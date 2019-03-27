@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  <title>Initial version (0.1.0) &middot; Packit</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+
+  <link rel="shortcut icon" href="https://packit.dev/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="/">Packit</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/packit-service/packit" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small></small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Initial version (0.1.0)</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>08 Mar 2019, 15:44</time>
+  </div>
+
+  
+
+  
+
+  
+
+</div>
+
+  
+
+<h1 id="initial-version-of-packit-is-out">Initial version of packit is out!</h1>
+
+<p>We would like to announce general availability of the initial version of
+packit, titled &lsquo;0.1.0&rsquo;.</p>
+
+<p>Since this is our first release, we would like to ask you to be patient if you
+encounter any issues. We work hard on packit&rsquo;s usability. If you feel like that
+packit is doing something weird or if anything is unclear, don&rsquo;t hesitate and
+reach out to us by creating <a href="https://github.com/packit-service/packit/issues/new">a new Github
+issue</a>.</p>
+
+<p>The initial release contains two commands:</p>
+
+<ul>
+<li><code>packit propose-update</code> — Opens a pull request in dist-git for the latest
+upstream release of a selected repository.</li>
+<li><code>packit watch-releases</code> — Watches events for all the upstream releases and
+performs <code>propose-update</code> for those who use packit.</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<pre><code>$ dnf install --enablerepo=updates-testing packit
+</code></pre>
+
+<p>Or</p>
+
+<pre><code>$ pip3 install --user packitos
+</code></pre>
+
+<p>Or (if you&rsquo;re brave)</p>
+
+<pre><code>$ pip3 install --user git+https://github.com/packit-service/packit
+</code></pre>
+
+<h2 id="requirements">Requirements</h2>
+
+<p>Present features have strict requirements on the upstream projects:</p>
+
+<ul>
+<li><p>You need to have a packit config file present in the upstream repo.</p></li>
+
+<li><p>You need to have spec file present in the upstream repo.</p></li>
+</ul>
+
+<p>This workflow is suitable for people who are both upstream and downstream
+maintainers of the particular project. If you don&rsquo;t fit into that bucket, then
+packit might not be ready for you, yet. Please wait till we land more
+<a href="https://github.com/packit-service/packit/blob/master/docs/source-git.md">source-git</a>
+related functionality into packit.</p>
+
+<h2 id="propose-update"><code>propose-update</code></h2>
+
+<p>I&rsquo;m going to demonstrate this functionality on
+<a href="https://github.com/packit-service/ogr.git">ogr</a>, our library for git forges,
+which powers packit.</p>
+
+<p>It was recently approved for Fedora, so we can use packit to bring the initial
+version of ogr into Fedora Rawhide, 30 and 29.</p>
+
+<h3 id="do-we-have-everything">Do we have everything?</h3>
+
+<p>Let&rsquo;s see <a href="https://github.com/packit-service/packit/blob/master/docs/update.md">the upstream
+guide</a> for
+the <code>propose-update</code> command on what we need:</p>
+
+<h4 id="0-the-upstream-repository-with-a-valid-upstream-release">0. The upstream repository with a valid upstream release.</h4>
+
+<pre><code>$ git remote -v
+origin  git@github.com:TomasTomecek/ogr.git (fetch)
+origin  git@github.com:TomasTomecek/ogr.git (push)
+upstream        https://github.com/packit-service/ogr.git (fetch)
+upstream        https://github.com/packit-service/ogr.git (push)
+</code></pre>
+
+<p>Yup.</p>
+
+<pre><code>$ git tag --list
+0.0.1
+0.0.2
+0.0.3
+
+$ git checkout 0.0.3
+Note: checking out '0.0.3'.
+</code></pre>
+
+<p>And the tag name is matching the version in a spec file:</p>
+
+<pre><code>$ grep Version python-ogr.spec
+Version:        0.0.3
+</code></pre>
+
+<h4 id="1-packit-config-file-placed-in-the-upstream-repository">1. Packit config file placed in the upstream repository.</h4>
+
+<pre><code>$ ll .packit.yaml
+-rw-rw-r--. 1 tt tt 177 Mar  1 17:44 .packit.yaml
+</code></pre>
+
+<p>Check.</p>
+
+<h4 id="2-spec-file-present-in-the-upstream-repository">2. Spec file present in the upstream repository.</h4>
+
+<pre><code>$ ll python-ogr.spec
+-rw-rw-r--. 1 tt tt 1.3K Mar  1 17:43 python-ogr.spec
+</code></pre>
+
+<p>:+1:</p>
+
+<h4 id="3-pagure-api-tokens-for-fedora-dist-git">3. Pagure API tokens for Fedora Dist-git.</h4>
+
+<pre><code>$ env | grep TOKEN
+PAGURE_USER_TOKEN=will
+PAGURE_FORK_TOKEN=not
+GITHUB_TOKEN=share, sorry
+</code></pre>
+
+<h4 id="4-valid-fedora-kerberos-ticket">4. Valid Fedora Kerberos ticket.</h4>
+
+<pre><code>$ kinit ttomecek@FEDORAPROJECT.ORG
+Password for ttomecek@FEDORAPROJECT.ORG:
+
+$ klist
+Ticket cache: KEYRING:persistent:1024:krb_ccache_g0t1Ty3Ah
+Default principal: ttomecek@FEDORAPROJECT.ORG
+
+Valid starting       Expires              Service principal
+03/01/2019 18:12:25  03/02/2019 18:12:19  krbtgt/FEDORAPROJECT.ORG@FEDORAPROJECT.ORG
+        renew until 03/08/2019 18:12:19
+</code></pre>
+
+<p>We&rsquo;re all set!</p>
+
+<h3 id="time-to-shine">Time to shine</h3>
+
+<p>We are still in the &ldquo;ogr&rdquo; upstream git repository.</p>
+
+<pre><code>$ packit propose-update
+INFO: Running 'anitya' versioneer
+ERROR: Failed to determine latest upstream version!
+Check that the package exists on https://release-monitoring.org.
+using &quot;master&quot; dist-git branch
+syncing ./python-ogr.spec
+INFO: Downloading file from URL https://files.pythonhosted.org/packages/source/o/ogr/ogr-0.0.3.tar.gz
+100%[=============================&gt;]    17.95K  eta 00:00:00
+downloaded archive: /tmp/tmp2e65b0xt/ogr-0.0.3.tar.gz
+uploading to the lookaside cache
+PR created: https://src.fedoraproject.org/rpms/python-ogr/pull-request/1
+</code></pre>
+
+<p>Mind-blowing, isn&rsquo;t it? Now we have latest python-ogr in Fedora Rawhide by
+running only a single command.</p>
+
+<p>I have also <a href="https://release-monitoring.org/project/18832/">added</a> ogr into release-monitoring as packit suggests.</p>
+
+<p>Once we are okay with the changes, we have to <a href="https://src.fedoraproject.org/rpms/python-ogr/pull-request/1">merge the pull
+request</a>. That&rsquo;s
+our responsibility, as maintainers.</p>
+
+<h3 id="building-in-koji">Building in koji</h3>
+
+<p>Time to build the package (packit doesn&rsquo;t support building in koji, yet)</p>
+
+<pre><code>$ fedpkg clone python-ogr
+Cloning into 'python-ogr'...
+remote: Counting objects: 8, done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 8 (delta 0), reused 5 (delta 0)
+Receiving objects: 100% (8/8), done.
+
+$ cd python-ogr
+
+$ git log
+commit c298df5e540ba1d010366e102c1c75d4f5b0b0cc (HEAD -&gt; master, origin/master, origin/HEAD)
+Author: Tomas Tomecek &lt;ttomecek@redhat.com&gt;
+Date:   Fri Mar 1 18:15:00 2019 +0100
+
+    [packit] 0.0.3 upstream release
+
+    more info
+
+    Signed-off-by: Tomas Tomecek &lt;ttomecek@redhat.com&gt;
+
+commit 7d5ab1471ca0ee2a6c0254410b83beaa83b80f0b
+Author: Gwyn Ciesla &lt;limb@fedoraproject.org&gt;
+Date:   Fri Mar 1 15:18:34 2019 +0000
+
+    Added the README
+</code></pre>
+
+<p>Yup, that&rsquo;s our commit. <code>more info</code> was added there by accident, this is
+already fixed in packit.</p>
+
+<pre><code>$ fedpkg build
+Building python-ogr-0.0.3-1.fc31 for rawhide
+Created task: 33125435
+Task info: https://koji.fedoraproject.org/koji/taskinfo?taskID=33125435
+Watching tasks (this may be safely interrupted)...
+33125435 build (rawhide, /rpms/python-ogr.git:c298df5e540ba1d010366e102c1c75d4f5b0b0cc): free
+33125435 build (rawhide, /rpms/python-ogr.git:c298df5e540ba1d010366e102c1c75d4f5b0b0cc): free -&gt; open (buildvm-14.phx2.fedoraproject.org)
+  33125451 buildArch (python-ogr-0.0.3-1.fc31.src.rpm, noarch): open (buildvm-14.phx2.fedoraproject.org)
+  33125436 buildSRPMFromSCM (/rpms/python-ogr.git:c298df5e540ba1d010366e102c1c75d4f5b0b0cc): closed
+33125435 build (rawhide, /rpms/python-ogr.git:c298df5e540ba1d010366e102c1c75d4f5b0b0cc): open (buildvm-14.phx2.fedoraproject.org) -&gt; closed
+  0 free  1 open  2 done  0 failed
+  33125464 tagBuild (noarch): closed
+  33125451 buildArch (python-ogr-0.0.3-1.fc31.src.rpm, noarch): open (buildvm-14.phx2.fedoraproject.org) -&gt; closed
+  0 free  0 open  4 done  0 failed
+
+33125435 build (rawhide, /rpms/python-ogr.git:c298df5e540ba1d010366e102c1c75d4f5b0b0cc) completed successfully
+</code></pre>
+
+<p>That was rough, can&rsquo;t wait to do this with packit.</p>
+
+<p>Let&rsquo;s do Fedora 30 now:</p>
+
+<pre><code>$ packit propose-update --dist-git-branch f30
+INFO: Running 'anitya' versioneer
+using &quot;f30&quot; dist-git branch
+syncing ./python-ogr.spec
+INFO: Downloading file from URL https://files.pythonhosted.org/packages/source/o/ogr/ogr-0.0.3.tar.gz
+100%[=============================&gt;]    17.95K  eta 00:00:00
+downloaded archive: /tmp/tmpl5xxq22x/ogr-0.0.3.tar.gz
+uploading to the lookaside cache
+PR created: https://src.fedoraproject.org/rpms/python-ogr/pull-request/3
+</code></pre>
+
+<p>And so on&hellip;</p>
+
+<h2 id="conclussion">Conclussion</h2>
+
+<p>As you can see, packit is useful for us right away.</p>
+
+<p>We&rsquo;ll be delighted if you try it out and let us know what you think.</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://packit.dev/post/packit-020/">Version 0.2.0</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://packit.dev/post/packit-020/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://packit.dev/js/ui.js"></script>
+<script src="https://packit.dev/js/menus.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+
