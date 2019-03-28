@@ -41,7 +41,7 @@ If you do not remove these files, you run the risk of the wrong files (e.g., dra
 
 ### Themes
 
-Currently, we use [Blackburn theme](https://themes.gohugo.io/blackburn).
+Currently, we use [Minos theme](https://themes.gohugo.io/hugo-theme-minos/).
 For complete list of themes for Hugo, see [this](https://themes.gohugo.io).
 If you want to add a new theme:
 
