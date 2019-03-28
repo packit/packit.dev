@@ -17,8 +17,11 @@
       <pubDate>Fri, 22 Mar 2019 18:13:04 +0100</pubDate>
       
       <guid>https://packit-service.github.io/packit.dev/about/</guid>
-      <description>Packit provides tooling and automation to integrate upstream open source projects into Fedora operating system.
-Github https://github.com/packit-service/packit</description>
+      <description>&lt;p&gt;Packit provides tooling and automation to integrate upstream open source projects into Fedora operating system.&lt;/p&gt;
+
+&lt;h3 id=&#34;github&#34;&gt;Github&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/packit-service/packit&#34;&gt;https://github.com/packit-service/packit&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -27,9 +30,18 @@ Github https://github.com/packit-service/packit</description>
       <pubDate>Tue, 19 Mar 2019 18:25:39 +0100</pubDate>
       
       <guid>https://packit-service.github.io/packit.dev/posts/packit-020/</guid>
-      <description>Packit 0.2.0 is here! Our sprint nears an end which means we have released a new version of packit - 0.2.0! You can expect a new release after every sprint (i.e. every 2 weeks).
-The 0.2.0 version has a bunch of new features and improvements: you can find a complete list in the changelog. We also have a detailed documentation for all the workflows packit covers.
-Let&amp;rsquo;s get through what&amp;rsquo;s new:</description>
+      <description>&lt;h1 id=&#34;packit-0-2-0-is-here&#34;&gt;Packit 0.2.0 is here!&lt;/h1&gt;
+
+&lt;p&gt;Our sprint nears an end which means we have released &lt;a href=&#34;https://github.com/packit-service/packit/releases/tag/0.2.0&#34;&gt;a new version of packit -
+0.2.0&lt;/a&gt;! You can
+expect a new release after every sprint (i.e. every 2 weeks).&lt;/p&gt;
+
+&lt;p&gt;The 0.2.0 version has a bunch of new features and improvements: you can find
+a complete list &lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md#020&#34;&gt;in the
+changelog&lt;/a&gt;.
+We also have a &lt;a href=&#34;https://github.com/packit-service/packit#workflows-covered-by-packit&#34;&gt;detailed
+documentation&lt;/a&gt;
+for all the workflows packit covers.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -38,8 +50,16 @@ Let&amp;rsquo;s get through what&amp;rsquo;s new:</description>
       <pubDate>Fri, 08 Mar 2019 15:44:36 +0100</pubDate>
       
       <guid>https://packit-service.github.io/packit.dev/posts/packit-010/</guid>
-      <description>Initial version of packit is out! We would like to announce general availability of the initial version of packit, titled &amp;lsquo;0.1.0&amp;rsquo;.
-Since this is our first release, we would like to ask you to be patient if you encounter any issues. We work hard on packit&amp;rsquo;s usability. If you feel like that packit is doing something weird or if anything is unclear, don&amp;rsquo;t hesitate and reach out to us by creating a new Github issue.</description>
+      <description>&lt;h1 id=&#34;initial-version-of-packit-is-out&#34;&gt;Initial version of packit is out!&lt;/h1&gt;
+
+&lt;p&gt;We would like to announce general availability of the initial version of
+packit, titled &amp;lsquo;0.1.0&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;Since this is our first release, we would like to ask you to be patient if you
+encounter any issues. We work hard on packit&amp;rsquo;s usability. If you feel like that
+packit is doing something weird or if anything is unclear, don&amp;rsquo;t hesitate and
+reach out to us by creating &lt;a href=&#34;https://github.com/packit-service/packit/issues/new&#34;&gt;a new Github
+issue&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>
