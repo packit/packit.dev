@@ -1,8 +1,6 @@
-.PHONY: docs server
-
 server:
 	hugo server -D
 
-docs:
+generate:
 	rm -rf ./docs/
-	hugo -d docs
+	hugo
