@@ -1,4 +1,4 @@
-baseURL = "https://packit.dev/"
+baseURL = "https://packit-service.github.io/packit.dev/"
 languageCode = "en-us"
 title = "Packit"
 theme = "blackburn"

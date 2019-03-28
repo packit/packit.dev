@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Packit</title>
-    <link>https://packit.dev/post/</link>
+    <link>https://packit-service.github.io/packit.dev/post/</link>
     <description>Recent content in Posts on Packit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 19 Mar 2019 18:25:39 +0100</lastBuildDate>
     
-	<atom:link href="https://packit.dev/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://packit-service.github.io/packit.dev/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Version 0.2.0</title>
-      <link>https://packit.dev/post/packit-020/</link>
+      <link>https://packit-service.github.io/packit.dev/post/packit-020/</link>
       <pubDate>Tue, 19 Mar 2019 18:25:39 +0100</pubDate>
       
-      <guid>https://packit.dev/post/packit-020/</guid>
+      <guid>https://packit-service.github.io/packit.dev/post/packit-020/</guid>
       <description>Packit 0.2.0 is here! Our sprint nears an end which means we have released a new version of packit - 0.2.0! You can expect a new release after every sprint (i.e. every 2 weeks).
 The 0.2.0 version has a bunch of new features and improvements: you can find a complete list in the changelog. We also have a detailed documentation for all the workflows packit covers.
 Let&amp;rsquo;s get through what&amp;rsquo;s new:</description>
@@ -24,10 +24,10 @@ Let&amp;rsquo;s get through what&amp;rsquo;s new:</description>
     
     <item>
       <title>Initial version (0.1.0)</title>
-      <link>https://packit.dev/post/packit-010/</link>
+      <link>https://packit-service.github.io/packit.dev/post/packit-010/</link>
       <pubDate>Fri, 08 Mar 2019 15:44:36 +0100</pubDate>
       
-      <guid>https://packit.dev/post/packit-010/</guid>
+      <guid>https://packit-service.github.io/packit.dev/post/packit-010/</guid>
       <description>Initial version of packit is out! We would like to announce general availability of the initial version of packit, titled &amp;lsquo;0.1.0&amp;rsquo;.
 Since this is our first release, we would like to ask you to be patient if you encounter any issues. We work hard on packit&amp;rsquo;s usability. If you feel like that packit is doing something weird or if anything is unclear, don&amp;rsquo;t hesitate and reach out to us by creating a new Github issue.</description>
     </item>
