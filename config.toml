@@ -1,4 +1,5 @@
 baseURL = "https://packit-service.github.io/packit.dev/"
+publishDir = "docs"
 languageCode = "en-us"
 title = "Packit"
 theme = "blackburn"
