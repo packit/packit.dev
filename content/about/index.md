@@ -9,3 +9,5 @@ Packit provides tooling and automation to integrate upstream open source project
 ### Github
 
 https://github.com/packit-service/packit
+
+<!--more-->

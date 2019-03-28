@@ -16,6 +16,7 @@ changelog](https://github.com/packit-service/packit/blob/master/CHANGELOG.md#020
 We also have a [detailed
 documentation](https://github.com/packit-service/packit#workflows-covered-by-packit)
 for all the workflows packit covers.
+<!--more-->
 
 Let's get through what's new:
 

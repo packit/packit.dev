@@ -14,7 +14,7 @@ encounter any issues. We work hard on packit's usability. If you feel like that
 packit is doing something weird or if anything is unclear, don't hesitate and
 reach out to us by creating [a new Github
 issue](https://github.com/packit-service/packit/issues/new).
-
+<!--more-->
 
 The initial release contains two commands:
 
