@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Packit</title>
-    <link>https://packit-service.github.io/packit.dev/</link>
+    <link>https://packit.dev/</link>
     <description>Recent content on Packit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 22 Mar 2019 18:13:04 +0100</lastBuildDate>
     
-	<atom:link href="https://packit-service.github.io/packit.dev/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://packit.dev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>https://packit-service.github.io/packit.dev/about/</link>
+      <link>https://packit.dev/about/</link>
       <pubDate>Fri, 22 Mar 2019 18:13:04 +0100</pubDate>
       
-      <guid>https://packit-service.github.io/packit.dev/about/</guid>
+      <guid>https://packit.dev/about/</guid>
       <description>&lt;p&gt;Packit provides tooling and automation to integrate upstream open source projects into Fedora operating system.&lt;/p&gt;
 
 &lt;h3 id=&#34;github&#34;&gt;Github&lt;/h3&gt;
@@ -26,10 +26,10 @@
     
     <item>
       <title>Version 0.2.0</title>
-      <link>https://packit-service.github.io/packit.dev/posts/packit-020/</link>
+      <link>https://packit.dev/posts/packit-020/</link>
       <pubDate>Tue, 19 Mar 2019 18:25:39 +0100</pubDate>
       
-      <guid>https://packit-service.github.io/packit.dev/posts/packit-020/</guid>
+      <guid>https://packit.dev/posts/packit-020/</guid>
       <description>&lt;h1 id=&#34;packit-0-2-0-is-here&#34;&gt;Packit 0.2.0 is here!&lt;/h1&gt;
 
 &lt;p&gt;Our sprint nears an end which means we have released &lt;a href=&#34;https://github.com/packit-service/packit/releases/tag/0.2.0&#34;&gt;a new version of packit -
@@ -46,10 +46,10 @@ for all the workflows packit covers.&lt;/p&gt;</description>
     
     <item>
       <title>Initial version (0.1.0)</title>
-      <link>https://packit-service.github.io/packit.dev/posts/packit-010/</link>
+      <link>https://packit.dev/posts/packit-010/</link>
       <pubDate>Fri, 08 Mar 2019 15:44:36 +0100</pubDate>
       
-      <guid>https://packit-service.github.io/packit.dev/posts/packit-010/</guid>
+      <guid>https://packit.dev/posts/packit-010/</guid>
       <description>&lt;h1 id=&#34;initial-version-of-packit-is-out&#34;&gt;Initial version of packit is out!&lt;/h1&gt;
 
 &lt;p&gt;We would like to announce general availability of the initial version of
