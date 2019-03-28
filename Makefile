@@ -1,3 +1,5 @@
+.PHONY: docs server
+
 server:
 	hugo server -D
 
