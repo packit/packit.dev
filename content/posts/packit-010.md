@@ -1,10 +1,8 @@
 ---
-title: "Initial version (0.1.0)"
+title: "Initial version (0.1.0) of packit is out!"
 date: 2019-03-08T15:44:36+01:00
 draft: false
 ---
-
-# Initial version of packit is out!
 
 We would like to announce general availability of the initial version of
 packit, titled '0.1.0'.
@@ -14,7 +12,6 @@ encounter any issues. We work hard on packit's usability. If you feel like that
 packit is doing something weird or if anything is unclear, don't hesitate and
 reach out to us by creating [a new Github
 issue](https://github.com/packit-service/packit/issues/new).
-<!--more-->
 
 The initial release contains two commands:
 
@@ -22,7 +19,7 @@ The initial release contains two commands:
   upstream release of a selected repository.
 * `packit watch-releases` — Watches events for all the upstream releases and
   performs `propose-update` for those who use packit.
-
+<!--more-->
 
 ## Installation
 

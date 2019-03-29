@@ -1,10 +1,8 @@
 ---
-title: "Version 0.2.0"
+title: "Packit 0.2.0 is here!"
 date: 2019-03-19T18:25:39+01:00
 draft: false
 ---
-
-# Packit 0.2.0 is here!
 
 Our sprint nears an end which means we have released [a new version of packit -
 0.2.0](https://github.com/packit-service/packit/releases/tag/0.2.0)! You can
