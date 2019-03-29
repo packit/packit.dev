@@ -12,14 +12,12 @@
     
     
     <item>
-      <title>Version 0.2.0</title>
+      <title>Packit 0.2.0 is here!</title>
       <link>https://packit.dev/posts/packit-020/</link>
       <pubDate>Tue, 19 Mar 2019 18:25:39 +0100</pubDate>
       
       <guid>https://packit.dev/posts/packit-020/</guid>
-      <description>&lt;h1 id=&#34;packit-0-2-0-is-here&#34;&gt;Packit 0.2.0 is here!&lt;/h1&gt;
-
-&lt;p&gt;Our sprint nears an end which means we have released &lt;a href=&#34;https://github.com/packit-service/packit/releases/tag/0.2.0&#34;&gt;a new version of packit -
+      <description>&lt;p&gt;Our sprint nears an end which means we have released &lt;a href=&#34;https://github.com/packit-service/packit/releases/tag/0.2.0&#34;&gt;a new version of packit -
 0.2.0&lt;/a&gt;! You can
 expect a new release after every sprint (i.e. every 2 weeks).&lt;/p&gt;
 
@@ -32,21 +30,28 @@ for all the workflows packit covers.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Initial version (0.1.0)</title>
+      <title>Initial version (0.1.0) of packit is out!</title>
       <link>https://packit.dev/posts/packit-010/</link>
       <pubDate>Fri, 08 Mar 2019 15:44:36 +0100</pubDate>
       
       <guid>https://packit.dev/posts/packit-010/</guid>
-      <description>&lt;h1 id=&#34;initial-version-of-packit-is-out&#34;&gt;Initial version of packit is out!&lt;/h1&gt;
-
-&lt;p&gt;We would like to announce general availability of the initial version of
+      <description>&lt;p&gt;We would like to announce general availability of the initial version of
 packit, titled &amp;lsquo;0.1.0&amp;rsquo;.&lt;/p&gt;
 
 &lt;p&gt;Since this is our first release, we would like to ask you to be patient if you
 encounter any issues. We work hard on packit&amp;rsquo;s usability. If you feel like that
 packit is doing something weird or if anything is unclear, don&amp;rsquo;t hesitate and
 reach out to us by creating &lt;a href=&#34;https://github.com/packit-service/packit/issues/new&#34;&gt;a new Github
-issue&lt;/a&gt;.&lt;/p&gt;</description>
+issue&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The initial release contains two commands:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;packit propose-update&lt;/code&gt; — Opens a pull request in dist-git for the latest
+upstream release of a selected repository.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;packit watch-releases&lt;/code&gt; — Watches events for all the upstream releases and
+performs &lt;code&gt;propose-update&lt;/code&gt; for those who use packit.&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>
