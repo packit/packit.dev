@@ -6,11 +6,16 @@ packit.dev website content
 ### Installation (Fedora)
 
 This repository uses git submodules, so you have to `git clone --recurse-submodules` it.
+The current build of hugo in Fedora does not work with our setup, please use this copr repo instead:
+```
+$ dnf copr enable daftaupe/hugo`
+```
+
+And then:
 
 1. `dnf install hugo`
 2. `hugo help`
 
-Note: If you need latest greatest, run `dnf copr enable daftaupe/hugo` first.
 
 ### Add new post
 
