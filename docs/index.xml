@@ -21,7 +21,46 @@
 
 &lt;h3 id=&#34;github&#34;&gt;Github&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/packit-service/packit&#34;&gt;https://github.com/packit-service/packit&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/packit-service/packit&#34;&gt;https://github.com/packit-service/packit&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;the-key-principles-of-packit&#34;&gt;The key principles of packit&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Reuse existing tools and services where it makes sense: don&amp;rsquo;t reinvent the
+wheel.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;You can consume packit in two forms:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Packit tool can run on your laptop and you run commands you want.&lt;/li&gt;
+&lt;li&gt;Packit service reacts to events and performs actions which you
+defined in your &lt;code&gt;packit.yaml&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We don&amp;rsquo;t break backwards compatibility just like that.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Packit has a deprecation policy:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We can mark a behaviour as deprecated.&lt;/li&gt;
+&lt;li&gt;Deprecated content can be removed or changed after at least 3 minor
+releases.&lt;/li&gt;
+&lt;li&gt;Deprecated content is advertised in our
+&lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md&#34;&gt;changelog&lt;/a&gt;,
+printed in terminal or tracked in your issue tracker.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We care about artifacts which Fedora supports: at the moment it&amp;rsquo;s RPMs,
+modules and container images.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Our initial focus is solely on RPMs.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Packit respects Fedora guidelines.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We want latest content in Fedora Rawhide, but only if it works.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
