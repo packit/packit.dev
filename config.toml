@@ -3,6 +3,7 @@ publishDir = "docs"
 languageCode = "en-us"
 title = "Packit"
 theme = "minos"
+paginate = 5
 
 [params]
   subtitle = "Upstream project ← → Downstream distribution"
