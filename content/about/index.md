@@ -40,6 +40,19 @@ https://github.com/packit-service/packit
 * We want latest content in Fedora Rawhide, but only if it works (the new
   content can be built and tests are passing).
 
+* Any task done by the automation system must be able to be performed by a
+  human when that is required. Packit service must be capable of recovering
+  from such situation.
+
+* Packit developers must be able to iterate on all parts packit (testing a
+  change, merging a change, deploying to production) at a pace of at least
+  every two weeks. To accomplish this, the release and validation processes are
+  completely automated.
+
+* Contributions to packit must be possible by any developer, maintainer,
+  tester, or other engineer. Any Fedora developer or tester should be able to
+  reproduce a bot locally on their machine, given appropriate credentials.
+
 <!--more-->
 
 
@@ -60,8 +73,8 @@ https://github.com/packit-service/packit
 
  * Developing in dist-git is cumbersome. Editing patch files and moving
    tarballs around is not fun. Why not working with the source code itself?
-   With source git, you'll have upstream git history and the dist-git content
-   combined in a single repository.
+   With [source-git](/source-git), you'll have upstream git history and the
+   dist-git content combined in a single repository.
 
  * Let's use modern development techniques such as pull requests, code review,
    modern git forges, automation and continuous integration. We have computers
@@ -69,7 +82,7 @@ https://github.com/packit-service/packit
 
  * We want dist-git to be "a database of content in a release" rather a place
    to do actual work. On the other hand, you'll still be able to interact with
-   dist-git the same way. We are not taking that away. Source git is meant to
-   be the modern, better alternative.
+   dist-git the same way. We are not taking that away.
+   [Source-git](/source-git) is meant to be the modern, better alternative.
 
 DevConf.cz ["Auto-maintain your package" talk](https://www.youtube.com/watch?v=KpF27v6K4Oc).
