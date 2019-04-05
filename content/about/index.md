@@ -6,7 +6,7 @@ draft: false
 
 Packit provides tooling and automation to integrate upstream open source projects into Fedora operating system.
 
-### Github
+### Upstream repository
 
 https://github.com/packit-service/packit
 
@@ -41,3 +41,35 @@ https://github.com/packit-service/packit
   content can be built and tests are passing).
 
 <!--more-->
+
+
+### Why packit?
+
+ * Our intent is to bring downstream and upstream communities closer: provide
+   feedback from downstream to upstream. (e.g. *"Hello \<upstream project Y>,
+   your newest release doesn't work in Fedora Rawhide, it breaks \<Z>, here is
+   a link to logs."*)
+
+ * We want to only merge, build and compose components which integrate well
+   with the rest of the operating system. The biggest impact of such behavior
+   will be on Fedora Rawhide and when working on a new Fedora release.
+
+ * Automatically pull and validate new upstream releases. This can be a trivial
+   thing to do, why should maintainers waste their times on work which can be
+   automated.
+
+ * Developing in dist-git is cumbersome. Editing patch files and moving
+   tarballs around is not fun. Why not working with the source code itself?
+   With source git, you'll have upstream git history and the dist-git content
+   combined in a single repository.
+
+ * Let's use modern development techniques such as pull requests, code review,
+   modern git forges, automation and continuous integration. We have computers
+   to do all the mundane tasks. Why we, as humans, should do such work?
+
+ * We want dist-git to be "a database of content in a release" rather a place
+   to do actual work. On the other hand, you'll still be able to interact with
+   dist-git the same way. We are not taking that away. Source git is meant to
+   be the modern, better alternative.
+
+DevConf.cz ["Auto-maintain your package" talk](https://www.youtube.com/watch?v=KpF27v6K4Oc).
