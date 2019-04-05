@@ -126,9 +126,34 @@ performs &lt;code&gt;propose-update&lt;/code&gt; for those who use packit.&lt;/l
       <pubDate>Mon, 31 Dec 2018 23:59:59 +0100</pubDate>
       
       <guid>https://packit.dev/source-git/</guid>
-      <description>Source git is the place where the manual work is done This document serves as a detailed description of source-git. Please bear in mind that some things are a subject to change — the overall design is pretty solid, but details may be tinkered over time.
-Authors: Stef Walter, Tomas Tomecek
-TL;DR Content of source-git repository is equivalent to dist-git, but uses upstream format: source files instead of tarballs, git commits instead of patches.</description>
+      <description>&lt;h3 id=&#34;source-git-is-the-place-where-the-manual-work-is-done&#34;&gt;Source git is the place where the manual work is done&lt;/h3&gt;
+
+&lt;p&gt;This document serves as a detailed description of source-git. Please bear in
+mind that some things are a subject to change — the overall design is pretty
+solid, but details may be tinkered over time.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Authors&lt;/strong&gt;: Stef Walter, Tomas Tomecek&lt;/p&gt;
+
+&lt;h3 id=&#34;tl-dr&#34;&gt;TL;DR&lt;/h3&gt;
+
+&lt;p&gt;Content of source-git repository is equivalent to dist-git, but uses upstream
+format: source files instead of tarballs, git commits instead of patches.&lt;/p&gt;
+
+&lt;p&gt;You can host this repository, or the specific git branch, anywhere you want. If
+you open a pull request, you will receive feedback on the changes:
+* Does the package build with the changes?
+* Do all the package tests pass?
+* How about tests of the dependant packages?
+* Are the changes good to be included in Fedora?&lt;/p&gt;
+
+&lt;p&gt;The goal of packit is to provide automation and tooling to interact with
+source-git repositories so you don&amp;rsquo;t have to touch dist-git ever again. Our
+plan is to center development experience around upstream repositories and
+source-git.&lt;/p&gt;
+
+&lt;p&gt;Upstream repositories and source-git repositories are pretty much the same
+thing. Creating source-git only makes sense when the upstream does not accept
+downstream spec file or adding spec file to such a project doesn&amp;rsquo;t make sense.&lt;/p&gt;</description>
     </item>
     
   </channel>

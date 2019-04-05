@@ -32,7 +32,7 @@ source-git.
 Upstream repositories and source-git repositories are pretty much the same
 thing. Creating source-git only makes sense when the upstream does not accept
 downstream spec file or adding spec file to such a project doesn't make sense.
-
+<!--more-->
 
 ### Full description
 
