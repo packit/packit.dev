@@ -19,9 +19,62 @@
       <guid>https://packit.dev/about/</guid>
       <description>&lt;p&gt;Packit provides tooling and automation to integrate upstream open source projects into Fedora operating system.&lt;/p&gt;
 
-&lt;h3 id=&#34;github&#34;&gt;Github&lt;/h3&gt;
+&lt;h3 id=&#34;upstream-repository&#34;&gt;Upstream repository&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/packit-service/packit&#34;&gt;https://github.com/packit-service/packit&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/packit-service/packit&#34;&gt;https://github.com/packit-service/packit&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;the-key-principles-of-packit&#34;&gt;The key principles of packit&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Reuse existing tools and services where it makes sense: don&amp;rsquo;t reinvent the
+wheel.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;You can consume packit in two forms:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Packit tool can run on your laptop and you run commands you want.&lt;/li&gt;
+&lt;li&gt;Packit service reacts to events and performs actions which you
+defined in your &lt;code&gt;packit.yaml&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We don&amp;rsquo;t break backwards compatibility just like that.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Packit has a deprecation policy:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We can mark a behaviour as deprecated.&lt;/li&gt;
+&lt;li&gt;Deprecated content can be removed or changed after at least 3 minor
+releases.&lt;/li&gt;
+&lt;li&gt;Deprecated content is advertised in our
+&lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md&#34;&gt;changelog&lt;/a&gt;,
+printed in terminal or tracked in your issue tracker.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We care about artifacts which Fedora supports: at the moment it&amp;rsquo;s RPMs,
+modules and container images.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Our initial focus is solely on RPMs.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Packit respects Fedora guidelines.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We want latest content in Fedora Rawhide, but only if it works (the new
+content can be built and tests are passing).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Any task done by the automation system must be able to be performed by a
+human when that is required. Packit service must be capable of recovering
+from such situation.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Packit developers must be able to iterate on all parts packit (testing a
+change, merging a change, deploying to production) at a pace of at least
+every two weeks. To accomplish this, the release and validation processes are
+completely automated.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Contributions to packit must be possible by any developer, maintainer,
+tester, or other engineer. Any Fedora developer or tester should be able to
+reproduce a bot locally on their machine, given appropriate credentials.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -65,6 +118,42 @@ upstream release of a selected repository.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;packit watch-releases&lt;/code&gt; — Watches events for all the upstream releases and
 performs &lt;code&gt;propose-update&lt;/code&gt; for those who use packit.&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Source-git</title>
+      <link>https://packit.dev/source-git/</link>
+      <pubDate>Mon, 31 Dec 2018 23:59:59 +0100</pubDate>
+      
+      <guid>https://packit.dev/source-git/</guid>
+      <description>&lt;h3 id=&#34;source-git-is-the-place-where-the-manual-work-is-done&#34;&gt;Source git is the place where the manual work is done&lt;/h3&gt;
+
+&lt;p&gt;This document serves as a detailed description of source-git. Please bear in
+mind that some things are a subject to change — the overall design is pretty
+solid, but details may be tinkered over time.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Authors&lt;/strong&gt;: Stef Walter, Tomas Tomecek&lt;/p&gt;
+
+&lt;h3 id=&#34;tl-dr&#34;&gt;TL;DR&lt;/h3&gt;
+
+&lt;p&gt;Content of source-git repository is equivalent to dist-git, but uses upstream
+format: source files instead of tarballs, git commits instead of patches.&lt;/p&gt;
+
+&lt;p&gt;You can host this repository, or the specific git branch, anywhere you want. If
+you open a pull request, you will receive feedback on the changes:
+* Does the package build with the changes?
+* Do all the package tests pass?
+* How about tests of the dependant packages?
+* Are the changes good to be included in Fedora?&lt;/p&gt;
+
+&lt;p&gt;The goal of packit is to provide automation and tooling to interact with
+source-git repositories so you don&amp;rsquo;t have to touch dist-git ever again. Our
+plan is to center development experience around upstream repositories and
+source-git.&lt;/p&gt;
+
+&lt;p&gt;Upstream repositories and source-git repositories are pretty much the same
+thing. Creating source-git only makes sense when the upstream does not accept
+downstream spec file or adding spec file to such a project doesn&amp;rsquo;t make sense.&lt;/p&gt;</description>
     </item>
     
   </channel>

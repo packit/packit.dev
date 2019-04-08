@@ -42,6 +42,8 @@
                 
                 <a class="main-nav-link" href="/about/">About</a>
                 
+                <a class="main-nav-link" href="/source-git/">Source-git</a>
+                
             </nav>
             <nav id="sub-nav">
                 <div id="search-form-wrap">
@@ -74,9 +76,62 @@
                         
                     <p>Packit provides tooling and automation to integrate upstream open source projects into Fedora operating system.</p>
 
-<h3 id="github">Github</h3>
+<h3 id="upstream-repository">Upstream repository</h3>
 
 <p><a href="https://github.com/packit-service/packit">https://github.com/packit-service/packit</a></p>
+
+<h3 id="the-key-principles-of-packit">The key principles of packit</h3>
+
+<ul>
+<li><p>Reuse existing tools and services where it makes sense: don&rsquo;t reinvent the
+wheel.</p></li>
+
+<li><p>You can consume packit in two forms:</p>
+
+<ul>
+<li>Packit tool can run on your laptop and you run commands you want.</li>
+<li>Packit service reacts to events and performs actions which you
+defined in your <code>packit.yaml</code>.</li>
+</ul></li>
+
+<li><p>We don&rsquo;t break backwards compatibility just like that.</p></li>
+
+<li><p>Packit has a deprecation policy:</p>
+
+<ul>
+<li>We can mark a behaviour as deprecated.</li>
+<li>Deprecated content can be removed or changed after at least 3 minor
+releases.</li>
+<li>Deprecated content is advertised in our
+<a href="https://github.com/packit-service/packit/blob/master/CHANGELOG.md">changelog</a>,
+printed in terminal or tracked in your issue tracker.</li>
+</ul></li>
+
+<li><p>We care about artifacts which Fedora supports: at the moment it&rsquo;s RPMs,
+modules and container images.</p>
+
+<ul>
+<li>Our initial focus is solely on RPMs.</li>
+</ul></li>
+
+<li><p>Packit respects Fedora guidelines.</p></li>
+
+<li><p>We want latest content in Fedora Rawhide, but only if it works (the new
+content can be built and tests are passing).</p></li>
+
+<li><p>Any task done by the automation system must be able to be performed by a
+human when that is required. Packit service must be capable of recovering
+from such situation.</p></li>
+
+<li><p>Packit developers must be able to iterate on all parts packit (testing a
+change, merging a change, deploying to production) at a pace of at least
+every two weeks. To accomplish this, the release and validation processes are
+completely automated.</p></li>
+
+<li><p>Contributions to packit must be possible by any developer, maintainer,
+tester, or other engineer. Any Fedora developer or tester should be able to
+reproduce a bot locally on their machine, given appropriate credentials.</p></li>
+</ul>
                     </p>
                     <p class="article-more-link">
                         <a href="/about/">Read More</a>
@@ -165,6 +220,63 @@ performs <code>propose-update</code> for those who use packit.</li>
                     </p>
                     <p class="article-more-link">
                         <a href="/posts/packit-010/">Read More</a>
+                    </p>
+                </div>
+
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/source-git/">Source-git</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/source-git/" class="article-date">
+                        <time datetime='2018-12-31T23:59:59.000&#43;01:00' itemprop="datePublished">2018-12-31</time>
+                    </a>
+                    
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <h3 id="source-git-is-the-place-where-the-manual-work-is-done">Source git is the place where the manual work is done</h3>
+
+<p>This document serves as a detailed description of source-git. Please bear in
+mind that some things are a subject to change — the overall design is pretty
+solid, but details may be tinkered over time.</p>
+
+<p><strong>Authors</strong>: Stef Walter, Tomas Tomecek</p>
+
+<h3 id="tl-dr">TL;DR</h3>
+
+<p>Content of source-git repository is equivalent to dist-git, but uses upstream
+format: source files instead of tarballs, git commits instead of patches.</p>
+
+<p>You can host this repository, or the specific git branch, anywhere you want. If
+you open a pull request, you will receive feedback on the changes:
+* Does the package build with the changes?
+* Do all the package tests pass?
+* How about tests of the dependant packages?
+* Are the changes good to be included in Fedora?</p>
+
+<p>The goal of packit is to provide automation and tooling to interact with
+source-git repositories so you don&rsquo;t have to touch dist-git ever again. Our
+plan is to center development experience around upstream repositories and
+source-git.</p>
+
+<p>Upstream repositories and source-git repositories are pretty much the same
+thing. Creating source-git only makes sense when the upstream does not accept
+downstream spec file or adding spec file to such a project doesn&rsquo;t make sense.</p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/source-git/">Read More</a>
                     </p>
                 </div>
 

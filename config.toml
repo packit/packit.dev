@@ -3,6 +3,7 @@ publishDir = "docs"
 languageCode = "en-us"
 title = "Packit"
 theme = "minos"
+paginate = 5
 
 [params]
   subtitle = "Upstream project ← → Downstream distribution"
@@ -28,6 +29,12 @@ theme = "minos"
     weight = 3
     identifier = "about"
     url = "/about/"
+  [[menu.main]]
+    name = "Source-git"
+    pre = "<i class='fa fa-user fa-fw'></i>"
+    weight = 4
+    identifier = "source-git"
+    url = "/source-git/"
 
 [social]
   github = "packit-service/packit"

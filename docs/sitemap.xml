@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>https://packit.dev/source-git/</loc>
+    <lastmod>2018-12-31T23:59:59+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://packit.dev/categories/</loc>
     <priority>0</priority>
   </url>
