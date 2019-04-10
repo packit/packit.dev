@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Packit 0.3.0 // Packit</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="Packit 0.3.0" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://packit.dev/posts/packit-030/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Packit" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link href="https://packit.dev/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://packit.dev/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://packit.dev/css/style.css">
+
+    <meta name="generator" content="Hugo 0.55.0" />
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="https://packit.dev/">Packit</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/posts/">Posts</a>
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/source-git/">Source-git</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Packit 0.3.0</h1>
+        </header>
+        
+        <div class="article-meta">
+            <a href="/posts/packit-030/" class="article-date">
+                <time datetime='2019-04-11T00:00:00.000&#43;00:00' itemprop="datePublished">2019-04-11</time>
+            </a>
+            
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>In the <a href="https://packit.dev/posts/packit-020/">previous post</a> we promised to provide a new release every 2 weeks and we are already breaking that as it&rsquo;s been 3 weeks since then.
+The reason is that we wanted to add the full source-git support into 0.3.0.</p>
+
+<p>Now the good news. <a href="https://github.com/packit-service/packit/releases/tag/0.3.0">0.3.0</a>, the new packit version, brings many new features and improvements.
+You can find a complete list in the <a href="https://github.com/packit-service/packit/blob/master/CHANGELOG.md#030">changelog</a>.</p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+<li>Packit supports <a href="https://packit.dev/source-git/">Source-git</a>. Sadly, we forgot to add the <code>--upstream-revision</code> option to CLI, so it&rsquo;s only in the <code>PackitAPI</code>. That means we actually do not have full source-git support in 0.3.0. It will be fixed either in <code>0.3.1</code> or <code>0.4.0</code>.</li>
+<li>You can now specify your own hooks or actions to replace default packit behaviour. (More information can be found <a href="https://github.com/packit-service/packit/blob/master/docs/actions.md">in the documentation</a>).</li>
+<li>Packit supports pagure.io-based upstream projects.</li>
+<li>Packit {propose-update, sync-from-downstream} supports copying directories.</li>
+<li>A new command <code>status</code>! It displays useful upstream/downstream info.</li>
+</ul>
+
+<pre><code>$ packit status
+Cloning repo: https://src.fedoraproject.org/rpms/packit.git -&gt; /tmp/tmp84we_6n8
+Downstream PRs: No open PRs.
+f29: 0.2.0
+f30: 0.2.0
+master: 0.2.0
+
+</code></pre>
+
+<ul>
+<li>You can now have a config file for packit in your home directory(<code>~/.config/packit.yaml</code>).</li>
+<li>Packit installed from an RPM now has manpages.</li>
+</ul>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#features">Features</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+
+        
+    </div>
+    <nav id="article-nav">
+    
+    
+    <a href="/about/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">About&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Packit
+            <br />
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/carsonip/hugo-theme-minos" target="_blank">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>
