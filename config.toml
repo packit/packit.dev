@@ -10,29 +10,22 @@ paginate = 5
   brand = "Packit"
 
 [menu]
-  # Shown in the side menu.
-  [[menu.main]]
-    name = "Home"
-    pre = "<i class='fa fa-home fa-fw'></i>"
-    weight = 1
-    identifier = "home"
-    url = "/"
   [[menu.main]]
     name = "Posts"
     pre = "<i class='fa fa-list fa-fw'></i>"
-    weight = 2
+    weight = 1
     identifier = "posts"
     url = "/posts/"
   [[menu.main]]
     name = "About"
     pre = "<i class='fa fa-user fa-fw'></i>"
-    weight = 3
+    weight = 2
     identifier = "about"
     url = "/about/"
   [[menu.main]]
     name = "Source-git"
     pre = "<i class='fa fa-user fa-fw'></i>"
-    weight = 4
+    weight = 3
     identifier = "source-git"
     url = "/source-git/"
 
