@@ -1,5 +1,5 @@
 # packit.dev
-packit.dev website content
+[packit.dev](https://packit.dev) website content
 
 ## Hugo
 
@@ -8,7 +8,7 @@ packit.dev website content
 This repository uses git submodules, so you have to `git clone --recurse-submodules` it.
 The current build of hugo in Fedora does not work with our setup, please use this copr repo instead:
 ```
-$ dnf copr enable daftaupe/hugo`
+$ dnf copr enable daftaupe/hugo
 ```
 
 And then:
@@ -27,7 +27,7 @@ All content [is organized](https://gohugo.io/content-management/organization) in
 
 ### Start Hugo server
 
-1. `hugo server -D` (`-D` means 'include content marked as draft') or `make server`
+1. `make server` or `hugo server -D` (`-D` means 'show also content marked as draft')
 2. [Web Server](http://localhost:1313)
 
 
