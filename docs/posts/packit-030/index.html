@@ -69,21 +69,34 @@
             
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p>In the <a href="https://packit.dev/posts/packit-020/">previous post</a> we promised to provide a new release every 2 weeks and we are already breaking that as it&rsquo;s been 3 weeks since then.
-The reason is that we wanted to add the full source-git support into 0.3.0.</p>
+            <p>In the <a href="https://packit.dev/posts/packit-020/">previous post</a> we promised to
+provide a new release every 2 weeks and we are already breaking this promise as
+it&rsquo;s been 3 weeks since then. We decided to wait with the release to merge
+several pull requests related to source-git support.</p>
 
-<p>Now the good news. <a href="https://github.com/packit-service/packit/releases/tag/0.3.0">0.3.0</a>, the new packit version, brings many new features and improvements.
-You can find a complete list in the <a href="https://github.com/packit-service/packit/blob/master/CHANGELOG.md#030">changelog</a>.</p>
+<p>Now the good news. You can find a complete list of new features and
+improvements of version
+<a href="https://github.com/packit-service/packit/releases/tag/0.3.0">0.3.0</a> in the
+<a href="https://github.com/packit-service/packit/blob/master/CHANGELOG.md#030">changelog</a>.</p>
 
 <h2 id="features">Features</h2>
 
 <ul>
-<li>Packit supports <a href="https://packit.dev/source-git/">Source-git</a>. Sadly, we forgot to add the <code>--upstream-revision</code> option to CLI, so it&rsquo;s only in the <code>PackitAPI</code>. That means we actually do not have full source-git support in 0.3.0. It will be fixed either in <code>0.3.1</code> or <code>0.4.0</code>.</li>
-<li>You can now specify your own hooks or actions to replace default packit behaviour. (More information can be found <a href="https://github.com/packit-service/packit/blob/master/docs/actions.md">in the documentation</a>).</li>
+<li>You can now specify your own hooks or actions to replace default packit
+behaviour. (More information can be found <a href="https://github.com/packit-service/packit/blob/master/docs/actions.md">in the
+documentation</a>).</li>
 <li>Packit supports pagure.io-based upstream projects.</li>
-<li>Packit {propose-update, sync-from-downstream} supports copying directories.</li>
+<li>Commands <code>propose-update</code> and <code>sync-from-downstream</code> supports <a href="https://github.com/packit-service/packit/blob/master/docs/configuration.md#minimal-sample-config">copying
+directories</a>.</li>
 <li>A new command <code>status</code>! It displays useful upstream/downstream info.</li>
+<li>Packit now supports <a href="https://packit.dev/source-git/">Source-git</a>. The
+functionality is not available, yet - we will add a CLI interface for it in
+the next release.</li>
+<li>You can now have a config file for packit in your home directory(<code>~/.config/packit.yaml</code>).</li>
+<li>Packit installed from an RPM now has manpages.</li>
 </ul>
+
+<h3 id="packit-status-example"><code>packit status</code> example</h3>
 
 <pre><code>$ packit status
 Cloning repo: https://src.fedoraproject.org/rpms/packit.git -&gt; /tmp/tmp84we_6n8
@@ -93,11 +106,6 @@ f30: 0.2.0
 master: 0.2.0
 
 </code></pre>
-
-<ul>
-<li>You can now have a config file for packit in your home directory(<code>~/.config/packit.yaml</code>).</li>
-<li>Packit installed from an RPM now has manpages.</li>
-</ul>
         </div>
 
         
@@ -108,7 +116,10 @@ master: 0.2.0
 <ul>
 <li>
 <ul>
-<li><a href="#features">Features</a></li>
+<li><a href="#features">Features</a>
+<ul>
+<li><a href="#packit-status-example"><code>packit status</code> example</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
