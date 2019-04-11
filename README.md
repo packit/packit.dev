@@ -19,7 +19,7 @@ And then:
 
 ### Add new post
 
-`hugo new post/packit-100.md`
+`hugo new posts/packit-xyz.md`
 
 ### Content
 

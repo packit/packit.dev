@@ -6,10 +6,27 @@
     <description>Recent content in Posts on Packit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Mar 2019 18:25:39 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 11 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://packit.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Packit 0.3.0</title>
+      <link>https://packit.dev/posts/packit-030/</link>
+      <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/packit-030/</guid>
+      <description>&lt;p&gt;In the &lt;a href=&#34;https://packit.dev/posts/packit-020/&#34;&gt;previous post&lt;/a&gt; we promised to
+provide a new release every 2 weeks and we are already breaking this promise as
+it&amp;rsquo;s been 3 weeks since then. We decided to wait with the release to merge
+several pull requests related to source-git support.&lt;/p&gt;
+
+&lt;p&gt;Now the good news. You can find a complete list of new features and
+improvements of version
+&lt;a href=&#34;https://github.com/packit-service/packit/releases/tag/0.3.0&#34;&gt;0.3.0&lt;/a&gt; in the
+&lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md#030&#34;&gt;changelog&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Packit 0.2.0 is here!</title>
