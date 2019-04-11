@@ -22,7 +22,8 @@ improvements of version
   behaviour. (More information can be found [in the
   documentation](https://github.com/packit-service/packit/blob/master/docs/actions.md)).
 * Packit supports pagure.io-based upstream projects.
-* Packit {propose-update, sync-from-downstream} supports copying directories.
+* Commands `propose-update` and `sync-from-downstream` supports [copying
+  directories](https://github.com/packit-service/packit/blob/master/docs/configuration.md#minimal-sample-config).
 * A new command `status`! It displays useful upstream/downstream info.
 * Packit now supports [Source-git](https://packit.dev/source-git/). The
   functionality is not available, yet - we will add a CLI interface for it in
