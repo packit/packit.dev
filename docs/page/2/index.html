@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Categories // Packit</title>
+    <title>Packit</title>
 
         <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
-        <meta property="og:title" content="Categories" />
+        <meta property="og:title" content="Packit" />
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="https://packit.dev/categories/" />
+    <meta property="og:url" content="https://packit.dev/" />
     
 
-    <link href="https://packit.dev/categories/index.xml" rel="alternate" type="application/rss+xml" title="Packit" />
+    <link href="https://packit.dev/index.xml" rel="alternate" type="application/rss+xml" title="Packit" />
     <link rel="shortcut icon" href="/favicon.png">
 
     <link href="https://packit.dev/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
@@ -52,19 +52,84 @@
 </header>
 
     <section id="main" class="outer">
-        <section class="layout-wrap">
-            <div class="layout-title">
-                <span>Categories</span>
-            </div>
-            <div class="layout-wrap-inner tag-cloud">
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
                 
                 
-                <ul>
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/source-git/">Source-git</a></h1>
+                </header>
                 
-                </ul>
-            </div>
+                <div class="article-meta">
+                    <a href="/source-git/" class="article-date">
+                        <time datetime='2018-12-31T23:59:59.000&#43;01:00' itemprop="datePublished">2018-12-31</time>
+                    </a>
+                    
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <h3 id="source-git-is-the-place-where-the-manual-work-is-done">Source git is the place where the manual work is done</h3>
 
-        </section>
+<p>This document serves as a detailed description of source-git. Please bear in
+mind that some things are a subject to change — the overall design is pretty
+solid, but details may be tinkered over time.</p>
+
+<p><strong>Authors</strong>: Stef Walter, Tomas Tomecek</p>
+
+<h3 id="tl-dr">TL;DR</h3>
+
+<p>Content of source-git repository is equivalent to dist-git, but uses upstream
+format: source files instead of tarballs, git commits instead of patches.</p>
+
+<p>You can host this repository, or the specific git branch, anywhere you want. If
+you open a pull request, you will receive feedback on the changes:
+* Does the package build with the changes?
+* Do all the package tests pass?
+* How about tests of the dependant packages?
+* Are the changes good to be included in Fedora?</p>
+
+<p>The goal of packit is to provide automation and tooling to interact with
+source-git repositories so you don&rsquo;t have to touch dist-git ever again. Our
+plan is to center development experience around upstream repositories and
+source-git.</p>
+
+<p>Upstream repositories and source-git repositories are pretty much the same
+thing. Creating source-git only makes sense when the upstream does not accept
+downstream spec file or adding spec file to such a project doesn&rsquo;t make sense.</p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/source-git/">Read More</a>
+                    </p>
+                </div>
+
+                
+            </div>
+        </article>
+        
+
+        
+
+<nav id="page-nav">
+    
+    <a href="/" rel="prev" class="extend prev">&laquo; Prev</a>
+    
+    
+    
+    <a href="/">1</a>
+    
+    
+    
+    <span class="page-number current">2</span>
+    
+    
+
+    
+</nav>
+
     </section>
     <footer id="footer">
     <div class="outer">

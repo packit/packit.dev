@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Packit 0.3.0 // Packit</title>
+    <title>Packit 0.4.0 &amp; 0.4.1 // Packit</title>
 
         <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -9,11 +9,11 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
-        <meta property="og:title" content="Packit 0.3.0" />
+        <meta property="og:title" content="Packit 0.4.0 &amp; 0.4.1" />
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="https://packit.dev/posts/packit-030/" />
+    <meta property="og:url" content="https://packit.dev/posts/packit-041/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Packit" />
@@ -57,55 +57,38 @@
     <div class="article-inner">
         
         <header class="article-header">
-            <h1 class="article-title" itemprop="name">Packit 0.3.0</h1>
+            <h1 class="article-title" itemprop="name">Packit 0.4.0 &amp; 0.4.1</h1>
         </header>
         
         <div class="article-meta">
-            <a href="/posts/packit-030/" class="article-date">
-                <time datetime='2019-04-11T00:00:00.000&#43;00:00' itemprop="datePublished">2019-04-11</time>
+            <a href="/posts/packit-041/" class="article-date">
+                <time datetime='2019-05-18T00:00:00.000&#43;00:00' itemprop="datePublished">2019-05-18</time>
             </a>
             
             
             
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p>In the <a href="https://packit.dev/posts/packit-020/">previous post</a> we promised to
-provide a new release every 2 weeks and we are already breaking this promise as
-it&rsquo;s been 3 weeks since then. We decided to wait with the release to merge
-several pull requests related to source-git support.</p>
+            <p>It&rsquo;s been over a month since 0.3.0 and newly released 0.4.0 (and patch release 0.4.1) again bring a lot of new features and improvements.</p>
 
-<p>Now the good news. You can find a complete list of new features and
-improvements of version
-<a href="https://github.com/packit-service/packit/releases/tag/0.3.0">0.3.0</a> in the
-<a href="https://github.com/packit-service/packit/blob/master/CHANGELOG.md#030">changelog</a>.</p>
+<p>You can find a complete list in the
+<a href="https://github.com/packit-service/packit/blob/master/CHANGELOG.md#040">changelog</a>.</p>
 
-<h2 id="features">Features</h2>
+<h2 id="packit-as-a-service">Packit as a service</h2>
 
 <ul>
-<li>You can now specify your own hooks or actions to replace default packit
-behaviour. (More information can be found <a href="https://github.com/packit-service/packit/blob/master/docs/actions.md">in the
-documentation</a>).</li>
-<li>Packit supports pagure.io-based upstream projects.</li>
-<li>Commands <code>propose-update</code> and <code>sync-from-downstream</code> supports <a href="https://github.com/packit-service/packit/blob/master/docs/configuration.md#minimal-sample-config">copying
-directories</a>.</li>
-<li>A new command <code>status</code>! It displays useful upstream/downstream info.</li>
-<li>Packit now supports <a href="https://packit.dev/source-git/">Source-git</a>. The
-functionality is not available, yet - we will add a CLI interface for it in
-the next release.</li>
-<li>You can now have a config file for packit in your home directory(<code>~/.config/packit.yaml</code>).</li>
-<li>Packit installed from an RPM now has manpages.</li>
+<li>We have Packit as a service running in OpenShift and also a GitHub App, which uses it. Unfortunately it&rsquo;s still not in the <a href="https://github.com/marketplace">Marketplace</a>, so <a href="https://github.com/packit-service">we</a> have been the only one using it so far. The service/app submits builds in <a href="https://copr.fedorainfracloud.org/coprs/packit/">copr</a> and once they&rsquo;re done it adds a GitHub status and comment with instructions how to install the builds. The service is now configurable via <a href="https://github.com/packit-service/packit/blob/master/docs/configuration.md#packit-service-jobs">jobs</a> defined in configuration file.</li>
+<li>Packit is now able to check GPG signatures of the upstream commits against configured fingerprints.</li>
 </ul>
 
-<h3 id="packit-status-example"><code>packit status</code> example</h3>
+<h2 id="cli">CLI</h2>
 
-<pre><code>$ packit status
-Cloning repo: https://src.fedoraproject.org/rpms/packit.git -&gt; /tmp/tmp84we_6n8
-Downstream PRs: No open PRs.
-f29: 0.2.0
-f30: 0.2.0
-master: 0.2.0
-
-</code></pre>
+<ul>
+<li><code>srpm</code> command now works also with <a href="https://packit.dev/source-git/">Source-git</a>.</li>
+<li><code>status</code> command now access remote APIs asynchronously in parallel, which should speed up the execution.</li>
+<li>CLI has new <code>--dry-run</code> option to not perform any remote changes (pull requests or comments).</li>
+<li>Fedmsg parsing has been unified into a single <code>listen-to-fedmsg</code> command.</li>
+</ul>
         </div>
 
         
@@ -116,10 +99,8 @@ master: 0.2.0
 <ul>
 <li>
 <ul>
-<li><a href="#features">Features</a>
-<ul>
-<li><a href="#packit-status-example"><code>packit status</code> example</a></li>
-</ul></li>
+<li><a href="#packit-as-a-service">Packit as a service</a></li>
+<li><a href="#cli">CLI</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -134,15 +115,9 @@ master: 0.2.0
     </div>
     <nav id="article-nav">
     
-    <a href="/posts/packit-041/" id="article-nav-newer" class="article-nav-link-wrap">
-        <div class="article-nav-title"><span>&lt;</span>&nbsp;
-            Packit 0.4.0 &amp; 0.4.1
-        </div>
-    </a>
     
-    
-    <a href="/about/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">About&nbsp;<span>&gt;</span></div>
+    <a href="/posts/packit-030/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Packit 0.3.0&nbsp;<span>&gt;</span></div>
     </a>
     
 </nav>
