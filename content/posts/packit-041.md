@@ -4,7 +4,7 @@ date: 2019-05-18
 draft: false
 ---
 
-It's been over a month since 0.3.0 and newly released 0.4.0 (and patch release 0.4.1) again bring a lot of new features and improvements.
+It's been over a month since we released packit "0.3.0". Here comes packit 0.4.0 (and patch release 0.4.1) and as always they bring a lot of new features and improvements.
 
 You can find a complete list in the
 [changelog](https://github.com/packit-service/packit/blob/master/CHANGELOG.md#040).
