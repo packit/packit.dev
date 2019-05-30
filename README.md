@@ -51,6 +51,12 @@ $ echo "make generate && git add docs/*" > .git/hooks/pre-commit
 $ chmod +x .git/hooks/pre-commit
 ```
 
+### About page
+
+We want the [About page](https://github.com/packit-service/packit.dev/blob/master/content/about.md)
+to be visible on the top of the website, so we have to keep the `date:` in the `about.md` newer then in the other content files.
+If you find a better way, let us know.
+
 ### Themes
 
 Currently, we use [Minos theme](https://themes.gohugo.io/hugo-theme-minos/).

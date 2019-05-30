@@ -11,17 +11,17 @@ paginate = 5
 
 [menu]
   [[menu.main]]
-    name = "Posts"
-    pre = "<i class='fa fa-list fa-fw'></i>"
-    weight = 1
-    identifier = "posts"
-    url = "/posts/"
-  [[menu.main]]
     name = "About"
     pre = "<i class='fa fa-user fa-fw'></i>"
-    weight = 2
+    weight = 1
     identifier = "about"
     url = "/about/"
+  [[menu.main]]
+    name = "Posts"
+    pre = "<i class='fa fa-list fa-fw'></i>"
+    weight = 2
+    identifier = "posts"
+    url = "/posts/"
   [[menu.main]]
     name = "Source-git"
     pre = "<i class='fa fa-user fa-fw'></i>"
