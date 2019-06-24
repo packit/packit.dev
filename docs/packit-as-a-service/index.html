@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Packit 0.4.0 &amp; 0.4.1 // Packit</title>
+    <title>Packit-as-a-Service // Packit</title>
 
         <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -9,11 +9,11 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
-        <meta property="og:title" content="Packit 0.4.0 &amp; 0.4.1" />
+        <meta property="og:title" content="Packit-as-a-Service" />
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="https://packit.dev/posts/packit-041/" />
+    <meta property="og:url" content="https://packit.dev/packit-as-a-service/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Packit" />
@@ -59,38 +59,68 @@
     <div class="article-inner">
         
         <header class="article-header">
-            <h1 class="article-title" itemprop="name">Packit 0.4.0 &amp; 0.4.1</h1>
+            <h1 class="article-title" itemprop="name">Packit-as-a-Service</h1>
         </header>
         
         <div class="article-meta">
-            <a href="/posts/packit-041/" class="article-date">
-                <time datetime='2019-05-18T00:00:00.000&#43;00:00' itemprop="datePublished">2019-05-18</time>
+            <a href="/packit-as-a-service/" class="article-date">
+                <time datetime='2019-06-22T00:00:00.000&#43;00:00' itemprop="datePublished">2019-06-22</time>
             </a>
             
             
             
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p>It&rsquo;s been over a month since we released packit &ldquo;0.3.0&rdquo;. Here comes packit 0.4.0 (and patch release 0.4.1) and as always they bring a lot of new features and improvements.</p>
+            
 
-<p>You can find a complete list in the
-<a href="https://github.com/packit-service/packit/blob/master/CHANGELOG.md#040">changelog</a>.</p>
+<h2 id="introductory-description">Introductory description</h2>
 
-<h2 id="packit-as-a-service">Packit as a service</h2>
+<p>With packit, it&rsquo;s easy to integrate your upstream project into Fedora Project.
+Your pull requests are built in Fedora version of your choice,
+so you&rsquo;re always sure that your software works. When you&rsquo;re ready for a release,
+packit takes care of all the hassle and is able to ship your new upstream release
+into Fedora Rawhide.</p>
 
-<ul>
-<li>We have Packit as a service running in OpenShift and also a GitHub App, which uses it. Unfortunately it&rsquo;s still not in the <a href="https://github.com/marketplace">Marketplace</a>, so <a href="https://github.com/packit-service">we</a> have been the only one using it so far. The service/app submits builds in <a href="https://copr.fedorainfracloud.org/coprs/packit/">copr</a> and once they&rsquo;re done it adds a GitHub status and comment with instructions how to install the builds. The service is now configurable via <a href="https://github.com/packit-service/packit/blob/master/docs/configuration.md#packit-service-jobs">jobs</a> defined in configuration file.</li>
-<li>Packit is now able to check GPG signatures of the upstream commits against configured fingerprints.</li>
-</ul>
+<h3 id="easy-to-use">Easy to use</h3>
 
-<h2 id="cli">CLI</h2>
+<p>Using Packit Service is very straightforward: add one config file to your repository,
+followed by an RPM spec file and you&rsquo;re good to go. We also support packit as a CLI tool,
+so you can always try things locally on your own.</p>
 
-<ul>
-<li><code>srpm</code> command now works also with <a href="https://packit.dev/source-git/">Source-git</a>.</li>
-<li><code>status</code> command now access remote APIs asynchronously in parallel, which should speed up the execution.</li>
-<li>CLI has new <code>--dry-run</code> option to not perform any remote changes (pull requests or comments).</li>
-<li>Fedmsg parsing has been unified into a single <code>listen-to-fedmsg</code> command.</li>
-</ul>
+<h3 id="makes-you-confident">Makes you confident</h3>
+
+<p>Packit Service validates your pull requests by building your software in Fedora OS.
+Once the builds are done, packit lets you know how to install your change
+inside your environment. Get confidence by trying out your changes yourself
+before shipping them to your users.</p>
+
+<h2 id="steps-how-to-install-packit-as-a-service-into-your-projects-or-organizations">Steps how to install Packit-as-a-Service into your projects or organizations</h2>
+
+<p>There are two ways to install Packit Service GitHub app into your repository.</p>
+
+<h3 id="install-from-packit-as-a-service-page">Install from Packit-as-a-Service page</h3>
+
+<ol>
+<li>From the <a href="https://github.com/apps/packit-as-a-service">Packit-service page</a> page,
+in the left sidebar, click &ldquo;Install App&rdquo;</li>
+<li>Click &ldquo;Install&rdquo; next to the organization or user account containing the correct repository</li>
+<li>Install the &ldquo;Packit-as-a-Service&rdquo; on all repositories or select repositories</li>
+</ol>
+
+<h3 id="install-from-github-marketplace">Install from GitHub Marketplace</h3>
+
+<ol>
+<li>Go to <a href="https://github.com/marketplace">GitHub Marketplace</a></li>
+<li>In section <a href="https://github.com/marketplace?category=continuous-integration">Continuous integration</a>
+find &ldquo;Packit-as-a-Service&rdquo; and select it</li>
+<li>On the &ldquo;Packit-as-a-Service&rdquo; page, under &ldquo;Pricing and setup&rdquo;, click &ldquo;Install it for free&rdquo;</li>
+<li>Click &ldquo;Complete order and begin installation&rdquo;</li>
+<li>Install the &ldquo;Packit-as-a-Service&rdquo; on all repositories or select repositories</li>
+</ol>
+
+<p>Once installed, you will see &ldquo;Packit-as-a-Service&rdquo; GitHub application in your project settings.
+In the left sidebar, click &ldquo;Integration &amp; services&rdquo; and our application is shown here.</p>
+
         </div>
 
         
@@ -101,8 +131,16 @@
 <ul>
 <li>
 <ul>
-<li><a href="#packit-as-a-service">Packit as a service</a></li>
-<li><a href="#cli">CLI</a></li>
+<li><a href="#introductory-description">Introductory description</a>
+<ul>
+<li><a href="#easy-to-use">Easy to use</a></li>
+<li><a href="#makes-you-confident">Makes you confident</a></li>
+</ul></li>
+<li><a href="#steps-how-to-install-packit-as-a-service-into-your-projects-or-organizations">Steps how to install Packit-as-a-Service into your projects or organizations</a>
+<ul>
+<li><a href="#install-from-packit-as-a-service-page">Install from Packit-as-a-Service page</a></li>
+<li><a href="#install-from-github-marketplace">Install from GitHub Marketplace</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -117,15 +155,9 @@
     </div>
     <nav id="article-nav">
     
-    <a href="/about/" id="article-nav-newer" class="article-nav-link-wrap">
-        <div class="article-nav-title"><span>&lt;</span>&nbsp;
-            About
-        </div>
-    </a>
     
-    
-    <a href="/posts/packit-030/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">Packit 0.3.0&nbsp;<span>&gt;</span></div>
+    <a href="/about/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">About&nbsp;<span>&gt;</span></div>
     </a>
     
 </nav>

@@ -6,10 +6,20 @@
     <description>Recent content on Packit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://packit.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Packit-as-a-Service</title>
+      <link>https://packit.dev/packit-as-a-service/</link>
+      <pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/packit-as-a-service/</guid>
+      <description>Introductory description With packit, it&amp;rsquo;s easy to integrate your upstream project into Fedora Project. Your pull requests are built in Fedora version of your choice, so you&amp;rsquo;re always sure that your software works. When you&amp;rsquo;re ready for a release, packit takes care of all the hassle and is able to ship your new upstream release into Fedora Rawhide.
+Easy to use Using Packit Service is very straightforward: add one config file to your repository, followed by an RPM spec file and you&amp;rsquo;re good to go.</description>
+    </item>
     
     <item>
       <title>About</title>
