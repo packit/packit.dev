@@ -4,35 +4,29 @@ date: 2019-06-22
 draft: false
 ---
 
-## Introductory description
-With packit, it's easy to integrate your upstream project into Fedora Project.
-Your pull requests are built in Fedora version of your choice,
-so you're always sure that your software works. When you're ready for a release,
-packit takes care of all the hassle and is able to ship your new upstream release
-into Fedora Rawhide.
+Packit-as-a-Service is a GitHub Application (https://developer.github.com/apps/about-apps/).
 
 ### Easy to use
 
 Using Packit Service is very straightforward: add one config file to your repository,
-followed by an RPM spec file and you're good to go. We also support packit as a CLI tool,
+followed by an RPM spec file and you're good to go. We also support packit as a tool,
 so you can always try things locally on your own.
 
-### Makes you confident
-
 Packit Service validates your pull requests by building your software in Fedora OS.
-Once the builds are done, packit lets you know how to install your change
-inside your environment. Get confidence by trying out your changes yourself
-before shipping them to your users.
+Once the builds are done, packit lets you know how to install the
+RPMs inside your environment so you can try the changes before merging them.
+
+<!--more-->
 
 ## Steps how to install Packit-as-a-Service into your projects or organizations
 
-There are two ways to install Packit Service GitHub app into your repository.
+There are two ways to install Packit-as-a-Service GitHub app into your repository.
 
 ### Install from Packit-as-a-Service page
 1. From the [Packit-service page](https://github.com/apps/packit-as-a-service) page,
 in the left sidebar, click "Install App"
 2. Click "Install" next to the organization or user account containing the correct repository
-3. Install the "Packit-as-a-Service" on all repositories or select repositories
+3. Install the "Packit-as-a-Service" on all repositories or to certain repositories
 
 ### Install from GitHub Marketplace
 1. Go to [GitHub Marketplace](https://github.com/marketplace)
@@ -40,7 +34,7 @@ in the left sidebar, click "Install App"
 find "Packit-as-a-Service" and select it
 3. On the "Packit-as-a-Service" page, under "Pricing and setup", click "Install it for free"
 4. Click "Complete order and begin installation"
-5. Install the "Packit-as-a-Service" on all repositories or select repositories
+5. Install the "Packit-as-a-Service" on all repositories or to certain repositories
 
 Once installed, you will see "Packit-as-a-Service" GitHub application in your project settings.
 In the left sidebar, click "Integration & services" and our application is shown here.
