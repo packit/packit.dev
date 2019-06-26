@@ -10,7 +10,7 @@ Packit-as-a-Service is a GitHub App (https://developer.github.com/apps/about-app
 
 Using Packit Service is very straightforward: add one config file to your repository
 ([see .packit.yaml format](https://github.com/packit-service/packit/blob/master/docs/configuration.md)),
-followed by an RPM spec file and you're good to go. Besides the service, packit is also as a tool
+followed by an RPM spec file and you're good to go. Besides the service, packit is also a tool
 ([see packit README.md](https://github.com/packit-service/packit/blob/master/README.md)),
 so you can always try things locally on your own.
 
