@@ -20,7 +20,7 @@ RPMs inside your environment so you can try the changes before merging them.
 
 <!--more-->
 
-## Steps how to install Packit-as-a-Service into your projects or organizations
+## Steps how to integrate Packit-as-a-Service into your projects or organizations
 
 There are two ways to install Packit-as-a-Service GitHub app into your repository.
 
@@ -40,3 +40,24 @@ find "Packit-as-a-Service" and select it
 
 Once installed, you will see "Packit-as-a-Service" GitHub application in your project settings.
 In the left sidebar, click "Integration & services" and our application is shown here.
+
+### Add .packit.yaml configuration file
+
+Packit Service expects ".packit.yaml" configuration file in root of your upstream repository.
+For more info
+[see .packit.yaml documentation](https://github.com/packit-service/packit/blob/master/docs/configuration.md)
+
+### Add SPEC file
+
+Packit Service needs RPM spec file in your upstream repository. This RPM spec file is used for building
+ project in COPR repositories.
+
+### How to check Packit Service works in your project?
+
+Nowadays, Packit Service supports only validation of your pull requests.
+Once you create a pull request, Packit Service builds the code from the
+pull request in COPR repository and reports back COPR build status to the pull request.
+
+An example of Packit Service pull request:
+
+![Packit service pull request](/packit-service-pr.png)
