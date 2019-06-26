@@ -17,12 +17,14 @@
       <pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://packit.dev/packit-as-a-service/</guid>
-      <description>&lt;p&gt;Packit-as-a-Service is a GitHub Application (&lt;a href=&#34;https://developer.github.com/apps/about-apps/&#34;&gt;https://developer.github.com/apps/about-apps/&lt;/a&gt;).&lt;/p&gt;
+      <description>&lt;p&gt;Packit-as-a-Service is a GitHub App (&lt;a href=&#34;https://developer.github.com/apps/about-apps/&#34;&gt;https://developer.github.com/apps/about-apps/&lt;/a&gt;).&lt;/p&gt;
 
 &lt;h3 id=&#34;easy-to-use&#34;&gt;Easy to use&lt;/h3&gt;
 
-&lt;p&gt;Using Packit Service is very straightforward: add one config file to your repository,
-followed by an RPM spec file and you&amp;rsquo;re good to go. We also support packit as a tool,
+&lt;p&gt;Using Packit Service is very straightforward: add one config file to your repository
+(&lt;a href=&#34;https://github.com/packit-service/packit/blob/master/docs/configuration.md&#34;&gt;see .packit.yaml format&lt;/a&gt;),
+followed by an RPM spec file and you&amp;rsquo;re good to go. Besides the service, packit is also as a tool
+(&lt;a href=&#34;https://github.com/packit-service/packit/blob/master/README.md&#34;&gt;see packit README.md&lt;/a&gt;),
 so you can always try things locally on your own.&lt;/p&gt;
 
 &lt;p&gt;Packit Service validates your pull requests by building your software in Fedora OS.
