@@ -77,7 +77,7 @@
 
 <p>Using Packit Service is very straightforward: add one config file to your repository
 (<a href="https://github.com/packit-service/packit/blob/master/docs/configuration.md">see .packit.yaml format</a>),
-followed by an RPM spec file and you&rsquo;re good to go. Besides the service, packit is also as a tool
+followed by an RPM spec file and you&rsquo;re good to go. Besides the service, packit is also a tool
 (<a href="https://github.com/packit-service/packit/blob/master/README.md">see packit README.md</a>),
 so you can always try things locally on your own.</p>
 
@@ -98,16 +98,15 @@ in the left sidebar, click &ldquo;Install App&rdquo;</li>
 <li>Install the &ldquo;Packit-as-a-Service&rdquo; on all repositories or to certain repositories</li>
 </ol>
 
-<h3 id="install-from-github-marketplace">Install from GitHub Marketplace</h3>
-
-<ol>
-<li>Go to <a href="https://github.com/marketplace">GitHub Marketplace</a></li>
-<li>In section <a href="https://github.com/marketplace?category=continuous-integration">Continuous integration</a>
-find &ldquo;Packit-as-a-Service&rdquo; and select it</li>
-<li>On the &ldquo;Packit-as-a-Service&rdquo; page, under &ldquo;Pricing and setup&rdquo;, click &ldquo;Install it for free&rdquo;</li>
-<li>Click &ldquo;Complete order and begin installation&rdquo;</li>
-<li>Install the &ldquo;Packit-as-a-Service&rdquo; on all repositories or to certain repositories</li>
-</ol>
+<!---
+### Install from GitHub Marketplace
+1. Go to [GitHub Marketplace](https://github.com/marketplace)
+2. In section [Continuous integration](https://github.com/marketplace?category=continuous-integration)
+find "Packit-as-a-Service" and select it
+3. On the "Packit-as-a-Service" page, under "Pricing and setup", click "Install it for free"
+4. Click "Complete order and begin installation"
+5. Install the "Packit-as-a-Service" on all repositories or to certain repositories
+--->
 
 <p>Once installed, you will see &ldquo;Packit-as-a-Service&rdquo; GitHub application in your project settings.
 In the left sidebar, click &ldquo;Integration &amp; services&rdquo; and our application is shown here.</p>
@@ -121,15 +120,14 @@ For more info
 <h3 id="add-spec-file">Add SPEC file</h3>
 
 <p>Packit Service needs RPM spec file in your upstream repository.
-This RPM spec file is used for building project in COPR repositories.</p>
+This RPM spec file is used to build your project.</p>
 
-<p>If this makes you barf, you can use a “source git” branch of your upstream repository.
-Packit is also tracking an RFE to not require spec in upstream
+<p>Packit is also tracking an RFE to not require spec in upstream
 <a href="https://github.com/packit-service/packit/issues/312">packit-service/packit#312</a>.</p>
 
 <h3 id="how-to-check-packit-service-works-in-your-project">How to check Packit Service works in your project?</h3>
 
-<p>Nowadays, Packit Service supports only validation of your pull requests.
+<p>Nowadays, Packit Service is able only to build your changes and provide them as RPMs.
 Once you create a pull request, Packit Service builds the code from the
 pull request in COPR repository and reports back COPR build status to the pull request.</p>
 
@@ -153,7 +151,6 @@ pull request in COPR repository and reports back COPR build status to the pull r
 <li><a href="#steps-how-to-integrate-packit-as-a-service-into-your-projects-or-organizations">Steps how to integrate Packit-as-a-Service into your projects or organizations</a>
 <ul>
 <li><a href="#install-from-packit-as-a-service-page">Install from Packit-as-a-Service page</a></li>
-<li><a href="#install-from-github-marketplace">Install from GitHub Marketplace</a></li>
 <li><a href="#add-packit-yaml-configuration-file">Add .packit.yaml configuration file</a></li>
 <li><a href="#add-spec-file">Add SPEC file</a></li>
 <li><a href="#how-to-check-packit-service-works-in-your-project">How to check Packit Service works in your project?</a></li>

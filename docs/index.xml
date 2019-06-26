@@ -23,7 +23,7 @@
 
 &lt;p&gt;Using Packit Service is very straightforward: add one config file to your repository
 (&lt;a href=&#34;https://github.com/packit-service/packit/blob/master/docs/configuration.md&#34;&gt;see .packit.yaml format&lt;/a&gt;),
-followed by an RPM spec file and you&amp;rsquo;re good to go. Besides the service, packit is also as a tool
+followed by an RPM spec file and you&amp;rsquo;re good to go. Besides the service, packit is also a tool
 (&lt;a href=&#34;https://github.com/packit-service/packit/blob/master/README.md&#34;&gt;see packit README.md&lt;/a&gt;),
 so you can always try things locally on your own.&lt;/p&gt;
 

@@ -30,6 +30,7 @@ in the left sidebar, click "Install App"
 2. Click "Install" next to the organization or user account containing the correct repository
 3. Install the "Packit-as-a-Service" on all repositories or to certain repositories
 
+<!---
 ### Install from GitHub Marketplace
 1. Go to [GitHub Marketplace](https://github.com/marketplace)
 2. In section [Continuous integration](https://github.com/marketplace?category=continuous-integration)
@@ -37,7 +38,7 @@ find "Packit-as-a-Service" and select it
 3. On the "Packit-as-a-Service" page, under "Pricing and setup", click "Install it for free"
 4. Click "Complete order and begin installation"
 5. Install the "Packit-as-a-Service" on all repositories or to certain repositories
-
+--->
 Once installed, you will see "Packit-as-a-Service" GitHub application in your project settings.
 In the left sidebar, click "Integration & services" and our application is shown here.
 
@@ -52,7 +53,6 @@ For more info
 Packit Service needs RPM spec file in your upstream repository.
 This RPM spec file is used to build your project.
 
-If this makes you barf, you can use a “source git” branch of your upstream repository.
 Packit is also tracking an RFE to not require spec in upstream
 [packit-service/packit#312](https://github.com/packit-service/packit/issues/312).
 
