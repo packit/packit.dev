@@ -58,7 +58,7 @@ Packit is also tracking an RFE to not require spec in upstream
 
 ### How to check Packit Service works in your project?
 
-Nowadays, Packit Service supports only validation of your pull requests.
+Nowadays, Packit Service is able only to build your changes and provide them as RPMs.
 Once you create a pull request, Packit Service builds the code from the
 pull request in COPR repository and reports back COPR build status to the pull request.
 
