@@ -4,7 +4,7 @@ date: 2019-06-22
 draft: false
 ---
 
-Packit-as-a-Service is a GitHub Application (https://developer.github.com/apps/about-apps/).
+Packit-as-a-Service is a GitHub App (https://developer.github.com/apps/about-apps/).
 
 ### Easy to use
 
