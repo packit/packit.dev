@@ -50,7 +50,7 @@ For more info
 ### Add SPEC file
 
 Packit Service needs RPM spec file in your upstream repository.
-This RPM spec file is used for building project in COPR repositories.
+This RPM spec file is used to build your project.
 
 If this makes you barf, you can use a “source git” branch of your upstream repository.
 Packit is also tracking an RFE to not require spec in upstream
