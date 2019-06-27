@@ -6,7 +6,7 @@
     <description>Recent content on Packit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://packit.dev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>About</title>
       <link>https://packit.dev/about/</link>
-      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://packit.dev/about/</guid>
       <description>&lt;p&gt;Packit provides tooling and automation to integrate upstream open source projects into Fedora operating system.&lt;/p&gt;
@@ -81,6 +81,27 @@ completely automated.&lt;/p&gt;&lt;/li&gt;
 tester, or other engineer. Any Fedora developer or tester should be able to
 reproduce a bot locally on their machine, given appropriate credentials.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Packit-as-a-Service</title>
+      <link>https://packit.dev/packit-as-a-service/</link>
+      <pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/packit-as-a-service/</guid>
+      <description>&lt;p&gt;Packit-as-a-Service is a GitHub App (&lt;a href=&#34;https://developer.github.com/apps/about-apps/&#34;&gt;https://developer.github.com/apps/about-apps/&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h3 id=&#34;easy-to-use&#34;&gt;Easy to use&lt;/h3&gt;
+
+&lt;p&gt;Using Packit Service is very straightforward: add one config file to your repository
+(&lt;a href=&#34;https://github.com/packit-service/packit/blob/master/docs/configuration.md&#34;&gt;see .packit.yaml format&lt;/a&gt;),
+followed by an RPM spec file and you&amp;rsquo;re good to go. Besides the service, packit is also a tool
+(&lt;a href=&#34;https://github.com/packit-service/packit/blob/master/README.md&#34;&gt;see packit README.md&lt;/a&gt;),
+so you can always try things locally on your own.&lt;/p&gt;
+
+&lt;p&gt;Packit Service validates your pull requests by building your software in Fedora OS.
+Once the builds are done, packit lets you know how to install the
+RPMs inside your environment so you can try the changes before merging them.&lt;/p&gt;</description>
     </item>
     
     <item>

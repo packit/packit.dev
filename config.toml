@@ -28,6 +28,11 @@ paginate = 5
     weight = 3
     identifier = "source-git"
     url = "/source-git/"
-
+  [[menu.main]]
+    name = "Packit-as-a-Service"
+    pre = "<i class='fa fa-user fa-fw'></i>"
+    weight = 4
+    identifier = "packit-as-a-service"
+    url = "/packit-as-a-service/"
 [social]
   github = "packit-service/packit"

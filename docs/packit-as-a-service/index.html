@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Packit-as-a-Service // Packit</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="Packit-as-a-Service" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://packit.dev/packit-as-a-service/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Packit" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link href="https://packit.dev/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://packit.dev/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://packit.dev/css/style.css">
+
+    <meta name="generator" content="Hugo 0.55.6" />
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="https://packit.dev/">Packit</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/posts/">Posts</a>
+                
+                <a class="main-nav-link" href="/source-git/">Source-git</a>
+                
+                <a class="main-nav-link" href="/packit-as-a-service/">Packit-as-a-Service</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Packit-as-a-Service</h1>
+        </header>
+        
+        <div class="article-meta">
+            <a href="/packit-as-a-service/" class="article-date">
+                <time datetime='2019-06-22T00:00:00.000&#43;00:00' itemprop="datePublished">2019-06-22</time>
+            </a>
+            
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>Packit-as-a-Service is a GitHub App (<a href="https://developer.github.com/apps/about-apps/">https://developer.github.com/apps/about-apps/</a>).</p>
+
+<h3 id="easy-to-use">Easy to use</h3>
+
+<p>Using Packit Service is very straightforward: add one config file to your repository
+(<a href="https://github.com/packit-service/packit/blob/master/docs/configuration.md">see .packit.yaml format</a>),
+followed by an RPM spec file and you&rsquo;re good to go. Besides the service, packit is also a tool
+(<a href="https://github.com/packit-service/packit/blob/master/README.md">see packit README.md</a>),
+so you can always try things locally on your own.</p>
+
+<p>Packit Service validates your pull requests by building your software in Fedora OS.
+Once the builds are done, packit lets you know how to install the
+RPMs inside your environment so you can try the changes before merging them.</p>
+
+<h2 id="steps-how-to-integrate-packit-as-a-service-into-your-projects-or-organizations">Steps how to integrate Packit-as-a-Service into your projects or organizations</h2>
+
+<p>There are two ways to install Packit-as-a-Service GitHub app into your repository.</p>
+
+<h3 id="install-from-packit-as-a-service-page">Install from Packit-as-a-Service page</h3>
+
+<ol>
+<li>From the <a href="https://github.com/apps/packit-as-a-service">Packit-service page</a> page,
+in the left sidebar, click &ldquo;Install App&rdquo;</li>
+<li>Click &ldquo;Install&rdquo; next to the organization or user account containing the correct repository</li>
+<li>Install the &ldquo;Packit-as-a-Service&rdquo; on all repositories or to certain repositories</li>
+</ol>
+
+<!---
+### Install from GitHub Marketplace
+1. Go to [GitHub Marketplace](https://github.com/marketplace)
+2. In section [Continuous integration](https://github.com/marketplace?category=continuous-integration)
+find "Packit-as-a-Service" and select it
+3. On the "Packit-as-a-Service" page, under "Pricing and setup", click "Install it for free"
+4. Click "Complete order and begin installation"
+5. Install the "Packit-as-a-Service" on all repositories or to certain repositories
+--->
+
+<p>Once installed, you will see &ldquo;Packit-as-a-Service&rdquo; GitHub application in your project settings.
+In the left sidebar, click &ldquo;Integration &amp; services&rdquo; and our application is shown here.</p>
+
+<h3 id="add-packit-yaml-configuration-file">Add .packit.yaml configuration file</h3>
+
+<p>Packit Service expects &ldquo;.packit.yaml&rdquo; configuration file in root of your upstream repository.
+For more info
+<a href="https://github.com/packit-service/packit/blob/master/docs/configuration.md">see .packit.yaml documentation</a></p>
+
+<h3 id="add-spec-file">Add SPEC file</h3>
+
+<p>Packit Service needs RPM spec file in your upstream repository.
+This RPM spec file is used to build your project.</p>
+
+<p>Packit is also tracking an RFE to not require spec in upstream
+<a href="https://github.com/packit-service/packit/issues/312">packit-service/packit#312</a>.</p>
+
+<h3 id="how-to-check-packit-service-works-in-your-project">How to check Packit Service works in your project?</h3>
+
+<p>Nowadays, Packit Service is able only to build your changes and provide them as RPMs.
+Once you create a pull request, Packit Service builds the code from the
+pull request in COPR repository and reports back COPR build status to the pull request.</p>
+
+<p>An example of Packit Service pull request:</p>
+
+<p><img src="/packit-service-pr.png" alt="Packit service pull request" /></p>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#easy-to-use">Easy to use</a></li>
+</ul></li>
+<li><a href="#steps-how-to-integrate-packit-as-a-service-into-your-projects-or-organizations">Steps how to integrate Packit-as-a-Service into your projects or organizations</a>
+<ul>
+<li><a href="#install-from-packit-as-a-service-page">Install from Packit-as-a-Service page</a></li>
+<li><a href="#add-packit-yaml-configuration-file">Add .packit.yaml configuration file</a></li>
+<li><a href="#add-spec-file">Add SPEC file</a></li>
+<li><a href="#how-to-check-packit-service-works-in-your-project">How to check Packit Service works in your project?</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/about/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            About
+        </div>
+    </a>
+    
+    
+    <a href="/posts/packit-041/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Packit 0.4.0 &amp; 0.4.1&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Packit
+            <br />
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/carsonip/hugo-theme-minos" target="_blank">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>
