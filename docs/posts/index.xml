@@ -20,7 +20,9 @@
       <description>&lt;p&gt;It&amp;rsquo;s been over a month since we released packit &amp;ldquo;0.3.0&amp;rdquo;. Here comes packit 0.4.0 (and patch release 0.4.1) and as always they bring a lot of new features and improvements.&lt;/p&gt;
 
 &lt;p&gt;You can find a complete list in the
-&lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md#040&#34;&gt;changelog&lt;/a&gt;.&lt;/p&gt;</description>
+&lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md#040&#34;&gt;changelog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,7 +39,9 @@ several pull requests related to source-git support.&lt;/p&gt;
 &lt;p&gt;Now the good news. You can find a complete list of new features and
 improvements of version
 &lt;a href=&#34;https://github.com/packit-service/packit/releases/tag/0.3.0&#34;&gt;0.3.0&lt;/a&gt; in the
-&lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md#030&#34;&gt;changelog&lt;/a&gt;.&lt;/p&gt;</description>
+&lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md#030&#34;&gt;changelog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -55,7 +59,8 @@ a complete list &lt;a href=&#34;https://github.com/packit-service/packit/blob/ma
 changelog&lt;/a&gt;.
 We also have a &lt;a href=&#34;https://github.com/packit-service/packit#workflows-covered-by-packit&#34;&gt;detailed
 documentation&lt;/a&gt;
-for all the workflows packit covers.&lt;/p&gt;</description>
+for all the workflows packit covers.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -79,8 +84,16 @@ issue&lt;/a&gt;.&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;packit propose-update&lt;/code&gt; — Opens a pull request in dist-git for the latest
 upstream release of a selected repository.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;packit watch-releases&lt;/code&gt; — Watches events for all the upstream releases and
-performs &lt;code&gt;propose-update&lt;/code&gt; for those who use packit.&lt;/li&gt;
-&lt;/ul&gt;</description>
+performs &lt;code&gt;propose-update&lt;/code&gt; for those who use packit.
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ dnf install --enablerepo=updates-testing packit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Or&lt;/p&gt;</description>
     </item>
     
   </channel>
