@@ -92,7 +92,7 @@ reproduce a bot locally on their machine, given appropriate credentials.&lt;/p&g
       <description>&lt;p&gt;Packit-as-a-Service is a &lt;a href=&#34;https://developer.github.com/apps/about-apps/&#34;&gt;GitHub App&lt;/a&gt;
 that helps you continuously ensure that your project work in Fedora OS.&lt;/p&gt;
 
-&lt;h3 id=&#34;easy-to-use&#34;&gt;Easy to use&lt;/h3&gt;
+&lt;h2 id=&#34;easy-to-use&#34;&gt;Easy to use&lt;/h2&gt;
 
 &lt;p&gt;Using Packit Service is very straightforward: add one &lt;a href=&#34;https://github.com/packit-service/packit/blob/master/docs/configuration.md&#34;&gt;config
 file&lt;/a&gt;

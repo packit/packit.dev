@@ -7,7 +7,7 @@ draft: false
 Packit-as-a-Service is a [GitHub App](https://developer.github.com/apps/about-apps/)
 that helps you continuously ensure that your project work in Fedora OS.
 
-### Easy to use
+## Easy to use
 
 Using Packit Service is very straightforward: add one [config
 file](https://github.com/packit-service/packit/blob/master/docs/configuration.md)
@@ -67,3 +67,18 @@ pull request in COPR repository and reports back COPR build status to the pull r
 An example of Packit Service pull request:
 
 ![Packit service pull request](/packit-service-pr.png)
+
+## FAQ
+
+### Can I use packit service as soon as I install it into my repository?
+
+Thanks for your interest in Packit Service! To be able to start using service, we need to put you on a whitelist: feel free to get in touch with us or we will reach out to you once we add you to whitelist.
+
+### Can I use packit service for any GitHub repository?
+
+As packit allows you to build your PRs in COPR, by using Packit-as-a-service you agree to comply with: [COPR rules](https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr).
+If any of these points is violated, the user will be banned from using Packit-as-a-service.
+
+### How can I contact you?
+
+If you encounter a problem while using Packit-as-a-service, please open an [upstream issue](https://github.com/packit-service/packit-service/issues/new). In case of any other questions, feel free to contact us on our mailing list: **user-cont-team@redhat.com**.
