@@ -70,12 +70,12 @@ An example of Packit Service pull request:
 
 ## FAQ
 
-### Whitelist
+### Can I use packit service as soon as I install it into my repository?
 
 If you installed Packit-as-a-service, we have to approve you first.
 This is mainly because of security reasons and approval can take up to 7 days.
 
-### Rules
+### Can I use packit service for any GitHub repository?
 
 As packit allows you to build your PRs in COPR, by using Packit-as-a-service you agree to comply with: [COPR rules](https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr).
 If any of these points is violated, the user will be banned from using Packit-as-a-service.
