@@ -84,6 +84,15 @@ reproduce a bot locally on their machine, given appropriate credentials.&lt;/p&g
     </item>
     
     <item>
+      <title>Packit 042</title>
+      <link>https://packit.dev/posts/packit-042/</link>
+      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/packit-042/</guid>
+      <description>&lt;p&gt;Another relase after a month since &lt;a href=&#34;https://packit.dev/posts/packit-041/&#34;&gt;0.4.1&lt;/a&gt;, this time mostly with bug fixes.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Packit-as-a-Service</title>
       <link>https://packit.dev/packit-as-a-service/</link>
       <pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate>
