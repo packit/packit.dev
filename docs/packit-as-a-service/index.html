@@ -71,31 +71,33 @@
             
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p>Packit-as-a-Service is a GitHub App (<a href="https://developer.github.com/apps/about-apps/">https://developer.github.com/apps/about-apps/</a>).</p>
+            <p>Packit-as-a-Service is a <a href="https://developer.github.com/apps/about-apps/">GitHub App</a>
+that helps you continuously ensure that your project work in Fedora OS.</p>
 
 <h3 id="easy-to-use">Easy to use</h3>
 
-<p>Using Packit Service is very straightforward: add one config file to your repository
-(<a href="https://github.com/packit-service/packit/blob/master/docs/configuration.md">see .packit.yaml format</a>),
-followed by an RPM spec file and you&rsquo;re good to go. Besides the service, packit is also a tool
-(<a href="https://github.com/packit-service/packit/blob/master/README.md">see packit README.md</a>),
-so you can always try things locally on your own.</p>
+<p>Using Packit Service is very straightforward: add one <a href="https://github.com/packit-service/packit/blob/master/docs/configuration.md">config
+file</a>
+to your repository together with the RPM spec file and you&rsquo;re good to go.</p>
 
 <p>Packit Service validates your pull requests by building your software in Fedora OS.
-Once the builds are done, packit lets you know how to install the
+Once the builds are done, Packit lets you know how to install the
 RPMs inside your environment so you can try the changes before merging them.</p>
 
-<h2 id="steps-how-to-integrate-packit-as-a-service-into-your-projects-or-organizations">Steps how to integrate Packit-as-a-Service into your projects or organizations</h2>
+<p>Packit is also available as a <a href="https://github.com/packit-service/packit/blob/master/README.md">CLI tool</a>,
+so you can always try things locally on your own.</p>
+
+<h2 id="integrating-packit-as-a-service-into-your-project-or-organization">Integrating Packit-as-a-Service into your project or organization</h2>
 
 <p>There are two ways to install Packit-as-a-Service GitHub app into your repository.</p>
 
 <h3 id="install-from-packit-as-a-service-page">Install from Packit-as-a-Service page</h3>
 
 <ol>
-<li>From the <a href="https://github.com/apps/packit-as-a-service">Packit-service page</a> page,
-in the left sidebar, click &ldquo;Install App&rdquo;</li>
+<li>From the <a href="https://github.com/apps/packit-as-a-service">Packit-service page</a>,
+in the left sidebar, click &ldquo;Install App&rdquo; (alternatively, click &ldquo;Configure&rdquo; in the right sidebar)</li>
 <li>Click &ldquo;Install&rdquo; next to the organization or user account containing the correct repository</li>
-<li>Install the &ldquo;Packit-as-a-Service&rdquo; on all repositories or to certain repositories</li>
+<li>Install &ldquo;Packit-as-a-Service&rdquo; to repositories where you wish to use the service</li>
 </ol>
 
 <!---
@@ -108,18 +110,18 @@ find "Packit-as-a-Service" and select it
 5. Install the "Packit-as-a-Service" on all repositories or to certain repositories
 --->
 
-<p>Once installed, you will see &ldquo;Packit-as-a-Service&rdquo; GitHub application in your project settings.
-In the left sidebar, click &ldquo;Integration &amp; services&rdquo; and our application is shown here.</p>
+<p>Once installed, you will see the &ldquo;Packit-as-a-Service&rdquo; GitHub application in your project settings.
+In the left sidebar, click &ldquo;Integration &amp; services&rdquo; and you will see the apllication displayed there.</p>
 
 <h3 id="add-packit-yaml-configuration-file">Add .packit.yaml configuration file</h3>
 
-<p>Packit Service expects &ldquo;.packit.yaml&rdquo; configuration file in root of your upstream repository.
-For more info
-<a href="https://github.com/packit-service/packit/blob/master/docs/configuration.md">see .packit.yaml documentation</a></p>
+<p>Packit Service expects the &ldquo;.packit.yaml&rdquo; configuration file in root of your upstream repository.
+For more info, see
+<a href="https://github.com/packit-service/packit/blob/master/docs/configuration.md">.packit.yaml documentation</a>.</p>
 
 <h3 id="add-spec-file">Add SPEC file</h3>
 
-<p>Packit Service needs RPM spec file in your upstream repository.
+<p>Packit Service needs the RPM spec file in your upstream repository.
 This RPM spec file is used to build your project.</p>
 
 <p>Packit is also tracking an RFE to not require spec in upstream
@@ -127,7 +129,7 @@ This RPM spec file is used to build your project.</p>
 
 <h3 id="how-to-check-packit-service-works-in-your-project">How to check Packit Service works in your project?</h3>
 
-<p>Nowadays, Packit Service is able only to build your changes and provide them as RPMs.
+<p>Currently, Packit Service is able only to build your changes and provide them as RPMs.
 Once you create a pull request, Packit Service builds the code from the
 pull request in COPR repository and reports back COPR build status to the pull request.</p>
 
@@ -148,7 +150,7 @@ pull request in COPR repository and reports back COPR build status to the pull r
 <ul>
 <li><a href="#easy-to-use">Easy to use</a></li>
 </ul></li>
-<li><a href="#steps-how-to-integrate-packit-as-a-service-into-your-projects-or-organizations">Steps how to integrate Packit-as-a-Service into your projects or organizations</a>
+<li><a href="#integrating-packit-as-a-service-into-your-project-or-organization">Integrating Packit-as-a-Service into your project or organization</a>
 <ul>
 <li><a href="#install-from-packit-as-a-service-page">Install from Packit-as-a-Service page</a></li>
 <li><a href="#add-packit-yaml-configuration-file">Add .packit.yaml configuration file</a></li>
