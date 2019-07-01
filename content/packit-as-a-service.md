@@ -70,14 +70,20 @@ An example of Packit Service pull request:
 
 ## FAQ
 
-### Can I use packit service as soon as I install it into my repository?
+### Can I use the packit service as soon as I install it into my repository?
 
-Thanks for your interest in Packit Service! To be able to start using service, we need to put you on a whitelist: feel free to get in touch with us or we will reach out to you once we add you to whitelist.
+Thanks for your interest in Packit Service! You need to be whitelisted in order
+to start using the service which is an action to be done by us. We are now
+on-boarding Fedora contributors (with a Fedora Account System account). Once we
+put you on the whitelist, we'll get in touch with you.
 
 ### Can I use packit service for any GitHub repository?
 
-As packit allows you to build your PRs in COPR, by using Packit-as-a-service you agree to comply with: [COPR rules](https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr).
-If any of these points is violated, the user will be banned from using Packit-as-a-service.
+Since packit service builds your PRs in Fedora COPR build service, by using
+Packit-as-a-service, your software needs to comply with [COPR
+rules](https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr).
+If any of these points are violated, we'll remove the builds and may put you on
+a blacklist so you won't be able to use the service again.
 
 ### How can I contact you?
 
