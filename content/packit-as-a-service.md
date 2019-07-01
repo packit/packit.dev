@@ -72,10 +72,10 @@ An example of Packit Service pull request:
 
 ### Can I use the packit service as soon as I install it into my repository?
 
-Thanks for your interest in Packit Service! You need to be whitelisted in order
-to start using the service which is an action to be done by us. We are now
-on-boarding Fedora contributors (with a Fedora Account System account). Once we
-put you on the whitelist, we'll get in touch with you.
+Thanks for your interest in Packit Service!  In order to start using the
+service you need to be whitelisted, which is an action to be done by us.  Once
+we put you on the whitelist, we'll get in touch with you.  We are now
+on-boarding Fedora contributors (with a Fedora Account System account).
 
 ### Can I use packit service for any GitHub repository?
 
