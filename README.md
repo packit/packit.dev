@@ -68,12 +68,13 @@ If you find a better way, let us know.
 
 ### Themes
 
-Currently, we use [Minos theme](https://themes.gohugo.io/hugo-theme-minos/).
+Currently, we use [Grav Learn theme](https://github.com/matcornic/hugo-theme-learn).
 For complete list of themes for Hugo, see [this](https://themes.gohugo.io).
-If you want to add a new theme:
+If you want to use a theme:
 
-1. `git submodule add <theme_git_url> themes/<theme_name>`
-2. set `theme = "theme_name"` in [config.toml](config.toml)
+1. `git submodule init themes/<theme_name>`
+2. `git submodule update`
+3. set `theme = "theme_name"` in [config.toml](config.toml)
 
 ### Site Configuration
 

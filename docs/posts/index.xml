@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Packit</title>
-    <link>/posts/</link>
+    <link>https://packit.dev/posts/</link>
     <description>Recent content in Posts on Packit</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
+    <language>en-us</language>
     <lastBuildDate>Wed, 26 Jun 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://packit.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Initial version (0.1.0) of packit is out!</title>
-      <link>/posts/packit-010/</link>
+      <link>https://packit.dev/posts/packit-010/</link>
       <pubDate>Fri, 08 Mar 2019 15:44:36 +0100</pubDate>
       
-      <guid>/posts/packit-010/</guid>
+      <guid>https://packit.dev/posts/packit-010/</guid>
       <description>&lt;p&gt;We would like to announce general availability of the initial version of
 packit, titled &amp;lsquo;0.1.0&amp;rsquo;.&lt;/p&gt;
 
@@ -38,10 +38,10 @@ performs &lt;code&gt;propose-update&lt;/code&gt; for those who use packit.&lt;/l
     
     <item>
       <title>Packit 0.2.0 is here!</title>
-      <link>/posts/packit-020/</link>
+      <link>https://packit.dev/posts/packit-020/</link>
       <pubDate>Tue, 19 Mar 2019 18:25:39 +0100</pubDate>
       
-      <guid>/posts/packit-020/</guid>
+      <guid>https://packit.dev/posts/packit-020/</guid>
       <description>&lt;p&gt;Our sprint nears an end which means we have released &lt;a href=&#34;https://github.com/packit-service/packit/releases/tag/0.2.0&#34;&gt;a new version of packit -
 0.2.0&lt;/a&gt;! You can
 expect a new release after every sprint (i.e. every 2 weeks).&lt;/p&gt;
@@ -56,11 +56,11 @@ for all the workflows packit covers.&lt;/p&gt;</description>
     
     <item>
       <title>Packit 0.3.0</title>
-      <link>/posts/packit-030/</link>
+      <link>https://packit.dev/posts/packit-030/</link>
       <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/packit-030/</guid>
-      <description>&lt;p&gt;In the &lt;a href=&#34;/posts/packit-020/&#34;&gt;previous post&lt;/a&gt; we promised to
+      <guid>https://packit.dev/posts/packit-030/</guid>
+      <description>&lt;p&gt;In the &lt;a href=&#34;https://packit.dev/posts/packit-020/&#34;&gt;previous post&lt;/a&gt; we promised to
 provide a new release every 2 weeks and we are already breaking this promise as
 it&amp;rsquo;s been 3 weeks since then. We decided to wait with the release to merge
 several pull requests related to source-git support.&lt;/p&gt;
@@ -73,10 +73,10 @@ improvements of version
     
     <item>
       <title>Packit 0.4.0 &amp; 0.4.1</title>
-      <link>/posts/packit-041/</link>
+      <link>https://packit.dev/posts/packit-041/</link>
       <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/packit-041/</guid>
+      <guid>https://packit.dev/posts/packit-041/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s been over a month since we released packit &amp;ldquo;0.3.0&amp;rdquo;. Here comes packit 0.4.0 (and patch release 0.4.1) and as always they bring a lot of new features and improvements.&lt;/p&gt;
 
 &lt;p&gt;You can find a complete list in the
@@ -85,10 +85,10 @@ improvements of version
     
     <item>
       <title>Packit 0.4.2</title>
-      <link>/posts/packit-042/</link>
+      <link>https://packit.dev/posts/packit-042/</link>
       <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/packit-042/</guid>
+      <guid>https://packit.dev/posts/packit-042/</guid>
       <description>&lt;p&gt;Another relase after a month since &lt;a href=&#34;https://packit.dev/posts/packit-041/&#34;&gt;0.4.1&lt;/a&gt;, this time mostly with bug fixes.&lt;/p&gt;</description>
     </item>
     

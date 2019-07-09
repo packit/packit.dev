@@ -1,6 +1,6 @@
-baseURL = "/"
+baseURL = "https://packit.dev/"
 publishDir = "docs"
-languageCode = "en-US"
+languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Packit"
 theme = "hugo-theme-learn"

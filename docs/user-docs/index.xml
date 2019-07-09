@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Packit user documentation on Packit</title>
-    <link>/user-docs/</link>
+    <link>https://packit.dev/user-docs/</link>
     <description>Recent content in Packit user documentation on Packit</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
+    <language>en-us</language>
     <lastBuildDate>Fri, 28 Jun 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/user-docs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://packit.dev/user-docs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Actions</title>
-      <link>/user-docs/actions/</link>
+      <link>https://packit.dev/user-docs/actions/</link>
       <pubDate>Fri, 28 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/user-docs/actions/</guid>
+      <guid>https://packit.dev/user-docs/actions/</guid>
       <description>You can probably find yourself in a situation where some part of the packit workflow needs to be tweaked for your package.
 Packit supports some actions, that can be defined in the configuration file. The part of the default behaviour is then skipped, and the configured command is called instead. Packit is able to execute more commands. Each action can accept list of commands.
 There are also some hooks presented &amp;ndash; it works as an action without any default behaviour.</description>
@@ -24,19 +24,19 @@ There are also some hooks presented &amp;ndash; it works as an action without an
     
     <item>
       <title>Architecture</title>
-      <link>/user-docs/architecture/</link>
+      <link>https://packit.dev/user-docs/architecture/</link>
       <pubDate>Fri, 28 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/user-docs/architecture/</guid>
+      <guid>https://packit.dev/user-docs/architecture/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Configuration for packit</title>
-      <link>/user-docs/configuration/</link>
+      <link>https://packit.dev/user-docs/configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/user-docs/configuration/</guid>
+      <guid>https://packit.dev/user-docs/configuration/</guid>
       <description>Project&amp;rsquo;s configuration file Packit uses a configuration file in the upstream repository. The config file is written in YAML language.
 You should place the file in the root of your upstream repo. Packit accepts these names:
  .packit.yaml .packit.yml .packit.json packit.yaml packit.yml packit.json  Values    Key name Type Description     specfile_path string relative path to a spec file within the upstream repository (mandatory)   synced_files list of strings a list of relative paths to files in the upstream repo which are meant to be copied to dist-git during an update   upstream_project_name string name of the upstream repository (e.</description>
@@ -44,10 +44,10 @@ You should place the file in the root of your upstream repo. Packit accepts thes
     
     <item>
       <title>How to source-git?</title>
-      <link>/user-docs/how-to-source-git/</link>
+      <link>https://packit.dev/user-docs/how-to-source-git/</link>
       <pubDate>Fri, 28 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/user-docs/how-to-source-git/</guid>
+      <guid>https://packit.dev/user-docs/how-to-source-git/</guid>
       <description>This is a practical introduction to source-git using a real example.
 If you are interested in the theory behind source-git, please read the specification.
 Let&amp;rsquo;s create a source-git repo I choose systemd from Fedora 29 for this example.
