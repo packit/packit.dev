@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>Configuration for packit :: Packit</title>
+
+    
+    <link href="/css/nucleus.css?1562673057" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1562673057" rel="stylesheet">
+    <link href="/css/hybrid.css?1562673057" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1562673057" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1562673057" rel="stylesheet">
+    <link href="/css/auto-complete.css?1562673057" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1562673057" rel="stylesheet">
+    <link href="/css/theme.css?1562673057" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1562673057" rel="stylesheet">
+    
+      <link href="/css/theme-red.css?1562673057" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1562673057"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/user-docs/configuration/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/"><img src="/packit_logo.png"></a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1562673057"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1562673057"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1562673057"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/user-docs/" title="Packit user documentation" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/user-docs/">
+          Packit user documentation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/actions/" title="Actions" class="dd-item ">
+        <a href="/user-docs/actions/">
+        Actions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/architecture/" title="Architecture" class="dd-item ">
+        <a href="/user-docs/architecture/">
+        Architecture
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/configuration/" title="Configuration for packit" class="dd-item active">
+        <a href="/user-docs/configuration/">
+        Configuration for packit
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/how-to-source-git/" title="How to source-git?" class="dd-item ">
+        <a href="/user-docs/how-to-source-git/">
+        How to source-git?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/user-docs/cli/" title="Packit CLI Commands" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/user-docs/cli/">
+          Packit CLI Commands
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/cli/build/" title="build" class="dd-item ">
+        <a href="/user-docs/cli/build/">
+        build
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/cli/create-bodhi-update/" title="create-bodhi-update" class="dd-item ">
+        <a href="/user-docs/cli/create-bodhi-update/">
+        create-bodhi-update
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/cli/propose-update/" title="propose-update" class="dd-item ">
+        <a href="/user-docs/cli/propose-update/">
+        propose-update
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/cli/srpm/" title="srpm" class="dd-item ">
+        <a href="/user-docs/cli/srpm/">
+        srpm
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/cli/sync-from-downstream/" title="sync-from-downstream" class="dd-item ">
+        <a href="/user-docs/cli/sync-from-downstream/">
+        sync-from-downstream
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/posts/" title="Posts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/posts/">
+          Posts
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/posts/packit-010/" title="Initial version (0.1.0) of packit is out!" class="dd-item ">
+        <a href="/posts/packit-010/">
+        Initial version (0.1.0) of packit is out!
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/posts/packit-020/" title="Packit 0.2.0 is here!" class="dd-item ">
+        <a href="/posts/packit-020/">
+        Packit 0.2.0 is here!
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/posts/packit-030/" title="Packit 0.3.0" class="dd-item ">
+        <a href="/posts/packit-030/">
+        Packit 0.3.0
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/posts/packit-041/" title="Packit 0.4.0 &amp; 0.4.1" class="dd-item ">
+        <a href="/posts/packit-041/">
+        Packit 0.4.0 &amp; 0.4.1
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/posts/packit-042/" title="Packit 0.4.2" class="dd-item ">
+        <a href="/posts/packit-042/">
+        Packit 0.4.2
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/packit-as-a-service/" title="Packit-as-a-Service" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/packit-as-a-service/">
+          Packit-as-a-Service
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/source-git/" title="Source-git" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/source-git/">
+          Source-git
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/packit-service/packit"><i class='fab fa-fw fa-github'></i> GitHub repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/apps/packit-as-a-service"><i class='fab fa-fw fa-github'></i> Packit as a Service on Marketplace</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>About</a> > <a href='/user-docs/'>Packit user documentation</a> > Configuration for packit
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#project-s-configuration-file">Project&rsquo;s configuration file</a>
+<ul>
+<li><a href="#values">Values</a></li>
+<li><a href="#minimal-sample-config">Minimal sample config</a></li>
+<li><a href="#more-examples-of-synced-files">More examples of <code>synced_files</code></a></li>
+<li><a href="#packit-service-jobs">Packit service jobs</a>
+<ul>
+<li><a href="#supported-jobs">Supported jobs</a></li>
+</ul></li>
+<li><a href="#in-progress-work">In-progress work</a></li>
+</ul></li>
+<li><a href="#user-configuration-file">User configuration file</a>
+<ul>
+<li><a href="#values-1">Values</a></li>
+<li><a href="#minimal-sample-config-1">Minimal sample config</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Configuration for packit
+            </h1>
+          
+
+        
+
+
+
+
+
+<h2 id="project-s-configuration-file">Project&rsquo;s configuration file</h2>
+
+<p>Packit uses a configuration file in the upstream repository. The config file is written in YAML language.</p>
+
+<p>You should place the file in the root of your upstream repo. Packit accepts these names:</p>
+
+<ul>
+<li><code>.packit.yaml</code></li>
+<li><code>.packit.yml</code></li>
+<li><code>.packit.json</code></li>
+<li><code>packit.yaml</code></li>
+<li><code>packit.yml</code></li>
+<li><code>packit.json</code></li>
+</ul>
+
+<h3 id="values">Values</h3>
+
+<table>
+<thead>
+<tr>
+<th>Key name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>specfile_path</code></td>
+<td>string</td>
+<td>relative path to a spec file within the upstream repository (mandatory)</td>
+</tr>
+
+<tr>
+<td><code>synced_files</code></td>
+<td>list of strings</td>
+<td>a list of relative paths to files in the upstream repo which are meant to be copied to dist-git during an update</td>
+</tr>
+
+<tr>
+<td><code>upstream_project_name</code></td>
+<td>string</td>
+<td>name of the upstream repository (e.g. in PyPI); this is used in <code>%prep</code> section</td>
+</tr>
+
+<tr>
+<td><code>upstream_ref</code></td>
+<td>string</td>
+<td>git reference to last upstream git commit (for source-git repos)</td>
+</tr>
+
+<tr>
+<td><code>downstream_package_name</code></td>
+<td>string</td>
+<td>name of package in Fedora (mandatory)</td>
+</tr>
+
+<tr>
+<td><code>dist_git_namespace</code></td>
+<td>string</td>
+<td>namespace in dist-git URL (defaults to &ldquo;rpms&rdquo;)</td>
+</tr>
+
+<tr>
+<td><code>dist_git_base_url</code></td>
+<td>string</td>
+<td>URL of dist-git server, defaults to <a href="https://src.fedoraproject.org/">https://src.fedoraproject.org/</a> (has to end with a slash)</td>
+</tr>
+
+<tr>
+<td><code>create_tarball_command</code></td>
+<td>list of strings</td>
+<td>a command which generates upstream tarball in the root of the upstream directory (defaults to <code>git archive -o &quot;{package_name}-{version}.tar.gz&quot; --prefix &quot;{package_name}-{version}/&quot; HEAD</code>)</td>
+</tr>
+
+<tr>
+<td><code>current_version_command</code></td>
+<td>list of strings</td>
+<td>a command which prints current upstream version (hint: <code>git describe</code>) (defaults to <code>git describe --tags --match '*.*'</code>)</td>
+</tr>
+
+<tr>
+<td><code>actions</code></td>
+<td>string:string</td>
+<td>custom actions/hooks overwriting the default behavior of the workflow (more in <a href="/user-docs/actions/">Actions</a>)</td>
+</tr>
+
+<tr>
+<td><code>jobs</code></td>
+<td>list of dicts</td>
+<td>a list of job definitions for packit service. See below for details</td>
+</tr>
+
+<tr>
+<td><code>allowed_gpg_keys</code></td>
+<td>list of strings</td>
+<td>a list of gpg-key fingerprints; if specified. One of the configured keys have to sign the last commit when syncing release or pull-request. Add GitHub key (<code>4AEE18F83AFDEB23</code>) if you want to use this on code merged via GitHub web interface.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="minimal-sample-config">Minimal sample config</h3>
+
+<p>This is a sample config which is meant for packit itself.</p>
+
+<pre><code class="language-yaml">specfile_path: packit.spec
+synced_files:
+  - packit.spec
+upstream_project_name: packitos
+downstream_package_name: packit
+</code></pre>
+
+<h3 id="more-examples-of-synced-files">More examples of <code>synced_files</code></h3>
+
+<pre><code class="language-yaml">synced_files:
+
+  # Copy a file from root of the upstream repo to dist-git.
+  - packit.spec
+
+  # If you copy packit.yaml downstream, you can then take advantage of
+  # `sync-from-downstream` command.
+  - .packit.yaml
+
+  # src: a file in root of the upstream repository
+  # dest: path within the downstream repository
+  - src: packit.spec
+    dest: redhat/packit.spec
+
+  # Also supports globbing: copy everything from fedora-packaging folder and
+  # put it to the root of the dist-git repo.
+  - src: fedora-packaging/*
+    dest: .
+
+  # You can specify multiple source files as well:
+  - src:
+    - package.spec
+    - some-file
+    dest: .
+</code></pre>
+
+<h3 id="packit-service-jobs">Packit service jobs</h3>
+
+<p><strong>Packit service is not live, we are working on opening it to the world in June.</strong></p>
+
+<p>Once the service starts handling events of your repository, it needs to have a clear definition of what it should do.</p>
+
+<p>The tasks the packit service should do are defined in section <code>jobs</code>. This is a list of dicts.</p>
+
+<p>Every job has two mandatory keys:</p>
+
+<ol>
+<li><code>job</code> - name of the job (you can imagine this as a CLI command)</li>
+<li><code>trigger</code> - what is the trigger for the job?</li>
+</ol>
+
+<p>Every job only supports a specific set of triggers.</p>
+
+<p>Jobs can also accept additional configuration in a dict <code>metadata</code>.</p>
+
+<h4 id="supported-jobs">Supported jobs</h4>
+
+<p><strong>propose_downstream</strong></p>
+
+<p>Take the new upstream release and land it in Fedora.</p>
+
+<p>Supported triggers: <strong>release</strong>.</p>
+
+<p>Additional configuration set in the <code>metadata</code> section:
+* <code>dist_git_branch</code>: name of the dist-git branch where the PR should be opened.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-yaml">jobs:
+- job: propose_downstream
+  trigger: release
+  metadata:
+    dist_git_branch: master
+- job: propose_downstream
+  trigger: release
+  metadata:
+    dist_git_branch: f30
+</code></pre>
+
+<p>With this configuration, packit service would react to new upstream releases
+and create dist-git pull requests for master and f30 branches with the
+content of the upstream release.</p>
+
+<p><strong>sync_from_downstream</strong></p>
+
+<p>Pick up a change (mass rebuild, proven packager rebuild or fix) from Fedora
+dist-git and send it to upstream repository.</p>
+
+<p>Supported triggers: <strong>commit</strong>.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-yaml">jobs:
+- job: sync_from_downstream
+  trigger: commit
+</code></pre>
+
+<p><strong>copr_build</strong></p>
+
+<p>Gather data from new pull_request or release and use trigger new copr build with it.</p>
+
+<p>Supported triggers: <strong>pull_request</strong>, <strong>release</strong>.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-yaml">jobs:
+- job: copr_build
+  trigger: pull_request
+  metadata:
+    targets:
+      - fedora-rawhide-x86_64
+      - fedora-30-x86_64
+
+</code></pre>
+
+<h3 id="in-progress-work">In-progress work</h3>
+
+<p>You may see packit configs with more values: support for checks is work in progress.
+Packit is not using those values right now.</p>
+
+<h2 id="user-configuration-file">User configuration file</h2>
+
+<p>When running packit as a tool locally, it is convenient to use a configuration
+file to provide data such as API tokens. Packit respects <code>XDG_CONFIG_HOME</code>
+environment variable. If not set, it looks inside <code>~/.config/</code> directory.</p>
+
+<p>The acceptable names are the same as for the package config:</p>
+
+<ul>
+<li><code>.packit.yaml</code></li>
+<li><code>.packit.yml</code></li>
+<li><code>.packit.json</code></li>
+<li><code>packit.yaml</code></li>
+<li><code>packit.yml</code></li>
+<li><code>packit.json</code></li>
+</ul>
+
+<h3 id="values-1">Values</h3>
+
+<table>
+<thead>
+<tr>
+<th>Key name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>debug</code></td>
+<td>bool</td>
+<td>enable debug logs</td>
+</tr>
+
+<tr>
+<td><code>dry_run</code></td>
+<td>bool</td>
+<td>Do not perform any remote changes (pull requests or comments)</td>
+</tr>
+
+<tr>
+<td><code>fas_user</code></td>
+<td>string</td>
+<td>username in Fedora account system (to perform kinit if needed)</td>
+</tr>
+
+<tr>
+<td><code>keytab_path</code></td>
+<td>string</td>
+<td>path to a Kerberos keytab file (requires <code>fas_user</code> to be set)</td>
+</tr>
+
+<tr>
+<td><code>github_token</code></td>
+<td>string</td>
+<td>Github API token: this is needed when packit interacts with Github API</td>
+</tr>
+
+<tr>
+<td><code>pagure_user_token</code></td>
+<td>string</td>
+<td>Pagure token needed to access REST API, get it at: <a href="https://src.fedoraproject.org/settings#nav-api-tab">https://src.fedoraproject.org/settings#nav-api-tab</a></td>
+</tr>
+
+<tr>
+<td><code>pagure_fork_token</code></td>
+<td>string</td>
+<td>a token so packit can create a pull request: <a href="https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab">https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab</a></td>
+</tr>
+
+<tr>
+<td><code>github_app_id</code></td>
+<td>string</td>
+<td>github app ID used for authentication</td>
+</tr>
+
+<tr>
+<td><code>github_app_cert_path</code></td>
+<td>string</td>
+<td>path to a certificate associated with a github app</td>
+</tr>
+
+<tr>
+<td><code>webhook_secret</code></td>
+<td>string</td>
+<td>when specified in a Github App settings, GitHub uses it to create a hash signature with each payload</td>
+</tr>
+</tbody>
+</table>
+
+<p>You can also specify the tokens as environment variables: <code>GITHUB_TOKEN</code>, <code>PAGURE_USER_TOKEN</code>, <code>PAGURE_FORK_TOKEN</code>.</p>
+
+<p>Keys related to Github app are meant for a packit service deployment.</p>
+
+<h3 id="minimal-sample-config-1">Minimal sample config</h3>
+
+<pre><code class="language-yaml">debug: true
+github_token: mnbvcxz123456
+pagure_user_token: qwertyuiop098765
+</code></pre>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/user-docs/architecture/" title="Architecture"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/user-docs/how-to-source-git/" title="How to source-git?" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1562673057"></script>
+    <script src="/js/perfect-scrollbar.min.js?1562673057"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1562673057"></script>
+    <script src="/js/jquery.sticky.js?1562673057"></script>
+    <script src="/js/featherlight.min.js?1562673057"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1562673057"></script>
+    <script src="/js/highlight.pack.js?1562673057"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1562673057"></script>
+    <script src="/js/learn.js?1562673057"></script>
+    <script src="/js/hugo-learn.js?1562673057"></script>
+
+    <link href="/mermaid/mermaid.css?1562673057" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1562673057"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

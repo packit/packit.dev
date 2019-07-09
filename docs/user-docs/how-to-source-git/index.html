@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>How to source-git? :: Packit</title>
+
+    
+    <link href="/css/nucleus.css?1562673057" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1562673057" rel="stylesheet">
+    <link href="/css/hybrid.css?1562673057" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1562673057" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1562673057" rel="stylesheet">
+    <link href="/css/auto-complete.css?1562673057" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1562673057" rel="stylesheet">
+    <link href="/css/theme.css?1562673057" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1562673057" rel="stylesheet">
+    
+      <link href="/css/theme-red.css?1562673057" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1562673057"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/user-docs/how-to-source-git/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/"><img src="/packit_logo.png"></a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1562673057"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1562673057"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1562673057"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/user-docs/" title="Packit user documentation" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/user-docs/">
+          Packit user documentation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/actions/" title="Actions" class="dd-item ">
+        <a href="/user-docs/actions/">
+        Actions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/architecture/" title="Architecture" class="dd-item ">
+        <a href="/user-docs/architecture/">
+        Architecture
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/configuration/" title="Configuration for packit" class="dd-item ">
+        <a href="/user-docs/configuration/">
+        Configuration for packit
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/how-to-source-git/" title="How to source-git?" class="dd-item active">
+        <a href="/user-docs/how-to-source-git/">
+        How to source-git?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/user-docs/cli/" title="Packit CLI Commands" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/user-docs/cli/">
+          Packit CLI Commands
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/cli/build/" title="build" class="dd-item ">
+        <a href="/user-docs/cli/build/">
+        build
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/cli/create-bodhi-update/" title="create-bodhi-update" class="dd-item ">
+        <a href="/user-docs/cli/create-bodhi-update/">
+        create-bodhi-update
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/cli/propose-update/" title="propose-update" class="dd-item ">
+        <a href="/user-docs/cli/propose-update/">
+        propose-update
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/cli/srpm/" title="srpm" class="dd-item ">
+        <a href="/user-docs/cli/srpm/">
+        srpm
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-docs/cli/sync-from-downstream/" title="sync-from-downstream" class="dd-item ">
+        <a href="/user-docs/cli/sync-from-downstream/">
+        sync-from-downstream
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/posts/" title="Posts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/posts/">
+          Posts
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/posts/packit-010/" title="Initial version (0.1.0) of packit is out!" class="dd-item ">
+        <a href="/posts/packit-010/">
+        Initial version (0.1.0) of packit is out!
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/posts/packit-020/" title="Packit 0.2.0 is here!" class="dd-item ">
+        <a href="/posts/packit-020/">
+        Packit 0.2.0 is here!
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/posts/packit-030/" title="Packit 0.3.0" class="dd-item ">
+        <a href="/posts/packit-030/">
+        Packit 0.3.0
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/posts/packit-041/" title="Packit 0.4.0 &amp; 0.4.1" class="dd-item ">
+        <a href="/posts/packit-041/">
+        Packit 0.4.0 &amp; 0.4.1
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/posts/packit-042/" title="Packit 0.4.2" class="dd-item ">
+        <a href="/posts/packit-042/">
+        Packit 0.4.2
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/packit-as-a-service/" title="Packit-as-a-Service" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/packit-as-a-service/">
+          Packit-as-a-Service
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/source-git/" title="Source-git" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/source-git/">
+          Source-git
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/packit-service/packit"><i class='fab fa-fw fa-github'></i> GitHub repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/apps/packit-as-a-service"><i class='fab fa-fw fa-github'></i> Packit as a Service on Marketplace</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>About</a> > <a href='/user-docs/'>Packit user documentation</a> > How to source-git?
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#let-s-create-a-source-git-repo">Let&rsquo;s create a source-git repo</a>
+<ul>
+<li><a href="#what-do-we-need">What do we need?</a></li>
+<li><a href="#we-can-start-now">We can start now</a></li>
+<li><a href="#layering-downstream-content-on-top-of-upstream">Layering downstream content on top of upstream</a></li>
+<li><a href="#applying-downstream-patches">Applying downstream patches</a></li>
+</ul></li>
+<li><a href="#wrap-up">Wrap up</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              How to source-git?
+            </h1>
+          
+
+        
+
+
+
+
+
+<p>This is a practical introduction to source-git using a real example.</p>
+
+<p>If you are interested in the theory behind source-git, please read <a href="/source-git/">the
+specification</a>.</p>
+
+<h2 id="let-s-create-a-source-git-repo">Let&rsquo;s create a source-git repo</h2>
+
+<p>I choose systemd from Fedora 29 for this example.</p>
+
+<h3 id="what-do-we-need">What do we need?</h3>
+
+<p>3 things:</p>
+
+<ol>
+<li>Systemd upstream repo.</li>
+<li>Fedora 29 dist-git repo of systemd.</li>
+<li>New local git repo.</li>
+</ol>
+
+<p>Let&rsquo;s set all of this up. We&rsquo;ll start with an empty git repository:</p>
+
+<pre><code class="language-bash">$ mkdir systemd-source-git
+$ cd systemd-source-git
+$ git init .
+Initialized empty Git repository in /home/tt/t/systemd-source-git/.git/
+</code></pre>
+
+<p>We&rsquo;ll add fedora and upstream remotes, and then we&rsquo;ll fetch them:</p>
+
+<pre><code class="language-bash">$ git remote add upstream https://github.com/systemd/systemd.git
+$ git remote add fedora ssh://ttomecek@pkgs.fedoraproject.org/rpms/systemd.git
+$ git fetch -q upstream
+$ git fetch -q fedora
+</code></pre>
+
+<p>Systemd also has a dedicated repository with backports to the older releases.
+This is how systemd is packaged in Fedora.</p>
+
+<pre><code class="language-bash">$ git remote add upstream-stable https://github.com/systemd/systemd-stable.git
+$ git fetch -q upstream-stable
+</code></pre>
+
+<h3 id="we-can-start-now">We can start now</h3>
+
+<p>Usually you would try to figure which upstream release is used so that you know
+what to choose for the base. But systemd in Fedora is not using the pristine
+upstream archives.</p>
+
+<p>When we open the Fedora 29 systemd spec file, we can see that upstream uses
+commit hash <code>8bca4621fc003a148c70248c55aa877dfe61fd3f</code> for the upstream tarball
+from the systemd-stable repo. We&rsquo;ll start a new git branch in our repo named
+<code>239-sg</code> (sg as source-git):</p>
+
+<pre><code class="language-bash">$ git checkout -B 239-sg 8bca4621fc003a148c70248c55aa877dfe61fd3f
+Switched to a new branch '239-sg'
+</code></pre>
+
+<p>Right now we have the upstream history which lead to the 239 release.
+Alternatively we could just unpack the upstream tarball and have the history in
+a single commit.</p>
+
+<p>In this case, the upstream history is not marked in a any way, so let&rsquo;s tag it:</p>
+
+<pre><code class="language-bash">$ git tag upstream-239 HEAD
+</code></pre>
+
+<p>Packit will be able to distinguish between additional source-git
+content and upstream history.</p>
+
+<p>We can start layering downstream content on top.</p>
+
+<h3 id="layering-downstream-content-on-top-of-upstream">Layering downstream content on top of upstream</h3>
+
+<p>Let&rsquo;s get files from the <code>fedora/f29</code> branch.</p>
+
+<pre><code class="language-bash">$ git checkout fedora/f29 -- .
+$ git status
+On branch 239-sg
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+        modified:   .gitignore
+        new file:   0001-Revert-journald-periodically-drop-cache-for-all-dead.patch
+        new file:   0998-resolved-create-etc-resolv.conf-symlink-at-runtime.patch
+        new file:   20-grubby.install
+        new file:   20-yama-ptrace.conf
+        new file:   inittab
+        new file:   purge-nobody-user
+        new file:   sources
+        new file:   split-files.py
+        new file:   sysctl.conf.README
+        new file:   systemd-journal-gatewayd.xml
+        new file:   systemd-journal-remote.xml
+        new file:   systemd-udev-trigger-no-reload.conf
+        new file:   systemd-user
+        new file:   systemd.spec
+        new file:   triggers.systemd
+        new file:   yum-protect-systemd.conf
+</code></pre>
+
+<p>We have a bunch of new files from f29 branch in the root. We&rsquo;ll move them now
+to the <code>fedora/</code> directory:</p>
+
+<pre><code class="language-bash">$ mkdir fedora
+$ mv $(git diff --name-only --cached) fedora/
+</code></pre>
+
+<p>and we should also clean our working tree:</p>
+
+<pre><code class="language-bash">$ git reset HEAD .
+Unstaged changes after reset:
+M       .gitignore
+
+$ git checkout .gitignore
+</code></pre>
+
+<p>&hellip;and commit the fedora content now:</p>
+
+<pre><code class="language-bash">$ git add fedora
+</code></pre>
+
+<p>We don&rsquo;t want to commit those two patch files:</p>
+
+<pre><code>$ git reset HEAD fedora/0001-Revert-journald-periodically-drop-cache-for-all-dead.patch fedora/0998-resolved-create-etc-resolv.conf-symlink-at-runtime.patch
+</code></pre>
+
+<p>We can now commit the files in <code>fedora/</code> directory:</p>
+
+<pre><code>$ git commit -m 'add fedora packaging'
+[239-sg 20548da6d9] add fedora packaging
+ 15 files changed, 2901 insertions(+)
+ create mode 100644 fedora/.gitignore
+ create mode 100755 fedora/20-grubby.install
+ create mode 100644 fedora/20-yama-ptrace.conf
+ create mode 100644 fedora/inittab
+ create mode 100755 fedora/purge-nobody-user
+ create mode 100644 fedora/sources
+ create mode 100644 fedora/split-files.py
+ create mode 100644 fedora/sysctl.conf.README
+ create mode 100644 fedora/systemd-journal-gatewayd.xml
+ create mode 100644 fedora/systemd-journal-remote.xml
+ create mode 100644 fedora/systemd-udev-trigger-no-reload.conf
+ create mode 100644 fedora/systemd-user
+ create mode 100644 fedora/systemd.spec
+ create mode 100644 fedora/triggers.systemd
+ create mode 100644 fedora/yum-protect-systemd.conf
+</code></pre>
+
+<h3 id="applying-downstream-patches">Applying downstream patches</h3>
+
+<p>We are getting to the core of source-git: we work with code in it, not with
+patches. Hence we need to apply the downstream patches:</p>
+
+<pre><code>$ git am fedora/0001-Revert-journald-periodically-drop-cache-for-all-dead.patch
+Applying: Revert &quot;journald: periodically drop cache for all dead PIDs&quot;
+
+$ git am fedora/0998-resolved-create-etc-resolv.conf-symlink-at-runtime.patch
+Applying: resolved: create /etc/resolv.conf symlink at runtime
+
+$ git log --oneline| head -n 2
+bcc2c8a292 resolved: create /etc/resolv.conf symlink at runtime
+1d39b39df9 Revert &quot;journald: periodically drop cache for all dead PIDs&quot;
+</code></pre>
+
+<p>And that&rsquo;s it, this is our source-git repo! You can check it out over
+<a href="https://github.com/packit-service/systemd-source-git">here</a>.</p>
+
+<p>Once we finish source-git related code in packit, you&rsquo;d be able then to work
+exclusively in source-git, getting results from tests and other testing systems
+directly on pull requests.</p>
+
+<h2 id="wrap-up">Wrap up</h2>
+
+<p>As you can see, it is a lot of work to create the source-git repo. We are
+planning on automating it — creating a dedicated command in packit.</p>
+
+<p>We also have a bunch of packit code related to source-git already done, but the
+overall experience is not done end-to-end.</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/user-docs/configuration/" title="Configuration for packit"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/user-docs/cli/" title="Packit CLI Commands" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1562673057"></script>
+    <script src="/js/perfect-scrollbar.min.js?1562673057"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1562673057"></script>
+    <script src="/js/jquery.sticky.js?1562673057"></script>
+    <script src="/js/featherlight.min.js?1562673057"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1562673057"></script>
+    <script src="/js/highlight.pack.js?1562673057"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1562673057"></script>
+    <script src="/js/learn.js?1562673057"></script>
+    <script src="/js/hugo-learn.js?1562673057"></script>
+
+    <link href="/mermaid/mermaid.css?1562673057" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1562673057"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

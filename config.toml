@@ -1,38 +1,35 @@
-baseURL = "https://packit.dev/"
+baseURL = "/"
 publishDir = "docs"
-languageCode = "en-us"
+languageCode = "en-US"
+defaultContentLanguage = "en"
 title = "Packit"
-theme = "minos"
-paginate = 5
+theme = "hugo-theme-learn"
+defaultContentLanguageInSubdir = false
+paginate = 10
+
+[outputs]
+home = ["HTML", "JSON"]
 
 [params]
   subtitle = "Upstream project ← → Downstream distribution"
   brand = "Packit"
+  email = "user-cont-team@redhat.com"
+  disableInlineCopyToClipBoard = true
+  themeVariant = "red"
 
-[menu]
-  [[menu.main]]
-    name = "About"
-    pre = "<i class='fa fa-user fa-fw'></i>"
-    weight = 1
-    identifier = "about"
-    url = "/about/"
-  [[menu.main]]
-    name = "Posts"
-    pre = "<i class='fa fa-list fa-fw'></i>"
-    weight = 2
-    identifier = "posts"
-    url = "/posts/"
-  [[menu.main]]
-    name = "Source-git"
-    pre = "<i class='fa fa-user fa-fw'></i>"
-    weight = 3
-    identifier = "source-git"
-    url = "/source-git/"
-  [[menu.main]]
-    name = "Packit-as-a-Service"
-    pre = "<i class='fa fa-user fa-fw'></i>"
-    weight = 4
-    identifier = "packit-as-a-service"
-    url = "/packit-as-a-service/"
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
+identifier = "gr"
+url = "https://github.com/packit-service/packit"
+weight = 10
+
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fab fa-fw fa-github'></i> Packit as a Service on Marketplace"
+identifier = "paas"
+url = "https://github.com/apps/packit-as-a-service"
+weight = 11
+
+
 [social]
   github = "packit-service/packit"
