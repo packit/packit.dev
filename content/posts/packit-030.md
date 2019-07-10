@@ -2,9 +2,11 @@
 title: "Packit 0.3.0"
 date: 2019-04-11
 draft: false
+disableToc: false
+weight: 3
 ---
 
-In the [previous post](https://packit.dev/posts/packit-020/) we promised to
+In the [previous post](/posts/packit-020/) we promised to
 provide a new release every 2 weeks and we are already breaking this promise as
 it's been 3 weeks since then. We decided to wait with the release to merge
 several pull requests related to source-git support.
@@ -20,12 +22,12 @@ improvements of version
 
 * You can now specify your own hooks or actions to replace default packit
   behaviour. (More information can be found [in the
-  documentation](https://github.com/packit-service/packit/blob/master/docs/actions.md)).
+  documentation](/user-docs/actions/)).
 * Packit supports pagure.io-based upstream projects.
 * Commands `propose-update` and `sync-from-downstream` supports [copying
-  directories](https://github.com/packit-service/packit/blob/master/docs/configuration.md#minimal-sample-config).
+  directories](/user-docs/configuration/#minimal-sample-config).
 * A new command `status`! It displays useful upstream/downstream info.
-* Packit now supports [Source-git](https://packit.dev/source-git/). The
+* Packit now supports [Source-git](/source-git/). The
   functionality is not available, yet - we will add a CLI interface for it in
   the next release.
 * You can now have a config file for packit in your home directory(`~/.config/packit.yaml`).
@@ -34,7 +36,7 @@ improvements of version
 
 ### `packit status` example
 
-```
+```bash
 $ packit status
 Cloning repo: https://src.fedoraproject.org/rpms/packit.git -> /tmp/tmp84we_6n8
 Downstream PRs: No open PRs.

@@ -12,62 +12,6 @@
     
     
     <item>
-      <title>Packit 0.4.2</title>
-      <link>https://packit.dev/posts/packit-042/</link>
-      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://packit.dev/posts/packit-042/</guid>
-      <description>&lt;p&gt;Another relase after a month since &lt;a href=&#34;https://packit.dev/posts/packit-041/&#34;&gt;0.4.1&lt;/a&gt;, this time mostly with bug fixes.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Packit 0.4.0 &amp; 0.4.1</title>
-      <link>https://packit.dev/posts/packit-041/</link>
-      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://packit.dev/posts/packit-041/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s been over a month since we released packit &amp;ldquo;0.3.0&amp;rdquo;. Here comes packit 0.4.0 (and patch release 0.4.1) and as always they bring a lot of new features and improvements.&lt;/p&gt;
-
-&lt;p&gt;You can find a complete list in the
-&lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md#040&#34;&gt;changelog&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Packit 0.3.0</title>
-      <link>https://packit.dev/posts/packit-030/</link>
-      <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://packit.dev/posts/packit-030/</guid>
-      <description>&lt;p&gt;In the &lt;a href=&#34;https://packit.dev/posts/packit-020/&#34;&gt;previous post&lt;/a&gt; we promised to
-provide a new release every 2 weeks and we are already breaking this promise as
-it&amp;rsquo;s been 3 weeks since then. We decided to wait with the release to merge
-several pull requests related to source-git support.&lt;/p&gt;
-
-&lt;p&gt;Now the good news. You can find a complete list of new features and
-improvements of version
-&lt;a href=&#34;https://github.com/packit-service/packit/releases/tag/0.3.0&#34;&gt;0.3.0&lt;/a&gt; in the
-&lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md#030&#34;&gt;changelog&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Packit 0.2.0 is here!</title>
-      <link>https://packit.dev/posts/packit-020/</link>
-      <pubDate>Tue, 19 Mar 2019 18:25:39 +0100</pubDate>
-      
-      <guid>https://packit.dev/posts/packit-020/</guid>
-      <description>&lt;p&gt;Our sprint nears an end which means we have released &lt;a href=&#34;https://github.com/packit-service/packit/releases/tag/0.2.0&#34;&gt;a new version of packit -
-0.2.0&lt;/a&gt;! You can
-expect a new release after every sprint (i.e. every 2 weeks).&lt;/p&gt;
-
-&lt;p&gt;The 0.2.0 version has a bunch of new features and improvements: you can find
-a complete list &lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md#020&#34;&gt;in the
-changelog&lt;/a&gt;.
-We also have a &lt;a href=&#34;https://github.com/packit-service/packit#workflows-covered-by-packit&#34;&gt;detailed
-documentation&lt;/a&gt;
-for all the workflows packit covers.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Initial version (0.1.0) of packit is out!</title>
       <link>https://packit.dev/posts/packit-010/</link>
       <pubDate>Fri, 08 Mar 2019 15:44:36 +0100</pubDate>
@@ -90,6 +34,62 @@ upstream release of a selected repository.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;packit watch-releases&lt;/code&gt; — Watches events for all the upstream releases and
 performs &lt;code&gt;propose-update&lt;/code&gt; for those who use packit.&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Packit 0.2.0 is here!</title>
+      <link>https://packit.dev/posts/packit-020/</link>
+      <pubDate>Tue, 19 Mar 2019 18:25:39 +0100</pubDate>
+      
+      <guid>https://packit.dev/posts/packit-020/</guid>
+      <description>&lt;p&gt;Our sprint nears an end which means we have released &lt;a href=&#34;https://github.com/packit-service/packit/releases/tag/0.2.0&#34;&gt;a new version of packit -
+0.2.0&lt;/a&gt;! You can
+expect a new release after every sprint (i.e. every 2 weeks).&lt;/p&gt;
+
+&lt;p&gt;The 0.2.0 version has a bunch of new features and improvements: you can find
+a complete list &lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md#020&#34;&gt;in the
+changelog&lt;/a&gt;.
+We also have a &lt;a href=&#34;https://github.com/packit-service/packit#workflows-covered-by-packit&#34;&gt;detailed
+documentation&lt;/a&gt;
+for all the workflows packit covers.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Packit 0.3.0</title>
+      <link>https://packit.dev/posts/packit-030/</link>
+      <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/packit-030/</guid>
+      <description>&lt;p&gt;In the &lt;a href=&#34;https://packit.dev/posts/packit-020/&#34;&gt;previous post&lt;/a&gt; we promised to
+provide a new release every 2 weeks and we are already breaking this promise as
+it&amp;rsquo;s been 3 weeks since then. We decided to wait with the release to merge
+several pull requests related to source-git support.&lt;/p&gt;
+
+&lt;p&gt;Now the good news. You can find a complete list of new features and
+improvements of version
+&lt;a href=&#34;https://github.com/packit-service/packit/releases/tag/0.3.0&#34;&gt;0.3.0&lt;/a&gt; in the
+&lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md#030&#34;&gt;changelog&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Packit 0.4.0 &amp; 0.4.1</title>
+      <link>https://packit.dev/posts/packit-041/</link>
+      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/packit-041/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s been over a month since we released packit &amp;ldquo;0.3.0&amp;rdquo;. Here comes packit 0.4.0 (and patch release 0.4.1) and as always they bring a lot of new features and improvements.&lt;/p&gt;
+
+&lt;p&gt;You can find a complete list in the
+&lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md#040&#34;&gt;changelog&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Packit 0.4.2</title>
+      <link>https://packit.dev/posts/packit-042/</link>
+      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/packit-042/</guid>
+      <description>&lt;p&gt;Another relase after a month since &lt;a href=&#34;https://packit.dev/posts/packit-041/&#34;&gt;0.4.1&lt;/a&gt;, this time mostly with bug fixes.&lt;/p&gt;</description>
     </item>
     
   </channel>

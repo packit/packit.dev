@@ -2,6 +2,8 @@
 title: "Packit 0.2.0 is here!"
 date: 2019-03-19T18:25:39+01:00
 draft: false
+disableToc: false
+weight: 2
 ---
 
 Our sprint nears an end which means we have released [a new version of packit -

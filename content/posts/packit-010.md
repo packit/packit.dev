@@ -2,6 +2,8 @@
 title: "Initial version (0.1.0) of packit is out!"
 date: 2019-03-08T15:44:36+01:00
 draft: false
+disableToc: false
+weight: 1
 ---
 
 We would like to announce general availability of the initial version of
@@ -51,7 +53,7 @@ Present features have strict requirements on the upstream projects:
 This workflow is suitable for people who are both upstream and downstream
 maintainers of the particular project. If you don't fit into that bucket, then
 packit might not be ready for you, yet. Please wait till we land more
-[source-git](https://github.com/packit-service/packit/blob/master/docs/source-git.md)
+[source-git](/source-git/)
 related functionality into packit.
 
 
@@ -67,8 +69,7 @@ version of ogr into Fedora Rawhide, 30 and 29.
 
 ### Do we have everything?
 
-Let's see [the upstream
-guide](https://github.com/packit-service/packit/blob/master/docs/update.md) for
+Let's see [guide](/user-docs/cli/propose-update/) for
 the `propose-update` command on what we need:
 
 
