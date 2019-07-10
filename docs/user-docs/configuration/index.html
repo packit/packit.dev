@@ -12,20 +12,20 @@
     <title>Configuration for packit :: Packit</title>
 
     
-    <link href="/css/nucleus.css?1562744237" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1562744237" rel="stylesheet">
-    <link href="/css/hybrid.css?1562744237" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1562744237" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1562744237" rel="stylesheet">
-    <link href="/css/auto-complete.css?1562744237" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1562744237" rel="stylesheet">
-    <link href="/css/theme.css?1562744237" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1562744237" rel="stylesheet">
+    <link href="/css/nucleus.css?1562753289" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1562753289" rel="stylesheet">
+    <link href="/css/hybrid.css?1562753289" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1562753289" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1562753289" rel="stylesheet">
+    <link href="/css/auto-complete.css?1562753289" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1562753289" rel="stylesheet">
+    <link href="/css/theme.css?1562753289" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1562753289" rel="stylesheet">
     
-      <link href="/css/theme-red.css?1562744237" rel="stylesheet">
+      <link href="/css/theme-red.css?1562753289" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1562744237"></script>
+    <script src="/js/jquery-3.3.1.min.js?1562753289"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1562744237"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1562744237"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1562753289"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1562753289"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/packit.dev\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1562744237"></script>
+<script type="text/javascript" src="/js/search.js?1562753289"></script>
 
     
   </div>
@@ -573,7 +573,6 @@
 <ul>
 <li><a href="#supported-jobs">Supported jobs</a></li>
 </ul></li>
-<li><a href="#in-progress-work">In-progress work</a></li>
 </ul></li>
 <li><a href="#user-configuration-file">User configuration file</a>
 <ul>
@@ -750,8 +749,6 @@ downstream_package_name: packit
 
 <h3 id="packit-service-jobs">Packit service jobs</h3>
 
-<p><strong>Packit service is not live, we are working on opening it to the world in June.</strong></p>
-
 <p>Once the service starts handling events of your repository, it needs to have a clear definition of what it should do.</p>
 
 <p>The tasks the packit service should do are defined in section <code>jobs</code>. This is a list of dicts.</p>
@@ -768,46 +765,6 @@ downstream_package_name: packit
 <p>Jobs can also accept additional configuration in a dict <code>metadata</code>.</p>
 
 <h4 id="supported-jobs">Supported jobs</h4>
-
-<p><strong>propose_downstream</strong></p>
-
-<p>Take the new upstream release and land it in Fedora.</p>
-
-<p>Supported triggers: <strong>release</strong>.</p>
-
-<p>Additional configuration set in the <code>metadata</code> section:
-* <code>dist_git_branch</code>: name of the dist-git branch where the PR should be opened.</p>
-
-<p><strong>Example</strong></p>
-
-<pre><code class="language-yaml">jobs:
-- job: propose_downstream
-  trigger: release
-  metadata:
-    dist_git_branch: master
-- job: propose_downstream
-  trigger: release
-  metadata:
-    dist_git_branch: f30
-</code></pre>
-
-<p>With this configuration, packit service would react to new upstream releases
-and create dist-git pull requests for master and f30 branches with the
-content of the upstream release.</p>
-
-<p><strong>sync_from_downstream</strong></p>
-
-<p>Pick up a change (mass rebuild, proven packager rebuild or fix) from Fedora
-dist-git and send it to upstream repository.</p>
-
-<p>Supported triggers: <strong>commit</strong>.</p>
-
-<p><strong>Example</strong></p>
-
-<pre><code class="language-yaml">jobs:
-- job: sync_from_downstream
-  trigger: commit
-</code></pre>
 
 <p><strong>copr_build</strong></p>
 
@@ -827,10 +784,19 @@ dist-git and send it to upstream repository.</p>
 
 </code></pre>
 
-<h3 id="in-progress-work">In-progress work</h3>
+<p><strong>sync_from_downstream</strong></p>
 
-<p>You may see packit configs with more values: support for checks is work in progress.
-Packit is not using those values right now.</p>
+<p>Pick up a change (mass rebuild, proven packager rebuild or fix) from Fedora
+dist-git and send it to upstream repository.</p>
+
+<p>Supported triggers: <strong>commit</strong>.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-yaml">jobs:
+- job: sync_from_downstream
+  trigger: commit
+</code></pre>
 
 <h2 id="user-configuration-file">User configuration file</h2>
 
@@ -1302,20 +1268,20 @@ pagure_user_token: qwertyuiop098765
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1562744237"></script>
-    <script src="/js/perfect-scrollbar.min.js?1562744237"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1562744237"></script>
-    <script src="/js/jquery.sticky.js?1562744237"></script>
-    <script src="/js/featherlight.min.js?1562744237"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1562744237"></script>
-    <script src="/js/highlight.pack.js?1562744237"></script>
+    <script src="/js/clipboard.min.js?1562753289"></script>
+    <script src="/js/perfect-scrollbar.min.js?1562753289"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1562753289"></script>
+    <script src="/js/jquery.sticky.js?1562753289"></script>
+    <script src="/js/featherlight.min.js?1562753289"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1562753289"></script>
+    <script src="/js/highlight.pack.js?1562753289"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1562744237"></script>
-    <script src="/js/learn.js?1562744237"></script>
-    <script src="/js/hugo-learn.js?1562744237"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1562753289"></script>
+    <script src="/js/learn.js?1562753289"></script>
+    <script src="/js/hugo-learn.js?1562753289"></script>
 
-    <link href="/mermaid/mermaid.css?1562744237" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1562744237"></script>
+    <link href="/mermaid/mermaid.css?1562753289" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1562753289"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
