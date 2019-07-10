@@ -11,7 +11,7 @@ that helps you continuously ensure that your project work in Fedora OS.
 ## Easy to use
 
 Using Packit Service is very straightforward: add one [config
-file](/user-docs/configuration/)
+file](/docs/configuration/)
 to your repository together with the RPM spec file and you're good to go. 
 
 Packit Service validates your pull requests by building your software in Fedora OS.
@@ -48,7 +48,7 @@ In the left sidebar, click "Integration & services" and you will see the apllica
 
 Packit Service expects the ".packit.yaml" configuration file in root of your upstream repository.
 For more info, see
-[.packit.yaml documentation](/user-docs/configuration/).
+[.packit.yaml documentation](/docs/configuration/).
 
 ### Add SPEC file
 

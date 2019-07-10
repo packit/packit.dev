@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>Packit 0.2.0 is here! :: Packit</title>
+    <title>How to source-git? :: Packit</title>
 
     
     <link href="/css/nucleus.css?1562769428" rel="stylesheet">
@@ -39,7 +39,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/posts/packit-020/">
+  <body class="" data-url="/docs/how-to-source-git/">
     <nav id="sidebar" class="">
 
 
@@ -80,7 +80,7 @@
   
     
     <li data-nav-id="/docs/" title="Packit user documentation" class="dd-item 
-        
+        parent
         
         
         ">
@@ -163,7 +163,7 @@
  
   
     
-      <li data-nav-id="/docs/how-to-source-git/" title="How to source-git?" class="dd-item ">
+      <li data-nav-id="/docs/how-to-source-git/" title="How to source-git?" class="dd-item active">
         <a href="/docs/how-to-source-git/">
         How to source-git?
         
@@ -319,7 +319,7 @@
   
     
     <li data-nav-id="/posts/" title="Posts" class="dd-item 
-        parent
+        
         
         
         ">
@@ -362,7 +362,7 @@
  
   
     
-      <li data-nav-id="/posts/packit-020/" title="Packit 0.2.0 is here!" class="dd-item active">
+      <li data-nav-id="/posts/packit-020/" title="Packit 0.2.0 is here!" class="dd-item ">
         <a href="/posts/packit-020/">
         Packit 0.2.0 is here!
         
@@ -547,7 +547,7 @@
             
           
           
-            <a href='/'>About</a> > <a href='/posts/'>Posts</a> > Packit 0.2.0 is here!
+            <a href='/'>About</a> > <a href='/docs/'>Packit user documentation</a> > How to source-git?
           
          
           
@@ -564,8 +564,14 @@
 <ul>
 <li>
 <ul>
-<li><a href="#installation">Installation</a></li>
-<li><a href="#how-are-we-using-packit">How are we using packit?</a></li>
+<li><a href="#let-s-create-a-source-git-repo">Let&rsquo;s create a source-git repo</a>
+<ul>
+<li><a href="#what-do-we-need">What do we need?</a></li>
+<li><a href="#we-can-start-now">We can start now</a></li>
+<li><a href="#layering-downstream-content-on-top-of-upstream">Layering downstream content on top of upstream</a></li>
+<li><a href="#applying-downstream-patches">Applying downstream patches</a></li>
+</ul></li>
+<li><a href="#wrap-up">Wrap up</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -584,7 +590,7 @@
           
             <h1>
               
-              Packit 0.2.0 is here!
+              How to source-git?
             </h1>
           
 
@@ -592,155 +598,187 @@
 
 
 
-<p>Our sprint nears an end which means we have released <a href="https://github.com/packit-service/packit/releases/tag/0.2.0">a new version of packit -
-0.2.0</a>! You can
-expect a new release after every sprint (i.e. every 2 weeks).</p>
 
-<p>The 0.2.0 version has a bunch of new features and improvements: you can find
-a complete list <a href="https://github.com/packit-service/packit/blob/master/CHANGELOG.md#020">in the
-changelog</a>.
-We also have a <a href="https://github.com/packit-service/packit#workflows-covered-by-packit">detailed
-documentation</a>
-for all the workflows packit covers.</p>
 
-<p>Let&rsquo;s get through what&rsquo;s new:</p>
+<p>This is a practical introduction to source-git using a real example.</p>
+
+<p>If you are interested in the theory behind source-git, please read <a href="/source-git/">the
+specification</a>.</p>
+
+<h2 id="let-s-create-a-source-git-repo">Let&rsquo;s create a source-git repo</h2>
+
+<p>I choose systemd from Fedora 29 for this example.</p>
+
+<h3 id="what-do-we-need">What do we need?</h3>
+
+<p>3 things:</p>
 
 <ol>
-<li>We have decided to rename two keys in our config file so they are more
-descriptive. Old names still work but they are deprecated:
-
-<ul>
-<li><code>package_name</code> → <code>downstream_package_name</code></li>
-<li><code>upstream_name</code> → <code>upstream_project_name</code></li>
-</ul></li>
-<li>You don&rsquo;t need to touch dist-git at all when getting your new upstream
-release into Fedora, you can stay in your upstream repository and just fire
-off a bunch of packit calls:
-
-<ul>
-<li><code>packit propose-update</code> to create a pull request in Fedora dist-git with
-the selected upstream release</li>
-<li><code>packit build</code> to build the new upstream release once the pull request is
-merged</li>
-<li>and finally, <code>packit create-update</code> creates a new bodhi update (if you
-chose a stable Fedora release)</li>
-</ul></li>
-<li>Packit now has a <code>srpm</code> command which creates an SRPM out of the local
-content of your upstream repository.</li>
-<li>You can now use packit to sync files from your dist-git repo back into
-upstream (mainly to keep spec files in sync). <code>sync-from-downstream</code> is the
-command.</li>
-<li>Command <code>propose-update</code> received numerous improvements:
-
-<ul>
-<li>You can pick upstream version to use.</li>
-<li>Packit will NOT check out the git ref with the upstream release if you
-specify <code>--local-content</code></li>
-<li>It&rsquo;s possible to force packit to execute <code>fedpkg new-sources</code> using
-<code>--force-new-sources</code> and bypass the caching mechanism.</li>
-</ul></li>
+<li>Systemd upstream repo.</li>
+<li>Fedora 29 dist-git repo of systemd.</li>
+<li>New local git repo.</li>
 </ol>
 
-<h2 id="installation">Installation</h2>
+<p>Let&rsquo;s set all of this up. We&rsquo;ll start with an empty git repository:</p>
 
-<p>Please make sure you are installing <code>0.2.0</code>:</p>
-
-<pre><code>$ dnf install --enablerepo=updates-testing packit
+<pre><code class="language-bash">$ mkdir systemd-source-git
+$ cd systemd-source-git
+$ git init .
+Initialized empty Git repository in /home/tt/t/systemd-source-git/.git/
 </code></pre>
 
-<p>Or</p>
+<p>We&rsquo;ll add fedora and upstream remotes, and then we&rsquo;ll fetch them:</p>
 
-<pre><code>$ pip3 install --user packitos
+<pre><code class="language-bash">$ git remote add upstream https://github.com/systemd/systemd.git
+$ git remote add fedora ssh://ttomecek@pkgs.fedoraproject.org/rpms/systemd.git
+$ git fetch -q upstream
+$ git fetch -q fedora
 </code></pre>
 
-<p>You can also install packit from master branch, if you are brave enough:</p>
+<p>Systemd also has a dedicated repository with backports to the older releases.
+This is how systemd is packaged in Fedora.</p>
 
-<pre><code>$ pip3 install --user git+https://github.com/packit-service/packit
+<pre><code class="language-bash">$ git remote add upstream-stable https://github.com/systemd/systemd-stable.git
+$ git fetch -q upstream-stable
 </code></pre>
 
-<h2 id="how-are-we-using-packit">How are we using packit?</h2>
+<h3 id="we-can-start-now">We can start now</h3>
 
-<p>I&rsquo;d like to show you how we used packit to bring a new upstream
-release of ogr into Fedora, a library which packit is using.</p>
+<p>Usually you would try to figure which upstream release is used so that you know
+what to choose for the base. But systemd in Fedora is not using the pristine
+upstream archives.</p>
 
-<p>Once we have performed an upstream release of ogr, we can propose an update in
-dist-git:</p>
+<p>When we open the Fedora 29 systemd spec file, we can see that upstream uses
+commit hash <code>8bca4621fc003a148c70248c55aa877dfe61fd3f</code> for the upstream tarball
+from the systemd-stable repo. We&rsquo;ll start a new git branch in our repo named
+<code>239-sg</code> (sg as source-git):</p>
 
-<pre><code>$ git clone https://github.com/packit-service/ogr &amp;&amp; cd ogr/
-
-$ packit propose-update
-INFO: Running 'anitya' versioneer
-Version in upstream registries is '0.0.3'.
-Version in spec file is '0.0.3'.
-Picking version of the latest release from the upstream registry over spec file.
-Checking out upstream version 0.0.3
-Using 'master' dist-git branch
-Cloning repo: https://src.fedoraproject.org/rpms/python-ogr.git -&gt; /tmp/tmpb9xlvdhj
-Syncing /home/tt/g/user-cont/ogr/python-ogr.spec
-Archive ogr-0.0.3.tar.gz found in lookaside cache (skipping upload).
-ERROR    Cmd('git') failed due to: exit code(1)
-  cmdline: git commit -s -m [packit] 0.0.3 upstream release -m Upstream tag: 0.0.3
-Upstream commit: 059d21080a7849acff4626b6e0ec61830d537ac4
-
-  stdout: 'On branch 0.0.3-master-update
-nothing to commit, working tree clean'
+<pre><code class="language-bash">$ git checkout -B 239-sg 8bca4621fc003a148c70248c55aa877dfe61fd3f
+Switched to a new branch '239-sg'
 </code></pre>
 
-<p>Whoops, it seems that I have messed up, I forgot to bump the spec file in the
-upstream repo when doing the release. I will bump it locally and utilize
-<code>--local-content</code> argument:</p>
+<p>Right now we have the upstream history which lead to the 239 release.
+Alternatively we could just unpack the upstream tarball and have the history in
+a single commit.</p>
 
-<pre><code>$ rpmdev-bumpspec -n 0.1.0 -c 'New upstream release: 0.1.0' *.spec
+<p>In this case, the upstream history is not marked in a any way, so let&rsquo;s tag it:</p>
 
-$ packit propose-update --local-content
-INFO: Running 'anitya' versioneer
-Version in upstream registries is '0.0.3'.
-Version in spec file is '0.1.0'.
-Picking version of the latest release from the upstream registry over spec file.
-Using 'master' dist-git branch
-Cloning repo: https://src.fedoraproject.org/rpms/python-ogr.git -&gt; /tmp/tmpd9j4se27
-Syncing /home/tt/g/user-cont/ogr/python-ogr.spec
-Archive ogr-0.1.0.tar.gz found in lookaside cache (skipping upload).
-INFO: Downloading file from URL https://files.pythonhosted.org/packages/source/o/ogr/ogr-0.1.0.tar.gz
-100%[=============================&gt;]    20.25K  eta 00:00:00
-Downloaded archive: '/tmp/tmpd9j4se27/ogr-0.1.0.tar.gz'
-About to upload to lookaside cache
-won't be doing kinit, no credentials provided
-PR created: https://src.fedoraproject.org/rpms/python-ogr/pull-request/6
+<pre><code class="language-bash">$ git tag upstream-239 HEAD
 </code></pre>
 
-<p>Once the scratch build is done and tests passed we merged and built it:</p>
+<p>Packit will be able to distinguish between additional source-git
+content and upstream history.</p>
 
-<pre><code>$ packit build
-Using 'master' dist-git branch
-Cloning repo: https://src.fedoraproject.org/rpms/python-ogr.git -&gt; /tmp/tmprp3cmdjy
-Building python-ogr-0.1.0-1.fc31 for rawhide
-Created task: 33616980
-Task info: https://koji.fedoraproject.org/koji/taskinfo?taskID=33616980
+<p>We can start layering downstream content on top.</p>
+
+<h3 id="layering-downstream-content-on-top-of-upstream">Layering downstream content on top of upstream</h3>
+
+<p>Let&rsquo;s get files from the <code>fedora/f29</code> branch.</p>
+
+<pre><code class="language-bash">$ git checkout fedora/f29 -- .
+$ git status
+On branch 239-sg
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+        modified:   .gitignore
+        new file:   0001-Revert-journald-periodically-drop-cache-for-all-dead.patch
+        new file:   0998-resolved-create-etc-resolv.conf-symlink-at-runtime.patch
+        new file:   20-grubby.install
+        new file:   20-yama-ptrace.conf
+        new file:   inittab
+        new file:   purge-nobody-user
+        new file:   sources
+        new file:   split-files.py
+        new file:   sysctl.conf.README
+        new file:   systemd-journal-gatewayd.xml
+        new file:   systemd-journal-remote.xml
+        new file:   systemd-udev-trigger-no-reload.conf
+        new file:   systemd-user
+        new file:   systemd.spec
+        new file:   triggers.systemd
+        new file:   yum-protect-systemd.conf
 </code></pre>
 
-<p>We have done the same for F30 and F29.</p>
+<p>We have a bunch of new files from f29 branch in the root. We&rsquo;ll move them now
+to the <code>fedora/</code> directory:</p>
 
-<p>The previous commands were ran in the directory of the upstream repository. Packit also accepts path to your upstream clone, or even URL. So let&rsquo;s create a bodhi update for python-ogr by specifying the upstream repo URL:</p>
-
-<pre><code>$ cd $HOME
-
-$ packit create-update --dist-git-branch f29 https://github.com/packit-service/ogr
-Cloning repo: https://github.com/packit-service/ogr -&gt; /tmp/tmpdkdadmn_
-Koji builds for package python-ogr and koji tag f29-updates-candidate:
- - python-ogr-0.1.0-1.fc29
-Cloning repo: https://src.fedoraproject.org/rpms/python-ogr.git -&gt; /tmp/tmpn1809ec9
-Bodhi update FEDORA-2019-78948e62d2:
-- https://bodhi.fedoraproject.org/updates/FEDORA-2019-78948e62d2
-- stable_karma: 3
-- unstable_karma: -3
-- notes:
-New upstream release: 0.1.0
+<pre><code class="language-bash">$ mkdir fedora
+$ mv $(git diff --name-only --cached) fedora/
 </code></pre>
 
-<p>And that&rsquo;s it, no need to access dist-git any more.</p>
+<p>and we should also clean our working tree:</p>
 
-<p>Please give packit a try and let us know what you think.</p>
+<pre><code class="language-bash">$ git reset HEAD .
+Unstaged changes after reset:
+M       .gitignore
+
+$ git checkout .gitignore
+</code></pre>
+
+<p>&hellip;and commit the fedora content now:</p>
+
+<pre><code class="language-bash">$ git add fedora
+</code></pre>
+
+<p>We don&rsquo;t want to commit those two patch files:</p>
+
+<pre><code>$ git reset HEAD fedora/0001-Revert-journald-periodically-drop-cache-for-all-dead.patch fedora/0998-resolved-create-etc-resolv.conf-symlink-at-runtime.patch
+</code></pre>
+
+<p>We can now commit the files in <code>fedora/</code> directory:</p>
+
+<pre><code>$ git commit -m 'add fedora packaging'
+[239-sg 20548da6d9] add fedora packaging
+ 15 files changed, 2901 insertions(+)
+ create mode 100644 fedora/.gitignore
+ create mode 100755 fedora/20-grubby.install
+ create mode 100644 fedora/20-yama-ptrace.conf
+ create mode 100644 fedora/inittab
+ create mode 100755 fedora/purge-nobody-user
+ create mode 100644 fedora/sources
+ create mode 100644 fedora/split-files.py
+ create mode 100644 fedora/sysctl.conf.README
+ create mode 100644 fedora/systemd-journal-gatewayd.xml
+ create mode 100644 fedora/systemd-journal-remote.xml
+ create mode 100644 fedora/systemd-udev-trigger-no-reload.conf
+ create mode 100644 fedora/systemd-user
+ create mode 100644 fedora/systemd.spec
+ create mode 100644 fedora/triggers.systemd
+ create mode 100644 fedora/yum-protect-systemd.conf
+</code></pre>
+
+<h3 id="applying-downstream-patches">Applying downstream patches</h3>
+
+<p>We are getting to the core of source-git: we work with code in it, not with
+patches. Hence we need to apply the downstream patches:</p>
+
+<pre><code>$ git am fedora/0001-Revert-journald-periodically-drop-cache-for-all-dead.patch
+Applying: Revert &quot;journald: periodically drop cache for all dead PIDs&quot;
+
+$ git am fedora/0998-resolved-create-etc-resolv.conf-symlink-at-runtime.patch
+Applying: resolved: create /etc/resolv.conf symlink at runtime
+
+$ git log --oneline| head -n 2
+bcc2c8a292 resolved: create /etc/resolv.conf symlink at runtime
+1d39b39df9 Revert &quot;journald: periodically drop cache for all dead PIDs&quot;
+</code></pre>
+
+<p>And that&rsquo;s it, this is our source-git repo! You can check it out over
+<a href="https://github.com/packit-service/systemd-source-git">here</a>.</p>
+
+<p>Once we finish source-git related code in packit, you&rsquo;d be able then to work
+exclusively in source-git, getting results from tests and other testing systems
+directly on pull requests.</p>
+
+<h2 id="wrap-up">Wrap up</h2>
+
+<p>As you can see, it is a lot of work to create the source-git repo. We are
+planning on automating it — creating a dedicated command in packit.</p>
+
+<p>We also have a bunch of packit code related to source-git already done, but the
+overall experience is not done end-to-end.</p>
+
 
 <footer class=" footline" >
 	
@@ -778,6 +816,22 @@ New upstream release: 0.1.0
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
                         
                         
                     
@@ -786,7 +840,73 @@ New upstream release: 0.1.0
 
                     
                     
+                    
+
+                    
+            
+        
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
                     
                     
 
@@ -868,6 +988,28 @@ New upstream release: 0.1.0
                     
 
                     
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -904,113 +1046,6 @@ New upstream release: 0.1.0
             
             
                 
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1099,10 +1134,10 @@ New upstream release: 0.1.0
 	 
 	 
 		
-			<a class="nav nav-prev" href="/posts/packit-010/" title="Initial version (0.1.0) of packit is out!"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/docs/configuration/" title="Configuration for packit"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/posts/packit-030/" title="Packit 0.3.0" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/docs/cli/" title="Packit CLI Commands" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>Packit 0.2.0 is here! :: Packit</title>
+    <title>sync-from-downstream :: Packit</title>
 
     
     <link href="/css/nucleus.css?1562769428" rel="stylesheet">
@@ -39,7 +39,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/posts/packit-020/">
+  <body class="" data-url="/docs/cli/sync-from-downstream/">
     <nav id="sidebar" class="">
 
 
@@ -80,7 +80,7 @@
   
     
     <li data-nav-id="/docs/" title="Packit user documentation" class="dd-item 
-        
+        parent
         
         
         ">
@@ -183,7 +183,7 @@
   
     
     <li data-nav-id="/docs/cli/" title="Packit CLI Commands" class="dd-item 
-        
+        parent
         
         
         ">
@@ -283,7 +283,7 @@
  
   
     
-      <li data-nav-id="/docs/cli/sync-from-downstream/" title="sync-from-downstream" class="dd-item ">
+      <li data-nav-id="/docs/cli/sync-from-downstream/" title="sync-from-downstream" class="dd-item active">
         <a href="/docs/cli/sync-from-downstream/">
         sync-from-downstream
         
@@ -319,7 +319,7 @@
   
     
     <li data-nav-id="/posts/" title="Posts" class="dd-item 
-        parent
+        
         
         
         ">
@@ -362,7 +362,7 @@
  
   
     
-      <li data-nav-id="/posts/packit-020/" title="Packit 0.2.0 is here!" class="dd-item active">
+      <li data-nav-id="/posts/packit-020/" title="Packit 0.2.0 is here!" class="dd-item ">
         <a href="/posts/packit-020/">
         Packit 0.2.0 is here!
         
@@ -547,7 +547,13 @@
             
           
           
-            <a href='/'>About</a> > <a href='/posts/'>Posts</a> > Packit 0.2.0 is here!
+            
+            
+          
+          
+            <a href='/'>About</a> > <a href='/docs/'>Packit user documentation</a> > <a href='/docs/cli/'>Packit CLI Commands</a> > sync-from-downstream
+          
+         
           
          
           
@@ -564,8 +570,9 @@
 <ul>
 <li>
 <ul>
-<li><a href="#installation">Installation</a></li>
-<li><a href="#how-are-we-using-packit">How are we using packit?</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#tutorial">Tutorial</a></li>
+<li><a href="#packit-sync-from-downstream-help">packit sync-from-downstream &ndash;help</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -584,7 +591,7 @@
           
             <h1>
               
-              Packit 0.2.0 is here!
+              sync-from-downstream
             </h1>
           
 
@@ -592,155 +599,81 @@
 
 
 
-<p>Our sprint nears an end which means we have released <a href="https://github.com/packit-service/packit/releases/tag/0.2.0">a new version of packit -
-0.2.0</a>! You can
-expect a new release after every sprint (i.e. every 2 weeks).</p>
 
-<p>The 0.2.0 version has a bunch of new features and improvements: you can find
-a complete list <a href="https://github.com/packit-service/packit/blob/master/CHANGELOG.md#020">in the
-changelog</a>.
-We also have a <a href="https://github.com/packit-service/packit#workflows-covered-by-packit">detailed
-documentation</a>
-for all the workflows packit covers.</p>
 
-<p>Let&rsquo;s get through what&rsquo;s new:</p>
+<p>This is a detailed documentation for the downstream sync functionality of packit. The
+command creates a new pull request in upstream repository using a
+selected branch (master by default) from Fedora dist-git repository.</p>
+
+<h2 id="requirements">Requirements</h2>
+
+<ul>
+<li>Fedora dist-git repository.</li>
+<li>Packit config file placed in the upstream repository.</li>
+<li>Pagure API tokens for Fedora Dist-git.</li>
+<li>Github API token.</li>
+</ul>
+
+<h2 id="tutorial">Tutorial</h2>
 
 <ol>
-<li>We have decided to rename two keys in our config file so they are more
-descriptive. Old names still work but they are deprecated:
+<li><p>Pagure dist-git is configured in a way that it requires 2 API tokens in
+order to perform a pull request using the API (which packit is using).
+Please set these three environment variables using the appropriate tokens:</p>
 
-<ul>
-<li><code>package_name</code> → <code>downstream_package_name</code></li>
-<li><code>upstream_name</code> → <code>upstream_project_name</code></li>
-</ul></li>
-<li>You don&rsquo;t need to touch dist-git at all when getting your new upstream
-release into Fedora, you can stay in your upstream repository and just fire
-off a bunch of packit calls:
+<ol>
+<li><code>export PAGURE_USER_TOKEN=&lt;token&gt;</code> — this token is needed to access data
+in pagure. This is meant to be an API token of your user:
+<a href="https://src.fedoraproject.org/settings#nav-api-tab">https://src.fedoraproject.org/settings#nav-api-tab</a></li>
+<li><code>export PAGURE_FORK_TOKEN=&lt;token&gt;</code> — packit needs this token to create a
+pull request:
+<a href="https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab">https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab</a>
+If the fork does not exist, you have to create it in Pagure&rsquo;s web
+interface. We are working with Fedora team to relax this requirement.</li>
+<li><code>export GITHUB_TOKEN=&lt;token&gt;</code> — you can obtain the token over here:
+<a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></li>
+</ol></li>
 
-<ul>
-<li><code>packit propose-update</code> to create a pull request in Fedora dist-git with
-the selected upstream release</li>
-<li><code>packit build</code> to build the new upstream release once the pull request is
-merged</li>
-<li>and finally, <code>packit create-update</code> creates a new bodhi update (if you
-chose a stable Fedora release)</li>
-</ul></li>
-<li>Packit now has a <code>srpm</code> command which creates an SRPM out of the local
-content of your upstream repository.</li>
-<li>You can now use packit to sync files from your dist-git repo back into
-upstream (mainly to keep spec files in sync). <code>sync-from-downstream</code> is the
-command.</li>
-<li>Command <code>propose-update</code> received numerous improvements:
+<li><p>Files which are synced are mentioned in <code>.packit.yaml</code> as <code>synced_files</code> value.</p></li>
 
-<ul>
-<li>You can pick upstream version to use.</li>
-<li>Packit will NOT check out the git ref with the upstream release if you
-specify <code>--local-content</code></li>
-<li>It&rsquo;s possible to force packit to execute <code>fedpkg new-sources</code> using
-<code>--force-new-sources</code> and bypass the caching mechanism.</li>
-</ul></li>
+<li><p>Once you want to sync Fedora dist-git repo into the upstream repo,
+run <code>packit sync-from-downstream</code> in a working directory of your upstream
+repository:</p>
+
+<pre><code class="language-bash">$ git clone https://github.com/user-cont/colin.git
+
+$ cd colin
+
+$ packit sync-from-downstream
+upstream active branch master
+Cloning repo: https://src.fedoraproject.org/rpms/colin.git -&gt; /tmp/tmph9npe78e
+using master dist-git branch
+syncing /tmp/tmph9npe78e/colin.spec
+PR created: https://api.github.com/repos/phracek/colin/pulls/3
+</code></pre>
+
+<h2 id="packit-sync-from-downstream-help">packit sync-from-downstream &ndash;help</h2>
+
+<pre><code class="language-bash">Usage: packit sync-from-downstream [OPTIONS] [PATH_OR_URL]
+
+Copy synced files from Fedora dist-git into upstream by opening a pull
+request.
+
+PATH_OR_URL argument is a local path or a URL to the upstream git
+repository, it defaults to the current working directory
+
+Options:
+--dist-git-branch TEXT  Source branch in dist-git for sync.
+--upstream-branch TEXT  Target branch in upstream to sync to.
+--no-pr                 Pull request is not create.
+--fork / --no-fork      Push to a fork.
+--remote-name TEXT      Name of the remote where packit should push. if this
+                      is not specified, it pushes to a fork if the repo
+                      can be forked.
+-h, --help              Show this message and exit.
+</code></pre></li>
 </ol>
 
-<h2 id="installation">Installation</h2>
-
-<p>Please make sure you are installing <code>0.2.0</code>:</p>
-
-<pre><code>$ dnf install --enablerepo=updates-testing packit
-</code></pre>
-
-<p>Or</p>
-
-<pre><code>$ pip3 install --user packitos
-</code></pre>
-
-<p>You can also install packit from master branch, if you are brave enough:</p>
-
-<pre><code>$ pip3 install --user git+https://github.com/packit-service/packit
-</code></pre>
-
-<h2 id="how-are-we-using-packit">How are we using packit?</h2>
-
-<p>I&rsquo;d like to show you how we used packit to bring a new upstream
-release of ogr into Fedora, a library which packit is using.</p>
-
-<p>Once we have performed an upstream release of ogr, we can propose an update in
-dist-git:</p>
-
-<pre><code>$ git clone https://github.com/packit-service/ogr &amp;&amp; cd ogr/
-
-$ packit propose-update
-INFO: Running 'anitya' versioneer
-Version in upstream registries is '0.0.3'.
-Version in spec file is '0.0.3'.
-Picking version of the latest release from the upstream registry over spec file.
-Checking out upstream version 0.0.3
-Using 'master' dist-git branch
-Cloning repo: https://src.fedoraproject.org/rpms/python-ogr.git -&gt; /tmp/tmpb9xlvdhj
-Syncing /home/tt/g/user-cont/ogr/python-ogr.spec
-Archive ogr-0.0.3.tar.gz found in lookaside cache (skipping upload).
-ERROR    Cmd('git') failed due to: exit code(1)
-  cmdline: git commit -s -m [packit] 0.0.3 upstream release -m Upstream tag: 0.0.3
-Upstream commit: 059d21080a7849acff4626b6e0ec61830d537ac4
-
-  stdout: 'On branch 0.0.3-master-update
-nothing to commit, working tree clean'
-</code></pre>
-
-<p>Whoops, it seems that I have messed up, I forgot to bump the spec file in the
-upstream repo when doing the release. I will bump it locally and utilize
-<code>--local-content</code> argument:</p>
-
-<pre><code>$ rpmdev-bumpspec -n 0.1.0 -c 'New upstream release: 0.1.0' *.spec
-
-$ packit propose-update --local-content
-INFO: Running 'anitya' versioneer
-Version in upstream registries is '0.0.3'.
-Version in spec file is '0.1.0'.
-Picking version of the latest release from the upstream registry over spec file.
-Using 'master' dist-git branch
-Cloning repo: https://src.fedoraproject.org/rpms/python-ogr.git -&gt; /tmp/tmpd9j4se27
-Syncing /home/tt/g/user-cont/ogr/python-ogr.spec
-Archive ogr-0.1.0.tar.gz found in lookaside cache (skipping upload).
-INFO: Downloading file from URL https://files.pythonhosted.org/packages/source/o/ogr/ogr-0.1.0.tar.gz
-100%[=============================&gt;]    20.25K  eta 00:00:00
-Downloaded archive: '/tmp/tmpd9j4se27/ogr-0.1.0.tar.gz'
-About to upload to lookaside cache
-won't be doing kinit, no credentials provided
-PR created: https://src.fedoraproject.org/rpms/python-ogr/pull-request/6
-</code></pre>
-
-<p>Once the scratch build is done and tests passed we merged and built it:</p>
-
-<pre><code>$ packit build
-Using 'master' dist-git branch
-Cloning repo: https://src.fedoraproject.org/rpms/python-ogr.git -&gt; /tmp/tmprp3cmdjy
-Building python-ogr-0.1.0-1.fc31 for rawhide
-Created task: 33616980
-Task info: https://koji.fedoraproject.org/koji/taskinfo?taskID=33616980
-</code></pre>
-
-<p>We have done the same for F30 and F29.</p>
-
-<p>The previous commands were ran in the directory of the upstream repository. Packit also accepts path to your upstream clone, or even URL. So let&rsquo;s create a bodhi update for python-ogr by specifying the upstream repo URL:</p>
-
-<pre><code>$ cd $HOME
-
-$ packit create-update --dist-git-branch f29 https://github.com/packit-service/ogr
-Cloning repo: https://github.com/packit-service/ogr -&gt; /tmp/tmpdkdadmn_
-Koji builds for package python-ogr and koji tag f29-updates-candidate:
- - python-ogr-0.1.0-1.fc29
-Cloning repo: https://src.fedoraproject.org/rpms/python-ogr.git -&gt; /tmp/tmpn1809ec9
-Bodhi update FEDORA-2019-78948e62d2:
-- https://bodhi.fedoraproject.org/updates/FEDORA-2019-78948e62d2
-- stable_karma: 3
-- unstable_karma: -3
-- notes:
-New upstream release: 0.1.0
-</code></pre>
-
-<p>And that&rsquo;s it, no need to access dist-git any more.</p>
-
-<p>Please give packit a try and let us know what you think.</p>
 
 <footer class=" footline" >
 	
@@ -778,8 +711,6 @@ New upstream release: 0.1.0
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -796,82 +727,8 @@ New upstream release: 0.1.0
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -937,28 +794,6 @@ New upstream release: 0.1.0
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -992,6 +827,21 @@ New upstream release: 0.1.0
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1009,8 +859,92 @@ New upstream release: 0.1.0
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1099,10 +1033,10 @@ New upstream release: 0.1.0
 	 
 	 
 		
-			<a class="nav nav-prev" href="/posts/packit-010/" title="Initial version (0.1.0) of packit is out!"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/docs/cli/srpm/" title="srpm"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/posts/packit-030/" title="Packit 0.3.0" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/posts/" title="Posts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

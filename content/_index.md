@@ -19,7 +19,7 @@ https://github.com/packit-service/packit
 * Packit aims to make things easy and right. But if the default behavior is not
   the right for you, there is still a way around, but may not be that simple.
   For example you can use
-  [actions](/user-docs/actions/)
+  [actions](/docs/actions/)
   to replace default packit's behavior with a script of yours.
 
 * Reuse existing tools and services where it makes sense: don't reinvent the
