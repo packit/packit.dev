@@ -25,7 +25,7 @@ weight = 10
 
 
 [[Languages.en.menu.shortcuts]]
-name = "<i class='fab fa-fw fa-github'></i> Packit as a Service on Marketplace"
+name = "<i class='fab fa-fw fa-github'></i> Packit-as-a-Service GitHub app"
 identifier = "paas"
 url = "https://github.com/apps/packit-as-a-service"
 weight = 11
