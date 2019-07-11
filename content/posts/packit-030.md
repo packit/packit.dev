@@ -22,10 +22,10 @@ improvements of version
 
 * You can now specify your own hooks or actions to replace default packit
   behaviour. (More information can be found [in the
-  documentation](/user-docs/actions/)).
+  documentation](/docs/actions/)).
 * Packit supports pagure.io-based upstream projects.
 * Commands `propose-update` and `sync-from-downstream` supports [copying
-  directories](/user-docs/configuration/#minimal-sample-config).
+  directories](/docs/configuration/#minimal-sample-config).
 * A new command `status`! It displays useful upstream/downstream info.
 * Packit now supports [Source-git](/source-git/). The
   functionality is not available, yet - we will add a CLI interface for it in

@@ -20,7 +20,7 @@ Unfortunately it's still not in the [Marketplace](https://github.com/marketplace
 so [we](https://github.com/packit-service) have been the only one using it so far.
 The service/app submits builds in [copr](https://copr.fedorainfracloud.org/coprs/packit/) and
 once they're done it adds a GitHub status and comment with instructions how to install the builds.
-The service is now configurable via [jobs](/user-docs/configuration/#packit-service-jobs) defined
+The service is now configurable via [jobs](/docs/configuration/#packit-service-jobs) defined
 in configuration file.
 * Packit is now able to check GPG signatures of the upstream commits against configured fingerprints.
 

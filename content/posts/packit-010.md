@@ -69,7 +69,7 @@ version of ogr into Fedora Rawhide, 30 and 29.
 
 ### Do we have everything?
 
-Let's see [guide](/user-docs/cli/propose-update/) for
+Let's see [guide](/docs/cli/propose-update/) for
 the `propose-update` command on what we need:
 
 
