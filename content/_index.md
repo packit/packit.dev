@@ -5,7 +5,7 @@ draft: false
 disableToc: false
 ---
 
-# About
+# Packit
 
 Packit provides tooling and automation to integrate upstream open source projects into Fedora operating system.
 

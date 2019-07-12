@@ -1,5 +1,5 @@
 ---
-title: "Posts"
+title: "Blog Posts"
 draft: false
 ---
 

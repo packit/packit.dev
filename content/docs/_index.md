@@ -1,5 +1,5 @@
 ---
-title: "Packit user documentation"
+title: "Documentation"
 draft: false
 ---
 
