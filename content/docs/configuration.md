@@ -32,7 +32,7 @@ You should place the file in the root of your upstream repo. Packit accepts thes
  `create_tarball_command`  | list of strings | a command which generates upstream tarball in the root of the upstream directory (defaults to `git archive -o "{package_name}-{version}.tar.gz" --prefix "{package_name}-{version}/" HEAD`)
  `current_version_command` | list of strings | a command which prints current upstream version (hint: `git describe`) (defaults to `git describe --tags --match '*.*'`)
  `actions`                 | string:string   | custom actions/hooks overwriting the default behavior of the workflow (more in [Actions](/docs/actions/))
- `jobs`                    | list of dicts   | a list of job definitions for packit service. See below for details
+ `jobs`                    | list of dicts   | a list of job definitions for packit service. See [below](#supported-jobs) for details
  `allowed_gpg_keys`        | list of strings | a list of gpg-key fingerprints; if specified. One of the configured keys have to sign the last commit when syncing release or pull-request. Add GitHub key (`4AEE18F83AFDEB23`) if you want to use this on code merged via GitHub web interface.
 
 
@@ -97,10 +97,19 @@ Jobs can also accept additional configuration in a dict `metadata`.
 
 **copr\_build**
 
-Gather data from new pull_request or release and use trigger new copr build with it.
+Gather data from new pull_request or release and trigger a new copr build with it.
 
-Supported triggers: **pull_request**, **release**.
+Supported triggers:
 
+* **pull_request**
+* **release**
+
+Required metadata: **targets**
+
+Optional metadata:
+
+* **timout** - (seconds) give up watching a build after timeout, defaults to 7200s, i.e. 2 hours
+* **owner**, **project** - custom owner/project hasn't been implemented yet, for progress see [issue#360](https://github.com/packit-service/packit/issues/360)
 
 **Example**
 
@@ -112,9 +121,7 @@ jobs:
     targets:
       - fedora-rawhide-x86_64
       - fedora-30-x86_64
-
 ```
-
 
 **sync\_from\_downstream**
 
@@ -123,7 +130,6 @@ dist-git and send it to upstream repository.
 
 Supported triggers: **commit**.
 
-
 **Example**
 
 ```yaml
@@ -131,7 +137,6 @@ jobs:
 - job: sync_from_downstream
   trigger: commit
 ```
-
 
 ## User configuration file
 
