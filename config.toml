@@ -6,6 +6,7 @@ title = "Packit"
 theme = "hugo-theme-learn"
 defaultContentLanguageInSubdir = false
 paginate = 10
+googleAnalytics = "UA-143669536-1"
 
 [outputs]
 home = ["HTML", "JSON"]
