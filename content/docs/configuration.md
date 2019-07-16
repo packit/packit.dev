@@ -77,6 +77,17 @@ synced_files:
     dest: .
 ```
 
+## Packit-as-a-Service
+
+This section contains info how packit service interacts with configuration file
+placed in your upstream repo.
+
+When you open a pull request against your upstream repository, packit service
+picks up configuration file from your pull request, not from the branch against
+the PR is opened. This way, you can polish your .packit.yaml and see the
+results right away. (for more info, please see [packit-service#48](https://github.com/packit-service/packit-service/issues/48))
+
+
 ### Packit service jobs
 
 Once the service starts handling events of your repository, it needs to have a clear definition of what it should do.
