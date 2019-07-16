@@ -23,7 +23,7 @@ if (!doNotTrack) {
 }
 </script>
 
-    <title>Categories :: Packit</title>
+    <title>copr-build :: Packit</title>
 
     
     <link href="/css/nucleus.css?1563287357" rel="stylesheet">
@@ -53,7 +53,7 @@ if (!doNotTrack) {
     </style>
     
   </head>
-  <body class="" data-url="/categories/">
+  <body class="" data-url="/docs/cli/copr-build/">
     <nav id="sidebar" class="">
 
 
@@ -94,7 +94,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/docs/" title="Documentation" class="dd-item 
-        
+        parent
         
         
         ">
@@ -197,7 +197,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/docs/cli/" title="Packit CLI Commands" class="dd-item 
-        
+        parent
         
         
         ">
@@ -316,7 +316,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/docs/cli/copr-build/" title="copr-build" class="dd-item ">
+      <li data-nav-id="/docs/cli/copr-build/" title="copr-build" class="dd-item active">
         <a href="/docs/cli/copr-build/">
         copr-build
         
@@ -572,7 +572,25 @@ if (!doNotTrack) {
                     
           
           
-            Categories
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>About</a> > <a href='/docs/'>Documentation</a> > <a href='/docs/cli/'>Packit CLI Commands</a> > copr-build
+          
+         
+          
+         
+          
+         
           
         
                  
@@ -581,7 +599,16 @@ if (!doNotTrack) {
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#tutorial">Tutorial</a></li>
+<li><a href="#help">Help</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -597,7 +624,7 @@ if (!doNotTrack) {
           
             <h1>
               
-              Categories
+              copr-build
             </h1>
           
 
@@ -607,15 +634,48 @@ if (!doNotTrack) {
 
 
 
+<p>Submit a <a href="https://copr.fedorainfracloud.org">Copr</a> build of the present content in the upstream repository.</p>
+
+<h2 id="requirements">Requirements</h2>
 
 <ul>
-	
+<li>Upstream git repository on Github.</li>
+<li>Packit config file placed in the upstream repository.</li>
+<li><a href="https://copr.fedorainfracloud.org/api/">~/.config/copr</a></li>
 </ul>
+
+<h2 id="tutorial">Tutorial</h2>
+
+<ol>
+<li><p><a href="/docs/configuration/">Place a config file for packit in the root of your upstream repository.</a></p></li>
+
+<li><p>The command below would create a SRPM from the present content of a repo and perform <code>copr-cli build</code> with it. If you need to specify a project name/owner or chroots, see the options in help.</p>
+
+<pre><code>$ cd my/ustream/project/
+$ packit copr-build
+</code></pre></li>
+</ol>
+
+<h2 id="help">Help</h2>
+
+<pre><code>Usage: packit copr-build [OPTIONS] [PATH_OR_URL]
+
+  Build selected upstream project in COPR.
+
+  PATH_OR_URL argument is a local path or a URL to the upstream git repository, it defaults to the current working directory.
+
+Options:
+  --nowait        Don't wait for build
+  --owner TEXT    Copr user, owner of the project. (defaults to username from ~/.config/copr)
+  --project TEXT  Project name to build in. Will be created if does not exist. (defaults to 'packit-cli-{repo_name}-{branch/commit}')
+  --targets TEXT  Comma separated list of chroots to build in. (defaults to 'fedora-rawhide-x86_64')
+</code></pre>
 
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -648,8 +708,6 @@ if (!doNotTrack) {
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -665,6 +723,9 @@ if (!doNotTrack) {
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -730,6 +791,7 @@ if (!doNotTrack) {
             
                 
                     
+                    
                 
                 
 
@@ -743,21 +805,8 @@ if (!doNotTrack) {
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -834,6 +883,23 @@ if (!doNotTrack) {
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -844,6 +910,9 @@ if (!doNotTrack) {
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -977,8 +1046,10 @@ if (!doNotTrack) {
 	 
 	 
 		
+			<a class="nav nav-prev" href="/docs/cli/sync-from-downstream/" title="sync-from-downstream"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/docs/" title="Documentation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/posts/" title="Blog Posts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1009,3 +1080,4 @@ if (!doNotTrack) {
 
   </body>
 </html>
+

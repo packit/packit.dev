@@ -66,5 +66,16 @@ create_tarball_command: [&amp;quot;python3&amp;quot;, &amp;quot;setup.</descript
 Requirements  Fedora dist-git repository. Packit config file placed in the upstream repository. Pagure API tokens for Fedora Dist-git. Github API token.  Tutorial  Pagure dist-git is configured in a way that it requires 2 API tokens in order to perform a pull request using the API (which packit is using).</description>
     </item>
     
+    <item>
+      <title>copr-build</title>
+      <link>https://packit.dev/docs/cli/copr-build/</link>
+      <pubDate>Tue, 16 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/copr-build/</guid>
+      <description>Submit a Copr build of the present content in the upstream repository.
+Requirements  Upstream git repository on Github. Packit config file placed in the upstream repository. ~/.config/copr  Tutorial  Place a config file for packit in the root of your upstream repository.
+ The command below would create a SRPM from the present content of a repo and perform copr-cli build with it. If you need to specify a project name/owner or chroots, see the options in help.</description>
+    </item>
+    
   </channel>
 </rss>
