@@ -18,8 +18,8 @@
       
       <guid>https://packit.dev/docs/actions/</guid>
       <description>You can probably find yourself in a situation where some part of the packit workflow needs to be tweaked for your package.
-Packit supports some actions, that can be defined in the configuration file. The part of the default behaviour is then skipped, and the configured command is called instead. Packit is able to execute more commands. Each action can accept list of commands.
-There are also some hooks presented &amp;ndash; it works as an action without any default behaviour.</description>
+Packit supports actions, a way to change default implementation for a command of your choice. Packit is able to execute more commands. Each action can accept list of commands.
+All the actions are also executed inside Packit-as-a-Service. The service creates a new sandbox environment where the command is ran.</description>
     </item>
     
     <item>
@@ -32,14 +32,15 @@ There are also some hooks presented &amp;ndash; it works as an action without an
     </item>
     
     <item>
-      <title>Configuration for packit</title>
+      <title>Configuration</title>
       <link>https://packit.dev/docs/configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://packit.dev/docs/configuration/</guid>
-      <description>Project&amp;rsquo;s configuration file Packit uses a configuration file in the upstream repository. The config file is written in YAML language.
+      <description>Packit uses a configuration file in the upstream repository. The config file is written in YAML language.
 You should place the file in the root of your upstream repo. Packit accepts these names:
- .packit.yaml .packit.yml .packit.json packit.yaml packit.yml packit.json  Values    Key name Type Description     specfile_path string relative path to a spec file within the upstream repository (mandatory)   synced_files list of strings a list of relative paths to files in the upstream repo which are meant to be copied to dist-git during an update   upstream_project_name string name of the upstream repository (e.</description>
+ .packit.yaml .packit.yml .packit.json packit.yaml packit.yml packit.json  Both Packit-as-a-Service and packit tool use this configuration file.
+Top level keys    Key name Type Description     specfile_path string relative path to a spec file within the upstream repository (mandatory)   upstream_project_name string name of the upstream repository (e.</description>
     </item>
     
     <item>

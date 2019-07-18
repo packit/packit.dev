@@ -26,20 +26,20 @@ if (!doNotTrack) {
     <title>Actions :: Packit</title>
 
     
-    <link href="/css/nucleus.css?1563287357" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1563287357" rel="stylesheet">
-    <link href="/css/hybrid.css?1563287357" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1563287357" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1563287357" rel="stylesheet">
-    <link href="/css/auto-complete.css?1563287357" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1563287357" rel="stylesheet">
-    <link href="/css/theme.css?1563287357" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1563287357" rel="stylesheet">
+    <link href="/css/nucleus.css?1563443970" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1563443970" rel="stylesheet">
+    <link href="/css/hybrid.css?1563443970" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1563443970" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1563443970" rel="stylesheet">
+    <link href="/css/auto-complete.css?1563443970" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1563443970" rel="stylesheet">
+    <link href="/css/theme.css?1563443970" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1563443970" rel="stylesheet">
     
-      <link href="/css/theme-red.css?1563287357" rel="stylesheet">
+      <link href="/css/theme-red.css?1563443970" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1563287357"></script>
+    <script src="/js/jquery-3.3.1.min.js?1563443970"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -70,14 +70,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1563287357"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1563287357"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1563443970"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1563443970"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/packit.dev\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1563287357"></script>
+<script type="text/javascript" src="/js/search.js?1563443970"></script>
 
     
   </div>
@@ -158,9 +158,9 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/docs/configuration/" title="Configuration for packit" class="dd-item ">
+      <li data-nav-id="/docs/configuration/" title="Configuration" class="dd-item ">
         <a href="/docs/configuration/">
-        Configuration for packit
+        Configuration
         
         </a>
     </li>
@@ -599,8 +599,8 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
-<li><a href="#propose-update">propose-update</a></li>
-<li><a href="#srpm">srpm</a></li>
+<li><a href="#propose-update-command"><code>propose-update</code> command</a></li>
+<li><a href="#creating-srpm">Creating SRPM</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -633,15 +633,19 @@ if (!doNotTrack) {
 <p>You can probably find yourself in a situation where some part of the packit workflow needs to be
 tweaked for your package.</p>
 
-<p>Packit supports some actions, that can be defined in the configuration file.
-The part of the default behaviour is then skipped, and the configured command is called instead.
+<p>Packit supports actions, a way to change default implementation for a command of your choice.
 Packit is able to execute more commands. Each action can accept list of commands.</p>
 
-<p>There are also some hooks presented &ndash; it works as an action without any default behaviour.</p>
+<p>All the actions are also executed inside Packit-as-a-Service. The service
+creates a new sandbox environment where the command is ran.</p>
 
-<p>Currently, there are the following actions that you can use:</p>
+<p>Actions have a default behaviour which you can override, hooks don&rsquo;t have any -
+hooks are a way for you to perform operations after packit does a specific
+event, e.g. clones an upstream repo.</p>
 
-<h3 id="propose-update">propose-update</h3>
+<p>Currently, these are the actions you can use:</p>
+
+<h3 id="propose-update-command"><code>propose-update</code> command</h3>
 
 <table>
 <thead>
@@ -659,7 +663,7 @@ Packit is able to execute more commands. Each action can accept list of commands
 <td>[hook]</td>
 <td><code>post-upstream-clone</code></td>
 <td>upstream git repo</td>
-<td>after cloning of the upstream-repo (master) and before other operation</td>
+<td>after cloning of the upstream repo (master) and before other operations</td>
 <td></td>
 </tr>
 
@@ -667,7 +671,7 @@ Packit is able to execute more commands. Each action can accept list of commands
 <td>[hook]</td>
 <td><code>pre-sync</code></td>
 <td>upstream git repo</td>
-<td>after cloning of the upstream-repo and checkout to the right (release) branch</td>
+<td>after cloning and checkout to the correct (release) branch</td>
 <td></td>
 </tr>
 
@@ -675,7 +679,7 @@ Packit is able to execute more commands. Each action can accept list of commands
 <td></td>
 <td><code>prepare-files</code></td>
 <td>upstream git repo</td>
-<td>after clone and checkout of upstream and dist-git repo</td>
+<td>after cloning, checking out of both upstream and dist-git repos</td>
 <td>replace patching and archive generation</td>
 </tr>
 
@@ -705,7 +709,9 @@ Packit is able to execute more commands. Each action can accept list of commands
 </tbody>
 </table>
 
-<h3 id="srpm">srpm</h3>
+<h3 id="creating-srpm">Creating SRPM</h3>
+
+<p>These applies to <code>srpm</code> command and building in COPR.</p>
 
 <table>
 <thead>
@@ -723,7 +729,7 @@ Packit is able to execute more commands. Each action can accept list of commands
 <td>[hook]</td>
 <td><code>post-upstream-clone</code></td>
 <td>upstream git repo</td>
-<td>after cloning of the upstream-repo (master) and before other operation</td>
+<td>after cloning of the upstream repo (master) and before other operations</td>
 <td></td>
 </tr>
 
@@ -1152,20 +1158,20 @@ actions:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1563287357"></script>
-    <script src="/js/perfect-scrollbar.min.js?1563287357"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1563287357"></script>
-    <script src="/js/jquery.sticky.js?1563287357"></script>
-    <script src="/js/featherlight.min.js?1563287357"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1563287357"></script>
-    <script src="/js/highlight.pack.js?1563287357"></script>
+    <script src="/js/clipboard.min.js?1563443970"></script>
+    <script src="/js/perfect-scrollbar.min.js?1563443970"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1563443970"></script>
+    <script src="/js/jquery.sticky.js?1563443970"></script>
+    <script src="/js/featherlight.min.js?1563443970"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1563443970"></script>
+    <script src="/js/highlight.pack.js?1563443970"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1563287357"></script>
-    <script src="/js/learn.js?1563287357"></script>
-    <script src="/js/hugo-learn.js?1563287357"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1563443970"></script>
+    <script src="/js/learn.js?1563443970"></script>
+    <script src="/js/hugo-learn.js?1563443970"></script>
 
-    <link href="/mermaid/mermaid.css?1563287357" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1563287357"></script>
+    <link href="/mermaid/mermaid.css?1563443970" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1563443970"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
