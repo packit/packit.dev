@@ -23,23 +23,23 @@ if (!doNotTrack) {
 }
 </script>
 
-    <title>Configuration for packit :: Packit</title>
+    <title>Configuration :: Packit</title>
 
     
-    <link href="/css/nucleus.css?1563287357" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1563287357" rel="stylesheet">
-    <link href="/css/hybrid.css?1563287357" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1563287357" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1563287357" rel="stylesheet">
-    <link href="/css/auto-complete.css?1563287357" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1563287357" rel="stylesheet">
-    <link href="/css/theme.css?1563287357" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1563287357" rel="stylesheet">
+    <link href="/css/nucleus.css?1563443970" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1563443970" rel="stylesheet">
+    <link href="/css/hybrid.css?1563443970" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1563443970" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1563443970" rel="stylesheet">
+    <link href="/css/auto-complete.css?1563443970" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1563443970" rel="stylesheet">
+    <link href="/css/theme.css?1563443970" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1563443970" rel="stylesheet">
     
-      <link href="/css/theme-red.css?1563287357" rel="stylesheet">
+      <link href="/css/theme-red.css?1563443970" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1563287357"></script>
+    <script src="/js/jquery-3.3.1.min.js?1563443970"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -70,14 +70,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1563287357"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1563287357"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1563443970"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1563443970"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/packit.dev\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1563287357"></script>
+<script type="text/javascript" src="/js/search.js?1563443970"></script>
 
     
   </div>
@@ -158,9 +158,9 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/docs/configuration/" title="Configuration for packit" class="dd-item active">
+      <li data-nav-id="/docs/configuration/" title="Configuration" class="dd-item active">
         <a href="/docs/configuration/">
-        Configuration for packit
+        Configuration
         
         </a>
     </li>
@@ -580,7 +580,7 @@ if (!doNotTrack) {
             
           
           
-            <a href='/'>About</a> > <a href='/docs/'>Documentation</a> > Configuration for packit
+            <a href='/'>About</a> > <a href='/docs/'>Documentation</a> > Configuration
           
          
           
@@ -597,9 +597,8 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
-<li><a href="#project-s-configuration-file">Project&rsquo;s configuration file</a>
+<li><a href="#top-level-keys">Top level keys</a>
 <ul>
-<li><a href="#values">Values</a></li>
 <li><a href="#minimal-sample-config">Minimal sample config</a></li>
 <li><a href="#more-examples-of-synced-files">More examples of <code>synced_files</code></a></li>
 </ul></li>
@@ -612,8 +611,11 @@ if (!doNotTrack) {
 </ul></li>
 <li><a href="#user-configuration-file">User configuration file</a>
 <ul>
-<li><a href="#values-1">Values</a></li>
-<li><a href="#minimal-sample-config-1">Minimal sample config</a></li>
+<li><a href="#values">Values</a></li>
+<li><a href="#minimal-sample-config-1">Minimal sample config</a>
+<ul>
+<li><a href="#server-side-configuration">Server-side configuration</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -633,7 +635,7 @@ if (!doNotTrack) {
           
             <h1>
               
-              Configuration for packit
+              Configuration
             </h1>
           
 
@@ -642,8 +644,6 @@ if (!doNotTrack) {
 
 
 
-
-<h2 id="project-s-configuration-file">Project&rsquo;s configuration file</h2>
 
 <p>Packit uses a configuration file in the upstream repository. The config file is written in YAML language.</p>
 
@@ -658,7 +658,9 @@ if (!doNotTrack) {
 <li><code>packit.json</code></li>
 </ul>
 
-<h3 id="values">Values</h3>
+<p>Both Packit-as-a-Service and packit tool use this configuration file.</p>
+
+<h2 id="top-level-keys">Top level keys</h2>
 
 <table>
 <thead>
@@ -677,15 +679,21 @@ if (!doNotTrack) {
 </tr>
 
 <tr>
-<td><code>synced_files</code></td>
-<td>list of strings</td>
-<td>a list of relative paths to files in the upstream repo which are meant to be copied to dist-git during an update</td>
+<td><code>upstream_project_name</code></td>
+<td>string</td>
+<td>name of the upstream repository (e.g. in PyPI); this is used in <code>%prep</code> section to generate an archive</td>
 </tr>
 
 <tr>
-<td><code>upstream_project_name</code></td>
-<td>string</td>
-<td>name of the upstream repository (e.g. in PyPI); this is used in <code>%prep</code> section</td>
+<td><code>create_pr</code></td>
+<td>bool</td>
+<td>when doing a new update in Fedora dist-git, should packit create a new pull request (when set to <code>true</code>) or push directly to dist-git (defaults to <code>false</code>)</td>
+</tr>
+
+<tr>
+<td><code>synced_files</code></td>
+<td>list of strings or dicts</td>
+<td>a list of relative paths to files in the upstream repo which are meant to be copied to dist-git during an update</td>
 </tr>
 
 <tr>
@@ -697,7 +705,7 @@ if (!doNotTrack) {
 <tr>
 <td><code>downstream_package_name</code></td>
 <td>string</td>
-<td>name of package in Fedora (mandatory)</td>
+<td>name of the RPM package in Fedora</td>
 </tr>
 
 <tr>
@@ -726,44 +734,48 @@ if (!doNotTrack) {
 
 <tr>
 <td><code>actions</code></td>
-<td>string:string</td>
-<td>custom actions/hooks overwriting the default behavior of the workflow (more in <a href="/docs/actions/">Actions</a>)</td>
+<td>string</td>
+<td>custom actions/hooks overwriting the default behavior of packit (more in <a href="/docs/actions/">Actions</a>)</td>
 </tr>
 
 <tr>
 <td><code>jobs</code></td>
 <td>list of dicts</td>
-<td>a list of job definitions for packit service. See <a href="#supported-jobs">below</a> for details</td>
+<td>a list of job definitions for packit service: see <a href="#supported-jobs">below</a> for details</td>
 </tr>
 
 <tr>
 <td><code>allowed_gpg_keys</code></td>
 <td>list of strings</td>
-<td>a list of gpg-key fingerprints; if specified. One of the configured keys have to sign the last commit when syncing release or pull-request. Add GitHub key (<code>4AEE18F83AFDEB23</code>) if you want to use this on code merged via GitHub web interface.</td>
+<td>a list of gpg-key fingerprints; if specified, one of the configured keys have to sign the last commit when updating in downstream; add GitHub key (<code>4AEE18F83AFDEB23</code>) if you want to use this on code merged via GitHub web interface</td>
 </tr>
 </tbody>
 </table>
 
 <h3 id="minimal-sample-config">Minimal sample config</h3>
 
-<p>This is a sample config which is meant for packit itself.</p>
+<p>This is a sample config which is meant for <a href="https://github.com/packit-service/packit">packit</a> itself.</p>
 
-<pre><code class="language-yaml">specfile_path: packit.spec
+<pre><code class="language-yaml"># we have the specfile in the root of our repository
+specfile_path: packit.spec
+# when doing an update in Fedora, we want to copy the spec file and the config file
 synced_files:
   - packit.spec
+  - .packit.yaml
+# packit is named packitos on PyPI b/c packit name was already taken
 upstream_project_name: packitos
+# yes, packit is named packit in Fedora
 downstream_package_name: packit
 </code></pre>
 
 <h3 id="more-examples-of-synced-files">More examples of <code>synced_files</code></h3>
 
 <pre><code class="language-yaml">synced_files:
-
-  # Copy a file from root of the upstream repo to dist-git.
+  # copy a file from root of the upstream repo to dist-git
   - packit.spec
 
-  # If you copy packit.yaml downstream, you can then take advantage of
-  # `sync-from-downstream` command.
+  # if you copy packit.yaml downstream, you can then take advantage of
+  # `sync-from-downstream` command
   - .packit.yaml
 
   # src: a file in root of the upstream repository
@@ -771,12 +783,12 @@ downstream_package_name: packit
   - src: packit.spec
     dest: redhat/packit.spec
 
-  # Also supports globbing: copy everything from fedora-packaging folder and
-  # put it to the root of the dist-git repo.
+  # also supports globbing: copy everything from fedora-packaging folder and
+  # put it to the root of the dist-git repo
   - src: fedora-packaging/*
     dest: .
 
-  # You can specify multiple source files as well:
+  # you can specify multiple source files as well:
   - src:
     - package.spec
     - some-file
@@ -785,8 +797,8 @@ downstream_package_name: packit
 
 <h2 id="packit-as-a-service">Packit-as-a-Service</h2>
 
-<p>This section contains info how packit service interacts with configuration file
-placed in your upstream repo.</p>
+<p>As of July 2019, packit service doesn&rsquo;t have any web interface, so the only way
+to change its behaviour is via the config file you just read about.</p>
 
 <p>When you open a pull request against your upstream repository, packit service
 picks up configuration file from your pull request, not from the branch against
@@ -795,9 +807,15 @@ results right away. (for more info, please see <a href="https://github.com/packi
 
 <h3 id="packit-service-jobs">Packit service jobs</h3>
 
-<p>Once the service starts handling events of your repository, it needs to have a clear definition of what it should do.</p>
+<p>Once the service starts handling events of your repository, it needs to have a
+clear definition of what it should do.</p>
 
-<p>The tasks the packit service should do are defined in section <code>jobs</code>. This is a list of dicts.</p>
+<p>The tasks the packit service should do are defined in section <code>jobs</code>. The section is a list of dicts:</p>
+
+<pre><code class="language-yaml">jobs:
+- {key: value}
+- {}
+</code></pre>
 
 <p>Every job has two mandatory keys:</p>
 
@@ -808,29 +826,50 @@ results right away. (for more info, please see <a href="https://github.com/packi
 
 <p>Every job only supports a specific set of triggers.</p>
 
-<p>Jobs can also accept additional configuration in a dict <code>metadata</code>.</p>
+<p>Jobs can also accept additional configuration in a key <code>metadata</code> which has dict as a value:</p>
+
+<pre><code class="language-yaml">jobs:
+- job: some-job
+  trigger: ran-out-of-beer
+  metadata:
+    key: value
+</code></pre>
 
 <h4 id="supported-jobs">Supported jobs</h4>
 
 <p><strong>copr_build</strong></p>
 
-<p>Gather data from new pull_request or release and trigger a new copr build with it.</p>
+<p>Create a SRPM and submit an RPM build to <a href="https://copr.fedorainfracloud.org/">Fedora COPR</a> build system.</p>
 
 <p>Supported triggers:</p>
 
 <ul>
-<li><strong>pull_request</strong></li>
-<li><strong>release</strong></li>
+<li><strong>pull_request</strong> &ndash; check out content of the pull request</li>
+<li><strong>release</strong> &ndash; check out content of the tag associated with the release</li>
 </ul>
 
-<p>Required metadata: <strong>targets</strong></p>
+<p>Required metadata:</p>
+
+<ul>
+<li><strong>targets</strong> - a list of mock chroots where to build (if you navigate to
+settings of your COPR project, you&rsquo;ll be able able to see the list of
+available values, alternatively you can install package <code>mock</code> in Fedora and
+see the list via <code>ls -1 /etc/mock/</code>.</li>
+</ul>
 
 <p>Optional metadata:</p>
 
 <ul>
-<li><strong>timout</strong> - (seconds) give up watching a build after timeout, defaults to 7200s, i.e. 2 hours</li>
-<li><strong>owner</strong>, <strong>project</strong> - custom owner/project hasn&rsquo;t been implemented yet, for progress see <a href="https://github.com/packit-service/packit/issues/360">issue#360</a></li>
+<li><strong>timeout</strong> - (seconds) give up watching a build after timeout, defaults to 7200s, i.e. 2 hours</li>
+<li><strong>owner</strong> - a namespace in COPR where the build should happen (defaults to packit)</li>
+<li><strong>project</strong> - a name of the copr project (defaults to <code>&quot;{github_namespace}-{repository_name}-{pr_id}&quot;</code>)</li>
 </ul>
+
+<p>If you want to build in your own COPR namespace, you need to <a href="https://docs.pagure.org/copr.copr/user_documentation.html?highlight=permissions#can-i-give-access-to-my-repo-to-my-team-mate">grant packit
+permissions</a>
+to build inside. The way COPR does this right now is that we, from the packit
+side, need to do a request for permissions. Please reach out to us via
+user-cont-team@redhat.com and we&rsquo;d be glad to help you.</p>
 
 <p><strong>Example</strong></p>
 
@@ -845,7 +884,7 @@ results right away. (for more info, please see <a href="https://github.com/packi
 
 <p><strong>sync_from_downstream</strong></p>
 
-<p>Pick up a change (mass rebuild, proven packager rebuild or fix) from Fedora
+<p>Pick up a change (mass rebuild, proven packager rebuild or a fix) from Fedora
 dist-git and send it to upstream repository.</p>
 
 <p>Supported triggers: <strong>commit</strong>.</p>
@@ -856,6 +895,33 @@ dist-git and send it to upstream repository.</p>
 - job: sync_from_downstream
   trigger: commit
 </code></pre>
+
+<p><strong>propose_downstream</strong></p>
+
+<p>Land a new upstream release in Fedora. This job only makes sure the changes
+happen in Fedora dist-git - no builds. The global key <code>create_pr</code> controls
+whether a pull request is created or changes are pushed directly.</p>
+
+<p>Supported triggers: <strong>release</strong>.</p>
+
+<p>Optional metadata:</p>
+
+<ul>
+<li><strong>dist-git-branch</strong> - a branch in dist-git where packit should work (defaults to <code>master</code>)</li>
+</ul>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-yaml">jobs:
+- job: propose_downstream
+  trigger: release
+- job: propose_downstream
+  trigger: release
+  metadata:
+    dist-git-branch: f30
+</code></pre>
+
+<p>This config would update Fedora Rawhide and Fedora 30 dist-git branches.</p>
 
 <h2 id="user-configuration-file">User configuration file</h2>
 
@@ -874,7 +940,7 @@ environment variable. If not set, it looks inside <code>~/.config/</code> direct
 <li><code>packit.json</code></li>
 </ul>
 
-<h3 id="values-1">Values</h3>
+<h3 id="values">Values</h3>
 
 <table>
 <thead>
@@ -905,12 +971,6 @@ environment variable. If not set, it looks inside <code>~/.config/</code> direct
 </tr>
 
 <tr>
-<td><code>keytab_path</code></td>
-<td>string</td>
-<td>path to a Kerberos keytab file (requires <code>fas_user</code> to be set)</td>
-</tr>
-
-<tr>
 <td><code>github_token</code></td>
 <td>string</td>
 <td>Github API token: this is needed when packit interacts with Github API</td>
@@ -926,6 +986,37 @@ environment variable. If not set, it looks inside <code>~/.config/</code> direct
 <td><code>pagure_fork_token</code></td>
 <td>string</td>
 <td>a token so packit can create a pull request: <a href="https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab">https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>You can also specify the tokens as environment variables: <code>GITHUB_TOKEN</code>, <code>PAGURE_USER_TOKEN</code>, <code>PAGURE_FORK_TOKEN</code>.</p>
+
+<h3 id="minimal-sample-config-1">Minimal sample config</h3>
+
+<pre><code class="language-yaml">debug: true
+github_token: mnbvcxz123456
+pagure_user_token: qwertyuiop098765
+</code></pre>
+
+<h4 id="server-side-configuration">Server-side configuration</h4>
+
+<p>These values are used to configure packit service. No need to bother with them, they serve as a documentation for us, packit service developers.</p>
+
+<table>
+<thead>
+<tr>
+<th>Key name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>keytab_path</code></td>
+<td>string</td>
+<td>path to a Kerberos keytab file (requires <code>fas_user</code> to be set)</td>
 </tr>
 
 <tr>
@@ -947,17 +1038,6 @@ environment variable. If not set, it looks inside <code>~/.config/</code> direct
 </tr>
 </tbody>
 </table>
-
-<p>You can also specify the tokens as environment variables: <code>GITHUB_TOKEN</code>, <code>PAGURE_USER_TOKEN</code>, <code>PAGURE_FORK_TOKEN</code>.</p>
-
-<p>Keys related to Github app are meant for a packit service deployment.</p>
-
-<h3 id="minimal-sample-config-1">Minimal sample config</h3>
-
-<pre><code class="language-yaml">debug: true
-github_token: mnbvcxz123456
-pagure_user_token: qwertyuiop098765
-</code></pre>
 
 
 <footer class=" footline" >
@@ -1343,20 +1423,20 @@ pagure_user_token: qwertyuiop098765
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1563287357"></script>
-    <script src="/js/perfect-scrollbar.min.js?1563287357"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1563287357"></script>
-    <script src="/js/jquery.sticky.js?1563287357"></script>
-    <script src="/js/featherlight.min.js?1563287357"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1563287357"></script>
-    <script src="/js/highlight.pack.js?1563287357"></script>
+    <script src="/js/clipboard.min.js?1563443970"></script>
+    <script src="/js/perfect-scrollbar.min.js?1563443970"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1563443970"></script>
+    <script src="/js/jquery.sticky.js?1563443970"></script>
+    <script src="/js/featherlight.min.js?1563443970"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1563443970"></script>
+    <script src="/js/highlight.pack.js?1563443970"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1563287357"></script>
-    <script src="/js/learn.js?1563287357"></script>
-    <script src="/js/hugo-learn.js?1563287357"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1563443970"></script>
+    <script src="/js/learn.js?1563443970"></script>
+    <script src="/js/hugo-learn.js?1563443970"></script>
 
-    <link href="/mermaid/mermaid.css?1563287357" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1563287357"></script>
+    <link href="/mermaid/mermaid.css?1563443970" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1563443970"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
