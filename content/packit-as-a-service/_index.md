@@ -22,25 +22,15 @@ Packit is also available as a [CLI tool](https://github.com/packit-service/packi
 so you can always try things locally on your own.
 
 
-## Integrating Packit-as-a-Service into your project or organization
+## Integrating Packit-as-a-Service into your project or organization from GitHub Marketplace
 
-There are two ways to install Packit-as-a-Service GitHub app into your repository.
-
-### Install from Packit-as-a-Service page
-1. From the [Packit-service page](https://github.com/apps/packit-as-a-service),
-in the left sidebar, click "Install App" (alternatively, click "Configure" in the right sidebar)
-2. Click "Install" next to the organization or user account containing the correct repository
-3. Install "Packit-as-a-Service" to repositories where you wish to use the service
-
-<!---
-### Install from GitHub Marketplace
 1. Go to [GitHub Marketplace](https://github.com/marketplace)
 2. In section [Continuous integration](https://github.com/marketplace?category=continuous-integration)
 find "Packit-as-a-Service" and select it
 3. On the "Packit-as-a-Service" page, under "Pricing and setup", click "Install it for free"
 4. Click "Complete order and begin installation"
 5. Install the "Packit-as-a-Service" on all repositories or to certain repositories
---->
+
 Once installed, you will see the "Packit-as-a-Service" GitHub application in your project settings.
 In the left sidebar, click "Integration & services" and you will see the apllication displayed there.
 
