@@ -45,7 +45,7 @@ For more info, see
 Packit Service needs the RPM spec file to build your project.
 
 Either you have to include it into your upstream repository or
-if you do not want to have it in your upstream repository, for some reason,
+if you do not want to have it in your upstream repository,
 see section [RPM spec file not in upstream](docs/configuration/#spec-file-not-in-upstream)
 
 ### How to check Packit Service works in your project?
