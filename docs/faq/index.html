@@ -23,7 +23,7 @@ if (!doNotTrack) {
 }
 </script>
 
-    <title>propose-update :: Packit</title>
+    <title>FAQ :: Packit</title>
 
     
     <link href="/css/nucleus.css?1563978887" rel="stylesheet">
@@ -53,7 +53,7 @@ if (!doNotTrack) {
     </style>
     
   </head>
-  <body class="" data-url="/docs/cli/propose-update/">
+  <body class="" data-url="/faq/">
     <nav id="sidebar" class="">
 
 
@@ -94,7 +94,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/docs/" title="Documentation" class="dd-item 
-        parent
+        
         
         
         ">
@@ -197,7 +197,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/docs/cli/" title="Packit CLI Commands" class="dd-item 
-        parent
+        
         
         
         ">
@@ -259,7 +259,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/docs/cli/propose-update/" title="propose-update" class="dd-item active">
+      <li data-nav-id="/docs/cli/propose-update/" title="propose-update" class="dd-item ">
         <a href="/docs/cli/propose-update/">
         propose-update
         
@@ -523,8 +523,8 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/faq/" title="FAQ" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/faq/">
@@ -598,19 +598,7 @@ if (!doNotTrack) {
             
           
           
-            
-            
-          
-          
-            
-            
-          
-          
-            <a href='/'>About</a> > <a href='/docs/'>Documentation</a> > <a href='/docs/cli/'>Packit CLI Commands</a> > propose-update
-          
-         
-          
-         
+            <a href='/'>About</a> > FAQ
           
          
           
@@ -625,9 +613,16 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
-<li><a href="#requirements">Requirements</a></li>
-<li><a href="#tutorial">Tutorial</a></li>
-<li><a href="#help">Help</a></li>
+<li><a href="#packit-as-a-service">Packit-as-a-Service</a>
+<ul>
+<li><a href="#can-i-use-the-packit-service-as-soon-as-i-install-it-into-my-repository">Can I use the packit service as soon as I install it into my repository?</a></li>
+<li><a href="#can-i-use-packit-service-for-any-github-repository">Can I use packit service for any GitHub repository?</a></li>
+<li><a href="#how-can-i-contact-you">How can I contact you?</a></li>
+</ul></li>
+<li><a href="#configuration">Configuration</a>
+<ul>
+<li><a href="#rpm-spec-file-not-in-upstream-repository">RPM spec file not in upstream repository</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -646,7 +641,7 @@ if (!doNotTrack) {
           
             <h1>
               
-              propose-update
+              FAQ
             </h1>
           
 
@@ -655,114 +650,59 @@ if (!doNotTrack) {
 
 
 
+	
 
-<p>This is a detailed documentation for the update functionality of packit. The
-command creates a new pull request in Fedora using a selected or latest
-upstream release.</p>
+<h2 id="packit-as-a-service">Packit-as-a-Service</h2>
 
-<h2 id="requirements">Requirements</h2>
+<h3 id="can-i-use-the-packit-service-as-soon-as-i-install-it-into-my-repository">Can I use the packit service as soon as I install it into my repository?</h3>
 
-<ul>
-<li>Upstream git repository on Github.</li>
-<li>Upstream release (read, git tag) where version in spec file is equivalent to
-the name of the git tag.</li>
-<li>Packit config file placed in the upstream repository.</li>
-<li>Spec file present in the upstream repository and is correct in a given
-release.</li>
-<li>Pagure API tokens for Fedora Dist-git.</li>
-<li>Github API token.</li>
-<li>Valid Fedora Kerberos ticket.</li>
-</ul>
+<p>Thanks for your interest in Packit Service!  In order to start using the
+service you need to be whitelisted, which is an action to be done by us.  Once
+we put you on the whitelist, we&rsquo;ll get in touch with you.  We are now
+on-boarding Fedora contributors (with a Fedora Account System account).</p>
 
-<h2 id="tutorial">Tutorial</h2>
+<h3 id="can-i-use-packit-service-for-any-github-repository">Can I use packit service for any GitHub repository?</h3>
 
-<ol>
-<li><p>Place a file called <code>.packit.yaml</code> or <code>packit.yaml</code> in the root of your upstream repository.</p>
+<p>Since packit service builds your PRs in Fedora COPR build service, by using
+Packit-as-a-service, your software needs to comply with <a href="https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr">COPR
+rules</a>.
+If any of these points are violated, we&rsquo;ll remove the builds and may put you on
+a blacklist so you won&rsquo;t be able to use the service again.</p>
 
-<ul>
-<li>The configuration is described <a href="/docs/configuration/">in this document</a>.</li>
-<li>Please get inspired from <a href="https://github.com/user-cont/colin/blob/master/.packit.yaml">an existing config</a> in
-colin project.</li>
-</ul></li>
+<h3 id="how-can-i-contact-you">How can I contact you?</h3>
 
-<li><p>Place a spec file into your upstream project (and make sure that
-<code>specfile_path</code> in the config has a correct value).</p>
+<p>If you encounter a problem while using Packit-as-a-service, please open an <a href="https://github.com/packit-service/packit-service/issues/new">upstream issue</a>. In case of any other questions, feel free to contact us on our mailing list: <strong>user-cont-team@redhat.com</strong>.</p>
 
-<ul>
-<li>This spec file will be then used to perform the update in Fedora.</li>
-<li>When you create a new upstream release, you should also update the spec file.</li>
-<li>Once your upstream release is out (and the spec file is really up to
-date), you can use packit to release it into Fedora.</li>
-</ul></li>
+<h2 id="configuration">Configuration</h2>
 
-<li><p>Create a new upstream release. The spec file needs to be included in the ref
-for upstream release, because packit checks out the tag for the upstream
-release before copying files downstream.</p></li>
+<h3 id="rpm-spec-file-not-in-upstream-repository">RPM spec file not in upstream repository</h3>
 
-<li><p>Pagure dist-git is configured in a way that it requires 2 API tokens in
-order to perform a pull request using the API (which packit is using).
-Please set these three environment variables using the appropriate tokens:</p>
+<p>If you do not want to have the RPM spec file in your upstream repository,
+you can download it in <a href="/docs/actions/">actions</a> section.</p>
 
-<ol>
-<li><code>export PAGURE_USER_TOKEN=&lt;token&gt;</code> — this token is needed to access data
-in pagure. This is meant to be an API token of your user:
-<a href="https://src.fedoraproject.org/settings#nav-api-tab">https://src.fedoraproject.org/settings#nav-api-tab</a></li>
-<li><code>export PAGURE_FORK_TOKEN=&lt;token&gt;</code> — packit needs this token to create a
-pull request:
-<a href="https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab">https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab</a>
-If the fork does not exist, you have to create it in Pagure&rsquo;s web
-interface. We are working with Fedora team to relax this requirement.</li>
-<li><code>export GITHUB_TOKEN=&lt;token&gt;</code> — you can obtain the token over here:
-<a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></li>
-</ol></li>
+<p>Add <a href="/docs/actions/">actions</a> section and
+hook <code>post_upstream_clone</code> into your <code>.packit.yaml</code> configuration file.
+Add a command, <code>wget</code> or <code>curl</code>, for downloading your RPM spec file from Fedora dist-git repository.</p>
 
-<li><p>Once you have performed the upstream release (and the new archive is up),
-run <code>packit propose-update</code> in a working directory of your upstream
-repository:</p>
+<p>The configuration file with downloading the RPM spec file now looks:</p>
 
-<pre><code>$ git clone https://github.com/user-cont/colin.git
-    
-$ cd colin
-    
-$ packit propose-update
-using &quot;master&quot; dist-git branch
-syncing ./colin.spec
-INFO: Downloading file from URL https://files.pythonhosted.org/packages/source/c/colin/colin-0.3.0.tar.gz
-100%[=============================&gt;]     3.18M  eta 00:00:00
-downloaded archive: /tmp/tmpaanrpgjz/colin-0.3.0.tar.gz
-uploading to the lookaside cache
-PR created: https://src.fedoraproject.org/rpms/colin/pull-request/4
-</code></pre></li>
-</ol>
-
-<h2 id="help">Help</h2>
-
-<pre><code class="language-bash">Usage: packit propose-update [OPTIONS] [PATH_OR_URL] [VERSION]
-
-  Release current upstream release into Fedora
-
-  PATH_OR_URL argument is a local path or a URL to the upstream git
-  repository, it defaults to the current working directory
-
-  VERSION argument is optional, the latest upstream version will be used by
-  default
-
-Options:
-  --dist-git-branch TEXT  Target branch in dist-git to release into.
-  --dist-git-path TEXT    Path to dist-git repo to work in. Otherwise clone
-                          the repo in a temporary directory.
-  --local-content         Do not checkout release tag. Use the current state
-                          of the repo.
-  --force-new-sources     Upload the new sources also when the archive is
-                          already in the lookaside cache.
-  -h, --help              Show this message and exit.
+<pre><code class="language-yaml">specfile_path: packit.spec
+synced_files:
+  - packit.spec
+  - .packit.yaml
+upstream_project_name: packitos
+downstream_package_name: packit
+actions:
+    post-upstream-clone: &quot;wget https://src.fedoraproject.org/rpms/packit/raw/master/f/packit.spec&quot;
 </code></pre>
+
+
+
 
 
 <footer class=" footline" >
 	
 </footer>
-
 
         
         </div> 
@@ -795,6 +735,8 @@ Options:
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -810,9 +752,6 @@ Options:
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -878,7 +817,6 @@ Options:
             
                 
                     
-                    
                 
                 
 
@@ -892,8 +830,21 @@ Options:
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -926,26 +877,6 @@ Options:
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1128,6 +1059,7 @@ Options:
             
             
                 
+                    
                     
                 
                 
@@ -1149,10 +1081,10 @@ Options:
 	 
 	 
 		
-			<a class="nav nav-prev" href="/docs/cli/create-bodhi-update/" title="create-bodhi-update"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/source-git/" title="Source-git"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/docs/cli/srpm/" title="srpm" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/docs/" title="Documentation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1183,4 +1115,3 @@ Options:
 
   </body>
 </html>
-

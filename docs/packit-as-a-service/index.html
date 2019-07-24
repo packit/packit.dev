@@ -26,20 +26,20 @@ if (!doNotTrack) {
     <title>Packit-as-a-Service :: Packit</title>
 
     
-    <link href="/css/nucleus.css?1563963414" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1563963414" rel="stylesheet">
-    <link href="/css/hybrid.css?1563963414" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1563963414" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1563963414" rel="stylesheet">
-    <link href="/css/auto-complete.css?1563963414" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1563963414" rel="stylesheet">
-    <link href="/css/theme.css?1563963414" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1563963414" rel="stylesheet">
+    <link href="/css/nucleus.css?1563978887" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1563978887" rel="stylesheet">
+    <link href="/css/hybrid.css?1563978887" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1563978887" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1563978887" rel="stylesheet">
+    <link href="/css/auto-complete.css?1563978887" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1563978887" rel="stylesheet">
+    <link href="/css/theme.css?1563978887" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1563978887" rel="stylesheet">
     
-      <link href="/css/theme-red.css?1563963414" rel="stylesheet">
+      <link href="/css/theme-red.css?1563978887" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1563963414"></script>
+    <script src="/js/jquery-3.3.1.min.js?1563978887"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -70,14 +70,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1563963414"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1563963414"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1563978887"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1563978887"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/packit.dev\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1563963414"></script>
+<script type="text/javascript" src="/js/search.js?1563978887"></script>
 
     
   </div>
@@ -351,6 +351,28 @@ if (!doNotTrack) {
  
   
     
+    <li data-nav-id="/packit-as-a-service/" title="Packit-as-a-Service" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/packit-as-a-service/">
+          Packit-as-a-Service
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
     <li data-nav-id="/posts/" title="Blog Posts" class="dd-item 
         
         
@@ -478,13 +500,13 @@ if (!doNotTrack) {
  
   
     
-    <li data-nav-id="/packit-as-a-service/" title="Packit-as-a-Service" class="dd-item 
-        parent
-        active
+    <li data-nav-id="/source-git/" title="Source-git" class="dd-item 
+        
+        
         
         ">
-      <a href="/packit-as-a-service/">
-          Packit-as-a-Service
+      <a href="/source-git/">
+          Source-git
           
       </a>
       
@@ -500,13 +522,13 @@ if (!doNotTrack) {
  
   
     
-    <li data-nav-id="/source-git/" title="Source-git" class="dd-item 
+    <li data-nav-id="/faq/" title="FAQ" class="dd-item 
         
         
         
         ">
-      <a href="/source-git/">
-          Source-git
+      <a href="/faq/">
+          FAQ
           
       </a>
       
@@ -598,12 +620,6 @@ if (!doNotTrack) {
 <li><a href="#add-rpm-spec-file">Add RPM spec file</a></li>
 <li><a href="#how-to-check-packit-service-works-in-your-project">How to check Packit Service works in your project?</a></li>
 </ul></li>
-<li><a href="#faq">FAQ</a>
-<ul>
-<li><a href="#can-i-use-the-packit-service-as-soon-as-i-install-it-into-my-repository">Can I use the packit service as soon as I install it into my repository?</a></li>
-<li><a href="#can-i-use-packit-service-for-any-github-repository">Can I use packit service for any GitHub repository?</a></li>
-<li><a href="#how-can-i-contact-you">How can I contact you?</a></li>
-</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -673,9 +689,9 @@ For more info, see
 
 <p>Packit Service needs the RPM spec file to build your project.</p>
 
-<p>Either you have to include it into your upstream repository or
-if you do not want to have it in your upstream repository, for some reason,
-see section <a href="docs/configuration/#spec-file-not-in-upstream">RPM spec file not in upstream</a></p>
+<p>Either include it in your upstream repository or
+if you do not want to have it in your upstream repository,
+see section <a href="/faq/#rpm-spec-file-not-in-upstream-repository">RPM spec file not in upstream</a></p>
 
 <h3 id="how-to-check-packit-service-works-in-your-project">How to check Packit Service works in your project?</h3>
 
@@ -686,27 +702,6 @@ pull request in COPR repository and reports back COPR build status to the pull r
 <p>An example of Packit Service pull request:</p>
 
 <p><img src="/packit-service-pr.png" alt="Packit service pull request" /></p>
-
-<h2 id="faq">FAQ</h2>
-
-<h3 id="can-i-use-the-packit-service-as-soon-as-i-install-it-into-my-repository">Can I use the packit service as soon as I install it into my repository?</h3>
-
-<p>Thanks for your interest in Packit Service!  In order to start using the
-service you need to be whitelisted, which is an action to be done by us.  Once
-we put you on the whitelist, we&rsquo;ll get in touch with you.  We are now
-on-boarding Fedora contributors (with a Fedora Account System account).</p>
-
-<h3 id="can-i-use-packit-service-for-any-github-repository">Can I use packit service for any GitHub repository?</h3>
-
-<p>Since packit service builds your PRs in Fedora COPR build service, by using
-Packit-as-a-service, your software needs to comply with <a href="https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr">COPR
-rules</a>.
-If any of these points are violated, we&rsquo;ll remove the builds and may put you on
-a blacklist so you won&rsquo;t be able to use the service again.</p>
-
-<h3 id="how-can-i-contact-you">How can I contact you?</h3>
-
-<p>If you encounter a problem while using Packit-as-a-service, please open an <a href="https://github.com/packit-service/packit-service/issues/new">upstream issue</a>. In case of any other questions, feel free to contact us on our mailing list: <strong>user-cont-team@redhat.com</strong>.</p>
 
 
 
@@ -944,6 +939,26 @@ a blacklist so you won&rsquo;t be able to use the service again.</p>
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -1040,7 +1055,6 @@ a blacklist so you won&rsquo;t be able to use the service again.</p>
             
                 
                     
-                    
                 
                 
 
@@ -1056,9 +1070,6 @@ a blacklist so you won&rsquo;t be able to use the service again.</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1080,10 +1091,10 @@ a blacklist so you won&rsquo;t be able to use the service again.</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/posts/packit-042/" title="Packit 0.4.2"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/docs/cli/copr-build/" title="copr-build"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/source-git/" title="Source-git" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/posts/" title="Blog Posts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1093,20 +1104,20 @@ a blacklist so you won&rsquo;t be able to use the service again.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1563963414"></script>
-    <script src="/js/perfect-scrollbar.min.js?1563963414"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1563963414"></script>
-    <script src="/js/jquery.sticky.js?1563963414"></script>
-    <script src="/js/featherlight.min.js?1563963414"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1563963414"></script>
-    <script src="/js/highlight.pack.js?1563963414"></script>
+    <script src="/js/clipboard.min.js?1563978887"></script>
+    <script src="/js/perfect-scrollbar.min.js?1563978887"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1563978887"></script>
+    <script src="/js/jquery.sticky.js?1563978887"></script>
+    <script src="/js/featherlight.min.js?1563978887"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1563978887"></script>
+    <script src="/js/highlight.pack.js?1563978887"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1563963414"></script>
-    <script src="/js/learn.js?1563963414"></script>
-    <script src="/js/hugo-learn.js?1563963414"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1563978887"></script>
+    <script src="/js/learn.js?1563978887"></script>
+    <script src="/js/hugo-learn.js?1563978887"></script>
 
-    <link href="/mermaid/mermaid.css?1563963414" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1563963414"></script>
+    <link href="/mermaid/mermaid.css?1563978887" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1563978887"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

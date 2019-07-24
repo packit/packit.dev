@@ -3,6 +3,7 @@ title: "Packit-as-a-Service"
 date: 2019-06-22
 draft: false
 disableToc: false
+weight: 2
 ---
 
 Packit-as-a-Service is a [GitHub App](https://developer.github.com/apps/about-apps/)
@@ -46,7 +47,7 @@ Packit Service needs the RPM spec file to build your project.
 
 Either include it in your upstream repository or
 if you do not want to have it in your upstream repository,
-see section [RPM spec file not in upstream](docs/configuration/#spec-file-not-in-upstream)
+see section [RPM spec file not in upstream](/faq/#rpm-spec-file-not-in-upstream-repository)
 
 ### How to check Packit Service works in your project?
 
@@ -58,23 +59,3 @@ An example of Packit Service pull request:
 
 ![Packit service pull request](/packit-service-pr.png)
 
-## FAQ
-
-### Can I use the packit service as soon as I install it into my repository?
-
-Thanks for your interest in Packit Service!  In order to start using the
-service you need to be whitelisted, which is an action to be done by us.  Once
-we put you on the whitelist, we'll get in touch with you.  We are now
-on-boarding Fedora contributors (with a Fedora Account System account).
-
-### Can I use packit service for any GitHub repository?
-
-Since packit service builds your PRs in Fedora COPR build service, by using
-Packit-as-a-service, your software needs to comply with [COPR
-rules](https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr).
-If any of these points are violated, we'll remove the builds and may put you on
-a blacklist so you won't be able to use the service again.
-
-### How can I contact you?
-
-If you encounter a problem while using Packit-as-a-service, please open an [upstream issue](https://github.com/packit-service/packit-service/issues/new). In case of any other questions, feel free to contact us on our mailing list: **user-cont-team@redhat.com**.

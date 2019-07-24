@@ -26,20 +26,20 @@ if (!doNotTrack) {
     <title>Configuration :: Packit</title>
 
     
-    <link href="/css/nucleus.css?1563963414" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1563963414" rel="stylesheet">
-    <link href="/css/hybrid.css?1563963414" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1563963414" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1563963414" rel="stylesheet">
-    <link href="/css/auto-complete.css?1563963414" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1563963414" rel="stylesheet">
-    <link href="/css/theme.css?1563963414" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1563963414" rel="stylesheet">
+    <link href="/css/nucleus.css?1563978887" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1563978887" rel="stylesheet">
+    <link href="/css/hybrid.css?1563978887" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1563978887" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1563978887" rel="stylesheet">
+    <link href="/css/auto-complete.css?1563978887" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1563978887" rel="stylesheet">
+    <link href="/css/theme.css?1563978887" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1563978887" rel="stylesheet">
     
-      <link href="/css/theme-red.css?1563963414" rel="stylesheet">
+      <link href="/css/theme-red.css?1563978887" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1563963414"></script>
+    <script src="/js/jquery-3.3.1.min.js?1563978887"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -70,14 +70,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1563963414"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1563963414"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1563978887"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1563978887"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/packit.dev\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1563963414"></script>
+<script type="text/javascript" src="/js/search.js?1563978887"></script>
 
     
   </div>
@@ -351,6 +351,28 @@ if (!doNotTrack) {
  
   
     
+    <li data-nav-id="/packit-as-a-service/" title="Packit-as-a-Service" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/packit-as-a-service/">
+          Packit-as-a-Service
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
     <li data-nav-id="/posts/" title="Blog Posts" class="dd-item 
         
         
@@ -478,13 +500,13 @@ if (!doNotTrack) {
  
   
     
-    <li data-nav-id="/packit-as-a-service/" title="Packit-as-a-Service" class="dd-item 
+    <li data-nav-id="/source-git/" title="Source-git" class="dd-item 
         
         
         
         ">
-      <a href="/packit-as-a-service/">
-          Packit-as-a-Service
+      <a href="/source-git/">
+          Source-git
           
       </a>
       
@@ -500,13 +522,13 @@ if (!doNotTrack) {
  
   
     
-    <li data-nav-id="/source-git/" title="Source-git" class="dd-item 
+    <li data-nav-id="/faq/" title="FAQ" class="dd-item 
         
         
         
         ">
-      <a href="/source-git/">
-          Source-git
+      <a href="/faq/">
+          FAQ
           
       </a>
       
@@ -602,7 +624,6 @@ if (!doNotTrack) {
 <li><a href="#minimal-sample-config">Minimal sample config</a></li>
 <li><a href="#more-examples-of-synced-files">More examples of <code>synced_files</code></a></li>
 </ul></li>
-<li><a href="#rpm-spec-file-not-in-upstream-repository">RPM spec file not in upstream repository</a></li>
 <li><a href="#packit-as-a-service">Packit-as-a-Service</a>
 <ul>
 <li><a href="#packit-service-jobs">Packit service jobs</a>
@@ -794,30 +815,6 @@ downstream_package_name: packit
     - package.spec
     - some-file
     dest: .
-</code></pre>
-
-<h2 id="rpm-spec-file-not-in-upstream-repository">RPM spec file not in upstream repository</h2>
-
-<p>If you do not want to have the RPM spec file in your upstream repository, for some reason,
-you can download it in <a href="/docs/actions/">actions</a> section.</p>
-
-<p>Add <a href="/docs/actions/">actions</a> section and
-hook <code>post_upstream_clone</code> into your <code>.packit.yaml</code> configuration file.
-Add row for downloading your RPM spec file from Fedora dist-git repository
-with your favorite command.</p>
-
-<p>The configuration file with downloading the RPM spec file now looks:</p>
-
-<pre><code class="language-yaml">specfile_path: packit.spec
-synced_files:
-  - packit.spec
-  - .packit.yaml
-upstream_project_name: packitos
-downstream_package_name: packit
-actions:
-    post_upstream_clone:
-    - wget https://src.fedoraproject.org/rpms/packit/raw/master/f/packit.spec
-
 </code></pre>
 
 <h2 id="packit-as-a-service">Packit-as-a-Service</h2>
@@ -1311,6 +1308,22 @@ pagure_user_token: qwertyuiop098765
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -1448,20 +1461,20 @@ pagure_user_token: qwertyuiop098765
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1563963414"></script>
-    <script src="/js/perfect-scrollbar.min.js?1563963414"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1563963414"></script>
-    <script src="/js/jquery.sticky.js?1563963414"></script>
-    <script src="/js/featherlight.min.js?1563963414"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1563963414"></script>
-    <script src="/js/highlight.pack.js?1563963414"></script>
+    <script src="/js/clipboard.min.js?1563978887"></script>
+    <script src="/js/perfect-scrollbar.min.js?1563978887"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1563978887"></script>
+    <script src="/js/jquery.sticky.js?1563978887"></script>
+    <script src="/js/featherlight.min.js?1563978887"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1563978887"></script>
+    <script src="/js/highlight.pack.js?1563978887"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1563963414"></script>
-    <script src="/js/learn.js?1563963414"></script>
-    <script src="/js/hugo-learn.js?1563963414"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1563978887"></script>
+    <script src="/js/learn.js?1563978887"></script>
+    <script src="/js/hugo-learn.js?1563978887"></script>
 
-    <link href="/mermaid/mermaid.css?1563963414" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1563963414"></script>
+    <link href="/mermaid/mermaid.css?1563978887" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1563978887"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
