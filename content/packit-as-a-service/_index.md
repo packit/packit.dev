@@ -40,13 +40,13 @@ Packit Service expects the ".packit.yaml" configuration file in root of your ups
 For more info, see
 [.packit.yaml documentation](/docs/configuration/).
 
-### Add SPEC file
+### Add RPM spec file
 
-Packit Service needs the RPM spec file in your upstream repository.
-This RPM spec file is used to build your project.
+Packit Service needs the RPM spec file to build your project.
 
-Packit is also tracking an RFE to not require spec in upstream
-[packit-service/packit#312](https://github.com/packit-service/packit/issues/312).
+Either you have to include it into your upstream repository or
+if you do not want to have it in your upstream repository, for some reason,
+see section [RPM spec file not in upstream](docs/configuration/#spec-file-not-in-upstream)
 
 ### How to check Packit Service works in your project?
 

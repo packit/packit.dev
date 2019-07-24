@@ -83,7 +83,30 @@ synced_files:
     dest: .
 ```
 
+## RPM spec file not in upstream repository
 
+If you do not want to have the RPM spec file in your upstream repository, for some reason,
+you can download it in [actions](/docs/actions/) section.
+
+Add [actions](/docs/actions/) section and
+hook `post_upstream_clone` into your `.packit.yaml` configuration file.
+Add row for downloading your RPM spec file from Fedora dist-git repository
+with your favorite command.
+
+The configuration file with downloading the RPM spec file now looks:
+
+```yaml
+specfile_path: packit.spec
+synced_files:
+  - packit.spec
+  - .packit.yaml
+upstream_project_name: packitos
+downstream_package_name: packit
+actions:
+    post_upstream_clone:
+    - wget https://src.fedoraproject.org/rpms/packit/raw/master/f/packit.spec
+
+```
 ## Packit-as-a-Service
 
 As of July 2019, packit service doesn't have any web interface, so the only way
