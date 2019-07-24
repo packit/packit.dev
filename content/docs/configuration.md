@@ -85,7 +85,7 @@ synced_files:
 
 ## RPM spec file not in upstream repository
 
-If you do not want to have the RPM spec file in your upstream repository, for some reason,
+If you do not want to have the RPM spec file in your upstream repository,
 you can download it in [actions](/docs/actions/) section.
 
 Add [actions](/docs/actions/) section and
