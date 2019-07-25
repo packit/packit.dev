@@ -34,7 +34,7 @@ If you do not want to have the RPM spec file in your upstream repository,
 you can download it in [actions](/docs/actions/) section.
 
 Add [actions](/docs/actions/) section and
-hook `post_upstream_clone` into your `.packit.yaml` configuration file.
+download the spec file in a hook `post_upstream_clone`.
 Add a command, `wget` or `curl`, for downloading your RPM spec file from Fedora dist-git repository.
 
 The configuration file with downloading the RPM spec file now looks:
