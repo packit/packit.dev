@@ -37,7 +37,7 @@ Add [actions](/docs/actions/) section and
 download the spec file in a hook `post_upstream_clone`.
 Add a command, `wget` or `curl`, for downloading your RPM spec file from Fedora dist-git repository.
 
-The configuration file with downloading the RPM spec file now looks:
+The configuration file with downloading the RPM spec file now looks like this:
 
 ```yaml
 specfile_path: packit.spec
