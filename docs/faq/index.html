@@ -26,20 +26,20 @@ if (!doNotTrack) {
     <title>FAQ :: Packit</title>
 
     
-    <link href="/css/nucleus.css?1563978887" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1563978887" rel="stylesheet">
-    <link href="/css/hybrid.css?1563978887" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1563978887" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1563978887" rel="stylesheet">
-    <link href="/css/auto-complete.css?1563978887" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1563978887" rel="stylesheet">
-    <link href="/css/theme.css?1563978887" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1563978887" rel="stylesheet">
+    <link href="/css/nucleus.css?1564040471" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1564040471" rel="stylesheet">
+    <link href="/css/hybrid.css?1564040471" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1564040471" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1564040471" rel="stylesheet">
+    <link href="/css/auto-complete.css?1564040471" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1564040471" rel="stylesheet">
+    <link href="/css/theme.css?1564040471" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1564040471" rel="stylesheet">
     
-      <link href="/css/theme-red.css?1563978887" rel="stylesheet">
+      <link href="/css/theme-red.css?1564040471" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1563978887"></script>
+    <script src="/js/jquery-3.3.1.min.js?1564040471"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -70,14 +70,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1563978887"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1563978887"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1564040471"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1564040471"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/packit.dev\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1563978887"></script>
+<script type="text/javascript" src="/js/search.js?1564040471"></script>
 
     
   </div>
@@ -613,15 +613,12 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
-<li><a href="#packit-as-a-service">Packit-as-a-Service</a>
+<li>
 <ul>
 <li><a href="#can-i-use-the-packit-service-as-soon-as-i-install-it-into-my-repository">Can I use the packit service as soon as I install it into my repository?</a></li>
 <li><a href="#can-i-use-packit-service-for-any-github-repository">Can I use packit service for any GitHub repository?</a></li>
 <li><a href="#how-can-i-contact-you">How can I contact you?</a></li>
-</ul></li>
-<li><a href="#configuration">Configuration</a>
-<ul>
-<li><a href="#rpm-spec-file-not-in-upstream-repository">RPM spec file not in upstream repository</a></li>
+<li><a href="#how-can-i-download-rpm-spec-file-if-it-is-not-part-of-upstream-repository">How can I download RPM spec file if it is not part of upstream repository?</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -652,8 +649,6 @@ if (!doNotTrack) {
 
 	
 
-<h2 id="packit-as-a-service">Packit-as-a-Service</h2>
-
 <h3 id="can-i-use-the-packit-service-as-soon-as-i-install-it-into-my-repository">Can I use the packit service as soon as I install it into my repository?</h3>
 
 <p>Thanks for your interest in Packit Service!  In order to start using the
@@ -671,20 +666,18 @@ a blacklist so you won&rsquo;t be able to use the service again.</p>
 
 <h3 id="how-can-i-contact-you">How can I contact you?</h3>
 
-<p>If you encounter a problem while using Packit-as-a-service, please open an <a href="https://github.com/packit-service/packit-service/issues/new">upstream issue</a>. In case of any other questions, feel free to contact us on our mailing list: <strong>user-cont-team@redhat.com</strong>.</p>
+<p>If you encounter a problem while using Packit-as-a-service, please open an <a href="https://github.com/packit-service/packit-service/issues/new">upstream issue</a>. In case of any other questions, feel free to contact us: <strong>user-cont-team@redhat.com</strong>.</p>
 
-<h2 id="configuration">Configuration</h2>
-
-<h3 id="rpm-spec-file-not-in-upstream-repository">RPM spec file not in upstream repository</h3>
+<h3 id="how-can-i-download-rpm-spec-file-if-it-is-not-part-of-upstream-repository">How can I download RPM spec file if it is not part of upstream repository?</h3>
 
 <p>If you do not want to have the RPM spec file in your upstream repository,
 you can download it in <a href="/docs/actions/">actions</a> section.</p>
 
-<p>Add <a href="/docs/actions/">actions</a> section and
-hook <code>post_upstream_clone</code> into your <code>.packit.yaml</code> configuration file.
-Add a command, <code>wget</code> or <code>curl</code>, for downloading your RPM spec file from Fedora dist-git repository.</p>
+<p>Add <a href="/docs/actions/">actions</a> section to your packit.yaml configuration file and
+download the spec file in a hook <code>post_upstream_clone</code>.
+Packit service has a limited set of commands available so please use <code>wget</code> or <code>curl</code>.</p>
 
-<p>The configuration file with downloading the RPM spec file now looks:</p>
+<p>The configuration file with downloading the RPM spec file now looks like this:</p>
 
 <pre><code class="language-yaml">specfile_path: packit.spec
 synced_files:
@@ -1094,20 +1087,20 @@ actions:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1563978887"></script>
-    <script src="/js/perfect-scrollbar.min.js?1563978887"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1563978887"></script>
-    <script src="/js/jquery.sticky.js?1563978887"></script>
-    <script src="/js/featherlight.min.js?1563978887"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1563978887"></script>
-    <script src="/js/highlight.pack.js?1563978887"></script>
+    <script src="/js/clipboard.min.js?1564040471"></script>
+    <script src="/js/perfect-scrollbar.min.js?1564040471"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1564040471"></script>
+    <script src="/js/jquery.sticky.js?1564040471"></script>
+    <script src="/js/featherlight.min.js?1564040471"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1564040471"></script>
+    <script src="/js/highlight.pack.js?1564040471"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1563978887"></script>
-    <script src="/js/learn.js?1563978887"></script>
-    <script src="/js/hugo-learn.js?1563978887"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1564040471"></script>
+    <script src="/js/learn.js?1564040471"></script>
+    <script src="/js/hugo-learn.js?1564040471"></script>
 
-    <link href="/mermaid/mermaid.css?1563978887" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1563978887"></script>
+    <link href="/mermaid/mermaid.css?1564040471" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1564040471"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
