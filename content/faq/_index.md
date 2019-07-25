@@ -24,7 +24,7 @@ a blacklist so you won't be able to use the service again.
 
 ### How can I contact you?
 
-If you encounter a problem while using Packit-as-a-service, please open an [upstream issue](https://github.com/packit-service/packit-service/issues/new). In case of any other questions, feel free to contact us on our mailing list: **user-cont-team@redhat.com**.
+If you encounter a problem while using Packit-as-a-service, please open an [upstream issue](https://github.com/packit-service/packit-service/issues/new). In case of any other questions, feel free to contact us: **user-cont-team@redhat.com**.
 
 ## Configuration
 
