@@ -3,6 +3,7 @@ title: "Source-git"
 date: 2018-12-31T23:59:59+01:00
 draft: false
 chapter: false
+weight: 4
 ---
 ### Source git is the place where the manual work is done
 

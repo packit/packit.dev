@@ -83,7 +83,6 @@ synced_files:
     dest: .
 ```
 
-
 ## Packit-as-a-Service
 
 As of July 2019, packit service doesn't have any web interface, so the only way

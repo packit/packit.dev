@@ -1,6 +1,7 @@
 ---
 title: "Documentation"
 draft: false
+weight: 1
 ---
 
 * [Actions](/docs/actions/)

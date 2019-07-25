@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://packit.dev/docs/</loc>
+    <lastmod>2019-06-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://packit.dev/posts/packit-010/</loc>
     <lastmod>2019-03-08T15:44:36+01:00</lastmod>
   </url>
@@ -18,8 +23,18 @@
   </url>
   
   <url>
+    <loc>https://packit.dev/packit-as-a-service/</loc>
+    <lastmod>2019-06-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://packit.dev/posts/packit-020/</loc>
     <lastmod>2019-03-19T18:25:39+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://packit.dev/posts/</loc>
+    <lastmod>2019-06-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -34,6 +49,11 @@
   <url>
     <loc>https://packit.dev/posts/packit-041/</loc>
     <lastmod>2019-05-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://packit.dev/source-git/</loc>
+    <lastmod>2018-12-31T23:59:59+01:00</lastmod>
   </url>
   
   <url>
@@ -66,6 +86,11 @@
   </url>
   
   <url>
+    <loc>https://packit.dev/faq/</loc>
+    <lastmod>2019-07-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://packit.dev/docs/cli/copr-build/</loc>
     <lastmod>2019-07-16T00:00:00+00:00</lastmod>
   </url>
@@ -81,28 +106,8 @@
   </url>
   
   <url>
-    <loc>https://packit.dev/docs/</loc>
-    <lastmod>2019-06-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://packit.dev/posts/</loc>
-    <lastmod>2019-06-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://packit.dev/posts/packit-042/</loc>
     <lastmod>2019-06-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://packit.dev/packit-as-a-service/</loc>
-    <lastmod>2019-06-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://packit.dev/source-git/</loc>
-    <lastmod>2018-12-31T23:59:59+01:00</lastmod>
   </url>
   
   <url>
