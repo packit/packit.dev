@@ -33,7 +33,7 @@ If you encounter a problem while using Packit-as-a-service, please open an [upst
 If you do not want to have the RPM spec file in your upstream repository,
 you can download it in [actions](/docs/actions/) section.
 
-Add [actions](/docs/actions/) section and
+Add [actions](/docs/actions/) section to your packit.yaml configuration file and
 download the spec file in a hook `post_upstream_clone`.
 Packit service has a limited set of commands available so please use `wget` or `curl`.
 
