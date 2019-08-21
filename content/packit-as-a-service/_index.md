@@ -61,7 +61,7 @@ An example of Packit Service pull request:
 
 ### How to re-trigger Packit Service actions in your pull request?
 
-Packit Service is able to trigger a pull request comments and reacts on them.
+Packit Service is able to trigger new builds based on a specific pull request comment.
 If you want to test the pull request is still buildable by Packit Service in COPR repository,
 add a comment `/packit copr-build` into your pull request
 and Packit Service triggers it and builds the code from the pull request in COPR repository.
