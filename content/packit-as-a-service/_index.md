@@ -33,7 +33,7 @@ find "Packit-as-a-Service" and select it
 5. Install the "Packit-as-a-Service" on all repositories or to certain repositories
 
 Once installed, you will see the "Packit-as-a-Service" GitHub application in your project settings.
-In the left sidebar, click "Integration & services" and you will see the apllication displayed there.
+In the left sidebar, click "Integration & services" and you will see the application displayed there.
 
 ### Add .packit.yaml configuration file
 
@@ -59,3 +59,13 @@ An example of Packit Service pull request:
 
 ![Packit service pull request](/packit-service-pr.png)
 
+### How to re-trigger Packit Service actions in your pull request?
+
+Packit Service is able to schedule new builds based on a pull request comment:
+```
+/packit copr-build
+```
+So whenever you run into a flake or feel like you want to retrigger, just type
+that comment into the PR and enjoy some fine, fresh builds.
+
+Only project collaborators can re-trigger.
