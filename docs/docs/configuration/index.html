@@ -1031,7 +1031,14 @@ environment variable. If not set, it looks inside <code>~/.config/</code> direct
 </tbody>
 </table>
 
-<p>You can also specify the tokens as environment variables: <code>GITHUB_TOKEN</code>, <code>PAGURE_USER_TOKEN</code>.</p>
+<p>You can also specify the tokens as environment variables: <code>GITHUB_TOKEN</code>,
+<code>PAGURE_USER_TOKEN</code>.</p>
+
+<p>Since API tokens are a very sensitive information, please do NOT ever store
+them in a public (such as a GitHub repository). The configuration file here is
+located on your workstation, please do NOT confuse it with a config file for
+your project - that one is described above in the first section of this
+document.</p>
 
 <h3 id="minimal-sample-config-1">Minimal sample config</h3>
 
