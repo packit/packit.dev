@@ -16,6 +16,7 @@ home = ["HTML", "JSON"]
   brand = "Packit"
   email = "user-cont-team@redhat.com"
   disableInlineCopyToClipBoard = true
+  disableAssetsBusting = true
   themeVariant = "red"
 
 [[Languages.en.menu.shortcuts]]
