@@ -26,20 +26,20 @@ if (!doNotTrack) {
     <title>Packit-as-a-Service :: Packit</title>
 
     
-    <link href="/css/nucleus.css?1566826609" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1566826609" rel="stylesheet">
-    <link href="/css/hybrid.css?1566826609" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1566826609" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1566826609" rel="stylesheet">
-    <link href="/css/auto-complete.css?1566826609" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1566826609" rel="stylesheet">
-    <link href="/css/theme.css?1566826609" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1566826609" rel="stylesheet">
+    <link href="/css/nucleus.css?1566909267" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1566909267" rel="stylesheet">
+    <link href="/css/hybrid.css?1566909267" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1566909267" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1566909267" rel="stylesheet">
+    <link href="/css/auto-complete.css?1566909267" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1566909267" rel="stylesheet">
+    <link href="/css/theme.css?1566909267" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1566909267" rel="stylesheet">
     
-      <link href="/css/theme-red.css?1566826609" rel="stylesheet">
+      <link href="/css/theme-red.css?1566909267" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1566826609"></script>
+    <script src="/js/jquery-3.3.1.min.js?1566909267"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -70,14 +70,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1566826609"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1566826609"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1566909267"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1566909267"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/packit.dev\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1566826609"></script>
+<script type="text/javascript" src="/js/search.js?1566909267"></script>
 
     
   </div>
@@ -619,6 +619,7 @@ if (!doNotTrack) {
 <li><a href="#add-packit-yaml-configuration-file">Add .packit.yaml configuration file</a></li>
 <li><a href="#add-rpm-spec-file">Add RPM spec file</a></li>
 <li><a href="#how-to-check-packit-service-works-in-your-project">How to check Packit Service works in your project?</a></li>
+<li><a href="#how-to-re-trigger-packit-service-actions-in-your-pull-request">How to re-trigger Packit Service actions in your pull request?</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -677,7 +678,7 @@ find &ldquo;Packit-as-a-Service&rdquo; and select it</li>
 </ol>
 
 <p>Once installed, you will see the &ldquo;Packit-as-a-Service&rdquo; GitHub application in your project settings.
-In the left sidebar, click &ldquo;Integration &amp; services&rdquo; and you will see the apllication displayed there.</p>
+In the left sidebar, click &ldquo;Integration &amp; services&rdquo; and you will see the application displayed there.</p>
 
 <h3 id="add-packit-yaml-configuration-file">Add .packit.yaml configuration file</h3>
 
@@ -702,6 +703,18 @@ pull request in COPR repository and reports back COPR build status to the pull r
 <p>An example of Packit Service pull request:</p>
 
 <p><img src="/packit-service-pr.png" alt="Packit service pull request" /></p>
+
+<h3 id="how-to-re-trigger-packit-service-actions-in-your-pull-request">How to re-trigger Packit Service actions in your pull request?</h3>
+
+<p>Packit Service is able to schedule new builds based on a pull request comment:</p>
+
+<pre><code>/packit copr-build
+</code></pre>
+
+<p>So whenever you run into a flake or feel like you want to retrigger, just type
+that comment into the PR and enjoy some fine, fresh builds.</p>
+
+<p>Only project collaborators can re-trigger.</p>
 
 
 
@@ -1104,20 +1117,20 @@ pull request in COPR repository and reports back COPR build status to the pull r
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1566826609"></script>
-    <script src="/js/perfect-scrollbar.min.js?1566826609"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1566826609"></script>
-    <script src="/js/jquery.sticky.js?1566826609"></script>
-    <script src="/js/featherlight.min.js?1566826609"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1566826609"></script>
-    <script src="/js/highlight.pack.js?1566826609"></script>
+    <script src="/js/clipboard.min.js?1566909267"></script>
+    <script src="/js/perfect-scrollbar.min.js?1566909267"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1566909267"></script>
+    <script src="/js/jquery.sticky.js?1566909267"></script>
+    <script src="/js/featherlight.min.js?1566909267"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1566909267"></script>
+    <script src="/js/highlight.pack.js?1566909267"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1566826609"></script>
-    <script src="/js/learn.js?1566826609"></script>
-    <script src="/js/hugo-learn.js?1566826609"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1566909267"></script>
+    <script src="/js/learn.js?1566909267"></script>
+    <script src="/js/hugo-learn.js?1566909267"></script>
 
-    <link href="/mermaid/mermaid.css?1566826609" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1566826609"></script>
+    <link href="/mermaid/mermaid.css?1566909267" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1566909267"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
