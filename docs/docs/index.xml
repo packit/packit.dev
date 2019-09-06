@@ -18,8 +18,7 @@
       
       <guid>https://packit.dev/docs/actions/</guid>
       <description>You can probably find yourself in a situation where some part of the packit workflow needs to be tweaked for your package.
-Packit supports actions, a way to change default implementation for a command of your choice. Packit is able to execute more commands. Each action can accept list of commands.
-All the actions are also executed inside Packit-as-a-Service. The service creates a new sandbox environment where the command is ran.</description>
+Packit supports actions, a way to change default implementation for a command of your choice. Packit is able to execute more commands. Each action can accept a list of commands. By default, the commands are executed directly and not in a shell - if you need shell, just wrap your command like this: bash -c &amp;quot;my fancy $command | grep success&amp;quot;.</description>
     </item>
     
     <item>

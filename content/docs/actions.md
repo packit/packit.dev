@@ -9,8 +9,11 @@ weight: 1
 You can probably find yourself in a situation where some part of the packit workflow needs to be
 tweaked for your package.
 
-Packit supports actions, a way to change default implementation for a command of your choice.
-Packit is able to execute more commands. Each action can accept list of commands.
+Packit supports actions, a way to change default implementation for a command
+of your choice.  Packit is able to execute more commands. Each action can
+accept a list of commands. By default, the commands are executed directly and
+not in a shell - if you need shell, just wrap your command like this: `bash -c
+"my fancy $command | grep success"`.
 
 All the actions are also executed inside Packit-as-a-Service. The service
 creates a new sandbox environment where the command is ran.
@@ -43,6 +46,35 @@ These applies to `srpm` command and building in COPR.
 |        | `get-current-version` | upstream git repo | when the current version needs to be found                                        | expect version as a stdout                |
 |        | `create-archive`      | upstream git repo | when the archive needs to be created                                              | replace the code for creating an archive  |
 |        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                                    | replace patching                          |
+|        | `fix-spec`            | upstream git repo | after creation of a tarball and before running rpmbuild command                   | this action changes spec file to use the new tarball                          |
+
+**fix-spec** — this action performs these 3 operations on a spec file:
+
+1. Replaces `Source0` with a local path to the generated tarball
+2. Changes first %setup (or %autosetup) macro in %prep and adds `-n` so the generated tarball can be unpacked
+3. Changes %version
+
+As an example how to use this, a package may define more Sources - in such a
+case, default implementation of fix-spec won't be able to update %prep
+correctly. You can write a simple shell script and use sed to set the new
+Sources correctly, e.g. `sed -i packaging/fedora/snapd.spec -e
+"s/https.*only-vendor.tar.xz/$correct_tarball_path/"`
+
+
+#### Environment variables set by packit
+
+Additionally, packit sets a few env vars for specific actions
+
+**fix-spec**
+
+`PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)
+`PACKIT_PROJECT_COMMIT` — commit hash of the top commit
+`PACKIT_PROJECT_ARCHIVE` — expected name of the archive
+
+**create-archive**
+
+`PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)
+`PACKIT_PROJECT_NAME_VERSION` — current name and version of the project (coming from `git describe`)
 
 
 -----
