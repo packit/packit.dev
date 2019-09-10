@@ -36,6 +36,7 @@ Both Packit-as-a-Service and packit tool use this configuration file.
  `actions`                 | string | custom actions/hooks overwriting the default behavior of packit (more in [Actions](/docs/actions/))
  `jobs`                    | list of dicts   | a list of job definitions for packit service: see [below](#supported-jobs) for details
  `allowed_gpg_keys`        | list of strings | a list of gpg-key fingerprints; if specified, one of the configured keys have to sign the last commit when updating in downstream; add GitHub key (`4AEE18F83AFDEB23`) if you want to use this on code merged via GitHub web interface
+ `spec_source_id`          | int or string   | Numeric ID of Source inside spec file which packit should change when setting path to the newly generated tarball, can be also full name of the macro
 
 
 ### Minimal sample config
