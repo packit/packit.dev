@@ -234,8 +234,9 @@ The acceptable names are the same as for the package config:
  `github_token`               | string          | Github API token: this is needed when packit interacts with Github API: https://github.com/settings/tokens (getting full read & write repo scope should be enough)
  `pagure_user_token`          | string          | Pagure token needed to access REST API, get it at: https://src.fedoraproject.org/settings#nav-api-tab
 
-You can also specify the tokens as environment variables: `GITHUB_TOKEN`,
-`PAGURE_USER_TOKEN`.
+Specifying tokens as environment variables `GITHUB_TOKEN` and
+`PAGURE_USER_TOKEN` is now deprecated and will be removed in future versions.
+Please store the tokens in the config file.
 
 Since API tokens are a very sensitive information, please do NOT ever store
 them in a public (such as a GitHub repository). The configuration file here is
