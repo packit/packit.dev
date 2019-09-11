@@ -706,8 +706,8 @@ packit service as well.</p>
 <pre><code>$ dnf install --enablerepo=updates-testing packit
 </code></pre>
 
-<p>We publish packit to PyPI and it&rsquo;s available as packitos project. (packit at
-PyPI is something different)</p>
+<p>We publish packit to PyPI and it&rsquo;s available as <code>packitos</code> project — <strong>packit
+at PyPI is something different</strong></p>
 
 <pre><code>$ pip3 install --user packitos
 </code></pre>
@@ -728,7 +728,7 @@ configuration file packit is using.</p>
 <p>Packit supports actions and hooks: you can define commands on your own which
 would replace packit&rsquo;s implementation (e.g. get version, or create a tarball)
 or run specific commands after the upstream repo is cloned. Please read more
-about action here: <a href="/docs/actions/">actions</a>.</p>
+about actions here: <a href="/docs/actions/">actions</a>.</p>
 
 <p>Packit needs an RPM spec file to build your package. The spec file does not
 need to be included in the upstream repo and can be generated on the fly or

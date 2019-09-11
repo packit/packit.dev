@@ -36,8 +36,8 @@ This is how you can install packit if you are on Fedora Linux:
 $ dnf install --enablerepo=updates-testing packit
 ```
 
-We publish packit to PyPI and it's available as packitos project. (packit at
-PyPI is something different)
+We publish packit to PyPI and it's available as `packitos` project — **packit
+at PyPI is something different**
 
 ```
 $ pip3 install --user packitos
@@ -61,7 +61,7 @@ The documentation file has a document on its own: [configuration]({{< ref
 Packit supports actions and hooks: you can define commands on your own which
 would replace packit's implementation (e.g. get version, or create a tarball)
 or run specific commands after the upstream repo is cloned. Please read more
-about action here: [actions]({{< ref "/docs/actions" >}}).
+about actions here: [actions]({{< ref "/docs/actions" >}}).
 
 Packit needs an RPM spec file to build your package. The spec file does not
 need to be included in the upstream repo and can be generated on the fly or
