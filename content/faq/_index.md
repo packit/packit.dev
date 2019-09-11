@@ -3,6 +3,7 @@ title: "FAQ"
 date: 2019-07-24
 draft: false
 disableToc: false
+
 ---
 
 ### Can I use the packit service as soon as I install it into my repository?
@@ -22,8 +23,10 @@ a blacklist so you won't be able to use the service again.
 
 ### How can I contact you?
 
-If you encounter a problem while using Packit-as-a-service, please open an [upstream issue](https://github.com/packit-service/packit-service/issues/new). In case of any other questions, feel free to contact us: **user-cont-team@redhat.com**.
-
+If you encounter a problem while using Packit-as-a-service, please open an
+[upstream issue](https://github.com/packit-service/packit-service/issues/new).
+In case of any other questions, feel free to contact us:
+**user-cont-team@redhat.com**.
 
 ### How can I download RPM spec file if it is not part of upstream repository?
 
@@ -46,3 +49,26 @@ downstream_package_name: packit
 actions:
     post-upstream-clone: "wget https://src.fedoraproject.org/rpms/packit/raw/master/f/packit.spec"
 ```
+
+### I have a template of a spec file in my repo: can packit work with it?
+
+Yes!
+
+The solution is, again, actions and hooks. Just render the spec after the upstream repo is cloned:
+```yaml
+specfile_path: my-project.spec
+upstream_project_name: my-project-src
+downstream_package_name: my-project
+actions:
+    post-upstream-clone: "make generate-spec"
+```
+
+Where the "generate-spec" make target could look like this:
+```make
+generate-spec:
+    sed -e 's/@@VERSION@@/$(VERSION)/g' my-project.spec.template >my-project.spec
+```
+
+As a practical example, [cockpit-podman
+project](https://github.com/cockpit-project/cockpit-podman) is using this
+functionality.

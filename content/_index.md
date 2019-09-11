@@ -7,11 +7,29 @@ disableToc: false
 
 # Packit
 
-Packit provides tooling and automation to integrate upstream open source projects into Fedora operating system.
+Packit provides tooling and automation to integrate upstream open source
+projects into Fedora operating system. Packit project is composed of two main
+components:
+
+1. `packit`, a CLI tool, which you can install locally and start using right away.
+
+2. [Packit-as-a-Service](https://github.com/marketplace/packit-as-a-service), a
+   GitHub app — it can provide you feedback on how is your project integrated
+   with Fedora Operating System.
+
+Feel free to jump into [the guide]({{< ref "/docs/guide" >}}) for using packit.
 
 ### Upstream repository
 
 https://github.com/packit-service/packit
+
+
+### Contact
+
+You can find us at Freenode IRC channel #packit, or feel free to create an
+issue in any of our GitHub projects.
+
+We are also available on this e-mail: user-cont-team@redhat.com.
 
 
 ### The key principles of packit

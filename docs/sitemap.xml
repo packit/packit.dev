@@ -43,6 +43,10 @@
   </url>
   
   <url>
+    <loc>https://packit.dev/docs/guide/</loc>
+  </url>
+  
+  <url>
     <loc>https://packit.dev/docs/cli/build/</loc>
   </url>
   
