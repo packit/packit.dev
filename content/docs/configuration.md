@@ -233,9 +233,16 @@ The acceptable names are the same as for the package config:
  `fas_user`                   | string          | username in Fedora account system (to perform kinit if needed)
  `github_token`               | string          | Github API token: this is needed when packit interacts with Github API: https://github.com/settings/tokens (getting full read & write repo scope should be enough)
  `pagure_user_token`          | string          | Pagure token needed to access REST API, get it at: https://src.fedoraproject.org/settings#nav-api-tab
- `pagure_fork_token`          | string          | a token so packit can create a pull request: https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab
 
-You can also specify the tokens as environment variables: `GITHUB_TOKEN`, `PAGURE_USER_TOKEN`, `PAGURE_FORK_TOKEN`.
+Specifying tokens as environment variables `GITHUB_TOKEN` and
+`PAGURE_USER_TOKEN` is now deprecated and will be removed in future versions.
+Please store the tokens in the config file.
+
+Since API tokens are a very sensitive information, please do NOT ever store
+them in a public (such as a GitHub repository). The configuration file here is
+located on your workstation, please do NOT confuse it with a config file for
+your project - that one is described above in the first section of this
+document.
 
 
 ### Minimal sample config

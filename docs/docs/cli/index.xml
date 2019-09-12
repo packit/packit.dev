@@ -63,7 +63,7 @@ create_tarball_command: [&amp;quot;python3&amp;quot;, &amp;quot;setup.</descript
       
       <guid>https://packit.dev/docs/cli/sync-from-downstream/</guid>
       <description>This is a detailed documentation for the downstream sync functionality of packit. The command creates a new pull request in upstream repository using a selected branch (master by default) from Fedora dist-git repository.
-Requirements  Fedora dist-git repository. Packit config file placed in the upstream repository. Pagure API tokens for Fedora Dist-git. Github API token.  Tutorial  Pagure dist-git is configured in a way that it requires 2 API tokens in order to perform a pull request using the API (which packit is using).</description>
+Requirements  Fedora dist-git repository. Packit config file placed in the upstream repository. Pagure API tokens for Fedora Dist-git. Github API token.  Tutorial  Starting with packit 0.5.2 and later, you only need to set a single token to interact with dist-git.</description>
     </item>
     
     <item>

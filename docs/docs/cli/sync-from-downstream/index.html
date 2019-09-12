@@ -690,29 +690,26 @@ selected branch (master by default) from Fedora dist-git repository.</p>
 
 <h2 id="tutorial">Tutorial</h2>
 
-<ol>
-<li><p>Pagure dist-git is configured in a way that it requires 2 API tokens in
-order to perform a pull request using the API (which packit is using).
-Please set these three environment variables using the appropriate tokens:</p>
+<ul>
+<li>Starting with packit 0.5.2 and later, you only need to set a single token to
+interact with dist-git. You needed two in the past. Please populate your
+local config at <code>~/.config/packit.yaml</code> for packit so it can talk to the
+remote services:</li>
+</ul>
 
-<ol>
-<li><code>export PAGURE_USER_TOKEN=&lt;token&gt;</code> — this token is needed to access data
-in pagure. This is meant to be an API token of your user:
-<a href="https://src.fedoraproject.org/settings#nav-api-tab">https://src.fedoraproject.org/settings#nav-api-tab</a></li>
-<li><code>export PAGURE_FORK_TOKEN=&lt;token&gt;</code> — packit needs this token to create a
-pull request:
-<a href="https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab">https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab</a>
-If the fork does not exist, you have to create it in Pagure&rsquo;s web
-interface. We are working with Fedora team to relax this requirement.</li>
-<li><code>export GITHUB_TOKEN=&lt;token&gt;</code> — you can obtain the token over here:
-<a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></li>
-</ol></li>
+<pre><code class="language-json"># you can obtain the token over here: https://github.com/settings/tokens
+github_token: 123
+# and this one right here: https://src.fedoraproject.org/settings#nav-api-tab
+pagure_user_token: 456
+</code></pre>
 
+<ul>
 <li><p>Files which are synced are mentioned in <code>.packit.yaml</code> as <code>synced_files</code> value.</p></li>
 
 <li><p>Once you want to sync Fedora dist-git repo into the upstream repo,
 run <code>packit sync-from-downstream</code> in a working directory of your upstream
-repository:</p>
+repository:</p></li>
+</ul>
 
 <pre><code class="language-bash">$ git clone https://github.com/user-cont/colin.git
 
@@ -730,23 +727,22 @@ PR created: https://api.github.com/repos/phracek/colin/pulls/3
 
 <pre><code class="language-bash">Usage: packit sync-from-downstream [OPTIONS] [PATH_OR_URL]
 
-Copy synced files from Fedora dist-git into upstream by opening a pull
-request.
+  Copy synced files from Fedora dist-git into upstream by opening a pull
+  request.
 
-PATH_OR_URL argument is a local path or a URL to the upstream git
-repository, it defaults to the current working directory
+  PATH_OR_URL argument is a local path or a URL to the upstream git
+  repository, it defaults to the current working directory
 
 Options:
---dist-git-branch TEXT  Source branch in dist-git for sync.
---upstream-branch TEXT  Target branch in upstream to sync to.
---no-pr                 Pull request is not create.
---fork / --no-fork      Push to a fork.
---remote-name TEXT      Name of the remote where packit should push. if this
-                      is not specified, it pushes to a fork if the repo
-                      can be forked.
--h, --help              Show this message and exit.
-</code></pre></li>
-</ol>
+  --dist-git-branch TEXT  Source branch in dist-git for sync.
+  --upstream-branch TEXT  Target branch in upstream to sync to.
+  --no-pr                 Pull request is not create.
+  --fork / --no-fork      Push to a fork.
+  --remote-name TEXT      Name of the remote where packit should push. if this
+                          is not specified, it pushes to a fork if the repo
+                          can be forked.
+  -h, --help              Show this message and exit.
+</code></pre>
 
 
 <footer class=" footline" >

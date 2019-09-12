@@ -1028,16 +1028,18 @@ environment variable. If not set, it looks inside <code>~/.config/</code> direct
 <td>string</td>
 <td>Pagure token needed to access REST API, get it at: <a href="https://src.fedoraproject.org/settings#nav-api-tab">https://src.fedoraproject.org/settings#nav-api-tab</a></td>
 </tr>
-
-<tr>
-<td><code>pagure_fork_token</code></td>
-<td>string</td>
-<td>a token so packit can create a pull request: <a href="https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab">https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab</a></td>
-</tr>
 </tbody>
 </table>
 
-<p>You can also specify the tokens as environment variables: <code>GITHUB_TOKEN</code>, <code>PAGURE_USER_TOKEN</code>, <code>PAGURE_FORK_TOKEN</code>.</p>
+<p>Specifying tokens as environment variables <code>GITHUB_TOKEN</code> and
+<code>PAGURE_USER_TOKEN</code> is now deprecated and will be removed in future versions.
+Please store the tokens in the config file.</p>
+
+<p>Since API tokens are a very sensitive information, please do NOT ever store
+them in a public (such as a GitHub repository). The configuration file here is
+located on your workstation, please do NOT confuse it with a config file for
+your project - that one is described above in the first section of this
+document.</p>
 
 <h3 id="minimal-sample-config-1">Minimal sample config</h3>
 
