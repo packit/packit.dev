@@ -46,16 +46,16 @@ These applies to `srpm` command and building in COPR.
 |        | `get-current-version` | upstream git repo | when the current version needs to be found                                        | expect version as a stdout                |
 |        | `create-archive`      | upstream git repo | when the archive needs to be created                                              | replace the code for creating an archive  |
 |        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                                    | replace patching                          |
-|        | `fix-spec`            | upstream git repo | after creation of a tarball and before running rpmbuild command                   | this action changes spec file to use the new tarball                          |
+|        | `fix-spec-file`            | upstream git repo | after creation of a tarball and before running rpmbuild command                   | this action changes spec file to use the new tarball                          |
 
-**fix-spec** — this action performs these 3 operations on a spec file:
+**fix-spec-file** — this action performs these 3 operations on a spec file:
 
 1. Replaces `Source0` with a local path to the generated tarball
 2. Changes first %setup (or %autosetup) macro in %prep and adds `-n` so the generated tarball can be unpacked
 3. Changes %version
 
 As an example how to use this, a package may define more Sources - in such a
-case, default implementation of fix-spec won't be able to update %prep
+case, default implementation of fix-spec-file won't be able to update %prep
 correctly. You can write a simple shell script and use sed to set the new
 Sources correctly, e.g. `sed -i packaging/fedora/snapd.spec -e
 "s/https.*only-vendor.tar.xz/$correct_tarball_path/"`
@@ -65,7 +65,7 @@ Sources correctly, e.g. `sed -i packaging/fedora/snapd.spec -e
 
 Additionally, packit sets a few env vars for specific actions
 
-**fix-spec**
+**fix-spec-file**
 
 `PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)
 `PACKIT_PROJECT_COMMIT` — commit hash of the top commit
