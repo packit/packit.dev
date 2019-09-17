@@ -73,4 +73,4 @@ Packit service triggers and pushes it directly into Fedora dist-git repositories
 If all jobs ([propose_downstream](/configuration/#supported-jobs)), defined in `packit.yaml` file,
 finished successfully, then the issue is automatically closed.
 
-Only project collaborators can propose new update.
+Only project collaborators can propose a new update.

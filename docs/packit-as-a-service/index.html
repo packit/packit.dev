@@ -637,7 +637,7 @@ if (!doNotTrack) {
 <ul>
 <li><a href="#how-to-check-packit-service-works-in-your-project">How to check Packit Service works in your project?</a></li>
 <li><a href="#how-to-re-trigger-packit-service-actions-in-your-pull-request">How to re-trigger Packit Service actions in your pull request?</a></li>
-<li><a href="#how-to-propose-update-new-update-with-packit-service-actions">How to propose-update new update with Packit Service actions?</a></li>
+<li><a href="#how-to-propose-a-new-downstream-update">How to propose a new downstream update?</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -723,9 +723,9 @@ that comment into the PR and enjoy some fine, fresh builds.</p>
 
 <p>Only project collaborators can re-trigger.</p>
 
-<h3 id="how-to-propose-update-new-update-with-packit-service-actions">How to propose-update new update with Packit Service actions?</h3>
+<h3 id="how-to-propose-a-new-downstream-update">How to propose a new downstream update?</h3>
 
-<p>Packit Service is able to propose update new upstream version by issue comment.</p>
+<p>Packit Service is able to propose updates of new upstream releases using this comment in an issue:</p>
 
 <pre><code>/packit propose-update
 </code></pre>
@@ -737,7 +737,7 @@ Packit service triggers and pushes it directly into Fedora dist-git repositories
 <p>If all jobs (<a href="/configuration/#supported-jobs">propose_downstream</a>), defined in <code>packit.yaml</code> file,
 finished successfully, then the issue is automatically closed.</p>
 
-<p>Only project collaborators can propose new update.</p>
+<p>Only project collaborators can propose a new update.</p>
 
 
 
