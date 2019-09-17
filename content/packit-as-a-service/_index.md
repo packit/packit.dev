@@ -61,7 +61,7 @@ Only project collaborators can re-trigger.
 
 ### How to propose a new downstream update?
 
-Packit Service is able to propose update new upstream version by issue comment.
+Packit Service is able to propose updates of new upstream releases using this comment in an issue:
 ```
 /packit propose-update
 ```
