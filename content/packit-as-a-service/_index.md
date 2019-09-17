@@ -58,3 +58,19 @@ So whenever you run into a flake or feel like you want to retrigger, just type
 that comment into the PR and enjoy some fine, fresh builds.
 
 Only project collaborators can re-trigger.
+
+### How to propose a new downstream update?
+
+Packit Service is able to propose updates of new upstream releases using this comment in an issue:
+```
+/packit propose-update
+```
+
+If you want to propose the latest release into Fedora repositories,
+create an issue and add that comment into this issue and
+Packit service triggers and pushes it directly into Fedora dist-git repositories.
+
+If all jobs ([propose_downstream](/configuration/#supported-jobs)), defined in `packit.yaml` file,
+finished successfully, then the issue is automatically closed.
+
+Only project collaborators can propose a new update.

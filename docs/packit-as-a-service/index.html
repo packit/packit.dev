@@ -637,6 +637,7 @@ if (!doNotTrack) {
 <ul>
 <li><a href="#how-to-check-packit-service-works-in-your-project">How to check Packit Service works in your project?</a></li>
 <li><a href="#how-to-re-trigger-packit-service-actions-in-your-pull-request">How to re-trigger Packit Service actions in your pull request?</a></li>
+<li><a href="#how-to-propose-a-new-downstream-update">How to propose a new downstream update?</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -721,6 +722,22 @@ pull request in COPR repository and reports back COPR build status to the pull r
 that comment into the PR and enjoy some fine, fresh builds.</p>
 
 <p>Only project collaborators can re-trigger.</p>
+
+<h3 id="how-to-propose-a-new-downstream-update">How to propose a new downstream update?</h3>
+
+<p>Packit Service is able to propose updates of new upstream releases using this comment in an issue:</p>
+
+<pre><code>/packit propose-update
+</code></pre>
+
+<p>If you want to propose the latest release into Fedora repositories,
+create an issue and add that comment into this issue and
+Packit service triggers and pushes it directly into Fedora dist-git repositories.</p>
+
+<p>If all jobs (<a href="/configuration/#supported-jobs">propose_downstream</a>), defined in <code>packit.yaml</code> file,
+finished successfully, then the issue is automatically closed.</p>
+
+<p>Only project collaborators can propose a new update.</p>
 
 
 
