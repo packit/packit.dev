@@ -27,29 +27,18 @@ so you can always try things locally on your own. Note that testing is not curre
 
 ## Integrating Packit-as-a-Service into your project or organization from GitHub Marketplace
 
-1. Go to [GitHub Marketplace](https://github.com/marketplace)
-2. In section [Continuous integration](https://github.com/marketplace?category=continuous-integration)
-find "Packit-as-a-Service" and select it
-3. On the "Packit-as-a-Service" page, under "Pricing and setup", click "Install it for free"
-4. Click "Complete order and begin installation"
-5. Install the "Packit-as-a-Service" on all repositories or to certain repositories
+1. Navigate to the ["Packit-as-a-Service" GitHub
+   application](https://github.com/marketplace/packit-as-a-service).
+2. Under "Pricing and setup", click "Install it for free".
+3. Click "Complete order and begin installation".
+4. Install the "Packit-as-a-Service" to repositories of your choice.
 
-Once installed, you will see the "Packit-as-a-Service" GitHub application in your project settings.
-In the left sidebar, click "Integration & services" and you will see the application displayed there.
+Once installed, you will see the ["Packit-as-a-Service" GitHub
+application](https://github.com/marketplace/packit-as-a-service) in your
+project settings.  In the left sidebar, click "Integration & services" and you
+will see the application displayed there.
 
-### Add .packit.yaml configuration file
-
-Packit Service expects the ".packit.yaml" configuration file in root of your upstream repository.
-For more info, see
-[.packit.yaml documentation](/docs/configuration/).
-
-### Add RPM spec file
-
-Packit Service needs the RPM spec file to build your project.
-
-Either include it in your upstream repository or
-if you do not want to have it in your upstream repository,
-see section [RPM spec file not in upstream](/faq/#rpm-spec-file-not-in-upstream-repository)
+In order to continue, please head to the main [Packit guide]({{< ref "/docs/guide" >}}).
 
 ### How to check Packit Service works in your project?
 
@@ -72,6 +61,22 @@ that comment into the PR and enjoy some fine, fresh builds.
 
 Only project collaborators can re-trigger.
 
-### Adding tests
+### How to propose a new downstream update?
 
-See [Testing Farm - Adding Tests](/testing-farm/adding-tests)
+Packit Service is able to propose updates of new upstream releases using this comment in an issue:
+```
+/packit propose-update
+```
+
+If you want to propose the latest release into Fedora repositories,
+create an issue and add that comment into this issue and
+Packit service triggers and pushes it directly into Fedora dist-git repositories.
+
+If all jobs ([propose_downstream](/configuration/#supported-jobs)), defined in `packit.yaml` file,
+finished successfully, then the issue is automatically closed.
+
+Only project collaborators can propose a new update.
+
+### How to add tests
+
+See [Testing Farm - Adding Tests](/testing-farm/adding-tests).

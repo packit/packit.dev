@@ -158,6 +158,25 @@ if (!doNotTrack) {
  
   
     
+      <li data-nav-id="/docs/guide/" title="Packit Guide" class="dd-item ">
+        <a href="/docs/guide/">
+        Packit Guide
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/docs/configuration/" title="Configuration" class="dd-item ">
         <a href="/docs/configuration/">
         Configuration
@@ -616,10 +635,9 @@ if (!doNotTrack) {
 <li><a href="#easy-to-use">Easy to use</a></li>
 <li><a href="#integrating-packit-as-a-service-into-your-project-or-organization-from-github-marketplace">Integrating Packit-as-a-Service into your project or organization from GitHub Marketplace</a>
 <ul>
-<li><a href="#add-packit-yaml-configuration-file">Add .packit.yaml configuration file</a></li>
-<li><a href="#add-rpm-spec-file">Add RPM spec file</a></li>
 <li><a href="#how-to-check-packit-service-works-in-your-project">How to check Packit Service works in your project?</a></li>
 <li><a href="#how-to-re-trigger-packit-service-actions-in-your-pull-request">How to re-trigger Packit Service actions in your pull request?</a></li>
+<li><a href="#how-to-propose-a-new-downstream-update">How to propose a new downstream update?</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -669,30 +687,19 @@ so you can always try things locally on your own.</p>
 <h2 id="integrating-packit-as-a-service-into-your-project-or-organization-from-github-marketplace">Integrating Packit-as-a-Service into your project or organization from GitHub Marketplace</h2>
 
 <ol>
-<li>Go to <a href="https://github.com/marketplace">GitHub Marketplace</a></li>
-<li>In section <a href="https://github.com/marketplace?category=continuous-integration">Continuous integration</a>
-find &ldquo;Packit-as-a-Service&rdquo; and select it</li>
-<li>On the &ldquo;Packit-as-a-Service&rdquo; page, under &ldquo;Pricing and setup&rdquo;, click &ldquo;Install it for free&rdquo;</li>
-<li>Click &ldquo;Complete order and begin installation&rdquo;</li>
-<li>Install the &ldquo;Packit-as-a-Service&rdquo; on all repositories or to certain repositories</li>
+<li>Navigate to the <a href="https://github.com/marketplace/packit-as-a-service">&ldquo;Packit-as-a-Service&rdquo; GitHub
+application</a>.</li>
+<li>Under &ldquo;Pricing and setup&rdquo;, click &ldquo;Install it for free&rdquo;.</li>
+<li>Click &ldquo;Complete order and begin installation&rdquo;.</li>
+<li>Install the &ldquo;Packit-as-a-Service&rdquo; to repositories of your choice.</li>
 </ol>
 
-<p>Once installed, you will see the &ldquo;Packit-as-a-Service&rdquo; GitHub application in your project settings.
-In the left sidebar, click &ldquo;Integration &amp; services&rdquo; and you will see the application displayed there.</p>
+<p>Once installed, you will see the <a href="https://github.com/marketplace/packit-as-a-service">&ldquo;Packit-as-a-Service&rdquo; GitHub
+application</a> in your
+project settings.  In the left sidebar, click &ldquo;Integration &amp; services&rdquo; and you
+will see the application displayed there.</p>
 
-<h3 id="add-packit-yaml-configuration-file">Add .packit.yaml configuration file</h3>
-
-<p>Packit Service expects the &ldquo;.packit.yaml&rdquo; configuration file in root of your upstream repository.
-For more info, see
-<a href="/docs/configuration/">.packit.yaml documentation</a>.</p>
-
-<h3 id="add-rpm-spec-file">Add RPM spec file</h3>
-
-<p>Packit Service needs the RPM spec file to build your project.</p>
-
-<p>Either include it in your upstream repository or
-if you do not want to have it in your upstream repository,
-see section <a href="/faq/#rpm-spec-file-not-in-upstream-repository">RPM spec file not in upstream</a></p>
+<p>In order to continue, please head to the main <a href="/docs/guide/">Packit guide</a>.</p>
 
 <h3 id="how-to-check-packit-service-works-in-your-project">How to check Packit Service works in your project?</h3>
 
@@ -715,6 +722,22 @@ pull request in COPR repository and reports back COPR build status to the pull r
 that comment into the PR and enjoy some fine, fresh builds.</p>
 
 <p>Only project collaborators can re-trigger.</p>
+
+<h3 id="how-to-propose-a-new-downstream-update">How to propose a new downstream update?</h3>
+
+<p>Packit Service is able to propose updates of new upstream releases using this comment in an issue:</p>
+
+<pre><code>/packit propose-update
+</code></pre>
+
+<p>If you want to propose the latest release into Fedora repositories,
+create an issue and add that comment into this issue and
+Packit service triggers and pushes it directly into Fedora dist-git repositories.</p>
+
+<p>If all jobs (<a href="/configuration/#supported-jobs">propose_downstream</a>), defined in <code>packit.yaml</code> file,
+finished successfully, then the issue is automatically closed.</p>
+
+<p>Only project collaborators can propose a new update.</p>
 
 
 
@@ -767,6 +790,22 @@ that comment into the PR and enjoy some fine, fresh builds.</p>
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             

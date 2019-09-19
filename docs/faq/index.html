@@ -158,6 +158,25 @@ if (!doNotTrack) {
  
   
     
+      <li data-nav-id="/docs/guide/" title="Packit Guide" class="dd-item ">
+        <a href="/docs/guide/">
+        Packit Guide
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/docs/configuration/" title="Configuration" class="dd-item ">
         <a href="/docs/configuration/">
         Configuration
@@ -619,6 +638,7 @@ if (!doNotTrack) {
 <li><a href="#can-i-use-packit-service-for-any-github-repository">Can I use packit service for any GitHub repository?</a></li>
 <li><a href="#how-can-i-contact-you">How can I contact you?</a></li>
 <li><a href="#how-can-i-download-rpm-spec-file-if-it-is-not-part-of-upstream-repository">How can I download RPM spec file if it is not part of upstream repository?</a></li>
+<li><a href="#i-have-a-template-of-a-spec-file-in-my-repo-can-packit-work-with-it">I have a template of a spec file in my repo: can packit work with it?</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -666,7 +686,10 @@ a blacklist so you won&rsquo;t be able to use the service again.</p>
 
 <h3 id="how-can-i-contact-you">How can I contact you?</h3>
 
-<p>If you encounter a problem while using Packit-as-a-service, please open an <a href="https://github.com/packit-service/packit-service/issues/new">upstream issue</a>. In case of any other questions, feel free to contact us: <strong>user-cont-team@redhat.com</strong>.</p>
+<p>If you encounter a problem while using Packit-as-a-service, please open an
+<a href="https://github.com/packit-service/packit-service/issues/new">upstream issue</a>.
+In case of any other questions, feel free to contact us:
+<strong>user-cont-team@redhat.com</strong>.</p>
 
 <h3 id="how-can-i-download-rpm-spec-file-if-it-is-not-part-of-upstream-repository">How can I download RPM spec file if it is not part of upstream repository?</h3>
 
@@ -688,6 +711,29 @@ downstream_package_name: packit
 actions:
     post-upstream-clone: &quot;wget https://src.fedoraproject.org/rpms/packit/raw/master/f/packit.spec&quot;
 </code></pre>
+
+<h3 id="i-have-a-template-of-a-spec-file-in-my-repo-can-packit-work-with-it">I have a template of a spec file in my repo: can packit work with it?</h3>
+
+<p>Yes!</p>
+
+<p>The solution is, again, actions and hooks. Just render the spec after the upstream repo is cloned:</p>
+
+<pre><code class="language-yaml">specfile_path: my-project.spec
+upstream_project_name: my-project-src
+downstream_package_name: my-project
+actions:
+    post-upstream-clone: &quot;make generate-spec&quot;
+</code></pre>
+
+<p>Where the &ldquo;generate-spec&rdquo; make target could look like this:</p>
+
+<pre><code class="language-make">generate-spec:
+    sed -e 's/@@VERSION@@/$(VERSION)/g' my-project.spec.template &gt;my-project.spec
+</code></pre>
+
+<p>As a practical example, <a href="https://github.com/cockpit-project/cockpit-podman">cockpit-podman
+project</a> is using this
+functionality.</p>
 
 
 
@@ -740,6 +786,22 @@ actions:
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             

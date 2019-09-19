@@ -158,6 +158,25 @@ if (!doNotTrack) {
  
   
     
+      <li data-nav-id="/docs/guide/" title="Packit Guide" class="dd-item ">
+        <a href="/docs/guide/">
+        Packit Guide
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/docs/configuration/" title="Configuration" class="dd-item ">
         <a href="/docs/configuration/">
         Configuration
@@ -676,7 +695,7 @@ release.</li>
 
 <h2 id="tutorial">Tutorial</h2>
 
-<ol>
+<ul>
 <li><p>Place a file called <code>.packit.yaml</code> or <code>packit.yaml</code> in the root of your upstream repository.</p>
 
 <ul>
@@ -699,31 +718,26 @@ date), you can use packit to release it into Fedora.</li>
 for upstream release, because packit checks out the tag for the upstream
 release before copying files downstream.</p></li>
 
-<li><p>Pagure dist-git is configured in a way that it requires 2 API tokens in
-order to perform a pull request using the API (which packit is using).
-Please set these three environment variables using the appropriate tokens:</p>
+<li><p>Starting with packit 0.5.2 and later, you only need to set a single token to
+interact with dist-git. You needed two in the past. Please populate your
+local config for packit so it can talk to the remote services:</p></li>
+</ul>
 
-<ol>
-<li><code>export PAGURE_USER_TOKEN=&lt;token&gt;</code> — this token is needed to access data
-in pagure. This is meant to be an API token of your user:
-<a href="https://src.fedoraproject.org/settings#nav-api-tab">https://src.fedoraproject.org/settings#nav-api-tab</a></li>
-<li><code>export PAGURE_FORK_TOKEN=&lt;token&gt;</code> — packit needs this token to create a
-pull request:
-<a href="https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab">https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab</a>
-If the fork does not exist, you have to create it in Pagure&rsquo;s web
-interface. We are working with Fedora team to relax this requirement.</li>
-<li><code>export GITHUB_TOKEN=&lt;token&gt;</code> — you can obtain the token over here:
-<a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></li>
-</ol></li>
+<pre><code class="language-json"># you can obtain the token over here: https://github.com/settings/tokens
+github_token: 123
+# and this one right here: https://src.fedoraproject.org/settings#nav-api-tab
+pagure_user_token: 456
+</code></pre>
 
+<ul>
 <li><p>Once you have performed the upstream release (and the new archive is up),
 run <code>packit propose-update</code> in a working directory of your upstream
 repository:</p>
 
 <pre><code>$ git clone https://github.com/user-cont/colin.git
-    
+
 $ cd colin
-    
+
 $ packit propose-update
 using &quot;master&quot; dist-git branch
 syncing ./colin.spec
@@ -733,7 +747,7 @@ downloaded archive: /tmp/tmpaanrpgjz/colin-0.3.0.tar.gz
 uploading to the lookaside cache
 PR created: https://src.fedoraproject.org/rpms/colin/pull-request/4
 </code></pre></li>
-</ol>
+</ul>
 
 <h2 id="help">Help</h2>
 
@@ -813,6 +827,22 @@ Options:
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 

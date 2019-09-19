@@ -36,6 +36,7 @@ Both Packit-as-a-Service and packit tool use this configuration file.
  `actions`                 | string | custom actions/hooks overwriting the default behavior of packit (more in [Actions](/docs/actions/))
  `jobs`                    | list of dicts   | a list of job definitions for packit service: see [below](#supported-jobs) for details
  `allowed_gpg_keys`        | list of strings | a list of gpg-key fingerprints; if specified, one of the configured keys have to sign the last commit when updating in downstream; add GitHub key (`4AEE18F83AFDEB23`) if you want to use this on code merged via GitHub web interface
+ `spec_source_id`          | int or string   | Numeric ID of Source inside spec file which packit should change when setting path to the newly generated tarball, can be also full name of the macro
 
 
 ### Minimal sample config
@@ -232,9 +233,16 @@ The acceptable names are the same as for the package config:
  `fas_user`                   | string          | username in Fedora account system (to perform kinit if needed)
  `github_token`               | string          | Github API token: this is needed when packit interacts with Github API: https://github.com/settings/tokens (getting full read & write repo scope should be enough)
  `pagure_user_token`          | string          | Pagure token needed to access REST API, get it at: https://src.fedoraproject.org/settings#nav-api-tab
- `pagure_fork_token`          | string          | a token so packit can create a pull request: https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab
 
-You can also specify the tokens as environment variables: `GITHUB_TOKEN`, `PAGURE_USER_TOKEN`, `PAGURE_FORK_TOKEN`.
+Specifying tokens as environment variables `GITHUB_TOKEN` and
+`PAGURE_USER_TOKEN` is now deprecated and will be removed in future versions.
+Please store the tokens in the config file.
+
+Since API tokens are a very sensitive information, please do NOT ever store
+them in a public (such as a GitHub repository). The configuration file here is
+located on your workstation, please do NOT confuse it with a config file for
+your project - that one is described above in the first section of this
+document.
 
 
 ### Minimal sample config

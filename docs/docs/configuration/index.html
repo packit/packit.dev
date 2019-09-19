@@ -158,6 +158,25 @@ if (!doNotTrack) {
  
   
     
+      <li data-nav-id="/docs/guide/" title="Packit Guide" class="dd-item ">
+        <a href="/docs/guide/">
+        Packit Guide
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/docs/configuration/" title="Configuration" class="dd-item active">
         <a href="/docs/configuration/">
         Configuration
@@ -771,6 +790,12 @@ if (!doNotTrack) {
 <td>list of strings</td>
 <td>a list of gpg-key fingerprints; if specified, one of the configured keys have to sign the last commit when updating in downstream; add GitHub key (<code>4AEE18F83AFDEB23</code>) if you want to use this on code merged via GitHub web interface</td>
 </tr>
+
+<tr>
+<td><code>spec_source_id</code></td>
+<td>int or string</td>
+<td>Numeric ID of Source inside spec file which packit should change when setting path to the newly generated tarball, can be also full name of the macro</td>
+</tr>
 </tbody>
 </table>
 
@@ -1003,16 +1028,18 @@ environment variable. If not set, it looks inside <code>~/.config/</code> direct
 <td>string</td>
 <td>Pagure token needed to access REST API, get it at: <a href="https://src.fedoraproject.org/settings#nav-api-tab">https://src.fedoraproject.org/settings#nav-api-tab</a></td>
 </tr>
-
-<tr>
-<td><code>pagure_fork_token</code></td>
-<td>string</td>
-<td>a token so packit can create a pull request: <a href="https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab">https://src.fedoraproject.org/fork/YOU/rpms/PACKAGE/settings#apikeys-tab</a></td>
-</tr>
 </tbody>
 </table>
 
-<p>You can also specify the tokens as environment variables: <code>GITHUB_TOKEN</code>, <code>PAGURE_USER_TOKEN</code>, <code>PAGURE_FORK_TOKEN</code>.</p>
+<p>Specifying tokens as environment variables <code>GITHUB_TOKEN</code> and
+<code>PAGURE_USER_TOKEN</code> is now deprecated and will be removed in future versions.
+Please store the tokens in the config file.</p>
+
+<p>Since API tokens are a very sensitive information, please do NOT ever store
+them in a public (such as a GitHub repository). The configuration file here is
+located on your workstation, please do NOT confuse it with a config file for
+your project - that one is described above in the first section of this
+document.</p>
 
 <h3 id="minimal-sample-config-1">Minimal sample config</h3>
 
@@ -1116,6 +1143,22 @@ pagure_user_token: qwertyuiop098765
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1448,7 +1491,7 @@ pagure_user_token: qwertyuiop098765
 	 
 	 
 		
-			<a class="nav nav-prev" href="/docs/architecture/" title="Architecture"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/docs/guide/" title="Packit Guide"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/docs/how-to-source-git/" title="How to source-git?" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>

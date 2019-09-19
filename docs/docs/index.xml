@@ -18,8 +18,7 @@
       
       <guid>https://packit.dev/docs/actions/</guid>
       <description>You can probably find yourself in a situation where some part of the packit workflow needs to be tweaked for your package.
-Packit supports actions, a way to change default implementation for a command of your choice. Packit is able to execute more commands. Each action can accept list of commands.
-All the actions are also executed inside Packit-as-a-Service. The service creates a new sandbox environment where the command is ran.</description>
+Packit supports actions, a way to change default implementation for a command of your choice. Packit is able to execute more commands. Each action can accept a list of commands. By default, the commands are executed directly and not in a shell - if you need shell, just wrap your command like this: bash -c &amp;quot;my fancy $command | grep success&amp;quot;.</description>
     </item>
     
     <item>
@@ -29,6 +28,16 @@ All the actions are also executed inside Packit-as-a-Service. The service create
       
       <guid>https://packit.dev/docs/architecture/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Packit Guide</title>
+      <link>https://packit.dev/docs/guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/guide/</guid>
+      <description>Agenda Being fully on-board of the packit train may take some time and effort. This is why we decided to split the on-boarding process into multiple checkpoints:
+ Have packit tooling installed locally. RPM builds pass on your laptop. You are approved to use packit-service. The project has successful builds inside the service. Packit service handles Fedora Rawhide updates for you.  The guide We welcome all the suggestions to this guide, feel free to open a new issue here.</description>
     </item>
     
     <item>
