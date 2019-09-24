@@ -65,6 +65,10 @@
   </url>
   
   <url>
+    <loc>https://packit.dev/testing-farm/</loc>
+  </url>
+  
+  <url>
     <loc>https://packit.dev/docs/cli/create-bodhi-update/</loc>
     <lastmod>2019-06-28T00:00:00+00:00</lastmod>
   </url>

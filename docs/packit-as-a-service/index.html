@@ -541,6 +541,28 @@ if (!doNotTrack) {
  
   
     
+    <li data-nav-id="/testing-farm/" title="Testing Farm" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/testing-farm/">
+          Testing Farm
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
     <li data-nav-id="/faq/" title="FAQ" class="dd-item 
         
         
@@ -638,6 +660,7 @@ if (!doNotTrack) {
 <li><a href="#how-to-check-packit-service-works-in-your-project">How to check Packit Service works in your project?</a></li>
 <li><a href="#how-to-re-trigger-packit-service-actions-in-your-pull-request">How to re-trigger Packit Service actions in your pull request?</a></li>
 <li><a href="#how-to-propose-a-new-downstream-update">How to propose a new downstream update?</a></li>
+<li><a href="#adding-tests">Adding tests</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -681,8 +704,10 @@ to your repository together with the RPM spec file and you&rsquo;re good to go.<
 Once the builds are done, Packit lets you know how to install the
 RPMs inside your environment so you can try the changes before merging them.</p>
 
+<p>Optionally, Packit Service can run tests for the built software (i.e. copr builds) in all current Fedora OS releases via <a href="/testing-farm">Testing Farm</a>.</p>
+
 <p>Packit is also available as a <a href="https://github.com/packit-service/packit/blob/master/README.md">CLI tool</a>,
-so you can always try things locally on your own.</p>
+so you can always try things locally on your own. Note that testing is not currently supported with the CLI tool.</p>
 
 <h2 id="integrating-packit-as-a-service-into-your-project-or-organization-from-github-marketplace">Integrating Packit-as-a-Service into your project or organization from GitHub Marketplace</h2>
 
@@ -738,6 +763,10 @@ Packit service triggers and pushes it directly into Fedora dist-git repositories
 finished successfully, then the issue is automatically closed.</p>
 
 <p>Only project collaborators can propose a new update.</p>
+
+<h3 id="adding-tests">Adding tests</h3>
+
+<p>See <a href="/testing-farm/adding-tests">Testing Farm - Adding Tests</a>.</p>
 
 
 
@@ -1098,6 +1127,22 @@ finished successfully, then the issue is automatically closed.</p>
                     
             
         
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
             
         

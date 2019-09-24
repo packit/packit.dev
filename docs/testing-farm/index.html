@@ -23,7 +23,7 @@ if (!doNotTrack) {
 }
 </script>
 
-    <title>build :: Packit</title>
+    <title>Testing Farm :: Packit</title>
 
     
     <link href="/css/nucleus.css" rel="stylesheet">
@@ -53,7 +53,7 @@ if (!doNotTrack) {
     </style>
     
   </head>
-  <body class="" data-url="/docs/cli/build/">
+  <body class="" data-url="/testing-farm/">
     <nav id="sidebar" class="">
 
 
@@ -94,7 +94,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/docs/" title="Documentation" class="dd-item 
-        parent
+        
         
         
         ">
@@ -216,7 +216,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/docs/cli/" title="Packit CLI Commands" class="dd-item 
-        parent
+        
         
         
         ">
@@ -240,7 +240,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/docs/cli/build/" title="build" class="dd-item active">
+      <li data-nav-id="/docs/cli/build/" title="build" class="dd-item ">
         <a href="/docs/cli/build/">
         build
         
@@ -542,8 +542,8 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/testing-farm/" title="Testing Farm" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/testing-farm/">
@@ -639,19 +639,7 @@ if (!doNotTrack) {
             
           
           
-            
-            
-          
-          
-            
-            
-          
-          
-            <a href='/'>About</a> > <a href='/docs/'>Documentation</a> > <a href='/docs/cli/'>Packit CLI Commands</a> > build
-          
-         
-          
-         
+            <a href='/'>About</a> > Testing Farm
           
          
           
@@ -666,9 +654,32 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
-<li><a href="#requirements">Requirements</a></li>
-<li><a href="#tutorial">Tutorial</a></li>
-<li><a href="#help">Help</a></li>
+<li><a href="#user-guide">User Guide</a>
+<ul>
+<li><a href="#add-tests">Add Tests</a></li>
+<li><a href="#enable-testing">Enable Testing</a></li>
+<li><a href="#support-matrix">Support Matrix</a></li>
+<li><a href="#test-environment">Test Environment</a></li>
+<li><a href="#debugging-and-reproducing">Debugging and Reproducing</a></li>
+</ul></li>
+<li><a href="#examples">Examples</a>
+<ul>
+<li><a href="#shell-tests">Shell Tests</a></li>
+<li><a href="#beakerlib-tests">BeakerLib Tests</a></li>
+<li><a href="#fmf-tests">FMF Tests</a></li>
+</ul></li>
+<li><a href="#issues-rfes">Issues &amp; RFEs</a></li>
+<li><a href="#architecture">Architecture</a>
+<ul>
+<li><a href="#high-level-overview">High Level Overview</a></li>
+<li><a href="#components">Components</a>
+<ul>
+<li><a href="#api">API</a></li>
+<li><a href="#console">Console</a></li>
+<li><a href="#artifacts">Artifacts</a></li>
+<li><a href="#worker">Worker</a></li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -687,7 +698,7 @@ if (!doNotTrack) {
           
             <h1>
               
-              build
+              Testing Farm
             </h1>
           
 
@@ -696,54 +707,294 @@ if (!doNotTrack) {
 
 
 
+	
 
-<p>Submit a koji build for the selected branch in Fedora dist-git.</p>
+<p>Testing Farm is Packit&rsquo;s testing system.
+It is a containerized service for running tests.
+Test execution is configured via <a href="https://fmf.readthedocs.io/">Flexible Metadata Format</a>,
+according to the <a href="https://pagure.io/fedora-ci/metadata/blob/master/f/l1">L1 Metadata</a> and <a href="https://pagure.io/fedora-ci/metadata/blob/master/f/l2">L2 Metadata</a> specification.</p>
 
-<h2 id="requirements">Requirements</h2>
+<p>Currently only a subset of the metadata specification is implemented:
+It is possible to run <a href="#beakerlib-tests">BeakerLib</a> tests and arbitrary <a href="#shell-tests">shell</a> commands.
+See <a href="#examples">Examples</a> and <a href="#support-matrix">Support Matrix</a> for more details.</p>
+
+<p>If you are interested in Testing Farm&rsquo;s architecture, see the section <a href="#architecture">Architecture</a>.</p>
+
+<h2 id="user-guide">User Guide</h2>
+
+<h3 id="add-tests">Add Tests</h3>
+
+<p>Test configuration is stored directly in the project repository.
+Make sure that you have <code>fmf</code> package <a href="https://fmf.readthedocs.io/en/latest/overview.html#install">installed</a> on your system.
+In order to start, initialize the metadata tree in the root directory of your git repository.</p>
+
+<pre><code>fmf init
+</code></pre>
+
+<p>For small projects store test config in a single <code>ci.fmf</code> file.
+If your config grows consider using <a href="https://fmf.readthedocs.io/en/latest/features.html#elasticity">elasticity</a> to organize your config into multiple files.
+Here&rsquo;s a minimal example showing how to enable a simple smoke test:</p>
+
+<pre><code>/test/build/smoke:
+    execute:
+        how: shell
+        commands:
+        - /usr/bin/binary --help
+</code></pre>
+
+<p>The first line defines name of the test set.
+It is possible to define multiple testsets in the config to cover multiple scenarios.
+Tests can be fetched from a remote repository as well.
+Use the <code>discover</code> step to reference the remote repository:</p>
+
+<pre><code>/test/build/smoke:
+    discover:
+        how: fmf
+        repository: &quot;https://github.com/systemd-rhel/tests&quot;
+    execute:
+        how: beakerlib
+</code></pre>
+
+<p>Use custom <code>filter</code> in order to choose relevant tests only:</p>
+
+<pre><code>discover:
+    how: fmf
+    filter: &quot;tier: 1 &amp; distros: rhel-8&quot;
+    repository: &quot;https://github.com/systemd-rhel/tests&quot;
+</code></pre>
+
+<p>The <code>prepare</code> step can be used to define how test environment should be prepared before testing.
+Currently only ansible playbooks are supported:</p>
+
+<pre><code>prepare:
+    how: ansible
+    playbooks:
+        - ci/rhel-8.yml
+</code></pre>
+
+<p>See the <a href="https://pagure.io/fedora-ci/metadata/blob/master/f/l2">L2 Metadata</a> specification for a detailed description of the individual test steps and the whole concept.</p>
+
+<h3 id="enable-testing">Enable Testing</h3>
+
+<p>In order to enable test execution simply include <code>copr_build</code> and <code>tests</code> jobs in the <code>.packit.yaml</code> configuration:</p>
+
+<pre><code>...
+
+jobs:
+- job: copr_build
+  trigger: pull_request
+  metadata:
+    targets:
+    - fedora-29-x86_64
+    - fedora-30-x86_64
+    - fedora-rawhide-x86_64
+
+- job: tests
+  trigger: pull_request
+  metadata:
+    targets:
+    - fedora-29-x86_64
+    - fedora-30-x86_64
+    - fedora-rawhide-x86_64
+</code></pre>
+
+<p>That&rsquo;s it! Since now you should see testing feedback in your pull requests.</p>
+
+<h3 id="support-matrix">Support Matrix</h3>
+
+<p>Currently supported steps and implementations:</p>
 
 <ul>
-<li>Upstream git repository on Github.</li>
-<li>Packit config file placed in the upstream repository.</li>
-<li>Valid Fedora Kerberos ticket.</li>
+<li>Discover: fmf</li>
+<li>Prepare: ansible</li>
+<li>Execute: shell, beakerlib</li>
 </ul>
 
-<h2 id="tutorial">Tutorial</h2>
+<h3 id="test-environment">Test Environment</h3>
 
-<ol>
-<li><p><a href="/docs/configuration/">Place a config file for packit in the root of your upstream repository.</a></p></li>
+<p>We currently support running tests in an x86_64 virtual machine only. The system is using qemu-kvm with hardware acceleration. You have full root access in the machine. The test environment currently cannot be easily changed.</p>
 
-<li><p>The command below would perform <code>fedpkg build</code> in the Fedora dist-git master branch.</p>
+<p>Additional machine specs:</p>
 
-<pre><code>$ cd my/ustream/project/
-$ packit build
-</code></pre></li>
-</ol>
+<ul>
+<li>RAM: 2 GB</li>
+<li>HDD: 4 GB</li>
+</ul>
 
-<h2 id="help">Help</h2>
+<h3 id="debugging-and-reproducing">Debugging and Reproducing</h3>
 
-<pre><code class="language-bash">Usage: packit build [OPTIONS] [PATH_OR_URL]
+<p>We are working on an easy way how to develop new tests, debug and reproduce issues for failed runs.
+Until that is ready, your best option is to spin up a new Fedora Docker container or run the Fedora Cloud Base qcow2 manually via qemu-kvm or libvirt.
+See the <a href="#worker">Worker</a> section for details how to run the tool locally.</p>
 
-  Build selected upstream project in Fedora.
+<h2 id="examples">Examples</h2>
 
-  Packit goes to dist-git and performs `fedpkg build` for the selected
-  branch.
+<p>Get inspiration for a quick start from a couple of real-life examples!</p>
 
-  PATH_OR_URL argument is a local path or a URL to the upstream git
-  repository, it defaults to the current working directory
+<h3 id="shell-tests">Shell Tests</h3>
 
-Options:
-  --dist-git-branch TEXT  Target branch in dist-git to release into.
-  --dist-git-path TEXT    Path to dist-git repo to work in. Otherwise clone
-                          the repo in a temporary directory.
-  --scratch               Submit a scratch koji build
-  -h, --help              Show this message and exit.
+<p>Here is an example of a simple integration test for the web server <code>httpd</code> and <code>curl</code> utility:</p>
+
+<pre><code>/test/build/smoke:
+    execute:
+        how: shell
+        commands:
+        - dnf -y install httpd curl
+        - systemctl start httpd
+        - echo foo &gt; /var/www/html/index.html
+        - curl http://localhost/ | grep foo
 </code></pre>
+
+<p>Single testset <code>/test/build/smoke</code> defines only the <code>execute</code> step.
+Individual shell commands are provided as a list.
+Testing will fail if any of the commands returns a non-zero exit status.</p>
+
+<h3 id="beakerlib-tests">BeakerLib Tests</h3>
+
+<p>Below you can find little bit more interesting example of a <code>systemd</code> test configuration:</p>
+
+<pre><code>/test/pull-request/smoke:
+    summary:
+        Basic set of quick smoke tests for systemd.
+    discover:
+        how: fmf
+        filter: &quot;tier: 1 &amp; distros: rhel-8&quot;
+        repository: &quot;https://github.com/systemd-rhel/tests&quot;
+    prepare:
+        how: ansible
+        playbooks: [ci/rhel-8.yml]
+    execute:
+        how: beakerlib
+</code></pre>
+
+<p>This testset enables a set of Tier 1 tests from the shared <a href="https://github.com/systemd-rhel/tests">systemd tests</a> repository.
+The meaning of individual attributes is as follows:</p>
+
+<ul>
+<li>Summary — an optional but useful attribute describing high-level purpose of the testset.</li>
+<li>Discover — instructs to fetch tests from given repository and select relevant ones by provided <code>filter</code>.</li>
+<li>Prepare — specifies which ansible playbook should be applied to prepare environment for testing.</li>
+<li>Execute — defines that the beakerlib framework should be used for running the tests.</li>
+</ul>
+
+<h3 id="fmf-tests">FMF Tests</h3>
+
+<p>Here&rsquo;s a real-life example of tests enabled for the <a href="https://fmf.readthedocs.io/">fmf</a> package.
+There are several testsets defined under the <a href="https://github.com/psss/fmf/tree/master/testsets">testsets</a> directory.
+The <code>smoke</code> testset enables a super basic test checking availability of the <code>fmf</code> command:</p>
+
+<pre><code>summary:
+    Just a basic smoke test
+execute:
+    how: shell
+    commands:
+        - fmf --help
+</code></pre>
+
+<p>Testset <code>features</code> is used to execute all available beakerlib tests from the <code>fmf</code> repository:</p>
+
+<pre><code>summary:
+    Essential command line features
+discover:
+    how: fmf
+    repository: https://github.com/psss/fmf
+execute:
+    how: beakerlib
+</code></pre>
+
+<p>It is also possible to select only a subset of available tests.
+This is demonstrated by the <code>docs</code> testset.
+Use an fmf <code>filter</code> like <code>tier:1</code> to select tests for execution.
+You can also reference a specific feature area instead:</p>
+
+<pre><code>summary:
+    Ensure that documentation is present
+discover:
+    how: fmf
+    repository: https://github.com/psss/fmf
+    filter: coverage:/stories/docs.*
+execute:
+    how: beakerlib
+</code></pre>
+
+<p>See the <a href="https://github.com/psss/fmf/tree/master/stories">stories</a> directory to get some inspiration for organizing stories and requirements.</p>
+
+<h2 id="issues-rfes">Issues &amp; RFEs</h2>
+
+<p>If you have found an issue or have an RFE, please use Testing Farm&rsquo;s general project to <a href="https://gitlab.com/testing-farm/general/issues">file an issue</a>.</p>
+
+<h2 id="architecture">Architecture</h2>
+
+<h3 id="high-level-overview">High Level Overview</h3>
+
+<p>Testing Farm is a containerized application running on Kubernetes.
+It consists of <a href="#components">4 main components</a>.
+It&rsquo;s source code is located under the <a href="https://gitlab.com/testing-farm">testing-farm organization</a> on gitlab.com.</p>
+
+<p>Currently Testing Farm is deployed on Centos CI Openshift, where it runs it&rsquo;s components and uses the same cluster as the testing infrastructure.
+See section <a href="#test-environment">Test Environment</a> for more information about the test environment.</p>
+
+<h3 id="components">Components</h3>
+
+<h4 id="api">API</h4>
+
+<p>API is a REST API endpoint used for integration with other services.
+Packit Service uses this API to trigger tests.
+For each trigger request the API runs a <a href="#worker">Worker</a> on the cluster as a separate pod.</p>
+
+<p>The <a href="#console">Console</a> component uses it to get the logs of the <a href="#worker">Workers</a>.
+Each trigger request MUST contain a unique pipeline ID, generated by the requester, which identifies the request and result and is used to access the console and testing artifacts.</p>
+
+<p>The API is currently in version 0 and it is expected to change.</p>
+
+<p>The source code of the API is located in the <a href="https://gitlab.com/testing-farm/api">testing-farm/api</a> project.</p>
+
+<h4 id="console">Console</h4>
+
+<p>Is a React.js application that uses API&rsquo;s console endpoint to access the Worker&rsquo;s pod console.
+Currently it is the main entrypoint for a user.
+Packit users can access the console by clicking the <code>Details</code> link in the Github PR test results.</p>
+
+<p><img src="/packit-github-tf-details.png" alt="testing-details" /></p>
+
+<p>Console provides also a link to produced test artifacts.</p>
+
+<p><img src="/testing-farm-console.png" alt="testing-farm-console" /></p>
+
+<p>The source code of the Console is located in the <a href="https://gitlab.com/testing-farm/console">testing-farm/console</a> project.</p>
+
+<h4 id="artifacts">Artifacts</h4>
+
+<p>Artifacts component provides access to the artifact storage to the end users.
+Artifacts are stored on a persistent volume storage which is shared with all the workers.
+Artifacts are not accessed directly, but via the <a href="#console">Console</a>.</p>
+
+<p>The source code of the Artifacts is located in the <a href="https://gitlab.com/testing-farm/artifacts">testing-farm/artifacts</a> project.</p>
+
+<h4 id="worker">Worker</h4>
+
+<p>Worker is a container image which runs the testing workloads.
+Each worker is run in a separate pod.</p>
+
+<p>The worker can be easily run from your localhost and if it has access to /dev/kvm, it can run basically the same workloads as CI.
+We will use it in the future to provide a seamless experience to the end users to reproduce the tests on your localhost.</p>
+
+<p>If you want to try out worker now, you can easily run some tests from a repository with FMF tests with the command bellow.</p>
+
+<pre><code>podman run --device /dev/kvm quay.io/testing-farm/cruncher cruncher --git-url https://github.com/packit-service/hello-world --keep-instance
+</code></pre>
+
+<p>The option <code>--keep-instance</code> will keep the VM reserved and you will be presented in the worker logs how to connect to the machine via ssh.</p>
+
+<p>The source code of the Worker is located in the <a href="https://gitlab.com/testing-farm/cruncher">testing-farm/cruncher</a> project.</p>
+
+
+
 
 
 <footer class=" footline" >
 	
 </footer>
-
 
         
         </div> 
@@ -776,6 +1027,8 @@ Options:
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -791,9 +1044,6 @@ Options:
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -875,7 +1125,6 @@ Options:
             
                 
                     
-                    
                 
                 
 
@@ -888,7 +1137,6 @@ Options:
             
             
                 
-                    
                     
                 
                 
@@ -905,9 +1153,6 @@ Options:
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1123,6 +1368,7 @@ Options:
             
                 
                     
+                    
                 
                 
 
@@ -1138,6 +1384,9 @@ Options:
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1159,10 +1408,10 @@ Options:
 	 
 	 
 		
-			<a class="nav nav-prev" href="/docs/cli/" title="Packit CLI Commands"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/source-git/" title="Source-git"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/docs/cli/create-bodhi-update/" title="create-bodhi-update" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/faq/" title="FAQ" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1193,4 +1442,3 @@ Options:
 
   </body>
 </html>
-
