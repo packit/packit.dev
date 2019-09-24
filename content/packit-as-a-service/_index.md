@@ -79,4 +79,4 @@ Only project collaborators can propose a new update.
 
 ### Adding tests
 
-See [Testing Farm - Adding Tests](/testing-farm/adding-tests).
+See [Testing Farm - Add Tests](/testing-farm/#/add-tests).
