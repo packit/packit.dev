@@ -19,8 +19,10 @@ Packit Service validates your pull requests by building your software in Fedora 
 Once the builds are done, Packit lets you know how to install the
 RPMs inside your environment so you can try the changes before merging them.
 
+Optionally, Packit Service can run tests for the built software (i.e. copr builds) in all current Fedora OS releases via [Testing Farm](/testing-farm).
+
 Packit is also available as a [CLI tool](https://github.com/packit-service/packit/blob/master/README.md),
-so you can always try things locally on your own.
+so you can always try things locally on your own. Note that testing is not currently supported with the CLI tool.
 
 
 ## Integrating Packit-as-a-Service into your project or organization from GitHub Marketplace
@@ -74,3 +76,7 @@ If all jobs ([propose_downstream](/configuration/#supported-jobs)), defined in `
 finished successfully, then the issue is automatically closed.
 
 Only project collaborators can propose a new update.
+
+### Adding tests
+
+See [Testing Farm - Adding Tests](/testing-farm/adding-tests).
