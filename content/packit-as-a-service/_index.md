@@ -79,4 +79,5 @@ Only project collaborators can propose a new update.
 
 ### Adding tests
 
-See [Testing Farm - Adding Tests](/testing-farm/adding-tests).
+It is also possible to run tests against the freshly built rpms.
+See the [Testing Farm](/testing-farm/#add-tests) documentation for details.
