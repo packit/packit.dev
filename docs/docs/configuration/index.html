@@ -748,6 +748,12 @@ if (!doNotTrack) {
 </tr>
 
 <tr>
+<td><code>upstream_project_url</code></td>
+<td>string</td>
+<td>URL of the upstream prject (e.g. <code>https://github.com/packit-service/packit</code>)</td>
+</tr>
+
+<tr>
 <td><code>create_pr</code></td>
 <td>bool</td>
 <td>when doing a new update in Fedora dist-git, should packit create a new pull request (when set to <code>true</code>) or push directly to dist-git (defaults to <code>false</code>) &ndash; there is an issue in Pagure API version 5.5 and below that pull requests can&rsquo;t be opened via API, for more info see <a href="https://github.com/packit-service/packit/issues/328">packit-service/packit#328</a></td>
