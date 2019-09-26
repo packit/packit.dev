@@ -9,16 +9,13 @@ This repository uses git submodules, so you have to `git clone --recurse-submodu
 
 #### Fedora
 
-The current build of hugo in Fedora does not work with our setup, please use this copr repo instead:
-```
-$ dnf copr enable daftaupe/hugo
-```
-
-And then:
-
 1. `dnf install hugo`
 2. `hugo help`
 
+There's also a copr repo, but the newer versions not always work as expected, you have to experiment a bit:
+```
+$ dnf copr enable daftaupe/hugo
+```
 
 #### MacOS
 
