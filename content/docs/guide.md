@@ -55,8 +55,7 @@ $ pip3 install --user git+https://github.com/packit-service/packit
 Once you install packit locally, it's time to fill `.packit.yaml` — the
 configuration file packit is using.
 
-The documentation file has a document on its own: [configuration]({{< ref
-"/docs/configuration" >}}).
+The documentation file has a document on its own: [configuration]({{< ref "/docs/configuration" >}}).
 
 Packit supports actions and hooks: you can define commands on your own which
 would replace packit's implementation (e.g. get version, or create a tarball)
@@ -106,7 +105,7 @@ jobs:
     - fedora-rawhide-x86_64
 ```
 
-Jobs are nicely described over [here]({{< ref "/docs/configuration#jobs" >}}).
+Jobs are nicely described over [here]({{< ref "/docs/configuration.md#jobs" >}}).
 
 If you are looking for an inspiration for your .packit.yaml, check [packit's
 config file](https://github.com/packit-service/packit/blob/master/.packit.yaml)

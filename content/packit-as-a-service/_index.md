@@ -72,8 +72,9 @@ If you want to propose the latest release into Fedora repositories,
 create an issue and add that comment into this issue and
 Packit service triggers and pushes it directly into Fedora dist-git repositories.
 
-If all jobs ([propose_downstream](/configuration/#supported-jobs)), defined in `packit.yaml` file,
-finished successfully, then the issue is automatically closed.
+If all jobs ([propose_downstream]({{< ref "/docs/configuration.md#supported-jobs" >}})),
+defined in `packit.yaml` file, finished successfully, then the issue is
+automatically closed.
 
 Only project collaborators can propose a new update.
 
