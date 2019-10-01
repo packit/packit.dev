@@ -77,7 +77,7 @@ yes, let's proceed to the next level.
 ### Running from the dist-git repository
 
 When you are not allowed or do not want to run packit command from the upstream git repository,
-you can run commands from the cloned dist-git repository in a same way as you do from upstream.
+you can run commands from the cloned dist-git repository in the same way as you do from upstream.
 Make sure, that you specify the `upstream_project_url` in your configuration.
 
 ### You are approved to use packit-service.
