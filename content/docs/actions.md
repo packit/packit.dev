@@ -88,7 +88,7 @@ specfile_path: package.spec
 synced_files:
   - packit.yaml
   - package.spec
-upstream_project_name: package
+upstream_package_name: package
 downstream_package_name: package
 dist_git_url: https://src.fedoraproject.org/rpms/package.git
 actions:

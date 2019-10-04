@@ -44,7 +44,7 @@ specfile_path: packit.spec
 synced_files:
   - packit.spec
   - .packit.yaml
-upstream_project_name: packitos
+upstream_package_name: packitos
 downstream_package_name: packit
 actions:
     post-upstream-clone: "wget https://src.fedoraproject.org/rpms/packit/raw/master/f/packit.spec"
@@ -57,7 +57,7 @@ Yes!
 The solution is, again, actions and hooks. Just render the spec after the upstream repo is cloned:
 ```yaml
 specfile_path: my-project.spec
-upstream_project_name: my-project-src
+upstream_package_name: my-project-src
 downstream_package_name: my-project
 actions:
     post-upstream-clone: "make generate-spec"

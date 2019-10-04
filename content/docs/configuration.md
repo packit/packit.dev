@@ -24,7 +24,8 @@ Both Packit-as-a-Service and packit tool use this configuration file.
  Key name                  | Type            | Description
 ---------------------------|-----------------|----------------------------------------------------------------------
  `specfile_path`           | string          | relative path to a spec file within the upstream repository (mandatory)
- `upstream_project_name`   | string          | name of the upstream repository (e.g. in PyPI); this is used in `%prep` section to generate an archive
+ `upstream_project_name`   | string          | deprecated since packit-0.7.0, use `upstream_package_name` instead
+ `upstream_package_name`   | string          | name of the upstream repository (e.g. in PyPI); this is used in `%prep` section to generate an archive
  `upstream_project_url`    | string          | URL of the upstream project (e.g. `https://github.com/packit-service/packit`)
  `create_pr`               | bool            | when doing a new update in Fedora dist-git, should packit create a new pull request (when set to `true`) or push directly to dist-git (defaults to `false`) -- there is an issue in Pagure API version 5.5 and below that pull requests can't be opened via API, for more info see [packit-service/packit#328](https://github.com/packit-service/packit/issues/328)
  `synced_files`            | list of strings or dicts | a list of relative paths to files in the upstream repo which are meant to be copied to dist-git during an update
@@ -52,7 +53,7 @@ synced_files:
   - packit.spec
   - .packit.yaml
 # packit is named packitos on PyPI b/c packit name was already taken
-upstream_project_name: packitos
+upstream_package_name: packitos
 # yes, packit is named packit in Fedora
 downstream_package_name: packit
 ```
