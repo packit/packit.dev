@@ -744,6 +744,12 @@ if (!doNotTrack) {
 <tr>
 <td><code>upstream_project_name</code></td>
 <td>string</td>
+<td>deprecated since packit-0.7.0, use <code>upstream_package_name</code> instead</td>
+</tr>
+
+<tr>
+<td><code>upstream_package_name</code></td>
+<td>string</td>
 <td>name of the upstream repository (e.g. in PyPI); this is used in <code>%prep</code> section to generate an archive</td>
 </tr>
 
@@ -838,7 +844,7 @@ synced_files:
   - packit.spec
   - .packit.yaml
 # packit is named packitos on PyPI b/c packit name was already taken
-upstream_project_name: packitos
+upstream_package_name: packitos
 # yes, packit is named packit in Fedora
 downstream_package_name: packit
 </code></pre>

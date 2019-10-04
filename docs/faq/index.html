@@ -728,7 +728,7 @@ Packit service has a limited set of commands available so please use <code>wget<
 synced_files:
   - packit.spec
   - .packit.yaml
-upstream_project_name: packitos
+upstream_package_name: packitos
 downstream_package_name: packit
 actions:
     post-upstream-clone: &quot;wget https://src.fedoraproject.org/rpms/packit/raw/master/f/packit.spec&quot;
@@ -741,7 +741,7 @@ actions:
 <p>The solution is, again, actions and hooks. Just render the spec after the upstream repo is cloned:</p>
 
 <pre><code class="language-yaml">specfile_path: my-project.spec
-upstream_project_name: my-project-src
+upstream_package_name: my-project-src
 downstream_package_name: my-project
 actions:
     post-upstream-clone: &quot;make generate-spec&quot;
