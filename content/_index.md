@@ -76,6 +76,9 @@ We are also available on this e-mail: user-cont-team@redhat.com.
   every two weeks. To accomplish this, the release and validation processes are
   completely automated.
 
+* All the tests are passing in CI systems for master branches for all our
+  projects. No excuses.
+
 * Contributions to packit must be possible by any developer, maintainer,
   tester, or other engineer. Any Fedora developer or tester should be able to
   reproduce a bot locally on their machine, given appropriate credentials.
