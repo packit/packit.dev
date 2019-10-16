@@ -661,6 +661,7 @@ if (!doNotTrack) {
 <li><a href="#how-can-i-contact-you">How can I contact you?</a></li>
 <li><a href="#how-can-i-download-rpm-spec-file-if-it-is-not-part-of-upstream-repository">How can I download RPM spec file if it is not part of upstream repository?</a></li>
 <li><a href="#i-have-a-template-of-a-spec-file-in-my-repo-can-packit-work-with-it">I have a template of a spec file in my repo: can packit work with it?</a></li>
+<li><a href="#can-i-use-centos-stream-with-packit-service">Can I use CentOS Stream with packit service?</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -756,6 +757,18 @@ actions:
 <p>As a practical example, <a href="https://github.com/cockpit-project/cockpit-podman">cockpit-podman
 project</a> is using this
 functionality.</p>
+
+<h3 id="can-i-use-centos-stream-with-packit-service">Can I use CentOS Stream with packit service?</h3>
+
+<p>Yes, you can! It&rsquo;s very simple, just add <code>centos-stream-x86_64</code> as a target for <code>copr_build</code> job:</p>
+
+<pre><code class="language-yaml">jobs:
+- job: copr_build
+  trigger: pull_request
+  metadata:
+    targets:
+      - centos-stream-x86_64
+</code></pre>
 
 
 
