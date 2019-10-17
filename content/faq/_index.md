@@ -3,7 +3,6 @@ title: "FAQ"
 date: 2019-07-24
 draft: false
 disableToc: false
-
 ---
 
 ### Can I use the packit service as soon as I install it into my repository?
@@ -72,3 +71,18 @@ generate-spec:
 As a practical example, [cockpit-podman
 project](https://github.com/cockpit-project/cockpit-podman) is using this
 functionality.
+
+
+### Can I use CentOS Stream with packit service?
+
+Yes, you can! It's very simple, just add `centos-stream-x86_64` as a target for
+the `copr_build` job:
+```yaml
+jobs:
+- job: copr_build
+  trigger: pull_request
+  metadata:
+    targets:
+      - centos-stream-x86_64
+```
+

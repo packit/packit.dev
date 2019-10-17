@@ -166,6 +166,7 @@ jobs:
     targets:
       - fedora-rawhide-x86_64
       - fedora-30-x86_64
+      - centos-stream-x86_64
 ```
 
 **sync\_from\_downstream**
