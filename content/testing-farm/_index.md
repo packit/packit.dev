@@ -26,6 +26,8 @@ In order to start, initialize the metadata tree in the root directory of your gi
 
     fmf init
 
+The initialization will create `.fmf` directory in your repository which you **must** add in your pull request otherwise Testing Farm will not find your tests.
+
 For small projects store test config in a single `ci.fmf` file.
 If your config grows consider using [elasticity][elasticity] to organize your config into multiple files.
 Here's a minimal example showing how to enable a simple smoke test:
@@ -89,6 +91,12 @@ In order to enable test execution simply include `copr_build` and `tests` jobs i
         - fedora-rawhide-x86_64
 
 That's it! Since now you should see testing feedback in your pull requests.
+
+### Restart Testing
+
+The testing will be automatically started after an update to the pull request and successful copr build. To trigger retesting manually (can come handy in case of infrastructure issues for example), you can use the following comment in the pull request:
+
+    /packit test
 
 ### Support Matrix
 

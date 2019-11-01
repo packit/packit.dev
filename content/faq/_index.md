@@ -86,3 +86,6 @@ jobs:
       - centos-stream-x86_64
 ```
 
+### After adding tests I see error 'No FMF metadata found.'
+
+If you encounter this error when running tests via Testing Farm, it means you forgot to initialize the metadata tree with `fmf init` and include the `.fmf` directory in the pull request. See [Testing Farm documentation](/testing-farm) for more information.
