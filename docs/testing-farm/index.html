@@ -658,6 +658,7 @@ if (!doNotTrack) {
 <ul>
 <li><a href="#add-tests">Add Tests</a></li>
 <li><a href="#enable-testing">Enable Testing</a></li>
+<li><a href="#restart-testing">Restart Testing</a></li>
 <li><a href="#support-matrix">Support Matrix</a></li>
 <li><a href="#test-environment">Test Environment</a></li>
 <li><a href="#debugging-and-reproducing">Debugging and Reproducing</a></li>
@@ -731,6 +732,8 @@ In order to start, initialize the metadata tree in the root directory of your gi
 <pre><code>fmf init
 </code></pre>
 
+<p>The initialization will create <code>.fmf</code> directory in your repository which you <strong>must</strong> add in your pull request otherwise Testing Farm will not find your tests.</p>
+
 <p>For small projects store test config in a single <code>ci.fmf</code> file.
 If your config grows consider using <a href="https://fmf.readthedocs.io/en/latest/features.html#elasticity">elasticity</a> to organize your config into multiple files.
 Here&rsquo;s a minimal example showing how to enable a simple smoke test:</p>
@@ -799,6 +802,13 @@ jobs:
 </code></pre>
 
 <p>That&rsquo;s it! Since now you should see testing feedback in your pull requests.</p>
+
+<h3 id="restart-testing">Restart Testing</h3>
+
+<p>The testing will be automatically started after an update to the pull request and successful copr build. To trigger retesting manually (can come handy in case of infrastructure issues for example), you can use the following comment in the pull request:</p>
+
+<pre><code>/packit test
+</code></pre>
 
 <h3 id="support-matrix">Support Matrix</h3>
 
