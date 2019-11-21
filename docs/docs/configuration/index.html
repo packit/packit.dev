@@ -830,6 +830,12 @@ if (!doNotTrack) {
 <td>int or string</td>
 <td>Numeric ID of Source inside spec file which packit should change when setting path to the newly generated tarball, can be also full name of the macro</td>
 </tr>
+
+<tr>
+<td><code>upstream_tag_template</code></td>
+<td>string</td>
+<td>template to create an upstream tag name (upstream may use different tagging scheme) using python string formatting, e.g.: &ldquo;v{version}&rdquo;, where packit will fill in the version argument</td>
+</tr>
 </tbody>
 </table>
 
