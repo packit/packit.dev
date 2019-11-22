@@ -828,13 +828,13 @@ if (!doNotTrack) {
 <tr>
 <td><code>spec_source_id</code></td>
 <td>int or string</td>
-<td>Numeric ID of Source inside spec file which packit should change when setting path to the newly generated tarball, can be also full name of the macro</td>
+<td>numeric ID of Source inside spec file which packit should change when setting path to the newly generated tarball, can be also full name of the macro</td>
 </tr>
 
 <tr>
 <td><code>upstream_tag_template</code></td>
 <td>string</td>
-<td>template to create an upstream tag name (upstream may use different tagging scheme) using python string formatting, e.g.: &ldquo;v{version}&rdquo;, where packit will fill in the version argument</td>
+<td>packit by default expects git tags to match versions (e.g. when doing the propose update command) - if you are using a different tagging scheme, let&rsquo;s say <code>v1.2.3</code> you can then set this parameter to <code>v{version}</code> and packit will fill in the version argument</td>
 </tr>
 </tbody>
 </table>
