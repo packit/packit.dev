@@ -27,8 +27,27 @@ If you encounter a problem while using Packit-as-a-service, please open an
 In case of any other questions, feel free to contact us:
 **user-cont-team@redhat.com**.
 
-### How can I download RPM spec file if it is not part of upstream repository?
+### Why do I have to maintain .packit.yaml and a spec file upstream?
+[We are working](https://github.com/packit-service/packit/issues/574) on simplifying the `.packit.yaml` so it's as small as possible.
+We will also handle all potentially backward incompatible changes of `.packit.yaml`.
+`Spec` file can be downloaded (see specific question below) from [Fedora Pagure](https://src.fedoraproject.org) instead of having it included in the upstream repository.
 
+### But what are the benefits?
+Packit makes it trivial to run your project as part of an OS.
+It provides feedback to your project at the time when the changes are being developed so you can fix incompatible code when you are working on it, not when it's already released.
+When you push commits to a pull request, you'll get RPM build and test results right away.
+
+### Why Fedora?
+We've started with Fedora Linux because we work for Red Hat and we ❤ Fedora.
+
+### How is Packit different from other services?
+Packit connects the existing services ([Copr](https://copr.fedorainfracloud.org), [Pagure](https://src.fedoraproject.org), [Koji](https://koji.fedoraproject.org), [Bodhi](https://bodhi.fedoraproject.org)) together.
+
+### Can we use Packit with Gitlab?
+Packit service is closely tied to GitHub right now because most of the projects are hosted on GitHub.
+[Let us know](https://github.com/packit-service/packit-service/issues/249) if you'd like to see Gitlab support.
+
+### How can I download RPM spec file if it is not part of upstream repository?
 If you do not want to have the RPM spec file in your upstream repository,
 you can download it in [actions](/docs/actions/) section.
 
