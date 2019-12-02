@@ -6,7 +6,7 @@
     <description>Recent content in Blog Posts on Packit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://packit.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -81,6 +81,16 @@ improvements of version
 
 &lt;p&gt;You can find a complete list in the
 &lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md#040&#34;&gt;changelog&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Week 44-48 (November) 2019</title>
+      <link>https://packit.dev/posts/week-44-48-19/</link>
+      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/week-44-48-19/</guid>
+      <description>With this blog post we&amp;rsquo;d like to continue with the idea of openly communicating changes in Packit. Since most of the developers use Packit as the GitHub App (which uses Packit Service), this blog will be about changes in all the parts, i.e. the GitHub App, the Packit Service and Packit itself.
+Continuous Deployment (CD) At the moment the workflow is that one of us manually triggers production container image build at the end of a week.</description>
     </item>
     
     <item>
