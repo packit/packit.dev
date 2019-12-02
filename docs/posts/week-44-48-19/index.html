@@ -743,23 +743,32 @@ From the most visible changes, Packit now:</p>
 
 <h3 id="packit-service">Packit Service</h3>
 
-<p>Now:
-- better reports Copr builds
-  * uses separate commit status for srpm build and every chroot
-  * clears test farm commit statuses when new build is triggered
-  * better handles failed Copr builds
-- gracefully handles no config file in the repo
-- better handles when no (copr build) targets are specified in config file
-- better checks whitelist of users
-- does not create duplicate tickets in our <a href="https://github.com/packit-service/notifications">notification repo</a> when a new user install the app</p>
+<p>Now:</p>
 
-<p>Changes not visible to end users:
-- using <a href="https://github.com/packit-service/requre">Requre</a> for integration/E2E tests
-- Fedora messaging consumer part of the service has been improved and moved to separate <a href="https://github.com/packit-service/packit-service-fedmsg">repo/image</a>
-- using FAS instead of Fedora Badges for checking whether a user is Fedora packager
-- many improved logs
-- many bugs squashed
-- lot&rsquo;s of code refactored</p>
+<ul>
+<li>better reports Copr builds
+
+<ul>
+<li>uses separate commit status for srpm build and every chroot</li>
+<li>clears test farm commit statuses when new build is triggered</li>
+<li>better handles failed Copr builds</li>
+</ul></li>
+<li>gracefully handles no config file in the repo</li>
+<li>better handles when no (copr build) targets are specified in config file</li>
+<li>better checks whitelist of users</li>
+<li>does not create duplicate tickets in our <a href="https://github.com/packit-service/notifications">notification repo</a> when a new user install the app</li>
+</ul>
+
+<p>Changes not visible to end users:</p>
+
+<ul>
+<li>using <a href="https://github.com/packit-service/requre">Requre</a> for integration/E2E tests</li>
+<li>Fedora messaging consumer part of the service has been improved and moved to separate <a href="https://github.com/packit-service/packit-service-fedmsg">repo/image</a></li>
+<li>using FAS instead of Fedora Badges for checking whether a user is Fedora packager</li>
+<li>many improved logs</li>
+<li>many bugs squashed</li>
+<li>lot&rsquo;s of code refactored</li>
+</ul>
 
 
 <footer class=" footline" >
