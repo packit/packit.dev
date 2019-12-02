@@ -89,7 +89,7 @@ improvements of version
       <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://packit.dev/posts/week-44-48-19/</guid>
-      <description>With this blog post we&amp;rsquo;d like to continue with the idea of openly communicating changes in Packit. Since most of the developers use Packit as the GitHub App (which uses Packit Service), this blog will be about changes in all the parts, i.e. the GitHub App, the Packit Service and Packit itself.
+      <description>With this blog post we&amp;rsquo;d like to continue with the idea of openly communicating changes in Packit. Since most of the developers use Packit as the GitHub App (which uses code from this repository - Packit Service), this blog will be about changes in all the parts, i.e. the GitHub App, the Packit Service and Packit itself.
 Continuous Deployment (CD) At the moment the workflow is that one of us manually triggers production container image build at the end of a week.</description>
     </item>
     
