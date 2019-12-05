@@ -24,8 +24,11 @@ a blacklist so you won't be able to use the service again.
 
 If you encounter a problem while using Packit-as-a-service, please open an
 [upstream issue](https://github.com/packit-service/packit-service/issues/new).
-In case of any other questions, feel free to contact us:
-**user-cont-team@redhat.com**.
+In case of any other questions, feel free to contact
+[us](https://github.com/orgs/packit-service/teams/the-packit-team):
+
+* [freenode](https://freenode.net) **#packit**
+* **user-cont-team@redhat.com**
 
 ### Why do I have to maintain .packit.yaml and a spec file upstream?
 [We are working](https://github.com/packit-service/packit/issues/574) on simplifying the `.packit.yaml` so it's as small as possible.
