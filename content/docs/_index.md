@@ -9,3 +9,4 @@ weight: 1
 * [Configuration for packit]({{< ref "/docs/configuration.md" >}})
 * [How to source-git?](/docs/how-to-source-git/)
 * [Packit CLI](/docs/cli/)
+* [Packit Guide](/docs/guide/)
