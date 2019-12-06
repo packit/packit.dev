@@ -23,7 +23,7 @@ if (!doNotTrack) {
 }
 </script>
 
-    <title>About :: Packit</title>
+    <title>December 19 :: Packit</title>
 
     
     <link href="/css/nucleus.css" rel="stylesheet">
@@ -53,7 +53,7 @@ if (!doNotTrack) {
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/posts/december-19/">
     <nav id="sidebar" class="">
 
 
@@ -393,7 +393,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/posts/" title="Blog Posts" class="dd-item 
-        
+        parent
         
         
         ">
@@ -493,7 +493,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/posts/december-19/" title="December 19" class="dd-item ">
+      <li data-nav-id="/posts/december-19/" title="December 19" class="dd-item active">
         <a href="/posts/december-19/">
         December 19
         
@@ -654,143 +654,109 @@ if (!doNotTrack) {
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>About</a> > <a href='/posts/'>Blog Posts</a> > December 19
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#week-49">Week 49</a>
+<ul>
+<li><a href="#ogr-packit">ogr &amp; packit</a></li>
+<li><a href="#packit-service">packit service</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              December 19
+            </h1>
+          
 
         
 
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h1 id="packit">Packit</h1>
 
-<p>Packit provides tooling and automation to integrate upstream open source
-projects into Fedora operating system. Packit project is composed of two main
-components:</p>
 
-<ol>
-<li><p><code>packit</code>, a CLI tool, which you can install locally and start using right away.</p></li>
+<h2 id="week-49">Week 49</h2>
 
-<li><p><a href="https://github.com/marketplace/packit-as-a-service">Packit-as-a-Service</a>, a
-GitHub app — it can provide you feedback on how is your project integrated
-with Fedora Operating System.</p></li>
-</ol>
-
-<p>Feel free to jump into <a href="/docs/guide/">the guide</a> for using packit.</p>
-
-<h3 id="upstream-repository">Upstream repository</h3>
-
-<p><a href="https://github.com/packit-service/packit">https://github.com/packit-service/packit</a></p>
-
-<h3 id="contact">Contact</h3>
-
-<p>You can find us at Freenode IRC channel #packit, or feel free to create an
-issue in any of our GitHub projects.</p>
-
-<p>We are also available on this e-mail: user-cont-team@redhat.com.</p>
-
-<h3 id="the-key-principles-of-packit">The key principles of packit</h3>
+<h3 id="ogr-packit">ogr &amp; packit</h3>
 
 <ul>
-<li><p>Packit aims to make things easy and right. But if the default behavior is not
-the right for you, there is still a way around, but may not be that simple.
-For example you can use
-<a href="/docs/actions/">actions</a>
-to replace default packit&rsquo;s behavior with a script of yours.</p></li>
-
-<li><p>Reuse existing tools and services where it makes sense: don&rsquo;t reinvent the
-wheel.</p></li>
-
-<li><p>You can consume packit in two forms:</p>
-
-<ul>
-<li>Packit tool can run on your laptop and you run commands you want.</li>
-<li>Packit service reacts to events and performs actions which you
-defined in your <code>packit.yaml</code>.</li>
-</ul></li>
-
-<li><p>We don&rsquo;t break backwards compatibility just like that.</p></li>
-
-<li><p>Packit has a deprecation policy:</p>
-
-<ul>
-<li>We can mark a behaviour as deprecated.</li>
-<li>Deprecated content can be removed or changed after at least 3 minor
-releases.</li>
-<li>Deprecated content is advertised in our
-<a href="https://github.com/packit-service/packit/blob/master/CHANGELOG.md">changelog</a>,
-printed in terminal or tracked in your issue tracker.</li>
-</ul></li>
-
-<li><p>We care about artifacts which Fedora supports: at the moment it&rsquo;s RPMs,
-modules and container images.</p>
-
-<ul>
-<li>Our initial focus is solely on RPMs.</li>
-</ul></li>
-
-<li><p>Packit respects Fedora guidelines.</p></li>
-
-<li><p>We want latest content in Fedora Rawhide, but only if it works (the new
-content can be built and tests are passing).</p></li>
-
-<li><p>Any task done by the automation system must be able to be performed by a
-human when that is required. Packit service must be capable of recovering
-from such situation.</p></li>
-
-<li><p>Packit developers must be able to iterate on all parts packit (testing a
-change, merging a change, deploying to production) at a pace of at least
-every two weeks. To accomplish this, the release and validation processes are
-completely automated.</p></li>
-
-<li><p>All the tests are passing in CI systems for master branches for all our
-projects. No excuses.</p></li>
-
-<li><p>Contributions to packit must be possible by any developer, maintainer,
-tester, or other engineer. Any Fedora developer or tester should be able to
-reproduce a bot locally on their machine, given appropriate credentials.</p></li>
+<li>ogr-0.9.0 has been released greatly restructured. (<a href="https://github.com/packit-service/ogr/pull/291/files">#291</a>)</li>
+<li><code>packit status</code> (CLI) now shows also latest Copr builds. (<a href="https://github.com/packit-service/packit/pull/579">#579</a>)</li>
+<li>Target aliases (currently <code>fedora-development</code>, <code>fedora-stable</code>, <code>fedora-all</code>) can now be used in the packit config file. (<a href="https://github.com/packit-service/packit/pull/619">#619</a>)</li>
+<li>When doing a new update in Fedora dist-git, packit now by default creates a new pull request instead of pushing directly to dist-git. (<a href="https://github.com/packit-service/packit/pull/622">#622</a>)</li>
 </ul>
 
-<h3 id="why-packit">Why packit?</h3>
+<h3 id="packit-service">packit service</h3>
 
 <ul>
-<li><p>Our intent is to bring downstream and upstream communities closer: provide
-feedback from downstream to upstream. (e.g. <em>&ldquo;Hello &lt;upstream project Y&gt;,
-your newest release doesn&rsquo;t work in Fedora Rawhide, it breaks &lt;Z&gt;, here is
-a link to logs.&rdquo;</em>)</p></li>
-
-<li><p>We want to only merge, build and compose components which integrate well
-with the rest of the operating system. The biggest impact of such behavior
-will be on Fedora Rawhide and when working on a new Fedora release.</p></li>
-
-<li><p>Automatically pull and validate new upstream releases. This can be a trivial
-thing to do, why should maintainers waste their times on work which can be
-automated.</p></li>
-
-<li><p>Developing in dist-git is cumbersome. Editing patch files and moving
-tarballs around is not fun. Why not working with the source code itself?
-With <a href="/source-git/">source-git</a>, you&rsquo;ll have upstream git history and the
-dist-git content combined in a single repository.</p></li>
-
-<li><p>Let&rsquo;s use modern development techniques such as pull requests, code review,
-modern git forges, automation and continuous integration. We have computers
-to do all the mundane tasks. Why we, as humans, should do such work?</p></li>
-
-<li><p>We want dist-git to be &ldquo;a database of content in a release&rdquo; rather a place
-to do actual work. On the other hand, you&rsquo;ll still be able to interact with
-dist-git the same way. We are not taking that away.
-<a href="/source-git/">Source-git</a> is meant to be the modern, better alternative.</p></li>
+<li>Does not set test checks when tests are not configured. (<a href="https://github.com/packit-service/packit-service/pull/275">#275</a>)</li>
+<li>Supports target aliases and dist-git branches aliases. (<a href="https://github.com/packit-service/packit-service/pull/277">#277</a>, <a href="https://github.com/packit-service/packit-service/pull/285">#285</a>)</li>
+<li>Nicely formats errors from OpenShift API. (<a href="https://github.com/packit-service/packit-service/pull/283">#283</a>)</li>
+<li>Runs Copr build when user adds a <code>/packit build</code> comment into a PR. (<a href="https://github.com/packit-service/packit-service/pull/290">#290</a>)</li>
 </ul>
 
-<p>DevConf.cz <a href="https://www.youtube.com/watch?v=KpF27v6K4Oc">&ldquo;Auto-maintain your package&rdquo; talk</a>.</p>	
-  
+
+<footer class=" footline" >
+	
+</footer>
+
+
         
         </div> 
         
@@ -1051,6 +1017,7 @@ dist-git the same way. We are not taking that away.
             
                 
                     
+                    
                 
                 
 
@@ -1063,6 +1030,9 @@ dist-git the same way. We are not taking that away.
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1128,6 +1098,7 @@ dist-git the same way. We are not taking that away.
             
                 
                     
+                    
                 
                 
 
@@ -1143,6 +1114,9 @@ dist-git the same way. We are not taking that away.
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1231,8 +1205,10 @@ dist-git the same way. We are not taking that away.
 	 
 	 
 		
+			<a class="nav nav-prev" href="/posts/packit-041/" title="Packit 0.4.0 &amp; 0.4.1"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/docs/" title="Documentation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/posts/week-44-48-19/" title="Week 44-48 (November) 2019" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
