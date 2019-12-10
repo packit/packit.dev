@@ -942,6 +942,26 @@ clear definition of what it should do.</p>
 - {}
 </code></pre>
 
+<p>If there is no <code>jobs</code> section in the configuration file, jobs default to:</p>
+
+<pre><code class="language-yaml">jobs:
+- job: copr_build
+  trigger: pull_request
+  metadata:
+      targets: fedora-stable
+
+- job: propose_downstream
+  trigger: release
+  metadata:
+  dist-git-branch: fedora-all
+</code></pre>
+
+<p>If you do not want to use the jobs then the <code>jobs</code> section in the configuration file should be empty:</p>
+
+<pre><code class="language-yaml">jobs: []
+
+</code></pre>
+
 <p>Every job has two mandatory keys:</p>
 
 <ol>
