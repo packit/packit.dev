@@ -1,6 +1,6 @@
 ---
 title: "December 19"
-date: 2019-12-06
+date: 2019-12-13
 draft: false
 ---
 
@@ -19,3 +19,17 @@ draft: false
 - Supports target aliases and dist-git branches aliases. ([#277](https://github.com/packit-service/packit-service/pull/277), [#285](https://github.com/packit-service/packit-service/pull/285))
 - Nicely formats errors from OpenShift API. ([#283](https://github.com/packit-service/packit-service/pull/283))
 - Runs Copr build when user adds a `/packit build` comment into a PR. ([#290](https://github.com/packit-service/packit-service/pull/290))
+
+## Week 50
+
+### packit
+
+- If there is no `upstream_package_name`/`downstream_package_name` given in `.packit.yaml`, they now default to the name of the GitHub repo. ([#624](https://github.com/packit-service/packit/pull/624))
+- If no `jobs` are defined in `.packit.yaml` packit by default runs `build` job on `fedora-stable` targets and `propose_downstream` on `fedora-all` branches. ([#625](https://github.com/packit-service/packit/pull/625))
+- `build` command has nicer output. ([#630](https://github.com/packit-service/packit/pull/630))
+- Smaller fixes. ([#630](https://github.com/packit-service/packit/pull/630), [#636](https://github.com/packit-service/packit/pull/636))
+
+### packit service
+
+- Creates a new issue when `propose-update` fails. ([#300](https://github.com/packit-service/packit-service/pull/300))
+- Better reports failed submitting of a Copr build. ([#301](https://github.com/packit-service/packit-service/pull/301))
