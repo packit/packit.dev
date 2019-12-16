@@ -109,6 +109,26 @@ jobs:
 - {}
 ```
 
+If there is no `jobs` section in the configuration file, jobs default to:
+```yaml
+jobs:
+- job: copr_build
+  trigger: pull_request
+  metadata:
+      targets: fedora-stable
+
+- job: propose_downstream
+  trigger: release
+  metadata:
+  dist-git-branch: fedora-all
+```
+
+If you do not want to use the jobs then the `jobs` section in the configuration file should be empty:
+```yaml
+jobs: []
+
+```
+
 Every job has two mandatory keys:
 
 1. `job` - name of the job (you can imagine this as a CLI command)
