@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog Posts on Packit</title>
@@ -6,7 +6,7 @@
     <description>Recent content in Blog Posts on Packit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://packit.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -86,7 +86,7 @@ improvements of version
     <item>
       <title>December 19</title>
       <link>https://packit.dev/posts/december-19/</link>
-      <pubDate>Fri, 06 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 13 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://packit.dev/posts/december-19/</guid>
       <description>Week 49 ogr &amp;amp; packit  ogr-0.9.0 has been released greatly restructured. (#291) packit status (CLI) now shows also latest Copr builds. (#579) Target aliases (currently fedora-development, fedora-stable, fedora-all) can now be used in the packit config file. (#619) When doing a new update in Fedora dist-git, packit now by default creates a new pull request instead of pushing directly to dist-git. (#622)  packit service  Does not set test checks when tests are not configured.</description>
