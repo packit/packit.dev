@@ -90,6 +90,9 @@ In order to enable test execution simply include `copr_build` and `tests` jobs i
         - fedora-30-x86_64
         - fedora-rawhide-x86_64
 
+Same as for `copr_build` targets, you can use `fedora-development`, `fedora-stable`
+and `fedora-all` aliases for test targets as well.
+
 That's it! Since now you should see testing feedback in your pull requests.
 
 ### Restart Testing
