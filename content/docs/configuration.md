@@ -162,7 +162,9 @@ Required metadata:
 * **targets** - a list of mock chroots where to build (if you navigate to
   settings of your COPR project, you'll be able able to see the list of
   available values, alternatively you can install package `mock` in Fedora and
-  see the list via `ls -1 /etc/mock/`.
+  see the list via `ls -1 /etc/mock/`. You can use `fedora-development`,
+  `fedora-stable` and `fedora-all` aliases as a target. By default, the `x86_64` architecture
+  will be used, but you can use e.g. `fedora-stable-aarch64` if you need.
 
 Optional metadata:
 
@@ -214,7 +216,9 @@ Supported triggers: **release**.
 
 Optional metadata:
 
-* **dist-git-branch** - a branch in dist-git where packit should work (defaults to `master`)
+* **dist-git-branch** - a branch in dist-git where packit should work (defaults to `master`).
+  You can also use `fedora-development`, `fedora-stable` and `fedora-all` aliases
+  to not need to change the config file when the new system version is released.
 
 **Example**
 
