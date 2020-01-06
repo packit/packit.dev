@@ -900,7 +900,7 @@ if (!doNotTrack) {
 
 <p>This is a sample config which is meant for <a href="https://github.com/packit-service/packit">packit</a> itself.</p>
 
-<pre><code class="language-yaml"># we have the specfile in the root of our repository
+<pre><code># we have the specfile in the root of our repository
 specfile_path: packit.spec
 # when doing an update in Fedora, we want to copy the spec file and the config file
 synced_files:
@@ -914,7 +914,7 @@ downstream_package_name: packit
 
 <h3 id="more-examples-of-synced-files">More examples of <code>synced_files</code></h3>
 
-<pre><code class="language-yaml">synced_files:
+<pre><code>synced_files:
   # copy a file from root of the upstream repo to dist-git
   - packit.spec
 
@@ -956,14 +956,14 @@ clear definition of what it should do.</p>
 
 <p>The tasks the packit service should do are defined in section <code>jobs</code>. The section is a list of dicts:</p>
 
-<pre><code class="language-yaml">jobs:
+<pre><code>jobs:
 - {key: value}
 - {}
 </code></pre>
 
 <p>If there is no <code>jobs</code> section in the configuration file, jobs default to:</p>
 
-<pre><code class="language-yaml">jobs:
+<pre><code>jobs:
 - job: copr_build
   trigger: pull_request
   metadata:
@@ -977,7 +977,7 @@ clear definition of what it should do.</p>
 
 <p>If you do not want to use the jobs then the <code>jobs</code> section in the configuration file should be empty:</p>
 
-<pre><code class="language-yaml">jobs: []
+<pre><code>jobs: []
 
 </code></pre>
 
@@ -992,7 +992,7 @@ clear definition of what it should do.</p>
 
 <p>Jobs can also accept additional configuration in a key <code>metadata</code> which has dict as a value:</p>
 
-<pre><code class="language-yaml">jobs:
+<pre><code>jobs:
 - job: some-job
   trigger: ran-out-of-beer
   metadata:
@@ -1039,7 +1039,7 @@ user-cont-team@redhat.com and we&rsquo;d be glad to help you.</p>
 
 <p><strong>Example</strong></p>
 
-<pre><code class="language-yaml">jobs:
+<pre><code>jobs:
 - job: copr_build
   trigger: pull_request
   metadata:
@@ -1058,7 +1058,7 @@ dist-git and send it to upstream repository.</p>
 
 <p><strong>Example</strong></p>
 
-<pre><code class="language-yaml">jobs:
+<pre><code>jobs:
 - job: sync_from_downstream
   trigger: commit
 </code></pre>
@@ -1081,7 +1081,7 @@ to not need to change the config file when the new system version is released.</
 
 <p><strong>Example</strong></p>
 
-<pre><code class="language-yaml">jobs:
+<pre><code>jobs:
 - job: propose_downstream
   trigger: release
 - job: propose_downstream
@@ -1165,7 +1165,7 @@ document.</p>
 
 <h3 id="minimal-sample-config-1">Minimal sample config</h3>
 
-<pre><code class="language-yaml">debug: true
+<pre><code>debug: true
 github_token: mnbvcxz123456
 pagure_user_token: qwertyuiop098765
 </code></pre>
