@@ -818,7 +818,7 @@ Packit service has a limited set of commands available so please use <code>wget<
 
 <p>The configuration file with downloading the RPM spec file now looks like this:</p>
 
-<pre><code class="language-yaml">specfile_path: packit.spec
+<pre><code>specfile_path: packit.spec
 synced_files:
   - packit.spec
   - .packit.yaml
@@ -834,7 +834,7 @@ actions:
 
 <p>The solution is, again, actions and hooks. Just render the spec after the upstream repo is cloned:</p>
 
-<pre><code class="language-yaml">specfile_path: my-project.spec
+<pre><code>specfile_path: my-project.spec
 upstream_package_name: my-project-src
 downstream_package_name: my-project
 actions:
@@ -843,7 +843,7 @@ actions:
 
 <p>Where the &ldquo;generate-spec&rdquo; make target could look like this:</p>
 
-<pre><code class="language-make">generate-spec:
+<pre><code>generate-spec:
     sed -e 's/@@VERSION@@/$(VERSION)/g' my-project.spec.template &gt;my-project.spec
 </code></pre>
 
@@ -856,7 +856,7 @@ functionality.</p>
 <p>Yes, you can! It&rsquo;s very simple, just add <code>centos-stream-x86_64</code> as a target for
 the <code>copr_build</code> job:</p>
 
-<pre><code class="language-yaml">jobs:
+<pre><code>jobs:
 - job: copr_build
   trigger: pull_request
   metadata:

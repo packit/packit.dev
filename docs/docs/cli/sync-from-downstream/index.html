@@ -770,19 +770,17 @@ selected branch (master by default) from Fedora dist-git repository.</p>
 <h2 id="tutorial">Tutorial</h2>
 
 <ul>
-<li>Starting with packit 0.5.2 and later, you only need to set a single token to
+<li><p>Starting with packit 0.5.2 and later, you only need to set a single token to
 interact with dist-git. You needed two in the past. Please populate your
 local config at <code>~/.config/packit.yaml</code> for packit so it can talk to the
-remote services:</li>
-</ul>
+remote services:</p>
 
-<pre><code class="language-json"># you can obtain the token over here: https://github.com/settings/tokens
+<pre><code># you can obtain the token over here: https://github.com/settings/tokens
 github_token: 123
 # and this one right here: https://src.fedoraproject.org/settings#nav-api-tab
 pagure_user_token: 456
-</code></pre>
+</code></pre></li>
 
-<ul>
 <li><p>Files which are synced are mentioned in <code>.packit.yaml</code> as <code>synced_files</code> value.</p></li>
 
 <li><p>Once you want to sync Fedora dist-git repo into the upstream repo,
