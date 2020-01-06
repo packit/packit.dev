@@ -967,12 +967,12 @@ clear definition of what it should do.</p>
 - job: copr_build
   trigger: pull_request
   metadata:
-      targets: fedora-stable
+    targets: fedora-stable
 
 - job: propose_downstream
   trigger: release
   metadata:
-  dist-git-branch: fedora-all
+    dist-git-branch: fedora-all
 </code></pre>
 
 <p>If you do not want to use the jobs then the <code>jobs</code> section in the configuration file should be empty:</p>
