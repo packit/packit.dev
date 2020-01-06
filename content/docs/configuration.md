@@ -45,7 +45,7 @@ Both Packit-as-a-Service and packit tool use this configuration file.
 
 This is a sample config which is meant for [packit](https://github.com/packit-service/packit) itself.
 
-```yaml
+```
 # we have the specfile in the root of our repository
 specfile_path: packit.spec
 # when doing an update in Fedora, we want to copy the spec file and the config file
@@ -60,7 +60,7 @@ downstream_package_name: packit
 
 ### More examples of `synced_files`
 
-```yaml
+```
 synced_files:
   # copy a file from root of the upstream repo to dist-git
   - packit.spec
@@ -103,14 +103,14 @@ Once the service starts handling events of your repository, it needs to have a
 clear definition of what it should do.
 
 The tasks the packit service should do are defined in section `jobs`. The section is a list of dicts:
-```yaml
+```
 jobs:
 - {key: value}
 - {}
 ```
 
 If there is no `jobs` section in the configuration file, jobs default to:
-```yaml
+```
 jobs:
 - job: copr_build
   trigger: pull_request
@@ -124,7 +124,7 @@ jobs:
 ```
 
 If you do not want to use the jobs then the `jobs` section in the configuration file should be empty:
-```yaml
+```
 jobs: []
 
 ```
@@ -137,7 +137,7 @@ Every job has two mandatory keys:
 Every job only supports a specific set of triggers.
 
 Jobs can also accept additional configuration in a key `metadata` which has dict as a value:
-```yaml
+```
 jobs:
 - job: some-job
   trigger: ran-out-of-beer
@@ -180,7 +180,7 @@ user-cont-team@redhat.com and we'd be glad to help you.
 
 **Example**
 
-```yaml
+```
 jobs:
 - job: copr_build
   trigger: pull_request
@@ -200,7 +200,7 @@ Supported triggers: **commit**.
 
 **Example**
 
-```yaml
+```
 jobs:
 - job: sync_from_downstream
   trigger: commit
@@ -222,7 +222,7 @@ Optional metadata:
 
 **Example**
 
-```yaml
+```
 jobs:
 - job: propose_downstream
   trigger: release
@@ -274,7 +274,7 @@ document.
 
 ### Minimal sample config
 
-```yaml
+```
 debug: true
 github_token: mnbvcxz123456
 pagure_user_token: qwertyuiop098765

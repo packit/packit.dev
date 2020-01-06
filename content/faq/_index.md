@@ -60,7 +60,7 @@ Packit service has a limited set of commands available so please use `wget` or `
 
 The configuration file with downloading the RPM spec file now looks like this:
 
-```yaml
+```
 specfile_path: packit.spec
 synced_files:
   - packit.spec
@@ -76,7 +76,7 @@ actions:
 Yes!
 
 The solution is, again, actions and hooks. Just render the spec after the upstream repo is cloned:
-```yaml
+```
 specfile_path: my-project.spec
 upstream_package_name: my-project-src
 downstream_package_name: my-project
@@ -85,7 +85,7 @@ actions:
 ```
 
 Where the "generate-spec" make target could look like this:
-```make
+```
 generate-spec:
     sed -e 's/@@VERSION@@/$(VERSION)/g' my-project.spec.template >my-project.spec
 ```
@@ -99,7 +99,7 @@ functionality.
 
 Yes, you can! It's very simple, just add `centos-stream-x86_64` as a target for
 the `copr_build` job:
-```yaml
+```
 jobs:
 - job: copr_build
   trigger: pull_request

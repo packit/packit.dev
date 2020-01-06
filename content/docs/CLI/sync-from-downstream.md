@@ -27,7 +27,7 @@ selected branch (master by default) from Fedora dist-git repository.
   local config at `~/.config/packit.yaml` for packit so it can talk to the
   remote services:
 
-```json
+```
 # you can obtain the token over here: https://github.com/settings/tokens
 github_token: 123
 # and this one right here: https://src.fedoraproject.org/settings#nav-api-tab
