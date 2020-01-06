@@ -10,3 +10,4 @@ weight: 3
 * [Packit 0.4.0 & 0.4.1](/posts/packit-041/)
 * [November 2019](/posts/week-44-48-19)
 * [December 2019](/posts/december-19/)
+* [January 2020](/posts/january-20/)
