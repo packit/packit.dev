@@ -115,12 +115,12 @@ jobs:
 - job: copr_build
   trigger: pull_request
   metadata:
-      targets: fedora-stable
+    targets: fedora-stable
 
 - job: propose_downstream
   trigger: release
   metadata:
-  dist-git-branch: fedora-all
+    dist-git-branch: fedora-all
 ```
 
 If you do not want to use the jobs then the `jobs` section in the configuration file should be empty:
