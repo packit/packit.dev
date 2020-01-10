@@ -137,7 +137,7 @@
 	"title": "January 2020",
 	"tags": [],
 	"description": "",
-	"content": " Week 1 packit  Correctly updates version on srpm build. (#642) Downloads all URL sources before srpm build. (#643)  packit service  Runs on Fedora 31. (#303, #304) Correctly checks list of whitelisted repositories when issue comment is added. (#309)  "
+	"content": " Week 1 packit  Correctly updates version on srpm build. (#642) Downloads all URL sources before srpm build. (#643)  packit service  Runs on Fedora 31. (#303, #304) Correctly checks list of whitelisted repositories when issue comment is added. (#309)  Week 2 packit  Incorporates lots of SRPM related improvements. (#646, #650, #651, #652, #653) Better handles when Copr owner is not set. (#648)  packit service  Fixes SRPM exceptions/errors handling. (#311, #317) Has loading of config fixed. (#318)  "
 },
 {
 	"uri": "https://packit.dev/posts/december-19/",
