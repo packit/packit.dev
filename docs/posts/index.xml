@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog Posts on Packit</title>
@@ -6,7 +6,7 @@
     <description>Recent content in Blog Posts on Packit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://packit.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -86,10 +86,10 @@ improvements of version
     <item>
       <title>January 2020</title>
       <link>https://packit.dev/posts/january-20/</link>
-      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://packit.dev/posts/january-20/</guid>
-      <description> Week 1 packit  Correctly updates version on srpm build. (#642) Downloads all URL sources before srpm build. (#643)  packit service  Runs on Fedora 31. (#303, #304) Correctly checks list of whitelisted repositories when issue comment is added. (#309)  </description>
+      <description>Week 1 packit  Correctly updates version on srpm build. (#642) Downloads all URL sources before srpm build. (#643)  packit service  Runs on Fedora 31. (#303, #304) Correctly checks list of whitelisted repositories when issue comment is added. (#309)  Week 2 packit  Incorporates lots of SRPM related improvements. (#646, #650, #651, #652, #653) Better handles when Copr owner is not set. (#648)  packit service  Fixes SRPM exceptions/errors handling.</description>
     </item>
     
     <item>

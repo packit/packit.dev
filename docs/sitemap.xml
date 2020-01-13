@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -34,7 +34,7 @@
   
   <url>
     <loc>https://packit.dev/posts/</loc>
-    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -43,11 +43,11 @@
   </url>
   
   <url>
-    <loc>https://packit.dev/docs/guide/</loc>
+    <loc>https://packit.dev/docs/cli/build/</loc>
   </url>
   
   <url>
-    <loc>https://packit.dev/docs/cli/build/</loc>
+    <loc>https://packit.dev/docs/guide/</loc>
   </url>
   
   <url>
@@ -95,7 +95,7 @@
   
   <url>
     <loc>https://packit.dev/posts/january-20/</loc>
-    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -135,12 +135,10 @@
   
   <url>
     <loc>https://packit.dev/categories/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://packit.dev/tags/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>
