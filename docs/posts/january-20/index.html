@@ -727,6 +727,11 @@ if (!doNotTrack) {
 <li><a href="#packit-1">packit</a></li>
 <li><a href="#packit-service-1">packit service</a></li>
 </ul></li>
+<li><a href="#week-3">Week 3</a>
+<ul>
+<li><a href="#packit-2">packit</a></li>
+<li><a href="#packit-service-2">packit service</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -785,6 +790,29 @@ if (!doNotTrack) {
 <ul>
 <li>Fixes SRPM exceptions/errors handling. (<a href="https://github.com/packit-service/packit-service/pull/311">#311</a>, <a href="https://github.com/packit-service/packit-service/pull/317">#317</a>)</li>
 <li>Has loading of config fixed. (<a href="https://github.com/packit-service/packit-service/pull/318">#318</a>)</li>
+</ul>
+
+<h2 id="week-3">Week 3</h2>
+
+<h3 id="packit-2">packit</h3>
+
+<ul>
+<li>Uses <a href="https://pypi.org/project/marshmallow">Marshmallow</a> for configuration schema. (<a href="https://github.com/packit-service/packit/pull/657">#657</a>)</li>
+<li>Is able to build in <a href="https://koji.fedoraproject.org">Koji</a> from upstream/source-git. (<a href="https://github.com/packit-service/packit/pull/658">#658</a>)</li>
+<li>Doesn&rsquo;t download remote sources when &ldquo;sources&rdquo; path exists in upstream. (<a href="https://github.com/packit-service/packit/pull/659">#659</a>)</li>
+<li>Configuration file allows list syntax in action commands. (<a href="https://github.com/packit-service/packit/pull/663">#663</a>)</li>
+<li>Configuration can use a new option to exclude paths from patching. (<a href="https://github.com/packit-service/packit/pull/666">#666</a>)</li>
+<li>Has few less bugs. (<a href="https://github.com/packit-service/packit/pull/660">#660</a>, <a href="https://github.com/packit-service/packit/pull/661">#661</a>, <a href="https://github.com/packit-service/packit/pull/664">#664</a>, <a href="https://github.com/packit-service/packit/pull/667">#667</a>)</li>
+</ul>
+
+<h3 id="packit-service-2">packit service</h3>
+
+<ul>
+<li>Uses <a href="https://pypi.org/project/marshmallow">Marshmallow</a> for configuration schema. (<a href="https://github.com/packit-service/packit-service/pull/320">#320</a>)</li>
+<li>Runs build for test job even when it&rsquo;s not explicitly configured. (<a href="https://github.com/packit-service/packit-service/pull/324">#324</a>)</li>
+<li>Reports invalid or missing packit config. (<a href="https://github.com/packit-service/packit-service/pull/328">#328</a>)</li>
+<li>Status workflow has been changed and simplified. (<a href="https://github.com/packit-service/packit-service/pull/338">#338</a>)</li>
+<li>Minor fixes. (<a href="https://github.com/packit-service/packit-service/pull/323">#323</a>, <a href="https://github.com/packit-service/packit-service/pull/326">#326</a>, <a href="https://github.com/packit-service/packit-service/pull/329">#329</a>, <a href="https://github.com/packit-service/packit-service/pull/331">#331</a>, <a href="https://github.com/packit-service/packit-service/pull/335">#335</a>, <a href="https://github.com/packit-service/packit-service/pull/336">#336</a>)</li>
 </ul>
 
 
