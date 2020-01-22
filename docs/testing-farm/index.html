@@ -713,8 +713,9 @@ if (!doNotTrack) {
 <ul>
 <li><a href="#user-guide">User Guide</a>
 <ul>
-<li><a href="#add-tests">Add Tests</a></li>
 <li><a href="#enable-testing">Enable Testing</a></li>
+<li><a href="#smoke-test">Smoke Test</a></li>
+<li><a href="#beakerlib-test">BeakerLib Test</a></li>
 <li><a href="#restart-testing">Restart Testing</a></li>
 <li><a href="#support-matrix">Support Matrix</a></li>
 <li><a href="#test-environment">Test Environment</a></li>
@@ -722,8 +723,10 @@ if (!doNotTrack) {
 </ul></li>
 <li><a href="#examples">Examples</a>
 <ul>
-<li><a href="#shell-tests">Shell Tests</a></li>
-<li><a href="#beakerlib-tests">BeakerLib Tests</a></li>
+<li><a href="#using-filters">Using Filters</a></li>
+<li><a href="#prepare-step">Prepare Step</a></li>
+<li><a href="#apache-test">Apache Test</a></li>
+<li><a href="#systemd-tests">Systemd Tests</a></li>
 <li><a href="#fmf-tests">FMF Tests</a></li>
 </ul></li>
 <li><a href="#issues-rfes">Issues &amp; RFEs</a></li>
@@ -770,115 +773,156 @@ if (!doNotTrack) {
 <p>Testing Farm is Packit&rsquo;s testing system.
 It is a containerized service for running tests.
 Test execution is configured via <a href="https://fmf.readthedocs.io/">Flexible Metadata Format</a>,
-according to the <a href="https://pagure.io/fedora-ci/metadata/blob/master/f/l1">L1 Metadata</a> and <a href="https://pagure.io/fedora-ci/metadata/blob/master/f/l2">L2 Metadata</a> specification.</p>
+according to the <a href="https://tmt.readthedocs.io/en/latest/spec.html">Metadata Specification</a>.</p>
 
-<p>Currently only a subset of the metadata specification is implemented:
-It is possible to run <a href="#beakerlib-tests">BeakerLib</a> tests and arbitrary <a href="#shell-tests">shell</a> commands.
-See <a href="#examples">Examples</a> and <a href="#support-matrix">Support Matrix</a> for more details.</p>
-
-<p>If you are interested in Testing Farm&rsquo;s architecture, see the section <a href="#architecture">Architecture</a>.</p>
+<p>Go through the <a href="#user-guide">User Guide</a> to get a quick start introduction.
+See the <a href="#examples">Examples</a> section to get some more inspiration.
+The <a href="#support-matrix">Support Matrix</a> gives overview of what&rsquo;s currently supported.
+In the <a href="#architecture">Architecture</a> section you will find information about Testing Farm&rsquo;s internals.</p>
 
 <h2 id="user-guide">User Guide</h2>
 
-<h3 id="add-tests">Add Tests</h3>
+<p>The easiest way to get started is to use the <a href="https://tmt.readthedocs.io/">tmt</a> tool which will help you with the setup.
+Install the latest stable version directly from Fedora. See <a href="https://tmt.readthedocs.io/">docs</a> for more installation options.</p>
 
-<p>Test configuration is stored directly in the project repository.
-Make sure that you have <code>fmf</code> package <a href="https://fmf.readthedocs.io/en/latest/overview.html#install">installed</a> on your system.
-In order to start, initialize the metadata tree in the root directory of your git repository.</p>
-
-<pre><code>fmf init
+<pre><code>sudo dnf install -y tmt
 </code></pre>
-
-<p>The initialization will create <code>.fmf</code> directory in your repository which you <strong>must</strong> add in your pull request otherwise Testing Farm will not find your tests.</p>
-
-<p>For small projects store test config in a single <code>ci.fmf</code> file.
-If your config grows consider using <a href="https://fmf.readthedocs.io/en/latest/features.html#elasticity">elasticity</a> to organize your config into multiple files.
-Here&rsquo;s a minimal example showing how to enable a simple smoke test:</p>
-
-<pre><code>/test/build/smoke:
-    execute:
-        how: shell
-        commands:
-        - /usr/bin/binary --help
-</code></pre>
-
-<p>The first line defines name of the test set.
-It is possible to define multiple testsets in the config to cover multiple scenarios.
-Tests can be fetched from a remote repository as well.
-Use the <code>discover</code> step to reference the remote repository:</p>
-
-<pre><code>/test/build/smoke:
-    discover:
-        how: fmf
-        repository: &quot;https://github.com/systemd-rhel/tests&quot;
-    execute:
-        how: beakerlib
-</code></pre>
-
-<p>Use custom <code>filter</code> in order to choose relevant tests only:</p>
-
-<pre><code>discover:
-    how: fmf
-    filter: &quot;tier: 1 &amp; distros: rhel-8&quot;
-    repository: &quot;https://github.com/systemd-rhel/tests&quot;
-</code></pre>
-
-<p>The <code>prepare</code> step can be used to define how test environment should be prepared before testing.
-Currently only ansible playbooks are supported:</p>
-
-<pre><code>prepare:
-    how: ansible
-    playbooks:
-        - ci/rhel-8.yml
-</code></pre>
-
-<p>See the <a href="https://pagure.io/fedora-ci/metadata/blob/master/f/l2">L2 Metadata</a> specification for a detailed description of the individual test steps and the whole concept.</p>
 
 <h3 id="enable-testing">Enable Testing</h3>
 
 <p>In order to enable test execution simply include <code>copr_build</code> and <code>tests</code> jobs in the <code>.packit.yaml</code> configuration:</p>
 
-<pre><code>...
-
-jobs:
+<pre><code>jobs:
 - job: copr_build
   trigger: pull_request
   metadata:
     targets:
-    - fedora-29-x86_64
-    - fedora-30-x86_64
-    - fedora-rawhide-x86_64
+    - fedora-all
 
 - job: tests
   trigger: pull_request
   metadata:
     targets:
-    - fedora-29-x86_64
-    - fedora-30-x86_64
-    - fedora-rawhide-x86_64
+    - fedora-all
 </code></pre>
 
-<p>Same as for <code>copr_build</code> targets, you can use <code>fedora-development</code>, <code>fedora-stable</code>
-and <code>fedora-all</code> aliases for test targets as well.</p>
+<p>You can use <code>fedora-development</code>, <code>fedora-stable</code> or release specific targets such as <code>fedora-31-x86_64</code> for test targets as well.</p>
 
-<p>That&rsquo;s it! Since now you should see testing feedback in your pull requests.</p>
+<h3 id="smoke-test">Smoke Test</h3>
+
+<p>Let&rsquo;s enable a very simple smoke test which will run your application and check the exit code.
+Change to the root of the project git repository and use the <code>tmt init</code> command to initialize the metadata.
+For the simple smoke test we&rsquo;ll be using the <code>mini</code> template:</p>
+
+<pre><code>$ cd ~/git/did
+$ tmt init --template mini
+Tree '/home/psss/git/did' initialized.
+Applying template 'mini'.
+Directory '/home/psss/git/did/plans' created.
+Plan '/home/psss/git/did/plans/example.fmf' created.
+</code></pre>
+
+<p>Let&rsquo;s see what the example plan contains:</p>
+
+<pre><code>$ cat plans/example.fmf
+summary:
+    Basic smoke test
+execute:
+    script: tmt --help
+</code></pre>
+
+<p>Update the <code>script</code> line with the desired command line which should be executed as a test.
+It&rsquo;s also possible to provide several commands to be executed in this way:</p>
+
+<pre><code>summary:
+    Basic smoke test
+execute:
+    script:
+        - did --help
+        - did --test
+</code></pre>
+
+<p>You might want to rename the plan to something more reasonable like <code>smoke.fmf</code>.
+When commiting new changes, make sure you include the special <code>.fmf</code> directory as well.
+It marks the root of the metadata tree and is needed for proper metadata detection.</p>
+
+<pre><code>$ git add plans .fmf
+</code></pre>
+
+<p>Now just create a new pull request and you&rsquo;re done!</p>
+
+<h3 id="beakerlib-test">BeakerLib Test</h3>
+
+<p>Let&rsquo;s have a bunch of beakerlib tests stored in a git repository with their <a href="https://tmt.readthedocs.io/en/latest/spec.html">metadata</a>.
+See the shared <a href="https://src.fedoraproject.org/tests/selinux/">tests/selinux</a> repository for an example of such tests.
+In order to enable these tests we will use <code>tmt plan create</code> to create the template for us:</p>
+
+<pre><code>$ tmt init
+Tree '/home/psss/git/did' initialized.
+
+$ tmt plan create /plans/integration --template full
+Directory '/home/psss/git/did/plans' created.
+Plan '/home/psss/git/did/plans/integration.fmf' created.
+</code></pre>
+
+<p>Here&rsquo;s what we get in the <code>integration.fmf</code> file:</p>
+
+<pre><code>summary:
+    Essential command line features
+discover:
+    how: fmf
+    repository: https://github.com/psss/tmt
+prepare:
+    how: ansible
+    playbooks: plans/packages.yml
+execute:
+    how: beakerlib
+</code></pre>
+
+<p>Let&rsquo;s update the summary and repository link to point to the right location.
+The <code>prepare</code> section can be used to prepare the environment for testing.
+As we don&rsquo;t have any extra requirements we can safely remove it for now.
+The resulting <code>integration.fmf</code> will look like this:</p>
+
+<pre><code>summary:
+    Run integration tests for all SELinux components
+discover:
+    how: fmf
+    repository: https://src.fedoraproject.org/tests/selinux
+execute:
+    how: beakerlib
+</code></pre>
+
+<p>That&rsquo;s it. Now just commit the changes and create a new pull request.
+Make sure you include the special <code>.fmf</code> directory in the commit as well.
+It marks the root of the metadata tree and is needed for proper metadata detection.</p>
+
+<pre><code>$ git add plans .fmf
+</code></pre>
+
+<p>Now let&rsquo;s wait for the results from Packit directly in the pull request!</p>
 
 <h3 id="restart-testing">Restart Testing</h3>
 
-<p>The testing will be automatically started after an update to the pull request and successful copr build. To trigger retesting manually (can come handy in case of infrastructure issues for example), you can use the following comment in the pull request:</p>
+<p>The testing will be automatically started after an update to the pull request and successful copr build.
+To trigger retesting manually (can come handy in case of infrastructure issues for example), you can use the following comment in the pull request:</p>
 
 <pre><code>/packit test
 </code></pre>
 
 <h3 id="support-matrix">Support Matrix</h3>
 
-<p>Currently supported steps and implementations:</p>
+<p>Currently only a subset of the metadata specification is implemented:
+It is possible to run <a href="#beakerlib-tests">BeakerLib</a> tests and arbitrary <a href="#shell-tests">shell</a> commands.
+List of supported steps and implementations:</p>
 
 <ul>
 <li>Discover: fmf</li>
 <li>Prepare: ansible</li>
 <li>Execute: shell, beakerlib</li>
 </ul>
+
+<p>See the <a href="https://tmt.readthedocs.io/en/latest/spec.html">Metadata Specification</a> for a detailed description of individual test steps.</p>
 
 <h3 id="test-environment">Test Environment</h3>
 
@@ -901,47 +945,67 @@ See the <a href="#worker">Worker</a> section for details how to run the tool loc
 
 <p>Get inspiration for a quick start from a couple of real-life examples!</p>
 
-<h3 id="shell-tests">Shell Tests</h3>
+<h3 id="using-filters">Using Filters</h3>
+
+<p>Use a custom <code>filter</code> in the discover step in order to choose relevant tests only:</p>
+
+<pre><code>discover:
+    how: fmf
+    filter: &quot;tier: 1&quot;
+    repository: https://src.fedoraproject.org/tests/selinux
+</code></pre>
+
+<h3 id="prepare-step">Prepare Step</h3>
+
+<p>The <code>prepare</code> step can be used to define how test environment should be prepared before testing.
+Provide one or more paths to ansible playbooks:</p>
+
+<pre><code>prepare:
+    how: ansible
+    playbooks:
+        - setup/packages.yml
+</code></pre>
+
+<h3 id="apache-test">Apache Test</h3>
 
 <p>Here is an example of a simple integration test for the web server <code>httpd</code> and <code>curl</code> utility:</p>
 
-<pre><code>/test/build/smoke:
+<pre><code>/apache/smoke:
     execute:
-        how: shell
-        commands:
+        script:
         - dnf -y install httpd curl
         - systemctl start httpd
         - echo foo &gt; /var/www/html/index.html
         - curl http://localhost/ | grep foo
 </code></pre>
 
-<p>Single testset <code>/test/build/smoke</code> defines only the <code>execute</code> step.
+<p>Plan <code>/apache/smoke</code> defines only the <code>execute</code> step.
 Individual shell commands are provided as a list.
 Testing will fail if any of the commands returns a non-zero exit status.</p>
 
-<h3 id="beakerlib-tests">BeakerLib Tests</h3>
+<h3 id="systemd-tests">Systemd Tests</h3>
 
 <p>Below you can find little bit more interesting example of a <code>systemd</code> test configuration:</p>
 
-<pre><code>/test/pull-request/smoke:
+<pre><code>/systemd/smoke:
     summary:
         Basic set of quick smoke tests for systemd.
     discover:
         how: fmf
-        filter: &quot;tier: 1 &amp; distros: rhel-8&quot;
+        filter: &quot;tier: 1 &amp; distro: rhel-8&quot;
         repository: &quot;https://github.com/systemd-rhel/tests&quot;
     prepare:
         how: ansible
-        playbooks: [ci/rhel-8.yml]
+        playbooks: [setup/packages.yml]
     execute:
         how: beakerlib
 </code></pre>
 
-<p>This testset enables a set of Tier 1 tests from the shared <a href="https://github.com/systemd-rhel/tests">systemd tests</a> repository.
+<p>This plan enables a set of Tier 1 tests from the shared <a href="https://github.com/systemd-rhel/tests">systemd tests</a> repository.
 The meaning of individual attributes is as follows:</p>
 
 <ul>
-<li>Summary — an optional but useful attribute describing high-level purpose of the testset.</li>
+<li>Summary — an optional but useful attribute describing high-level purpose of the plan.</li>
 <li>Discover — instructs to fetch tests from given repository and select relevant ones by provided <code>filter</code>.</li>
 <li>Prepare — specifies which ansible playbook should be applied to prepare environment for testing.</li>
 <li>Execute — defines that the beakerlib framework should be used for running the tests.</li>
@@ -950,18 +1014,17 @@ The meaning of individual attributes is as follows:</p>
 <h3 id="fmf-tests">FMF Tests</h3>
 
 <p>Here&rsquo;s a real-life example of tests enabled for the <a href="https://fmf.readthedocs.io/">fmf</a> package.
-There are several testsets defined under the <a href="https://github.com/psss/fmf/tree/master/testsets">testsets</a> directory.
-The <code>smoke</code> testset enables a super basic test checking availability of the <code>fmf</code> command:</p>
+There are several plans defined under the <a href="https://github.com/psss/fmf/tree/master/plans">plans</a> directory.
+The <code>smoke</code> plan enables a super basic test checking availability of the <code>fmf</code> command:</p>
 
 <pre><code>summary:
     Just a basic smoke test
 execute:
     how: shell
-    commands:
-        - fmf --help
+    script: fmf --help
 </code></pre>
 
-<p>Testset <code>features</code> is used to execute all available beakerlib tests from the <code>fmf</code> repository:</p>
+<p>Plan <code>features</code> is used to execute all available beakerlib tests from the <code>fmf</code> repository:</p>
 
 <pre><code>summary:
     Essential command line features
@@ -973,7 +1036,7 @@ execute:
 </code></pre>
 
 <p>It is also possible to select only a subset of available tests.
-This is demonstrated by the <code>docs</code> testset.
+This is demonstrated by the <code>docs</code> plan.
 Use an fmf <code>filter</code> like <code>tier:1</code> to select tests for execution.
 You can also reference a specific feature area instead:</p>
 
