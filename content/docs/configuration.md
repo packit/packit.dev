@@ -257,28 +257,35 @@ The acceptable names are the same as for the package config:
 ------------------------------|-----------------|----------------------------------------------------------------------
  `debug`                      | bool            | enable debug logs
  `fas_user`                   | string          | username in Fedora account system (to perform kinit if needed)
- `github_token`               | string          | Github API token: this is needed when packit interacts with Github API: https://github.com/settings/tokens (getting full read & write repo scope should be enough)
- `pagure_user_token`          | string          | Pagure token needed to access REST API, get it at: https://src.fedoraproject.org/settings#nav-api-tab
+ `authentication`             | dict            | tokens for services (GitHub, Pagure)
 
-Specifying tokens as environment variables `GITHUB_TOKEN` and
-`PAGURE_USER_TOKEN` is now deprecated and will be removed in future versions.
-Please store the tokens in the config file.
+The `authentication` is a dictionary where:
+* key is a hostname, url or name that can be mapped to a service-type, for example `github.com` or `pagure`
+* value is a dictionary with keys: `token` and `instance_url` (optional)
+
+e.g.:
+```
+authentication:
+    github.com:
+        token: mnbvcxz123456
+    pagure:
+        token: qwertyuiop098765
+        instance_url: https://src.fedoraproject.org
+```
+
+The GitHub token is needed when packit interacts with Github API,
+get it at https://github.com/settings/tokens (getting full read & write repo scope should be enough).
+The Pagure token needed to access REST API,
+get it at https://src.fedoraproject.org/settings#nav-api-tab
+
+Specifying tokens as direct keys `github_token` and `pagure_user_token`
+has been deprecated and will be removed in future versions.
 
 Since API tokens are a very sensitive information, please do NOT ever store
 them in a public (such as a GitHub repository). The configuration file here is
 located on your workstation, please do NOT confuse it with a config file for
 your project - that one is described above in the first section of this
 document.
-
-
-### Minimal sample config
-
-```
-debug: true
-github_token: mnbvcxz123456
-pagure_user_token: qwertyuiop098765
-```
-
 
 #### Server-side configuration
 
