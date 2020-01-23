@@ -1,6 +1,6 @@
 ---
 title: "January 2020"
-date: 2020-01-17
+date: 2020-01-27
 draft: false
 ---
 
@@ -46,3 +46,18 @@ draft: false
 - Reports invalid or missing packit config. ([#328](https://github.com/packit-service/packit-service/pull/328))
 - Status workflow has been changed and simplified. ([#338](https://github.com/packit-service/packit-service/pull/338))
 - Minor fixes. ([#323](https://github.com/packit-service/packit-service/pull/323), [#326](https://github.com/packit-service/packit-service/pull/326), [#329](https://github.com/packit-service/packit-service/pull/329), [#331](https://github.com/packit-service/packit-service/pull/331), [#335](https://github.com/packit-service/packit-service/pull/335), [#336](https://github.com/packit-service/packit-service/pull/336))
+
+## Week 4
+
+### packit
+
+- [0.8.1](https://pypi.org/project/packitos/0.8.1/) has been released.
+- CLI has bash auto completion. ([#654](https://github.com/packit-service/packit/pull/654))
+- Few bugs have been squashed. ([#668](https://github.com/packit-service/packit/pull/668), [#670](https://github.com/packit-service/packit/pull/670), [#676](https://github.com/packit-service/packit/pull/676), [#677](https://github.com/packit-service/packit/pull/677), [#678](https://github.com/packit-service/packit/pull/678), [#680](https://github.com/packit-service/packit/pull/680), [#682](https://github.com/packit-service/packit/pull/682))
+
+### packit service
+
+- More checks messages have been unified. ([#355](https://github.com/packit-service/packit-service/pull/355))
+- One more testing-farm status is now shown before the tests are submitted. ([#343](https://github.com/packit-service/packit-service/pull/343))
+- No-fmf scenario has better messages. ([#362](https://github.com/packit-service/packit-service/pull/362))
+- Minor fixes and improvements. ([#339](https://github.com/packit-service/packit-service/pull/339), [#340](https://github.com/packit-service/packit-service/pull/340), [#342](https://github.com/packit-service/packit-service/pull/342), [#345](https://github.com/packit-service/packit-service/pull/345), [#346](https://github.com/packit-service/packit-service/pull/346), [#347](https://github.com/packit-service/packit-service/pull/347), [#348](https://github.com/packit-service/packit-service/pull/348), [#352](https://github.com/packit-service/packit-service/pull/352), [#353](https://github.com/packit-service/packit-service/pull/353), [#350](https://github.com/packit-service/packit-service/pull/350), [#357](https://github.com/packit-service/packit-service/pull/357), [#358](https://github.com/packit-service/packit-service/pull/358), [#361](https://github.com/packit-service/packit-service/pull/361), [#364](https://github.com/packit-service/packit-service/pull/364))
