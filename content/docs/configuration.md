@@ -256,7 +256,6 @@ The acceptable names are the same as for the package config:
  Key name                     | Type            | Description
 ------------------------------|-----------------|----------------------------------------------------------------------
  `debug`                      | bool            | enable debug logs
- `dry_run`                    | bool            | Do not perform any remote changes (pull requests or comments)
  `fas_user`                   | string          | username in Fedora account system (to perform kinit if needed)
  `github_token`               | string          | Github API token: this is needed when packit interacts with Github API: https://github.com/settings/tokens (getting full read & write repo scope should be enough)
  `pagure_user_token`          | string          | Pagure token needed to access REST API, get it at: https://src.fedoraproject.org/settings#nav-api-tab
