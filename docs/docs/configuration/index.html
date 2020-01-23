@@ -731,8 +731,7 @@ if (!doNotTrack) {
 </ul></li>
 <li><a href="#user-configuration-file">User configuration file</a>
 <ul>
-<li><a href="#values">Values</a></li>
-<li><a href="#minimal-sample-config-1">Minimal sample config</a>
+<li><a href="#values">Values</a>
 <ul>
 <li><a href="#server-side-configuration">Server-side configuration</a></li>
 </ul></li>
@@ -1128,47 +1127,46 @@ environment variable. If not set, it looks inside <code>~/.config/</code> direct
 </tr>
 
 <tr>
-<td><code>dry_run</code></td>
-<td>bool</td>
-<td>Do not perform any remote changes (pull requests or comments)</td>
-</tr>
-
-<tr>
 <td><code>fas_user</code></td>
 <td>string</td>
 <td>username in Fedora account system (to perform kinit if needed)</td>
 </tr>
 
 <tr>
-<td><code>github_token</code></td>
-<td>string</td>
-<td>Github API token: this is needed when packit interacts with Github API: <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> (getting full read &amp; write repo scope should be enough)</td>
-</tr>
-
-<tr>
-<td><code>pagure_user_token</code></td>
-<td>string</td>
-<td>Pagure token needed to access REST API, get it at: <a href="https://src.fedoraproject.org/settings#nav-api-tab">https://src.fedoraproject.org/settings#nav-api-tab</a></td>
+<td><code>authentication</code></td>
+<td>dict</td>
+<td>tokens for services (GitHub, Pagure)</td>
 </tr>
 </tbody>
 </table>
 
-<p>Specifying tokens as environment variables <code>GITHUB_TOKEN</code> and
-<code>PAGURE_USER_TOKEN</code> is now deprecated and will be removed in future versions.
-Please store the tokens in the config file.</p>
+<p>The <code>authentication</code> is a dictionary where:
+* key is a hostname, url or name that can be mapped to a service-type, for example <code>github.com</code> or <code>pagure</code>
+* value is a dictionary with keys: <code>token</code> and <code>instance_url</code> (optional)</p>
+
+<p>e.g.:</p>
+
+<pre><code>authentication:
+    github.com:
+        token: mnbvcxz123456
+    pagure:
+        token: qwertyuiop098765
+        instance_url: https://src.fedoraproject.org
+</code></pre>
+
+<p>The GitHub token is needed when packit interacts with Github API,
+get it at <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> (getting full read &amp; write repo scope should be enough).
+The Pagure token needed to access REST API,
+get it at <a href="https://src.fedoraproject.org/settings#nav-api-tab">https://src.fedoraproject.org/settings#nav-api-tab</a></p>
+
+<p>Specifying tokens as direct keys <code>github_token</code> and <code>pagure_user_token</code>
+has been deprecated and will be removed in future versions.</p>
 
 <p>Since API tokens are a very sensitive information, please do NOT ever store
 them in a public (such as a GitHub repository). The configuration file here is
 located on your workstation, please do NOT confuse it with a config file for
 your project - that one is described above in the first section of this
 document.</p>
-
-<h3 id="minimal-sample-config-1">Minimal sample config</h3>
-
-<pre><code>debug: true
-github_token: mnbvcxz123456
-pagure_user_token: qwertyuiop098765
-</code></pre>
 
 <h4 id="server-side-configuration">Server-side configuration</h4>
 
