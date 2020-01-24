@@ -790,15 +790,9 @@ Install the latest stable version directly from Fedora. See <a href="https://tmt
 
 <h3 id="enable-testing">Enable Testing</h3>
 
-<p>In order to enable test execution simply include <code>copr_build</code> and <code>tests</code> jobs in the <code>.packit.yaml</code> configuration:</p>
+<p>In order to enable test execution simply include <code>tests</code> jobs in the <code>.packit.yaml</code> configuration:</p>
 
 <pre><code>jobs:
-- job: copr_build
-  trigger: pull_request
-  metadata:
-    targets:
-    - fedora-all
-
 - job: tests
   trigger: pull_request
   metadata:
