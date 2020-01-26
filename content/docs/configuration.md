@@ -186,10 +186,13 @@ jobs:
   trigger: pull_request
   metadata:
     targets:
-      - fedora-rawhide-x86_64
-      - fedora-30-x86_64
+      - fedora-stable
       - centos-stream-x86_64
 ```
+
+With this configuration, you'll get builds in all stable fedora releases
+(excluding rawhide) and the CentOS stream.
+
 
 **sync\_from\_downstream**
 
