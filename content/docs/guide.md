@@ -106,10 +106,10 @@ jobs:
   trigger: pull_request
   metadata:
     targets:
-    - fedora-30-x86_64
-    - fedora-31-x86_64
-    - fedora-rawhide-x86_64
+    - fedora-all
 ```
+
+`fedora-all` stands for all currently available Fedora releases.
 
 Jobs are nicely described over [here]({{< ref "/docs/configuration.md#jobs" >}}).
 
@@ -132,18 +132,21 @@ jobs:
 
 Pretty clear I'd say: when a new upstream release happens, propose it to
 dist-git master branch: Fedora Rawhide. Packit enables you to decide whether
-you want to do a direct push or create a pull request:
+you want to do a direct push or create a pull request. If you want direct
+pushes, you need to set a global config option `create_pr` to `false`:
 
-1. If you want direct pushes, you need to set a global config option `create_pr` to `false`:
-  ```
-  create_pr: false
-  jobs:
-  - job: propose_downstream
-    trigger: release
-    metadata:
-      dist-git-branch: master
-  ```
-  Packit user in Fedora is not a proven packager, so you need to grant [packit
-  user](https://src.fedoraproject.org/user/packit) the ability to push.
-2. Creating pull requests is easy. `create_pr` defaults to true so the config starting this section is good enough.
+```
+create_pr: false
+jobs:
+- job: propose_downstream
+  trigger: release
+  metadata:
+    dist-git-branch: master
+```
+
+Packit user in Fedora is not a proven packager, so you need to grant [packit
+user](https://src.fedoraproject.org/user/packit) the ability to push.
+
+Creating pull requests is easy. `create_pr` defaults to true so the config
+starting this section is good enough.
 
