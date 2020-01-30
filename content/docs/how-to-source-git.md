@@ -64,7 +64,7 @@ from the systemd-stable repo. We'll start a new git branch in our repo named
 `239-sg` (sg as source-git):
 
 ```bash
-$ git checkout -B 239-sg 8bca4621fc003a148c70248c55aa877dfe61fd3f
+$ git switch -C 239-sg 8bca4621fc003a148c70248c55aa877dfe61fd3f
 Switched to a new branch '239-sg'
 ```
 
@@ -129,7 +129,7 @@ $ git reset HEAD .
 Unstaged changes after reset:
 M       .gitignore
 
-$ git checkout .gitignore
+$ git restore .gitignore
 ```
 
 ...and commit the fedora content now:
@@ -140,7 +140,7 @@ $ git add fedora
 
 We don't want to commit those two patch files:
 ```
-$ git reset HEAD fedora/0001-Revert-journald-periodically-drop-cache-for-all-dead.patch fedora/0998-resolved-create-etc-resolv.conf-symlink-at-runtime.patch
+$ git restore --staged fedora/0001-Revert-journald-periodically-drop-cache-for-all-dead.patch fedora/0998-resolved-create-etc-resolv.conf-symlink-at-runtime.patch
 ```
 
 We can now commit the files in `fedora/` directory:
@@ -180,6 +180,17 @@ Applying: resolved: create /etc/resolv.conf symlink at runtime
 $ git log --oneline| head -n 2
 bcc2c8a292 resolved: create /etc/resolv.conf symlink at runtime
 1d39b39df9 Revert "journald: periodically drop cache for all dead PIDs"
+```
+
+In case the patches are not in git format you need to apply them with `patch`:
+```
+$ patch -p1 --verbose --fuzz=0 <fedora/some-fix.patch
+Hmm...  Looks like a unified diff to me...
+patching file a/b/c.py
+Hunk #1 succeeded at 123.
+done
+
+$ git commit -am "some fix"
 ```
 
 And that's it, this is our source-git repo! You can check it out over
