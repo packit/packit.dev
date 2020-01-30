@@ -10,3 +10,4 @@ chapter: false
 * [propose-update](/docs/cli/propose-update/)
 * [srpm](/docs/cli/srpm/)
 * [sync-from-downstream](/docs/cli/sync-from-downstream/)
+* [copr-build](/docs/cli/copr-build/)
