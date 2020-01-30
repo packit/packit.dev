@@ -61,3 +61,14 @@ draft: false
 - One more testing-farm status is now shown before the tests are submitted. ([#343](https://github.com/packit-service/packit-service/pull/343))
 - No-fmf scenario has better messages. ([#362](https://github.com/packit-service/packit-service/pull/362))
 - Minor fixes and improvements. ([#339](https://github.com/packit-service/packit-service/pull/339), [#340](https://github.com/packit-service/packit-service/pull/340), [#342](https://github.com/packit-service/packit-service/pull/342), [#345](https://github.com/packit-service/packit-service/pull/345), [#346](https://github.com/packit-service/packit-service/pull/346), [#347](https://github.com/packit-service/packit-service/pull/347), [#348](https://github.com/packit-service/packit-service/pull/348), [#352](https://github.com/packit-service/packit-service/pull/352), [#353](https://github.com/packit-service/packit-service/pull/353), [#350](https://github.com/packit-service/packit-service/pull/350), [#357](https://github.com/packit-service/packit-service/pull/357), [#358](https://github.com/packit-service/packit-service/pull/358), [#361](https://github.com/packit-service/packit-service/pull/361), [#364](https://github.com/packit-service/packit-service/pull/364))
+
+## Week 5
+
+### packit
+
+- CLI has a new command for local build. ([#687](https://github.com/packit-service/packit/pull/687))
+- Logs less. ([#685](https://github.com/packit-service/packit/pull/685))
+
+### packit service
+
+- Minor fixes and improvements. ([#365](https://github.com/packit-service/packit-service/pull/365), [#371](https://github.com/packit-service/packit-service/pull/371), [#373](https://github.com/packit-service/packit-service/pull/373), [#376](https://github.com/packit-service/packit-service/pull/376))
