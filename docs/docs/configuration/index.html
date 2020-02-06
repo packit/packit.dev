@@ -892,6 +892,12 @@ if (!doNotTrack) {
 <td>string</td>
 <td>packit by default expects git tags to match versions (e.g. when doing the <code>propose-update</code> command) - if you are using a different tagging scheme, let&rsquo;s say <code>v1.2.3</code> you can then set this parameter to <code>v{version}</code> and packit will fill in the version argument</td>
 </tr>
+
+<tr>
+<td><code>patch_generation_ignore_paths</code></td>
+<td>list of strings</td>
+<td>in a source-git repo, when packit is generating patches, it excludes changes to the spec file and packit.yaml by default: with this option you can precisely specify paths to exclude</td>
+</tr>
 </tbody>
 </table>
 
