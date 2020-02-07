@@ -1,5 +1,5 @@
 server:
-	hugo server -D
+	hugo server -D -w
 
 generate:
 	rm -rf ./docs/
