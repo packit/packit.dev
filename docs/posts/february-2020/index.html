@@ -23,7 +23,7 @@ if (!doNotTrack) {
 }
 </script>
 
-    <title>Actions :: Packit</title>
+    <title>February 2020 :: Packit</title>
 
     
     <link href="/css/nucleus.css" rel="stylesheet">
@@ -53,7 +53,7 @@ if (!doNotTrack) {
     </style>
     
   </head>
-  <body class="" data-url="/docs/actions/">
+  <body class="" data-url="/posts/february-2020/">
     <nav id="sidebar" class="">
 
 
@@ -94,7 +94,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/docs/" title="Documentation" class="dd-item 
-        parent
+        
         
         
         ">
@@ -120,7 +120,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/docs/actions/" title="Actions" class="dd-item active">
+      <li data-nav-id="/docs/actions/" title="Actions" class="dd-item ">
         <a href="/docs/actions/">
         Actions
         
@@ -393,7 +393,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/posts/" title="Blog Posts" class="dd-item 
-        
+        parent
         
         
         ">
@@ -493,7 +493,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/posts/february-2020/" title="February 2020" class="dd-item ">
+      <li data-nav-id="/posts/february-2020/" title="February 2020" class="dd-item active">
         <a href="/posts/february-2020/">
         February 2020
         
@@ -719,7 +719,7 @@ if (!doNotTrack) {
             
           
           
-            <a href='/'>About</a> > <a href='/docs/'>Documentation</a> > Actions
+            <a href='/'>About</a> > <a href='/posts/'>Blog Posts</a> > February 2020
           
          
           
@@ -736,14 +736,7 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
-<li>
-<ul>
-<li><a href="#propose-update-command"><code>propose-update</code> command</a></li>
-<li><a href="#creating-srpm">Creating SRPM</a>
-<ul>
-<li><a href="#environment-variables-set-by-packit">Environment variables set by packit</a></li>
-</ul></li>
-</ul></li>
+<li><a href="#week-6">Week 6</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -762,7 +755,7 @@ if (!doNotTrack) {
           
             <h1>
               
-              Actions
+              February 2020
             </h1>
           
 
@@ -772,194 +765,21 @@ if (!doNotTrack) {
 
 
 
-<p>You can probably find yourself in a situation where some part of the packit workflow needs to be
-tweaked for your package.</p>
+<h2 id="week-6">Week 6</h2>
 
-<p>Packit supports actions, a way to change default implementation for a command
-of your choice.  Packit is able to execute more commands. Each action can
-accept a list of commands. By default, the commands are executed directly and
-not in a shell - if you need shell, just wrap your command like this: <code>bash -c
-&quot;my fancy $command | grep success&quot;</code>.</p>
+<p>Both Packit and Packit Service pre-commit hooks <a href="https://github.com/packit-service/packit/pull/697">were</a> <a href="https://github.com/packit-service/packit-service/pull/383">updated</a> to include
+<a href="https://github.com/prettier/prettier">prettier</a> and <a href="https://github.com/asottile/setup-cfg-fmt">setup-cfg-fmt</a>, in order to have a more consistent formatting of
+markup, YAML, JSON and <code>setup.cfg</code> files.</p>
 
-<p>All the actions are also executed inside Packit-as-a-Service. The service
-creates a new sandbox environment where the command is ran.</p>
+<p>It became easier for developers to <a href="https://github.com/packit-service/packit/pull/695">build the Packit base image</a> locally, and
+tests in Zuul <a href="https://github.com/packit-service/packit/pull/694">were configured</a> to run on Fedora 31.</p>
 
-<p>Actions have a default behaviour which you can override, hooks don&rsquo;t have any -
-hooks are a way for you to perform operations after packit does a specific
-event, e.g. clones an upstream repo.</p>
+<p>Packit learned <a href="https://github.com/packit-service/packit/pull/634">how to look for RPM spec files on its own</a>, so specifying
+<code>specfile_path</code> in the configuration is not mandatory anymore. Packit will
+recursively search the tree and use the first spec file found.</p>
 
-<p>Currently, these are the actions you can use:</p>
-
-<h3 id="propose-update-command"><code>propose-update</code> command</h3>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th>name</th>
-<th>working directory</th>
-<th>when run</th>
-<th>description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>[hook]</td>
-<td><code>post-upstream-clone</code></td>
-<td>upstream git repo</td>
-<td>after cloning of the upstream repo (master) and before other operations</td>
-<td></td>
-</tr>
-
-<tr>
-<td>[hook]</td>
-<td><code>pre-sync</code></td>
-<td>upstream git repo</td>
-<td>after cloning and checkout to the correct (release) branch</td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td><code>prepare-files</code></td>
-<td>upstream git repo</td>
-<td>after cloning, checking out of both upstream and dist-git repos</td>
-<td>replace patching and archive generation</td>
-</tr>
-
-<tr>
-<td></td>
-<td><code>create-patches</code></td>
-<td>upstream git repo</td>
-<td>after sync of upstream files to the downstream</td>
-<td>replace patching</td>
-</tr>
-
-<tr>
-<td></td>
-<td><code>create-archive</code></td>
-<td>upstream git repo</td>
-<td>when the archive needs to be created</td>
-<td>replace the code for creating an archive</td>
-</tr>
-
-<tr>
-<td></td>
-<td><code>get-current-version</code></td>
-<td>upstream git repo</td>
-<td>when the current version needs to be found</td>
-<td>expect version as a stdout</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="creating-srpm">Creating SRPM</h3>
-
-<p>These applies to <code>srpm</code> command and building in COPR.</p>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th>name</th>
-<th>working directory</th>
-<th>when run</th>
-<th>description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>[hook]</td>
-<td><code>post-upstream-clone</code></td>
-<td>upstream git repo</td>
-<td>after cloning of the upstream repo (master) and before other operations</td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td><code>get-current-version</code></td>
-<td>upstream git repo</td>
-<td>when the current version needs to be found</td>
-<td>expect version as a stdout</td>
-</tr>
-
-<tr>
-<td></td>
-<td><code>create-archive</code></td>
-<td>upstream git repo</td>
-<td>when the archive needs to be created</td>
-<td>replace the code for creating an archive</td>
-</tr>
-
-<tr>
-<td></td>
-<td><code>create-patches</code></td>
-<td>upstream git repo</td>
-<td>after sync of upstream files to the downstream</td>
-<td>replace patching</td>
-</tr>
-
-<tr>
-<td></td>
-<td><code>fix-spec-file</code></td>
-<td>upstream git repo</td>
-<td>after creation of a tarball and before running rpmbuild command</td>
-<td>this action changes spec file to use the new tarball</td>
-</tr>
-</tbody>
-</table>
-
-<p><strong>create-archive</strong> - is expected to return the created archive name. If there are more steps, then one of them has to return the archive name.</p>
-
-<p><strong>fix-spec-file</strong> — this action performs these 3 operations on a spec file:</p>
-
-<ol>
-<li>Replaces <code>Source0</code> with a local path to the generated tarball</li>
-<li>Changes first %setup (or %autosetup) macro in %prep and adds <code>-n</code> so the generated tarball can be unpacked</li>
-<li>Changes %version</li>
-</ol>
-
-<p>As an example how to use this, a package may define more Sources - in such a
-case, default implementation of fix-spec-file won&rsquo;t be able to update %prep
-correctly. You can write a simple shell script and use sed to set the new
-Sources correctly, e.g. <code>sed -i packaging/fedora/snapd.spec -e
-&quot;s/https.*only-vendor.tar.xz/$correct_tarball_path/&quot;</code></p>
-
-<h4 id="environment-variables-set-by-packit">Environment variables set by packit</h4>
-
-<p>Additionally, packit sets a few env vars for specific actions</p>
-
-<p><strong>fix-spec-file</strong></p>
-
-<p><code>PACKIT_PROJECT_VERSION</code> — current version of the project (coming from <code>git describe</code>)
-<code>PACKIT_PROJECT_COMMIT</code> — commit hash of the top commit
-<code>PACKIT_PROJECT_ARCHIVE</code> — expected name of the archive</p>
-
-<p><strong>create-archive</strong></p>
-
-<p><code>PACKIT_PROJECT_VERSION</code> — current version of the project (coming from <code>git describe</code>)
-<code>PACKIT_PROJECT_NAME_VERSION</code> — current name and version of the project (coming from <code>git describe</code>)</p>
-
-<hr />
-
-<p>In your package config they can be defined like this:</p>
-
-<pre><code>specfile_path: package.spec
-synced_files:
-  - packit.yaml
-  - package.spec
-upstream_package_name: package
-downstream_package_name: package
-dist_git_url: https://src.fedoraproject.org/rpms/package.git
-actions:
-  prepare-files: &quot;make prepare&quot;
-  create-archive:
-  - &quot;make archive&quot;
-  - &quot;ls&quot;
-</code></pre>
+<p>The Redis pod in Packit Service uses an up to date image now, <a href="https://github.com/packit-service/deployment/pull/51">based on Fedora 31</a>.
+Kudos to <a href="https://github.com/hhorak">hhorak</a> for the help!</p>
 
 
 <footer class=" footline" >
@@ -998,6 +818,8 @@ actions:
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -1008,140 +830,6 @@ actions:
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
                     
                         
             
@@ -1673,6 +1361,136 @@ actions:
 
                     
                     
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
                     
 
                     
@@ -1799,6 +1617,7 @@ actions:
             
                 
                     
+                    
                 
                 
 
@@ -1811,6 +1630,9 @@ actions:
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1876,6 +1698,7 @@ actions:
             
                 
                     
+                    
                 
                 
 
@@ -1891,6 +1714,9 @@ actions:
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2011,10 +1837,10 @@ actions:
 	 
 	 
 		
-			<a class="nav nav-prev" href="/docs/" title="Documentation"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/posts/packit-041/" title="Packit 0.4.0 &amp; 0.4.1"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/docs/cli/" title="Packit CLI Commands" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/posts/january-20/" title="January 2020" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

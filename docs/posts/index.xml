@@ -6,7 +6,7 @@
     <description>Recent content in Blog Posts on Packit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://packit.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -81,6 +81,17 @@ improvements of version
 
 &lt;p&gt;You can find a complete list in the
 &lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md#040&#34;&gt;changelog&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>February 2020</title>
+      <link>https://packit.dev/posts/february-2020/</link>
+      <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/february-2020/</guid>
+      <description>Week 6 Both Packit and Packit Service pre-commit hooks were updated to include prettier and setup-cfg-fmt, in order to have a more consistent formatting of markup, YAML, JSON and setup.cfg files.
+It became easier for developers to build the Packit base image locally, and tests in Zuul were configured to run on Fedora 31.
+Packit learned how to look for RPM spec files on its own, so specifying specfile_path in the configuration is not mandatory anymore.</description>
     </item>
     
     <item>
