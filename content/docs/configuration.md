@@ -23,7 +23,7 @@ Both Packit-as-a-Service and packit tool use this configuration file.
 
  Key name                  | Type            | Description
 ---------------------------|-----------------|----------------------------------------------------------------------
- `specfile_path`           | string          | relative path to a spec file within the upstream repository (mandatory)
+ `specfile_path`           | string          | relative path to a spec file within the upstream repository (if not specified, Packit will recursively search the tree and use the first spec file found)
  `upstream_project_name`   | string          | deprecated since packit-0.7.0, use `upstream_package_name` instead
  `upstream_package_name`   | string          | name of the upstream repository (e.g. in PyPI); this is used in `%prep` section to generate an archive
  `upstream_project_url`    | string          | URL of the upstream project (e.g. `https://github.com/packit-service/packit`)
