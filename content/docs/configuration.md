@@ -25,12 +25,12 @@ Both Packit-as-a-Service and packit tool use this configuration file.
 ---------------------------|-----------------|----------------------------------------------------------------------
  `specfile_path`           | string          | relative path to a spec file within the upstream repository (if not specified, Packit will recursively search the tree and use the first spec file found)
  `upstream_project_name`   | string          | deprecated since packit-0.7.0, use `upstream_package_name` instead
- `upstream_package_name`   | string          | name of the upstream repository (e.g. in PyPI); this is used in `%prep` section to generate an archive
+ `upstream_package_name`   | string          | name of the upstream repository (e.g. in PyPI), defaults to the name of the Github repository; this is used in `%prep` section to generate an archive
  `upstream_project_url`    | string          | URL of the upstream project (e.g. `https://github.com/packit-service/packit`)
  `create_pr`               | bool            | when doing a new update in Fedora dist-git, should packit create a new pull request (defaults to `true`) or push directly to dist-git (if set to `false`)
  `synced_files`            | list of strings or dicts | a list of relative paths to files in the upstream repo which are meant to be copied to dist-git during an update (spec file path and config file path are set every time by default)
  `upstream_ref`            | string          | git reference to last upstream git commit (for source-git repos)
- `downstream_package_name` | string          | name of the RPM package in Fedora
+ `downstream_package_name` | string          | name of the RPM package in Fedora, defaults to the name of the Github repository
  `dist_git_namespace`      | string          | namespace in dist-git URL (defaults to "rpms")
  `dist_git_base_url`       | string          | URL of dist-git server, defaults to [https://src.fedoraproject.org/](https://src.fedoraproject.org/) (has to end with a slash)
  `create_tarball_command`  | list of strings | a command which generates upstream tarball in the root of the upstream directory (defaults to `git archive -o "{package_name}-{version}.tar.gz" --prefix "{package_name}-{version}/" HEAD`)
@@ -48,16 +48,8 @@ Both Packit-as-a-Service and packit tool use this configuration file.
 This is a sample config which is meant for [packit](https://github.com/packit-service/packit) itself.
 
 ```
-# we have the specfile in the root of our repository
-specfile_path: packit.spec
-# when doing an update in Fedora, we want to copy the spec file and the config file
-synced_files:
-  - packit.spec
-  - .packit.yaml
 # packit is named packitos on PyPI b/c packit name was already taken
 upstream_package_name: packitos
-# yes, packit is named packit in Fedora
-downstream_package_name: packit
 ```
 
 ### More examples of `synced_files`
