@@ -163,8 +163,8 @@ Required metadata:
 
 * **targets** - a list of mock chroots where to build (if you navigate to
   settings of your COPR project, you'll be able able to see the list of
-  available values, alternatively you can install package `mock` in Fedora and
-  see the list via `ls -1 /etc/mock/`. You can use `fedora-development`,
+  available values, alternatively you can install package `copr-cli` in Fedora and
+  see the list via `copr-cli list-chroots`. You can use `fedora-development`,
   `fedora-stable` and `fedora-all` aliases as a target. By default, the `x86_64` architecture
   will be used, but you can use e.g. `fedora-stable-aarch64` if you need.
 
