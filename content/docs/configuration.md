@@ -38,7 +38,7 @@ Both Packit-as-a-Service and packit tool use this configuration file.
  `actions`                 | string | custom actions/hooks overwriting the default behavior of packit (more in [Actions](/docs/actions/))
  `jobs`                    | list of dicts   | a list of job definitions for packit service: see [below](#supported-jobs) for details
  `allowed_gpg_keys`        | list of strings | a list of gpg-key fingerprints; if specified, one of the configured keys have to sign the last commit when updating in downstream; add GitHub key (`5DE3E0509C47EA3CF04A42D34AEE18F83AFDEB23`) if you want to use this on code merged via GitHub web interface
- `spec_source_id`          | int or string   | numeric ID of Source inside spec file which packit should change when setting path to the newly generated tarball, can be also full name of the macro
+ `spec_source_id`          | int or string   | Numeric ID of Source inside spec file which packit should change when setting path to the newly generated tarball, can be also full name of the macro. Defaults to `Source0` or `Source`, whichever is found first in the spec file.
  `upstream_tag_template`   | string          | packit by default expects git tags to match versions (e.g. when doing the `propose-update` command) - if you are using a different tagging scheme, let's say `v1.2.3` you can then set this parameter to `v{version}` and packit will fill in the version argument
  `patch_generation_ignore_paths`   | list of strings          | in a source-git repo, when packit is generating patches, it excludes changes to the spec file and packit.yaml by default: with this option you can precisely specify paths to exclude
 
