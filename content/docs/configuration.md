@@ -21,27 +21,104 @@ Both Packit-as-a-Service and packit tool use this configuration file.
 
 ## Top level keys
 
- Key name                  | Type            | Description
----------------------------|-----------------|----------------------------------------------------------------------
- `specfile_path`           | string          | relative path to a spec file within the upstream repository (if not specified, Packit will recursively search the tree and use the first spec file found)
- `upstream_project_name`   | string          | deprecated since packit-0.7.0, use `upstream_package_name` instead
- `upstream_package_name`   | string          | name of the upstream repository (e.g. in PyPI), defaults to the name of the Github repository; this is used in `%prep` section to generate an archive
- `upstream_project_url`    | string          | URL of the upstream project (e.g. `https://github.com/packit-service/packit`)
- `create_pr`               | bool            | when doing a new update in Fedora dist-git, should packit create a new pull request (defaults to `true`) or push directly to dist-git (if set to `false`)
- `synced_files`            | list of strings or dicts | a list of relative paths to files in the upstream repo which are meant to be copied to dist-git during an update (spec file path and config file path are set every time by default)
- `upstream_ref`            | string          | git reference to last upstream git commit (for source-git repos)
- `downstream_package_name` | string          | name of the RPM package in Fedora, defaults to the name of the Github repository
- `dist_git_namespace`      | string          | namespace in dist-git URL (defaults to "rpms")
- `dist_git_base_url`       | string          | URL of dist-git server, defaults to [https://src.fedoraproject.org/](https://src.fedoraproject.org/) (has to end with a slash)
- `create_tarball_command`  | list of strings | a command which generates upstream tarball in the root of the upstream directory (defaults to `git archive -o "{package_name}-{version}.tar.gz" --prefix "{package_name}-{version}/" HEAD`)
- `current_version_command` | list of strings | a command which prints current upstream version (hint: `git describe`) (defaults to `git describe --tags --match '*.*'`)
- `actions`                 | string | custom actions/hooks overwriting the default behavior of packit (more in [Actions](/docs/actions/))
- `jobs`                    | list of dicts   | a list of job definitions for packit service: see [below](#supported-jobs) for details
- `allowed_gpg_keys`        | list of strings | a list of gpg-key fingerprints; if specified, one of the configured keys have to sign the last commit when updating in downstream; add GitHub key (`5DE3E0509C47EA3CF04A42D34AEE18F83AFDEB23`) if you want to use this on code merged via GitHub web interface
- `spec_source_id`          | int or string   | Numeric ID of Source inside spec file which packit should change when setting path to the newly generated tarball, can be also full name of the macro. Defaults to `Source0` or `Source`, whichever is found first in the spec file.
- `upstream_tag_template`   | string          | packit by default expects git tags to match versions (e.g. when doing the `propose-update` command) - if you are using a different tagging scheme, let's say `v1.2.3` you can then set this parameter to `v{version}` and packit will fill in the version argument
- `patch_generation_ignore_paths`   | list of strings          | in a source-git repo, when packit is generating patches, it excludes changes to the spec file and packit.yaml by default: with this option you can precisely specify paths to exclude
+#### specfile_path
 
+(*string*) Relative path to a spec file within the upstream repository (if not
+specified, Packit will recursively search the tree and use the first spec file
+found).
+
+#### upstream_project_name
+
+(*string*) Deprecated since packit-0.7.0, use `upstream_package_name` instead.
+
+#### upstream_package_name
+
+(*string*) Name of the upstream repository (e.g. in PyPI), defaults to the
+name of the Github repository; this is used in `%prep` section to generate an
+archive.
+
+#### upstream_project_url
+
+(*string*) URL of the upstream project (e.g.
+`https://github.com/packit-service/packit`).
+
+#### create_pr
+
+(*bool*) When doing a new update in Fedora dist-git, should packit create a
+new pull request (defaults to `true`) or push directly to dist-git (if set to
+`false`).
+
+#### synced_files
+
+(*list of strings or dicts*) A list of relative paths to files in the upstream
+repo which are meant to be copied to dist-git during an update (spec file path
+and config file path are set every time by default).
+
+#### upstream_ref
+
+(*string*) Git reference to last upstream git commit (for source-git repos).
+
+#### downstream_package_name
+
+(*string*) Name of the RPM package in Fedora, defaults to the name of the
+Github repository.
+
+#### dist_git_namespace
+
+(*string*) Namespace in dist-git URL (defaults to "rpms").
+
+#### dist_git_base_url
+
+(*string*) URL of dist-git server, defaults to https://src.fedoraproject.org/
+(has to end with a slash).
+
+#### create_tarball_command
+
+(*list of strings*) A command which generates upstream tarball in the root of
+the upstream directory (defaults to `git archive -o
+"{package_name}-{version}.tar.gz" --prefix "{package_name}-{version}/" HEAD`).
+
+#### current_version_command
+
+(*list of strings*) A command which prints current upstream version (hint:
+`git describe`) (defaults to `git describe --tags --match '*.*'`).
+
+#### actions
+
+(*string*) Custom actions/hooks overwriting the default behavior of packit
+(more in [Actions](/docs/actions/)).
+
+#### jobs
+
+(*list of dicts*) A list of job definitions for packit service: see
+[below](#supported-jobs) for details.
+
+#### allowed_gpg_keys
+
+(*list of string*) A list of gpg-key fingerprints; if specified, one of the
+configured keys have to sign the last commit when updating in downstream; add
+GitHub key (`5DE3E0509C47EA3CF04A42D34AEE18F83AFDEB23`) if you want to use
+this on code merged via GitHub web interface.
+
+#### spec_source_id
+
+(*int or string*) Numeric ID of Source inside spec file which packit should
+change when setting path to the newly generated tarball, can be also full name
+of the macro. Defaults to `Source0` or `Source`, whichever is found first in
+the spec file.
+
+#### upstream_tag_template
+
+(*string*) Packit by default expects git tags to match versions (e.g. when
+doing the `propose-update` command) - if you are using a different tagging
+scheme, let's say `v1.2.3` you can then set this parameter to `v{version}` and
+packit will fill in the version argument.
+
+#### patch_generation_ignore_paths
+
+(*list of strings*) In a source-git repo, when packit is generating patches,
+it excludes changes to the spec file and packit.yaml by default: with this
+option you can precisely specify paths to exclude.
 
 ### Minimal sample config
 
