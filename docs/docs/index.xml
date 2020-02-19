@@ -49,7 +49,7 @@ Packit supports actions, a way to change default implementation for a command of
       <description>Packit uses a configuration file in the upstream repository. The config file is written in YAML language.
 You should place the file in the root of your upstream repo. Packit accepts these names:
  .packit.yaml .packit.yml .packit.json packit.yaml packit.yml packit.json  Both Packit-as-a-Service and packit tool use this configuration file.
-Top level keys    Key name Type Description     specfile_path string relative path to a spec file within the upstream repository (if not specified, Packit will recursively search the tree and use the first spec file found)   upstream_project_name string deprecated since packit-0.</description>
+Top level keys specfile_path (string) Relative path to a spec file within the upstream repository (if not specified, Packit will recursively search the tree and use the first spec file found).</description>
     </item>
     
     <item>
