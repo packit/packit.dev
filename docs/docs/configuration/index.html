@@ -738,6 +738,27 @@ if (!doNotTrack) {
 <ul>
 <li><a href="#top-level-keys">Top level keys</a>
 <ul>
+<li>
+<ul>
+<li><a href="#specfile-path">specfile_path</a></li>
+<li><a href="#upstream-project-name">upstream_project_name</a></li>
+<li><a href="#upstream-package-name">upstream_package_name</a></li>
+<li><a href="#upstream-project-url">upstream_project_url</a></li>
+<li><a href="#create-pr">create_pr</a></li>
+<li><a href="#synced-files">synced_files</a></li>
+<li><a href="#upstream-ref">upstream_ref</a></li>
+<li><a href="#downstream-package-name">downstream_package_name</a></li>
+<li><a href="#dist-git-namespace">dist_git_namespace</a></li>
+<li><a href="#dist-git-base-url">dist_git_base_url</a></li>
+<li><a href="#create-tarball-command">create_tarball_command</a></li>
+<li><a href="#current-version-command">current_version_command</a></li>
+<li><a href="#actions">actions</a></li>
+<li><a href="#jobs">jobs</a></li>
+<li><a href="#allowed-gpg-keys">allowed_gpg_keys</a></li>
+<li><a href="#spec-source-id">spec_source_id</a></li>
+<li><a href="#upstream-tag-template">upstream_tag_template</a></li>
+<li><a href="#patch-generation-ignore-paths">patch_generation_ignore_paths</a></li>
+</ul></li>
 <li><a href="#minimal-sample-config">Minimal sample config</a></li>
 <li><a href="#more-examples-of-synced-files">More examples of <code>synced_files</code></a></li>
 </ul></li>
@@ -800,125 +821,104 @@ if (!doNotTrack) {
 
 <h2 id="top-level-keys">Top level keys</h2>
 
-<table>
-<thead>
-<tr>
-<th>Key name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
+<h4 id="specfile-path">specfile_path</h4>
 
-<tbody>
-<tr>
-<td><code>specfile_path</code></td>
-<td>string</td>
-<td>relative path to a spec file within the upstream repository (if not specified, Packit will recursively search the tree and use the first spec file found)</td>
-</tr>
+<p>(<em>string</em>) Relative path to a spec file within the upstream repository (if not
+specified, Packit will recursively search the tree and use the first spec file
+found).</p>
 
-<tr>
-<td><code>upstream_project_name</code></td>
-<td>string</td>
-<td>deprecated since packit-0.7.0, use <code>upstream_package_name</code> instead</td>
-</tr>
+<h4 id="upstream-project-name">upstream_project_name</h4>
 
-<tr>
-<td><code>upstream_package_name</code></td>
-<td>string</td>
-<td>name of the upstream repository (e.g. in PyPI), defaults to the name of the Github repository; this is used in <code>%prep</code> section to generate an archive</td>
-</tr>
+<p>(<em>string</em>) Deprecated since packit-0.7.0, use <code>upstream_package_name</code> instead.</p>
 
-<tr>
-<td><code>upstream_project_url</code></td>
-<td>string</td>
-<td>URL of the upstream project (e.g. <code>https://github.com/packit-service/packit</code>)</td>
-</tr>
+<h4 id="upstream-package-name">upstream_package_name</h4>
 
-<tr>
-<td><code>create_pr</code></td>
-<td>bool</td>
-<td>when doing a new update in Fedora dist-git, should packit create a new pull request (defaults to <code>true</code>) or push directly to dist-git (if set to <code>false</code>)</td>
-</tr>
+<p>(<em>string</em>) Name of the upstream repository (e.g. in PyPI), defaults to the
+name of the Github repository; this is used in <code>%prep</code> section to generate an
+archive.</p>
 
-<tr>
-<td><code>synced_files</code></td>
-<td>list of strings or dicts</td>
-<td>a list of relative paths to files in the upstream repo which are meant to be copied to dist-git during an update (spec file path and config file path are set every time by default)</td>
-</tr>
+<h4 id="upstream-project-url">upstream_project_url</h4>
 
-<tr>
-<td><code>upstream_ref</code></td>
-<td>string</td>
-<td>git reference to last upstream git commit (for source-git repos)</td>
-</tr>
+<p>(<em>string</em>) URL of the upstream project (e.g.
+<code>https://github.com/packit-service/packit</code>).</p>
 
-<tr>
-<td><code>downstream_package_name</code></td>
-<td>string</td>
-<td>name of the RPM package in Fedora, defaults to the name of the Github repository</td>
-</tr>
+<h4 id="create-pr">create_pr</h4>
 
-<tr>
-<td><code>dist_git_namespace</code></td>
-<td>string</td>
-<td>namespace in dist-git URL (defaults to &ldquo;rpms&rdquo;)</td>
-</tr>
+<p>(<em>bool</em>) When doing a new update in Fedora dist-git, should packit create a
+new pull request (defaults to <code>true</code>) or push directly to dist-git (if set to
+<code>false</code>).</p>
 
-<tr>
-<td><code>dist_git_base_url</code></td>
-<td>string</td>
-<td>URL of dist-git server, defaults to <a href="https://src.fedoraproject.org/">https://src.fedoraproject.org/</a> (has to end with a slash)</td>
-</tr>
+<h4 id="synced-files">synced_files</h4>
 
-<tr>
-<td><code>create_tarball_command</code></td>
-<td>list of strings</td>
-<td>a command which generates upstream tarball in the root of the upstream directory (defaults to <code>git archive -o &quot;{package_name}-{version}.tar.gz&quot; --prefix &quot;{package_name}-{version}/&quot; HEAD</code>)</td>
-</tr>
+<p>(<em>list of strings or dicts</em>) A list of relative paths to files in the upstream
+repo which are meant to be copied to dist-git during an update (spec file path
+and config file path are set every time by default).</p>
 
-<tr>
-<td><code>current_version_command</code></td>
-<td>list of strings</td>
-<td>a command which prints current upstream version (hint: <code>git describe</code>) (defaults to <code>git describe --tags --match '*.*'</code>)</td>
-</tr>
+<h4 id="upstream-ref">upstream_ref</h4>
 
-<tr>
-<td><code>actions</code></td>
-<td>string</td>
-<td>custom actions/hooks overwriting the default behavior of packit (more in <a href="/docs/actions/">Actions</a>)</td>
-</tr>
+<p>(<em>string</em>) Git reference to last upstream git commit (for source-git repos).</p>
 
-<tr>
-<td><code>jobs</code></td>
-<td>list of dicts</td>
-<td>a list of job definitions for packit service: see <a href="#supported-jobs">below</a> for details</td>
-</tr>
+<h4 id="downstream-package-name">downstream_package_name</h4>
 
-<tr>
-<td><code>allowed_gpg_keys</code></td>
-<td>list of strings</td>
-<td>a list of gpg-key fingerprints; if specified, one of the configured keys have to sign the last commit when updating in downstream; add GitHub key (<code>5DE3E0509C47EA3CF04A42D34AEE18F83AFDEB23</code>) if you want to use this on code merged via GitHub web interface</td>
-</tr>
+<p>(<em>string</em>) Name of the RPM package in Fedora, defaults to the name of the
+Github repository.</p>
 
-<tr>
-<td><code>spec_source_id</code></td>
-<td>int or string</td>
-<td>numeric ID of Source inside spec file which packit should change when setting path to the newly generated tarball, can be also full name of the macro</td>
-</tr>
+<h4 id="dist-git-namespace">dist_git_namespace</h4>
 
-<tr>
-<td><code>upstream_tag_template</code></td>
-<td>string</td>
-<td>packit by default expects git tags to match versions (e.g. when doing the <code>propose-update</code> command) - if you are using a different tagging scheme, let&rsquo;s say <code>v1.2.3</code> you can then set this parameter to <code>v{version}</code> and packit will fill in the version argument</td>
-</tr>
+<p>(<em>string</em>) Namespace in dist-git URL (defaults to &ldquo;rpms&rdquo;).</p>
 
-<tr>
-<td><code>patch_generation_ignore_paths</code></td>
-<td>list of strings</td>
-<td>in a source-git repo, when packit is generating patches, it excludes changes to the spec file and packit.yaml by default: with this option you can precisely specify paths to exclude</td>
-</tr>
-</tbody>
-</table>
+<h4 id="dist-git-base-url">dist_git_base_url</h4>
+
+<p>(<em>string</em>) URL of dist-git server, defaults to <a href="https://src.fedoraproject.org/">https://src.fedoraproject.org/</a>
+(has to end with a slash).</p>
+
+<h4 id="create-tarball-command">create_tarball_command</h4>
+
+<p>(<em>list of strings</em>) A command which generates upstream tarball in the root of
+the upstream directory (defaults to <code>git archive -o
+&quot;{package_name}-{version}.tar.gz&quot; --prefix &quot;{package_name}-{version}/&quot; HEAD</code>).</p>
+
+<h4 id="current-version-command">current_version_command</h4>
+
+<p>(<em>list of strings</em>) A command which prints current upstream version (hint:
+<code>git describe</code>) (defaults to <code>git describe --tags --match '*.*'</code>).</p>
+
+<h4 id="actions">actions</h4>
+
+<p>(<em>string</em>) Custom actions/hooks overwriting the default behavior of packit
+(more in <a href="/docs/actions/">Actions</a>).</p>
+
+<h4 id="jobs">jobs</h4>
+
+<p>(<em>list of dicts</em>) A list of job definitions for packit service: see
+<a href="#supported-jobs">below</a> for details.</p>
+
+<h4 id="allowed-gpg-keys">allowed_gpg_keys</h4>
+
+<p>(<em>list of string</em>) A list of gpg-key fingerprints; if specified, one of the
+configured keys have to sign the last commit when updating in downstream; add
+GitHub key (<code>5DE3E0509C47EA3CF04A42D34AEE18F83AFDEB23</code>) if you want to use
+this on code merged via GitHub web interface.</p>
+
+<h4 id="spec-source-id">spec_source_id</h4>
+
+<p>(<em>int or string</em>) Numeric ID of Source inside spec file which packit should
+change when setting path to the newly generated tarball, can be also full name
+of the macro. Defaults to <code>Source0</code> or <code>Source</code>, whichever is found first in
+the spec file.</p>
+
+<h4 id="upstream-tag-template">upstream_tag_template</h4>
+
+<p>(<em>string</em>) Packit by default expects git tags to match versions (e.g. when
+doing the <code>propose-update</code> command) - if you are using a different tagging
+scheme, let&rsquo;s say <code>v1.2.3</code> you can then set this parameter to <code>v{version}</code> and
+packit will fill in the version argument.</p>
+
+<h4 id="patch-generation-ignore-paths">patch_generation_ignore_paths</h4>
+
+<p>(<em>list of strings</em>) In a source-git repo, when packit is generating patches,
+it excludes changes to the spec file and packit.yaml by default: with this
+option you can precisely specify paths to exclude.</p>
 
 <h3 id="minimal-sample-config">Minimal sample config</h3>
 
