@@ -126,6 +126,10 @@ We don't want to commit those patch files:
 $ git restore --staged fedora/0002-Revert-units-set-NoNewPrivileges-for-all-long-runnin.patch fedora/0998-resolved-create-etc-resolv.conf-symlink-at-runtime.patch fedora/464a73411c13596a130a7a8f0ac00ca728e5f69e.patch
 ```
 
+We also (currently) have to remove them from the spec file.
+Packit will automatically generate patches from the additional commits and
+add them to the spec when generating a SRPM or proposing downstream update.
+
 We can now commit the files in `fedora/` directory:
 ```bash
 $ git commit -m 'add fedora packaging'
