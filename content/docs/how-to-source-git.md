@@ -168,7 +168,24 @@ $ git commit -m 'add fedora packaging'
 
 ### Applying downstream patches
 We are getting to the core of source-git: we work with code in it, not with
-patches. Hence we need to apply the downstream patches:
+patches. But first we need to instruct packit from which point in history start
+downstream patches.
+Add [upstream_ref](https://packit.dev/docs/configuration/#upstream-ref) key into
+`.packit.yaml`:
+
+```
+upstream_ref: 239-sg-start
+```
+
+Commit and tag it:
+
+```
+$ git commit -am "upstream_ref -> .packit.yaml"
+
+$ git tag 239-sg-start HEAD
+```
+
+Now we can apply the downstream patches:
 
 ```
 $ git am fedora/0001-Revert-journald-periodically-drop-cache-for-all-dead.patch
@@ -196,9 +213,14 @@ $ git commit -am "some fix"
 And that's it, this is our source-git repo! You can check it out over
 [here](https://github.com/packit-service/systemd-source-git).
 
-Once we finish source-git related code in packit, you'd be able then to work
-exclusively in source-git, getting results from tests and other testing systems
-directly on pull requests.
+### Working with source-git
+
+Run `packit srpm` and see that packit generates an upstream tarball plus
+downstream patches and puts everything along with a spec file into a SRPM.
+The same applies to `propose-update`, `local-build` or `copr-build` commands.
+
+Alternatively you can use `--upstream-ref` option instead of putting
+the `upstream_ref` into `.packit.yaml`
 
 
 ## Wrap up
