@@ -742,6 +742,7 @@ if (!doNotTrack) {
 <li><a href="#we-can-start-now">We can start now</a></li>
 <li><a href="#layering-downstream-content-on-top-of-upstream">Layering downstream content on top of upstream</a></li>
 <li><a href="#applying-downstream-patches">Applying downstream patches</a></li>
+<li><a href="#working-with-source-git">Working with source-git</a></li>
 </ul></li>
 <li><a href="#wrap-up">Wrap up</a></li>
 </ul></li>
@@ -779,7 +780,7 @@ specification</a>.</p>
 
 <h2 id="let-s-create-a-source-git-repo">Let&rsquo;s create a source-git repo</h2>
 
-<p>I choose systemd from Fedora 29 for this example.</p>
+<p>I choose systemd from Fedora 31 for this example.</p>
 
 <h3 id="what-do-we-need">What do we need?</h3>
 
@@ -787,7 +788,7 @@ specification</a>.</p>
 
 <ol>
 <li>Systemd upstream repo.</li>
-<li>Fedora 29 dist-git repo of systemd.</li>
+<li>Fedora 31 dist-git repo of systemd.</li>
 <li>New local git repo.</li>
 </ol>
 
@@ -816,64 +817,49 @@ $ git fetch -q upstream-stable
 
 <h3 id="we-can-start-now">We can start now</h3>
 
-<p>Usually you would try to figure which upstream release is used so that you know
-what to choose for the base. But systemd in Fedora is not using the pristine
-upstream archives.</p>
+<p>When we open the Fedora 31 systemd spec file, we can see that upstream uses
+version <code>243.7</code>. There&rsquo;s a corresponding tag <code>v243.7</code> in <code>upstream-stable</code>.
+We&rsquo;ll start a new git branch in our repo named <code>2437-sg</code> (sg as source-git):</p>
 
-<p>When we open the Fedora 29 systemd spec file, we can see that upstream uses
-commit hash <code>8bca4621fc003a148c70248c55aa877dfe61fd3f</code> for the upstream tarball
-from the systemd-stable repo. We&rsquo;ll start a new git branch in our repo named
-<code>239-sg</code> (sg as source-git):</p>
-
-<pre><code class="language-bash">$ git checkout -B 239-sg 8bca4621fc003a148c70248c55aa877dfe61fd3f
-Switched to a new branch '239-sg'
+<pre><code class="language-bash">$ git switch -C 2437-sg v243.7
+Switched to a new branch '2437-sg'
 </code></pre>
 
-<p>Right now we have the upstream history which lead to the 239 release.
+<p>Right now we have the upstream history which lead to the 243.7 release.
 Alternatively we could just unpack the upstream tarball and have the history in
 a single commit.</p>
 
-<p>In this case, the upstream history is not marked in a any way, so let&rsquo;s tag it:</p>
-
-<pre><code class="language-bash">$ git tag upstream-239 HEAD
-</code></pre>
-
-<p>Packit will be able to distinguish between additional source-git
-content and upstream history.</p>
-
-<p>We can start layering downstream content on top.</p>
-
 <h3 id="layering-downstream-content-on-top-of-upstream">Layering downstream content on top of upstream</h3>
 
-<p>Let&rsquo;s get files from the <code>fedora/f29</code> branch.</p>
+<p>Let&rsquo;s get files from the <code>fedora/f31</code> branch.</p>
 
-<pre><code class="language-bash">$ git checkout fedora/f29 -- .
+<pre><code class="language-bash">$ git checkout fedora/f31 -- .
 $ git status
-On branch 239-sg
+On branch 2437-sg
 Changes to be committed:
-  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
-
-        modified:   .gitignore
-        new file:   0001-Revert-journald-periodically-drop-cache-for-all-dead.patch
-        new file:   0998-resolved-create-etc-resolv.conf-symlink-at-runtime.patch
-        new file:   20-grubby.install
-        new file:   20-yama-ptrace.conf
-        new file:   inittab
-        new file:   purge-nobody-user
-        new file:   sources
-        new file:   split-files.py
-        new file:   sysctl.conf.README
-        new file:   systemd-journal-gatewayd.xml
-        new file:   systemd-journal-remote.xml
-        new file:   systemd-udev-trigger-no-reload.conf
-        new file:   systemd-user
-        new file:   systemd.spec
-        new file:   triggers.systemd
-        new file:   yum-protect-systemd.conf
+  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
+	modified:   .gitignore
+	new file:   0002-Revert-units-set-NoNewPrivileges-for-all-long-runnin.patch
+	new file:   0998-resolved-create-etc-resolv.conf-symlink-at-runtime.patch
+	new file:   20-grubby.install
+	new file:   20-yama-ptrace.conf
+	new file:   464a73411c13596a130a7a8f0ac00ca728e5f69e.patch
+	new file:   inittab
+	new file:   purge-nobody-user
+	new file:   sources
+	new file:   split-files.py
+	new file:   sysctl.conf.README
+	new file:   systemd-journal-gatewayd.xml
+	new file:   systemd-journal-remote.xml
+	new file:   systemd-udev-trigger-no-reload.conf
+	new file:   systemd-user
+	new file:   systemd.spec
+	new file:   triggers.systemd
+	new file:   yum-protect-systemd.conf
 </code></pre>
 
-<p>We have a bunch of new files from f29 branch in the root. We&rsquo;ll move them now
-to the <code>fedora/</code> directory:</p>
+<p>We have a bunch of new files from f31 branch in the root.
+We&rsquo;ll move them now to the <code>fedora/</code> directory:</p>
 
 <pre><code class="language-bash">$ mkdir fedora
 $ mv $(git diff --name-only --cached) fedora/
@@ -885,7 +871,7 @@ $ mv $(git diff --name-only --cached) fedora/
 Unstaged changes after reset:
 M       .gitignore
 
-$ git checkout .gitignore
+$ git restore .gitignore
 </code></pre>
 
 <p>&hellip;and commit the fedora content now:</p>
@@ -893,16 +879,20 @@ $ git checkout .gitignore
 <pre><code class="language-bash">$ git add fedora
 </code></pre>
 
-<p>We don&rsquo;t want to commit those two patch files:</p>
+<p>We don&rsquo;t want to commit those patch files:</p>
 
-<pre><code>$ git reset HEAD fedora/0001-Revert-journald-periodically-drop-cache-for-all-dead.patch fedora/0998-resolved-create-etc-resolv.conf-symlink-at-runtime.patch
+<pre><code class="language-bash">$ git restore --staged fedora/0002-Revert-units-set-NoNewPrivileges-for-all-long-runnin.patch fedora/0998-resolved-create-etc-resolv.conf-symlink-at-runtime.patch fedora/464a73411c13596a130a7a8f0ac00ca728e5f69e.patch
 </code></pre>
+
+<p>We also (currently) have to remove them from the spec file.
+Packit will automatically generate patches from the additional commits and
+add them to the spec when generating a SRPM or proposing downstream update.</p>
 
 <p>We can now commit the files in <code>fedora/</code> directory:</p>
 
-<pre><code>$ git commit -m 'add fedora packaging'
-[239-sg 20548da6d9] add fedora packaging
- 15 files changed, 2901 insertions(+)
+<pre><code class="language-bash">$ git commit -m 'add fedora packaging'
+[2437-sg 578bda8d7d] add fedora packaging
+ 15 files changed, 3077 insertions(+)
  create mode 100644 fedora/.gitignore
  create mode 100755 fedora/20-grubby.install
  create mode 100644 fedora/20-yama-ptrace.conf
@@ -923,25 +913,57 @@ $ git checkout .gitignore
 <h3 id="applying-downstream-patches">Applying downstream patches</h3>
 
 <p>We are getting to the core of source-git: we work with code in it, not with
-patches. Hence we need to apply the downstream patches:</p>
+patches. But first we need to instruct packit from which point in history start
+downstream patches.
+Add <a href="https://packit.dev/docs/configuration/#upstream-ref">upstream_ref</a>
+key into <code>.packit.yaml</code>:</p>
 
-<pre><code>$ git am fedora/0001-Revert-journald-periodically-drop-cache-for-all-dead.patch
-Applying: Revert &quot;journald: periodically drop cache for all dead PIDs&quot;
+<pre><code>upstream_ref: 2437-sg-start
+</code></pre>
+
+<p>Commit and tag it:</p>
+
+<pre><code class="language-bash">$ git commit -am &quot;upstream_ref -&gt; .packit.yaml&quot;
+
+$ git tag 2437-sg-start HEAD
+</code></pre>
+
+<p>Now we can apply the downstream patches:</p>
+
+<pre><code class="language-bash">$ git am fedora/464a73411c13596a130a7a8f0ac00ca728e5f69e.patch
+Applying: udev: use bfq as the default scheduler
+
+$ git am fedora/0002-Revert-units-set-NoNewPrivileges-for-all-long-runnin.patch
+Applying: Revert &quot;units: set NoNewPrivileges= for all long-running services&quot;
 
 $ git am fedora/0998-resolved-create-etc-resolv.conf-symlink-at-runtime.patch
 Applying: resolved: create /etc/resolv.conf symlink at runtime
 
-$ git log --oneline| head -n 2
-bcc2c8a292 resolved: create /etc/resolv.conf symlink at runtime
-1d39b39df9 Revert &quot;journald: periodically drop cache for all dead PIDs&quot;
+$ git log --oneline| head -n 3
+5fc8885d47 resolved: create /etc/resolv.conf symlink at runtime
+81c37ac6f6 Revert &quot;units: set NoNewPrivileges= for all long-running services&quot;
+d9f29507fe udev: use bfq as the default scheduler
+</code></pre>
+
+<p>(This is not the case for systemd, but)
+If the patches are not in git format you need to apply them with <code>patch</code>:</p>
+
+<pre><code class="language-bash">$ patch -p1 --verbose --fuzz=0 &lt;fedora/some-fix.patch
+
+$ git commit -am &quot;some fix&quot;
 </code></pre>
 
 <p>And that&rsquo;s it, this is our source-git repo! You can check it out over
 <a href="https://github.com/packit-service/systemd-source-git">here</a>.</p>
 
-<p>Once we finish source-git related code in packit, you&rsquo;d be able then to work
-exclusively in source-git, getting results from tests and other testing systems
-directly on pull requests.</p>
+<h3 id="working-with-source-git">Working with source-git</h3>
+
+<p>Run <code>packit srpm</code> and see that packit generates an upstream tarball plus
+downstream patches and puts everything along with a spec file into a SRPM.
+The same applies to <code>propose-update</code>, <code>local-build</code> or <code>copr-build</code> commands.</p>
+
+<p>Alternatively you can use <code>--upstream-ref</code> option instead of putting
+the <code>upstream_ref</code> into <code>.packit.yaml</code></p>
 
 <h2 id="wrap-up">Wrap up</h2>
 
