@@ -738,6 +738,7 @@ if (!doNotTrack) {
 <ul>
 <li><a href="#week-6">Week 6</a></li>
 <li><a href="#week-7">Week 7</a></li>
+<li><a href="#week-8">Week 8</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -803,6 +804,19 @@ when there are no releases found in the upstream GitHub repository.</p>
 <p>Test results became <a href="https://github.com/packit-service/packit-service/pull/391">serializable</a>, we will not block when <a href="https://github.com/packit-service/packit-service/pull/388">no test results
 are received</a>, and Packit Service received <a href="https://github.com/packit-service/packit-service/pull/319">some initial code</a> to enable using
 PostgreSQL as a data backend.</p>
+
+<h2 id="week-8">Week 8</h2>
+
+<p>Postgresql database was introduced in production environment to improve performance and enable implementation
+of new features, e.g. storing logs to reduce amount of messages sent directly to pull request <a href="https://github.com/packit-service/packit-service/pull/406">(#406)</a>, <a href="https://github.com/packit-service/packit-service/pull/420">(#420)</a>.</p>
+
+<p>Cleanup in configuration files was performed, so no longer needed values were removed from .packit.yaml <a href="https://github.com/packit-service/packit/pull/709">(#709)</a>.
+User experience was improved by adding new <code>--upstrem-ref</code> option to <code>copr-build</code> command in command-line interface <a href="https://github.com/packit-service/packit/pull/718">(#718)</a>
+and making error reporting more robust by adding new fedpkg clones related error message <a href="https://github.com/packit-service/packit/pull/714">(#714)</a>.</p>
+
+<p>Following bugs were fixed:
+- bug in copr-build command fixed <a href="https://github.com/packit-service/packit/pull/713">(#713)</a>
+- get_local_package_config() duplicate entries in &lsquo;directories&rsquo; bug fixed <a href="https://github.com/packit-service/packit/pull/715">(#715)</a></p>
 
 
 <footer class=" footline" >

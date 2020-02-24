@@ -62,3 +62,25 @@ PostgreSQL as a data backend.
 [some initial code]: https://github.com/packit-service/packit-service/pull/319
 [report a failure]: https://github.com/packit-service/packit-service/pull/399
 [serializable]: https://github.com/packit-service/packit-service/pull/391
+
+## Week 8
+
+Postgresql database was introduced in production environment to improve performance and enable implementation 
+of new features, e.g. storing logs to reduce amount of messages sent directly to pull request [(#406)], [(#420)].
+
+Cleanup in configuration files was performed, so no longer needed values were removed from .packit.yaml [(#709)]. 
+User experience was improved by adding new `--upstrem-ref` option to `copr-build` command in command-line interface [(#718)] 
+and making error reporting more robust by adding new fedpkg clones related error message [(#714)]. 
+
+Following bugs were fixed:
+- bug in copr-build command fixed [(#713)]
+- get_local_package_config() duplicate entries in 'directories' bug fixed [(#715)]
+
+
+[(#709)]: https://github.com/packit-service/packit/pull/709
+[(#718)]: https://github.com/packit-service/packit/pull/718
+[(#714)]: https://github.com/packit-service/packit/pull/714
+[(#713)]: https://github.com/packit-service/packit/pull/713
+[(#715)]: https://github.com/packit-service/packit/pull/715
+[(#406)]: https://github.com/packit-service/packit-service/pull/406
+[(#420)]: https://github.com/packit-service/packit-service/pull/420
