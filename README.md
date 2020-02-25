@@ -39,6 +39,8 @@ All content [is organized](https://gohugo.io/content-management/organization) in
 
 ### Rebuild content & Github Pages
 
+__If you didnt clone using `git clone --recurse-submodules` please follow instruction in [themes](#themes) section.__
+
 tl;dr:
 Run `make generate`.
 
