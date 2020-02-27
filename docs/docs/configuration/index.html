@@ -980,7 +980,7 @@ clear definition of what it should do.</p>
 <p>If there is no <code>jobs</code> section in the configuration file, jobs default to:</p>
 
 <pre><code>jobs:
-- job: copr_build
+- job: tests
   trigger: pull_request
   metadata:
     targets: fedora-stable
@@ -1109,6 +1109,10 @@ to not need to change the config file when the new system version is released.</
 </code></pre>
 
 <p>This config would update Fedora Rawhide and Fedora 30 dist-git branches.</p>
+
+<p><strong>tests</strong></p>
+
+<p>See more about tests <a href="http://packit.dev/testing-farm/">here</a>.</p>
 
 <h2 id="user-configuration-file">User configuration file</h2>
 
