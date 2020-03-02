@@ -84,3 +84,28 @@ Following bugs were fixed:
 [(#715)]: https://github.com/packit-service/packit/pull/715
 [(#406)]: https://github.com/packit-service/packit-service/pull/406
 [(#420)]: https://github.com/packit-service/packit-service/pull/420
+
+## Week 9
+
+Dist-git patches are newly applied with `-p1` [(#730)]. Packit specfile code was improved [(#736)], [(#734)].
+Fedora-32 was added to 'fedora-all' and 'fedora-development' aliases [(#731)].
+Documentation was improved by adding links to user configuration [(#726)].
+
+Packit-service was adjusted, so we don't need metadata for copr build [(#431)].
+Ansible playbooks in deployment repo were adjusted to use the same playbooks in Zuul and locally [(#429)].
+Handlers were moved to separate module[(#426)] and build-helper classes were refactored [(#424)].
+
+Bug related to incorrect pull-request filtering was fixed [(#441)].
+
+
+[(#730)]: https://github.com/packit-service/packit/pull/730
+[(#736)]: https://github.com/packit-service/packit/pull/736
+[(#734)]: https://github.com/packit-service/packit/pull/734
+[(#731)]: https://github.com/packit-service/packit/pull/731
+[(#726)]: https://github.com/packit-service/packit/pull/726
+[(#431)]: https://github.com/packit-service/packit-service/pull/431
+[(#429)]: https://github.com/packit-service/packit-service/pull/429
+[(#426)]: https://github.com/packit-service/packit-service/pull/426
+[(#424)]: https://github.com/packit-service/packit-service/pull/424
+[(#441)]: https://github.com/packit-service/packit-service/pull/441
+
