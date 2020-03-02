@@ -59,7 +59,8 @@ Packit Service is able to schedule new builds based on a pull request comment:
 So whenever you run into a flake or feel like you want to retrigger, just type
 that comment into the PR and enjoy some fine, fresh builds.
 
-Only project collaborators can re-trigger.
+Only users with write or admin permissions to the repository can re-trigger
+COPR builds.
 
 ### How to propose a new downstream update?
 
@@ -76,7 +77,8 @@ If all jobs ([propose_downstream]({{< ref "/docs/configuration.md#supported-jobs
 defined in `packit.yaml` file, finished successfully, then the issue is
 automatically closed.
 
-Only project collaborators can propose a new update.
+Only users with write or admin permissions to the repository can propose a new
+update.
 
 ### Adding tests
 
