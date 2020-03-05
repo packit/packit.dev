@@ -183,7 +183,7 @@ jobs:
 If there is no `jobs` section in the configuration file, jobs default to:
 ```
 jobs:
-- job: copr_build
+- job: tests
   trigger: pull_request
   metadata:
     targets: fedora-stable
@@ -307,6 +307,12 @@ jobs:
 ```
 
 This config would update Fedora Rawhide and Fedora 30 dist-git branches.
+
+
+**tests**
+
+
+See more about tests [here](http://packit.dev/testing-farm/).
 
 
 ## User configuration file
