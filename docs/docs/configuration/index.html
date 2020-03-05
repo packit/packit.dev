@@ -874,9 +874,9 @@ Github repository.</p>
 
 <h4 id="create-tarball-command">create_tarball_command</h4>
 
-<p>(<em>list of strings</em>) A command which generates upstream tarball in the root of
-the upstream directory (defaults to <code>git archive -o
-&quot;{package_name}-{version}.tar.gz&quot; --prefix &quot;{package_name}-{version}/&quot; HEAD</code>).</p>
+<p>(<em>list of strings</em>) A command which generates upstream tarball in the directory with the specfile
+(defaults to <code>git archive -o &quot;{specfile_dir}/{package_name}-{version}.tar.gz&quot; --prefix
+&quot;{package_name}-{version}/&quot; HEAD</code>).</p>
 
 <h4 id="current-version-command">current_version_command</h4>
 

@@ -74,9 +74,9 @@ Github repository.
 
 #### create_tarball_command
 
-(*list of strings*) A command which generates upstream tarball in the root of
-the upstream directory (defaults to `git archive -o
-"{package_name}-{version}.tar.gz" --prefix "{package_name}-{version}/" HEAD`).
+(*list of strings*) A command which generates upstream tarball in the directory with the specfile
+(defaults to `git archive -o "{specfile_dir}/{package_name}-{version}.tar.gz" --prefix
+"{package_name}-{version}/" HEAD`).
 
 #### current_version_command
 
