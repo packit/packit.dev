@@ -120,6 +120,22 @@ packit will fill in the version argument.
 it excludes changes to the spec file and packit.yaml by default: with this
 option you can precisely specify paths to exclude.
 
+#### notifications
+
+There is only one notifcation configuration you can set up right now: disable
+the "Congratulations!" comment which packit sends after a successful build of a
+pull request is done.
+
+The default behaviour is to send the comment with instructions how to install a
+package with the change implemented in the pull request:
+```
+notifications:
+  pull_request:
+    successful_build: true
+```
+
+You can disable the commenting by setting `successful_build` to `false`.
+
 ### Minimal sample config
 
 This is a sample config which is meant for [packit](https://github.com/packit-service/packit) itself.

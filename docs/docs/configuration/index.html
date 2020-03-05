@@ -758,6 +758,7 @@ if (!doNotTrack) {
 <li><a href="#spec-source-id">spec_source_id</a></li>
 <li><a href="#upstream-tag-template">upstream_tag_template</a></li>
 <li><a href="#patch-generation-ignore-paths">patch_generation_ignore_paths</a></li>
+<li><a href="#notifications">notifications</a></li>
 </ul></li>
 <li><a href="#minimal-sample-config">Minimal sample config</a></li>
 <li><a href="#more-examples-of-synced-files">More examples of <code>synced_files</code></a></li>
@@ -919,6 +920,22 @@ packit will fill in the version argument.</p>
 <p>(<em>list of strings</em>) In a source-git repo, when packit is generating patches,
 it excludes changes to the spec file and packit.yaml by default: with this
 option you can precisely specify paths to exclude.</p>
+
+<h4 id="notifications">notifications</h4>
+
+<p>There is only one notifcation configuration you can set up right now: disable
+the &ldquo;Congratulations!&rdquo; comment which packit sends after a successful build of a
+pull request is done.</p>
+
+<p>The default behaviour is to send the comment with instructions how to install a
+package with the change implemented in the pull request:</p>
+
+<pre><code>notifications:
+  pull_request:
+    successful_build: true
+</code></pre>
+
+<p>You can disable the commenting by setting <code>successful_build</code> to <code>false</code>.</p>
 
 <h3 id="minimal-sample-config">Minimal sample config</h3>
 
