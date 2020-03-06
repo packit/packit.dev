@@ -46,7 +46,7 @@
 	"title": "Blog Posts",
 	"tags": [],
 	"description": "",
-	"content": " Packit 0.1.0 Packit 0.2.0 Packit 0.3.0 Packit 0.4.0 \u0026amp; 0.4.1 November 2019 December 2019 January 2020 February 2020  "
+	"content": " Packit 0.1.0 Packit 0.2.0 Packit 0.3.0 Packit 0.4.0 \u0026amp; 0.4.1 November 2019 December 2019 January 2020 February 2020 March 2020  "
 },
 {
 	"uri": "https://packit.dev/posts/packit-030/",
@@ -131,6 +131,13 @@
 	"tags": [],
 	"description": "",
 	"content": " This is a detailed documentation for the downstream sync functionality of packit. The command creates a new pull request in upstream repository using a selected branch (master by default) from Fedora dist-git repository.\nRequirements  Fedora dist-git repository. Packit config file placed in the upstream repository. Pagure API tokens for Fedora Dist-git. Github API token.  Tutorial  Starting with packit 0.5.2 and later, you only need to set a single token to interact with dist-git. You needed two in the past. Please populate your local config at ~/.config/packit.yaml for packit so it can talk to the remote services:\n# you can obtain the token over here: https://github.com/settings/tokens github_token: 123 # and this one right here: https://src.fedoraproject.org/settings#nav-api-tab pagure_user_token: 456  Files which are synced are mentioned in .packit.yaml as synced_files value.\n Once you want to sync Fedora dist-git repo into the upstream repo, run packit sync-from-downstream in a working directory of your upstream repository:\n  $ git clone https://github.com/user-cont/colin.git $ cd colin $ packit sync-from-downstream upstream active branch master Cloning repo: https://src.fedoraproject.org/rpms/colin.git -\u0026gt; /tmp/tmph9npe78e using master dist-git branch syncing /tmp/tmph9npe78e/colin.spec PR created: https://api.github.com/repos/phracek/colin/pulls/3  packit sync-from-downstream \u0026ndash;help Usage: packit sync-from-downstream [OPTIONS] [PATH_OR_URL] Copy synced files from Fedora dist-git into upstream by opening a pull request. PATH_OR_URL argument is a local path or a URL to the upstream git repository, it defaults to the current working directory Options: --dist-git-branch TEXT Source branch in dist-git for sync. --upstream-branch TEXT Target branch in upstream to sync to. --no-pr Pull request is not create. --fork / --no-fork Push to a fork. --remote-name TEXT Name of the remote where packit should push. if this is not specified, it pushes to a fork if the repo can be forked. -h, --help Show this message and exit.  "
+},
+{
+	"uri": "https://packit.dev/posts/march-2020/",
+	"title": "March 2020",
+	"tags": [],
+	"description": "",
+	"content": " Week 10 (March 2nd - March 6th) packit  The generate command is now deprecated in favour of the init command (#728), contributed by @shreyaspapi  packit-service  When a non-collaborator creates a PR, packit says that only \u0026ldquo;Collaborators can trigger packit-service\u0026rdquo; - this message has been improved to better match the reality (#445) Packit service no longer posts comments on pull requests when a SRPM can\u0026rsquo;t be created - the logs should be now aviable in the service\u0026rsquo;s logs view available when clocking on the commit status check URL (#447) Commands to control packit service can now be embedded in a comment (previously, the whole comment was treated as a command) - hence you can now create a comment to give an update and also trigger packit (#433), contributed by @IceWreck We have improved monitoring of packit-service by using more sentry.io\u0026rsquo;s features (#458) You can now disable the functionality when packit service comments on a PR when it gets built for the first time (notifications: {pull_request: {successful_build:: false}} in your packit.yaml), hi Lars! (#455)  "
 },
 {
 	"uri": "https://packit.dev/posts/february-2020/",
