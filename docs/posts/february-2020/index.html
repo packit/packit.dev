@@ -739,7 +739,11 @@ if (!doNotTrack) {
 <li><a href="#week-6">Week 6</a></li>
 <li><a href="#week-7">Week 7</a></li>
 <li><a href="#week-8">Week 8</a></li>
-<li><a href="#week-9">Week 9</a></li>
+<li><a href="#week-9">Week 9</a>
+<ul>
+<li><a href="#packit">packit</a></li>
+<li><a href="#packit-service">packit-service</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -821,15 +825,20 @@ and making error reporting more robust by adding new fedpkg clones related error
 
 <h2 id="week-9">Week 9</h2>
 
-<p>Dist-git patches are newly applied with <code>-p1</code> <a href="https://github.com/packit-service/packit/pull/730">(#730)</a>. Packit specfile code was improved <a href="https://github.com/packit-service/packit/pull/736">(#736)</a>, <a href="https://github.com/packit-service/packit/pull/734">(#734)</a>.
-Fedora-32 was added to &lsquo;fedora-all&rsquo; and &lsquo;fedora-development&rsquo; aliases <a href="https://github.com/packit-service/packit/pull/731">(#731)</a>.
-Documentation was improved by adding links to user configuration <a href="https://github.com/packit-service/packit/pull/726">(#726)</a>.</p>
+<h3 id="packit">packit</h3>
 
-<p>Packit-service was adjusted, so we don&rsquo;t need metadata for copr build <a href="https://github.com/packit-service/packit-service/pull/431">(#431)</a>.
-Ansible playbooks in deployment repo were adjusted to use the same playbooks in Zuul and locally <a href="https://github.com/packit-service/packit-service/pull/429">(#429)</a>.
-Handlers were moved to separate module<a href="https://github.com/packit-service/packit-service/pull/426">(#426)</a> and build-helper classes were refactored <a href="https://github.com/packit-service/packit-service/pull/424">(#424)</a>.</p>
+<ul>
+<li>Dist-git patches are now applied in source-git repos with <code>-p1</code> to resolve an issue when they are generated with git and patch program fails to apply them <a href="https://github.com/packit-service/packit/pull/730">(#730)</a>.<br /></li>
+<li>Fedora 32 was added to &lsquo;fedora-all&rsquo; and &lsquo;fedora-development&rsquo; aliases <a href="https://github.com/packit-service/packit/pull/731">(#731)</a>.<br /></li>
+<li>We have put more links to our documentation (README, deprecation warning in packit) so that people can easily correct their configuration files <a href="https://github.com/packit-service/packit/pull/726">(#726)</a>.</li>
+</ul>
 
-<p>Bug related to incorrect pull-request filtering was fixed <a href="https://github.com/packit-service/packit-service/pull/441">(#441)</a>.</p>
+<h3 id="packit-service">packit-service</h3>
+
+<ul>
+<li><code>targets</code> key in copr job definition in the packit.yaml is no longer a required field (it defaults to <code>fedora-stable</code>) <a href="https://github.com/packit-service/packit-service/pull/431">(#431)</a>.</li>
+<li>Builds are now correctly linked to their actual GitHub projects (this can be seen in the logs view) <a href="https://github.com/packit-service/packit-service/pull/441">(#441)</a>.</li>
+</ul>
 
 
 <footer class=" footline" >
