@@ -34,7 +34,7 @@
   
   <url>
     <loc>https://packit.dev/posts/</loc>
-    <lastmod>2020-02-07T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -91,6 +91,11 @@
   <url>
     <loc>https://packit.dev/docs/cli/sync-from-downstream/</loc>
     <lastmod>2019-06-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://packit.dev/posts/march-2020/</loc>
+    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>

@@ -493,6 +493,25 @@ if (!doNotTrack) {
  
   
     
+      <li data-nav-id="/posts/march-2020/" title="March 2020" class="dd-item ">
+        <a href="/posts/march-2020/">
+        March 2020
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/posts/february-2020/" title="February 2020" class="dd-item active">
         <a href="/posts/february-2020/">
         February 2020
@@ -739,6 +758,11 @@ if (!doNotTrack) {
 <li><a href="#week-6">Week 6</a></li>
 <li><a href="#week-7">Week 7</a></li>
 <li><a href="#week-8">Week 8</a></li>
+<li><a href="#week-9">Week 9</a>
+<ul>
+<li><a href="#packit">packit</a></li>
+<li><a href="#packit-service">packit-service</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -817,6 +841,23 @@ and making error reporting more robust by adding new fedpkg clones related error
 <p>Following bugs were fixed:
 - bug in copr-build command fixed <a href="https://github.com/packit-service/packit/pull/713">(#713)</a>
 - get_local_package_config() duplicate entries in &lsquo;directories&rsquo; bug fixed <a href="https://github.com/packit-service/packit/pull/715">(#715)</a></p>
+
+<h2 id="week-9">Week 9</h2>
+
+<h3 id="packit">packit</h3>
+
+<ul>
+<li>Dist-git patches are now applied in source-git repos with <code>-p1</code> to resolve an issue when they are generated with git and patch program fails to apply them <a href="https://github.com/packit-service/packit/pull/730">(#730)</a>.<br /></li>
+<li>Fedora 32 was added to &lsquo;fedora-all&rsquo; and &lsquo;fedora-development&rsquo; aliases <a href="https://github.com/packit-service/packit/pull/731">(#731)</a>.<br /></li>
+<li>We have put more links to our documentation (README, deprecation warning in packit) so that people can easily correct their configuration files <a href="https://github.com/packit-service/packit/pull/726">(#726)</a>.</li>
+</ul>
+
+<h3 id="packit-service">packit-service</h3>
+
+<ul>
+<li><code>targets</code> key in copr job definition in the packit.yaml is no longer a required field (it defaults to <code>fedora-stable</code>) <a href="https://github.com/packit-service/packit-service/pull/431">(#431)</a>.</li>
+<li>Builds are now correctly linked to their actual GitHub projects (this can be seen in the logs view) <a href="https://github.com/packit-service/packit-service/pull/441">(#441)</a>.</li>
+</ul>
 
 
 <footer class=" footline" >
@@ -1735,6 +1776,22 @@ and making error reporting more robust by adding new fedpkg clones related error
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -1874,7 +1931,7 @@ and making error reporting more robust by adding new fedpkg clones related error
 	 
 	 
 		
-			<a class="nav nav-prev" href="/posts/packit-041/" title="Packit 0.4.0 &amp; 0.4.1"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/posts/march-2020/" title="March 2020"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/posts/january-20/" title="January 2020" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>

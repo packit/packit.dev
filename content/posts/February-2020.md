@@ -84,3 +84,22 @@ Following bugs were fixed:
 [(#715)]: https://github.com/packit-service/packit/pull/715
 [(#406)]: https://github.com/packit-service/packit-service/pull/406
 [(#420)]: https://github.com/packit-service/packit-service/pull/420
+
+## Week 9
+
+### packit
+* Dist-git patches are now applied in source-git repos with `-p1` to resolve an issue when they are generated with git and patch program fails to apply them [(#730)].  
+* Fedora 32 was added to 'fedora-all' and 'fedora-development' aliases [(#731)].  
+* We have put more links to our documentation (README, deprecation warning in packit) so that people can easily correct their configuration files [(#726)].
+
+### packit-service
+* `targets` key in copr job definition in the packit.yaml is no longer a required field (it defaults to `fedora-stable`) [(#431)].
+* Builds are now correctly linked to their actual GitHub projects (this can be seen in the logs view) [(#441)].
+
+
+[(#730)]: https://github.com/packit-service/packit/pull/730
+[(#731)]: https://github.com/packit-service/packit/pull/731
+[(#726)]: https://github.com/packit-service/packit/pull/726
+[(#431)]: https://github.com/packit-service/packit-service/pull/431
+[(#441)]: https://github.com/packit-service/packit-service/pull/441
+
