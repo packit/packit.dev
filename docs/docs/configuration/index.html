@@ -843,9 +843,10 @@ if (!doNotTrack) {
 
 <h4 id="specfile-path">specfile_path</h4>
 
-<p>(<em>string</em>) Relative path to a spec file within the upstream repository (if not
-specified, Packit will recursively search the tree and use the first spec file
-found).</p>
+<p>(<em>string</em>) Relative path to a spec file within the upstream repository.
+If not specified, defaults to:
+1. <code>downstream_package_name</code>.spec if <code>downstream_package_name</code> is set.
+2. Else recursively search the tree and use the first spec file found.</p>
 
 <h4 id="upstream-project-name">upstream_project_name</h4>
 
