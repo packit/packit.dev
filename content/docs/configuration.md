@@ -23,9 +23,10 @@ Both Packit-as-a-Service and packit tool use this configuration file.
 
 #### specfile_path
 
-(*string*) Relative path to a spec file within the upstream repository (if not
-specified, Packit will recursively search the tree and use the first spec file
-found).
+(*string*) Relative path to a spec file within the upstream repository.
+If not specified, defaults to:
+1. `downstream_package_name`.spec if `downstream_package_name` is set.
+2. Else recursively search the tree and use the first spec file found.
 
 #### upstream_project_name
 
