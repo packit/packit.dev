@@ -760,6 +760,11 @@ if (!doNotTrack) {
 <li><a href="#packit">packit</a></li>
 <li><a href="#packit-service">packit-service</a></li>
 </ul></li>
+<li><a href="#week-11-march-9th-march-13th">Week 11 (March 9th - March 13th)</a>
+<ul>
+<li><a href="#packit-1">packit</a></li>
+<li><a href="#packit-service-1">packit-service</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -816,6 +821,34 @@ features <a href="https://github.com/packit-service/packit-service/pull/458">(#4
 when it gets built for the first time (<code>notifications: {pull_request:
 {successful_build:: false}}</code> in your packit.yaml), hi
 <a href="https://github.com/larskarlitski">Lars</a>! <a href="https://github.com/packit-service/packit-service/pull/455">(#455)</a></li>
+</ul>
+
+<h2 id="week-11-march-9th-march-13th">Week 11 (March 9th - March 13th)</h2>
+
+<h3 id="packit-1">packit</h3>
+
+<ul>
+<li>We have changed how packit treats version and release in the spec file <a href="https://github.com/packit-service/packit/pull/748">(#748)</a>
+
+<ul>
+<li>We handle the <code>git-describe</code> output better which should help when tags
+contain dashes <a href="https://github.com/packit-service/packit/pull/759">(#759)</a></li>
+</ul></li>
+<li>When packit adds source-git patches into a spec file it adds them outside
+of rpm macros now <a href="https://github.com/packit-service/packit/pull/760">(#760)</a></li>
+<li>In pull request pipelines we run the packit-service tests so that we are sure we
+do not break the service <a href="https://github.com/packit-service/packit/pull/752">(#752)</a></li>
+</ul>
+
+<h3 id="packit-service-1">packit-service</h3>
+
+<ul>
+<li>Comments from packit-service about successful <code>propose-update</code> in the issue
+which triggered the update now include the URL of the new pull-request in Fedora <a href="https://github.com/packit-service/packit-service/pull/472">(#472)</a></li>
+<li>We have done some major refactoring how jobs are processed
+<a href="https://github.com/packit-service/packit-service/pull/476">(#476)</a>, <a href="https://github.com/packit-service/packit/pull/746">(#746)</a>, <a href="https://github.com/packit-service/packit-service/pull/453">(#453)</a></li>
+<li>Development and debugging of the packit-service should be easier now, we
+documented how to run packit-service locally <a href="https://github.com/packit-service/packit-service/pull/473">(#473)</a></li>
 </ul>
 
 
