@@ -71,3 +71,40 @@ draft: false
 [(#473)]: https://github.com/packit-service/packit-service/pull/473
 [(#476)]: https://github.com/packit-service/packit-service/pull/476
 [(#453)]: https://github.com/packit-service/packit-service/pull/453
+
+
+## Week 12 (March 16th - March 20th)
+
+
+
+### packit
+* When you are executing `copr-build` command, you do not 
+  need to set the project name if this value is defined in
+  the copr-build job in the configuration file [(#763)]
+* Packit orders all patches that are generated when adding them into a specfile [(#765)]
+* We improved the behaviour when loading the authentication in the config file - 
+  users are warned only if deprecated keys are used, no more confusing messages when 
+  you do not have `authentication` key in the configuration [(#754)]
+
+
+
+### packit-service
+* We periodically check the status of the copr-build so that we do not need to rely
+  on the result message, this should avoid failures in reporting the status of build [(#490)]
+* `Propose-update` triggered by comment in Github now recognizes also pre-releases [(#498)]
+* We have updated the targets in Makefile so you can now run requre tests without
+  Openshift [(#497)]
+* Testing farm in Packit-service works again, we fixed several bugs 
+  [(#496)], [(#505)], [(#510)], [(#513)]
+
+
+[(#765)]: https://github.com/packit-service/packit/pull/765
+[(#754)]: https://github.com/packit-service/packit/pull/754
+[(#763)]: https://github.com/packit-service/packit/pull/763
+[(#490)]: https://github.com/packit-service/packit-service/pull/490
+[(#498)]: https://github.com/packit-service/packit-service/pull/498
+[(#497)]: https://github.com/packit-service/packit-service/pull/497
+[(#496)]: https://github.com/packit-service/packit-service/pull/496
+[(#505)]: https://github.com/packit-service/packit-service/pull/505
+[(#510)]: https://github.com/packit-service/packit-service/pull/510
+[(#513)]: https://github.com/packit-service/packit-service/pull/513
