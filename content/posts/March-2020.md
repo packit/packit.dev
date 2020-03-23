@@ -9,26 +9,26 @@ draft: false
 
 ### packit
 * The generate command is now deprecated in favour of the init command
-  [(#728)], contributed by [@shreyaspapi](https://github.com/shreyaspapi)
+  [(#728)], contributed by [@shreyaspapi](https://github.com/shreyaspapi).
 
 
 ### packit-service
 * When a non-collaborator creates a PR, packit says that only "Collaborators
   can trigger packit-service" - this message has been improved to better match
-  the reality [(#445)]
+  the reality [(#445)].
 * Packit service no longer posts comments on pull requests when a SRPM can't be
   created - the logs should be now aviable in the service's logs view available
-  when clocking on the commit status check URL [(#447)]
+  when clocking on the commit status check URL [(#447)].
 * Commands to control packit service can now be embedded in a comment
   (previously, the whole comment was treated as a command) - hence you can now
   create a comment to give an update and also trigger packit [(#433)],
-  contributed by [@IceWreck](https://github.com/IceWreck)
+  contributed by [@IceWreck](https://github.com/IceWreck).
 * We have improved monitoring of packit-service by using more sentry.io's
-  features [(#458)]
+  features [(#458)].
 * You can now disable the functionality when packit service comments on a PR
   when it gets built for the first time (`notifications: {pull_request:
   {successful_build:: false}}` in your packit.yaml), hi
-  [Lars](https://github.com/larskarlitski)! [(#455)]
+  [Lars](https://github.com/larskarlitski)! [(#455)].
 
 
 [(#728)]: https://github.com/packit-service/packit/pull/728
@@ -44,22 +44,22 @@ draft: false
 
 
 ### packit
-* We have changed how packit treats version and release in the spec file [(#748)]
+* We have changed how packit treats version and release in the spec file [(#748)].
     * We handle the `git-describe` output better which should help when tags 
-    contain dashes [(#759)]
+    contain dashes [(#759)].
 * When packit adds source-git patches into a spec file it adds them outside 
-  of rpm macros now [(#760)]
+  of rpm macros now [(#760)].
 * In pull request pipelines we run the packit-service tests so that we are sure we 
-  do not break the service [(#752)]
+  do not break the service [(#752)].
 
 
 ### packit-service
 * Comments from packit-service about successful `propose-update` in the issue 
-  which triggered the update now include the URL of the new pull-request in Fedora [(#472)]
+  which triggered the update now include the URL of the new pull-request in Fedora [(#472)].
 * We have done some major refactoring how jobs are processed 
-  [(#476)], [(#746)], [(#453)]
+  [(#476)], [(#746)], [(#453)].
 * Development and debugging of the packit-service should be easier now, we
-  documented how to run packit-service locally [(#473)]
+  documented how to run packit-service locally [(#473)].
 
 
 [(#746)]: https://github.com/packit-service/packit/pull/746
@@ -80,22 +80,22 @@ draft: false
 ### packit
 * When you are executing `copr-build` command, you do not 
   need to set the project name if this value is defined in
-  the copr-build job in the configuration file [(#763)]
-* Packit orders all patches that are generated when adding them into a specfile [(#765)]
+  the `copr_build` job in the configuration file [(#763)].
+* All patches generated from a source-git repo are now prefixed with a number 
+  so they are easy to sort [(#765)].
 * We improved the behaviour when loading the authentication in the config file - 
   users are warned only if deprecated keys are used, no more confusing messages when 
-  you do not have `authentication` key in the configuration [(#754)]
+  you do not have `authentication` key in the configuration [(#754)].
 
 
 
 ### packit-service
 * We periodically check the status of the copr-build so that we do not need to rely
-  on the result message, this should avoid failures in reporting the status of build [(#490)]
-* `Propose-update` triggered by comment in Github now recognizes also pre-releases [(#498)]
-* We have updated the targets in Makefile so you can now run requre tests without
-  Openshift [(#497)]
-* Testing farm in Packit-service works again, we fixed several bugs 
-  [(#496)], [(#505)], [(#510)], [(#513)]
+  on the Fedora message bus. This should avoid failures in build status reporting [(#490)].
+* `Propose-update` triggered by comment in Github now recognizes also pre-releases [(#498)].
+* Several bugs in how we report results from Testing farm have been fixed and Testing 
+  farm results should now appear correctly in commit status checks
+  [(#496)], [(#505)], [(#510)], [(#513)].
 
 
 [(#765)]: https://github.com/packit-service/packit/pull/765
