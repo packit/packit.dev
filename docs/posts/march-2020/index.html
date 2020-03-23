@@ -765,6 +765,11 @@ if (!doNotTrack) {
 <li><a href="#packit-1">packit</a></li>
 <li><a href="#packit-service-1">packit-service</a></li>
 </ul></li>
+<li><a href="#week-12-march-16th-march-20th">Week 12 (March 16th - March 20th)</a>
+<ul>
+<li><a href="#packit-2">packit</a></li>
+<li><a href="#packit-service-2">packit-service</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -799,7 +804,7 @@ if (!doNotTrack) {
 
 <ul>
 <li>The generate command is now deprecated in favour of the init command
-<a href="https://github.com/packit-service/packit/pull/728">(#728)</a>, contributed by <a href="https://github.com/shreyaspapi">@shreyaspapi</a></li>
+<a href="https://github.com/packit-service/packit/pull/728">(#728)</a>, contributed by <a href="https://github.com/shreyaspapi">@shreyaspapi</a>.</li>
 </ul>
 
 <h3 id="packit-service">packit-service</h3>
@@ -807,20 +812,20 @@ if (!doNotTrack) {
 <ul>
 <li>When a non-collaborator creates a PR, packit says that only &ldquo;Collaborators
 can trigger packit-service&rdquo; - this message has been improved to better match
-the reality <a href="https://github.com/packit-service/packit-service/pull/445">(#445)</a></li>
+the reality <a href="https://github.com/packit-service/packit-service/pull/445">(#445)</a>.</li>
 <li>Packit service no longer posts comments on pull requests when a SRPM can&rsquo;t be
 created - the logs should be now aviable in the service&rsquo;s logs view available
-when clocking on the commit status check URL <a href="https://github.com/packit-service/packit-service/pull/447">(#447)</a></li>
+when clocking on the commit status check URL <a href="https://github.com/packit-service/packit-service/pull/447">(#447)</a>.</li>
 <li>Commands to control packit service can now be embedded in a comment
 (previously, the whole comment was treated as a command) - hence you can now
 create a comment to give an update and also trigger packit <a href="https://github.com/packit-service/packit-service/pull/433">(#433)</a>,
-contributed by <a href="https://github.com/IceWreck">@IceWreck</a></li>
+contributed by <a href="https://github.com/IceWreck">@IceWreck</a>.</li>
 <li>We have improved monitoring of packit-service by using more sentry.io&rsquo;s
-features <a href="https://github.com/packit-service/packit-service/pull/458">(#458)</a></li>
+features <a href="https://github.com/packit-service/packit-service/pull/458">(#458)</a>.</li>
 <li>You can now disable the functionality when packit service comments on a PR
 when it gets built for the first time (<code>notifications: {pull_request:
 {successful_build:: false}}</code> in your packit.yaml), hi
-<a href="https://github.com/larskarlitski">Lars</a>! <a href="https://github.com/packit-service/packit-service/pull/455">(#455)</a></li>
+<a href="https://github.com/larskarlitski">Lars</a>! <a href="https://github.com/packit-service/packit-service/pull/455">(#455)</a>.</li>
 </ul>
 
 <h2 id="week-11-march-9th-march-13th">Week 11 (March 9th - March 13th)</h2>
@@ -828,27 +833,53 @@ when it gets built for the first time (<code>notifications: {pull_request:
 <h3 id="packit-1">packit</h3>
 
 <ul>
-<li>We have changed how packit treats version and release in the spec file <a href="https://github.com/packit-service/packit/pull/748">(#748)</a>
+<li>We have changed how packit treats version and release in the spec file <a href="https://github.com/packit-service/packit/pull/748">(#748)</a>.
 
 <ul>
 <li>We handle the <code>git-describe</code> output better which should help when tags
-contain dashes <a href="https://github.com/packit-service/packit/pull/759">(#759)</a></li>
+contain dashes <a href="https://github.com/packit-service/packit/pull/759">(#759)</a>.</li>
 </ul></li>
 <li>When packit adds source-git patches into a spec file it adds them outside
-of rpm macros now <a href="https://github.com/packit-service/packit/pull/760">(#760)</a></li>
+of rpm macros now <a href="https://github.com/packit-service/packit/pull/760">(#760)</a>.</li>
 <li>In pull request pipelines we run the packit-service tests so that we are sure we
-do not break the service <a href="https://github.com/packit-service/packit/pull/752">(#752)</a></li>
+do not break the service <a href="https://github.com/packit-service/packit/pull/752">(#752)</a>.</li>
 </ul>
 
 <h3 id="packit-service-1">packit-service</h3>
 
 <ul>
 <li>Comments from packit-service about successful <code>propose-update</code> in the issue
-which triggered the update now include the URL of the new pull-request in Fedora <a href="https://github.com/packit-service/packit-service/pull/472">(#472)</a></li>
+which triggered the update now include the URL of the new pull-request in Fedora <a href="https://github.com/packit-service/packit-service/pull/472">(#472)</a>.</li>
 <li>We have done some major refactoring how jobs are processed
-<a href="https://github.com/packit-service/packit-service/pull/476">(#476)</a>, <a href="https://github.com/packit-service/packit/pull/746">(#746)</a>, <a href="https://github.com/packit-service/packit-service/pull/453">(#453)</a></li>
+<a href="https://github.com/packit-service/packit-service/pull/476">(#476)</a>, <a href="https://github.com/packit-service/packit/pull/746">(#746)</a>, <a href="https://github.com/packit-service/packit-service/pull/453">(#453)</a>.</li>
 <li>Development and debugging of the packit-service should be easier now, we
-documented how to run packit-service locally <a href="https://github.com/packit-service/packit-service/pull/473">(#473)</a></li>
+documented how to run packit-service locally <a href="https://github.com/packit-service/packit-service/pull/473">(#473)</a>.</li>
+</ul>
+
+<h2 id="week-12-march-16th-march-20th">Week 12 (March 16th - March 20th)</h2>
+
+<h3 id="packit-2">packit</h3>
+
+<ul>
+<li>When you are executing <code>copr-build</code> command, you do not
+need to set the project name if this value is defined in
+the <code>copr_build</code> job in the configuration file <a href="https://github.com/packit-service/packit/pull/763">(#763)</a>.</li>
+<li>All patches generated from a source-git repo are now prefixed with a number
+so they are easy to sort <a href="https://github.com/packit-service/packit/pull/765">(#765)</a>.</li>
+<li>We improved the behaviour when loading the authentication in the config file -
+users are warned only if deprecated keys are used, no more confusing messages when
+you do not have <code>authentication</code> key in the configuration <a href="https://github.com/packit-service/packit/pull/754">(#754)</a>.</li>
+</ul>
+
+<h3 id="packit-service-2">packit-service</h3>
+
+<ul>
+<li>We periodically check the status of the copr-build so that we do not need to rely
+on the Fedora message bus. This should avoid failures in build status reporting <a href="https://github.com/packit-service/packit-service/pull/490">(#490)</a>.</li>
+<li><code>Propose-update</code> triggered by comment in Github now recognizes also pre-releases <a href="https://github.com/packit-service/packit-service/pull/498">(#498)</a>.</li>
+<li>Several bugs in how we report results from Testing farm have been fixed and Testing
+farm results should now appear correctly in commit status checks
+<a href="https://github.com/packit-service/packit-service/pull/496">(#496)</a>, <a href="https://github.com/packit-service/packit-service/pull/505">(#505)</a>, <a href="https://github.com/packit-service/packit-service/pull/510">(#510)</a>, <a href="https://github.com/packit-service/packit-service/pull/513">(#513)</a>.</li>
 </ul>
 
 
@@ -911,34 +942,6 @@ documented how to run packit-service locally <a href="https://github.com/packit-
 
                     
                     
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
                     
 
                     
@@ -1005,548 +1008,6 @@ documented how to run packit-service locally <a href="https://github.com/packit-
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
             
         
