@@ -89,7 +89,7 @@ improvements of version
       <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://packit.dev/posts/march-2020/</guid>
-      <description>Week 10 (March 2nd - March 6th) packit  The generate command is now deprecated in favour of the init command (#728), contributed by @shreyaspapi  packit-service  When a non-collaborator creates a PR, packit says that only &amp;ldquo;Collaborators can trigger packit-service&amp;rdquo; - this message has been improved to better match the reality (#445) Packit service no longer posts comments on pull requests when a SRPM can&amp;rsquo;t be created - the logs should be now aviable in the service&amp;rsquo;s logs view available when clocking on the commit status check URL (#447) Commands to control packit service can now be embedded in a comment (previously, the whole comment was treated as a command) - hence you can now create a comment to give an update and also trigger packit (#433), contributed by @IceWreck We have improved monitoring of packit-service by using more sentry.</description>
+      <description>Week 10 (March 2nd - March 6th) packit  The generate command is now deprecated in favour of the init command (#728), contributed by @shreyaspapi.  packit-service  When a non-collaborator creates a PR, packit says that only &amp;ldquo;Collaborators can trigger packit-service&amp;rdquo; - this message has been improved to better match the reality (#445). Packit service no longer posts comments on pull requests when a SRPM can&amp;rsquo;t be created - the logs should be now aviable in the service&amp;rsquo;s logs view available when clocking on the commit status check URL (#447).</description>
     </item>
     
     <item>
