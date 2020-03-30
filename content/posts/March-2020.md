@@ -75,8 +75,6 @@ draft: false
 
 ## Week 12 (March 16th - March 20th)
 
-
-
 ### packit
 * When you are executing `copr-build` command, you do not 
   need to set the project name if this value is defined in
@@ -86,8 +84,6 @@ draft: false
 * We improved the behaviour when loading the authentication in the config file - 
   users are warned only if deprecated keys are used, no more confusing messages when 
   you do not have `authentication` key in the configuration [(#754)].
-
-
 
 ### packit-service
 * We periodically check the status of the copr-build so that we do not need to rely
@@ -108,3 +104,10 @@ draft: false
 [(#505)]: https://github.com/packit-service/packit-service/pull/505
 [(#510)]: https://github.com/packit-service/packit-service/pull/510
 [(#513)]: https://github.com/packit-service/packit-service/pull/513
+
+
+## Week 13 (March 23th - March 27th)
+
+* New Packit version 0.9.0 was released.
+* Packit Service now mostly uses PostgreSQL instead of Redis as a backend,
+  which will result in more responsive API and Dashboard.
