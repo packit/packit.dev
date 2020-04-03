@@ -6,7 +6,7 @@
     <description>Recent content in Blog Posts on Packit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://packit.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -81,6 +81,15 @@ improvements of version
 
 &lt;p&gt;You can find a complete list in the
 &lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md#040&#34;&gt;changelog&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>April 2020</title>
+      <link>https://packit.dev/posts/april-2020/</link>
+      <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/april-2020/</guid>
+      <description> Week 14 (March 30th - April 3rd) packit  Fix web URLs for Copr builds owned by groups (#778) Create downstream spec if it&amp;rsquo;s not there (propose-update) (#779) Change the way how packit does archives (always create a tar.gz archive and %prep needs to deal with it) (#781)  packit-service  Several fixes and improvments after moving from Redis to postgreSQL Use the configured COPR project when triggering Testing Farm (Fixes: tests to fail in repos which use build in their own COPR namespace) [(#524)]  </description>
     </item>
     
     <item>

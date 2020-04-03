@@ -23,7 +23,7 @@ if (!doNotTrack) {
 }
 </script>
 
-    <title>Packit 0.4.2 :: Packit</title>
+    <title>April 2020 :: Packit</title>
 
     
     <link href="/css/nucleus.css" rel="stylesheet">
@@ -53,7 +53,7 @@ if (!doNotTrack) {
     </style>
     
   </head>
-  <body class="" data-url="/posts/packit-042/">
+  <body class="" data-url="/posts/april-2020/">
     <nav id="sidebar" class="">
 
 
@@ -493,7 +493,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/posts/april-2020/" title="April 2020" class="dd-item ">
+      <li data-nav-id="/posts/april-2020/" title="April 2020" class="dd-item active">
         <a href="/posts/april-2020/">
         April 2020
         
@@ -607,7 +607,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/posts/packit-042/" title="Packit 0.4.2" class="dd-item active">
+      <li data-nav-id="/posts/packit-042/" title="Packit 0.4.2" class="dd-item ">
         <a href="/posts/packit-042/">
         Packit 0.4.2
         
@@ -757,7 +757,7 @@ if (!doNotTrack) {
             
           
           
-            <a href='/'>About</a> > <a href='/posts/'>Blog Posts</a> > Packit 0.4.2
+            <a href='/'>About</a> > <a href='/posts/'>Blog Posts</a> > April 2020
           
          
           
@@ -770,7 +770,18 @@ if (!doNotTrack) {
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#week-14-march-30th-april-3rd">Week 14 (March 30th - April 3rd)</a>
+<ul>
+<li><a href="#packit">packit</a></li>
+<li><a href="#packit-service">packit-service</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -786,7 +797,7 @@ if (!doNotTrack) {
           
             <h1>
               
-              Packit 0.4.2
+              April 2020
             </h1>
           
 
@@ -794,11 +805,25 @@ if (!doNotTrack) {
 
 
 
-<p>Another relase after a month since <a href="https://packit.dev/posts/packit-041/">0.4.1</a>, this time mostly with bug fixes.</p>
 
-<p>We&rsquo;ve been busy polishing our <a href="https://packit.dev/packit-as-a-service/">Github App</a> recently, therefore we had no resources for new features.</p>
 
-<p>See <a href="https://github.com/packit-service/packit/blob/master/CHANGELOG.md#042">CHANGELOG</a> for more details.</p>
+<h2 id="week-14-march-30th-april-3rd">Week 14 (March 30th - April 3rd)</h2>
+
+<h3 id="packit">packit</h3>
+
+<ul>
+<li>Fix web URLs for Copr builds owned by groups <a href="https://github.com/packit-service/packit/pull/778">(#778)</a></li>
+<li>Create downstream spec if it&rsquo;s not there (propose-update) <a href="https://github.com/packit-service/packit/pull/779">(#779)</a></li>
+<li>Change the way how packit does archives (always create a tar.gz archive and <code>%prep</code> needs to deal with it) <a href="https://github.com/packit-service/packit/pull/781">(#781)</a></li>
+</ul>
+
+<h3 id="packit-service">packit-service</h3>
+
+<ul>
+<li>Several fixes and improvments after moving from Redis to postgreSQL</li>
+<li>Use the configured COPR project when triggering Testing Farm (Fixes: tests to fail in repos which use build in their own COPR namespace) [(#524)]</li>
+</ul>
+
 
 <footer class=" footline" >
 	
@@ -1716,6 +1741,26 @@ if (!doNotTrack) {
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -1807,23 +1852,6 @@ if (!doNotTrack) {
             
         
                     
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1831,9 +1859,6 @@ if (!doNotTrack) {
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1887,10 +1912,10 @@ if (!doNotTrack) {
 	 
 	 
 		
-			<a class="nav nav-prev" href="/posts/week-44-48-19/" title="Week 44-48 (November) 2019"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/posts/packit-041/" title="Packit 0.4.0 &amp; 0.4.1"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/source-git/" title="Source-git" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/posts/march-2020/" title="March 2020" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
