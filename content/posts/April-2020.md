@@ -8,13 +8,13 @@ draft: false
 
 ### packit
 
-* Fix web URLs for Copr builds owned by groups [(#778)]
-* Create downstream spec if it's not there (propose-update) [(#779)]
-* Change the way how packit does archives (always create a tar.gz archive and `%prep` needs to deal with it) [(#781)]
+* Fix web URLs for Copr builds owned by groups [(#778)].
+* Create downstream spec if it's not there (propose-update) - this used to happen when using packit on a newly created package in Fedora which did not have spec fille added yet. [(#779)]
+* Packit no longer inspects archive extension set in `Source` and creates `.tar.gz` by default - this should be more flexible and prevent issues for "non-standard" archive names. [(#781)]
 
 ### packit-service
-* Several fixes and improvments after moving from Redis to postgreSQL
-* Use the configured COPR project when triggering Testing Farm (Fixes: tests to fail in repos which use build in their own COPR namespace) [(#524)]
+* Several fixes and improvements after switching data store from Redis to PostgreSQL.
+* Use the configured COPR project when triggering Testing Farm (tests no longer fail for projects which are built in their own COPR namespace) [(#524)].
 
 
 [(#778)]: https://github.com/packit-service/packit/pull/778
