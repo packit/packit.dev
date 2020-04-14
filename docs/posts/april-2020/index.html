@@ -779,6 +779,11 @@ if (!doNotTrack) {
 <li><a href="#packit">packit</a></li>
 <li><a href="#packit-service">packit-service</a></li>
 </ul></li>
+<li><a href="#week-15-march-6th-april-9th">Week 15 (March 6th - April 9th)</a>
+<ul>
+<li><a href="#packit-1">packit</a></li>
+<li><a href="#packit-service-1">packit-service</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -821,7 +826,26 @@ if (!doNotTrack) {
 
 <ul>
 <li>Several fixes and improvements after switching data store from Redis to PostgreSQL.</li>
-<li>Use the configured COPR project when triggering Testing Farm (tests no longer fail for projects which are built in their own COPR namespace) [(#524)].</li>
+<li>Use the configured COPR project when triggering Testing Farm (tests no longer fail for projects which are built in their own COPR namespace) <a href="https://github.com/packit-service/packit-service/pull/524">(#524)</a>.</li>
+</ul>
+
+<h2 id="week-15-march-6th-april-9th">Week 15 (March 6th - April 9th)</h2>
+
+<h3 id="packit-1">packit</h3>
+
+<ul>
+<li><a href="https://github.com/TomasTomecek">Tomáš</a> finished teaching <code>packit srpm</code> to <a href="https://github.com/packit-service/packit/pull/766">linearise extremely complex Git
+histories</a>, in order to get patches that can be applied when building the
+SRPM.</li>
+<li><a href="https://github.com/jpopelka">Jirka</a> made the schema validation code <a href="https://github.com/packit-service/packit/pull/775">Marshmallow3 compatible</a>. This
+enables building <code>packit</code> in Fedora 32 and Rawhide.</li>
+</ul>
+
+<h3 id="packit-service-1">packit-service</h3>
+
+<ul>
+<li><a href="https://github.com/packit-service/packit-service/pull/541">Franta</a> an issue with <a href="https://github.com/packit-service/packit-service/issues/536">parsing release events</a>.</li>
+<li><a href="https://github.com/jpopelka">Jirka</a> made code <a href="https://github.com/packit-service/packit-service/pull/538">Marshmallow3</a> compatible in this project, too.</li>
 </ul>
 
 
