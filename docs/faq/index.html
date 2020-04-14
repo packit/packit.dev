@@ -782,6 +782,7 @@ if (!doNotTrack) {
 <li><a href="#i-have-a-template-of-a-spec-file-in-my-repo-can-packit-work-with-it">I have a template of a spec file in my repo: can packit work with it?</a></li>
 <li><a href="#can-i-use-centos-stream-with-packit-service">Can I use CentOS Stream with packit service?</a></li>
 <li><a href="#after-adding-tests-i-see-error-no-fmf-metadata-found">After adding tests I see error &lsquo;No FMF metadata found.&rsquo;</a></li>
+<li><a href="#does-packit-work-with-rpmautospec-https-docs-pagure-org-fedora-infra-rpmautospec">Does packit work with <a href="https://docs.pagure.org/Fedora-Infra.rpmautospec/">rpmautospec</a>?</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -924,6 +925,25 @@ the <code>copr_build</code> job:</p>
 <h3 id="after-adding-tests-i-see-error-no-fmf-metadata-found">After adding tests I see error &lsquo;No FMF metadata found.&rsquo;</h3>
 
 <p>If you encounter this error when running tests via Testing Farm, it means you forgot to initialize the metadata tree with <code>fmf init</code> and include the <code>.fmf</code> directory in the pull request. See <a href="/testing-farm">Testing Farm documentation</a> for more information.</p>
+
+<h3 id="does-packit-work-with-rpmautospec-https-docs-pagure-org-fedora-infra-rpmautospec">Does packit work with <a href="https://docs.pagure.org/Fedora-Infra.rpmautospec/">rpmautospec</a>?</h3>
+
+<p>Good that you ask. It does, packit works with rpmautospec quite nicely.</p>
+
+<p>Before you start, please make sure that you follow <a href="https://docs.pagure.org/Fedora-Infra.rpmautospec/">latest documentation for rpmautospec</a>.</p>
+
+<p>rpmautospec utilizes two RPM macros:
+1. <code>autorel</code> — to populate <code>Release</code>
+2. <code>autochangelog</code> — to figure out changelog</p>
+
+<p>If you want your upstream spec file to also work well when <code>rpmautospec-rpm-macros</code> is not installed, set <code>Release</code> to this:</p>
+
+<pre><code>Release:  %{?autorel}%{!?autorel:1}
+</code></pre>
+
+<p>This construct uses <code>autorel</code> macro if it&rsquo;s defined, and if it&rsquo;s not, it sets release to 1.</p>
+
+<p>For <code>%changelog</code>, you don&rsquo;t need to include the changelog file upstream and you can have it downstream only, which makes sense - changelog is specific to a release.</p>
 
 
 
