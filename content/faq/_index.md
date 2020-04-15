@@ -111,3 +111,23 @@ jobs:
 ### After adding tests I see error 'No FMF metadata found.'
 
 If you encounter this error when running tests via Testing Farm, it means you forgot to initialize the metadata tree with `fmf init` and include the `.fmf` directory in the pull request. See [Testing Farm documentation](/testing-farm) for more information.
+
+
+### Does packit work with [rpmautospec](https://docs.pagure.org/Fedora-Infra.rpmautospec/)?
+
+Good that you ask. It does, packit works with rpmautospec quite nicely.
+
+Before you start, please make sure that you follow [latest documentation for rpmautospec](https://docs.pagure.org/Fedora-Infra.rpmautospec/).
+
+rpmautospec utilizes two RPM macros:
+1. `autorel` — to populate `Release`
+2. `autochangelog` — to figure out changelog
+
+If you want your upstream spec file to also work well when `rpmautospec-rpm-macros` is not installed, set `Release` to this:
+```
+Release:  %{?autorel}%{!?autorel:1}
+```
+
+This construct uses `autorel` macro if it's defined, and if it's not, it sets release to 1.
+
+For `%changelog`, you don't need to include the changelog file upstream and you can have it downstream only, which makes sense - changelog is specific to a release.
