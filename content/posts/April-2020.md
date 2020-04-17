@@ -44,3 +44,18 @@ draft: false
 [Marshmallow3]: https://github.com/packit-service/packit-service/pull/538
 [fixed]: https://github.com/packit-service/packit-service/pull/541
 [parsing release events]: https://github.com/packit-service/packit-service/issues/536
+
+## Week 16 (April 14th - April 17th)
+
+### packit & packit-service
+
+* Job metadata field `dist-git-branch` is now marked as deprecated, to be
+  replaced by `dist_git_branches` to match the naming of other metadata fields
+  and to accept multiple branch names where Packit should work. ([#797],
+  [#788] and [#564]).
+* A great deal of refactoring, CI work and general code improvements which
+  will make Packit and Packit Service run smoother and development easier.
+
+[#797]: https://github.com/packit-service/packit/pull/797
+[#788]: https://github.com/packit-service/packit/pull/788
+[#564]: https://github.com/packit-service/packit-service/pull/564
