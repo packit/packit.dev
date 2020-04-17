@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="">
 
 
@@ -746,56 +746,52 @@ if (!doNotTrack) {
 
  
 <h1 id="packit">Packit</h1>
-
 <p>Packit provides tooling and automation to integrate upstream open source
 projects into Fedora operating system. Packit project is composed of two main
 components:</p>
-
 <ol>
-<li><p><code>packit</code>, a CLI tool, which you can install locally and start using right away.</p></li>
-
-<li><p><a href="https://github.com/marketplace/packit-as-a-service">Packit-as-a-Service</a>, a
+<li>
+<p><code>packit</code>, a CLI tool, which you can install locally and start using right away.</p>
+</li>
+<li>
+<p><a href="https://github.com/marketplace/packit-as-a-service">Packit-as-a-Service</a>, a
 GitHub app — it can provide you feedback on how is your project integrated
-with Fedora Operating System.</p></li>
+with Fedora Operating System.</p>
+</li>
 </ol>
-
 <p>Feel free to jump into <a href="/docs/guide/">the guide</a> for using packit.</p>
-
 <h3 id="upstream-repository">Upstream repository</h3>
-
 <p><a href="https://github.com/packit-service/packit">https://github.com/packit-service/packit</a></p>
-
 <h3 id="contact">Contact</h3>
-
 <p>You can find us at Freenode IRC channel #packit, or feel free to create an
 issue in any of our GitHub projects.</p>
-
-<p>We are also available on this e-mail: user-cont-team@redhat.com.</p>
-
+<p>We are also available on this e-mail: <a href="mailto:user-cont-team@redhat.com">user-cont-team@redhat.com</a>.</p>
 <h3 id="the-key-principles-of-packit">The key principles of packit</h3>
-
 <ul>
-<li><p>Packit aims to make things easy and right. But if the default behavior is not
+<li>
+<p>Packit aims to make things easy and right. But if the default behavior is not
 the right for you, there is still a way around, but may not be that simple.
 For example you can use
 <a href="/docs/actions/">actions</a>
-to replace default packit&rsquo;s behavior with a script of yours.</p></li>
-
-<li><p>Reuse existing tools and services where it makes sense: don&rsquo;t reinvent the
-wheel.</p></li>
-
-<li><p>You can consume packit in two forms:</p>
-
+to replace default packit&rsquo;s behavior with a script of yours.</p>
+</li>
+<li>
+<p>Reuse existing tools and services where it makes sense: don&rsquo;t reinvent the
+wheel.</p>
+</li>
+<li>
+<p>You can consume packit in two forms:</p>
 <ul>
 <li>Packit tool can run on your laptop and you run commands you want.</li>
 <li>Packit service reacts to events and performs actions which you
 defined in your <code>packit.yaml</code>.</li>
-</ul></li>
-
-<li><p>We don&rsquo;t break backwards compatibility just like that.</p></li>
-
-<li><p>Packit has a deprecation policy:</p>
-
+</ul>
+</li>
+<li>
+<p>We don&rsquo;t break backwards compatibility just like that.</p>
+</li>
+<li>
+<p>Packit has a deprecation policy:</p>
 <ul>
 <li>We can mark a behaviour as deprecated.</li>
 <li>Deprecated content can be removed or changed after at least 3 minor
@@ -803,68 +799,79 @@ releases.</li>
 <li>Deprecated content is advertised in our
 <a href="https://github.com/packit-service/packit/blob/master/CHANGELOG.md">changelog</a>,
 printed in terminal or tracked in your issue tracker.</li>
-</ul></li>
-
-<li><p>We care about artifacts which Fedora supports: at the moment it&rsquo;s RPMs,
+</ul>
+</li>
+<li>
+<p>We care about artifacts which Fedora supports: at the moment it&rsquo;s RPMs,
 modules and container images.</p>
-
 <ul>
 <li>Our initial focus is solely on RPMs.</li>
-</ul></li>
-
-<li><p>Packit respects Fedora guidelines.</p></li>
-
-<li><p>We want latest content in Fedora Rawhide, but only if it works (the new
-content can be built and tests are passing).</p></li>
-
-<li><p>Any task done by the automation system must be able to be performed by a
+</ul>
+</li>
+<li>
+<p>Packit respects Fedora guidelines.</p>
+</li>
+<li>
+<p>We want latest content in Fedora Rawhide, but only if it works (the new
+content can be built and tests are passing).</p>
+</li>
+<li>
+<p>Any task done by the automation system must be able to be performed by a
 human when that is required. Packit service must be capable of recovering
-from such situation.</p></li>
-
-<li><p>Packit developers must be able to iterate on all parts packit (testing a
+from such situation.</p>
+</li>
+<li>
+<p>Packit developers must be able to iterate on all parts packit (testing a
 change, merging a change, deploying to production) at a pace of at least
 every two weeks. To accomplish this, the release and validation processes are
-completely automated.</p></li>
-
-<li><p>All the tests are passing in CI systems for master branches for all our
-projects. No excuses.</p></li>
-
-<li><p>Contributions to packit must be possible by any developer, maintainer,
+completely automated.</p>
+</li>
+<li>
+<p>All the tests are passing in CI systems for master branches for all our
+projects. No excuses.</p>
+</li>
+<li>
+<p>Contributions to packit must be possible by any developer, maintainer,
 tester, or other engineer. Any Fedora developer or tester should be able to
-reproduce a bot locally on their machine, given appropriate credentials.</p></li>
+reproduce a bot locally on their machine, given appropriate credentials.</p>
+</li>
 </ul>
-
 <h3 id="why-packit">Why packit?</h3>
-
 <ul>
-<li><p>Our intent is to bring downstream and upstream communities closer: provide
+<li>
+<p>Our intent is to bring downstream and upstream communities closer: provide
 feedback from downstream to upstream. (e.g. <em>&ldquo;Hello &lt;upstream project Y&gt;,
 your newest release doesn&rsquo;t work in Fedora Rawhide, it breaks &lt;Z&gt;, here is
-a link to logs.&rdquo;</em>)</p></li>
-
-<li><p>We want to only merge, build and compose components which integrate well
+a link to logs.&quot;</em>)</p>
+</li>
+<li>
+<p>We want to only merge, build and compose components which integrate well
 with the rest of the operating system. The biggest impact of such behavior
-will be on Fedora Rawhide and when working on a new Fedora release.</p></li>
-
-<li><p>Automatically pull and validate new upstream releases. This can be a trivial
+will be on Fedora Rawhide and when working on a new Fedora release.</p>
+</li>
+<li>
+<p>Automatically pull and validate new upstream releases. This can be a trivial
 thing to do, why should maintainers waste their times on work which can be
-automated.</p></li>
-
-<li><p>Developing in dist-git is cumbersome. Editing patch files and moving
+automated.</p>
+</li>
+<li>
+<p>Developing in dist-git is cumbersome. Editing patch files and moving
 tarballs around is not fun. Why not working with the source code itself?
 With <a href="/source-git/">source-git</a>, you&rsquo;ll have upstream git history and the
-dist-git content combined in a single repository.</p></li>
-
-<li><p>Let&rsquo;s use modern development techniques such as pull requests, code review,
+dist-git content combined in a single repository.</p>
+</li>
+<li>
+<p>Let&rsquo;s use modern development techniques such as pull requests, code review,
 modern git forges, automation and continuous integration. We have computers
-to do all the mundane tasks. Why we, as humans, should do such work?</p></li>
-
-<li><p>We want dist-git to be &ldquo;a database of content in a release&rdquo; rather a place
+to do all the mundane tasks. Why we, as humans, should do such work?</p>
+</li>
+<li>
+<p>We want dist-git to be &ldquo;a database of content in a release&rdquo; rather a place
 to do actual work. On the other hand, you&rsquo;ll still be able to interact with
 dist-git the same way. We are not taking that away.
-<a href="/source-git/">Source-git</a> is meant to be the modern, better alternative.</p></li>
+<a href="/source-git/">Source-git</a> is meant to be the modern, better alternative.</p>
+</li>
 </ul>
-
 <p>DevConf.cz <a href="https://www.youtube.com/watch?v=KpF27v6K4Oc">&ldquo;Auto-maintain your package&rdquo; talk</a>.</p>	
   
         
@@ -921,34 +928,6 @@ dist-git the same way. We are not taking that away.
 
                     
                     
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
                     
 
                     
@@ -1015,548 +994,6 @@ dist-git the same way. We are not taking that away.
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
             
         

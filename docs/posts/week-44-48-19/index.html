@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="">
 
 
@@ -771,17 +771,15 @@ if (!doNotTrack) {
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#continuous-deployment-cd">Continuous Deployment (CD)</a></li>
-<li><a href="#changes-in-production-since-the-end-of-november">Changes in production (since the end of November)</a>
-<ul>
-<li><a href="#packit">Packit</a></li>
-<li><a href="#packit-service">Packit Service</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#continuous-deployment-cd">Continuous Deployment (CD)</a></li>
+    <li><a href="#changes-in-production-since-the-end-of-november">Changes in production (since the end of November)</a>
+      <ul>
+        <li><a href="#packit">Packit</a></li>
+        <li><a href="#packit-service">Packit Service</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -806,28 +804,19 @@ if (!doNotTrack) {
 
 
 
-
-
 <p>With this blog post we&rsquo;d like to continue with the idea of openly communicating changes in Packit.
 Since most of the developers use Packit as the <a href="https://packit.dev/packit-as-a-service">GitHub App</a> (which uses code from <a href="https://github.com/packit-service/packit-service">this repository - Packit Service</a>), this blog will be about changes in all the parts, i.e. the GitHub App, the Packit Service and Packit itself.</p>
-
 <h2 id="continuous-deployment-cd">Continuous Deployment (CD)</h2>
-
 <p>At the moment the workflow is that one of us manually triggers production container image build at the end of a week.
 This image is then automatically deployed into our production instance of the service over a weekend (Sun/Mon night) so that everyone can start a week with all the amazing stuff we added the previous week.
 In case an issue makes it through our staging instance into production uncaught, we can easily rollback on Monday.
 The same person also writes down what&rsquo;s changed in Packit (service/app) since previous deployment.</p>
-
 <h2 id="changes-in-production-since-the-end-of-november">Changes in production (since the end of November)</h2>
-
 <p><a href="/posts/packit-042/">Previous post</a> is almost half a year old so we won&rsquo;t list all the changes since then, but only since last deployment, i.e. since end of December.</p>
-
 <h3 id="packit">Packit</h3>
-
 <p>Previous deployment was running <a href="https://pypi.org/project/packitos/0.7.1/">packit-0.7.1</a>.
 We haven&rsquo;t released a newer version since then, but in the service we install Packit from the Git repository (we have a separate <code>stable</code> git branch for our production deployment).
 From the most visible changes, Packit now:</p>
-
 <ul>
 <li>better handles Create-archive action</li>
 <li>is able to work in a repo with detached head</li>
@@ -835,27 +824,22 @@ From the most visible changes, Packit now:</p>
 <li>syncs config file and spec file by default in Propose-update action</li>
 <li>hadles patches with undecodable chars</li>
 </ul>
-
 <h3 id="packit-service">Packit Service</h3>
-
 <p>Now:</p>
-
 <ul>
 <li>better reports Copr builds
-
 <ul>
 <li>uses separate commit status for srpm build and every chroot</li>
 <li>clears test farm commit statuses when new build is triggered</li>
 <li>better handles failed Copr builds</li>
-</ul></li>
+</ul>
+</li>
 <li>gracefully handles no config file in the repo</li>
 <li>better handles when no (copr build) targets are specified in config file</li>
 <li>better checks whitelist of users</li>
 <li>does not create duplicate tickets in our <a href="https://github.com/packit-service/notifications">notification repo</a> when a new user install the app</li>
 </ul>
-
 <p>Changes not visible to end users:</p>
-
 <ul>
 <li>using <a href="https://github.com/packit-service/requre">Requre</a> for integration/E2E tests</li>
 <li>Fedora messaging consumer part of the service has been improved and moved to separate <a href="https://github.com/packit-service/packit-service-fedmsg">repo/image</a></li>
@@ -925,34 +909,6 @@ From the most visible changes, Packit now:</p>
 
                     
                     
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
                     
 
                     
@@ -1019,548 +975,6 @@ From the most visible changes, Packit now:</p>
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
             
         

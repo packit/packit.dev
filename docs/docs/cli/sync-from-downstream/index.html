@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="">
 
 
@@ -777,14 +777,11 @@ if (!doNotTrack) {
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#requirements">Requirements</a></li>
-<li><a href="#tutorial">Tutorial</a></li>
-<li><a href="#packit-sync-from-downstream-help">packit sync-from-downstream &ndash;help</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#tutorial">Tutorial</a></li>
+    <li><a href="#packit-sync-from-downstream---help">packit sync-from-downstream &ndash;help</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -809,43 +806,38 @@ if (!doNotTrack) {
 
 
 
-
-
 <p>This is a detailed documentation for the downstream sync functionality of packit. The
 command creates a new pull request in upstream repository using a
 selected branch (master by default) from Fedora dist-git repository.</p>
-
 <h2 id="requirements">Requirements</h2>
-
 <ul>
 <li>Fedora dist-git repository.</li>
 <li>Packit config file placed in the upstream repository.</li>
 <li>Pagure API tokens for Fedora Dist-git.</li>
 <li>Github API token.</li>
 </ul>
-
 <h2 id="tutorial">Tutorial</h2>
-
 <ul>
-<li><p>Starting with packit 0.5.2 and later, you only need to set a single token to
+<li>Starting with packit 0.5.2 and later, you only need to set a single token to
 interact with dist-git. You needed two in the past. Please populate your
 local config at <code>~/.config/packit.yaml</code> for packit so it can talk to the
-remote services:</p>
-
+remote services:</li>
+</ul>
 <pre><code># you can obtain the token over here: https://github.com/settings/tokens
 github_token: 123
 # and this one right here: https://src.fedoraproject.org/settings#nav-api-tab
 pagure_user_token: 456
-</code></pre></li>
-
-<li><p>Files which are synced are mentioned in <code>.packit.yaml</code> as <code>synced_files</code> value.</p></li>
-
-<li><p>Once you want to sync Fedora dist-git repo into the upstream repo,
+</code></pre><ul>
+<li>
+<p>Files which are synced are mentioned in <code>.packit.yaml</code> as <code>synced_files</code> value.</p>
+</li>
+<li>
+<p>Once you want to sync Fedora dist-git repo into the upstream repo,
 run <code>packit sync-from-downstream</code> in a working directory of your upstream
-repository:</p></li>
+repository:</p>
+</li>
 </ul>
-
-<pre><code class="language-bash">$ git clone https://github.com/user-cont/colin.git
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git clone https://github.com/user-cont/colin.git
 
 $ cd colin
 
@@ -855,11 +847,8 @@ Cloning repo: https://src.fedoraproject.org/rpms/colin.git -&gt; /tmp/tmph9npe78
 using master dist-git branch
 syncing /tmp/tmph9npe78e/colin.spec
 PR created: https://api.github.com/repos/phracek/colin/pulls/3
-</code></pre>
-
-<h2 id="packit-sync-from-downstream-help">packit sync-from-downstream &ndash;help</h2>
-
-<pre><code class="language-bash">Usage: packit sync-from-downstream [OPTIONS] [PATH_OR_URL]
+</code></pre></div><h2 id="packit-sync-from-downstream---help">packit sync-from-downstream &ndash;help</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Usage: packit sync-from-downstream <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>PATH_OR_URL<span style="color:#f92672">]</span>
 
   Copy synced files from Fedora dist-git into upstream by opening a pull
   request.
@@ -868,16 +857,15 @@ PR created: https://api.github.com/repos/phracek/colin/pulls/3
   repository, it defaults to the current working directory
 
 Options:
-  --dist-git-branch TEXT  Source branch in dist-git for sync.
+  --dist-git-branch TEXT  Source branch in dist-git <span style="color:#66d9ef">for</span> sync.
   --upstream-branch TEXT  Target branch in upstream to sync to.
   --no-pr                 Pull request is not create.
   --fork / --no-fork      Push to a fork.
-  --remote-name TEXT      Name of the remote where packit should push. if this
-                          is not specified, it pushes to a fork if the repo
+  --remote-name TEXT      Name of the remote where packit should push. <span style="color:#66d9ef">if</span> this
+                          is not specified, it pushes to a fork <span style="color:#66d9ef">if</span> the repo
                           can be forked.
   -h, --help              Show this message and exit.
-</code></pre>
-
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -939,38 +927,6 @@ Options:
 
                     
                     
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
                     
 
                     
@@ -1030,591 +986,13 @@ Options:
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
                 
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
                 
 
                     
                     
                     
 
-                    
-            
-        
-                    
-            
-        
                     
             
         

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="">
 
 
@@ -777,14 +777,11 @@ if (!doNotTrack) {
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#requirements">Requirements</a></li>
-<li><a href="#tutorial">Tutorial</a></li>
-<li><a href="#help">Help</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#tutorial">Tutorial</a></li>
+    <li><a href="#help">Help</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -809,26 +806,21 @@ if (!doNotTrack) {
 
 
 
-
-
 <p>Create a new bodhi update for the latest Fedora build of the upstream project.</p>
-
 <h2 id="requirements">Requirements</h2>
-
 <ul>
 <li>Upstream git repository on Github.</li>
 <li>Packit config file placed in the upstream repository.</li>
 <li>Valid Fedora Kerberos ticket.</li>
 </ul>
-
 <h2 id="tutorial">Tutorial</h2>
-
 <ol>
-<li><p><a href="/docs/configuration/">Place a config file for packit in the root of your upstream repository.</a>.</p></li>
-
-<li><p>Once the <a href="/docs/cli/build/">builds are done</a>, you can run the <code>create-update</code> command.
+<li>
+<p><a href="/docs/configuration/">Place a config file for packit in the root of your upstream repository.</a>.</p>
+</li>
+<li>
+<p>Once the <a href="/docs/cli/build/">builds are done</a>, you can run the <code>create-update</code> command.
 If you don&rsquo;t specify the koji builds packit takes latest build.</p>
-
 <pre><code>$ packit create-update --dist-git-branch f29 https://github.com/packit-service/packit.git
 Bodhi update FEDORA-2019-b72add0dcd:
 - https://bodhi.fedoraproject.org/updates/FEDORA-2019-b72add0dcd
@@ -837,26 +829,23 @@ Bodhi update FEDORA-2019-b72add0dcd:
 - notes: &quot;New upstream release 0.1.0&quot;
 </code></pre></li>
 </ol>
-
 <h2 id="help">Help</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Usage: packit create-update <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>PATH_OR_URL<span style="color:#f92672">]</span>
 
-<pre><code class="language-bash">Usage: packit create-update [OPTIONS] [PATH_OR_URL]
-
-  Create a bodhi update for the selected upstream project
+  Create a bodhi update <span style="color:#66d9ef">for</span> the selected upstream project
 
   PATH_OR_URL argument is a local path or a URL to the upstream git
   repository, it defaults to the current working directory
 
 Options:
   --dist-git-branch TEXT          Target branch in dist-git to release into.
-  --koji-build TEXT               Koji build (NVR) to add to the bodhi update
-                                  (can be specified multiple times)
+  --koji-build TEXT               Koji build <span style="color:#f92672">(</span>NVR<span style="color:#f92672">)</span> to add to the bodhi update
+                                  <span style="color:#f92672">(</span>can be specified multiple times<span style="color:#f92672">)</span>
   --update-notes TEXT             Bodhi update notes
-  --update-type [security|bugfix|enhancement|newpackage]
+  --update-type <span style="color:#f92672">[</span>security|bugfix|enhancement|newpackage<span style="color:#f92672">]</span>
                                   Type of the bodhi update
   -h, --help                      Show this message and exit.
-</code></pre>
-
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -918,74 +907,6 @@ Options:
 
                     
                     
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
                     
 
                     
@@ -1040,96 +961,6 @@ Options:
             
         
                     
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -1142,458 +973,6 @@ Options:
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
             
         
