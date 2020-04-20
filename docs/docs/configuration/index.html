@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="">
 
 
@@ -771,52 +771,25 @@ if (!doNotTrack) {
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#top-level-keys">Top level keys</a>
-<ul>
-<li>
-<ul>
-<li><a href="#specfile-path">specfile_path</a></li>
-<li><a href="#upstream-project-name">upstream_project_name</a></li>
-<li><a href="#upstream-package-name">upstream_package_name</a></li>
-<li><a href="#upstream-project-url">upstream_project_url</a></li>
-<li><a href="#create-pr">create_pr</a></li>
-<li><a href="#synced-files">synced_files</a></li>
-<li><a href="#upstream-ref">upstream_ref</a></li>
-<li><a href="#downstream-package-name">downstream_package_name</a></li>
-<li><a href="#dist-git-namespace">dist_git_namespace</a></li>
-<li><a href="#dist-git-base-url">dist_git_base_url</a></li>
-<li><a href="#create-tarball-command">create_tarball_command</a></li>
-<li><a href="#current-version-command">current_version_command</a></li>
-<li><a href="#actions">actions</a></li>
-<li><a href="#jobs">jobs</a></li>
-<li><a href="#allowed-gpg-keys">allowed_gpg_keys</a></li>
-<li><a href="#spec-source-id">spec_source_id</a></li>
-<li><a href="#upstream-tag-template">upstream_tag_template</a></li>
-<li><a href="#patch-generation-ignore-paths">patch_generation_ignore_paths</a></li>
-<li><a href="#notifications">notifications</a></li>
-</ul></li>
-<li><a href="#minimal-sample-config">Minimal sample config</a></li>
-<li><a href="#more-examples-of-synced-files">More examples of <code>synced_files</code></a></li>
-</ul></li>
-<li><a href="#packit-as-a-service">Packit-as-a-Service</a>
-<ul>
-<li><a href="#packit-service-jobs">Packit service jobs</a>
-<ul>
-<li><a href="#supported-jobs">Supported jobs</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#user-configuration-file">User configuration file</a>
-<ul>
-<li><a href="#values">Values</a>
-<ul>
-<li><a href="#server-side-configuration">Server-side configuration</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#top-level-keys">Top level keys</a>
+      <ul>
+        <li></li>
+        <li><a href="#minimal-sample-config">Minimal sample config</a></li>
+        <li><a href="#more-examples-of-synced_files">More examples of <code>synced_files</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#packit-as-a-service">Packit-as-a-Service</a>
+      <ul>
+        <li><a href="#packit-service-jobs">Packit service jobs</a></li>
+      </ul>
+    </li>
+    <li><a href="#user-configuration-file">User configuration file</a>
+      <ul>
+        <li><a href="#values">Values</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -841,12 +814,8 @@ if (!doNotTrack) {
 
 
 
-
-
 <p>Packit uses a configuration file in the upstream repository. The config file is written in YAML language.</p>
-
 <p>You should place the file in the root of your upstream repo. Packit accepts these names:</p>
-
 <ul>
 <li><code>.packit.yaml</code></li>
 <li><code>.packit.yml</code></li>
@@ -855,137 +824,88 @@ if (!doNotTrack) {
 <li><code>packit.yml</code></li>
 <li><code>packit.json</code></li>
 </ul>
-
 <p>Both Packit-as-a-Service and packit tool use this configuration file.</p>
-
 <h2 id="top-level-keys">Top level keys</h2>
-
-<h4 id="specfile-path">specfile_path</h4>
-
+<h4 id="specfile_path">specfile_path</h4>
 <p>(<em>string</em>) Relative path to a spec file within the upstream repository.
-If not specified, defaults to:
-1. <code>downstream_package_name</code>.spec if <code>downstream_package_name</code> is set.
-2. Else recursively search the tree and use the first spec file found.</p>
-
-<h4 id="upstream-project-name">upstream_project_name</h4>
-
+If not specified, defaults to:</p>
+<ol>
+<li><code>downstream_package_name</code>.spec if <code>downstream_package_name</code> is set.</li>
+<li>Else recursively search the tree and use the first spec file found.</li>
+</ol>
+<h4 id="upstream_project_name">upstream_project_name</h4>
 <p>(<em>string</em>) Deprecated since packit-0.7.0, use <code>upstream_package_name</code> instead.</p>
-
-<h4 id="upstream-package-name">upstream_package_name</h4>
-
+<h4 id="upstream_package_name">upstream_package_name</h4>
 <p>(<em>string</em>) Name of the upstream repository (e.g. in PyPI), defaults to the
 name of the Github repository; this is used in <code>%prep</code> section to generate an
 archive.</p>
-
-<h4 id="upstream-project-url">upstream_project_url</h4>
-
+<h4 id="upstream_project_url">upstream_project_url</h4>
 <p>(<em>string</em>) URL of the upstream project (e.g.
 <code>https://github.com/packit-service/packit</code>).</p>
-
-<h4 id="create-pr">create_pr</h4>
-
+<h4 id="create_pr">create_pr</h4>
 <p>(<em>bool</em>) When doing a new update in Fedora dist-git, should packit create a
 new pull request (defaults to <code>true</code>) or push directly to dist-git (if set to
 <code>false</code>).</p>
-
-<h4 id="synced-files">synced_files</h4>
-
+<h4 id="synced_files">synced_files</h4>
 <p>(<em>list of strings or dicts</em>) A list of relative paths to files in the upstream
 repo which are meant to be copied to dist-git during an update (spec file path
 and config file path are set every time by default).</p>
-
-<h4 id="upstream-ref">upstream_ref</h4>
-
+<h4 id="upstream_ref">upstream_ref</h4>
 <p>(<em>string</em>) Git reference to last upstream git commit (for source-git repos).</p>
-
-<h4 id="downstream-package-name">downstream_package_name</h4>
-
+<h4 id="downstream_package_name">downstream_package_name</h4>
 <p>(<em>string</em>) Name of the RPM package in Fedora, defaults to the name of the
 Github repository.</p>
-
-<h4 id="dist-git-namespace">dist_git_namespace</h4>
-
+<h4 id="dist_git_namespace">dist_git_namespace</h4>
 <p>(<em>string</em>) Namespace in dist-git URL (defaults to &ldquo;rpms&rdquo;).</p>
-
-<h4 id="dist-git-base-url">dist_git_base_url</h4>
-
+<h4 id="dist_git_base_url">dist_git_base_url</h4>
 <p>(<em>string</em>) URL of dist-git server, defaults to <a href="https://src.fedoraproject.org/">https://src.fedoraproject.org/</a>
 (has to end with a slash).</p>
-
-<h4 id="create-tarball-command">create_tarball_command</h4>
-
+<h4 id="create_tarball_command">create_tarball_command</h4>
 <p>(<em>list of strings</em>) A command which generates upstream tarball in the directory with the specfile
-(defaults to <code>git archive -o &quot;{specfile_dir}/{package_name}-{version}.tar.gz&quot; --prefix
-&quot;{package_name}-{version}/&quot; HEAD</code>).</p>
-
-<h4 id="current-version-command">current_version_command</h4>
-
+(defaults to <code>git archive -o &quot;{specfile_dir}/{package_name}-{version}.tar.gz&quot; --prefix &quot;{package_name}-{version}/&quot; HEAD</code>).</p>
+<h4 id="current_version_command">current_version_command</h4>
 <p>(<em>list of strings</em>) A command which prints current upstream version (hint:
 <code>git describe</code>) (defaults to <code>git describe --tags --match '*.*'</code>).</p>
-
 <h4 id="actions">actions</h4>
-
 <p>(<em>string</em>) Custom actions/hooks overwriting the default behavior of packit
 (more in <a href="/docs/actions/">Actions</a>).</p>
-
 <h4 id="jobs">jobs</h4>
-
 <p>(<em>list of dicts</em>) A list of job definitions for packit service: see
 <a href="#supported-jobs">below</a> for details.</p>
-
-<h4 id="allowed-gpg-keys">allowed_gpg_keys</h4>
-
+<h4 id="allowed_gpg_keys">allowed_gpg_keys</h4>
 <p>(<em>list of string</em>) A list of gpg-key fingerprints; if specified, one of the
 configured keys have to sign the last commit when updating in downstream; add
 GitHub key (<code>5DE3E0509C47EA3CF04A42D34AEE18F83AFDEB23</code>) if you want to use
 this on code merged via GitHub web interface.</p>
-
-<h4 id="spec-source-id">spec_source_id</h4>
-
+<h4 id="spec_source_id">spec_source_id</h4>
 <p>(<em>int or string</em>) Numeric ID of Source inside spec file which packit should
 change when setting path to the newly generated tarball, can be also full name
 of the macro. Defaults to <code>Source0</code> or <code>Source</code>, whichever is found first in
 the spec file.</p>
-
-<h4 id="upstream-tag-template">upstream_tag_template</h4>
-
+<h4 id="upstream_tag_template">upstream_tag_template</h4>
 <p>(<em>string</em>) Packit by default expects git tags to match versions (e.g. when
 doing the <code>propose-update</code> command) - if you are using a different tagging
 scheme, let&rsquo;s say <code>v1.2.3</code> you can then set this parameter to <code>v{version}</code> and
 packit will fill in the version argument.</p>
-
-<h4 id="patch-generation-ignore-paths">patch_generation_ignore_paths</h4>
-
+<h4 id="patch_generation_ignore_paths">patch_generation_ignore_paths</h4>
 <p>(<em>list of strings</em>) In a source-git repo, when packit is generating patches,
 it excludes changes to the spec file and packit.yaml by default: with this
 option you can precisely specify paths to exclude.</p>
-
 <h4 id="notifications">notifications</h4>
-
 <p>There is only one notifcation configuration you can set up right now: disable
 the &ldquo;Congratulations!&rdquo; comment which packit sends after a successful build of a
 pull request is done.</p>
-
 <p>The default behaviour is to send the comment with instructions how to install a
 package with the change implemented in the pull request:</p>
-
 <pre><code>notifications:
   pull_request:
     successful_build: true
-</code></pre>
-
-<p>You can disable the commenting by setting <code>successful_build</code> to <code>false</code>.</p>
-
+</code></pre><p>You can disable the commenting by setting <code>successful_build</code> to <code>false</code>.</p>
 <h3 id="minimal-sample-config">Minimal sample config</h3>
-
 <p>This is a sample config which is meant for <a href="https://github.com/packit-service/packit">packit</a> itself.</p>
-
 <pre><code># packit is named packitos on PyPI b/c packit name was already taken
 upstream_package_name: packitos
-</code></pre>
-
-<h3 id="more-examples-of-synced-files">More examples of <code>synced_files</code></h3>
-
+</code></pre><h3 id="more-examples-of-synced_files">More examples of <code>synced_files</code></h3>
 <pre><code>synced_files:
   # copy a file from root of the upstream repo to dist-git
   - packit.spec
@@ -1009,32 +929,21 @@ upstream_package_name: packitos
     - package.spec
     - some-file
     dest: .
-</code></pre>
-
-<h2 id="packit-as-a-service">Packit-as-a-Service</h2>
-
+</code></pre><h2 id="packit-as-a-service">Packit-as-a-Service</h2>
 <p>As of July 2019, packit service doesn&rsquo;t have any web interface, so the only way
 to change its behaviour is via the config file you just read about.</p>
-
 <p>When you open a pull request against your upstream repository, packit service
 picks up configuration file from your pull request, not from the branch against
 the PR is opened. This way, you can polish your .packit.yaml and see the
 results right away. (for more info, please see <a href="https://github.com/packit-service/packit-service/issues/48">packit-service#48</a>)</p>
-
 <h3 id="packit-service-jobs">Packit service jobs</h3>
-
 <p>Once the service starts handling events of your repository, it needs to have a
 clear definition of what it should do.</p>
-
 <p>The tasks the packit service should do are defined in section <code>jobs</code>. The section is a list of dicts:</p>
-
 <pre><code>jobs:
 - {key: value}
 - {}
-</code></pre>
-
-<p>If there is no <code>jobs</code> section in the configuration file, jobs default to:</p>
-
+</code></pre><p>If there is no <code>jobs</code> section in the configuration file, jobs default to:</p>
 <pre><code>jobs:
 - job: tests
   trigger: pull_request
@@ -1045,47 +954,30 @@ clear definition of what it should do.</p>
   trigger: release
   metadata:
     dist-git-branch: fedora-all
-</code></pre>
-
-<p>If you do not want to use the jobs then the <code>jobs</code> section in the configuration file should be empty:</p>
-
+</code></pre><p>If you do not want to use the jobs then the <code>jobs</code> section in the configuration file should be empty:</p>
 <pre><code>jobs: []
 
-</code></pre>
-
-<p>Every job has two mandatory keys:</p>
-
+</code></pre><p>Every job has two mandatory keys:</p>
 <ol>
 <li><code>job</code> - name of the job (you can imagine this as a CLI command)</li>
 <li><code>trigger</code> - what is the trigger for the job?</li>
 </ol>
-
 <p>Every job only supports a specific set of triggers.</p>
-
 <p>Jobs can also accept additional configuration in a key <code>metadata</code> which has dict as a value:</p>
-
 <pre><code>jobs:
 - job: some-job
   trigger: ran-out-of-beer
   metadata:
     key: value
-</code></pre>
-
-<h4 id="supported-jobs">Supported jobs</h4>
-
+</code></pre><h4 id="supported-jobs">Supported jobs</h4>
 <p><strong>copr_build</strong></p>
-
 <p>Create a SRPM and submit an RPM build to <a href="https://copr.fedorainfracloud.org/">Fedora COPR</a> build system.</p>
-
 <p>Supported triggers:</p>
-
 <ul>
 <li><strong>pull_request</strong> &ndash; check out content of the pull request</li>
 <li><strong>release</strong> &ndash; check out content of the tag associated with the release</li>
 </ul>
-
 <p>Required metadata:</p>
-
 <ul>
 <li><strong>targets</strong> - a list of mock chroots where to build (if you navigate to
 settings of your COPR project, you&rsquo;ll be able able to see the list of
@@ -1094,23 +986,18 @@ see the list via <code>copr-cli list-chroots</code>. You can use <code>fedora-de
 <code>fedora-stable</code> and <code>fedora-all</code> aliases as a target. By default, the <code>x86_64</code> architecture
 will be used, but you can use e.g. <code>fedora-stable-aarch64</code> if you need.</li>
 </ul>
-
 <p>Optional metadata:</p>
-
 <ul>
 <li><strong>timeout</strong> - (seconds) give up watching a build after timeout, defaults to 7200s, i.e. 2 hours</li>
 <li><strong>owner</strong> - a namespace in COPR where the build should happen (defaults to packit)</li>
 <li><strong>project</strong> - a name of the copr project (defaults to <code>&quot;{github_namespace}-{repository_name}-{pr_id}&quot;</code>)</li>
 </ul>
-
 <p>If you want to build in your own COPR namespace, you need to <a href="https://docs.pagure.org/copr.copr/user_documentation.html?highlight=permissions#can-i-give-access-to-my-repo-to-my-team-mate">grant packit
 permissions</a>
 to build inside. The way COPR does this right now is that we, from the packit
 side, need to do a request for permissions. Please reach out to us via
-user-cont-team@redhat.com and we&rsquo;d be glad to help you.</p>
-
+<a href="mailto:user-cont-team@redhat.com">user-cont-team@redhat.com</a> and we&rsquo;d be glad to help you.</p>
 <p><strong>Example</strong></p>
-
 <pre><code>jobs:
 - job: copr_build
   trigger: pull_request
@@ -1118,43 +1005,28 @@ user-cont-team@redhat.com and we&rsquo;d be glad to help you.</p>
     targets:
       - fedora-stable
       - centos-stream-x86_64
-</code></pre>
-
-<p>With this configuration, you&rsquo;ll get builds in all stable fedora releases
+</code></pre><p>With this configuration, you&rsquo;ll get builds in all stable fedora releases
 (excluding rawhide) and the CentOS stream.</p>
-
 <p><strong>sync_from_downstream</strong></p>
-
 <p>Pick up a change (mass rebuild, proven packager rebuild or a fix) from Fedora
 dist-git and send it to upstream repository.</p>
-
 <p>Supported triggers: <strong>commit</strong>.</p>
-
 <p><strong>Example</strong></p>
-
 <pre><code>jobs:
 - job: sync_from_downstream
   trigger: commit
-</code></pre>
-
-<p><strong>propose_downstream</strong></p>
-
+</code></pre><p><strong>propose_downstream</strong></p>
 <p>Land a new upstream release in Fedora. This job only makes sure the changes
 happen in Fedora dist-git - no builds. The global key <code>create_pr</code> controls
 whether a pull request is created or changes are pushed directly.</p>
-
 <p>Supported triggers: <strong>release</strong>.</p>
-
 <p>Optional metadata:</p>
-
 <ul>
 <li><strong>dist-git-branch</strong> - a branch in dist-git where packit should work (defaults to <code>master</code>).
 You can also use <code>fedora-development</code>, <code>fedora-stable</code> and <code>fedora-all</code> aliases
 to not need to change the config file when the new system version is released.</li>
 </ul>
-
 <p><strong>Example</strong></p>
-
 <pre><code>jobs:
 - job: propose_downstream
   trigger: release
@@ -1162,22 +1034,14 @@ to not need to change the config file when the new system version is released.</
   trigger: release
   metadata:
     dist-git-branch: f30
-</code></pre>
-
-<p>This config would update Fedora Rawhide and Fedora 30 dist-git branches.</p>
-
+</code></pre><p>This config would update Fedora Rawhide and Fedora 30 dist-git branches.</p>
 <p><strong>tests</strong></p>
-
 <p>See more about tests <a href="http://packit.dev/testing-farm/">here</a>.</p>
-
 <h2 id="user-configuration-file">User configuration file</h2>
-
 <p>When running packit as a tool locally, it is convenient to use a configuration
 file to provide data such as API tokens. Packit respects <code>XDG_CONFIG_HOME</code>
 environment variable. If not set, it looks inside <code>~/.config/</code> directory.</p>
-
 <p>The acceptable names are the same as for the package config:</p>
-
 <ul>
 <li><code>.packit.yaml</code></li>
 <li><code>.packit.yml</code></li>
@@ -1186,9 +1050,7 @@ environment variable. If not set, it looks inside <code>~/.config/</code> direct
 <li><code>packit.yml</code></li>
 <li><code>packit.json</code></li>
 </ul>
-
 <h3 id="values">Values</h3>
-
 <table>
 <thead>
 <tr>
@@ -1197,20 +1059,17 @@ environment variable. If not set, it looks inside <code>~/.config/</code> direct
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>debug</code></td>
 <td>bool</td>
 <td>enable debug logs</td>
 </tr>
-
 <tr>
 <td><code>fas_user</code></td>
 <td>string</td>
 <td>username in Fedora account system (to perform kinit if needed)</td>
 </tr>
-
 <tr>
 <td><code>authentication</code></td>
 <td>dict</td>
@@ -1218,39 +1077,31 @@ environment variable. If not set, it looks inside <code>~/.config/</code> direct
 </tr>
 </tbody>
 </table>
-
-<p>The <code>authentication</code> is a dictionary where:
-* key is a hostname, url or name that can be mapped to a service-type, for example <code>github.com</code> or <code>pagure</code>
-* value is a dictionary with keys: <code>token</code> and <code>instance_url</code> (optional)</p>
-
+<p>The <code>authentication</code> is a dictionary where:</p>
+<ul>
+<li>key is a hostname, url or name that can be mapped to a service-type, for example <code>github.com</code> or <code>pagure</code></li>
+<li>value is a dictionary with keys: <code>token</code> and <code>instance_url</code> (optional)</li>
+</ul>
 <p>e.g.:</p>
-
 <pre><code>authentication:
     github.com:
         token: mnbvcxz123456
     pagure:
         token: qwertyuiop098765
         instance_url: https://src.fedoraproject.org
-</code></pre>
-
-<p>The GitHub token is needed when packit interacts with Github API,
+</code></pre><p>The GitHub token is needed when packit interacts with Github API,
 get it at <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> (getting full read &amp; write repo scope should be enough).
 The Pagure token needed to access REST API,
 get it at <a href="https://src.fedoraproject.org/settings#nav-api-tab">https://src.fedoraproject.org/settings#nav-api-tab</a></p>
-
 <p>Specifying tokens as direct keys <code>github_token</code> and <code>pagure_user_token</code>
 has been deprecated and will be removed in future versions.</p>
-
 <p>Since API tokens are a very sensitive information, please do NOT ever store
 them in a public (such as a GitHub repository). The configuration file here is
 located on your workstation, please do NOT confuse it with a config file for
 your project - that one is described above in the first section of this
 document.</p>
-
 <h4 id="server-side-configuration">Server-side configuration</h4>
-
 <p>These values are used to configure packit service. No need to bother with them, they serve as a documentation for us, packit service developers.</p>
-
 <table>
 <thead>
 <tr>
@@ -1259,26 +1110,22 @@ document.</p>
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>keytab_path</code></td>
 <td>string</td>
 <td>path to a Kerberos keytab file (requires <code>fas_user</code> to be set)</td>
 </tr>
-
 <tr>
 <td><code>github_app_id</code></td>
 <td>string</td>
 <td>github app ID used for authentication</td>
 </tr>
-
 <tr>
 <td><code>github_app_cert_path</code></td>
 <td>string</td>
 <td>path to a certificate associated with a github app</td>
 </tr>
-
 <tr>
 <td><code>webhook_secret</code></td>
 <td>string</td>
@@ -1348,34 +1195,6 @@ document.</p>
 
                     
                     
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
                     
 
                     
@@ -1419,21 +1238,6 @@ document.</p>
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1451,304 +1255,6 @@ document.</p>
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -1759,235 +1265,6 @@ document.</p>
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
             
         
@@ -2372,10 +1649,10 @@ document.</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/docs/cli/copr-build/" title="copr-build"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/docs/guide/" title="Packit Guide"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/docs/cli/" title="Packit CLI Commands" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/docs/how-to-source-git/" title="How to source-git?" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

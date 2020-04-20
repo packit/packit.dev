@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="">
 
 
@@ -771,21 +771,25 @@ if (!doNotTrack) {
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#week-14-march-30th-april-3rd">Week 14 (March 30th - April 3rd)</a>
-<ul>
-<li><a href="#packit">packit</a></li>
-<li><a href="#packit-service">packit-service</a></li>
-</ul></li>
-<li><a href="#week-15-march-6th-april-9th">Week 15 (March 6th - April 9th)</a>
-<ul>
-<li><a href="#packit-1">packit</a></li>
-<li><a href="#packit-service-1">packit-service</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#week-14-march-30th---april-3rd">Week 14 (March 30th - April 3rd)</a>
+      <ul>
+        <li><a href="#packit">packit</a></li>
+        <li><a href="#packit-service">packit-service</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-15-march-6th---april-9th">Week 15 (March 6th - April 9th)</a>
+      <ul>
+        <li><a href="#packit-1">packit</a></li>
+        <li><a href="#packit-service-1">packit-service</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-16-april-14th---april-17th">Week 16 (April 14th - April 17th)</a>
+      <ul>
+        <li><a href="#packit--packit-service">packit &amp; packit-service</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -810,29 +814,20 @@ if (!doNotTrack) {
 
 
 
-
-
-<h2 id="week-14-march-30th-april-3rd">Week 14 (March 30th - April 3rd)</h2>
-
+<h2 id="week-14-march-30th---april-3rd">Week 14 (March 30th - April 3rd)</h2>
 <h3 id="packit">packit</h3>
-
 <ul>
 <li>Fix web URLs for Copr builds owned by groups <a href="https://github.com/packit-service/packit/pull/778">(#778)</a>.</li>
 <li>Create downstream spec if it&rsquo;s not there (propose-update) - this used to happen when using packit on a newly created package in Fedora which did not have spec fille added yet. <a href="https://github.com/packit-service/packit/pull/779">(#779)</a></li>
 <li>Packit no longer inspects archive extension set in <code>Source</code> and creates <code>.tar.gz</code> by default - this should be more flexible and prevent issues for &ldquo;non-standard&rdquo; archive names. <a href="https://github.com/packit-service/packit/pull/781">(#781)</a></li>
 </ul>
-
 <h3 id="packit-service">packit-service</h3>
-
 <ul>
 <li>Several fixes and improvements after switching data store from Redis to PostgreSQL.</li>
 <li>Use the configured COPR project when triggering Testing Farm (tests no longer fail for projects which are built in their own COPR namespace) <a href="https://github.com/packit-service/packit-service/pull/524">(#524)</a>.</li>
 </ul>
-
-<h2 id="week-15-march-6th-april-9th">Week 15 (March 6th - April 9th)</h2>
-
+<h2 id="week-15-march-6th---april-9th">Week 15 (March 6th - April 9th)</h2>
 <h3 id="packit-1">packit</h3>
-
 <ul>
 <li><a href="https://github.com/TomasTomecek">Tomáš</a> finished teaching <code>packit srpm</code> to <a href="https://github.com/packit-service/packit/pull/766">linearise extremely complex Git
 histories</a>, in order to get patches that can be applied when building the
@@ -840,12 +835,20 @@ SRPM.</li>
 <li><a href="https://github.com/jpopelka">Jirka</a> made the schema validation code <a href="https://github.com/packit-service/packit/pull/775">Marshmallow3 compatible</a>. This
 enables building <code>packit</code> in Fedora 32 and Rawhide.</li>
 </ul>
-
 <h3 id="packit-service-1">packit-service</h3>
-
 <ul>
-<li><a href="https://github.com/packit-service/packit-service/pull/541">Franta</a> an issue with <a href="https://github.com/packit-service/packit-service/issues/536">parsing release events</a>.</li>
+<li><a href="https://github.com/lachmanfrantisek">Franta</a> <a href="https://github.com/packit-service/packit-service/pull/541">fixed</a> an issue with <a href="https://github.com/packit-service/packit-service/issues/536">parsing release events</a>.</li>
 <li><a href="https://github.com/jpopelka">Jirka</a> made code <a href="https://github.com/packit-service/packit-service/pull/538">Marshmallow3</a> compatible in this project, too.</li>
+</ul>
+<h2 id="week-16-april-14th---april-17th">Week 16 (April 14th - April 17th)</h2>
+<h3 id="packit--packit-service">packit &amp; packit-service</h3>
+<ul>
+<li>Job metadata field <code>dist-git-branch</code> is now marked as deprecated, to be
+replaced by <code>dist_git_branches</code> to match the naming of other metadata fields
+and to accept multiple branch names where Packit should work. (<a href="https://github.com/packit-service/packit/pull/797">#797</a>,
+<a href="https://github.com/packit-service/packit/pull/788">#788</a> and <a href="https://github.com/packit-service/packit-service/pull/564">#564</a>).</li>
+<li>A great deal of refactoring, CI work and general code improvements which
+will make Packit and Packit Service run smoother and development easier.</li>
 </ul>
 
 
@@ -908,34 +911,6 @@ enables building <code>packit</code> in Fedora 32 and Rawhide.</li>
 
                     
                     
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
                     
 
                     
@@ -1002,548 +977,6 @@ enables building <code>packit</code> in Fedora 32 and Rawhide.</li>
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
             
         

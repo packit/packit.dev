@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="">
 
 
@@ -777,14 +777,11 @@ if (!doNotTrack) {
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#requirements">Requirements</a></li>
-<li><a href="#tutorial">Tutorial</a></li>
-<li><a href="#help">Help</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#tutorial">Tutorial</a></li>
+    <li><a href="#help">Help</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -809,14 +806,10 @@ if (!doNotTrack) {
 
 
 
-
-
 <p>This is a detailed documentation for the update functionality of packit. The
 command creates a new pull request in Fedora using a selected or latest
 upstream release.</p>
-
 <h2 id="requirements">Requirements</h2>
-
 <ul>
 <li>Upstream git repository on Github.</li>
 <li>Upstream release (read, git tag) where version in spec file is equivalent to
@@ -828,48 +821,46 @@ release.</li>
 <li>Github API token.</li>
 <li>Valid Fedora Kerberos ticket.</li>
 </ul>
-
 <h2 id="tutorial">Tutorial</h2>
-
 <ul>
-<li><p>Place a file called <code>.packit.yaml</code> or <code>packit.yaml</code> in the root of your upstream repository.</p>
-
+<li>
+<p>Place a file called <code>.packit.yaml</code> or <code>packit.yaml</code> in the root of your upstream repository.</p>
 <ul>
 <li>The configuration is described <a href="/docs/configuration/">in this document</a>.</li>
 <li>Please get inspired from <a href="https://github.com/user-cont/colin/blob/master/.packit.yaml">an existing config</a> in
 colin project.</li>
-</ul></li>
-
-<li><p>Place a spec file into your upstream project (and make sure that
+</ul>
+</li>
+<li>
+<p>Place a spec file into your upstream project (and make sure that
 <code>specfile_path</code> in the config has a correct value).</p>
-
 <ul>
 <li>This spec file will be then used to perform the update in Fedora.</li>
 <li>When you create a new upstream release, you should also update the spec file.</li>
 <li>Once your upstream release is out (and the spec file is really up to
 date), you can use packit to release it into Fedora.</li>
-</ul></li>
-
-<li><p>Create a new upstream release. The spec file needs to be included in the ref
-for upstream release, because packit checks out the tag for the upstream
-release before copying files downstream.</p></li>
-
-<li><p>Starting with packit 0.5.2 and later, you only need to set a single token to
-interact with dist-git. You needed two in the past. Please populate your
-local config for packit so it can talk to the remote services:</p></li>
 </ul>
-
-<pre><code class="language-json"># you can obtain the token over here: https://github.com/settings/tokens
-github_token: 123
-# and this one right here: https://src.fedoraproject.org/settings#nav-api-tab
-pagure_user_token: 456
-</code></pre>
-
-<ul>
-<li><p>Once you have performed the upstream release (and the new archive is up),
+</li>
+<li>
+<p>Create a new upstream release. The spec file needs to be included in the ref
+for upstream release, because packit checks out the tag for the upstream
+release before copying files downstream.</p>
+</li>
+<li>
+<p>Starting with packit 0.5.2 and later, you only need to set a single token to
+interact with dist-git. You needed two in the past. Please populate your
+local config for packit so it can talk to the remote services:</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">you</span> <span style="color:#960050;background-color:#1e0010">can</span> <span style="color:#960050;background-color:#1e0010">obtain</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">token</span> <span style="color:#960050;background-color:#1e0010">over</span> <span style="color:#960050;background-color:#1e0010">here:</span> <span style="color:#960050;background-color:#1e0010">https://github.com/settings/tokens</span>
+<span style="color:#960050;background-color:#1e0010">github_token:</span> <span style="color:#ae81ff">123</span>
+<span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">and</span> <span style="color:#960050;background-color:#1e0010">this</span> <span style="color:#960050;background-color:#1e0010">one</span> <span style="color:#960050;background-color:#1e0010">right</span> <span style="color:#960050;background-color:#1e0010">here:</span> <span style="color:#960050;background-color:#1e0010">https://src.fedoraproject.org/settings#nav-api-tab</span>
+<span style="color:#960050;background-color:#1e0010">pagure_user_token:</span> <span style="color:#ae81ff">456</span>
+</code></pre></div><ul>
+<li>Once you have performed the upstream release (and the new archive is up),
 run <code>packit propose-update</code> in a working directory of your upstream
-repository:</p>
-
+repository:</li>
+</ul>
 <pre><code>$ git clone https://github.com/user-cont/colin.git
 
 $ cd colin
@@ -882,12 +873,8 @@ INFO: Downloading file from URL https://files.pythonhosted.org/packages/source/c
 downloaded archive: /tmp/tmpaanrpgjz/colin-0.3.0.tar.gz
 uploading to the lookaside cache
 PR created: https://src.fedoraproject.org/rpms/colin/pull-request/4
-</code></pre></li>
-</ul>
-
-<h2 id="help">Help</h2>
-
-<pre><code class="language-bash">Usage: packit propose-update [OPTIONS] [PATH_OR_URL] [VERSION]
+</code></pre><h2 id="help">Help</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Usage: packit propose-update <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>PATH_OR_URL<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>VERSION<span style="color:#f92672">]</span>
 
   Release current upstream release into Fedora
 
@@ -906,8 +893,7 @@ Options:
   --force-new-sources     Upload the new sources also when the archive is
                           already in the lookaside cache.
   -h, --help              Show this message and exit.
-</code></pre>
-
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -969,38 +955,6 @@ Options:
 
                     
                     
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
                     
 
                     
@@ -1011,42 +965,6 @@ Options:
             
             
                 
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1091,60 +1009,6 @@ Options:
             
         
                     
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -1157,494 +1021,6 @@ Options:
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
             
         

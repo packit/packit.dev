@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="">
 
 
@@ -765,27 +765,25 @@ if (!doNotTrack) {
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#can-i-use-the-packit-service-as-soon-as-i-install-it-into-my-repository">Can I use the packit service as soon as I install it into my repository?</a></li>
-<li><a href="#can-i-use-packit-service-for-any-github-repository">Can I use packit service for any GitHub repository?</a></li>
-<li><a href="#how-can-i-contact-you">How can I contact you?</a></li>
-<li><a href="#why-do-i-have-to-maintain-packit-yaml-and-a-spec-file-upstream">Why do I have to maintain .packit.yaml and a spec file upstream?</a></li>
-<li><a href="#but-what-are-the-benefits">But what are the benefits?</a></li>
-<li><a href="#why-fedora">Why Fedora?</a></li>
-<li><a href="#how-is-packit-different-from-other-services">How is Packit different from other services?</a></li>
-<li><a href="#can-we-use-packit-with-gitlab">Can we use Packit with Gitlab?</a></li>
-<li><a href="#how-can-i-download-rpm-spec-file-if-it-is-not-part-of-upstream-repository">How can I download RPM spec file if it is not part of upstream repository?</a></li>
-<li><a href="#i-have-a-template-of-a-spec-file-in-my-repo-can-packit-work-with-it">I have a template of a spec file in my repo: can packit work with it?</a></li>
-<li><a href="#can-i-use-centos-stream-with-packit-service">Can I use CentOS Stream with packit service?</a></li>
-<li><a href="#after-adding-tests-i-see-error-no-fmf-metadata-found">After adding tests I see error &lsquo;No FMF metadata found.&rsquo;</a></li>
-<li><a href="#does-packit-work-with-rpmautospec-https-docs-pagure-org-fedora-infra-rpmautospec">Does packit work with <a href="https://docs.pagure.org/Fedora-Infra.rpmautospec/">rpmautospec</a>?</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#can-i-use-the-packit-service-as-soon-as-i-install-it-into-my-repository">Can I use the packit service as soon as I install it into my repository?</a></li>
+        <li><a href="#can-i-use-packit-service-for-any-github-repository">Can I use packit service for any GitHub repository?</a></li>
+        <li><a href="#how-can-i-contact-you">How can I contact you?</a></li>
+        <li><a href="#why-do-i-have-to-maintain-packityaml-and-a-spec-file-upstream">Why do I have to maintain .packit.yaml and a spec file upstream?</a></li>
+        <li><a href="#but-what-are-the-benefits">But what are the benefits?</a></li>
+        <li><a href="#why-fedora">Why Fedora?</a></li>
+        <li><a href="#how-is-packit-different-from-other-services">How is Packit different from other services?</a></li>
+        <li><a href="#can-we-use-packit-with-gitlab">Can we use Packit with Gitlab?</a></li>
+        <li><a href="#how-can-i-download-rpm-spec-file-if-it-is-not-part-of-upstream-repository">How can I download RPM spec file if it is not part of upstream repository?</a></li>
+        <li><a href="#i-have-a-template-of-a-spec-file-in-my-repo-can-packit-work-with-it">I have a template of a spec file in my repo: can packit work with it?</a></li>
+        <li><a href="#can-i-use-centos-stream-with-packit-service">Can I use CentOS Stream with packit service?</a></li>
+        <li><a href="#after-adding-tests-i-see-error-no-fmf-metadata-found">After adding tests I see error &lsquo;No FMF metadata found.&rsquo;</a></li>
+        <li><a href="#does-packit-work-with-rpmautospechttpsdocspagureorgfedora-infrarpmautospec">Does packit work with <a href="https://docs.pagure.org/Fedora-Infra.rpmautospec/">rpmautospec</a>?</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -811,71 +809,48 @@ if (!doNotTrack) {
 
 
 
-	
-
-<h3 id="can-i-use-the-packit-service-as-soon-as-i-install-it-into-my-repository">Can I use the packit service as soon as I install it into my repository?</h3>
-
+	<h3 id="can-i-use-the-packit-service-as-soon-as-i-install-it-into-my-repository">Can I use the packit service as soon as I install it into my repository?</h3>
 <p>Thanks for your interest in Packit Service!  In order to start using the
 service you need to be whitelisted, which is an action to be done by us.  Once
 we put you on the whitelist, we&rsquo;ll get in touch with you.  We are now
 on-boarding Fedora contributors (with a Fedora Account System account).</p>
-
 <h3 id="can-i-use-packit-service-for-any-github-repository">Can I use packit service for any GitHub repository?</h3>
-
 <p>Since packit service builds your PRs in Fedora COPR build service, by using
 Packit-as-a-service, your software needs to comply with <a href="https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr">COPR
 rules</a>.
 If any of these points are violated, we&rsquo;ll remove the builds and may put you on
 a blacklist so you won&rsquo;t be able to use the service again.</p>
-
 <h3 id="how-can-i-contact-you">How can I contact you?</h3>
-
 <p>If you encounter a problem while using Packit-as-a-service, please open an
 <a href="https://github.com/packit-service/packit-service/issues/new">upstream issue</a>.
 In case of any other questions, feel free to contact
 <a href="https://github.com/orgs/packit-service/teams/the-packit-team">us</a>:</p>
-
 <ul>
 <li><a href="https://freenode.net">freenode</a> <strong>#packit</strong></li>
-<li><strong>user-cont-team@redhat.com</strong></li>
+<li><strong><a href="mailto:user-cont-team@redhat.com">user-cont-team@redhat.com</a></strong></li>
 </ul>
-
-<h3 id="why-do-i-have-to-maintain-packit-yaml-and-a-spec-file-upstream">Why do I have to maintain .packit.yaml and a spec file upstream?</h3>
-
+<h3 id="why-do-i-have-to-maintain-packityaml-and-a-spec-file-upstream">Why do I have to maintain .packit.yaml and a spec file upstream?</h3>
 <p><a href="https://github.com/packit-service/packit/issues/574">We are working</a> on simplifying the <code>.packit.yaml</code> so it&rsquo;s as small as possible.
 We will also handle all potentially backward incompatible changes of <code>.packit.yaml</code>.
 <code>Spec</code> file can be downloaded (see specific question below) from <a href="https://src.fedoraproject.org">Fedora Pagure</a> instead of having it included in the upstream repository.</p>
-
 <h3 id="but-what-are-the-benefits">But what are the benefits?</h3>
-
 <p>Packit makes it trivial to run your project as part of an OS.
 It provides feedback to your project at the time when the changes are being developed so you can fix incompatible code when you are working on it, not when it&rsquo;s already released.
 When you push commits to a pull request, you&rsquo;ll get RPM build and test results right away.</p>
-
 <h3 id="why-fedora">Why Fedora?</h3>
-
 <p>We&rsquo;ve started with Fedora Linux because we work for Red Hat and we ❤ Fedora.</p>
-
 <h3 id="how-is-packit-different-from-other-services">How is Packit different from other services?</h3>
-
 <p>Packit connects the existing services (<a href="https://copr.fedorainfracloud.org">Copr</a>, <a href="https://src.fedoraproject.org">Pagure</a>, <a href="https://koji.fedoraproject.org">Koji</a>, <a href="https://bodhi.fedoraproject.org">Bodhi</a>) together.</p>
-
 <h3 id="can-we-use-packit-with-gitlab">Can we use Packit with Gitlab?</h3>
-
 <p>Packit service is closely tied to GitHub right now because most of the projects are hosted on GitHub.
 <a href="https://github.com/packit-service/packit-service/issues/249">Let us know</a> if you&rsquo;d like to see Gitlab support.</p>
-
 <h3 id="how-can-i-download-rpm-spec-file-if-it-is-not-part-of-upstream-repository">How can I download RPM spec file if it is not part of upstream repository?</h3>
-
 <p>If you do not want to have the RPM spec file in your upstream repository,
 you can download it in <a href="/docs/actions/">actions</a> section.</p>
-
 <p>Add <a href="/docs/actions/">actions</a> section to your packit.yaml configuration file and
 download the spec file in a hook <code>post_upstream_clone</code>.
 Packit service has a limited set of commands available so please use <code>wget</code> or <code>curl</code>.</p>
-
 <p>The configuration file with downloading the RPM spec file now looks like this:</p>
-
 <pre><code>specfile_path: packit.spec
 synced_files:
   - packit.spec
@@ -884,65 +859,42 @@ upstream_package_name: packitos
 downstream_package_name: packit
 actions:
     post-upstream-clone: &quot;wget https://src.fedoraproject.org/rpms/packit/raw/master/f/packit.spec&quot;
-</code></pre>
-
-<h3 id="i-have-a-template-of-a-spec-file-in-my-repo-can-packit-work-with-it">I have a template of a spec file in my repo: can packit work with it?</h3>
-
+</code></pre><h3 id="i-have-a-template-of-a-spec-file-in-my-repo-can-packit-work-with-it">I have a template of a spec file in my repo: can packit work with it?</h3>
 <p>Yes!</p>
-
 <p>The solution is, again, actions and hooks. Just render the spec after the upstream repo is cloned:</p>
-
 <pre><code>specfile_path: my-project.spec
 upstream_package_name: my-project-src
 downstream_package_name: my-project
 actions:
     post-upstream-clone: &quot;make generate-spec&quot;
-</code></pre>
-
-<p>Where the &ldquo;generate-spec&rdquo; make target could look like this:</p>
-
+</code></pre><p>Where the &ldquo;generate-spec&rdquo; make target could look like this:</p>
 <pre><code>generate-spec:
     sed -e 's/@@VERSION@@/$(VERSION)/g' my-project.spec.template &gt;my-project.spec
-</code></pre>
-
-<p>As a practical example, <a href="https://github.com/cockpit-project/cockpit-podman">cockpit-podman
+</code></pre><p>As a practical example, <a href="https://github.com/cockpit-project/cockpit-podman">cockpit-podman
 project</a> is using this
 functionality.</p>
-
 <h3 id="can-i-use-centos-stream-with-packit-service">Can I use CentOS Stream with packit service?</h3>
-
 <p>Yes, you can! It&rsquo;s very simple, just add <code>centos-stream-x86_64</code> as a target for
 the <code>copr_build</code> job:</p>
-
 <pre><code>jobs:
 - job: copr_build
   trigger: pull_request
   metadata:
     targets:
       - centos-stream-x86_64
-</code></pre>
-
-<h3 id="after-adding-tests-i-see-error-no-fmf-metadata-found">After adding tests I see error &lsquo;No FMF metadata found.&rsquo;</h3>
-
+</code></pre><h3 id="after-adding-tests-i-see-error-no-fmf-metadata-found">After adding tests I see error &lsquo;No FMF metadata found.&rsquo;</h3>
 <p>If you encounter this error when running tests via Testing Farm, it means you forgot to initialize the metadata tree with <code>fmf init</code> and include the <code>.fmf</code> directory in the pull request. See <a href="/testing-farm">Testing Farm documentation</a> for more information.</p>
-
-<h3 id="does-packit-work-with-rpmautospec-https-docs-pagure-org-fedora-infra-rpmautospec">Does packit work with <a href="https://docs.pagure.org/Fedora-Infra.rpmautospec/">rpmautospec</a>?</h3>
-
+<h3 id="does-packit-work-with-rpmautospechttpsdocspagureorgfedora-infrarpmautospec">Does packit work with <a href="https://docs.pagure.org/Fedora-Infra.rpmautospec/">rpmautospec</a>?</h3>
 <p>Good that you ask. It does, packit works with rpmautospec quite nicely.</p>
-
 <p>Before you start, please make sure that you follow <a href="https://docs.pagure.org/Fedora-Infra.rpmautospec/">latest documentation for rpmautospec</a>.</p>
-
-<p>rpmautospec utilizes two RPM macros:
-1. <code>autorel</code> — to populate <code>Release</code>
-2. <code>autochangelog</code> — to figure out changelog</p>
-
+<p>rpmautospec utilizes two RPM macros:</p>
+<ol>
+<li><code>autorel</code> — to populate <code>Release</code></li>
+<li><code>autochangelog</code> — to figure out changelog</li>
+</ol>
 <p>If you want your upstream spec file to also work well when <code>rpmautospec-rpm-macros</code> is not installed, set <code>Release</code> to this:</p>
-
 <pre><code>Release:  %{?autorel}%{!?autorel:1}
-</code></pre>
-
-<p>This construct uses <code>autorel</code> macro if it&rsquo;s defined, and if it&rsquo;s not, it sets release to 1.</p>
-
+</code></pre><p>This construct uses <code>autorel</code> macro if it&rsquo;s defined, and if it&rsquo;s not, it sets release to 1.</p>
 <p>For <code>%changelog</code>, you don&rsquo;t need to include the changelog file upstream and you can have it downstream only, which makes sense - changelog is specific to a release.</p>
 
 
@@ -1007,34 +959,6 @@ the <code>copr_build</code> job:</p>
 
                     
                     
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
                     
 
                     
@@ -1101,548 +1025,6 @@ the <code>copr_build</code> job:</p>
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
             
         

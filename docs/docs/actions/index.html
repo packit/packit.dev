@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="">
 
 
@@ -771,19 +771,14 @@ if (!doNotTrack) {
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#propose-update-command"><code>propose-update</code> command</a></li>
-<li><a href="#creating-srpm">Creating SRPM</a>
-<ul>
-<li><a href="#environment-variables-set-by-packit">Environment variables set by packit</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#propose-update-command"><code>propose-update</code> command</a></li>
+        <li><a href="#creating-srpm">Creating SRPM</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -808,28 +803,19 @@ if (!doNotTrack) {
 
 
 
-
-
 <p>You can probably find yourself in a situation where some part of the packit workflow needs to be
 tweaked for your package.</p>
-
 <p>Packit supports actions, a way to change default implementation for a command
 of your choice.  Packit is able to execute more commands. Each action can
 accept a list of commands. By default, the commands are executed directly and
-not in a shell - if you need shell, just wrap your command like this: <code>bash -c
-&quot;my fancy $command | grep success&quot;</code>.</p>
-
+not in a shell - if you need shell, just wrap your command like this: <code>bash -c &quot;my fancy $command | grep success&quot;</code>.</p>
 <p>All the actions are also executed inside Packit-as-a-Service. The service
 creates a new sandbox environment where the command is ran.</p>
-
 <p>Actions have a default behaviour which you can override, hooks don&rsquo;t have any -
 hooks are a way for you to perform operations after packit does a specific
 event, e.g. clones an upstream repo.</p>
-
 <p>Currently, these are the actions you can use:</p>
-
 <h3 id="propose-update-command"><code>propose-update</code> command</h3>
-
 <table>
 <thead>
 <tr>
@@ -840,7 +826,6 @@ event, e.g. clones an upstream repo.</p>
 <th>description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>[hook]</td>
@@ -849,7 +834,6 @@ event, e.g. clones an upstream repo.</p>
 <td>after cloning of the upstream repo (master) and before other operations</td>
 <td></td>
 </tr>
-
 <tr>
 <td>[hook]</td>
 <td><code>pre-sync</code></td>
@@ -857,7 +841,6 @@ event, e.g. clones an upstream repo.</p>
 <td>after cloning and checkout to the correct (release) branch</td>
 <td></td>
 </tr>
-
 <tr>
 <td></td>
 <td><code>prepare-files</code></td>
@@ -865,7 +848,6 @@ event, e.g. clones an upstream repo.</p>
 <td>after cloning, checking out of both upstream and dist-git repos</td>
 <td>replace patching and archive generation</td>
 </tr>
-
 <tr>
 <td></td>
 <td><code>create-patches</code></td>
@@ -873,7 +855,6 @@ event, e.g. clones an upstream repo.</p>
 <td>after sync of upstream files to the downstream</td>
 <td>replace patching</td>
 </tr>
-
 <tr>
 <td></td>
 <td><code>create-archive</code></td>
@@ -881,7 +862,6 @@ event, e.g. clones an upstream repo.</p>
 <td>when the archive needs to be created</td>
 <td>replace the code for creating an archive</td>
 </tr>
-
 <tr>
 <td></td>
 <td><code>get-current-version</code></td>
@@ -891,11 +871,8 @@ event, e.g. clones an upstream repo.</p>
 </tr>
 </tbody>
 </table>
-
 <h3 id="creating-srpm">Creating SRPM</h3>
-
 <p>These applies to <code>srpm</code> command and building in COPR.</p>
-
 <table>
 <thead>
 <tr>
@@ -906,7 +883,6 @@ event, e.g. clones an upstream repo.</p>
 <th>description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>[hook]</td>
@@ -915,7 +891,6 @@ event, e.g. clones an upstream repo.</p>
 <td>after cloning of the upstream repo (master) and before other operations</td>
 <td></td>
 </tr>
-
 <tr>
 <td></td>
 <td><code>get-current-version</code></td>
@@ -923,7 +898,6 @@ event, e.g. clones an upstream repo.</p>
 <td>when the current version needs to be found</td>
 <td>expect version as a stdout</td>
 </tr>
-
 <tr>
 <td></td>
 <td><code>create-archive</code></td>
@@ -931,7 +905,6 @@ event, e.g. clones an upstream repo.</p>
 <td>when the archive needs to be created</td>
 <td>replace the code for creating an archive</td>
 </tr>
-
 <tr>
 <td></td>
 <td><code>create-patches</code></td>
@@ -939,7 +912,6 @@ event, e.g. clones an upstream repo.</p>
 <td>after sync of upstream files to the downstream</td>
 <td>replace patching</td>
 </tr>
-
 <tr>
 <td></td>
 <td><code>fix-spec-file</code></td>
@@ -949,42 +921,28 @@ event, e.g. clones an upstream repo.</p>
 </tr>
 </tbody>
 </table>
-
 <p><strong>create-archive</strong> - is expected to return the created archive name. If there are more steps, then one of them has to return the archive name.</p>
-
 <p><strong>fix-spec-file</strong> — this action performs these 3 operations on a spec file:</p>
-
 <ol>
 <li>Replaces <code>Source0</code> with a local path to the generated tarball</li>
 <li>Changes first %setup (or %autosetup) macro in %prep and adds <code>-n</code> so the generated tarball can be unpacked</li>
 <li>Changes %version</li>
 </ol>
-
 <p>As an example how to use this, a package may define more Sources - in such a
 case, default implementation of fix-spec-file won&rsquo;t be able to update %prep
 correctly. You can write a simple shell script and use sed to set the new
-Sources correctly, e.g. <code>sed -i packaging/fedora/snapd.spec -e
-&quot;s/https.*only-vendor.tar.xz/$correct_tarball_path/&quot;</code></p>
-
+Sources correctly, e.g. <code>sed -i packaging/fedora/snapd.spec -e &quot;s/https.*only-vendor.tar.xz/$correct_tarball_path/&quot;</code></p>
 <h4 id="environment-variables-set-by-packit">Environment variables set by packit</h4>
-
 <p>Additionally, packit sets a few env vars for specific actions</p>
-
 <p><strong>fix-spec-file</strong></p>
-
 <p><code>PACKIT_PROJECT_VERSION</code> — current version of the project (coming from <code>git describe</code>)
 <code>PACKIT_PROJECT_COMMIT</code> — commit hash of the top commit
 <code>PACKIT_PROJECT_ARCHIVE</code> — expected name of the archive</p>
-
 <p><strong>create-archive</strong></p>
-
 <p><code>PACKIT_PROJECT_VERSION</code> — current version of the project (coming from <code>git describe</code>)
 <code>PACKIT_PROJECT_NAME_VERSION</code> — current name and version of the project (coming from <code>git describe</code>)</p>
-
-<hr />
-
+<hr>
 <p>In your package config they can be defined like this:</p>
-
 <pre><code>specfile_path: package.spec
 synced_files:
   - packit.yaml
@@ -998,7 +956,6 @@ actions:
   - &quot;make archive&quot;
   - &quot;ls&quot;
 </code></pre>
-
 
 <footer class=" footline" >
 	
@@ -1058,11 +1015,12 @@ actions:
 
                     
                     
-                        
-                    
                     
 
                     
+            
+        
+                    
                         
             
             
@@ -1070,19 +1028,6 @@ actions:
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1139,564 +1084,6 @@ actions:
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
             
         
@@ -2084,7 +1471,7 @@ actions:
 			<a class="nav nav-prev" href="/docs/" title="Documentation"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/docs/cli/" title="Packit CLI Commands" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/docs/architecture/" title="Architecture" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

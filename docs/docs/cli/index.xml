@@ -18,8 +18,8 @@
       
       <guid>https://packit.dev/docs/cli/build/</guid>
       <description>Submit a koji build for the selected branch in Fedora dist-git.
-Requirements  Upstream git repository on Github. Packit config file placed in the upstream repository. Valid Fedora Kerberos ticket.  Tutorial  Place a config file for packit in the root of your upstream repository.
- The command below would perform fedpkg build in the Fedora dist-git master branch.
+Requirements  Upstream git repository on Github. Packit config file placed in the upstream repository. Valid Fedora Kerberos ticket.  Tutorial   Place a config file for packit in the root of your upstream repository.
+  The command below would perform fedpkg build in the Fedora dist-git master branch.
 $ cd my/ustream/project/ $ packit build   Help Usage: packit build [OPTIONS] [PATH_OR_URL] Build selected upstream project in Fedora.</description>
     </item>
     
@@ -30,8 +30,8 @@ $ cd my/ustream/project/ $ packit build   Help Usage: packit build [OPTIONS] [PA
       
       <guid>https://packit.dev/docs/cli/create-bodhi-update/</guid>
       <description>Create a new bodhi update for the latest Fedora build of the upstream project.
-Requirements  Upstream git repository on Github. Packit config file placed in the upstream repository. Valid Fedora Kerberos ticket.  Tutorial  Place a config file for packit in the root of your upstream repository..
- Once the builds are done, you can run the create-update command. If you don&amp;rsquo;t specify the koji builds packit takes latest build.</description>
+Requirements  Upstream git repository on Github. Packit config file placed in the upstream repository. Valid Fedora Kerberos ticket.  Tutorial   Place a config file for packit in the root of your upstream repository..
+  Once the builds are done, you can run the create-update command. If you don&amp;rsquo;t specify the koji builds packit takes latest build.</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@ Requirements  Upstream git repository on Github. Upstream release (read, git tag
       <description>Create a SRPM of the present content in the upstream repository.
 By default, packit uses git describe --tags --match &#39;*.*&#39; to create a unique version of the snapshot and git archive -o &amp;quot;{package_name}-{version}.tar.gz&amp;quot; --prefix &amp;quot;{package_name}-{version}/&amp;quot; HEAD to create a tarball with upstream sources.
 You can override the archive and version commands in packit.yaml, e.g. this is what we use in ogr, a library which packit is using:
-create_tarball_command: [&amp;quot;python3&amp;quot;, &amp;quot;setup.</description>
+create_tarball_command: [&amp;quot;python3&amp;quot;, &amp;quot;setup.py&amp;quot;, &amp;quot;sdist&amp;quot;, &amp;quot;--dist-dir&amp;quot;, &amp;quot;.</description>
     </item>
     
     <item>
@@ -73,8 +73,8 @@ Requirements  Fedora dist-git repository. Packit config file placed in the upstr
       
       <guid>https://packit.dev/docs/cli/copr-build/</guid>
       <description>Submit a Copr build of the present content in the upstream repository.
-Requirements  Upstream git repository on Github. Packit config file placed in the upstream repository. ~/.config/copr  Tutorial  Place a config file for packit in the root of your upstream repository.
- The command below would create a SRPM from the present content of a repo and perform copr-cli build with it. If you need to specify a project name/owner or chroots, see the options in help.</description>
+Requirements  Upstream git repository on Github. Packit config file placed in the upstream repository. ~/.config/copr  Tutorial   Place a config file for packit in the root of your upstream repository.
+  The command below would create a SRPM from the present content of a repo and perform copr-cli build with it. If you need to specify a project name/owner or chroots, see the options in help.</description>
     </item>
     
   </channel>

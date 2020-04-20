@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="">
 
 
@@ -771,27 +771,18 @@ if (!doNotTrack) {
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#installation">Installation</a></li>
-<li><a href="#requirements">Requirements</a></li>
-<li><a href="#propose-update"><code>propose-update</code></a>
-<ul>
-<li><a href="#do-we-have-everything">Do we have everything?</a>
-<ul>
-<li><a href="#0-the-upstream-repository-with-a-valid-upstream-release">0. The upstream repository with a valid upstream release.</a></li>
-<li><a href="#1-packit-config-file-placed-in-the-upstream-repository">1. Packit config file placed in the upstream repository.</a></li>
-<li><a href="#2-spec-file-present-in-the-upstream-repository">2. Spec file present in the upstream repository.</a></li>
-<li><a href="#3-pagure-api-tokens-for-fedora-dist-git">3. Pagure API tokens for Fedora Dist-git.</a></li>
-<li><a href="#4-valid-fedora-kerberos-ticket">4. Valid Fedora Kerberos ticket.</a></li>
-</ul></li>
-<li><a href="#time-to-shine">Time to shine</a></li>
-<li><a href="#building-in-koji">Building in koji</a></li>
-</ul></li>
-<li><a href="#conclussion">Conclussion</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#propose-update"><code>propose-update</code></a>
+      <ul>
+        <li><a href="#do-we-have-everything">Do we have everything?</a></li>
+        <li><a href="#time-to-shine">Time to shine</a></li>
+        <li><a href="#building-in-koji">Building in koji</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclussion">Conclussion</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -818,78 +809,55 @@ if (!doNotTrack) {
 
 <p>We would like to announce general availability of the initial version of
 packit, titled &lsquo;0.1.0&rsquo;.</p>
-
 <p>Since this is our first release, we would like to ask you to be patient if you
 encounter any issues. We work hard on packit&rsquo;s usability. If you feel like that
 packit is doing something weird or if anything is unclear, don&rsquo;t hesitate and
 reach out to us by creating <a href="https://github.com/packit-service/packit/issues/new">a new Github
 issue</a>.</p>
-
 <p>The initial release contains two commands:</p>
-
 <ul>
 <li><code>packit propose-update</code> — Opens a pull request in dist-git for the latest
 upstream release of a selected repository.</li>
 <li><code>packit watch-releases</code> — Watches events for all the upstream releases and
 performs <code>propose-update</code> for those who use packit.</li>
 </ul>
-
 <h2 id="installation">Installation</h2>
-
 <pre><code>$ dnf install --enablerepo=updates-testing packit
-</code></pre>
-
-<p>Or</p>
-
+</code></pre><p>Or</p>
 <pre><code>$ pip3 install --user packitos
-</code></pre>
-
-<p>Or (if you&rsquo;re brave)</p>
-
+</code></pre><p>Or (if you&rsquo;re brave)</p>
 <pre><code>$ pip3 install --user git+https://github.com/packit-service/packit
-</code></pre>
-
-<h2 id="requirements">Requirements</h2>
-
+</code></pre><h2 id="requirements">Requirements</h2>
 <p>Present features have strict requirements on the upstream projects:</p>
-
 <ul>
-<li><p>You need to have a packit config file present in the upstream repo.</p></li>
-
-<li><p>You need to have spec file present in the upstream repo.</p></li>
+<li>
+<p>You need to have a packit config file present in the upstream repo.</p>
+</li>
+<li>
+<p>You need to have spec file present in the upstream repo.</p>
+</li>
 </ul>
-
 <p>This workflow is suitable for people who are both upstream and downstream
 maintainers of the particular project. If you don&rsquo;t fit into that bucket, then
 packit might not be ready for you, yet. Please wait till we land more
 <a href="/source-git/">source-git</a>
 related functionality into packit.</p>
-
 <h2 id="propose-update"><code>propose-update</code></h2>
-
 <p>I&rsquo;m going to demonstrate this functionality on
 <a href="https://github.com/packit-service/ogr.git">ogr</a>, our library for git forges,
 which powers packit.</p>
-
 <p>It was recently approved for Fedora, so we can use packit to bring the initial
 version of ogr into Fedora Rawhide, 30 and 29.</p>
-
 <h3 id="do-we-have-everything">Do we have everything?</h3>
-
 <p>Let&rsquo;s see <a href="/docs/cli/propose-update/">guide</a> for
 the <code>propose-update</code> command on what we need:</p>
-
 <h4 id="0-the-upstream-repository-with-a-valid-upstream-release">0. The upstream repository with a valid upstream release.</h4>
-
 <pre><code>$ git remote -v
 origin  git@github.com:TomasTomecek/ogr.git (fetch)
 origin  git@github.com:TomasTomecek/ogr.git (push)
 upstream        https://github.com/packit-service/ogr.git (fetch)
 upstream        https://github.com/packit-service/ogr.git (push)
-</code></pre>
-
-<p>Yup.</p>
-
+</code></pre><p>Yup.</p>
 <pre><code>$ git tag --list
 0.0.1
 0.0.2
@@ -897,40 +865,23 @@ upstream        https://github.com/packit-service/ogr.git (push)
 
 $ git checkout 0.0.3
 Note: checking out '0.0.3'.
-</code></pre>
-
-<p>And the tag name is matching the version in a spec file:</p>
-
+</code></pre><p>And the tag name is matching the version in a spec file:</p>
 <pre><code>$ grep Version python-ogr.spec
 Version:        0.0.3
-</code></pre>
-
-<h4 id="1-packit-config-file-placed-in-the-upstream-repository">1. Packit config file placed in the upstream repository.</h4>
-
+</code></pre><h4 id="1-packit-config-file-placed-in-the-upstream-repository">1. Packit config file placed in the upstream repository.</h4>
 <pre><code>$ ll .packit.yaml
 -rw-rw-r--. 1 tt tt 177 Mar  1 17:44 .packit.yaml
-</code></pre>
-
-<p>Check.</p>
-
+</code></pre><p>Check.</p>
 <h4 id="2-spec-file-present-in-the-upstream-repository">2. Spec file present in the upstream repository.</h4>
-
 <pre><code>$ ll python-ogr.spec
 -rw-rw-r--. 1 tt tt 1.3K Mar  1 17:43 python-ogr.spec
-</code></pre>
-
-<p>:+1:</p>
-
+</code></pre><p>:+1:</p>
 <h4 id="3-pagure-api-tokens-for-fedora-dist-git">3. Pagure API tokens for Fedora Dist-git.</h4>
-
 <pre><code>$ env | grep TOKEN
 PAGURE_USER_TOKEN=will
 PAGURE_FORK_TOKEN=not
 GITHUB_TOKEN=share, sorry
-</code></pre>
-
-<h4 id="4-valid-fedora-kerberos-ticket">4. Valid Fedora Kerberos ticket.</h4>
-
+</code></pre><h4 id="4-valid-fedora-kerberos-ticket">4. Valid Fedora Kerberos ticket.</h4>
 <pre><code>$ kinit ttomecek@FEDORAPROJECT.ORG
 Password for ttomecek@FEDORAPROJECT.ORG:
 
@@ -941,14 +892,9 @@ Default principal: ttomecek@FEDORAPROJECT.ORG
 Valid starting       Expires              Service principal
 03/01/2019 18:12:25  03/02/2019 18:12:19  krbtgt/FEDORAPROJECT.ORG@FEDORAPROJECT.ORG
         renew until 03/08/2019 18:12:19
-</code></pre>
-
-<p>We&rsquo;re all set!</p>
-
+</code></pre><p>We&rsquo;re all set!</p>
 <h3 id="time-to-shine">Time to shine</h3>
-
 <p>We are still in the &ldquo;ogr&rdquo; upstream git repository.</p>
-
 <pre><code>$ packit propose-update
 INFO: Running 'anitya' versioneer
 ERROR: Failed to determine latest upstream version!
@@ -960,21 +906,14 @@ INFO: Downloading file from URL https://files.pythonhosted.org/packages/source/o
 downloaded archive: /tmp/tmp2e65b0xt/ogr-0.0.3.tar.gz
 uploading to the lookaside cache
 PR created: https://src.fedoraproject.org/rpms/python-ogr/pull-request/1
-</code></pre>
-
-<p>Mind-blowing, isn&rsquo;t it? Now we have latest python-ogr in Fedora Rawhide by
+</code></pre><p>Mind-blowing, isn&rsquo;t it? Now we have latest python-ogr in Fedora Rawhide by
 running only a single command.</p>
-
 <p>I have also <a href="https://release-monitoring.org/project/18832/">added</a> ogr into release-monitoring as packit suggests.</p>
-
 <p>Once we are okay with the changes, we have to <a href="https://src.fedoraproject.org/rpms/python-ogr/pull-request/1">merge the pull
 request</a>. That&rsquo;s
 our responsibility, as maintainers.</p>
-
 <h3 id="building-in-koji">Building in koji</h3>
-
 <p>Time to build the package (packit doesn&rsquo;t support building in koji, yet)</p>
-
 <pre><code>$ fedpkg clone python-ogr
 Cloning into 'python-ogr'...
 remote: Counting objects: 8, done.
@@ -1000,11 +939,8 @@ Author: Gwyn Ciesla &lt;limb@fedoraproject.org&gt;
 Date:   Fri Mar 1 15:18:34 2019 +0000
 
     Added the README
-</code></pre>
-
-<p>Yup, that&rsquo;s our commit. <code>more info</code> was added there by accident, this is
+</code></pre><p>Yup, that&rsquo;s our commit. <code>more info</code> was added there by accident, this is
 already fixed in packit.</p>
-
 <pre><code>$ fedpkg build
 Building python-ogr-0.0.3-1.fc31 for rawhide
 Created task: 33125435
@@ -1021,12 +957,8 @@ Watching tasks (this may be safely interrupted)...
   0 free  0 open  4 done  0 failed
 
 33125435 build (rawhide, /rpms/python-ogr.git:c298df5e540ba1d010366e102c1c75d4f5b0b0cc) completed successfully
-</code></pre>
-
-<p>That was rough, can&rsquo;t wait to do this with packit.</p>
-
+</code></pre><p>That was rough, can&rsquo;t wait to do this with packit.</p>
 <p>Let&rsquo;s do Fedora 30 now:</p>
-
 <pre><code>$ packit propose-update --dist-git-branch f30
 INFO: Running 'anitya' versioneer
 using &quot;f30&quot; dist-git branch
@@ -1036,14 +968,9 @@ INFO: Downloading file from URL https://files.pythonhosted.org/packages/source/o
 downloaded archive: /tmp/tmpl5xxq22x/ogr-0.0.3.tar.gz
 uploading to the lookaside cache
 PR created: https://src.fedoraproject.org/rpms/python-ogr/pull-request/3
-</code></pre>
-
-<p>And so on&hellip;</p>
-
+</code></pre><p>And so on&hellip;</p>
 <h2 id="conclussion">Conclussion</h2>
-
 <p>As you can see, packit is useful for us right away.</p>
-
 <p>We&rsquo;ll be delighted if you try it out and let us know what you think.</p>
 
 <footer class=" footline" >
@@ -1105,34 +1032,6 @@ PR created: https://src.fedoraproject.org/rpms/python-ogr/pull-request/3
 
                     
                     
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
                     
 
                     
@@ -1199,548 +1098,6 @@ PR created: https://src.fedoraproject.org/rpms/python-ogr/pull-request/3
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
             
         

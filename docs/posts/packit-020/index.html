@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="">
 
 
@@ -771,13 +771,10 @@ if (!doNotTrack) {
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#installation">Installation</a></li>
-<li><a href="#how-are-we-using-packit">How are we using packit?</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#how-are-we-using-packit">How are we using packit?</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -805,28 +802,24 @@ if (!doNotTrack) {
 <p>Our sprint nears an end which means we have released <a href="https://github.com/packit-service/packit/releases/tag/0.2.0">a new version of packit -
 0.2.0</a>! You can
 expect a new release after every sprint (i.e. every 2 weeks).</p>
-
 <p>The 0.2.0 version has a bunch of new features and improvements: you can find
 a complete list <a href="https://github.com/packit-service/packit/blob/master/CHANGELOG.md#020">in the
 changelog</a>.
 We also have a <a href="https://github.com/packit-service/packit#workflows-covered-by-packit">detailed
 documentation</a>
 for all the workflows packit covers.</p>
-
 <p>Let&rsquo;s get through what&rsquo;s new:</p>
-
 <ol>
 <li>We have decided to rename two keys in our config file so they are more
 descriptive. Old names still work but they are deprecated:
-
 <ul>
 <li><code>package_name</code> → <code>downstream_package_name</code></li>
 <li><code>upstream_name</code> → <code>upstream_project_name</code></li>
-</ul></li>
+</ul>
+</li>
 <li>You don&rsquo;t need to touch dist-git at all when getting your new upstream
 release into Fedora, you can stay in your upstream repository and just fire
 off a bunch of packit calls:
-
 <ul>
 <li><code>packit propose-update</code> to create a pull request in Fedora dist-git with
 the selected upstream release</li>
@@ -834,48 +827,35 @@ the selected upstream release</li>
 merged</li>
 <li>and finally, <code>packit create-update</code> creates a new bodhi update (if you
 chose a stable Fedora release)</li>
-</ul></li>
+</ul>
+</li>
 <li>Packit now has a <code>srpm</code> command which creates an SRPM out of the local
 content of your upstream repository.</li>
 <li>You can now use packit to sync files from your dist-git repo back into
 upstream (mainly to keep spec files in sync). <code>sync-from-downstream</code> is the
 command.</li>
 <li>Command <code>propose-update</code> received numerous improvements:
-
 <ul>
 <li>You can pick upstream version to use.</li>
 <li>Packit will NOT check out the git ref with the upstream release if you
 specify <code>--local-content</code></li>
 <li>It&rsquo;s possible to force packit to execute <code>fedpkg new-sources</code> using
 <code>--force-new-sources</code> and bypass the caching mechanism.</li>
-</ul></li>
+</ul>
+</li>
 </ol>
-
 <h2 id="installation">Installation</h2>
-
 <p>Please make sure you are installing <code>0.2.0</code>:</p>
-
 <pre><code>$ dnf install --enablerepo=updates-testing packit
-</code></pre>
-
-<p>Or</p>
-
+</code></pre><p>Or</p>
 <pre><code>$ pip3 install --user packitos
-</code></pre>
-
-<p>You can also install packit from master branch, if you are brave enough:</p>
-
+</code></pre><p>You can also install packit from master branch, if you are brave enough:</p>
 <pre><code>$ pip3 install --user git+https://github.com/packit-service/packit
-</code></pre>
-
-<h2 id="how-are-we-using-packit">How are we using packit?</h2>
-
+</code></pre><h2 id="how-are-we-using-packit">How are we using packit?</h2>
 <p>I&rsquo;d like to show you how we used packit to bring a new upstream
 release of ogr into Fedora, a library which packit is using.</p>
-
 <p>Once we have performed an upstream release of ogr, we can propose an update in
 dist-git:</p>
-
 <pre><code>$ git clone https://github.com/packit-service/ogr &amp;&amp; cd ogr/
 
 $ packit propose-update
@@ -894,12 +874,9 @@ Upstream commit: 059d21080a7849acff4626b6e0ec61830d537ac4
 
   stdout: 'On branch 0.0.3-master-update
 nothing to commit, working tree clean'
-</code></pre>
-
-<p>Whoops, it seems that I have messed up, I forgot to bump the spec file in the
+</code></pre><p>Whoops, it seems that I have messed up, I forgot to bump the spec file in the
 upstream repo when doing the release. I will bump it locally and utilize
 <code>--local-content</code> argument:</p>
-
 <pre><code>$ rpmdev-bumpspec -n 0.1.0 -c 'New upstream release: 0.1.0' *.spec
 
 $ packit propose-update --local-content
@@ -917,22 +894,15 @@ Downloaded archive: '/tmp/tmpd9j4se27/ogr-0.1.0.tar.gz'
 About to upload to lookaside cache
 won't be doing kinit, no credentials provided
 PR created: https://src.fedoraproject.org/rpms/python-ogr/pull-request/6
-</code></pre>
-
-<p>Once the scratch build is done and tests passed we merged and built it:</p>
-
+</code></pre><p>Once the scratch build is done and tests passed we merged and built it:</p>
 <pre><code>$ packit build
 Using 'master' dist-git branch
 Cloning repo: https://src.fedoraproject.org/rpms/python-ogr.git -&gt; /tmp/tmprp3cmdjy
 Building python-ogr-0.1.0-1.fc31 for rawhide
 Created task: 33616980
 Task info: https://koji.fedoraproject.org/koji/taskinfo?taskID=33616980
-</code></pre>
-
-<p>We have done the same for F30 and F29.</p>
-
+</code></pre><p>We have done the same for F30 and F29.</p>
 <p>The previous commands were ran in the directory of the upstream repository. Packit also accepts path to your upstream clone, or even URL. So let&rsquo;s create a bodhi update for python-ogr by specifying the upstream repo URL:</p>
-
 <pre><code>$ cd $HOME
 
 $ packit create-update --dist-git-branch f29 https://github.com/packit-service/ogr
@@ -946,10 +916,7 @@ Bodhi update FEDORA-2019-78948e62d2:
 - unstable_karma: -3
 - notes:
 New upstream release: 0.1.0
-</code></pre>
-
-<p>And that&rsquo;s it, no need to access dist-git any more.</p>
-
+</code></pre><p>And that&rsquo;s it, no need to access dist-git any more.</p>
 <p>Please give packit a try and let us know what you think.</p>
 
 <footer class=" footline" >
@@ -1011,34 +978,6 @@ New upstream release: 0.1.0
 
                     
                     
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
                     
 
                     
@@ -1105,548 +1044,6 @@ New upstream release: 0.1.0
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
             
         
