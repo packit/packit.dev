@@ -208,7 +208,7 @@ jobs:
 - job: propose_downstream
   trigger: release
   metadata:
-    dist-git-branch: fedora-all
+    dist_git_branches: fedora-all
 ```
 
 If you do not want to use the jobs then the `jobs` section in the configuration file should be empty:
@@ -247,7 +247,7 @@ Supported triggers:
 
 Required metadata:
 
-* **targets** - a list of mock chroots where to build (if you navigate to
+* **targets** - a (list of) mock chroot(s) where to build (if you navigate to
   settings of your COPR project, you'll be able able to see the list of
   available values, alternatively you can install package `copr-cli` in Fedora and
   see the list via `copr-cli list-chroots`. You can use `fedora-development`,
@@ -307,7 +307,7 @@ Supported triggers: **release**.
 
 Optional metadata:
 
-* **dist-git-branch** - a branch in dist-git where packit should work (defaults to `master`).
+* **dist-git-branches** - a (list of) branch(es) in dist-git where packit should work (defaults to `master`).
   You can also use `fedora-development`, `fedora-stable` and `fedora-all` aliases
   to not need to change the config file when the new system version is released.
 
@@ -320,10 +320,10 @@ jobs:
 - job: propose_downstream
   trigger: release
   metadata:
-    dist-git-branch: f30
+    dist_git_branches: f32
 ```
 
-This config would update Fedora Rawhide and Fedora 30 dist-git branches.
+This config would update Fedora Rawhide and Fedora 32 dist-git branches.
 
 
 **tests**
