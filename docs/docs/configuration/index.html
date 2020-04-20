@@ -953,7 +953,7 @@ clear definition of what it should do.</p>
 - job: propose_downstream
   trigger: release
   metadata:
-    dist-git-branch: fedora-all
+    dist_git_branches: fedora-all
 </code></pre><p>If you do not want to use the jobs then the <code>jobs</code> section in the configuration file should be empty:</p>
 <pre><code>jobs: []
 
@@ -979,7 +979,7 @@ clear definition of what it should do.</p>
 </ul>
 <p>Required metadata:</p>
 <ul>
-<li><strong>targets</strong> - a list of mock chroots where to build (if you navigate to
+<li><strong>targets</strong> - a (list of) mock chroot(s) where to build (if you navigate to
 settings of your COPR project, you&rsquo;ll be able able to see the list of
 available values, alternatively you can install package <code>copr-cli</code> in Fedora and
 see the list via <code>copr-cli list-chroots</code>. You can use <code>fedora-development</code>,
@@ -1022,7 +1022,7 @@ whether a pull request is created or changes are pushed directly.</p>
 <p>Supported triggers: <strong>release</strong>.</p>
 <p>Optional metadata:</p>
 <ul>
-<li><strong>dist-git-branch</strong> - a branch in dist-git where packit should work (defaults to <code>master</code>).
+<li><strong>dist-git-branches</strong> - a (list of) branch(es) in dist-git where packit should work (defaults to <code>master</code>).
 You can also use <code>fedora-development</code>, <code>fedora-stable</code> and <code>fedora-all</code> aliases
 to not need to change the config file when the new system version is released.</li>
 </ul>
@@ -1033,8 +1033,8 @@ to not need to change the config file when the new system version is released.</
 - job: propose_downstream
   trigger: release
   metadata:
-    dist-git-branch: f30
-</code></pre><p>This config would update Fedora Rawhide and Fedora 30 dist-git branches.</p>
+    dist_git_branches: f32
+</code></pre><p>This config would update Fedora Rawhide and Fedora 32 dist-git branches.</p>
 <p><strong>tests</strong></p>
 <p>See more about tests <a href="http://packit.dev/testing-farm/">here</a>.</p>
 <h2 id="user-configuration-file">User configuration file</h2>
