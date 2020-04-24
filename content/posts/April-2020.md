@@ -59,3 +59,23 @@ draft: false
 [#797]: https://github.com/packit-service/packit/pull/797
 [#788]: https://github.com/packit-service/packit/pull/788
 [#564]: https://github.com/packit-service/packit-service/pull/564
+
+## Week 17 (April 20th - April 24th)
+
+### packit-service
+
+In this week we mostly focused on CentOS Stream and
+some under the hood improvements,
+none of which are available for Github projects.
+
+* [Jano] did a lot of work on [initial CentOS Stream integration].
+* [Hunor] added a Pagure build status reporting.
+* [Anchit] added first API tests and improved build statuses given by the API.
+* [Laura] and [Rishav] improved how data about Copr builds are stored in our db.
+
+[Anchit]: https://github.com/IceWreck
+[Hunor]: https://github.com/csomh
+[Jano]: https://github.com/sakalosj
+[Laura]: https://github.com/lbarcziova
+[Rishav]: https://github.com/rishavanand
+[initial CentOS Stream integration]: https://github.com/packit-service/packit-service/pull/515
