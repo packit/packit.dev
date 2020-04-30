@@ -79,3 +79,15 @@ none of which are available for Github projects.
 [Laura]: https://github.com/lbarcziova
 [Rishav]: https://github.com/rishavanand
 [initial CentOS Stream integration]: https://github.com/packit-service/packit-service/pull/515
+
+## Week 18 (April 27th - April 30th)
+
+### packit-service
+
+* [Franta] did a great deal of service & worker refactoring related to CentOS ([#586])
+  and to forks usage in Github. ([#589])
+* [Hunor] fixed confusing Github status messages while building in Copr. ([#588])
+
+[#586]: https://github.com/packit-service/packit-service/pull/586
+[#588]: https://github.com/packit-service/packit-service/pull/588
+[#589]: https://github.com/packit-service/packit-service/pull/589
