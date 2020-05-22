@@ -302,8 +302,8 @@ Required metadata:
 Optional metadata:
 
 * **targets** -- a (list of) targets we want to build for,
-  list of supported targets can be listed using with `koji list-targets`.
-* **scratch* -- defaults to `false`, use to create scratch (test) builds
+  list of supported targets can be listed using with `koji list-targets`
+* **scratch** -- defaults to `false`, use to create scratch (test) builds
   instead of the real production builds
 
 **sync\_from\_downstream**
