@@ -243,6 +243,7 @@ Create a SRPM and submit an RPM build to [Fedora COPR](https://copr.fedorainfrac
 Supported triggers:
 
 * **pull_request** -- check out content of the pull request
+* **commit** -- reacts to new commits to the specified branch
 * **release** -- check out content of the tag associated with the release
 
 Required metadata:
@@ -253,6 +254,7 @@ Required metadata:
   see the list via `copr-cli list-chroots`. You can use `fedora-development`,
   `fedora-stable` and `fedora-all` aliases as a target. By default, the `x86_64` architecture
   will be used, but you can use e.g. `fedora-stable-aarch64` if you need.
+* **branch** - the name of the branch we want to build for when using **commit** trigger
 
 Optional metadata:
 
@@ -281,6 +283,28 @@ jobs:
 With this configuration, you'll get builds in all stable fedora releases
 (excluding rawhide) and the CentOS stream.
 
+
+**production\_build** (in preview, no reporting yet)
+
+Create a SRPM and submit an RPM build
+to [Fedora Koji](https://koji.fedoraproject.org/koji/) build system.
+
+Supported triggers:
+
+* **pull_request** -- check out content of the pull request
+* **commit** -- reacts to new commits to the specified branch
+* **release** -- check out content of the tag associated with the release
+
+Required metadata:
+
+* **branch** -- the name of the branch we want to build for when using **commit** trigger
+
+Optional metadata:
+
+* **targets** -- a (list of) targets we want to build for,
+  list of supported targets can be listed using with `koji list-targets`
+* **scratch** -- defaults to `false`, use to create scratch (test) builds
+  instead of the real production builds
 
 **sync\_from\_downstream**
 
