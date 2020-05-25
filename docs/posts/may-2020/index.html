@@ -791,10 +791,16 @@ if (!doNotTrack) {
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#week-19-may-4th---may-6th">Week 19 (May 4th - May 6th)</a>
+    <li><a href="#week-2021-may-11th---may-22th">Week 20+21 (May 11th - May 22th)</a>
       <ul>
         <li><a href="#packit">packit</a></li>
         <li><a href="#packit-service">packit-service</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-19-may-4th---may-6th">Week 19 (May 4th - May 6th)</a>
+      <ul>
+        <li><a href="#packit-1">packit</a></li>
+        <li><a href="#packit-service-1">packit-service</a></li>
       </ul>
     </li>
   </ul>
@@ -822,12 +828,23 @@ if (!doNotTrack) {
 
 
 
-<h2 id="week-19-may-4th---may-6th">Week 19 (May 4th - May 6th)</h2>
+<h2 id="week-2021-may-11th---may-22th">Week 20+21 (May 11th - May 22th)</h2>
 <h3 id="packit">packit</h3>
+<ul>
+<li>The debug logs in the CLI are now much more consistent. (<a href="https://github.com/packit-service/packit/pull/824">#824</a>)</li>
+<li>A bug in the <code>propose-update</code> causing problems with the synchronization of the spec-file content was fixed. (<a href="https://github.com/packit-service/packit/pull/830">#830</a>)</li>
+<li>You can now use <code>epel-all</code> alias in the arguments and also in the configuration. (<a href="https://github.com/packit-service/packit/pull/835">#835</a>)</li>
+</ul>
+<h3 id="packit-service">packit-service</h3>
+<ul>
+<li>In job definition for packit-service you can use <code>epel-all</code> alias as well. (<a href="https://github.com/packit-service/packit/pull/835">#835</a>)</li>
+</ul>
+<h2 id="week-19-may-4th---may-6th">Week 19 (May 4th - May 6th)</h2>
+<h3 id="packit-1">packit</h3>
 <ul>
 <li>The image now uses ogr from git master instead of from Fedora stable RPM.</li>
 </ul>
-<h3 id="packit-service">packit-service</h3>
+<h3 id="packit-service-1">packit-service</h3>
 <ul>
 <li><a href="https://github.com/lachmanfrantisek">Franta</a> Fixed a previous week introduced bug, which prevented users from being whitelisted. (<a href="https://github.com/packit-service/packit-service/pull/599">#599</a>)</li>
 <li><a href="https://github.com/csomh">Hunor</a> Made improvements to avoid a race condition in getting app access token. (<a href="https://github.com/packit-service/packit-service/pull/601">#601</a>)</li>
