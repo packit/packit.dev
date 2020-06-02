@@ -791,16 +791,22 @@ if (!doNotTrack) {
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#week-2021-may-11th---may-22th">Week 20+21 (May 11th - May 22th)</a>
+    <li><a href="#week-19-may-4th---may-6th">Week 19 (May 4th - May 6th)</a>
       <ul>
         <li><a href="#packit">packit</a></li>
         <li><a href="#packit-service">packit-service</a></li>
       </ul>
     </li>
-    <li><a href="#week-19-may-4th---may-6th">Week 19 (May 4th - May 6th)</a>
+    <li><a href="#week-2021-may-11th---may-22th">Week 20+21 (May 11th - May 22th)</a>
       <ul>
         <li><a href="#packit-1">packit</a></li>
         <li><a href="#packit-service-1">packit-service</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-22-may-25th---may-29th">Week 22 (May 25th - May 29th)</a>
+      <ul>
+        <li><a href="#packit-2">packit</a></li>
+        <li><a href="#packit-service-2">packit-service</a></li>
       </ul>
     </li>
   </ul>
@@ -828,26 +834,44 @@ if (!doNotTrack) {
 
 
 
-<h2 id="week-2021-may-11th---may-22th">Week 20+21 (May 11th - May 22th)</h2>
+<h2 id="week-19-may-4th---may-6th">Week 19 (May 4th - May 6th)</h2>
 <h3 id="packit">packit</h3>
+<ul>
+<li>The image now uses ogr from git master instead of from Fedora stable RPM.</li>
+</ul>
+<h3 id="packit-service">packit-service</h3>
+<ul>
+<li><a href="https://github.com/lachmanfrantisek">Franta</a> Fixed a previous week introduced bug, which prevented users from being whitelisted. (<a href="https://github.com/packit-service/packit-service/pull/599">#599</a>)</li>
+<li><a href="https://github.com/csomh">Hunor</a> Made improvements to avoid a race condition in getting app access token. (<a href="https://github.com/packit-service/packit-service/pull/601">#601</a>)</li>
+</ul>
+<h2 id="week-2021-may-11th---may-22th">Week 20+21 (May 11th - May 22th)</h2>
+<h3 id="packit-1">packit</h3>
 <ul>
 <li>The debug logs in the CLI are now much more consistent. (<a href="https://github.com/packit-service/packit/pull/824">#824</a>)</li>
 <li>A bug in the <code>propose-update</code> causing problems with the synchronization of the spec-file content was fixed. (<a href="https://github.com/packit-service/packit/pull/830">#830</a>)</li>
 <li>You can now use <code>epel-all</code> alias in the arguments and also in the configuration. (<a href="https://github.com/packit-service/packit/pull/835">#835</a>)</li>
 </ul>
-<h3 id="packit-service">packit-service</h3>
+<h3 id="packit-service-1">packit-service</h3>
 <ul>
 <li>In job definition for packit-service you can use <code>epel-all</code> alias as well. (<a href="https://github.com/packit-service/packit/pull/835">#835</a>)</li>
 </ul>
-<h2 id="week-19-may-4th---may-6th">Week 19 (May 4th - May 6th)</h2>
-<h3 id="packit-1">packit</h3>
+<h2 id="week-22-may-25th---may-29th">Week 22 (May 25th - May 29th)</h2>
+<h3 id="packit-2">packit</h3>
 <ul>
-<li>The image now uses ogr from git master instead of from Fedora stable RPM.</li>
+<li><a href="https://github.com/packit-service/packit/issues/837">The problem with kerberos initialization</a>
+was fixed. (<a href="https://github.com/packit-service/packit/pull/838">#838</a>)</li>
+<li>We released a new version of the packit package. (<a href="https://github.com/packit-service/packit/releases/tag/0.11.0">release 0.11.0</a>)</li>
+<li>We have been also working on some smaller issues and preparation steps for our future work.
+(<a href="https://github.com/packit-service/packit/pull/841">#841</a>, <a href="https://github.com/packit-service/packit/pull/843">#843</a>, <a href="https://github.com/packit-service/packit/pull/846">#846</a>, <a href="https://github.com/packit-service/packit/pull/847">#847</a>)</li>
 </ul>
-<h3 id="packit-service-1">packit-service</h3>
+<h3 id="packit-service-2">packit-service</h3>
 <ul>
-<li><a href="https://github.com/lachmanfrantisek">Franta</a> Fixed a previous week introduced bug, which prevented users from being whitelisted. (<a href="https://github.com/packit-service/packit-service/pull/599">#599</a>)</li>
-<li><a href="https://github.com/csomh">Hunor</a> Made improvements to avoid a race condition in getting app access token. (<a href="https://github.com/packit-service/packit-service/pull/601">#601</a>)</li>
+<li><a href="https://github.com/jpopelka">Jirka</a> implemented creating a new bug in Bugzilla for CentOS Stream pull-requests (<a href="https://github.com/packit-service/packit-service/pull/627">#627</a>).
+This will be triggered when the label &ldquo;accepted&rdquo; is added to a PR in the (near) future.</li>
+<li>You will be able to use aliases also for koji builds. (<a href="https://github.com/packit-service/packit/pull/839">packit:#839</a>, <a href="https://github.com/packit-service/packit-service/pull/632">#632</a>)</li>
+<li><a href="https://github.com/lbarcziova">Laura</a> fixed <a href="https://github.com/packit-service/packit-service/issues/535">a problem</a>
+with missing builds when triggering Packit Service with <code>/packit test</code>.
+Now, we trigger the build first if there are no builds for the pull-request yet. (<a href="https://github.com/packit-service/packit-service/pull/631">#631</a>)</li>
 </ul>
 
 
