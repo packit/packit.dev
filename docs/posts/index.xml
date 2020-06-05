@@ -78,6 +78,16 @@ improvements of version
     </item>
     
     <item>
+      <title>June 2020</title>
+      <link>https://packit.dev/posts/june-2020/</link>
+      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/june-2020/</guid>
+      <description>Week 23 (June 1st - June 5th) Hello everyone, during this week we didn&amp;rsquo;t manage to implement any significant new features - most of the work happened under the hood.
+packit  We have fixed a formatting issue when packit prints installation instructions for using builds from a copr repo (by @lachmanfrantisek, #852. You are able to set up builds when you push to a branch, we have set this up for master branch of packit, feel free to get inspired (by @lachmanfrantisek, #851.</description>
+    </item>
+    
+    <item>
       <title>May 2020</title>
       <link>https://packit.dev/posts/may-2020/</link>
       <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
