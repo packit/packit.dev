@@ -23,7 +23,7 @@ if (!doNotTrack) {
 }
 </script>
 
-    <title>srpm :: Packit</title>
+    <title>June 2020 :: Packit</title>
 
     
     <link href="/css/nucleus.css" rel="stylesheet">
@@ -53,7 +53,7 @@ if (!doNotTrack) {
     </style>
     
   </head>
-  <body class="" data-url="/docs/cli/srpm/">
+  <body class="" data-url="/posts/june-2020/">
     <nav id="sidebar" class="">
 
 
@@ -216,7 +216,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/docs/cli/" title="Packit CLI Commands" class="dd-item 
-        parent
+        
         
         
         ">
@@ -297,7 +297,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/docs/cli/srpm/" title="srpm" class="dd-item active">
+      <li data-nav-id="/docs/cli/srpm/" title="srpm" class="dd-item ">
         <a href="/docs/cli/srpm/">
         srpm
         
@@ -393,7 +393,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/posts/" title="Blog Posts" class="dd-item 
-        
+        parent
         
         
         ">
@@ -493,7 +493,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/posts/june-2020/" title="June 2020" class="dd-item ">
+      <li data-nav-id="/posts/june-2020/" title="June 2020" class="dd-item active">
         <a href="/posts/june-2020/">
         June 2020
         
@@ -795,13 +795,7 @@ if (!doNotTrack) {
             
           
           
-            
-            
-          
-          
-            <a href='/'>About</a> > <a href='/docs/'>Documentation</a> > <a href='/docs/cli/'>Packit CLI Commands</a> > srpm
-          
-         
+            <a href='/'>About</a> > <a href='/posts/'>Blog Posts</a> > June 2020
           
          
           
@@ -816,9 +810,12 @@ if (!doNotTrack) {
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#requirements">Requirements</a></li>
-    <li><a href="#tutorial">Tutorial</a></li>
-    <li><a href="#help">Help</a></li>
+    <li><a href="#week-23-june-1st---june-5th">Week 23 (June 1st - June 5th)</a>
+      <ul>
+        <li><a href="#packit">packit</a></li>
+        <li><a href="#packit-as-a-service">packit-as-a-service</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -836,7 +833,7 @@ if (!doNotTrack) {
           
             <h1>
               
-              srpm
+              June 2020
             </h1>
           
 
@@ -844,96 +841,16 @@ if (!doNotTrack) {
 
 
 
-<p>Create a SRPM of the present content in the upstream repository.</p>
-<p>By default, packit uses <code>git describe --tags --match '*.*'</code> to create a unique
-version of the snapshot and <code>git archive -o &quot;{package_name}-{version}.tar.gz&quot; --prefix &quot;{package_name}-{version}/&quot; HEAD</code> to create a tarball with upstream
-sources.</p>
-<p>You can override the archive and version commands in <a href="/docs/configuration/">packit.yaml</a>, e.g. this is
-what we use in <a href="https://github.com/packit-service/ogr/blob/master/.packit.yaml">ogr</a>, a library which packit is using:</p>
-<pre><code>create_tarball_command: [&quot;python3&quot;, &quot;setup.py&quot;, &quot;sdist&quot;, &quot;--dist-dir&quot;, &quot;.&quot;]
-current_version_command: [&quot;python3&quot;, &quot;setup.py&quot;, &quot;--version&quot;]
-</code></pre><h2 id="requirements">Requirements</h2>
+<h2 id="week-23-june-1st---june-5th">Week 23 (June 1st - June 5th)</h2>
+<p>Hello everyone, during this week we didn&rsquo;t manage to implement any significant new features - most of the work happened under the hood.</p>
+<h3 id="packit">packit</h3>
 <ul>
-<li>Upstream project is using git.</li>
-<li>Packit config file placed in the upstream repository.</li>
+<li>We have fixed a formatting issue when packit prints installation instructions for using builds from a copr repo (by <a href="https://github.com/lachmanfrantisek">@lachmanfrantisek</a>, <a href="https://github.com/packit-service/packit/pulls/852">#852</a>.</li>
+<li>You are able to set up builds when you push to a branch, we have set this up for master branch of packit, feel free to get inspired (by <a href="https://github.com/lachmanfrantisek">@lachmanfrantisek</a>, <a href="https://github.com/packit-service/packit/pulls/851">#851</a>.</li>
 </ul>
-<h2 id="tutorial">Tutorial</h2>
-<ol>
-<li>
-<p><a href="/docs/configuration/">Place a config file for packit in the root of your upstream repository.</a>.</p>
-</li>
-<li>
-<p>Now we would generate a SRPM for ogr project:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ packit srpm
-Version in spec file is <span style="color:#e6db74">&#34;0.0.3&#34;</span>.
-SRPM: /home/tt/g/user-cont/ogr/python-ogr-0.0.4.dev11+gc9956c9.d20190318-1.fc29.src.rpm
-</code></pre></div><p>We can now build the package:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rpmbuild --rebuild /home/tt/g/user-cont/ogr/python-ogr-0.0.4.dev11+gc9956c9.d20190318-1.fc29.src.rpm
-Installing /home/tt/g/user-cont/ogr/python-ogr-0.0.4.dev11+gc9956c9.d20190318-1.fc29.src.rpm
-Executing<span style="color:#f92672">(</span>%prep<span style="color:#f92672">)</span>: /bin/sh -e /var/tmp/rpm-tmp.95VZ3c
-+ umask <span style="color:#ae81ff">022</span>
-+ cd /home/tt/rpmbuild/BUILD
-+ cd /home/tt/rpmbuild/BUILD
-+ rm -rf ogr-0.0.4.dev11+gc9956c9.d20190318
-+ /usr/bin/gzip -dc /home/tt/rpmbuild/SOURCES/ogr-0.0.4.dev11+gc9956c9.d20190318.tar.gz
-+ /usr/bin/tar -xof -
-+ STATUS<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-...
-Executing<span style="color:#f92672">(</span>%build<span style="color:#f92672">)</span>: /bin/sh -e /var/tmp/rpm-tmp.aYyTMP
-...
-Executing<span style="color:#f92672">(</span>%install<span style="color:#f92672">)</span>: /bin/sh -e /var/tmp/rpm-tmp.fotlPv
-...
-+ exit <span style="color:#ae81ff">0</span>
-Provides: python3-ogr <span style="color:#f92672">=</span> 0.0.4.dev11+gc9956c9.d20190318-1.fc29 python3.7dist<span style="color:#f92672">(</span>ogr<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> 0.0.4.dev11+gc9956c9.d20190318 python3dist<span style="color:#f92672">(</span>ogr<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> 0.0.4.dev11+gc9956c9.d20190318
-Requires<span style="color:#f92672">(</span>rpmlib<span style="color:#f92672">)</span>: rpmlib<span style="color:#f92672">(</span>CompressedFileNames<span style="color:#f92672">)</span> &lt;<span style="color:#f92672">=</span> 3.0.4-1 rpmlib<span style="color:#f92672">(</span>FileDigests<span style="color:#f92672">)</span> &lt;<span style="color:#f92672">=</span> 4.6.0-1 rpmlib<span style="color:#f92672">(</span>PartialHardlinkSets<span style="color:#f92672">)</span> &lt;<span style="color:#f92672">=</span> 4.0.4-1 rpmlib<span style="color:#f92672">(</span>PayloadFilesHavePrefix<span style="color:#f92672">)</span> &lt;<span style="color:#f92672">=</span> 4.0-1
-Requires: python<span style="color:#f92672">(</span>abi<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> 3.7 python3.7dist<span style="color:#f92672">(</span>gitpython<span style="color:#f92672">)</span> python3.7dist<span style="color:#f92672">(</span>libpagure<span style="color:#f92672">)</span> python3.7dist<span style="color:#f92672">(</span>pygithub<span style="color:#f92672">)</span> python3.7dist<span style="color:#f92672">(</span>python-gitlab<span style="color:#f92672">)</span>
-Checking <span style="color:#66d9ef">for</span> unpackaged file<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>: /usr/lib/rpm/check-files /home/tt/rpmbuild/BUILDROOT/python-ogr-0.0.4.dev11+gc9956c9.d20190318-1.fc29.x86_64
-Wrote: /home/tt/rpmbuild/RPMS/noarch/python3-ogr-0.0.4.dev11+gc9956c9.d20190318-1.fc29.noarch.rpm
-+ exit <span style="color:#ae81ff">0</span>
-</code></pre></div></li>
-</ol>
-<h2 id="help">Help</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Usage: packit srpm <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>PATH_OR_URL<span style="color:#f92672">]</span>
-
-  Create new SRPM <span style="color:#f92672">(</span>.src.rpm file<span style="color:#f92672">)</span> using content of the upstream repository.
-
-  PATH_OR_URL argument is a local path or a URL to the upstream git
-  repository, it defaults to the current working directory
-
-Options:
-  --output FILE        Write the SRPM to FILE instead of current dir.
-  --remote TEXT        Name of the remote to discover upstream project URL, If
-                       this is not specified, default to origin.
-  --upstream-ref TEXT  Git ref of the last upstream commit in the current
-                       branch from which packit should generate patches <span style="color:#f92672">(</span>this
-                       option implies the repository is source-git<span style="color:#f92672">)</span>.
-  -h, --help           Show this message and exit.
-</code></pre></div><p>As you can see, it is possible to create SRPM for <a href="/source-git/">source-git</a> repositories as well.
-Just add an <code>--upstream-ref</code> option to the packit command.</p>
-<p>If you have a git tag <code>0.1.0</code> specifying the upstream code,
-just run <code>packit srpm --upstream-ref 0.1.0</code> to create an SRPM file.
-It will create an archive from the given upstream reference (<code>0.1.0</code>)
-and following commits will be added as downstream patches.</p>
-<p>Just make sure, that you apply all the patches in the specfile.
-(Packit only adds the patches after the sources.)
-You can use a following setup:</p>
+<h3 id="packit-as-a-service">packit-as-a-service</h3>
 <ul>
-<li>
-<p>Define the macro on top of the specfile:</p>
-<pre><code>%global num_patches %{lua: c=0; for i,p in ipairs(patches) do c=c+1; end; print(c);}
-</code></pre></li>
-<li>
-<p>Apply the patches in the <code>%prep</code> part:</p>
-<pre><code>%if %{num_patches}
-git init
-git config user.email &quot;noreply@example.com&quot;
-git config user.name &quot;John Foo&quot;
-git add .
-git commit -a -q -m &quot;%{version} baseline.&quot;
-# Apply all the patches.
-git am %{patches}
-%endif
-</code></pre></li>
+<li>We have run into multiple problems when you set up jobs for PRs and branch pushes - there were multiple fixes for this, packit-service wasn&rsquo;t able to work well with the fact that there are multiple jobs defined for the same job type - e.g. build.</li>
 </ul>
 
 
@@ -973,6 +890,8 @@ git am %{patches}
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -988,9 +907,6 @@ git am %{patches}
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1047,145 +963,6 @@ git am %{patches}
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
             
         
@@ -1303,6 +1080,145 @@ git am %{patches}
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1487,10 +1403,10 @@ git am %{patches}
 	 
 	 
 		
-			<a class="nav nav-prev" href="/docs/cli/propose-update/" title="propose-update"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/posts/packit-041/" title="Packit 0.4.0 &amp; 0.4.1"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/docs/cli/sync-from-downstream/" title="sync-from-downstream" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/posts/may-2020/" title="May 2020" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
