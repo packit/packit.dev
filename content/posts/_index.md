@@ -15,3 +15,4 @@ weight: 3
 * [March 2020](/posts/march-2020/)
 * [April 2020](/posts/april-2020/)
 * [May 2020](/posts/may-2020/)
+* [June 2020](/posts/june-2020/)
