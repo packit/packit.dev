@@ -816,6 +816,12 @@ if (!doNotTrack) {
         <li><a href="#packit-as-a-service">packit-as-a-service</a></li>
       </ul>
     </li>
+    <li><a href="#week-24-june-8th---june-11th">Week 24 (June 8th - June 11th)</a>
+      <ul>
+        <li><a href="#packit-1">packit</a></li>
+        <li><a href="#packit-as-a-service-1">packit-as-a-service</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -845,12 +851,23 @@ if (!doNotTrack) {
 <p>Hello everyone, during this week we didn&rsquo;t manage to implement any significant new features - most of the work happened under the hood.</p>
 <h3 id="packit">packit</h3>
 <ul>
-<li>We have fixed a formatting issue when packit prints installation instructions for using builds from a copr repo (by <a href="https://github.com/lachmanfrantisek">@lachmanfrantisek</a>, <a href="https://github.com/packit-service/packit/pulls/852">#852</a>.</li>
-<li>You are able to set up builds when you push to a branch, we have set this up for master branch of packit, feel free to get inspired (by <a href="https://github.com/lachmanfrantisek">@lachmanfrantisek</a>, <a href="https://github.com/packit-service/packit/pulls/851">#851</a>.</li>
+<li>We have fixed a formatting issue when packit prints installation instructions for using builds from a copr repo (by <a href="https://github.com/lachmanfrantisek">@lachmanfrantisek</a>, <a href="https://github.com/packit-service/packit/pulls/852">#852</a>).</li>
+<li>You are able to set up builds when you push to a branch, we have set this up for master branch of packit, feel free to get inspired (by <a href="https://github.com/lachmanfrantisek">@lachmanfrantisek</a>, <a href="https://github.com/packit-service/packit/pulls/851">#851</a>).</li>
 </ul>
 <h3 id="packit-as-a-service">packit-as-a-service</h3>
 <ul>
 <li>We have run into multiple problems when you set up jobs for PRs and branch pushes - there were multiple fixes for this, packit-service wasn&rsquo;t able to work well with the fact that there are multiple jobs defined for the same job type - e.g. build.</li>
+</ul>
+<h2 id="week-24-june-8th---june-11th">Week 24 (June 8th - June 11th)</h2>
+<h3 id="packit-1">packit</h3>
+<ul>
+<li><a href="https://github.com/TomasTomecek">Tomas</a> re-implemented overriding of package config per job. This will enable overriding configuration for builds and releases once the corresponding changes are merged in Packit-as-a-Service. (<a href="https://github.com/packit-service/packit/pull/858">#858</a>, <a href="https://github.com/packit-service/packit/pull/859">#859</a>).</li>
+</ul>
+<h3 id="packit-as-a-service-1">packit-as-a-service</h3>
+<ul>
+<li>We are now parsing events from Koji about the progress of the builds and report them (by <a href="https://github.com/lachmanfrantisek/">Franta</a>, <a href="https://github.com/packit-service/packit-service/pull/657">#657</a>).</li>
+<li>We are now able to listen to Gitlab hooks and parse the (comment &amp; push) events (by <a href="https://github.com/shreyaspapi">Shreyas</a>, <a href="https://github.com/packit-service/packit-service/pull/629">#629</a>, <a href="https://github.com/packit-service/packit-service/pull/671">#671</a>).</li>
+<li>Log pages have been restructured by linking SRPM build logs instead of including them (by <a href="https://github.com/csomh">Hunor</a>, <a href="https://github.com/packit-service/packit-service/pull/641">#641</a>).</li>
 </ul>
 
 

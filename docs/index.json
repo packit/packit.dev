@@ -46,7 +46,7 @@
 	"title": "Blog Posts",
 	"tags": [],
 	"description": "",
-	"content": " Packit 0.1.0 Packit 0.2.0 Packit 0.3.0 Packit 0.4.0 \u0026amp; 0.4.1 November 2019 December 2019 January 2020 February 2020 March 2020 April 2020 May 2020  "
+	"content": " Packit 0.1.0 Packit 0.2.0 Packit 0.3.0 Packit 0.4.0 \u0026amp; 0.4.1 November 2019 December 2019 January 2020 February 2020 March 2020 April 2020 May 2020 June 2020  "
 },
 {
 	"uri": "https://packit.dev/posts/packit-030/",
@@ -137,7 +137,7 @@
 	"title": "June 2020",
 	"tags": [],
 	"description": "",
-	"content": "Week 23 (June 1st - June 5th) Hello everyone, during this week we didn\u0026rsquo;t manage to implement any significant new features - most of the work happened under the hood.\npackit  We have fixed a formatting issue when packit prints installation instructions for using builds from a copr repo (by @lachmanfrantisek, #852. You are able to set up builds when you push to a branch, we have set this up for master branch of packit, feel free to get inspired (by @lachmanfrantisek, #851.  packit-as-a-service  We have run into multiple problems when you set up jobs for PRs and branch pushes - there were multiple fixes for this, packit-service wasn\u0026rsquo;t able to work well with the fact that there are multiple jobs defined for the same job type - e.g. build.  "
+	"content": "Week 23 (June 1st - June 5th) Hello everyone, during this week we didn\u0026rsquo;t manage to implement any significant new features - most of the work happened under the hood.\npackit  We have fixed a formatting issue when packit prints installation instructions for using builds from a copr repo (by @lachmanfrantisek, #852). You are able to set up builds when you push to a branch, we have set this up for master branch of packit, feel free to get inspired (by @lachmanfrantisek, #851).  packit-as-a-service  We have run into multiple problems when you set up jobs for PRs and branch pushes - there were multiple fixes for this, packit-service wasn\u0026rsquo;t able to work well with the fact that there are multiple jobs defined for the same job type - e.g. build.  Week 24 (June 8th - June 11th) packit  Tomas re-implemented overriding of package config per job. This will enable overriding configuration for builds and releases once the corresponding changes are merged in Packit-as-a-Service. (#858, #859).  packit-as-a-service  We are now parsing events from Koji about the progress of the builds and report them (by Franta, #657). We are now able to listen to Gitlab hooks and parse the (comment \u0026amp; push) events (by Shreyas, #629, #671). Log pages have been restructured by linking SRPM build logs instead of including them (by Hunor, #641).  "
 },
 {
 	"uri": "https://packit.dev/posts/may-2020/",
