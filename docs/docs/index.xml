@@ -6,7 +6,7 @@
     <description>Recent content in Documentation on Packit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2020 23:59:59 +0100</lastBuildDate>
     
 	<atom:link href="https://packit.dev/docs/index.xml" rel="self" type="application/rss+xml" />
     
@@ -50,19 +50,6 @@ Packit supports actions, a way to change default implementation for a command of
 You should place the file in the root of your upstream repo. Packit accepts these names:
  .packit.yaml .packit.yml .packit.json packit.yaml packit.yml packit.json  Both Packit-as-a-Service and packit tool use this configuration file.
 Top level keys specfile_path (string) Relative path to a spec file within the upstream repository. If not specified, defaults to:</description>
-    </item>
-    
-    <item>
-      <title>How to source-git?</title>
-      <link>https://packit.dev/docs/how-to-source-git/</link>
-      <pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://packit.dev/docs/how-to-source-git/</guid>
-      <description>This is a practical introduction to source-git using a real example.
-If you are interested in the theory behind source-git, please read the specification.
-Let&amp;rsquo;s create a source-git repo I choose systemd from Fedora 31 for this example.
-What do we need? 3 things:
- Systemd upstream repo. Fedora 31 dist-git repo of systemd. New local git repo.  Let&amp;rsquo;s set all of this up. We&amp;rsquo;ll start with an empty git repository:</description>
     </item>
     
   </channel>

@@ -2,15 +2,14 @@
 title: "How to source-git?"
 date: 2020-02-20
 draft: false
-disableToc: false
-weight: 6
+weight: 2
 ---
 
 
 This is a practical introduction to source-git using a real example.
 
 If you are interested in the theory behind source-git, please read [the
-specification](/source-git/).
+specification]({{< ref "docs/source-git/design.md" >}}).
 
 
 ## Let's create a source-git repo
