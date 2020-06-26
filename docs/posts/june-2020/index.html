@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.69.2" />
     <meta name="description" content="">
 
 
@@ -822,6 +822,18 @@ if (!doNotTrack) {
         <li><a href="#packit-as-a-service-1">packit-as-a-service</a></li>
       </ul>
     </li>
+    <li><a href="#week-25-june-15th---june-19th">Week 25 (June 15th - June 19th)</a>
+      <ul>
+        <li><a href="#packit-2">packit</a></li>
+        <li><a href="#packit-as-a-service-2">packit-as-a-service</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-26-june-22th---june-26th">Week 26 (June 22th - June 26th)</a>
+      <ul>
+        <li><a href="#packit-3">packit</a></li>
+        <li><a href="#packit-as-a-service-3">packit-as-a-service</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -868,6 +880,29 @@ if (!doNotTrack) {
 <li>We are now parsing events from Koji about the progress of the builds and report them (by <a href="https://github.com/lachmanfrantisek/">Franta</a>, <a href="https://github.com/packit-service/packit-service/pull/657">#657</a>).</li>
 <li>We are now able to listen to Gitlab hooks and parse the (comment &amp; push) events (by <a href="https://github.com/shreyaspapi">Shreyas</a>, <a href="https://github.com/packit-service/packit-service/pull/629">#629</a>, <a href="https://github.com/packit-service/packit-service/pull/671">#671</a>).</li>
 <li>Log pages have been restructured by linking SRPM build logs instead of including them (by <a href="https://github.com/csomh">Hunor</a>, <a href="https://github.com/packit-service/packit-service/pull/641">#641</a>).</li>
+</ul>
+<h2 id="week-25-june-15th---june-19th">Week 25 (June 15th - June 19th)</h2>
+<h3 id="packit-2">packit</h3>
+<ul>
+<li>Packit logs more information for RebaseHelper errors (by <a href="https://github.com/csomh">@csomh</a>, <a href="https://github.com/packit-service/packit/pull/865">#865</a>).</li>
+</ul>
+<h3 id="packit-as-a-service-2">packit-as-a-service</h3>
+<ul>
+<li>Obtaining builds via packit <a href="https://prod.packit.dev/api/copr-builds">API endpoint</a> is now significantly quicker (by <a href="https://github.com/IceWreck">@IceWreck</a>, <a href="https://github.com/packit-service/packit-service/pull/674">#674</a>).</li>
+<li>We now have an API endpoint for obtaining results from testing farm (by <a href="https://github.com/IceWreck">@IceWreck</a>, <a href="https://github.com/packit-service/packit-service/pull/678">#678</a>).</li>
+<li>We finished the implementation of the trigger to create bugs in Bugzilla. Therefore packit is now able to create bugzilla for accepted PR&rsquo;s in CentOS (by <a href="https://github.com/jpopelka">@jpopelka</a>, <a href="https://github.com/packit-service/packit-service/pull/662">#662</a>).</li>
+</ul>
+<h2 id="week-26-june-22th---june-26th">Week 26 (June 22th - June 26th)</h2>
+<h3 id="packit-3">packit</h3>
+<ul>
+<li>packit now supports using custom repositories and packages when building in Copr and has options to preserve the project and to list it in on the Copr home page <a href="https://github.com/lachmanfrantisek">@lachmanfrantisek</a>, <a href="https://github.com/packit-service/packit/pull/872">#872</a>.</li>
+<li>Custom commands defined by user in packit config now are run in the shell, no more <code>bash -c</code> required (by <a href="https://github.com/TomasTomecek">@TomasTomecek</a>, <a href="https://github.com/packit-service/packit/pull/871">#871</a>).</li>
+<li>packit now includes pull request ID in version of rpm. (by <a href="https://github.com/sturivny">@sturivny</a> and <a href="https://github.com/TomasTomecek">@TomasTomecek</a>, <a href="https://github.com/packit-service/packit/pull/870">#870</a>).</li>
+</ul>
+<h3 id="packit-as-a-service-3">packit-as-a-service</h3>
+<ul>
+<li>We added support for copr builds in gitlab (by <a href="https://github.com/shreyaspapi">@shreyaspapi</a>, <a href="https://github.com/packit-service/packit-service/pull/683">#683</a>).</li>
+<li>packit-service utilizes the new options introduced in packit (by <a href="https://github.com/lachmanfrantisek">@lachmanfrantisek</a>, <a href="https://github.com/packit-service/packit-service/pull/694">#694</a>).</li>
 </ul>
 
 
