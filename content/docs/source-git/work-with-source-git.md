@@ -81,9 +81,37 @@ So, how can one add new changes into a source-git repo? That's simple - just
 commit them. If your repo is on GitHub (or another public forge), you can even
 force-push changes to achieve desired results with patches.
 
-The important point with patch files is, that a commit which changes code will be:
+The important point with patch files is, that a commit which changes code (not
+downstream packaging) will be:
 1. converted into a patch file (using `git format-patch`)
 2. added to the spec file
+3. the `%setup` line in the spec will be converted to `%autosetup -p1` to make
+   sure the patches are applied correctly in the `%prep` phase
+
+
+#### Rebase or merge?
+
+The most common workflow in the world of open source development is to accept
+pull requests and have merge commits in the git history. If the PRs are not
+rebased against master before the merge, the history may go wild. Packit is
+able to work with such a state by creating an ephemeral branch with linear
+history and generate the patch files out of it. [More
+info](https://github.com/packit-service/packit/pull/766).
+
+Picking up latest upstream changes into your downstream source-git repo has
+multiple solutions and it's up to you to pick the one which suits your workflow
+best:
+
+1. **Rebase against upstream master branch** (a.k.a. `git pull --rebase
+   upstream master`). This solution implies that you are able to perform the
+   force-push operation (e.g. Fedora and CentOS dist-git instances don't allow
+   force-pushes). Packit will not help you with the rebase process in any way
+   and it's up to you to complete the rebase.
+2. **Create a new branch for every upstream release**. No rebase needed — may
+   require good branch hygiene since the number of branches can skyrocket. No
+   dedicated help from packit again, you are running all the `git` commands.
+3. **Merge upstream changes** (a.k.a. `git merge upstream/master`). Does not
+   alter existing git history, yet makes it more complicated.
 
 
 ### Creating an SRPM
