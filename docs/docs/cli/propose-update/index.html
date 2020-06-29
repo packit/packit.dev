@@ -935,20 +935,9 @@ for upstream release, because packit checks out the tag for the upstream
 release before copying files downstream.</p>
 </li>
 <li>
-<p>Starting with packit 0.5.2 and later, you only need to set a single token to
-interact with dist-git. You needed two in the past. Please populate your
-local config for packit so it can talk to the remote services:</p>
-</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">you</span> <span style="color:#960050;background-color:#1e0010">can</span> <span style="color:#960050;background-color:#1e0010">obtain</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">token</span> <span style="color:#960050;background-color:#1e0010">over</span> <span style="color:#960050;background-color:#1e0010">here:</span> <span style="color:#960050;background-color:#1e0010">https://github.com/settings/tokens</span>
-<span style="color:#960050;background-color:#1e0010">github_token:</span> <span style="color:#ae81ff">123</span>
-<span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">and</span> <span style="color:#960050;background-color:#1e0010">this</span> <span style="color:#960050;background-color:#1e0010">one</span> <span style="color:#960050;background-color:#1e0010">right</span> <span style="color:#960050;background-color:#1e0010">here:</span> <span style="color:#960050;background-color:#1e0010">https://src.fedoraproject.org/settings#nav-api-tab</span>
-<span style="color:#960050;background-color:#1e0010">pagure_user_token:</span> <span style="color:#ae81ff">456</span>
-</code></pre></div><ul>
-<li>Once you have performed the upstream release (and the new archive is up),
+<p>Once you have performed the upstream release (and the new archive is up),
 run <code>packit propose-update</code> in a working directory of your upstream
-repository:</li>
-</ul>
+repository:</p>
 <pre><code>$ git clone https://github.com/user-cont/colin.git
 
 $ cd colin
@@ -961,7 +950,15 @@ INFO: Downloading file from URL https://files.pythonhosted.org/packages/source/c
 downloaded archive: /tmp/tmpaanrpgjz/colin-0.3.0.tar.gz
 uploading to the lookaside cache
 PR created: https://src.fedoraproject.org/rpms/colin/pull-request/4
-</code></pre><h2 id="help">Help</h2>
+</code></pre><p>As you can see, one of the things <code>propose-update</code> does is, it downloads the
+upstream release tarball and uploads it to the lookaside cache. <a href="https://fedoraproject.org/wiki/Packaging:SourceURL#Referencing_Source">This is
+required by the Fedora Packaging
+Guidelines</a>.
+Then it takes the spec file from the upstream repo, copies it downstream (while
+also all the files set in the <code>synced_files</code>) and creates the downstream PR.</p>
+</li>
+</ul>
+<h2 id="help">Help</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Usage: packit propose-update <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>PATH_OR_URL<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>VERSION<span style="color:#f92672">]</span>
 
   Release current upstream release into Fedora
@@ -973,13 +970,31 @@ PR created: https://src.fedoraproject.org/rpms/colin/pull-request/4
   default
 
 Options:
-  --dist-git-branch TEXT  Target branch in dist-git to release into.
+  --dist-git-branch TEXT  Comma separated list of target branches in dist-git
+                          to release into. <span style="color:#f92672">(</span>defaults to <span style="color:#e6db74">&#39;master&#39;</span><span style="color:#f92672">)</span>
+
   --dist-git-path TEXT    Path to dist-git repo to work in. Otherwise clone
                           the repo in a temporary directory.
+
   --local-content         Do not checkout release tag. Use the current state
                           of the repo.
+
   --force-new-sources     Upload the new sources also when the archive is
                           already in the lookaside cache.
+
+  --no-pr                 Do not create a pull request to downstream
+                          repository.
+
+  --remote TEXT           Name of the remote to discover upstream project URL,
+                          If this is not specified, default to origin.
+
+  --upstream-ref TEXT     Git ref of the last upstream commit in the current
+                          branch from which packit should generate patches
+                          <span style="color:#f92672">(</span>this option implies the repository is source-git<span style="color:#f92672">)</span>.
+
+  -f, --force             Don<span style="color:#960050;background-color:#1e0010">&#39;</span>t discard changes in the git repo by default,
+                          unless this is set.
+
   -h, --help              Show this message and exit.
 </code></pre></div>
 
