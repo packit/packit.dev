@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.69.2" />
+    <meta name="generator" content="Hugo 0.73.0" />
     <meta name="description" content="">
 
 
@@ -23,7 +23,7 @@ if (!doNotTrack) {
 }
 </script>
 
-    <title>How to source-git? :: Packit</title>
+    <title>Source-git Documentation :: Packit</title>
 
     
     <link href="/css/nucleus.css" rel="stylesheet">
@@ -53,7 +53,7 @@ if (!doNotTrack) {
     </style>
     
   </head>
-  <body class="" data-url="/docs/how-to-source-git/">
+  <body class="" data-url="/docs/source-git/">
     <nav id="sidebar" class="">
 
 
@@ -120,6 +120,97 @@ if (!doNotTrack) {
  
   
     
+    <li data-nav-id="/docs/source-git/" title="Source-git Documentation" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/docs/source-git/">
+          Source-git Documentation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/source-git/how-to-source-git/" title="How to source-git?" class="dd-item ">
+        <a href="/docs/source-git/how-to-source-git/">
+        How to source-git?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/source-git/work-with-source-git/" title="Working with source-git" class="dd-item ">
+        <a href="/docs/source-git/work-with-source-git/">
+        Working with source-git
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/source-git/design/" title="Source-git design" class="dd-item ">
+        <a href="/docs/source-git/design/">
+        Source-git design
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/docs/actions/" title="Actions" class="dd-item ">
         <a href="/docs/actions/">
         Actions
@@ -177,66 +268,9 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/docs/source-git-design/" title="Source-git design" class="dd-item ">
-        <a href="/docs/source-git-design/">
-        Source-git design
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
       <li data-nav-id="/docs/configuration/" title="Configuration" class="dd-item ">
         <a href="/docs/configuration/">
         Configuration
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/docs/how-to-source-git/" title="How to source-git?" class="dd-item active">
-        <a href="/docs/how-to-source-git/">
-        How to source-git?
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/docs/work-with-source-git/" title="Working with source-git" class="dd-item ">
-        <a href="/docs/work-with-source-git/">
-        Working with source-git
         
         </a>
     </li>
@@ -811,7 +845,7 @@ if (!doNotTrack) {
             
           
           
-            <a href='/'>About</a> > <a href='/docs/'>Documentation</a> > How to source-git?
+            <a href='/'>About</a> > <a href='/docs/'>Documentation</a> > Source-git Documentation
           
          
           
@@ -824,20 +858,7 @@ if (!doNotTrack) {
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#lets-create-a-source-git-repo">Let&rsquo;s create a source-git repo</a>
-      <ul>
-        <li><a href="#what-do-we-need">What do we need?</a></li>
-        <li><a href="#we-can-start-now">We can start now</a></li>
-        <li><a href="#layering-downstream-content-on-top-of-upstream">Layering downstream content on top of upstream</a></li>
-        <li><a href="#applying-downstream-patches">Applying downstream patches</a></li>
-        <li><a href="#working-with-source-git">Working with source-git</a></li>
-      </ul>
-    </li>
-    <li><a href="#wrap-up">Wrap up</a></li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -853,7 +874,7 @@ if (!doNotTrack) {
           
             <h1>
               
-              How to source-git?
+              Source-git Documentation
             </h1>
           
 
@@ -861,151 +882,20 @@ if (!doNotTrack) {
 
 
 
-<p>This is a practical introduction to source-git using a real example.</p>
-<p>If you are interested in the theory behind source-git, please read <a href="/docs/source-git-design/">the
-specification</a>.</p>
-<h2 id="lets-create-a-source-git-repo">Let&rsquo;s create a source-git repo</h2>
-<p>I choose systemd from Fedora 31 for this example.</p>
-<h3 id="what-do-we-need">What do we need?</h3>
-<p>3 things:</p>
-<ol>
-<li>Systemd upstream repo.</li>
-<li>Fedora 31 dist-git repo of systemd.</li>
-<li>New local git repo.</li>
-</ol>
-<p>Let&rsquo;s set all of this up. We&rsquo;ll start with an empty git repository:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir systemd-source-git
-$ cd systemd-source-git
-$ git init .
-Initialized empty Git repository in /home/tt/t/systemd-source-git/.git/
-</code></pre></div><p>We&rsquo;ll add fedora and upstream remotes, and then we&rsquo;ll fetch them:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git remote add upstream https://github.com/systemd/systemd.git
-$ git remote add fedora ssh://ttomecek@pkgs.fedoraproject.org/rpms/systemd.git
-$ git fetch -q upstream
-$ git fetch -q fedora
-</code></pre></div><p>Systemd also has a dedicated repository with backports to the older releases.
-This is how systemd is packaged in Fedora.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git remote add upstream-stable https://github.com/systemd/systemd-stable.git
-$ git fetch -q upstream-stable
-</code></pre></div><h3 id="we-can-start-now">We can start now</h3>
-<p>When we open the Fedora 31 systemd spec file, we can see that upstream uses
-version <code>243.7</code>. There&rsquo;s a corresponding tag <code>v243.7</code> in <code>upstream-stable</code>.
-We&rsquo;ll start a new git branch in our repo named <code>2437-sg</code> (sg as source-git):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git switch -C 2437-sg v243.7
-Switched to a new branch <span style="color:#e6db74">&#39;2437-sg&#39;</span>
-</code></pre></div><p>Right now we have the upstream history which lead to the 243.7 release.
-Alternatively we could just unpack the upstream tarball and have the history in
-a single commit.</p>
-<h3 id="layering-downstream-content-on-top-of-upstream">Layering downstream content on top of upstream</h3>
-<p>Let&rsquo;s get files from the <code>fedora/f31</code> branch.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git checkout fedora/f31 -- .
-$ git status
-On branch 2437-sg
-Changes to be committed:
-  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git restore --staged &lt;file&gt;...&#34;</span> to unstage<span style="color:#f92672">)</span>
-	modified:   .gitignore
-	new file:   0002-Revert-units-set-NoNewPrivileges-for-all-long-runnin.patch
-	new file:   0998-resolved-create-etc-resolv.conf-symlink-at-runtime.patch
-	new file:   20-grubby.install
-	new file:   20-yama-ptrace.conf
-	new file:   464a73411c13596a130a7a8f0ac00ca728e5f69e.patch
-	new file:   inittab
-	new file:   purge-nobody-user
-	new file:   sources
-	new file:   split-files.py
-	new file:   sysctl.conf.README
-	new file:   systemd-journal-gatewayd.xml
-	new file:   systemd-journal-remote.xml
-	new file:   systemd-udev-trigger-no-reload.conf
-	new file:   systemd-user
-	new file:   systemd.spec
-	new file:   triggers.systemd
-	new file:   yum-protect-systemd.conf
-</code></pre></div><p>We have a bunch of new files from f31 branch in the root.
-We&rsquo;ll move them now to the <code>fedora/</code> directory:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir fedora
-$ mv <span style="color:#66d9ef">$(</span>git diff --name-only --cached<span style="color:#66d9ef">)</span> fedora/
-</code></pre></div><p>and we should also clean our working tree:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git reset HEAD .
-Unstaged changes after reset:
-M       .gitignore
 
-$ git restore .gitignore
-</code></pre></div><p>&hellip;and commit the fedora content now:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git add fedora
-</code></pre></div><p>We don&rsquo;t want to commit those patch files:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git restore --staged fedora/0002-Revert-units-set-NoNewPrivileges-for-all-long-runnin.patch fedora/0998-resolved-create-etc-resolv.conf-symlink-at-runtime.patch fedora/464a73411c13596a130a7a8f0ac00ca728e5f69e.patch
-</code></pre></div><p>We also (currently) have to remove them from the spec file.
-Packit will automatically generate patches from the additional commits and
-add them to the spec when generating a SRPM or proposing downstream update.</p>
-<p>We can now commit the files in <code>fedora/</code> directory:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git commit -m <span style="color:#e6db74">&#39;add fedora packaging&#39;</span>
-<span style="color:#f92672">[</span>2437-sg 578bda8d7d<span style="color:#f92672">]</span> add fedora packaging
- <span style="color:#ae81ff">15</span> files changed, <span style="color:#ae81ff">3077</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>
- create mode <span style="color:#ae81ff">100644</span> fedora/.gitignore
- create mode <span style="color:#ae81ff">100755</span> fedora/20-grubby.install
- create mode <span style="color:#ae81ff">100644</span> fedora/20-yama-ptrace.conf
- create mode <span style="color:#ae81ff">100644</span> fedora/inittab
- create mode <span style="color:#ae81ff">100755</span> fedora/purge-nobody-user
- create mode <span style="color:#ae81ff">100644</span> fedora/sources
- create mode <span style="color:#ae81ff">100644</span> fedora/split-files.py
- create mode <span style="color:#ae81ff">100644</span> fedora/sysctl.conf.README
- create mode <span style="color:#ae81ff">100644</span> fedora/systemd-journal-gatewayd.xml
- create mode <span style="color:#ae81ff">100644</span> fedora/systemd-journal-remote.xml
- create mode <span style="color:#ae81ff">100644</span> fedora/systemd-udev-trigger-no-reload.conf
- create mode <span style="color:#ae81ff">100644</span> fedora/systemd-user
- create mode <span style="color:#ae81ff">100644</span> fedora/systemd.spec
- create mode <span style="color:#ae81ff">100644</span> fedora/triggers.systemd
- create mode <span style="color:#ae81ff">100644</span> fedora/yum-protect-systemd.conf
-</code></pre></div><h3 id="applying-downstream-patches">Applying downstream patches</h3>
-<p>We are getting to the core of source-git: we work with code in it, not with
-patches. But first we need to instruct packit from which point in history start
-downstream patches.
-Add <a href="https://packit.dev/docs/configuration/#upstream-ref">upstream_ref</a>
-key into <code>.packit.yaml</code>:</p>
-<pre><code>upstream_ref: 2437-sg-start
-</code></pre><p>Commit and tag it:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git commit -am <span style="color:#e6db74">&#34;upstream_ref -&gt; .packit.yaml&#34;</span>
+	<ul>
+<li><a href="/docs/source-git/how-to-source-git/">How to create a source-git repo?</a></li>
+<li><a href="/docs/source-git/work-with-source-git/">Working with source-git</a></li>
+<li><a href="/docs/source-git/design/">Source-git concept</a></li>
+</ul>
 
-$ git tag 2437-sg-start HEAD
-</code></pre></div><p>Now we can apply the downstream patches:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git am fedora/464a73411c13596a130a7a8f0ac00ca728e5f69e.patch
-Applying: udev: use bfq as the default scheduler
 
-$ git am fedora/0002-Revert-units-set-NoNewPrivileges-for-all-long-runnin.patch
-Applying: Revert <span style="color:#e6db74">&#34;units: set NoNewPrivileges= for all long-running services&#34;</span>
 
-$ git am fedora/0998-resolved-create-etc-resolv.conf-symlink-at-runtime.patch
-Applying: resolved: create /etc/resolv.conf symlink at runtime
-
-$ git log --oneline| head -n <span style="color:#ae81ff">3</span>
-5fc8885d47 resolved: create /etc/resolv.conf symlink at runtime
-81c37ac6f6 Revert <span style="color:#e6db74">&#34;units: set NoNewPrivileges= for all long-running services&#34;</span>
-d9f29507fe udev: use bfq as the default scheduler
-</code></pre></div><p>(This is not the case for systemd, but)
-If the patches are not in git format you need to apply them with <code>patch</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ patch -p1 --verbose --fuzz<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> &lt;fedora/some-fix.patch
-
-$ git commit -am <span style="color:#e6db74">&#34;some fix&#34;</span>
-</code></pre></div><p>And that&rsquo;s it, this is our source-git repo! You can check it out over
-<a href="https://github.com/packit-service/systemd-source-git">here</a>.</p>
-<h3 id="working-with-source-git">Working with source-git</h3>
-<p>Run <code>packit srpm</code> and see that packit generates an upstream tarball plus
-downstream patches and puts everything along with a spec file into a SRPM.
-The same applies to <code>propose-update</code>, <code>local-build</code> or <code>copr-build</code> commands.</p>
-<p>Alternatively you can use <code>--upstream-ref</code> option instead of putting
-the <code>upstream_ref</code> into <code>.packit.yaml</code></p>
-<h2 id="wrap-up">Wrap up</h2>
-<p>As you can see, it is a lot of work to create the source-git repo. We are
-planning on automating it — creating a dedicated command in packit.</p>
-<p>We also have a bunch of packit code related to source-git already done, but the
-overall experience is not done end-to-end.</p>
 
 
 <footer class=" footline" >
 	
 </footer>
-
 
         
         </div> 
@@ -1054,6 +944,20 @@ overall experience is not done end-to-end.</p>
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
                         
                         
                     
@@ -1064,6 +968,41 @@ overall experience is not done end-to-end.</p>
                     
                     
 
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1120,42 +1059,6 @@ overall experience is not done end-to-end.</p>
             
             
                 
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1564,10 +1467,10 @@ overall experience is not done end-to-end.</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/docs/configuration/" title="Configuration"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/docs/" title="Documentation"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/docs/work-with-source-git/" title="Working with source-git" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/docs/source-git/how-to-source-git/" title="How to source-git?" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1598,4 +1501,3 @@ overall experience is not done end-to-end.</p>
 
   </body>
 </html>
-
