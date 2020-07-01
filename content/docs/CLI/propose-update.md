@@ -42,34 +42,30 @@ upstream release.
   for upstream release, because packit checks out the tag for the upstream
   release before copying files downstream.
 
-* Starting with packit 0.5.2 and later, you only need to set a single token to
-  interact with dist-git. You needed two in the past. Please populate your
-  local config for packit so it can talk to the remote services:
-
-```json
-# you can obtain the token over here: https://github.com/settings/tokens
-github_token: 123
-# and this one right here: https://src.fedoraproject.org/settings#nav-api-tab
-pagure_user_token: 456
-```
-
 * Once you have performed the upstream release (and the new archive is up),
   run `packit propose-update` in a working directory of your upstream
   repository:
-```
-$ git clone https://github.com/user-cont/colin.git
+  ```
+  $ git clone https://github.com/user-cont/colin.git
 
-$ cd colin
+  $ cd colin
 
-$ packit propose-update
-using "master" dist-git branch
-syncing ./colin.spec
-INFO: Downloading file from URL https://files.pythonhosted.org/packages/source/c/colin/colin-0.3.0.tar.gz
-100%[=============================>]     3.18M  eta 00:00:00
-downloaded archive: /tmp/tmpaanrpgjz/colin-0.3.0.tar.gz
-uploading to the lookaside cache
-PR created: https://src.fedoraproject.org/rpms/colin/pull-request/4
-```
+  $ packit propose-update
+  using "master" dist-git branch
+  syncing ./colin.spec
+  INFO: Downloading file from URL https://files.pythonhosted.org/packages/source/c/colin/colin-0.3.0.tar.gz
+  100%[=============================>]     3.18M  eta 00:00:00
+  downloaded archive: /tmp/tmpaanrpgjz/colin-0.3.0.tar.gz
+  uploading to the lookaside cache
+  PR created: https://src.fedoraproject.org/rpms/colin/pull-request/4
+  ```
+
+  As you can see, one of the things `propose-update` does is, it downloads the
+  upstream release tarball and uploads it to the lookaside cache. [This is
+  required by the Fedora Packaging
+  Guidelines](https://fedoraproject.org/wiki/Packaging:SourceURL#Referencing_Source).
+  Then it takes the spec file from the upstream repo, copies it downstream (while
+  also all the files set in the `synced_files`) and creates the downstream PR.
 
 
 ## Help
@@ -86,12 +82,30 @@ Usage: packit propose-update [OPTIONS] [PATH_OR_URL] [VERSION]
   default
 
 Options:
-  --dist-git-branch TEXT  Target branch in dist-git to release into.
+  --dist-git-branch TEXT  Comma separated list of target branches in dist-git
+                          to release into. (defaults to 'master')
+
   --dist-git-path TEXT    Path to dist-git repo to work in. Otherwise clone
                           the repo in a temporary directory.
+
   --local-content         Do not checkout release tag. Use the current state
                           of the repo.
+
   --force-new-sources     Upload the new sources also when the archive is
                           already in the lookaside cache.
+
+  --no-pr                 Do not create a pull request to downstream
+                          repository.
+
+  --remote TEXT           Name of the remote to discover upstream project URL,
+                          If this is not specified, default to origin.
+
+  --upstream-ref TEXT     Git ref of the last upstream commit in the current
+                          branch from which packit should generate patches
+                          (this option implies the repository is source-git).
+
+  -f, --force             Don't discard changes in the git repo by default,
+                          unless this is set.
+
   -h, --help              Show this message and exit.
 ```
