@@ -961,10 +961,34 @@ whole upstream git history.</p>
 <p>So, how can one add new changes into a source-git repo? That&rsquo;s simple - just
 commit them. If your repo is on GitHub (or another public forge), you can even
 force-push changes to achieve desired results with patches.</p>
-<p>The important point with patch files is, that a commit which changes code will be:</p>
+<p>The important point with patch files is, that a commit which changes code (not
+downstream packaging) will be:</p>
 <ol>
 <li>converted into a patch file (using <code>git format-patch</code>)</li>
 <li>added to the spec file</li>
+<li>the <code>%setup</code> line in the spec will be converted to <code>%autosetup -p1</code> to make
+sure the patches are applied correctly in the <code>%prep</code> phase</li>
+</ol>
+<h4 id="rebase-or-merge">Rebase or merge?</h4>
+<p>The most common workflow in the world of open source development is to accept
+pull requests and have merge commits in the git history. If the PRs are not
+rebased against master before the merge, the history may go wild. Packit is
+able to work with such a state by creating an ephemeral branch with linear
+history and generate the patch files out of it. <a href="https://github.com/packit-service/packit/pull/766">More
+info</a>.</p>
+<p>Picking up latest upstream changes into your downstream source-git repo has
+multiple solutions and it&rsquo;s up to you to pick the one which suits your workflow
+best:</p>
+<ol>
+<li><strong>Rebase against upstream master branch</strong> (a.k.a. <code>git pull --rebase upstream master</code>). This solution implies that you are able to perform the
+force-push operation (e.g. Fedora and CentOS dist-git instances don&rsquo;t allow
+force-pushes). Packit will not help you with the rebase process in any way
+and it&rsquo;s up to you to complete the rebase.</li>
+<li><strong>Create a new branch for every upstream release</strong>. No rebase needed — may
+require good branch hygiene since the number of branches can skyrocket. No
+dedicated help from packit again, you are running all the <code>git</code> commands.</li>
+<li><strong>Merge upstream changes</strong> (a.k.a. <code>git merge upstream/master</code>). Does not
+alter existing git history, yet makes it more complicated.</li>
 </ol>
 <h3 id="creating-an-srpm">Creating an SRPM</h3>
 <p>The format between a source-git repo and the build system is a source RPM -
