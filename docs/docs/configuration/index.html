@@ -1057,7 +1057,25 @@ clear definition of what it should do.</p>
   trigger: ran-out-of-beer
   metadata:
     key: value
-</code></pre><h4 id="supported-jobs">Supported jobs</h4>
+</code></pre><h5 id="overriding-global-parameters">Overriding global parameters</h5>
+<p>You are able to override your global parameters (such as <code>specfile_path</code>,
+<code>downstream_package_name</code>, <code>actions</code>&hellip;) for every job. This is very useful
+when you want to set up a build or a test matrix using different parameters or
+configuration. It&rsquo;s also useful when your release workflow differs between
+Fedora and EPEL.</p>
+<p>In order to do such a thing, just set a value you want to override in the
+respective job.</p>
+<p>Example:</p>
+<pre><code>specfile_path: package.spec
+jobs:
+- job: some-job
+  trigger: ran-out-of-beer
+  metadata:
+    key: value
+  specfile_path: somewhere/else/package.spec
+</code></pre><p>In this example, the job <code>some-job</code> would override <code>specfile_path</code> to
+<code>somewhere/else/package.spec</code> instead of using <code>./package.spec</code>.</p>
+<h4 id="supported-jobs">Supported jobs</h4>
 <p><strong>copr_build</strong></p>
 <p>Create a SRPM and submit an RPM build to <a href="https://copr.fedorainfracloud.org/">Fedora COPR</a> build system.</p>
 <p>Supported triggers:</p>
