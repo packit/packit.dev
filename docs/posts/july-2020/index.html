@@ -878,16 +878,20 @@ if (!doNotTrack) {
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#week-27-june-29th-july-3rd">Week 27 (June 29th - July 3rd)</a>
-<ul>
-<li><a href="#packit">packit</a></li>
-<li><a href="#packit-as-a-service">packit-as-a-service</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#week-27-june-29th---july-3rd">Week 27 (June 29th - July 3rd)</a>
+      <ul>
+        <li><a href="#packit">packit</a></li>
+        <li><a href="#packit-as-a-service">packit-as-a-service</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-28-july-6th---july-10th">Week 28 (July 6th - July 10th)</a>
+      <ul>
+        <li><a href="#packit-1">packit</a></li>
+        <li><a href="#packit-as-a-service-1">packit-as-a-service</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -912,22 +916,29 @@ if (!doNotTrack) {
 
 
 
-
-
-<h2 id="week-27-june-29th-july-3rd">Week 27 (June 29th - July 3rd)</h2>
-
+<h2 id="week-27-june-29th---july-3rd">Week 27 (June 29th - July 3rd)</h2>
 <h3 id="packit">packit</h3>
-
 <ul>
 <li>We introduced a new command <code>packit validate-config</code> which validates the contect of a package configuration file in your project
 (contributed by <a href="https://github.com/TomasJani">@TomasJani</a>, <a href="https://github.com/packit-service/packit/pull/826">#826</a>).</li>
 </ul>
-
 <h3 id="packit-as-a-service">packit-as-a-service</h3>
-
 <ul>
 <li>You are now able to override configuration for builds, releases and other jobs (by <a href="https://github.com/TomasTomecek">@TomasTomecek</a>, <a href="https://github.com/packit-service/packit-service/pull/676">#676</a>).
 Read more about this feature <a href="/docs/configuration/#overriding-global-parameters">here</a>.</li>
+</ul>
+<h2 id="week-28-july-6th---july-10th">Week 28 (July 6th - July 10th)</h2>
+<h3 id="packit-1">packit</h3>
+<ul>
+<li>Command <code>validate-config</code> works properly now and does not produce odd error messages, by <a href="https://github.com/TomasTomecek">@TomasTomecek</a> and <a href="https://github.com/csomh">@csomh</a>, <a href="https://github.com/packit-service/packit/pull/894">#894</a> and <a href="https://github.com/packit-service/packit/pull/895">#895</a></li>
+<li>You will now properly see git-describe metadata in the <code>%release</code> field in spec file when using <code>srpm</code> command, by <a href="https://github.com/TomasTomecek">@TomasTomecek</a>, <a href="https://github.com/packit-service/packit/pull/894">#894</a></li>
+<li>git-log is being used to get a list of commits between HEAD and latest tag to pick up commit messages and add those to %changelog, by <a href="https://github.com/TomasTomecek">@TomasTomecek</a>, <a href="https://github.com/packit-service/packit/pull/889">#889</a></li>
+<li>packit is now able to load metadata from commits of a source-git repo and utilize them when creating patch files, by <a href="https://github.com/lachmanfrantisek">@lachmanfrantisek</a>, <a href="https://github.com/packit-service/packit/pull/875">#875</a></li>
+</ul>
+<h3 id="packit-as-a-service-1">packit-as-a-service</h3>
+<ul>
+<li>We now have a new API endpoint: <a href="https://prod.packit.dev/api/projects"><code>/api/projects/</code></a>, by <a href="https://github.com/IceWreck">@IceWreck</a>, <a href="https://github.com/packit-service/packit-service/pull/716">#716</a></li>
+<li>Over the last few weeks, <a href="https://github.com/lbarcziova">@lbarcziova</a> was very busy with refactoring how jobs and tasks are being executed in packit-service. This work is now complete which allows us to scale the deployment up while giving us better introspection in what&rsquo;s happening inside, by <a href="https://github.com/lbarcziova">@lbarcziova</a>, <a href="https://github.com/packit-service/packit-service/pull/704">#704</a></li>
 </ul>
 
 
