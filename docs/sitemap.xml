@@ -43,13 +43,13 @@
   </url>
   
   <url>
-    <loc>https://packit.dev/docs/source-git/work-with-source-git/</loc>
-    <lastmod>2020-06-24T23:59:59+01:00</lastmod>
+    <loc>https://packit.dev/posts/</loc>
+    <lastmod>2020-07-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://packit.dev/posts/</loc>
-    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
+    <loc>https://packit.dev/docs/source-git/work-with-source-git/</loc>
+    <lastmod>2020-06-24T23:59:59+01:00</lastmod>
   </url>
   
   <url>
@@ -102,7 +102,7 @@
     <loc>https://packit.dev/docs/cli/sync-from-downstream/</loc>
     <lastmod>2019-06-28T00:00:00+00:00</lastmod>
   </url>
-
+  
   <url>
     <loc>https://packit.dev/posts/july-2020/</loc>
     <lastmod>2020-07-03T00:00:00+00:00</lastmod>
