@@ -5,6 +5,7 @@ draft: false
 ---
 
 Another relase after a month since [0.4.1](https://packit.dev/posts/packit-041/), this time mostly with bug fixes.
+
 <!--more-->
 
 We've been busy polishing our [Github App](https://packit.dev/packit-as-a-service/) recently, therefore we had no resources for new features.

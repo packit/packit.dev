@@ -13,7 +13,7 @@ that helps you continuously ensure that your project work in Fedora OS.
 
 Using Packit Service is very straightforward: add one [config
 file](/docs/configuration/)
-to your repository together with the RPM spec file and you're good to go. 
+to your repository together with the RPM spec file and you're good to go.
 
 Packit Service validates your pull requests by building your software in Fedora OS.
 Once the builds are done, Packit lets you know how to install the
@@ -23,7 +23,6 @@ Optionally, Packit Service can run tests for the built software (i.e. copr build
 
 Packit is also available as a [CLI tool](https://github.com/packit-service/packit/blob/master/README.md),
 so you can always try things locally on your own. Note that testing is not currently supported with the CLI tool.
-
 
 ## Integrating Packit-as-a-Service into your project or organization from GitHub Marketplace
 
@@ -35,7 +34,7 @@ so you can always try things locally on your own. Note that testing is not curre
 
 Once installed, you will see the ["Packit-as-a-Service" GitHub
 application](https://github.com/marketplace/packit-as-a-service) in your
-project settings.  In the left sidebar, click "Integration & services" and you
+project settings. In the left sidebar, click "Integration & services" and you
 will see the application displayed there.
 
 In order to continue, please head to the main [Packit guide]({{< ref "/docs/guide" >}}).
@@ -53,9 +52,11 @@ An example of Packit Service pull request:
 ### How to re-trigger Packit Service actions in your pull request?
 
 Packit Service is able to schedule new builds based on a pull request comment:
+
 ```
 /packit copr-build
 ```
+
 So whenever you run into a flake or feel like you want to retrigger, just type
 that comment into the PR and enjoy some fine, fresh builds.
 
@@ -65,6 +66,7 @@ COPR builds.
 ### How to propose a new downstream update?
 
 Packit Service is able to propose updates of new upstream releases using this comment in an issue:
+
 ```
 /packit propose-update
 ```

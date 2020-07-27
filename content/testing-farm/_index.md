@@ -134,12 +134,11 @@ Currently only a subset of the metadata specification is implemented:
 It is possible to run [BeakerLib](#beakerlib-tests) tests and arbitrary [shell](#shell-tests) commands.
 List of supported steps and implementations:
 
-* Discover: fmf
-* Prepare: ansible
-* Execute: shell, beakerlib
+- Discover: fmf
+- Prepare: ansible
+- Execute: shell, beakerlib
 
 See the [Metadata Specification][spec] for a detailed description of individual test steps.
-
 
 ### Test Environment
 
@@ -147,15 +146,14 @@ We currently support running tests in an x86_64 virtual machine only. The system
 
 Additional machine specs:
 
-* RAM: 2 GB
-* HDD: 4 GB
+- RAM: 2 GB
+- HDD: 4 GB
 
 ### Debugging and Reproducing
 
 We are working on an easy way how to develop new tests, debug and reproduce issues for failed runs.
 Until that is ready, your best option is to spin up a new Fedora Docker container or run the Fedora Cloud Base qcow2 manually via qemu-kvm or libvirt.
 See the [Worker](#worker) section for details how to run the tool locally.
-
 
 ## Examples
 
@@ -216,10 +214,10 @@ Below you can find little bit more interesting example of a `systemd` test confi
 This plan enables a set of Tier 1 tests from the shared [systemd tests][systemd-tests] repository.
 The meaning of individual attributes is as follows:
 
-* Summary — an optional but useful attribute describing high-level purpose of the plan.
-* Discover — instructs to fetch tests from given repository and select relevant ones by provided `filter`.
-* Prepare — specifies which ansible playbook should be applied to prepare environment for testing.
-* Execute — defines that the beakerlib framework should be used for running the tests.
+- Summary — an optional but useful attribute describing high-level purpose of the plan.
+- Discover — instructs to fetch tests from given repository and select relevant ones by provided `filter`.
+- Prepare — specifies which ansible playbook should be applied to prepare environment for testing.
+- Execute — defines that the beakerlib framework should be used for running the tests.
 
 ### FMF Tests
 
@@ -227,35 +225,35 @@ Here's a real-life example of tests enabled for the [fmf][fmf] package.
 There are several plans defined under the [plans](https://github.com/psss/fmf/tree/master/plans) directory.
 The `smoke` plan enables a super basic test checking availability of the `fmf` command:
 
-	summary:
-		Just a basic smoke test
-	execute:
-		how: shell
-		script: fmf --help
+    summary:
+    	Just a basic smoke test
+    execute:
+    	how: shell
+    	script: fmf --help
 
 Plan `features` is used to execute all available beakerlib tests from the `fmf` repository:
 
-	summary:
-		Essential command line features
-	discover:
-		how: fmf
-		repository: https://github.com/psss/fmf
-	execute:
-		how: beakerlib
+    summary:
+    	Essential command line features
+    discover:
+    	how: fmf
+    	repository: https://github.com/psss/fmf
+    execute:
+    	how: beakerlib
 
 It is also possible to select only a subset of available tests.
 This is demonstrated by the `docs` plan.
 Use an fmf `filter` like `tier:1` to select tests for execution.
 You can also reference a specific feature area instead:
 
-	summary:
-		Ensure that documentation is present
-	discover:
-		how: fmf
-		repository: https://github.com/psss/fmf
-		filter: coverage:/stories/docs.*
-	execute:
-		how: beakerlib
+    summary:
+    	Ensure that documentation is present
+    discover:
+    	how: fmf
+    	repository: https://github.com/psss/fmf
+    	filter: coverage:/stories/docs.*
+    execute:
+    	how: beakerlib
 
 See the [stories](https://github.com/psss/fmf/tree/master/stories) directory to get some inspiration for organizing stories and requirements.
 
@@ -330,15 +328,12 @@ The source code of the Worker is located in the [testing-farm/cruncher][testing-
 [fmf]: https://fmf.readthedocs.io/
 [tmt]: https://tmt.readthedocs.io/
 [spec]: https://tmt.readthedocs.io/en/latest/spec.html
-
 [beakerlib]: https://github.com/beakerlib/beakerlib/wiki/man
 [selinux]: https://src.fedoraproject.org/tests/selinux/
 [systemd-tests]: https://github.com/systemd-rhel/tests
-
 [testing-farm-organization]: https://gitlab.com/testing-farm
 [testing-farm-api]: https://gitlab.com/testing-farm/api
 [testing-farm-artifacts]: https://gitlab.com/testing-farm/artifacts
 [testing-farm-console]: https://gitlab.com/testing-farm/console
 [testing-farm-worker]: https://gitlab.com/testing-farm/cruncher
-
 [issues]: https://gitlab.com/testing-farm/general/issues

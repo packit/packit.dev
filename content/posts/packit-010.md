@@ -17,10 +17,10 @@ issue](https://github.com/packit-service/packit/issues/new).
 
 The initial release contains two commands:
 
-* `packit propose-update` — Opens a pull request in dist-git for the latest
+- `packit propose-update` — Opens a pull request in dist-git for the latest
   upstream release of a selected repository.
-* `packit watch-releases` — Watches events for all the upstream releases and
-  performs `propose-update` for those who use packit.
+- `packit watch-releases` — Watches events for all the upstream releases and
+performs `propose-update` for those who use packit.
 <!--more-->
 
 ## Installation
@@ -41,21 +41,19 @@ Or (if you're brave)
 $ pip3 install --user git+https://github.com/packit-service/packit
 ```
 
-
 ## Requirements
 
 Present features have strict requirements on the upstream projects:
 
-* You need to have a packit config file present in the upstream repo.
+- You need to have a packit config file present in the upstream repo.
 
-* You need to have spec file present in the upstream repo.
+- You need to have spec file present in the upstream repo.
 
 This workflow is suitable for people who are both upstream and downstream
 maintainers of the particular project. If you don't fit into that bucket, then
 packit might not be ready for you, yet. Please wait till we land more
 [source-git](/source-git/)
 related functionality into packit.
-
 
 ## `propose-update`
 
@@ -66,12 +64,10 @@ which powers packit.
 It was recently approved for Fedora, so we can use packit to bring the initial
 version of ogr into Fedora Rawhide, 30 and 29.
 
-
 ### Do we have everything?
 
 Let's see [guide](/docs/cli/propose-update/) for
 the `propose-update` command on what we need:
-
 
 #### 0. The upstream repository with a valid upstream release.
 
@@ -96,6 +92,7 @@ Note: checking out '0.0.3'.
 ```
 
 And the tag name is matching the version in a spec file:
+
 ```
 $ grep Version python-ogr.spec
 Version:        0.0.3
@@ -110,7 +107,6 @@ $ ll .packit.yaml
 
 Check.
 
-
 #### 2. Spec file present in the upstream repository.
 
 ```
@@ -119,7 +115,6 @@ $ ll python-ogr.spec
 ```
 
 :+1:
-
 
 #### 3. Pagure API tokens for Fedora Dist-git.
 
@@ -147,7 +142,6 @@ Valid starting       Expires              Service principal
 
 We're all set!
 
-
 ### Time to shine
 
 We are still in the "ogr" upstream git repository.
@@ -174,7 +168,6 @@ I have also [added](https://release-monitoring.org/project/18832/) ogr into rele
 Once we are okay with the changes, we have to [merge the pull
 request](https://src.fedoraproject.org/rpms/python-ogr/pull-request/1). That's
 our responsibility, as maintainers.
-
 
 ### Building in koji
 
@@ -232,7 +225,6 @@ Watching tasks (this may be safely interrupted)...
 
 That was rough, can't wait to do this with packit.
 
-
 Let's do Fedora 30 now:
 
 ```
@@ -248,7 +240,6 @@ PR created: https://src.fedoraproject.org/rpms/python-ogr/pull-request/3
 ```
 
 And so on...
-
 
 ## Conclussion
 
