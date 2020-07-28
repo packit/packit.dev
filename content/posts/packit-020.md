@@ -16,39 +16,40 @@ changelog](https://github.com/packit-service/packit/blob/master/CHANGELOG.md#020
 We also have a [detailed
 documentation](https://github.com/packit-service/packit#workflows-covered-by-packit)
 for all the workflows packit covers.
+
 <!--more-->
 
 Let's get through what's new:
 
 1. We have decided to rename two keys in our config file so they are more
    descriptive. Old names still work but they are deprecated:
-    * `package_name` → `downstream_package_name`
-    * `upstream_name` → `upstream_project_name`
+   - `package_name` → `downstream_package_name`
+   - `upstream_name` → `upstream_project_name`
 2. You don't need to touch dist-git at all when getting your new upstream
    release into Fedora, you can stay in your upstream repository and just fire
    off a bunch of packit calls:
-    * `packit propose-update` to create a pull request in Fedora dist-git with
-      the selected upstream release
-    * `packit build` to build the new upstream release once the pull request is
-      merged
-    * and finally, `packit create-update` creates a new bodhi update (if you
-      chose a stable Fedora release)
+   - `packit propose-update` to create a pull request in Fedora dist-git with
+     the selected upstream release
+   - `packit build` to build the new upstream release once the pull request is
+     merged
+   - and finally, `packit create-update` creates a new bodhi update (if you
+     chose a stable Fedora release)
 3. Packit now has a `srpm` command which creates an SRPM out of the local
    content of your upstream repository.
 4. You can now use packit to sync files from your dist-git repo back into
    upstream (mainly to keep spec files in sync). `sync-from-downstream` is the
    command.
 5. Command `propose-update` received numerous improvements:
-    * You can pick upstream version to use.
-    * Packit will NOT check out the git ref with the upstream release if you
-      specify `--local-content`
-    * It's possible to force packit to execute `fedpkg new-sources` using
-      `--force-new-sources` and bypass the caching mechanism.
-
+   - You can pick upstream version to use.
+   - Packit will NOT check out the git ref with the upstream release if you
+     specify `--local-content`
+   - It's possible to force packit to execute `fedpkg new-sources` using
+     `--force-new-sources` and bypass the caching mechanism.
 
 ## Installation
 
 Please make sure you are installing `0.2.0`:
+
 ```
 $ dnf install --enablerepo=updates-testing packit
 ```
@@ -65,7 +66,6 @@ You can also install packit from master branch, if you are brave enough:
 $ pip3 install --user git+https://github.com/packit-service/packit
 ```
 
-
 ## How are we using packit?
 
 I'd like to show you how we used packit to bring a new upstream
@@ -73,6 +73,7 @@ release of ogr into Fedora, a library which packit is using.
 
 Once we have performed an upstream release of ogr, we can propose an update in
 dist-git:
+
 ```
 $ git clone https://github.com/packit-service/ogr && cd ogr/
 
@@ -97,6 +98,7 @@ nothing to commit, working tree clean'
 Whoops, it seems that I have messed up, I forgot to bump the spec file in the
 upstream repo when doing the release. I will bump it locally and utilize
 `--local-content` argument:
+
 ```
 $ rpmdev-bumpspec -n 0.1.0 -c 'New upstream release: 0.1.0' *.spec
 
@@ -118,6 +120,7 @@ PR created: https://src.fedoraproject.org/rpms/python-ogr/pull-request/6
 ```
 
 Once the scratch build is done and tests passed we merged and built it:
+
 ```
 $ packit build
 Using 'master' dist-git branch
@@ -130,6 +133,7 @@ Task info: https://koji.fedoraproject.org/koji/taskinfo?taskID=33616980
 We have done the same for F30 and F29.
 
 The previous commands were ran in the directory of the upstream repository. Packit also accepts path to your upstream clone, or even URL. So let's create a bodhi update for python-ogr by specifying the upstream repo URL:
+
 ```
 $ cd $HOME
 

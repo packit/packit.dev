@@ -1,4 +1,5 @@
 # packit.dev
+
 [packit.dev](https://packit.dev) website content
 
 ## Hugo
@@ -13,6 +14,7 @@ This repository uses git submodules, so you have to `git clone --recurse-submodu
 2. `hugo help`
 
 There's also a copr repo, but the newer versions not always work as expected, you have to experiment a bit:
+
 ```
 $ dnf copr enable daftaupe/hugo
 ```
@@ -36,10 +38,9 @@ All content [is organized](https://gohugo.io/content-management/organization) in
 1. `make server` or `hugo server -D` (`-D` means 'show also content marked as draft')
 2. [Web Server](http://localhost:1313)
 
-
 ### Rebuild content & Github Pages
 
-__If you didnt clone using `git clone --recurse-submodules` please follow instruction in [themes](#themes) section.__
+**If you didn't clone using `git clone --recurse-submodules` please follow instruction in [themes](#themes) section.**
 
 tl;dr:
 Run `make generate`.
