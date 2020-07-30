@@ -57,11 +57,26 @@ Packit Service is able to schedule new builds based on a pull request comment:
 /packit copr-build
 ```
 
+or the shorter version
+
+```
+/packit build
+```
+
 So whenever you run into a flake or feel like you want to retrigger, just type
 that comment into the PR and enjoy some fine, fresh builds.
 
-Only users with write or admin permissions to the repository can re-trigger
-COPR builds.
+The standard requirements for permissions still apply, so if you see this
+message
+
+```
+Only users with write or admin permissions to the repository can trigger
+Packit-as-a-Service
+```
+
+it means the author of the pull request does not have commit access to the
+repository so the build cannot be scheduled. This is a perfect case for
+maintainers of the repository to post `/packit build` in the PR to get a build.
 
 ### How to propose a new downstream update?
 
