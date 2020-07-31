@@ -942,10 +942,17 @@ pull request in COPR repository and reports back COPR build status to the pull r
 <h3 id="how-to-re-trigger-packit-service-actions-in-your-pull-request">How to re-trigger Packit Service actions in your pull request?</h3>
 <p>Packit Service is able to schedule new builds based on a pull request comment:</p>
 <pre><code>/packit copr-build
+</code></pre><p>or the shorter version</p>
+<pre><code>/packit build
 </code></pre><p>So whenever you run into a flake or feel like you want to retrigger, just type
 that comment into the PR and enjoy some fine, fresh builds.</p>
-<p>Only users with write or admin permissions to the repository can re-trigger
-COPR builds.</p>
+<p>The standard requirements for permissions still apply, so if you see this
+message</p>
+<pre><code>Only users with write or admin permissions to the repository can trigger
+Packit-as-a-Service
+</code></pre><p>it means the author of the pull request does not have commit access to the
+repository so the build cannot be scheduled. This is a perfect case for
+maintainers of the repository to post <code>/packit build</code> in the PR to get a build.</p>
 <h3 id="how-to-propose-a-new-downstream-update">How to propose a new downstream update?</h3>
 <p>Packit Service is able to propose updates of new upstream releases using this comment in an issue:</p>
 <pre><code>/packit propose-update
