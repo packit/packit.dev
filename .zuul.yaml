@@ -1,6 +1,5 @@
 ---
 - project:
-    name: packit-service/packit.dev
     check:
       jobs:
         - pre-commit
