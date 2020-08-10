@@ -319,7 +319,7 @@ We will use it in the future to provide a seamless experience to the end users t
 
 If you want to try out worker now, you can easily run some tests from a repository with FMF tests with the command bellow.
 
-    podman run --device /dev/kvm quay.io/testing-farm/cruncher cruncher --git-url https://github.com/packit-service/hello-world --keep-instance
+    podman run --device /dev/kvm quay.io/testing-farm/cruncher cruncher --git-url https://github.com/packit/hello-world --keep-instance
 
 The option `--keep-instance` will keep the VM reserved and you will be presented in the worker logs how to connect to the machine via ssh.
 

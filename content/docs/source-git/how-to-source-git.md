@@ -198,7 +198,7 @@ $ git commit -am "some fix"
 ```
 
 And that's it, this is our source-git repo! You can check it out over
-[here](https://github.com/packit-service/systemd-source-git).
+[here](https://github.com/packit/systemd-source-git).
 
 ### Working with source-git
 

@@ -23,16 +23,16 @@ a blacklist so you won't be able to use the service again.
 ### How can I contact you?
 
 If you encounter a problem while using Packit-as-a-service, please open an
-[upstream issue](https://github.com/packit-service/packit-service/issues/new).
+[upstream issue](https://github.com/packit/packit-service/issues/new).
 In case of any other questions, feel free to contact
-[us](https://github.com/orgs/packit-service/teams/the-packit-team):
+[us](https://github.com/orgs/packit/teams/the-packit-team):
 
 - [freenode](https://freenode.net) **#packit**
 - **user-cont-team@redhat.com**
 
 ### Why do I have to maintain .packit.yaml and a spec file upstream?
 
-[We are working](https://github.com/packit-service/packit/issues/574) on simplifying the `.packit.yaml` so it's as small as possible.
+[We are working](https://github.com/packit/packit/issues/574) on simplifying the `.packit.yaml` so it's as small as possible.
 We will also handle all potentially backward incompatible changes of `.packit.yaml`.
 `Spec` file can be downloaded (see specific question below) from [Fedora Pagure](https://src.fedoraproject.org) instead of having it included in the upstream repository.
 
@@ -53,7 +53,7 @@ Packit connects the existing services ([Copr](https://copr.fedorainfracloud.org)
 ### Can we use Packit with Gitlab?
 
 Packit service is closely tied to GitHub right now because most of the projects are hosted on GitHub.
-[Let us know](https://github.com/packit-service/packit-service/issues/249) if you'd like to see Gitlab support.
+[Let us know](https://github.com/packit/packit-service/issues/249) if you'd like to see Gitlab support.
 
 ### How can I download RPM spec file if it is not part of upstream repository?
 

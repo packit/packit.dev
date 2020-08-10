@@ -20,7 +20,7 @@ why we decided to split the on-boarding process into multiple checkpoints:
 ## The guide
 
 We welcome all the suggestions to this guide, feel free to [open a new issue
-here](https://github.com/packit-service/packit.dev/issues/new).
+here](https://github.com/packit/packit.dev/issues/new).
 
 ### Have packit tooling installed locally.
 
@@ -47,7 +47,7 @@ You can also help us test the latest development snapshot by installing packit
 directly from the master branch:
 
 ```
-$ pip3 install --user git+https://github.com/packit-service/packit
+$ pip3 install --user git+https://github.com/packit/packit
 ```
 
 ### RPM builds pass on your laptop.
@@ -114,7 +114,7 @@ jobs:
 Jobs are nicely described over [here]({{< ref "/docs/configuration.md#jobs" >}}).
 
 If you are looking for an inspiration for your .packit.yaml, check [packit's
-config file](https://github.com/packit-service/packit/blob/master/.packit.yaml)
+config file](https://github.com/packit/packit/blob/master/.packit.yaml)
 since we try to use all the latest features.
 
 ### Packit service handles Fedora Rawhide updates for you.

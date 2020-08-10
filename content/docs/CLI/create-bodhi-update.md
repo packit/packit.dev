@@ -23,7 +23,7 @@ Create a new bodhi update for the latest Fedora build of the upstream project.
 2. Once the [builds are done](/docs/cli/build/), you can run the `create-update` command.
    If you don't specify the koji builds packit takes latest build.
    ```
-   $ packit create-update --dist-git-branch f29 https://github.com/packit-service/packit.git
+   $ packit create-update --dist-git-branch f29 https://github.com/packit/packit.git
    Bodhi update FEDORA-2019-b72add0dcd:
    - https://bodhi.fedoraproject.org/updates/FEDORA-2019-b72add0dcd
    - stable_karma: 3

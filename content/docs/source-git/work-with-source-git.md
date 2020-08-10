@@ -96,7 +96,7 @@ pull requests and have merge commits in the git history. If the PRs are not
 rebased against master before the merge, the history may go wild. Packit is
 able to work with such a state by creating an ephemeral branch with linear
 history and generate the patch files out of it. [More
-info](https://github.com/packit-service/packit/pull/766).
+info](https://github.com/packit/packit/pull/766).
 
 Picking up latest upstream changes into your downstream source-git repo has
 multiple solutions and it's up to you to pick the one which suits your workflow
