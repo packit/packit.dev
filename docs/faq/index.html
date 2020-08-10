@@ -888,6 +888,7 @@ if (!doNotTrack) {
         <li><a href="#can-i-use-centos-stream-with-packit-service">Can I use CentOS Stream with packit service?</a></li>
         <li><a href="#after-adding-tests-i-see-error-no-fmf-metadata-found">After adding tests I see error &lsquo;No FMF metadata found.&rsquo;</a></li>
         <li><a href="#does-packit-work-with-rpmautospechttpsdocspagureorgfedora-infrarpmautospec">Does packit work with <a href="https://docs.pagure.org/Fedora-Infra.rpmautospec/">rpmautospec</a>?</a></li>
+        <li><a href="#how-do-i-install-dependencies-for-my-commands-in-packit-service">How do I install dependencies for my commands in packit-service?</a></li>
       </ul>
     </li>
   </ul>
@@ -1003,6 +1004,12 @@ the <code>copr_build</code> job:</p>
 <pre><code>Release:  %{?autorel}%{!?autorel:1}
 </code></pre><p>This construct uses <code>autorel</code> macro if it&rsquo;s defined, and if it&rsquo;s not, it sets release to 1.</p>
 <p>For <code>%changelog</code>, you don&rsquo;t need to include the changelog file upstream and you can have it downstream only, which makes sense - changelog is specific to a release.</p>
+<h3 id="how-do-i-install-dependencies-for-my-commands-in-packit-service">How do I install dependencies for my commands in packit-service?</h3>
+<p>We are running all commands, defined by you, in a sandbox which is locked-down.
+At the moment we don&rsquo;t have any mechanism for you to define the dependencies
+you need and us making them available for you.</p>
+<p>In the mean time we are solving these requests one by one, so <a href="#how-can-i-contact-you">please reach out
+to us</a>.</p>
 
 
 
