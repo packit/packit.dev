@@ -140,3 +140,12 @@ Release:  %{?autorel}%{!?autorel:1}
 This construct uses `autorel` macro if it's defined, and if it's not, it sets release to 1.
 
 For `%changelog`, you don't need to include the changelog file upstream and you can have it downstream only, which makes sense - changelog is specific to a release.
+
+### How do I install dependencies for my commands in packit-service?
+
+We are running all commands, defined by you, in a sandbox which is locked-down.
+At the moment we don't have any mechanism for you to define the dependencies
+you need and us making them available for you.
+
+In the mean time we are solving these requests one by one, so [please reach out
+to us](#how-can-i-contact-you).
