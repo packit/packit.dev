@@ -1172,7 +1172,7 @@ Each worker is run in a separate pod.</p>
 <p>The worker can be easily run from your localhost and if it has access to /dev/kvm, it can run basically the same workloads as CI.
 We will use it in the future to provide a seamless experience to the end users to reproduce the tests on your localhost.</p>
 <p>If you want to try out worker now, you can easily run some tests from a repository with FMF tests with the command bellow.</p>
-<pre><code>podman run --device /dev/kvm quay.io/testing-farm/cruncher cruncher --git-url https://github.com/packit-service/hello-world --keep-instance
+<pre><code>podman run --device /dev/kvm quay.io/testing-farm/cruncher cruncher --git-url https://github.com/packit/hello-world --keep-instance
 </code></pre>
 <p>The option <code>--keep-instance</code> will keep the VM reserved and you will be presented in the worker logs how to connect to the machine via ssh.</p>
 <p>The source code of the Worker is located in the <a href="https://gitlab.com/testing-farm/cruncher">testing-farm/cruncher</a> project.</p>
