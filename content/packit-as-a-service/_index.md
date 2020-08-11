@@ -21,7 +21,7 @@ RPMs inside your environment so you can try the changes before merging them.
 
 Optionally, Packit Service can run tests for the built software (i.e. copr builds) in all current Fedora OS releases via [Testing Farm](/testing-farm).
 
-Packit is also available as a [CLI tool](https://github.com/packit-service/packit/blob/master/README.md),
+Packit is also available as a [CLI tool](https://github.com/packit/packit/blob/master/README.md),
 so you can always try things locally on your own. Note that testing is not currently supported with the CLI tool.
 
 ## Integrating Packit-as-a-Service into your project or organization from GitHub Marketplace

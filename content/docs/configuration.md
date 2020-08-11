@@ -41,7 +41,7 @@ archive.
 #### upstream_project_url
 
 (*string*) URL of the upstream project (e.g.
-`https://github.com/packit-service/packit`).
+`https://github.com/packit/packit`).
 
 #### create_pr
 
@@ -139,7 +139,7 @@ You can disable the commenting by setting `successful_build` to `false`.
 
 ### Minimal sample config
 
-This is a sample config which is meant for [packit](https://github.com/packit-service/packit) itself.
+This is a sample config which is meant for [packit](https://github.com/packit/packit) itself.
 
 ```
 # packit is named packitos on PyPI b/c packit name was already taken
@@ -182,7 +182,7 @@ to change its behaviour is via the config file you just read about.
 When you open a pull request against your upstream repository, packit service
 picks up configuration file from your pull request, not from the branch against
 the PR is opened. This way, you can polish your .packit.yaml and see the
-results right away. (for more info, please see [packit-service#48](https://github.com/packit-service/packit-service/issues/48))
+results right away. (for more info, please see [packit-service#48](https://github.com/packit/packit-service/issues/48))
 
 
 ### Packit service jobs

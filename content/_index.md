@@ -21,7 +21,7 @@ Feel free to jump into [the guide]({{< ref "/docs/guide" >}}) for using packit.
 
 ### Upstream repository
 
-https://github.com/packit-service/packit
+https://github.com/packit/packit
 
 ### Contact
 
@@ -55,7 +55,7 @@ We are also available on this e-mail: user-cont-team@redhat.com.
   - Deprecated content can be removed or changed after at least 3 minor
     releases.
   - Deprecated content is advertised in our
-    [changelog](https://github.com/packit-service/packit/blob/master/CHANGELOG.md),
+    [changelog](https://github.com/packit/packit/blob/master/CHANGELOG.md),
     printed in terminal or tracked in your issue tracker.
 
 - We care about artifacts which Fedora supports: at the moment it's RPMs,

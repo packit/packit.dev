@@ -918,7 +918,7 @@ if (!doNotTrack) {
 version of the snapshot and <code>git archive -o &quot;{package_name}-{version}.tar.gz&quot; --prefix &quot;{package_name}-{version}/&quot; HEAD</code> to create a tarball with upstream
 sources.</p>
 <p>You can override the archive and version commands in <a href="/docs/configuration/">packit.yaml</a>, e.g. this is
-what we use in <a href="https://github.com/packit-service/ogr/blob/master/.packit.yaml">ogr</a>, a library which packit is using:</p>
+what we use in <a href="https://github.com/packit/ogr/blob/master/.packit.yaml">ogr</a>, a library which packit is using:</p>
 <pre><code>create_tarball_command: [&quot;python3&quot;, &quot;setup.py&quot;, &quot;sdist&quot;, &quot;--dist-dir&quot;, &quot;.&quot;]
 current_version_command: [&quot;python3&quot;, &quot;setup.py&quot;, &quot;--version&quot;]
 </code></pre><h2 id="requirements">Requirements</h2>

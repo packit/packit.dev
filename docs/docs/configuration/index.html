@@ -948,7 +948,7 @@ name of the Github repository; this is used in <code>%prep</code> section to gen
 archive.</p>
 <h4 id="upstream_project_url">upstream_project_url</h4>
 <p>(<em>string</em>) URL of the upstream project (e.g.
-<code>https://github.com/packit-service/packit</code>).</p>
+<code>https://github.com/packit/packit</code>).</p>
 <h4 id="create_pr">create_pr</h4>
 <p>(<em>bool</em>) When doing a new update in Fedora dist-git, should packit create a
 new pull request (defaults to <code>true</code>) or push directly to dist-git (if set to
@@ -1009,7 +1009,7 @@ package with the change implemented in the pull request:</p>
     successful_build: true
 </code></pre><p>You can disable the commenting by setting <code>successful_build</code> to <code>false</code>.</p>
 <h3 id="minimal-sample-config">Minimal sample config</h3>
-<p>This is a sample config which is meant for <a href="https://github.com/packit-service/packit">packit</a> itself.</p>
+<p>This is a sample config which is meant for <a href="https://github.com/packit/packit">packit</a> itself.</p>
 <pre><code># packit is named packitos on PyPI b/c packit name was already taken
 upstream_package_name: packitos
 </code></pre><h3 id="more-examples-of-synced_files">More examples of <code>synced_files</code></h3>
@@ -1042,7 +1042,7 @@ to change its behaviour is via the config file you just read about.</p>
 <p>When you open a pull request against your upstream repository, packit service
 picks up configuration file from your pull request, not from the branch against
 the PR is opened. This way, you can polish your .packit.yaml and see the
-results right away. (for more info, please see <a href="https://github.com/packit-service/packit-service/issues/48">packit-service#48</a>)</p>
+results right away. (for more info, please see <a href="https://github.com/packit/packit-service/issues/48">packit-service#48</a>)</p>
 <h3 id="packit-service-jobs">Packit service jobs</h3>
 <p>Once the service starts handling events of your repository, it needs to have a
 clear definition of what it should do.</p>

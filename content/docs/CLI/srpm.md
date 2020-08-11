@@ -14,7 +14,7 @@ version of the snapshot and `git archive -o "{package_name}-{version}.tar.gz"
 sources.
 
 You can override the archive and version commands in [packit.yaml](/docs/configuration/), e.g. this is
-what we use in [ogr](https://github.com/packit-service/ogr/blob/master/.packit.yaml), a library which packit is using:
+what we use in [ogr](https://github.com/packit/ogr/blob/master/.packit.yaml), a library which packit is using:
 ```
 create_tarball_command: ["python3", "setup.py", "sdist", "--dist-dir", "."]
 current_version_command: ["python3", "setup.py", "--version"]
