@@ -6,7 +6,7 @@
     <description>Recent content in Blog Posts on Packit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://packit.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -75,6 +75,15 @@ improvements of version
       <description>&lt;p&gt;It&amp;rsquo;s been over a month since we released packit &amp;ldquo;0.3.0&amp;rdquo;. Here comes packit 0.4.0 (and patch release 0.4.1) and as always they bring a lot of new features and improvements.&lt;/p&gt;
 &lt;p&gt;You can find a complete list in the
 &lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md#040&#34;&gt;changelog&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>August 2020</title>
+      <link>https://packit.dev/posts/august-2020/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/august-2020/</guid>
+      <description>Week 32 (August 3rd - August 7th) and 33 (August 10th - August 13th)  We renamed our GitHub organisation to packit. That user had been inactive for a long time and Hunor&amp;lsquo;s request was successful. The Copr project settings are now changed only if needed. If we can&amp;rsquo;t edit the settings, we ask for the admin access to the Copr project and the service shows you a table with the changes if you want to do the edit manually.</description>
     </item>
     
     <item>
