@@ -48,7 +48,7 @@ These applies to `srpm` command and building in COPR.
 |        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                                    | replace patching                          |
 |        | `fix-spec-file`            | upstream git repo | after creation of a tarball and before running rpmbuild command                   | this action changes spec file to use the new tarball                          |
 
-**create-archive** - is expected to return the created archive name. If there are more steps, then one of them has to return the archive name.
+**create-archive** - is expected to return a relative path to the archive - relative within the repository. If there are more steps, then one of them has to return the archive name.
 
 **fix-spec-file** — this action performs these 3 operations on a spec file:
 
