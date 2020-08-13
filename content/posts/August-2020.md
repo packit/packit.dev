@@ -6,8 +6,8 @@ draft: false
 
 ## Week 32 (August 3rd - August 7th) and 33 (August 10th - August 13th)
 
-- Last week, we renamed our GitHub organisation to `packit`.
-  That user was inactive for a long time and [Hunor]'s request was successful.
+- We renamed our GitHub organisation to `packit`.
+  That user had been inactive for a long time and [Hunor]'s request was successful.
 - The Copr project settings are now changed only if needed. If we can't edit the settings,
   we ask for the admin access to the Copr project and the service shows you a table with
   the changes if you want to do the edit manually.
