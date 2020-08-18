@@ -285,14 +285,23 @@ Required metadata:
 Optional metadata:
 
 * **timeout** - (seconds) give up watching a build after timeout, defaults to 7200s, i.e. 2 hours
-* **owner** - a namespace in COPR where the build should happen (defaults to packit)
-* **project** - a name of the copr project (defaults to `"{github_namespace}-{repository_name}-{pr_id}"`)
+* **owner** - a namespace in Copr where the build should happen (defaults to packit)
+* **project** - a name of the Copr project (defaults to `"{github_namespace}-{repository_name}-{pr_id}"`)
+* **additional_repos** - a list of additional buildroot repositories
+* **list_on_homepage** -- The project will be shown on Copr frontend homepage if set to `True`.
+  Defaults to `False`.
+  The value is represented as `unlisted_on_hp` in Copr project settings.
+* **preserve_project** -- The project will not be removed after 60 days if set to `True`.
+  Defaults to `False`.
+  The value is represented as `delete_after_days` in Copr project settings
+  (`True` is `-1` and `False` is `60`).
 
-If you want to build in your own COPR namespace, you need to [grant packit
-permissions](https://docs.pagure.org/copr.copr/user_documentation.html?highlight=permissions#can-i-give-access-to-my-repo-to-my-team-mate)
-to build inside. The way COPR does this right now is that we, from the packit
-side, need to do a request for permissions. Please reach out to us via
-user-cont-team@redhat.com and we'd be glad to help you.
+For custom `owner`, you will be asked to give us `builder` permission
+and in case of settings change (e.g. `targets`) also for `admin` permission.
+(You need to approve this request in the Copr project settings.)
+If you do not want to give us `admin` permission, you can do the change in Copr settings manually.
+Boolean values (`list_on_homepage` and `preserve_project`) are not updated
+when you use custom `owner`.
 
 **Example**
 

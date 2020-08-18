@@ -1135,14 +1135,23 @@ will be used, but you can use e.g. <code>fedora-stable-aarch64</code> if you nee
 <p>Optional metadata:</p>
 <ul>
 <li><strong>timeout</strong> - (seconds) give up watching a build after timeout, defaults to 7200s, i.e. 2 hours</li>
-<li><strong>owner</strong> - a namespace in COPR where the build should happen (defaults to packit)</li>
-<li><strong>project</strong> - a name of the copr project (defaults to <code>&quot;{github_namespace}-{repository_name}-{pr_id}&quot;</code>)</li>
+<li><strong>owner</strong> - a namespace in Copr where the build should happen (defaults to packit)</li>
+<li><strong>project</strong> - a name of the Copr project (defaults to <code>&quot;{github_namespace}-{repository_name}-{pr_id}&quot;</code>)</li>
+<li><strong>additional_repos</strong> - a list of additional buildroot repositories</li>
+<li><strong>list_on_homepage</strong> &ndash; The project will be shown on Copr frontend homepage if set to <code>True</code>.
+Defaults to <code>False</code>.
+The value is represented as <code>unlisted_on_hp</code> in Copr project settings.</li>
+<li><strong>preserve_project</strong> &ndash; The project will not be removed after 60 days if set to <code>True</code>.
+Defaults to <code>False</code>.
+The value is represented as <code>delete_after_days</code> in Copr project settings
+(<code>True</code> is <code>-1</code> and <code>False</code> is <code>60</code>).</li>
 </ul>
-<p>If you want to build in your own COPR namespace, you need to <a href="https://docs.pagure.org/copr.copr/user_documentation.html?highlight=permissions#can-i-give-access-to-my-repo-to-my-team-mate">grant packit
-permissions</a>
-to build inside. The way COPR does this right now is that we, from the packit
-side, need to do a request for permissions. Please reach out to us via
-<a href="mailto:user-cont-team@redhat.com">user-cont-team@redhat.com</a> and we&rsquo;d be glad to help you.</p>
+<p>For custom <code>owner</code>, you will be asked to give us <code>builder</code> permission
+and in case of settings change (e.g. <code>targets</code>) also for <code>admin</code> permission.
+(You need to approve this request in the Copr project settings.)
+If you do not want to give us <code>admin</code> permission, you can do the change in Copr settings manually.
+Boolean values (<code>list_on_homepage</code> and <code>preserve_project</code>) are not updated
+when you use custom <code>owner</code>.</p>
 <p><strong>Example</strong></p>
 <pre><code>jobs:
 - job: copr_build
