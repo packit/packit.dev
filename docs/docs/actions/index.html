@@ -1047,7 +1047,7 @@ event, e.g. clones an upstream repo.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>create-archive</strong> - is expected to return the created archive name. If there are more steps, then one of them has to return the archive name.</p>
+<p><strong>create-archive</strong> - is expected to return a relative path to the archive - relative within the repository. If there are more steps, then one of them has to return the archive name.</p>
 <p><strong>fix-spec-file</strong> — this action performs these 3 operations on a spec file:</p>
 <ol>
 <li>Replaces <code>Source0</code> with a local path to the generated tarball</li>
