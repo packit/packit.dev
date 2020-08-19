@@ -85,8 +85,6 @@ The important point with patch files is, that a commit which changes code (not
 downstream packaging) will be:
 1. converted into a patch file (using `git format-patch`)
 2. added to the spec file
-3. the `%setup` line in the spec will be converted to `%autosetup -p1` to make
-   sure the patches are applied correctly in the `%prep` phase
 
 
 #### Rebase or merge?
