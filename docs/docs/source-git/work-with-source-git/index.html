@@ -1004,10 +1004,46 @@ downstream packaging) will be:</p>
 <ol>
 <li>converted into a patch file (using <code>git format-patch</code>)</li>
 <li>added to the spec file</li>
-<li>the <code>%setup</code> line in the spec will be converted to <code>%autosetup -p1</code> to make
-sure the patches are applied correctly in the <code>%prep</code> phase</li>
 </ol>
-<h4 id="rebase-or-merge">Rebase or merge?</h4>
+<h4 id="controlling-the-patch-process">Controlling the patch process</h4>
+<p>With the process above you cannot name the patch file nor control where exactly
+should packit place the <code>Patch123: 123.patch</code> line in the specfile. There is a
+way though how you can do all of that yourself. You can set patch metadata in a
+commit message which packit will then read and take into account:</p>
+<ul>
+<li><code>patch_name</code> — name of the patch (e.g. <code>my-fancy.patch</code>)</li>
+<li><code>present_in_specfile:</code> — when set to <code>true</code>, it indicates the patch is set in
+the spec file so packit should not touch the spec file</li>
+</ul>
+<p>packit parses the metadata as yaml, hence the colon syntax.</p>
+<p>Example:</p>
+<pre><code>Author:     Packit &lt;packit&gt;
+AuthorDate: Wed Aug 19 11:55:14 2020 +0000
+Commit:     Packit &lt;packit&gt;
+CommitDate: Wed Aug 19 11:55:14 2020 +0000
+
+    Apply patch drpm-0.3.0-workaround-ppc64le-gcc.patch
+
+    patch_name: drpm-0.3.0-workaround-ppc64le-gcc.patch
+    present_in_specfile: true
+---
+ src/CMakeLists.txt  |  2 +-
+ test/CMakeLists.txt | 12 +-----------
+ 2 files changed, 2 insertions(+), 12 deletions(-)
+</code></pre><p>And this is how a corresponding spec file looks (shortened for brevity)</p>
+<pre><code>Name:           drpm
+Version:        0.4.1
+Release:        2.g959639c5%{?dist}
+URL:            https://github.com/rpm-software-management/%{name}
+Source:         %{url}/releases/download/%{version}/%{name}-%{version}.tar.bz2
+
+# add workaround for gcc7 on ppc64le temporary before it's fixed in gcc
+# https://bugzilla.redhat.com/show_bug.cgi?id=1420350
+Patch1:         drpm-0.3.0-workaround-ppc64le-gcc.patch
+
+%prep
+%autosetup -p1
+</code></pre><h4 id="rebase-or-merge">Rebase or merge?</h4>
 <p>The most common workflow in the world of open source development is to accept
 pull requests and have merge commits in the git history. If the PRs are not
 rebased against master before the merge, the history may go wild. Packit is
