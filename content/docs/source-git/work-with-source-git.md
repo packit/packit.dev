@@ -85,8 +85,52 @@ The important point with patch files is, that a commit which changes code (not
 downstream packaging) will be:
 1. converted into a patch file (using `git format-patch`)
 2. added to the spec file
-3. the `%setup` line in the spec will be converted to `%autosetup -p1` to make
-   sure the patches are applied correctly in the `%prep` phase
+
+
+#### Controlling the patch process
+
+With the process above you cannot name the patch file nor control where exactly
+should packit place the `Patch123: 123.patch` line in the specfile. There is a
+way though how you can do all of that yourself. You can set patch metadata in a
+commit message which packit will then read and take into account:
+* `patch_name` — name of the patch (e.g. `my-fancy.patch`)
+* `present_in_specfile:` — when set to `true`, it indicates the patch is set in
+  the spec file so packit should not touch the spec file
+
+packit parses the metadata as yaml, hence the colon syntax.
+
+Example:
+```
+Author:     Packit <packit>
+AuthorDate: Wed Aug 19 11:55:14 2020 +0000
+Commit:     Packit <packit>
+CommitDate: Wed Aug 19 11:55:14 2020 +0000
+
+    Apply patch drpm-0.3.0-workaround-ppc64le-gcc.patch
+
+    patch_name: drpm-0.3.0-workaround-ppc64le-gcc.patch
+    present_in_specfile: true
+---
+ src/CMakeLists.txt  |  2 +-
+ test/CMakeLists.txt | 12 +-----------
+ 2 files changed, 2 insertions(+), 12 deletions(-)
+```
+
+And this is how a corresponding spec file looks (shortened for brevity)
+```
+Name:           drpm
+Version:        0.4.1
+Release:        2.g959639c5%{?dist}
+URL:            https://github.com/rpm-software-management/%{name}
+Source:         %{url}/releases/download/%{version}/%{name}-%{version}.tar.bz2
+
+# add workaround for gcc7 on ppc64le temporary before it's fixed in gcc
+# https://bugzilla.redhat.com/show_bug.cgi?id=1420350
+Patch1:         drpm-0.3.0-workaround-ppc64le-gcc.patch
+
+%prep
+%autosetup -p1
+```
 
 
 #### Rebase or merge?
