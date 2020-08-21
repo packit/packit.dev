@@ -20,3 +20,15 @@ draft: false
 
 [hunor]: https://github.com/csomh
 [matej]: https://github.com/mfocko
+
+## Week 34 (August 17th - August 20th)
+
+- [Tomas] tought packit how to merge related commits, which were previously created
+  by git-am applying of a multiple commit patch. ([packit#933](https://github.com/packit/packit/pull/933))
+- [Anchit] added new `/api/srpm-builds/` endpoint.
+- Service now requests 'builder' permission for custom projects if needed.
+- [Franta] fixed a problem with only one job executed executed for 2 build definitions for the same trigger.
+
+[anchit]: https://github.com/IceWreck
+[franta]: https://github.com/lachmanfrantisek
+[tomas]: https://github.com/TomasTomecek
