@@ -149,3 +149,52 @@ you need and us making them available for you.
 
 In the mean time we are solving these requests one by one, so [please reach out
 to us](#how-can-i-contact-you).
+
+### A command failed in packit-service: how do I reproduce it locally?
+
+We don't have an end-to-end solution to this, yet.
+
+In the meantime, you can pull our production sandbox image and run the command
+inside. As an example, this is how we were debugging build problems with
+anaconda:
+
+1. Clone the upstream git repo.
+
+2. Pull the sandbox image:
+
+```
+$ docker pull docker.io/usercont/sandcastle:prod
+```
+
+3. Launch the container and bind-mount the upstream project inside:
+
+```
+$ docker run -ti --rm -v $PWD:/anaconda docker.io/usercont/sandcastle:prod bash
+```
+
+4. Run commands of your choice:
+
+```
+[root@4af5dbd9c828 /]# cd /anaconda
+
+[root@4af5dbd9c828 anaconda]# ./configure
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether UID '0' is supported by ustar format... yes
+checking whether GID '0' is supported by ustar format... yes
+checking how to create a ustar tar archive... gnutar
+checking whether make supports nested variables... (cached) yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+...
+```
+
+Our deployment is running in [OpenShift
+Online](https://www.openshift.com/products/online/) which is using docker as a
+container engine, that's why we are using docker here and not
+[podman](https://github.com/containers/podman).

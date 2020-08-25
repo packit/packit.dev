@@ -908,6 +908,7 @@ if (!doNotTrack) {
         <li><a href="#after-adding-tests-i-see-error-no-fmf-metadata-found">After adding tests I see error &lsquo;No FMF metadata found.&rsquo;</a></li>
         <li><a href="#does-packit-work-with-rpmautospechttpsdocspagureorgfedora-infrarpmautospec">Does packit work with <a href="https://docs.pagure.org/Fedora-Infra.rpmautospec/">rpmautospec</a>?</a></li>
         <li><a href="#how-do-i-install-dependencies-for-my-commands-in-packit-service">How do I install dependencies for my commands in packit-service?</a></li>
+        <li><a href="#a-command-failed-in-packit-service-how-do-i-reproduce-it-locally">A command failed in packit-service: how do I reproduce it locally?</a></li>
       </ul>
     </li>
   </ul>
@@ -1029,6 +1030,48 @@ At the moment we don&rsquo;t have any mechanism for you to define the dependenci
 you need and us making them available for you.</p>
 <p>In the mean time we are solving these requests one by one, so <a href="#how-can-i-contact-you">please reach out
 to us</a>.</p>
+<h3 id="a-command-failed-in-packit-service-how-do-i-reproduce-it-locally">A command failed in packit-service: how do I reproduce it locally?</h3>
+<p>We don&rsquo;t have an end-to-end solution to this, yet.</p>
+<p>In the meantime, you can pull our production sandbox image
+(<code>docker.io/usercont/sandcastle:prod</code>) and run the command inside. As an
+example, this is how we were debugging build problems with anaconda:</p>
+<ol>
+<li>
+<p>Clone the upstream git repo.</p>
+</li>
+<li>
+<p>Pull the sandbox image:</p>
+</li>
+</ol>
+<pre><code>$ docker pull docker.io/usercont/sandcastle:prod
+</code></pre><ol start="3">
+<li>Launch the container and bind-mount the upstream project inside:</li>
+</ol>
+<pre><code>$ docker run -ti --rm -v $PWD:/anaconda docker.io/usercont/sandcastle:prod bash
+</code></pre><ol start="4">
+<li>Run commands of your choice:</li>
+</ol>
+<pre><code>[root@4af5dbd9c828 /]# cd /anaconda
+
+[root@4af5dbd9c828 anaconda]# ./configure
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether UID '0' is supported by ustar format... yes
+checking whether GID '0' is supported by ustar format... yes
+checking how to create a ustar tar archive... gnutar
+checking whether make supports nested variables... (cached) yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+...
+</code></pre><p>Our deployment is running in <a href="https://www.openshift.com/products/online/">OpenShift
+Online</a> which is using docker as a
+container engine, that&rsquo;s why we are using docker here and not
+<a href="https://github.com/containers/podman">podman</a>.</p>
 
 
 
