@@ -32,3 +32,12 @@ draft: false
 [anchit]: https://github.com/IceWreck
 [franta]: https://github.com/lachmanfrantisek
 [tomas]: https://github.com/TomasTomecek
+
+## Week 35 (August 24th - August 28th)
+
+- [Tomas] improved logging of the Packit actions' output. ([packit#950](https://github.com/packit/packit/pull/950))
+- [Anchit] fixed and enhanced the `/api/srpm-builds` endpoint.
+  ([packit-service#788](https://github.com/packit/packit-service/pull/788))
+
+[tomas]: https://github.com/TomasTomecek
+[anchit]: https://github.com/IceWreck
