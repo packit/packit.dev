@@ -18,3 +18,4 @@ weight: 3
 - [June 2020](/posts/june-2020/)
 - [July 2020](/posts/july-2020/)
 - [August 2020](/posts/august-2020/)
+- [September 2020](/posts/september-2020)
