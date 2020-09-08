@@ -6,7 +6,7 @@
     <description>Recent content in Blog Posts on Packit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2020 12:07:03 +0200</lastBuildDate>
     
 	<atom:link href="https://packit.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -75,6 +75,15 @@ improvements of version
       <description>&lt;p&gt;It&amp;rsquo;s been over a month since we released packit &amp;ldquo;0.3.0&amp;rdquo;. Here comes packit 0.4.0 (and patch release 0.4.1) and as always they bring a lot of new features and improvements.&lt;/p&gt;
 &lt;p&gt;You can find a complete list in the
 &lt;a href=&#34;https://github.com/packit-service/packit/blob/master/CHANGELOG.md#040&#34;&gt;changelog&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>September 2020</title>
+      <link>https://packit.dev/posts/september-2020/</link>
+      <pubDate>Fri, 04 Sep 2020 12:07:03 +0200</pubDate>
+      
+      <guid>https://packit.dev/posts/september-2020/</guid>
+      <description>Week 36 (August 31th - September 4th)  We store the submission time of SRPM builds now (packit-service#795 by Anchit). Shreyas improved implementation of the build status reporting (packit-service#740). Anchit enhanced the /koji-builds endpoint to be more consistent with /copr-builds endpoint (packit-service#791).  </description>
     </item>
     
     <item>
