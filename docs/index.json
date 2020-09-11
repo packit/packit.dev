@@ -151,7 +151,7 @@
 	"title": "September 2020",
 	"tags": [],
 	"description": "",
-	"content": "Week 36 (August 31th - September 4th)  We store the submission time of SRPM builds now (packit-service#795 by Anchit). Shreyas improved implementation of the build status reporting (packit-service#740). Anchit enhanced the /koji-builds endpoint to be more consistent with /copr-builds endpoint (packit-service#791).  "
+	"content": "Week 36 (August 31th - September 4th)  We store the submission time of SRPM builds now (packit-service#795 by Anchit). Shreyas improved implementation of the build status reporting (packit-service#740). Anchit enhanced the /koji-builds endpoint to be more consistent with /copr-builds endpoint (packit-service#791).  Week 37 (September 7th - September 11th)  Stage now uses Tokman to get access tokens for GitHub, which should resolve race condition when running parallel jobs (Tokman by Hunor, ogr integration by Matej). Franta has addressed problems with Testing-Farm cluster with custom response on PRs that links to more information (pinned info, packit-service#798).  "
 },
 {
 	"uri": "https://packit.dev/posts/august-2020/",

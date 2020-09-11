@@ -12,3 +12,13 @@ draft: false
 
 [anchit]: https://github.com/IceWreck
 [shreyas]: https://github.com/shreyaspapi
+
+## Week 37 (September 7th - September 11th)
+
+- Stage now uses [Tokman](https://github.com/packit/tokman) to get access tokens for GitHub, which should resolve race condition when running parallel jobs
+  (Tokman by [Hunor], ogr integration by [Matej]).
+- [Franta] has addressed problems with Testing-Farm cluster with custom response on PRs that links to more information ([pinned info](https://github.com/packit/packit-service/issues/803), [packit-service#798](https://github.com/packit/packit-service/pull/798)).
+
+[hunor]: https://github.com/csomh
+[matej]: https://github.com/mfocko
+[franta]: https://github.com/lachmanfrantisek
