@@ -918,6 +918,7 @@ if (!doNotTrack) {
 <nav id="TableOfContents">
   <ul>
     <li><a href="#week-36-august-31th---september-4th">Week 36 (August 31th - September 4th)</a></li>
+    <li><a href="#week-37-september-7th---september-11th">Week 37 (September 7th - September 11th)</a></li>
   </ul>
 </nav>
     </div>
@@ -948,6 +949,12 @@ if (!doNotTrack) {
 <li>We store the submission time of SRPM builds now (<a href="https://github.com/packit/packit-service/pull/795">packit-service#795</a> by <a href="https://github.com/IceWreck">Anchit</a>).</li>
 <li><a href="https://github.com/shreyaspapi">Shreyas</a> improved implementation of the build status reporting (<a href="https://github.com/packit/packit-service/pull/740">packit-service#740</a>).</li>
 <li><a href="https://github.com/IceWreck">Anchit</a> enhanced the <code>/koji-builds</code> endpoint to be more consistent with <code>/copr-builds</code> endpoint (<a href="https://github.com/packit/packit-service/pull/791">packit-service#791</a>).</li>
+</ul>
+<h2 id="week-37-september-7th---september-11th">Week 37 (September 7th - September 11th)</h2>
+<ul>
+<li>Stage now uses <a href="https://github.com/packit/tokman">Tokman</a> to get access tokens for GitHub, which should resolve race condition when running parallel jobs
+(Tokman by <a href="https://github.com/csomh">Hunor</a>, ogr integration by <a href="https://github.com/mfocko">Matej</a>).</li>
+<li><a href="https://github.com/lachmanfrantisek">Franta</a> has addressed problems with Testing-Farm cluster with custom response on PRs that links to more information (<a href="https://github.com/packit/packit-service/issues/803">pinned info</a>, <a href="https://github.com/packit/packit-service/pull/798">packit-service#798</a>).</li>
 </ul>
 
 
