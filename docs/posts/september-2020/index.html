@@ -919,6 +919,7 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#week-36-august-31th---september-4th">Week 36 (August 31th - September 4th)</a></li>
     <li><a href="#week-37-september-7th---september-11th">Week 37 (September 7th - September 11th)</a></li>
+    <li><a href="#week-38-september-21st---september-18th">Week 38 (September 21st - September 18th)</a></li>
   </ul>
 </nav>
     </div>
@@ -955,6 +956,28 @@ if (!doNotTrack) {
 <li>Stage now uses <a href="https://github.com/packit/tokman">Tokman</a> to get access tokens for GitHub, which should resolve race condition when running parallel jobs
 (Tokman by <a href="https://github.com/csomh">Hunor</a>, ogr integration by <a href="https://github.com/mfocko">Matej</a>).</li>
 <li><a href="https://github.com/lachmanfrantisek">Franta</a> has addressed problems with Testing-Farm cluster with custom response on PRs that links to more information (<a href="https://github.com/packit/packit-service/issues/803">pinned info</a>, <a href="https://github.com/packit/packit-service/pull/798">packit-service#798</a>).</li>
+</ul>
+<h2 id="week-38-september-21st---september-18th">Week 38 (September 21st - September 18th)</h2>
+<ul>
+<li>The combination of the source-git patches with existing patches now works well
+(<a href="https://github.com/packit/packit/pull/963">packit#963</a>).</li>
+<li>Service now mostly supports also GitLab as you can see
+<a href="https://gitlab.com/packit-service/hello-world/-/merge_requests/10">here</a>
+or <a href="https://gitlab.com/packit-service/src/drpm/-/merge_requests/2">here</a>.
+A lot of small issues were fixed in the last week
+(<a href="https://github.com/packit/packit-service/pull/806">packit-service#806</a>,
+<a href="https://github.com/packit/packit-service/pull/812">packit-service#812</a>,
+<a href="https://github.com/packit/packit-service/pull/814">packit-service#814</a>,
+<a href="https://github.com/packit/packit-service/pull/815">packit-service#815</a>,
+<a href="https://github.com/packit/packit-service/pull/816">packit-service#816</a>
+).</li>
+<li>Created Copr projects are now prefixed with the hostname
+for non-GitHub services and also support multipart namespaces
+(<a href="https://github.com/packit/packit-service/pull/819">packit-service#819</a>).</li>
+<li><a href="https://github.com/lbarcziova">Laura</a> fixed two testing-farm related issues
+(<a href="https://github.com/packit/packit-service/pull/808">packit-service#808</a>,
+<a href="https://github.com/packit/packit-service/pull/809">packit-service#809</a>).
+You can now use <code>test</code> job also on Pagure and GitLab thanks to that.</li>
 </ul>
 
 
