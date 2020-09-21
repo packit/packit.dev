@@ -22,3 +22,27 @@ draft: false
 [hunor]: https://github.com/csomh
 [matej]: https://github.com/mfocko
 [franta]: https://github.com/lachmanfrantisek
+
+## Week 38 (September 21st - September 18th)
+
+- The combination of the source-git patches with existing patches now works well
+  ([packit#963](https://github.com/packit/packit/pull/963)).
+- Service now mostly supports also GitLab as you can see
+  [here](https://gitlab.com/packit-service/hello-world/-/merge_requests/10)
+  or [here](https://gitlab.com/packit-service/src/drpm/-/merge_requests/2).
+  A lot of small issues were fixed in the last week
+  ([packit-service#806](https://github.com/packit/packit-service/pull/806),
+  [packit-service#812](https://github.com/packit/packit-service/pull/812),
+  [packit-service#814](https://github.com/packit/packit-service/pull/814),
+  [packit-service#815](https://github.com/packit/packit-service/pull/815),
+  [packit-service#816](https://github.com/packit/packit-service/pull/816)
+  ).
+- Created Copr projects are now prefixed with the hostname
+  for non-GitHub services and also support multipart namespaces
+  ([packit-service#819](https://github.com/packit/packit-service/pull/819)).
+- [Laura] fixed two testing-farm related issues
+  ([packit-service#808](https://github.com/packit/packit-service/pull/808),
+  [packit-service#809](https://github.com/packit/packit-service/pull/809)).
+  You can now use `test` job also on Pagure and GitLab thanks to that.
+
+[laura]: https://github.com/lbarcziova
