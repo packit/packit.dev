@@ -27,14 +27,14 @@ draft: false
 
 - The combination of the source-git patches with existing patches now works well
   ([packit#963](https://github.com/packit/packit/pull/963)).
-- Service now mostly support also GitLab as you can see
+- Service now mostly supports also GitLab as you can see
   [here](https://gitlab.com/packit-service/hello-world/-/merge_requests/10)
   or [here](https://gitlab.com/packit-service/src/drpm/-/merge_requests/2).
   A lot of small issues were fixed in the last week
   ([packit-service#806](https://github.com/packit/packit-service/pull/806),
   [packit-service#812](https://github.com/packit/packit-service/pull/812),
   [packit-service#814](https://github.com/packit/packit-service/pull/814),
-  [packit-service#815](https://github.com/packit/packit-service/pull/815)
+  [packit-service#815](https://github.com/packit/packit-service/pull/815),
   [packit-service#816](https://github.com/packit/packit-service/pull/816)
   ).
 - Created Copr projects are now prefixed with the hostname
