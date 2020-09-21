@@ -58,6 +58,9 @@ and config file path are set every time by default).
 #### upstream_ref
 
 (*string*) Git reference to last upstream git commit (for source-git repos).
+Can be set to commit hash, tag or a branch name. You can also use globbing pattern
+to find a tag. In case you want to use globbing pattern for a branch, prefix the
+pattern with `branches/`, e.g. for a branch matching `*-release` set to `branches/*-release`.
 
 #### downstream_package_name
 
@@ -82,7 +85,7 @@ Github repository.
 #### current_version_command
 
 (*list of strings*) A command which prints current upstream version (hint:
-`git describe`) (defaults to `git describe --tags --match '*.*'`).
+`git describe`) (defaults to `git describe --abbrev=0 --tags --match '*'`).
 
 #### actions
 

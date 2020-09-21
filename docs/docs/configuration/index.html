@@ -996,7 +996,10 @@ new pull request (defaults to <code>true</code>) or push directly to dist-git (i
 repo which are meant to be copied to dist-git during an update (spec file path
 and config file path are set every time by default).</p>
 <h4 id="upstream_ref">upstream_ref</h4>
-<p>(<em>string</em>) Git reference to last upstream git commit (for source-git repos).</p>
+<p>(<em>string</em>) Git reference to last upstream git commit (for source-git repos).
+Can be set to commit hash, tag or a branch name. You can also use globbing pattern
+to find a tag. In case you want to use globbing pattern for a branch, prefix the
+pattern with <code>branches/</code>, e.g. for a branch matching <code>*-release</code> set to <code>branches/*-release</code>.</p>
 <h4 id="downstream_package_name">downstream_package_name</h4>
 <p>(<em>string</em>) Name of the RPM package in Fedora, defaults to the name of the
 Github repository.</p>
@@ -1010,7 +1013,7 @@ Github repository.</p>
 (defaults to <code>git archive -o &quot;{specfile_dir}/{package_name}-{version}.tar.gz&quot; --prefix &quot;{package_name}-{version}/&quot; HEAD</code>).</p>
 <h4 id="current_version_command">current_version_command</h4>
 <p>(<em>list of strings</em>) A command which prints current upstream version (hint:
-<code>git describe</code>) (defaults to <code>git describe --tags --match '*.*'</code>).</p>
+<code>git describe</code>) (defaults to <code>git describe --abbrev=0 --tags --match '*'</code>).</p>
 <h4 id="actions">actions</h4>
 <p>(<em>string</em>) Custom actions/hooks overwriting the default behavior of packit
 (more in <a href="/docs/actions/">Actions</a>).</p>
