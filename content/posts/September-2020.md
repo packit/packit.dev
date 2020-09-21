@@ -40,9 +40,9 @@ draft: false
 - Created Copr projects are now prefixed with the hostname
   for non-GitHub services and also support multipart namespaces
   ([packit-service#819](https://github.com/packit/packit-service/pull/819)).
-- [Laura] fixed two issues with the testing-farm, our testing runner service
+- [Laura] fixed two testing-farm related issues
   ([packit-service#808](https://github.com/packit/packit-service/pull/808),
   [packit-service#809](https://github.com/packit/packit-service/pull/809)).
-  It now works also on Pagure and GitLab.
+  You can now use `test` job also on Pagure and GitLab thanks to that.
 
 [laura]: https://github.com/lbarcziova
