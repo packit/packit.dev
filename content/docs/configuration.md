@@ -417,6 +417,7 @@ The acceptable names are the same as for the package config:
  `debug`                      | bool            | enable debug logs
  `fas_user`                   | string          | username in Fedora account system (to perform kinit if needed)
  `authentication`             | dict            | tokens for services (GitHub, Pagure)
+ `upstream_git_remote`        | string          | name of the git remote to discover upstream project URL from
 
 The `authentication` is a dictionary where:
 * key is a hostname, url or name that can be mapped to a service-type, for example `github.com` or `pagure`
