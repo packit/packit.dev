@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.69.2" />
     <meta name="description" content="">
 
 
@@ -919,7 +919,8 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#week-36-august-31th---september-4th">Week 36 (August 31th - September 4th)</a></li>
     <li><a href="#week-37-september-7th---september-11th">Week 37 (September 7th - September 11th)</a></li>
-    <li><a href="#week-38-september-21st---september-18th">Week 38 (September 21st - September 18th)</a></li>
+    <li><a href="#week-38-september-14th---september-18th">Week 38 (September 14th - September 18th)</a></li>
+    <li><a href="#week-39-september-21st---september-25th">Week 39 (September 21st - September 25th)</a></li>
   </ul>
 </nav>
     </div>
@@ -957,7 +958,7 @@ if (!doNotTrack) {
 (Tokman by <a href="https://github.com/csomh">Hunor</a>, ogr integration by <a href="https://github.com/mfocko">Matej</a>).</li>
 <li><a href="https://github.com/lachmanfrantisek">Franta</a> has addressed problems with Testing-Farm cluster with custom response on PRs that links to more information (<a href="https://github.com/packit/packit-service/issues/803">pinned info</a>, <a href="https://github.com/packit/packit-service/pull/798">packit-service#798</a>).</li>
 </ul>
-<h2 id="week-38-september-21st---september-18th">Week 38 (September 21st - September 18th)</h2>
+<h2 id="week-38-september-14th---september-18th">Week 38 (September 14th - September 18th)</h2>
 <ul>
 <li>The combination of the source-git patches with existing patches now works well
 (<a href="https://github.com/packit/packit/pull/963">packit#963</a>).</li>
@@ -978,6 +979,18 @@ for non-GitHub services and also support multipart namespaces
 (<a href="https://github.com/packit/packit-service/pull/808">packit-service#808</a>,
 <a href="https://github.com/packit/packit-service/pull/809">packit-service#809</a>).
 You can now use <code>test</code> job also on Pagure and GitLab thanks to that.</li>
+</ul>
+<h2 id="week-39-september-21st---september-25th">Week 39 (September 21st - September 25th)</h2>
+<ul>
+<li>Service supports private namespaces now. They need to be configured in the service config. <a href="https://github.com/packit/packit-service/pull/831">packit-service#831</a></li>
+<li>If git tag contains more information than just version (e.g. <code>pkg_name-v1.2.3</code>), it is possible to use upstream_tag_template to extract version from the tag, which will be used in a subsequent task. <a href="https://packit.dev/docs/configuration/#upstream_tag_template">doc</a> <a href="https://github.com/packit/packit/pull/959">packit#959</a></li>
+<li>Added support for globbing pattern in upstream_ref. <a href="https://packit.dev/docs/configuration/#upstream_ref">doc</a> <a href="https://github.com/packit/packit/pull/960">packit#960</a></li>
+<li>Packit <code>--remote</code> is global option now and available for all commands. Because of this <code>sync-from-downstream --remote</code> was renamed to <code>--remote-to-push</code>. Remote can now be specified in the user&rsquo;s config (via upstream_git_remote parameter). <a href="https://github.com/packit/packit/pull/977">packit#977</a></li>
+</ul>
+<p>Following bugs were fixed:</p>
+<ul>
+<li>Packit dropping leading zeros in version. <a href="https://github.com/packit/packit/pull/814">packit#814</a></li>
+<li>Packit CLI issue caused by picking incorrect copr project name. <a href="https://github.com/packit/packit/pull/971">packit#971</a></li>
 </ul>
 
 
