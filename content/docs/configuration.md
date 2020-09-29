@@ -87,6 +87,12 @@ Github repository.
 (*list of strings*) A command which prints current upstream version (hint:
 `git describe`) (defaults to `git describe --abbrev=0 --tags --match '*'`).
 
+This option affects the behavior of following CLI commands:
+* build
+* local-build
+* copr-build
+* srpm
+
 #### actions
 
 (*string*) Custom actions/hooks overwriting the default behavior of packit
