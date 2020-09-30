@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.69.2" />
+    <meta name="generator" content="Hugo 0.73.0" />
     <meta name="description" content="">
 
 
@@ -982,7 +982,7 @@ You can now use <code>test</code> job also on Pagure and GitLab thanks to that.<
 </ul>
 <h2 id="week-39-september-21st---september-25th">Week 39 (September 21st - September 25th)</h2>
 <ul>
-<li>Service supports private namespaces now. They need to be configured in the service config. <a href="https://github.com/packit/packit-service/pull/831">packit-service#831</a></li>
+<li>Packit-service can be configured to work with private namespaces. This is plumbing work which we need right now for CentOS Stream. We are not planning to enable this for GitHub - packit-service will still work only for public repositories, private ones are ignored. <a href="https://github.com/packit/packit-service/pull/831">packit-service#831</a></li>
 <li>If git tag contains more information than just version (e.g. <code>pkg_name-v1.2.3</code>), it is possible to use upstream_tag_template to extract version from the tag, which will be used in a subsequent task. <a href="https://packit.dev/docs/configuration/#upstream_tag_template">doc</a> <a href="https://github.com/packit/packit/pull/959">packit#959</a></li>
 <li>Added support for globbing pattern in upstream_ref. <a href="https://packit.dev/docs/configuration/#upstream_ref">doc</a> <a href="https://github.com/packit/packit/pull/960">packit#960</a></li>
 <li>Packit <code>--remote</code> is global option now and available for all commands. Because of this <code>sync-from-downstream --remote</code> was renamed to <code>--remote-to-push</code>. Remote can now be specified in the user&rsquo;s config (via upstream_git_remote parameter). <a href="https://github.com/packit/packit/pull/977">packit#977</a></li>

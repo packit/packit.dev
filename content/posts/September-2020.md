@@ -49,7 +49,7 @@ draft: false
 
 ## Week 39 (September 21st - September 25th)
 
-- Service supports private namespaces now. They need to be configured in the service config. [packit-service#831](https://github.com/packit/packit-service/pull/831)
+- Packit-service can be configured to work with private namespaces. This is plumbing work which we need right now for CentOS Stream. We are not planning to enable this for GitHub - packit-service will still work only for public repositories, private ones are ignored. [packit-service#831](https://github.com/packit/packit-service/pull/831)
 - If git tag contains more information than just version (e.g. `pkg_name-v1.2.3`), it is possible to use upstream_tag_template to extract version from the tag, which will be used in a subsequent task. [doc](https://packit.dev/docs/configuration/#upstream_tag_template) [packit#959](https://github.com/packit/packit/pull/959)
 - Added support for globbing pattern in upstream_ref. [doc](https://packit.dev/docs/configuration/#upstream_ref) [packit#960](https://github.com/packit/packit/pull/960)
 - Packit `--remote` is global option now and available for all commands. Because of this `sync-from-downstream --remote` was renamed to `--remote-to-push`. Remote can now be specified in the user's config (via upstream_git_remote parameter). [packit#977](https://github.com/packit/packit/pull/977)
