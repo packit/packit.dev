@@ -92,7 +92,7 @@ improvements of version
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://packit.dev/posts/august-2020/</guid>
-      <description>Week 32 (August 3rd - August 7th) and 33 (August 10th - August 13th)  We renamed our GitHub organisation to packit. That user had been inactive for a long time and Hunor&amp;lsquo;s request was successful. The Copr project settings are now changed only if needed. If we can&amp;rsquo;t edit the settings, we ask for the admin access to the Copr project and the service shows you a table with the changes if you want to do the edit manually.</description>
+      <description>Week 32 (August 3rd - August 7th) and 33 (August 10th - August 13th)  We renamed our GitHub organisation to packit. That user had been inactive for a long time and Hunor&amp;rsquo;s request was successful. The Copr project settings are now changed only if needed. If we can&amp;rsquo;t edit the settings, we ask for the admin access to the Copr project and the service shows you a table with the changes if you want to do the edit manually.</description>
     </item>
     
     <item>
