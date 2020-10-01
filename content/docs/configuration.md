@@ -124,6 +124,19 @@ doing the `propose-update` command) - if you are using a different tagging
 scheme, let's say `v1.2.3` you can then set this parameter to `v{version}` and
 packit will fill in the version argument.
 
+#### archive_root_dir_template
+
+(string) Packit is updating `%autosetup -n ...` line in a spec file. For this 
+purpose, it requires the name of the archive root directory. If packit is not 
+able to extract it from the archive, it is possible to specify it explicitly 
+with this option. 
+ 
+Default value is `{upstream_pkg_name}-{version}`. 
+ 
+You can use following tags in string: 
+* `{upstream_pkg_name}` - upstream package name 
+* `{version}` - package version
+
 #### patch_generation_ignore_paths
 
 (*list of strings*) In a source-git repo, when packit is generating patches,

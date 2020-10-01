@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.73.0" />
+    <meta name="generator" content="Hugo 0.69.2" />
     <meta name="description" content="">
 
 
@@ -1042,6 +1042,17 @@ the spec file.</p>
 doing the <code>propose-update</code> command) - if you are using a different tagging
 scheme, let&rsquo;s say <code>v1.2.3</code> you can then set this parameter to <code>v{version}</code> and
 packit will fill in the version argument.</p>
+<h4 id="archive_root_dir_template">archive_root_dir_template</h4>
+<p>(string) Packit is updating <code>%autosetup -n ...</code> line in a spec file. For this
+purpose, it requires the name of the archive root directory. If packit is not
+able to extract it from the archive, it is possible to specify it explicitly
+with this option.</p>
+<p>Default value is <code>{upstream_pkg_name}-{version}</code>.</p>
+<p>You can use following tags in string:</p>
+<ul>
+<li><code>{upstream_pkg_name}</code> - upstream package name</li>
+<li><code>{version}</code> - package version</li>
+</ul>
 <h4 id="patch_generation_ignore_paths">patch_generation_ignore_paths</h4>
 <p>(<em>list of strings</em>) In a source-git repo, when packit is generating patches,
 it excludes changes to the spec file and packit.yaml by default: with this
