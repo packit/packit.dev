@@ -318,12 +318,17 @@ Optional metadata:
   The value is represented as `delete_after_days` in Copr project settings
   (`True` is `-1` and `False` is `60`).
 
-For custom `owner`, you will be asked to give us `builder` permission
-and in case of settings change (e.g. `targets`) also for `admin` permission.
-(You need to approve this request in the Copr project settings.)
-If you do not want to give us `admin` permission, you can do the change in Copr settings manually.
-Boolean values (`list_on_homepage` and `preserve_project`) are not updated
-when you use custom `owner`.
+When using a custom `owner`, Packit Service asks for `builder` permission the
+first time it tries to build in the project. In case the configuration of the
+Copr project (e.g. adding new `targets`) need to be updated, Packit Service asks
+for `admin` permission. You need to approve these requests in the Copr project
+settings.
+
+If you do not want to give us `admin` permission, you can update the project
+settings manually in Copr based on the guidance Packit Service gives.
+
+Boolean values (`list_on_homepage` and `preserve_project`) are not updated when
+you use custom `owner`.
 
 **Example**
 
