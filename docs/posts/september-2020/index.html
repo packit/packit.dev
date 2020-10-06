@@ -921,6 +921,7 @@ if (!doNotTrack) {
     <li><a href="#week-37-september-7th---september-11th">Week 37 (September 7th - September 11th)</a></li>
     <li><a href="#week-38-september-14th---september-18th">Week 38 (September 14th - September 18th)</a></li>
     <li><a href="#week-39-september-21st---september-25th">Week 39 (September 21st - September 25th)</a></li>
+    <li><a href="#week-40-september-28th---october-2nd">Week 40 (September 28th - October 2nd)</a></li>
   </ul>
 </nav>
     </div>
@@ -991,6 +992,13 @@ You can now use <code>test</code> job also on Pagure and GitLab thanks to that.<
 <ul>
 <li>Packit dropping leading zeros in version. <a href="https://github.com/packit/packit/pull/814">packit#814</a></li>
 <li>Packit CLI issue caused by picking incorrect copr project name. <a href="https://github.com/packit/packit/pull/971">packit#971</a></li>
+</ul>
+<h2 id="week-40-september-28th---october-2nd">Week 40 (September 28th - October 2nd)</h2>
+<ul>
+<li>Packit-service is now explicitly checking if requested copr-build targets exist and if not, the user is informed about it. <a href="https://github.com/packit-service/packit-service/pull/835">packit-service#835</a></li>
+<li>We have improved the way how packit updates <code>%setup</code> line in a spec file - you are now able to set content of <code>-n</code> option via archive_root_dir_template config option, it defaults to <code>{upstream-pkg-name}</code>. <a href="https://github.com/packit/packit.dev/pull/167">doc</a> <a href="https://github.com/packit-service/packit-service/pull/834">packit#834</a></li>
+<li>Packit is able to generate a patch file with format-patch without leading a/ and b/ in the patch diff. Required for patches in dist-git which are applied with -p0.</li>
+<li>Contribution guidelines were updated, now we have one shared <a href="https://github.com/packit/contributing">link</a>.</li>
 </ul>
 
 
