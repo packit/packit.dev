@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.69.2" />
+    <meta name="generator" content="Hugo 0.69.0" />
     <meta name="description" content="">
 
 
@@ -1186,12 +1186,15 @@ Defaults to <code>False</code>.
 The value is represented as <code>delete_after_days</code> in Copr project settings
 (<code>True</code> is <code>-1</code> and <code>False</code> is <code>60</code>).</li>
 </ul>
-<p>For custom <code>owner</code>, you will be asked to give us <code>builder</code> permission
-and in case of settings change (e.g. <code>targets</code>) also for <code>admin</code> permission.
-(You need to approve this request in the Copr project settings.)
-If you do not want to give us <code>admin</code> permission, you can do the change in Copr settings manually.
-Boolean values (<code>list_on_homepage</code> and <code>preserve_project</code>) are not updated
-when you use custom <code>owner</code>.</p>
+<p>When using a custom <code>owner</code>, Packit Service asks for <code>builder</code> permission the
+first time it tries to build in the project. In case the configuration of the
+Copr project (e.g. adding new <code>targets</code>) need to be updated, Packit Service asks
+for <code>admin</code> permission. You need to approve these requests in the Copr project
+settings.</p>
+<p>If you do not want to give us <code>admin</code> permission, you can update the project
+settings manually in Copr based on the guidance Packit Service gives.</p>
+<p>Boolean values (<code>list_on_homepage</code> and <code>preserve_project</code>) are not updated when
+you use custom <code>owner</code>.</p>
 <p><strong>Example</strong></p>
 <pre><code>jobs:
 - job: copr_build
