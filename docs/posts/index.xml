@@ -6,11 +6,7 @@
     <description>Recent content in Blog Posts on Packit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Sep 2020 12:07:03 +0200</lastBuildDate>
-    
-	<atom:link href="https://packit.dev/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 04 Oct 2020 12:07:03 +0200</lastBuildDate><atom:link href="https://packit.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Initial version (0.1.0) of packit is out!</title>
       <link>https://packit.dev/posts/packit-010/</link>
@@ -78,6 +74,17 @@ improvements of version
     </item>
     
     <item>
+      <title>Working on the next major RHEL release, in your upstream repo</title>
+      <link>https://packit.dev/posts/fedora-eln/</link>
+      <pubDate>Sun, 04 Oct 2020 12:07:03 +0200</pubDate>
+      
+      <guid>https://packit.dev/posts/fedora-eln/</guid>
+      <description>Fedora EL Niño (ELN) is such an awesome idea. It enables building rawhide packages in two distinct buildroots:
+ the standard Fedora Rawhide buildroot and a second one, which mimics Red Hat Enterprise Linux  This way you can make sure that your new upstream release builds fine in the next RHEL.
+But this feedback might be a little bit too late: the upstream release already happened and the code was imported in Fedora dist-git, so fixing an issue will require repeating the whole process.</description>
+    </item>
+    
+    <item>
       <title>September 2020</title>
       <link>https://packit.dev/posts/september-2020/</link>
       <pubDate>Fri, 04 Sep 2020 12:07:03 +0200</pubDate>
@@ -92,7 +99,7 @@ improvements of version
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://packit.dev/posts/august-2020/</guid>
-      <description>Week 32 (August 3rd - August 7th) and 33 (August 10th - August 13th)  We renamed our GitHub organisation to packit. That user had been inactive for a long time and Hunor&amp;lsquo;s request was successful. The Copr project settings are now changed only if needed. If we can&amp;rsquo;t edit the settings, we ask for the admin access to the Copr project and the service shows you a table with the changes if you want to do the edit manually.</description>
+      <description>Week 32 (August 3rd - August 7th) and 33 (August 10th - August 13th)  We renamed our GitHub organisation to packit. That user had been inactive for a long time and Hunor&amp;rsquo;s request was successful. The Copr project settings are now changed only if needed. If we can&amp;rsquo;t edit the settings, we ask for the admin access to the Copr project and the service shows you a table with the changes if you want to do the edit manually.</description>
     </item>
     
     <item>

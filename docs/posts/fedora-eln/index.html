@@ -23,7 +23,7 @@ if (!doNotTrack) {
 }
 </script>
 
-    <title>Packit 0.4.2 :: Packit</title>
+    <title>Working on the next major RHEL release, in your upstream repo :: Packit</title>
 
     
     <link href="/css/nucleus.css" rel="stylesheet">
@@ -53,7 +53,7 @@ if (!doNotTrack) {
     </style>
     
   </head>
-  <body class="" data-url="/posts/packit-042/">
+  <body class="" data-url="/posts/fedora-eln/">
     <nav id="sidebar" class="">
 
 
@@ -565,7 +565,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/posts/fedora-eln/" title="Working on the next major RHEL release, in your upstream repo" class="dd-item ">
+      <li data-nav-id="/posts/fedora-eln/" title="Working on the next major RHEL release, in your upstream repo" class="dd-item active">
         <a href="/posts/fedora-eln/">
         Working on the next major RHEL release, in your upstream repo
         
@@ -793,7 +793,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/posts/packit-042/" title="Packit 0.4.2" class="dd-item active">
+      <li data-nav-id="/posts/packit-042/" title="Packit 0.4.2" class="dd-item ">
         <a href="/posts/packit-042/">
         Packit 0.4.2
         
@@ -921,7 +921,7 @@ if (!doNotTrack) {
             
           
           
-            <a href='/'>About</a> > <a href='/posts/'>Blog Posts</a> > Packit 0.4.2
+            <a href='/'>About</a> > <a href='/posts/'>Blog Posts</a> > Working on the next major RHEL release, in your upstream repo
           
          
           
@@ -934,7 +934,16 @@ if (!doNotTrack) {
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#you-can-do-this-easily-with-packit">You can do this easily with Packit</a></li>
+        <li><a href="#a-real-life-example">A real-life example</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -950,7 +959,7 @@ if (!doNotTrack) {
           
             <h1>
               
-              Packit 0.4.2
+              Working on the next major RHEL release, in your upstream repo
             </h1>
           
 
@@ -958,9 +967,68 @@ if (!doNotTrack) {
 
 
 
-<p>Another relase after a month since <a href="https://packit.dev/posts/packit-041/">0.4.1</a>, this time mostly with bug fixes.</p>
-<p>We&rsquo;ve been busy polishing our <a href="https://packit.dev/packit-as-a-service/">Github App</a> recently, therefore we had no resources for new features.</p>
-<p>See <a href="https://github.com/packit-service/packit/blob/master/CHANGELOG.md#042">CHANGELOG</a> for more details.</p>
+<p><a href="https://docs.fedoraproject.org/en-US/eln/">Fedora EL Niño</a> (ELN) is such an
+awesome idea. It enables building rawhide packages in two distinct buildroots:</p>
+<ol>
+<li>the standard Fedora Rawhide buildroot and</li>
+<li>a second one, which mimics Red Hat Enterprise Linux</li>
+</ol>
+<p>This way you can make sure that your new upstream release builds fine in the
+next RHEL.</p>
+<p>But this feedback might be a little bit too late: the upstream
+release already happened and the code was imported in Fedora dist-git, so
+fixing an issue will require repeating the whole process. Wouldn&rsquo;t it be better
+to know if the upstream change builds fine in ELN <strong>while</strong> working on the
+code?</p>
+<p>Oh, wait!</p>
+<h3 id="you-can-do-this-easily-with-packit">You can do this easily with Packit</h3>
+<p>If your GitHub project is not using Packit yet, <a href="https://packit.dev/packit-as-a-service/">here&rsquo;s a
+guide</a> how to start.</p>
+<p>Once it&rsquo;s set up, you need to make sure that your pull requests are also being
+built in the <code>fedora-eln</code> target:</p>
+<pre><code>jobs:
+  - job: copr_build
+    trigger: pull_request
+    metadata:
+      targets:
+        - fedora-development
+        - fedora-eln
+</code></pre><p>With this config, changes from every pull request will be built in all
+development versions of Fedora (at the time of writing this, it&rsquo;s Rawhide and
+Fedora 33) and in Fedora ELN.</p>
+<p>Easy, right?</p>
+<p>Packit can also trigger builds when you push to a branch. If you want to have
+up to date builds of your master branch for ELN and development versions of
+Fedora, here&rsquo;s how to set it up:</p>
+<pre><code>jobs:
+  - job: copr_build
+    trigger: commit
+    metadata:
+      targets:
+        - fedora-development
+        - fedora-eln
+      branch: master
+</code></pre><h3 id="a-real-life-example">A real-life example</h3>
+<p>If you got here and you&rsquo;re still not sure why you&rsquo;d need this, I can give
+you a real-life example.</p>
+<p>Recently, <a href="https://github.com/jkonecny12">Jirka Konecny</a> from the RHEL
+Installer team reached out to us that they would love to use Packit as a CI
+system. He set it up and now all the anaconda PRs are being built and tested on
+<code>Fedora Rawhide x86_64</code>.</p>
+<p><img src="/anaconda-rawhide-tests-passing.png" alt="Anaconda PR passing tests"></p>
+<p>Jirka continued and added Fedora ELN as an additional target. The build failed
+because one of build requirements was not available in ELN:</p>
+<pre><code>Fedora ELN - Developmental modular packages for the next Enterprise Linux release               2.7 kB/s | 2.3 kB     00:0
+No matching package to install: 'metacity'
+Not all dependencies satisfied
+Error: Some packages could not be found.
+</code></pre><p>Since the team discovered this during their upstream development process, they
+can react to the issue right away. It would have been pretty late if they found this
+while the next major RHEL is reaching alpha - at this moment they should
+have enough time to fix the problem and make sure anaconda builds fine in ELN.</p>
+<p>So, are you convinced? Let us know if you need help setting up Packit in your
+upstream repositories :)</p>
+
 
 <footer class=" footline" >
 	
@@ -1356,6 +1424,26 @@ if (!doNotTrack) {
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -1543,23 +1631,6 @@ if (!doNotTrack) {
             
         
                     
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1567,9 +1638,6 @@ if (!doNotTrack) {
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1607,10 +1675,10 @@ if (!doNotTrack) {
 	 
 	 
 		
-			<a class="nav nav-prev" href="/posts/week-44-48-19/" title="Week 44-48 (November) 2019"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/posts/packit-041/" title="Packit 0.4.0 &amp; 0.4.1"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/testing-farm/" title="Testing Farm" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/posts/september-2020/" title="September 2020" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
