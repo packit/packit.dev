@@ -6,11 +6,7 @@
     <description>Recent content in Source-git Documentation on Packit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Jun 2020 23:59:59 +0100</lastBuildDate>
-    
-	<atom:link href="https://packit.dev/docs/source-git/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 24 Jun 2020 23:59:59 +0100</lastBuildDate><atom:link href="https://packit.dev/docs/source-git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to source-git?</title>
       <link>https://packit.dev/docs/source-git/how-to-source-git/</link>
