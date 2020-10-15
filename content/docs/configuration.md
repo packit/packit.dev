@@ -351,6 +351,10 @@ With this configuration, you'll get builds in all stable fedora releases
 Create a SRPM and submit an RPM build
 to [Fedora Koji](https://koji.fedoraproject.org/koji/) build system.
 
+At the moment it is not possible to run non-scratch production builds from upstream.
+For more info, please see [the following issue](https://pagure.io/releng/issue/9801).
+However, it is still possible to run scratch builds.
+
 Supported triggers:
 
 * **pull_request** -- check out content of the pull request
