@@ -1246,6 +1246,9 @@ you use custom <code>owner</code>.</p>
 <p><strong>production_build</strong> (in preview, no reporting yet)</p>
 <p>Create a SRPM and submit an RPM build
 to <a href="https://koji.fedoraproject.org/koji/">Fedora Koji</a> build system.</p>
+<p>At the moment it is not possible to run non-scratch production builds from upstream.
+For more info, please see <a href="https://pagure.io/releng/issue/9801">the following issue</a>.
+However, it is still possible to run scratch builds.</p>
 <p>Supported triggers:</p>
 <ul>
 <li><strong>pull_request</strong> &ndash; check out content of the pull request</li>
