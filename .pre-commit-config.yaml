@@ -3,8 +3,8 @@
 # pre-commit install
 
 repos:
-  - repo: https://github.com/prettier/prettier
-    rev: 2.0.5
+  - repo: https://github.com/prettier/pre-commit
+    rev: v2.1.2
     hooks:
       - id: prettier
         exclude: archetypes|docs|data|layouts|resources|static|themes/*
