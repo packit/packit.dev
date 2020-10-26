@@ -54,7 +54,7 @@ new pull request (defaults to `true`) or push directly to dist-git (if set to
 
 (*bool*) When doing a new update in Fedora dist-git, the spec-file changelog
 is synchronised when set to `true`. By default (`false`), everything but the changelog
-part is synchronized.
+part is synchronized. Use this only when your changelogs are in sync since this overwrites the changelog in the downstream.
 
 #### synced_files
 
