@@ -1029,6 +1029,10 @@ archive.</p>
 <p>(<em>bool</em>) When doing a new update in Fedora dist-git, should packit create a
 new pull request (defaults to <code>true</code>) or push directly to dist-git (if set to
 <code>false</code>).</p>
+<h4 id="sync_changelog">sync_changelog</h4>
+<p>(<em>bool</em>) When doing a new update in Fedora dist-git, the spec-file changelog
+is synchronised when set to <code>true</code>. By default (<code>false</code>), everything but the changelog
+part is synchronized.</p>
 <h4 id="synced_files">synced_files</h4>
 <p>(<em>list of strings or dicts</em>) A list of relative paths to files in the upstream
 repo which are meant to be copied to dist-git during an update (spec file path

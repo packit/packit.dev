@@ -49,6 +49,13 @@ archive.
 new pull request (defaults to `true`) or push directly to dist-git (if set to
 `false`).
 
+
+#### sync_changelog
+
+(*bool*) When doing a new update in Fedora dist-git, the spec-file changelog
+is synchronised when set to `true`. By default (`false`), everything but the changelog
+part is synchronized. Use this only when your changelogs are in sync since this overwrites the changelog in the downstream.
+
 #### synced_files
 
 (*list of strings or dicts*) A list of relative paths to files in the upstream
