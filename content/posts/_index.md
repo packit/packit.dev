@@ -19,4 +19,5 @@ weight: 3
 - [July 2020](/posts/july-2020/)
 - [August 2020](/posts/august-2020/)
 - [September 2020](/posts/september-2020)
+- [October 2020](/posts/october-2020)
 - [Fedora ELN](/posts/fedora-eln)

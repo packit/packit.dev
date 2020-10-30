@@ -39,3 +39,7 @@ We finally had a week with plenty updates!
   configuration option `sync_changelog` which bypasses this behaviour and
   copies the %changelog from upstream and overwrites the downstream changelog.
   Please use this option only when your changelogs are in sync. [Documentation](https://packit.dev/docs/configuration/#sync_changelog)
+
+## Week 44 (October 26th - October 30th)
+
+No user-facing changes in packit(-service) this week.
