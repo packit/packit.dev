@@ -1,5 +1,4 @@
 baseURL = "https://packit.dev/"
-publishDir = "docs"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Packit"
