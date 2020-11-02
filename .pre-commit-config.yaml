@@ -13,9 +13,9 @@ repos:
     hooks:
       - id: check-merge-conflict
       - id: detect-private-key
-  - repo: https://github.com/packit-service/pre-commit-hooks
+  - repo: https://github.com/packit/pre-commit-hooks
     rev: master
     hooks:
       - id: check-rebase
         args:
-          - git://github.com/packit-service/packit.dev.git
+          - git://github.com/packit/packit.dev.git

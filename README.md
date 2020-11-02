@@ -47,7 +47,7 @@ Run `make generate`.
 
 Long story:
 We host the content on GitHub Pages from [docs/](docs/) folder.
-See `GitHub Pages` section in [this repo's Settings](https://github.com/packit-service/packit.dev/settings).
+See `GitHub Pages` section in [this repo's Settings](https://github.com/packit/packit.dev/settings).
 To regenerate the content in `docs/` folder, you have to run `hugo`.
 However, running `hugo` does not remove generated files before building.
 This means that you should delete the [docs/](docs/) directory before running the `hugo` command.
@@ -62,7 +62,7 @@ $ chmod +x .git/hooks/pre-commit
 
 ### About page
 
-We want the [About page](https://github.com/packit-service/packit.dev/blob/master/content/about.md)
+We want the [About page](https://github.com/packit/packit.dev/blob/master/content/about.md)
 to be visible on the top of the website, so we have to keep the `date:` in the `about.md` newer then in the other content files.
 If you find a better way, let us know.
 
