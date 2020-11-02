@@ -18,7 +18,8 @@ jobs:
       - name: Hugo Deploy GitHub Pages
         uses: benmatselby/hugo-deploy-gh-pages@master
         env:
+          CNAME: packit.dev
+          GITHUB_ACTOR: jpopelka
           HUGO_VERSION: 0.75.1
           TARGET_REPO: packit/packit.dev-github-pages
           TOKEN: ${{ secrets.TOKEN }}
-          CNAME: packit.dev
