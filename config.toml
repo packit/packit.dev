@@ -22,7 +22,7 @@ home = ["HTML", "JSON"]
 [[Languages.en.menu.shortcuts]]
 name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
 identifier = "gr"
-url = "https://github.com/packit-service/packit"
+url = "https://github.com/packit/packit"
 weight = 10
 
 
@@ -34,4 +34,4 @@ weight = 11
 
 
 [social]
-  github = "packit-service/packit"
+  github = "packit/packit"

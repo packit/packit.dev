@@ -61,7 +61,7 @@ Following bugs were fixed:
 
 ## Week 40 (September 28th - October 2nd)
 
-- Packit-service is now explicitly checking if requested copr-build targets exist and if not, the user is informed about it. [packit-service#835](https://github.com/packit-service/packit-service/pull/835)
-- We have improved the way how packit updates `%setup` line in a spec file - you are now able to set content of `-n` option via archive_root_dir_template config option, it defaults to `{upstream-pkg-name}`. [doc](https://github.com/packit/packit.dev/pull/167) [packit#834](https://github.com/packit-service/packit-service/pull/834)
+- Packit-service is now explicitly checking if requested copr-build targets exist and if not, the user is informed about it. [packit-service#835](https://github.com/packit/packit-service/pull/835)
+- We have improved the way how packit updates `%setup` line in a spec file - you are now able to set content of `-n` option via archive_root_dir_template config option, it defaults to `{upstream-pkg-name}`. [doc](https://github.com/packit/packit.dev/pull/167) [packit#834](https://github.com/packit/packit-service/pull/834)
 - Packit is able to generate a patch file with format-patch without leading a/ and b/ in the patch diff. Required for patches in dist-git which are applied with -p0.
 - Contribution guidelines were updated, now we have one shared [link](https://github.com/packit/contributing).
