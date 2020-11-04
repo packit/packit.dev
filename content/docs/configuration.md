@@ -166,6 +166,11 @@ notifications:
 
 You can disable the commenting by setting `successful_build` to `false`.
 
+#### copy_upstream_release_description
+(*bool*) When doing a new update in Fedora dist-git, the upstream release description
+is copied to the spec-file changelog when set to `true`. By default (`false`), 
+all messages of new commits are copied.
+
 ### Minimal sample config
 
 This is a sample config which is meant for [packit](https://github.com/packit/packit) itself.
