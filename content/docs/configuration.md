@@ -167,9 +167,24 @@ notifications:
 You can disable the commenting by setting `successful_build` to `false`.
 
 #### copy_upstream_release_description
-(*bool*) When doing a new update in Fedora dist-git, the upstream release description
+(*bool*) When doing a new update in Fedora dist-git, the Github upstream release description
 is copied to the spec-file changelog when set to `true`. By default (`false`), 
 all messages of new commits are copied.
+e.g. 
+- `copy_upstream_release_description = True`:
+```
+%changelog
+* Thu Oct 15 2020 Packit Service <user-cont-team+packit-service@redhat.com> - 0.18.0-1
+Packit got new archive_root_dir_template config option to get custom archive root dir. 
+You can find more info in the documentation.
+```
+- `copy_upstream_release_description = False` (default):
+```
+%changelog
+* Thu Oct 15 2020 Packit Service <user-cont-team+packit-service@redhat.com> - 0.18.0-1
+- Use inner archive directory in %setup macro 
+- Use archive_root_dir_template 
+```
 
 ### Minimal sample config
 
