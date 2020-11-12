@@ -55,7 +55,7 @@ any way you want:
 ### Downstream patches to be applied in the spec file
 
 In the downstream, it's a common workflow to pick up upstream patches from the
-master branch, backport them on top of the current version in Fedora, CentOS
+main branch, backport them on top of the current version in Fedora, CentOS
 Stream or RHEL and apply the patches during the build process.
 
 Source-git is perfect for this because patches are stored as git commits and

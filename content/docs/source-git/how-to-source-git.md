@@ -41,7 +41,7 @@ $ cd chrony/
 
 At the time of writing this guide:
 * We have chrony 4.0 in Fedora Rawhide
-* 4.0 git tag is also the HEAD of upstream git master (hash:
+* 4.0 git tag is also the HEAD of the main upstream branch (hash:
   d327cfea5a4b5f7385056be8b18f4c5fab01ad13)
 
 In order for us to continue, we need to be able to either generate an archive
@@ -99,10 +99,10 @@ d327cfe (tag: 4.0, origin/master, origin/HEAD, master) nts: save new server keys
 
 ### Downstream patches
 
-It's a common practice to pick up fixes from the master branch of an upstream
-project and backport them to the current (older) version of a package in a
-distribution. Alternatively to accommodate changes specific to the distribution
-which are not merged upstream.
+It's a common practice to pick up fixes from the main upstream branch and
+backport them to the current (older) version of a package in a distribution.
+Alternatively to accommodate changes specific to the distribution which are not
+merged upstream.
 
 In this stage, we are going to apply all downstream patches we have defined in
 our spec file.
