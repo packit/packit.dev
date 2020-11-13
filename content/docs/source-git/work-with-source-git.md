@@ -137,16 +137,16 @@ Patch1:         drpm-0.3.0-workaround-ppc64le-gcc.patch
 
 The most common workflow in the world of open source development is to accept
 pull requests and have merge commits in the git history. If the PRs are not
-rebased against master before the merge, the history may go wild. Packit is
-able to work with such a state by creating an ephemeral branch with linear
-history and generate the patch files out of it. [More
+rebased against the main branch before the merge, the history may go wild.
+Packit is able to work with such a state by creating an ephemeral branch with
+linear history and generate the patch files out of it. [More
 info](https://github.com/packit/packit/pull/766).
 
 Picking up latest upstream changes into your downstream source-git repo has
 multiple solutions and it's up to you to pick the one which suits your workflow
 best:
 
-1. **Rebase against upstream master branch** (a.k.a. `git pull --rebase
+1. **Rebase against the main upstream branch** (a.k.a. `git pull --rebase
    upstream master`). This solution implies that you are able to perform the
    force-push operation (e.g. Fedora and CentOS dist-git instances don't allow
    force-pushes). Packit will not help you with the rebase process in any way
