@@ -13,6 +13,14 @@ draft: false
 - [Tomas] improved an experience of a contributor to source-git in case the contributor
   doesn't follow git-am patches style that is used. ([packit#1000](https://github.com/packit/packit/pull/1000))
 
+## Week 46 (November 9th - November 13th)
+
+- [Tomas] improved the UX of logging in the CLI. ([packit#1014](https://github.com/packit/packit/pull/1014))
+- [Jano] improved logic of acquiring current version in the CLI. ([packit#1013](https://github.com/packit/packit/pull/1013))
+- We appreciate getting feedback from our users, if you could find some time to
+  do so, there is an [open issue](https://github.com/packit/packit-service/issues/859)
+  for it.
+
 [laura]: https://github.com/lbarcziova
 [jano]: https://github.com/sakalosj
 [tomas]: https://github.com/TomasTomecek
