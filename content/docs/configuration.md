@@ -249,6 +249,11 @@ jobs:
 If there is no `jobs` section in the configuration file, jobs default to:
 ```
 jobs:
+- job: copr_build
+  trigger: pull_request
+  metadata:
+    targets: fedora-stable
+
 - job: tests
   trigger: pull_request
   metadata:
