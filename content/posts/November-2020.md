@@ -21,6 +21,18 @@ draft: false
   do so, there is an [open issue](https://github.com/packit/packit-service/issues/859)
   for it.
 
+## Week 47 (November 16th - November 20th)
+
+- [Matej] fixed [an
+  issue](https://github.com/packit/packit-service/issues/774) with Packit CLI,
+  enabling recursive search for spec-files
+  ([packit#1005](https://github.com/packit/packit/pull/1005)).
+- [Laura] made Copr builds to be part of the default jobs. This will cause
+  build jobs to explicitly run, and display their own result flags in PRs,
+  next to the test results. We hope this to be a more friendly behaviour for
+  our new users ([packit#1024](https://github.com/packit/packit/pull/1024)).
+
 [laura]: https://github.com/lbarcziova
 [jano]: https://github.com/sakalosj
 [tomas]: https://github.com/TomasTomecek
+[matej]: https://github.com/mfocko
