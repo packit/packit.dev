@@ -12,4 +12,3 @@ weight: 1
 * [Configuration for packit]({{< ref "configuration" >}}) - Configuration file description.
 * [Packit CLI](/docs/cli/) - Commands description.
 * [Actions]({{< ref "actions" >}}) - Further customize Packit's behaviour.
-* [Architecture]({{< ref "architecture" >}})
