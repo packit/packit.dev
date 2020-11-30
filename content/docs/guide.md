@@ -2,7 +2,7 @@
 title: "Packit Guide"
 draft: false
 disableToc: false
-weight: 3
+weight: 1
 ---
 
 ## Agenda
@@ -55,20 +55,20 @@ $ pip3 install --user git+https://github.com/packit/packit
 Once you install packit locally, it's time to fill `.packit.yaml` — the
 configuration file packit is using.
 
-The documentation file has a document on its own: [configuration]({{< ref "/docs/configuration" >}}).
+The documentation file has a document on its own: [configuration]({{< ref "configuration" >}}).
 
 Packit supports actions and hooks: you can define commands on your own which
 would replace packit's implementation (e.g. get version, or create a tarball)
 or run specific commands after the upstream repo is cloned. Please read more
-about actions here: [actions]({{< ref "/docs/actions" >}}).
+about actions here: [actions]({{< ref "actions" >}}).
 
 Packit needs an RPM spec file to build your package. The spec file does not
 need to be included in the upstream repo and can be generated on the fly or
 downloaded (e.g. from Fedora dist-git). Please check out our [FAQ]({{< ref
-"/faq" >}}) to read about some other common questions.
+"faq" >}}) to read about some other common questions.
 
 You can also read more about the SRPM process in [the document]({{< ref
-"/docs/cli/srpm" >}}) dedicated to the `srpm` command.
+"cli/srpm" >}}) dedicated to the `srpm` command.
 
 Is your `packit srpm` finally passing? If not, feel free to reach out to us. If
 yes, let's proceed to the next level.
@@ -82,10 +82,8 @@ Make sure, that you specify the `upstream_project_url` in your configuration.
 ### You are approved to use packit-service.
 
 In order to start using packit service, the killer GitHub app, you need to
-install it in your GitHub projects. Then we need to approve you (usually takes
-only a few hours).
-
-This process is described in detail over [here]({{< ref "packit-as-a-service" >}}).
+[install it in your GitHub projects]({{< ref "packit-as-a-service" >}}).
+Then we need to approve you (usually takes only a few hours).
 
 ### The project has successful builds inside the service.
 
@@ -111,7 +109,7 @@ jobs:
 
 `fedora-all` stands for all currently available Fedora releases.
 
-Jobs are nicely described over [here]({{< ref "/docs/configuration.md#jobs" >}}).
+Jobs are nicely described over [here](/docs/configuration/#jobs).
 
 If you are looking for an inspiration for your .packit.yaml, check [packit's
 config file](https://github.com/packit/packit/blob/master/.packit.yaml)

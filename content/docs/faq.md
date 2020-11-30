@@ -3,6 +3,8 @@ title: "FAQ"
 date: 2019-07-24
 draft: false
 disableToc: false
+weight: 4
+aliases: [/faq]
 ---
 
 ### Can I use the packit service as soon as I install it into my repository?
@@ -39,7 +41,8 @@ We will also handle all potentially backward incompatible changes of `.packit.ya
 ### But what are the benefits?
 
 Packit makes it trivial to run your project as part of an OS.
-It provides feedback to your project at the time when the changes are being developed so you can fix incompatible code when you are working on it, not when it's already released.
+It provides feedback to your project at the time when the changes are being developed
+so you can fix incompatible code when you are working on it, not when it's already released.
 When you push commits to a pull request, you'll get RPM build and test results right away.
 
 ### Why Fedora?
@@ -48,7 +51,9 @@ We've started with Fedora Linux because we work for Red Hat and we ❤ Fedora.
 
 ### How is Packit different from other services?
 
-Packit connects the existing services ([Copr](https://copr.fedorainfracloud.org), [Pagure](https://src.fedoraproject.org), [Koji](https://koji.fedoraproject.org), [Bodhi](https://bodhi.fedoraproject.org)) together.
+Packit connects the existing services ([Copr](https://copr.fedorainfracloud.org),
+[Pagure](https://src.fedoraproject.org), [Koji](https://koji.fedoraproject.org),
+[Bodhi](https://bodhi.fedoraproject.org)) together.
 
 ### Can we use Packit with Gitlab?
 
@@ -118,7 +123,10 @@ jobs:
 
 ### After adding tests I see error 'No FMF metadata found.'
 
-If you encounter this error when running tests via Testing Farm, it means you forgot to initialize the metadata tree with `fmf init` and include the `.fmf` directory in the pull request. See [Testing Farm documentation](/testing-farm) for more information.
+If you encounter this error when running tests via Testing Farm,
+it means you forgot to initialize the metadata tree with `fmf init`
+and include the `.fmf` directory in the pull request.
+See [Testing Farm documentation](/docs/testing-farm) for more information.
 
 ### Does packit work with [rpmautospec](https://docs.pagure.org/Fedora-Infra.rpmautospec/)?
 

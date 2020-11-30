@@ -1,7 +1,7 @@
 ---
 title: "Blog Posts"
 draft: false
-weight: 3
+weight: 2
 ---
 
 - [Packit 0.1.0](/posts/packit-010/)

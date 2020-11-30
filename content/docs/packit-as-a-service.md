@@ -4,9 +4,11 @@ date: 2019-06-22
 draft: false
 disableToc: false
 weight: 2
+aliases: [/packit-as-a-service]
 ---
 
-Packit-as-a-Service is a [GitHub App](https://developer.github.com/apps/about-apps/)
+[Packit-as-a-Service](https://github.com/marketplace/packit-as-a-service)
+is a [GitHub App](https://docs.github.com/apps/about-apps/)
 that helps you continuously ensure that your project work in Fedora OS.
 
 ## Easy to use
@@ -19,7 +21,8 @@ Packit Service validates your pull requests by building your software in Fedora 
 Once the builds are done, Packit lets you know how to install the
 RPMs inside your environment so you can try the changes before merging them.
 
-Optionally, Packit Service can run tests for the built software (i.e. copr builds) in all current Fedora OS releases via [Testing Farm](/testing-farm).
+Optionally, Packit Service can run tests for the built software (i.e. copr builds)
+in all current Fedora OS releases via [Testing Farm](/docs/testing-farm).
 
 Packit is also available as a [CLI tool](https://github.com/packit/packit/blob/master/README.md),
 so you can always try things locally on your own. Note that testing is not currently supported with the CLI tool.
@@ -37,7 +40,7 @@ application](https://github.com/marketplace/packit-as-a-service) in your
 project settings. In the left sidebar, click "Integration & services" and you
 will see the application displayed there.
 
-In order to continue, please head to the main [Packit guide]({{< ref "/docs/guide" >}}).
+In order to continue, please head to the main [Packit guide]({{< ref "guide" >}}).
 
 ### How to check Packit Service works in your project?
 
@@ -90,7 +93,7 @@ If you want to propose the latest release into Fedora repositories,
 create an issue and add that comment into this issue and
 Packit service triggers and pushes it directly into Fedora dist-git repositories.
 
-If all jobs ([propose_downstream]({{< ref "/docs/configuration.md#supported-jobs" >}})),
+If all jobs ([propose_downstream](/docs/configuration/#supported-jobs),
 defined in `packit.yaml` file, finished successfully, then the issue is
 automatically closed.
 
@@ -100,4 +103,4 @@ update.
 ### Adding tests
 
 It is also possible to run tests against the freshly built rpms.
-See the [Testing Farm](/testing-farm/#add-tests) documentation for details.
+See the [Testing Farm]({{< ref "testing-farm" >}}) documentation for details.

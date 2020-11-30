@@ -2,7 +2,8 @@
 title: "Testing Farm"
 draft: false
 disableToc: false
-weight: 4
+weight: 3
+aliases: [/testing-farm]
 ---
 
 Testing Farm is Packit's testing system.
