@@ -3,6 +3,7 @@ title: "About"
 date: 2019-06-28
 draft: false
 disableToc: false
+aliases: [/about]
 ---
 
 # Packit
