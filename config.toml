@@ -16,7 +16,7 @@ home = ["HTML", "JSON"]
   email = "user-cont-team@redhat.com"
   disableInlineCopyToClipBoard = true
   disableAssetsBusting = true
-  themeVariant = "red"
+  themeVariant = "packit"
 
 [[Languages.en.menu.shortcuts]]
 name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
