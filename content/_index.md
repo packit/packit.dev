@@ -3,6 +3,7 @@ title: "About"
 date: 2019-06-28
 draft: false
 disableToc: false
+aliases: [/about]
 ---
 
 # Packit
@@ -13,11 +14,11 @@ components:
 
 1. `packit`, a CLI tool, which you can install locally and start using right away.
 
-2. [Packit-as-a-Service](https://github.com/marketplace/packit-as-a-service), a
+2. [Packit-as-a-Service]({{< ref "packit-as-a-service" >}}), a
    GitHub app — it can provide you feedback on how is your project integrated
    with Fedora Operating System.
 
-Feel free to jump into [the guide]({{< ref "/docs/guide" >}}) for using packit.
+Feel free to jump into [the guide]({{< ref "guide" >}}) for using packit.
 
 ### Upstream repository
 
@@ -103,7 +104,7 @@ We are also available on this e-mail: user-cont-team@redhat.com.
 
 - Developing in dist-git is cumbersome. Editing patch files and moving
   tarballs around is not fun. Why not working with the source code itself?
-  With [source-git](/source-git/), you'll have upstream git history and the
+  With [source-git](/docs/source-git/), you'll have upstream git history and the
   dist-git content combined in a single repository.
 
 - Let's use modern development techniques such as pull requests, code review,
@@ -113,6 +114,6 @@ We are also available on this e-mail: user-cont-team@redhat.com.
 - We want dist-git to be "a database of content in a release" rather a place
   to do actual work. On the other hand, you'll still be able to interact with
   dist-git the same way. We are not taking that away.
-  [Source-git](/source-git/) is meant to be the modern, better alternative.
+  [Source-git](/docs/source-git/) is meant to be the modern, better alternative.
 
 DevConf.cz ["Auto-maintain your package" talk](https://www.youtube.com/watch?v=KpF27v6K4Oc).

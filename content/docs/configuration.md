@@ -2,7 +2,7 @@
 title: "Configuration"
 draft: false
 disableToc: false
-weight: 4
+weight: 6
 ---
 
 Packit uses a configuration file in the upstream repository. The config file is written in YAML language.

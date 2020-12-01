@@ -1,7 +1,8 @@
 ---
 title: "Source-git Documentation"
 draft: false
-weight: 1
+weight: 5
+aliases: [/source-git]
 ---
 
 Let's talk about what source-git actually is.
