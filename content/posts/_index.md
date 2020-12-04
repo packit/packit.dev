@@ -4,6 +4,7 @@ draft: false
 weight: 2
 ---
 
+- [December 2020](/posts/december-2020)
 - [November 2020](/posts/november-2020)
 - [October 2020](/posts/october-2020)
 - [Fedora ELN](/posts/fedora-eln)
