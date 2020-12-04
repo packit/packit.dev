@@ -1,7 +1,8 @@
 ---
 title: "November 2020"
-date: 2020-11-06T13:16:55+01:00
+date: 2020-11-06
 draft: false
+weight: 81
 ---
 
 ## Week 45 (November 2nd - November 6th)

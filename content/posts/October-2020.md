@@ -2,6 +2,7 @@
 title: "October 2020"
 date: 2020-10-15
 draft: false
+weight: 82
 ---
 
 ## Week 41 (October 5th - October 9th)

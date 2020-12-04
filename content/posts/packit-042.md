@@ -2,6 +2,7 @@
 title: "Packit 0.4.2"
 date: 2019-06-26
 draft: false
+weight: 95
 ---
 
 Another relase after a month since [0.4.1](https://packit.dev/posts/packit-041/), this time mostly with bug fixes.

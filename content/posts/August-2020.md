@@ -2,6 +2,7 @@
 title: "August 2020"
 date: 2020-08-13
 draft: false
+weight: 85
 ---
 
 ## Week 32 (August 3rd - August 7th) and 33 (August 10th - August 13th)

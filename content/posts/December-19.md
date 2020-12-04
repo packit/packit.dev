@@ -2,6 +2,7 @@
 title: "December 19"
 date: 2019-12-13
 draft: false
+weight: 93
 ---
 
 ## Week 49

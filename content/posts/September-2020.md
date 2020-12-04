@@ -1,7 +1,8 @@
 ---
 title: "September 2020"
-date: 2020-09-04T12:07:03+02:00
+date: 2020-09-04
 draft: false
+weight: 84
 ---
 
 ## Week 36 (August 31th - September 4th)
