@@ -3,7 +3,7 @@ title: "Packit 0.4.0 & 0.4.1"
 date: 2019-05-18
 draft: false
 disableToc: false
-weight: 4
+weight: 96
 ---
 
 It's been over a month since we released packit "0.3.0". Here comes packit 0.4.0 (and patch release 0.4.1) and as always they bring a lot of new features and improvements.

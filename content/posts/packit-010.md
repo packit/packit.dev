@@ -3,7 +3,7 @@ title: "Initial version (0.1.0) of packit is out!"
 date: 2019-03-08T15:44:36+01:00
 draft: false
 disableToc: false
-weight: 1
+weight: 99
 ---
 
 We would like to announce general availability of the initial version of

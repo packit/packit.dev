@@ -2,6 +2,7 @@
 title: "January 2020"
 date: 2020-01-27
 draft: false
+weight: 92
 ---
 
 ## Week 1

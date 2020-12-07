@@ -1,7 +1,8 @@
 ---
 title: "Working on the next major RHEL release, in your upstream repo"
-date: 2020-10-04T12:07:03+02:00
+date: 2020-10-04
 draft: false
+weight: 83
 ---
 
 [Fedora EL Niño](https://docs.fedoraproject.org/en-US/eln/) (ELN) is such an

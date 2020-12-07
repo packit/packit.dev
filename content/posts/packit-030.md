@@ -3,7 +3,7 @@ title: "Packit 0.3.0"
 date: 2019-04-11
 draft: false
 disableToc: false
-weight: 3
+weight: 97
 ---
 
 In the [previous post](/posts/packit-020/) we promised to
