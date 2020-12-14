@@ -1,7 +1,7 @@
 ---
 title: "December 2020"
 date: 2020-12-04
-draft: true
+draft: false
 weight: 80
 ---
 
@@ -14,3 +14,10 @@ weight: 80
 [jano]: https://github.com/sakalosj
 [jiri konecny]: https://github.com/jkonecny12
 [laura]: https://github.com/lbarcziova
+
+## Week 50 (December 7th - December 11th)
+
+- [Tomas] implemented the `--upstream-url` option of `packit init` command. When specified,
+  `init` also sets up a source-git repository next to creating a configuration file.
+
+[tomas]: https://github.com/TomasTomecek
