@@ -22,7 +22,7 @@ why we decided to split the on-boarding process into multiple checkpoints:
 We welcome all the suggestions to this guide, feel free to [open a new issue
 here](https://github.com/packit/packit.dev/issues/new).
 
-### Have packit tooling installed locally.
+### Have packit tooling installed locally
 
 In order to start using packit, it's a best practice to install the tooling
 locally. All the logic is baked inside `packit` command - so once `packit srpm`
@@ -33,7 +33,7 @@ packit service as well.
 This is how you can install packit if you are on Fedora Linux:
 
 ```
-$ dnf install --enablerepo=updates-testing packit
+$ sudo dnf install packit
 ```
 
 We publish packit to PyPI and it's available as `packitos` project — **packit
@@ -44,7 +44,16 @@ $ pip3 install --user packitos
 ```
 
 You can also help us test the latest development snapshot by installing packit
-directly from the master branch:
+built from the master branch in Copr:
+
+```
+$ sudo dnf copr enable packit/packit-master
+$ sudo dnf install packit
+$ # OR in case you have packit already installed from the Fedora repositories:
+$ sudo dnf upgrade packit
+```
+
+... or installing it directly from GitHub:
 
 ```
 $ pip3 install --user git+https://github.com/packit/packit
