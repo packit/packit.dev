@@ -1,14 +1,14 @@
 ---
-title: "propose-update"
+title: "propose-downstream (ex propose-update)"
 date: 2019-06-28
 draft: false
 disableToc: false
 weight: 7
 ---
 
-This is a detailed documentation for the update functionality of packit. The
-command creates a new pull request in Fedora using a selected or latest
-upstream release.
+This is a detailed documentation for the downstream update functionality of packit.
+The `propose-downstream` (used to be named `propose-update`) command creates
+a new pull request in Fedora using a selected or latest upstream release.
 
 
 ## Requirements
@@ -43,14 +43,14 @@ upstream release.
   release before copying files downstream.
 
 * Once you have performed the upstream release (and the new archive is up),
-  run `packit propose-update` in a working directory of your upstream
+  run `packit propose-downstream` in a working directory of your upstream
   repository:
   ```
   $ git clone https://github.com/user-cont/colin.git
 
   $ cd colin
 
-  $ packit propose-update
+  $ packit propose-downstream
   using "master" dist-git branch
   syncing ./colin.spec
   INFO: Downloading file from URL https://files.pythonhosted.org/packages/source/c/colin/colin-0.3.0.tar.gz
@@ -60,7 +60,7 @@ upstream release.
   PR created: https://src.fedoraproject.org/rpms/colin/pull-request/4
   ```
 
-  As you can see, one of the things `propose-update` does is, it downloads the
+  As you can see, one of the things `propose-downstream` does is, it downloads the
   upstream release tarball and uploads it to the lookaside cache. [This is
   required by the Fedora Packaging
   Guidelines](https://fedoraproject.org/wiki/Packaging:SourceURL#Referencing_Source).
@@ -71,9 +71,9 @@ upstream release.
 ## Help
 
 ```bash
-Usage: packit propose-update [OPTIONS] [PATH_OR_URL] [VERSION]
+Usage: packit propose-downstream [OPTIONS] [PATH_OR_URL] [VERSION]
 
-  Release current upstream release into Fedora
+  Land a new upstream release in Fedora.
 
   PATH_OR_URL argument is a local path or a URL to the upstream git
   repository, it defaults to the current working directory

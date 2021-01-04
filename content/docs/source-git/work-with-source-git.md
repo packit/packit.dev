@@ -189,7 +189,7 @@ In this chapter, we'd cover the "sync to dist-git" part listed above. When you
 use source-git to track a package in Fedora, the workflow is the same as if you
 were in an upstream repository:
 ```
-$ packit propose-update
+$ packit propose-downstream
 ```
 
 which creates a PR similar to this: [src.fedoraproject.org/rpms/python-docker/pull-request/26](https://src.fedoraproject.org/rpms/python-docker/pull-request/26).

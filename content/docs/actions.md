@@ -24,7 +24,7 @@ event, e.g. clones an upstream repo.
 
 Currently, these are the actions you can use:
 
-### `propose-update` command
+### `propose-downstream` command
 
 |        | name                  | working directory | when run                                                                          | description                               |
 | ------ | --------------------- | ----------------- | --------------------------------------------------------------------------------  | ----------------------------------------- |
