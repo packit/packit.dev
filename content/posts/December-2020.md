@@ -21,3 +21,8 @@ weight: 80
   `init` also sets up a source-git repository next to creating a configuration file.
 
 [tomas]: https://github.com/TomasTomecek
+
+## Week 51 (December 14th - December 18th)
+
+- Congratulations comments are now disabled by default, unless enabled in config.
+- A bug, which prevented npm to be run during SRPM build, has been fixed. ([sandcastle#86](https://github.com/packit/sandcastle/pull/86))
