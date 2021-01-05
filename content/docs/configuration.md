@@ -328,12 +328,8 @@ Supported triggers:
 
 Required metadata:
 
-* **targets** - a (list of) mock chroot(s) where to build (if you navigate to
-  settings of your COPR project, you'll be able able to see the list of
-  available values, alternatively you can install package `copr-cli` in Fedora and
-  see the list via `copr-cli list-chroots`. You can use `fedora-development`,
-  `fedora-stable` and `fedora-all` aliases as a target. By default, the `x86_64` architecture
-  will be used, but you can use e.g. `fedora-stable-aarch64` if you need.
+* **targets** - a (list of) mock chroot(s) where the build is going to be
+  executed (example `fedora-rawhide-x86_64`): for more info [see below](#available-copr-build-targets).
 * **branch** - the name of the branch we want to build for when using **commit** trigger
 
 Optional metadata:
@@ -376,6 +372,39 @@ jobs:
 
 With this configuration, you'll get builds in all stable fedora releases
 (excluding rawhide) and the CentOS stream.
+
+
+##### Available COPR build targets
+There are multiple places where you can get the latest list of available build targets:
+* Open your COPR project, then click "Settings" > "Build options" > "Chroots" -
+these are the same values packit accepts.
+
+* Install package `copr-cli` and run:
+```
+$ copr-cli list-chroots
+centos-stream-aarch64
+centos-stream-x86_64
+custom-1-i386
+custom-1-x86_64
+epel-6-i386
+epel-6-x86_64
+epel-7-aarch64
+epel-7-x86_64
+epel-8-aarch64
+epel-8-x86_64
+fedora-32-aarch64
+fedora-32-armhfp
+...
+```
+
+* You can use aliases
+  * `fedora-stable` — stable versions of Fedora (e.g. Fedora 32 and 33)
+  * `fedora-development` — development versions of Fedora (e.g. Fedora 34 +
+    Rawhide)
+  * `fedora-all` — `fedora-stable` + `fedora-development`
+
+  By default, the `x86_64` architecture will be used, but you you can
+  override the default e.g. `fedora-stable-aarch64`.
 
 
 **production\_build** (in preview, no reporting yet)
