@@ -2,7 +2,7 @@ baseURL = "https://packit.dev/"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Packit"
-theme = "hugo-theme-learn"
+theme = "book"
 defaultContentLanguageInSubdir = false
 paginate = 10
 googleAnalytics = "UA-143669536-1"
@@ -11,26 +11,13 @@ googleAnalytics = "UA-143669536-1"
 home = ["HTML", "JSON"]
 
 [params]
-  subtitle = "Upstream project ← → Downstream distribution"
-  brand = "Packit"
-  email = "user-cont-team@redhat.com"
-  disableInlineCopyToClipBoard = true
-  disableAssetsBusting = true
-  themeVariant = "packit"
+subtitle = "Upstream project ← → Downstream distribution"
+brand = "Packit"
+email = "user-cont-team@redhat.com"
+BookLogo = 'packit_logo.png'
+BookSection = '*'
 
-[[Languages.en.menu.shortcuts]]
-name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
-identifier = "gr"
-url = "https://github.com/packit/packit"
-weight = 10
-
-
-[[Languages.en.menu.shortcuts]]
-name = "<i class='fab fa-fw fa-github'></i> Packit-as-a-Service GitHub app"
-identifier = "paas"
-url = "https://github.com/apps/packit-as-a-service"
-weight = 11
-
-
-[social]
-  github = "packit/packit"
+[menu]
+  [[menu.after]]
+    name = "Github repo"
+    url = "https://github.com/packit/packit"

@@ -2,6 +2,7 @@
 title: "Documentation"
 draft: false
 weight: 1
+bookCollapseSection: true
 ---
 
 * [Onboarding Guide]({{< ref "guide" >}}) - How to start using Packit.

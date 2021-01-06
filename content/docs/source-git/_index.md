@@ -3,6 +3,7 @@ title: "Source-git Documentation"
 draft: false
 weight: 5
 aliases: [/source-git]
+bookCollapseSection: true
 ---
 
 Let's talk about what source-git actually is.
