@@ -11,6 +11,9 @@ the upstream project manually using git without any help from another tooling.
 As an example for the purpose of this guide, we will create a source-git
 repository for [chrony](https://chrony.tuxfamily.org/).
 
+Though you don't need to do this the hard way, we have a command in packit,
+[init]({{< ref "/docs/CLI/init.md" >}}), which automates almost all the steps
+described below.
 
 
 ## Prerequisites
