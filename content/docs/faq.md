@@ -59,8 +59,14 @@ Packit connects the existing services ([Copr](https://copr.fedorainfracloud.org)
 
 ### Can we use Packit with Gitlab?
 
-Packit service is closely tied to GitHub right now because most of the projects are hosted on GitHub.
-[Let us know](https://github.com/packit/packit-service/issues/249) if you'd like to see Gitlab support.
+Yes!
+
+Since GitLab doesn't have an app functionality to enable integration, you need
+to manually configure the webhooks: hop into Settings → Webhooks → Add Webhook
+and enter "https://prod.packit.dev/api/webhooks/gitlab"
+
+Please bear in mind that not many people are using packit service via GitLab,
+so if anything doesn't work as expected, please reach out to us.
 
 ### How can I download RPM spec file if it is not part of upstream repository?
 
