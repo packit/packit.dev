@@ -9,8 +9,7 @@ weight: 1
 
 ## Agenda
 
-Being fully on-board of the packit train may take some time and effort. This is
-why we decided to split the on-boarding process into multiple checkpoints:
+We have split the on-boarding process into multiple stages:
 
 1. Have packit tooling installed locally.
 2. RPM builds pass on your laptop.
@@ -26,11 +25,10 @@ here](https://github.com/packit/packit.dev/issues/new).
 
 ### Have packit tooling installed locally
 
-In order to start using packit, it's a best practice to install the tooling
-locally. All the logic is baked inside `packit` command - so once `packit srpm`
-(the command to create a source RPM locally from the current snapshot of the
-project) starts passing for you, it's very likely it will work inside the
-packit service as well.
+In order to start using packit, we suggest you install the tooling locally. All
+the logic is baked inside `packit` command - so once `packit srpm` (the command
+to create a source RPM locally from the current snapshot of the project) starts
+passing for you, it should work inside packit service as well.
 
 This is how you can install packit if you are on Fedora Linux:
 
@@ -56,14 +54,34 @@ built from the master branch in Copr:
 ### RPM builds pass on your laptop.
 
 Once you install packit locally, it's time to fill `.packit.yaml` — the
-configuration file packit is using.
+configuration file packit is using. Packit can help to fill the initial
+template by running the `init` command:
+```
+$ packit init
+$ cat .packit.yaml
+# See the documentation for more information:
+# https://packit.dev/docs/configuration/
 
-The documentation file has a document on its own: [configuration]({{< ref "configuration" >}}).
+specfile_path: packit.dev.spec
 
-Packit supports actions and hooks: you can define commands on your own which
-would replace packit's implementation (e.g. get version, or create a tarball)
-or run specific commands after the upstream repo is cloned. Please read more
-about actions here: [actions]({{< ref "actions" >}}).
+# add or remove files that should be synced
+synced_files:
+    - packit.dev.spec
+    - .packit.yaml
+
+# name in upstream package repository/registry (e.g. in PyPI)
+upstream_package_name: packit.dev
+# downstream (Fedora) RPM package name
+downstream_package_name: packit.dev
+```
+
+Head on to page [configuration]({{< ref "configuration" >}}) to learn more
+about the config file.
+
+Packit supports actions and hooks: you can define your own commands which would
+replace packit's implementation (e.g. get version, or create a tarball) or run
+specific commands after the upstream repo is cloned. Please read more about
+actions here: [actions]({{< ref "actions" >}}).
 
 Packit needs an RPM spec file to build your package. The spec file does not
 need to be included in the upstream repo and can be generated on the fly or
@@ -76,17 +94,19 @@ You can also read more about the SRPM process in [the document]({{< ref
 Is your `packit srpm` finally passing? If not, feel free to reach out to us. If
 yes, let's proceed to the next level.
 
+
 ### Running from the dist-git repository
 
-When you are not allowed or do not want to run packit command from the upstream git repository,
-you can run commands from the cloned dist-git repository in the same way as you do from upstream.
-Make sure, that you specify the `upstream_project_url` in your configuration.
+When you are not allowed or do not want to run packit command from the upstream
+git repository, you can run commands from the cloned dist-git repository in the
+same way as you do from upstream.  Make sure, that you specify the
+`upstream_project_url` in your configuration.
 
 ### You are approved to use packit-service.
 
-In order to start using packit service, the killer GitHub app, you need to
-[install it in your GitHub projects]({{< ref "packit-as-a-service" >}}).
-Then we need to approve you (usually takes only a few hours).
+In order to start using packit service, our GitHub app, you need to [install it
+in your GitHub projects]({{< ref "packit-as-a-service" >}}). Then we need to
+approve you (usually takes only a few hours).
 
 ### The project has successful builds inside the service.
 
