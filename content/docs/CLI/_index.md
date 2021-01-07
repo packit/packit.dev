@@ -12,3 +12,4 @@ weight: 7
 * [srpm](/docs/cli/srpm/)
 * [sync-from-downstream](/docs/cli/sync-from-downstream/)
 * [copr-build](/docs/cli/copr-build/)
+* [init](/docs/cli/init/)
