@@ -58,15 +58,11 @@ An example of Packit Service pull request:
 
 Packit Service is able to schedule new builds based on a pull request comment:
 
-```
-/packit copr-build
-```
+    /packit copr-build
 
 or the shorter version
 
-```
-/packit build
-```
+    /packit build
 
 So whenever you run into a flake or feel like you want to retrigger, just type
 that comment into the PR and enjoy some fine, fresh builds.
@@ -74,10 +70,8 @@ that comment into the PR and enjoy some fine, fresh builds.
 The standard requirements for permissions still apply, so if you see this
 message
 
-```
-Only users with write or admin permissions to the repository can trigger
-Packit-as-a-Service
-```
+    Only users with write or admin permissions to the repository can trigger
+    Packit-as-a-Service
 
 it means the author of the pull request does not have commit access to the
 repository so the build cannot be scheduled. This is a perfect case for
@@ -87,9 +81,7 @@ maintainers of the repository to post `/packit build` in the PR to get a build.
 
 Packit Service is able to propose updates of new upstream releases using this comment in an issue:
 
-```
-/packit propose-update
-```
+    /packit propose-update
 
 If you want to propose the latest release into Fedora repositories,
 create an issue and add that comment into this issue and

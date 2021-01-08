@@ -6,6 +6,8 @@ disableToc: false
 weight: 7
 ---
 
+# propose-downstream
+
 This is a detailed documentation for the update functionality of packit. The
 command creates a new pull request in Fedora using a selected or latest
 upstream release.
@@ -70,42 +72,40 @@ upstream release.
 
 ## Help
 
-```bash
-Usage: packit propose-update [OPTIONS] [PATH_OR_URL] [VERSION]
-
-  Release current upstream release into Fedora
-
-  PATH_OR_URL argument is a local path or a URL to the upstream git
-  repository, it defaults to the current working directory
-
-  VERSION argument is optional, the latest upstream version will be used by
-  default
-
-Options:
-  --dist-git-branch TEXT  Comma separated list of target branches in dist-git
-                          to release into. (defaults to 'master')
-
-  --dist-git-path TEXT    Path to dist-git repo to work in. Otherwise clone
-                          the repo in a temporary directory.
-
-  --local-content         Do not checkout release tag. Use the current state
-                          of the repo.
-
-  --force-new-sources     Upload the new sources also when the archive is
-                          already in the lookaside cache.
-
-  --no-pr                 Do not create a pull request to downstream
-                          repository.
-
-  --remote TEXT           Name of the remote to discover upstream project URL,
-                          If this is not specified, default to origin.
-
-  --upstream-ref TEXT     Git ref of the last upstream commit in the current
-                          branch from which packit should generate patches
-                          (this option implies the repository is source-git).
-
-  -f, --force             Don't discard changes in the git repo by default,
-                          unless this is set.
-
-  -h, --help              Show this message and exit.
-```
+    Usage: packit propose-update [OPTIONS] [PATH_OR_URL] [VERSION]
+    
+      Release current upstream release into Fedora
+    
+      PATH_OR_URL argument is a local path or a URL to the upstream git
+      repository, it defaults to the current working directory
+    
+      VERSION argument is optional, the latest upstream version will be used by
+      default
+    
+    Options:
+      --dist-git-branch TEXT  Comma separated list of target branches in dist-git
+                              to release into. (defaults to 'master')
+    
+      --dist-git-path TEXT    Path to dist-git repo to work in. Otherwise clone
+                              the repo in a temporary directory.
+    
+      --local-content         Do not checkout release tag. Use the current state
+                              of the repo.
+    
+      --force-new-sources     Upload the new sources also when the archive is
+                              already in the lookaside cache.
+    
+      --no-pr                 Do not create a pull request to downstream
+                              repository.
+    
+      --remote TEXT           Name of the remote to discover upstream project URL,
+                              If this is not specified, default to origin.
+    
+      --upstream-ref TEXT     Git ref of the last upstream commit in the current
+                              branch from which packit should generate patches
+                              (this option implies the repository is source-git).
+    
+      -f, --force             Don't discard changes in the git repo by default,
+                              unless this is set.
+    
+      -h, --help              Show this message and exit.

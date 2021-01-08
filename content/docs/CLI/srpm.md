@@ -17,7 +17,7 @@ sources.
 
 You can override the archive and version commands in [packit.yaml](/docs/configuration/), e.g. this is
 what we use in [ogr](https://github.com/packit/ogr/blob/master/.packit.yaml), a library which packit is using:
-```
+```yaml
 create_tarball_command: ["python3", "setup.py", "sdist", "--dist-dir", "."]
 current_version_command: ["python3", "setup.py", "--version"]
 ```
@@ -34,13 +34,13 @@ current_version_command: ["python3", "setup.py", "--version"]
 1. [Place a config file for packit in the root of your upstream repository.](/docs/configuration/).
 
 2. Now we would generate a SRPM for ogr project:
-   ```bash
+   ```
    $ packit srpm
    Version in spec file is "0.0.3".
    SRPM: /home/tt/g/user-cont/ogr/python-ogr-0.0.4.dev11+gc9956c9.d20190318-1.fc29.src.rpm
    ```
    We can now build the package:
-   ```bash
+   ```
    $ rpmbuild --rebuild /home/tt/g/user-cont/ogr/python-ogr-0.0.4.dev11+gc9956c9.d20190318-1.fc29.src.rpm
    Installing /home/tt/g/user-cont/ogr/python-ogr-0.0.4.dev11+gc9956c9.d20190318-1.fc29.src.rpm
    Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.95VZ3c
@@ -65,26 +65,23 @@ current_version_command: ["python3", "setup.py", "--version"]
    + exit 0
    ```
 
-
 ## Help
 
-```bash
-Usage: packit srpm [OPTIONS] [PATH_OR_URL]
-
-  Create new SRPM (.src.rpm file) using content of the upstream repository.
-
-  PATH_OR_URL argument is a local path or a URL to the upstream git
-  repository, it defaults to the current working directory
-
-Options:
-  --output FILE        Write the SRPM to FILE instead of current dir.
-  --remote TEXT        Name of the remote to discover upstream project URL, If
-                       this is not specified, default to origin.
-  --upstream-ref TEXT  Git ref of the last upstream commit in the current
-                       branch from which packit should generate patches (this
-                       option implies the repository is source-git).
-  -h, --help           Show this message and exit.
-```
+    Usage: packit srpm [OPTIONS] [PATH_OR_URL]
+    
+      Create new SRPM (.src.rpm file) using content of the upstream repository.
+    
+      PATH_OR_URL argument is a local path or a URL to the upstream git
+      repository, it defaults to the current working directory
+    
+    Options:
+      --output FILE        Write the SRPM to FILE instead of current dir.
+      --remote TEXT        Name of the remote to discover upstream project URL, If
+                           this is not specified, default to origin.
+      --upstream-ref TEXT  Git ref of the last upstream commit in the current
+                           branch from which packit should generate patches (this
+                           option implies the repository is source-git).
+      -h, --help           Show this message and exit.
 
 
 As you can see, it is possible to create SRPM for [source-git](/source-git/) repositories as well.

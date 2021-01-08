@@ -29,12 +29,14 @@ Install the latest stable version directly from Fedora. See [docs][tmt] for more
 
 In order to enable test execution simply include `tests` jobs in the `.packit.yaml` configuration:
 
+```yaml
     jobs:
     - job: tests
       trigger: pull_request
       metadata:
         targets:
         - fedora-all
+```
 
 You can use `fedora-development`, `fedora-stable` or release specific targets such as `fedora-31-x86_64` for test targets as well.
 
@@ -62,12 +64,14 @@ Let's see what the example plan contains:
 Update the `script` line with the desired command line which should be executed as a test.
 It's also possible to provide several commands to be executed in this way:
 
+```yaml
     summary:
         Basic smoke test
     execute:
         script:
             - did --help
             - did --test
+```
 
 You might want to rename the plan to something more reasonable like `smoke.fmf`.
 When commiting new changes, make sure you include the special `.fmf` directory as well.
@@ -92,6 +96,7 @@ In order to enable these tests we will use `tmt plan create` to create the templ
 
 Here's what we get in the `integration.fmf` file:
 
+```yaml
     summary:
         Essential command line features
     discover:
@@ -102,12 +107,14 @@ Here's what we get in the `integration.fmf` file:
         playbooks: plans/packages.yml
     execute:
         how: beakerlib
+```
 
 Let's update the summary and repository link to point to the right location.
 The `prepare` section can be used to prepare the environment for testing.
 As we don't have any extra requirements we can safely remove it for now.
 The resulting `integration.fmf` will look like this:
 
+```yaml
     summary:
         Run integration tests for all SELinux components
     discover:
@@ -115,6 +122,7 @@ The resulting `integration.fmf` will look like this:
         repository: https://src.fedoraproject.org/tests/selinux
     execute:
         how: beakerlib
+```
 
 That's it. Now just commit the changes and create a new pull request.
 Make sure you include the special `.fmf` directory in the commit as well.
@@ -166,25 +174,30 @@ Get inspiration for a quick start from a couple of real-life examples!
 
 Use a custom `filter` in the discover step in order to choose relevant tests only:
 
+```yaml
     discover:
         how: fmf
         filter: "tier: 1"
         repository: https://src.fedoraproject.org/tests/selinux
+```
 
 ### Prepare Step
 
 The `prepare` step can be used to define how test environment should be prepared before testing.
 Provide one or more paths to ansible playbooks:
 
+```yaml
     prepare:
         how: ansible
         playbooks:
             - setup/packages.yml
+```
 
 ### Apache Test
 
 Here is an example of a simple integration test for the web server `httpd` and `curl` utility:
 
+```yaml
     /apache/smoke:
         execute:
             script:
@@ -192,6 +205,7 @@ Here is an example of a simple integration test for the web server `httpd` and `
             - systemctl start httpd
             - echo foo > /var/www/html/index.html
             - curl http://localhost/ | grep foo
+```
 
 Plan `/apache/smoke` defines only the `execute` step.
 Individual shell commands are provided as a list.
@@ -201,6 +215,7 @@ Testing will fail if any of the commands returns a non-zero exit status.
 
 Below you can find little bit more interesting example of a `systemd` test configuration:
 
+```yaml
     /systemd/smoke:
         summary:
             Basic set of quick smoke tests for systemd.
@@ -213,6 +228,7 @@ Below you can find little bit more interesting example of a `systemd` test confi
             playbooks: [setup/packages.yml]
         execute:
             how: beakerlib
+```
 
 This plan enables a set of Tier 1 tests from the shared [systemd tests][systemd-tests] repository.
 The meaning of individual attributes is as follows:
@@ -228,14 +244,17 @@ Here's a real-life example of tests enabled for the [fmf][fmf] package.
 There are several plans defined under the [plans](https://github.com/psss/fmf/tree/master/plans) directory.
 The `smoke` plan enables a super basic test checking availability of the `fmf` command:
 
+```yaml
     summary:
     	Just a basic smoke test
     execute:
     	how: shell
     	script: fmf --help
+```
 
 Plan `features` is used to execute all available beakerlib tests from the `fmf` repository:
 
+```yaml
     summary:
     	Essential command line features
     discover:
@@ -243,12 +262,14 @@ Plan `features` is used to execute all available beakerlib tests from the `fmf` 
     	repository: https://github.com/psss/fmf
     execute:
     	how: beakerlib
+```
 
 It is also possible to select only a subset of available tests.
 This is demonstrated by the `docs` plan.
 Use an fmf `filter` like `tier:1` to select tests for execution.
 You can also reference a specific feature area instead:
 
+```yaml
     summary:
     	Ensure that documentation is present
     discover:
@@ -257,6 +278,7 @@ You can also reference a specific feature area instead:
     	filter: coverage:/stories/docs.*
     execute:
     	how: beakerlib
+```
 
 See the [stories](https://github.com/psss/fmf/tree/master/stories) directory to get some inspiration for organizing stories and requirements.
 
