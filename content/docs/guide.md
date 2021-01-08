@@ -5,6 +5,8 @@ disableToc: false
 weight: 1
 ---
 
+# Packit Guide
+
 ## Agenda
 
 Being fully on-board of the packit train may take some time and effort. This is
@@ -32,32 +34,24 @@ packit service as well.
 
 This is how you can install packit if you are on Fedora Linux:
 
-```
-$ sudo dnf install packit
-```
+    $ sudo dnf install packit
 
 We publish packit to PyPI and it's available as `packitos` project — **packit
 at PyPI is something different**
 
-```
-$ pip3 install --user packitos
-```
+    $ pip3 install --user packitos
 
 You can also help us test the latest development snapshot by installing packit
 built from the master branch in Copr:
 
-```
-$ sudo dnf copr enable packit/packit-master
-$ sudo dnf install packit
-$ # OR in case you have packit already installed from the Fedora repositories:
-$ sudo dnf upgrade packit
-```
+    $ sudo dnf copr enable packit/packit-master
+    $ sudo dnf install packit
+    $ # OR in case you have packit already installed from the Fedora repositories:
+    $ sudo dnf upgrade packit
 
 ... or installing it directly from GitHub:
 
-```
-$ pip3 install --user git+https://github.com/packit/packit
-```
+    $ pip3 install --user git+https://github.com/packit/packit
 
 ### RPM builds pass on your laptop.
 
@@ -107,7 +101,8 @@ and we'd be glad to help.
 In order to get RPM builds for every change in your project, you need add a
 section `jobs` inside your .packit.yaml and set up a job to do RPM builds for
 every change in a PR:
-```
+
+```yaml
 jobs:
 - job: copr_build
   trigger: pull_request
@@ -129,7 +124,7 @@ since we try to use all the latest features.
 So you already have `jobs` section in your config. Let's extend it with another
 job to push new upstream releases to Fedora rawhide.
 
-```
+```yaml
 jobs:
 - job: propose_downstream
   trigger: release
@@ -142,7 +137,7 @@ dist-git master branch: Fedora Rawhide. Packit enables you to decide whether
 you want to do a direct push or create a pull request. If you want direct
 pushes, you need to set a global config option `create_pr` to `false`:
 
-```
+```yaml
 create_pr: false
 jobs:
 - job: propose_downstream

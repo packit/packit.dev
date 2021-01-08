@@ -5,6 +5,8 @@ disableToc: false
 weight: 6
 ---
 
+# Configuration
+
 Packit uses a configuration file in the upstream repository. The config file is written in YAML language.
 
 You should place the file in the root of your upstream repo. Packit accepts these names:
@@ -158,7 +160,8 @@ pull request is done.
 
 The default behaviour is to send the comment with instructions how to install a
 package with the change implemented in the pull request:
-```
+
+```yaml
 notifications:
   pull_request:
     successful_build: true
@@ -190,14 +193,14 @@ You can find more info in the documentation.
 
 This is a sample config which is meant for [packit](https://github.com/packit/packit) itself.
 
-```
+```yaml
 # packit is named packitos on PyPI b/c packit name was already taken
 upstream_package_name: packitos
 ```
 
 ### More examples of `synced_files`
 
-```
+```yaml
 synced_files:
   # copy a file from root of the upstream repo to dist-git
   - packit.spec
@@ -240,14 +243,14 @@ Once the service starts handling events of your repository, it needs to have a
 clear definition of what it should do.
 
 The tasks the packit service should do are defined in section `jobs`. The section is a list of dicts:
-```
+```yaml
 jobs:
 - {key: value}
 - {}
 ```
 
 If there is no `jobs` section in the configuration file, jobs default to:
-```
+```yaml
 jobs:
 - job: copr_build
   trigger: pull_request
@@ -266,7 +269,7 @@ jobs:
 ```
 
 If you do not want to use the jobs then the `jobs` section in the configuration file should be empty:
-```
+```yaml
 jobs: []
 
 ```
@@ -279,7 +282,7 @@ Every job has two mandatory keys:
 Every job only supports a specific set of triggers.
 
 Jobs can also accept additional configuration in a key `metadata` which has dict as a value:
-```
+```yaml
 jobs:
 - job: some-job
   trigger: ran-out-of-beer
@@ -300,7 +303,7 @@ In order to do such a thing, just set a value you want to override in the
 respective job.
 
 Example:
-```
+```yaml
 specfile_path: package.spec
 jobs:
 - job: some-job
@@ -360,7 +363,7 @@ you use custom `owner`.
 
 **Example**
 
-```
+```yaml
 jobs:
 - job: copr_build
   trigger: pull_request
@@ -442,7 +445,7 @@ Supported triggers: **commit**.
 
 **Example**
 
-```
+```yaml
 jobs:
 - job: sync_from_downstream
   trigger: commit
@@ -464,7 +467,7 @@ Optional metadata:
 
 **Example**
 
-```
+```yaml
 jobs:
 - job: propose_downstream
   trigger: release
@@ -476,12 +479,9 @@ jobs:
 
 This config would update Fedora Rawhide and Fedora 32 dist-git branches.
 
-
 **tests**
 
-
 See more about tests [here](http://packit.dev/testing-farm/).
-
 
 ## User configuration file
 
@@ -513,7 +513,7 @@ The `authentication` is a dictionary where:
 * value is a dictionary with keys: `token` and `instance_url` (optional)
 
 e.g.:
-```
+```yaml
 authentication:
     github.com:
         token: mnbvcxz123456

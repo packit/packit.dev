@@ -4,6 +4,9 @@ date: 2020-06-24T23:59:59+01:00
 draft: false
 weight: 3
 ---
+
+# Working with source-git
+
 This document is focused on how packit treats a source-git repo.
 
 If you are looking for the design concept of source-git, please head on here:

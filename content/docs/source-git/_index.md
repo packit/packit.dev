@@ -1,9 +1,12 @@
 ---
-title: "Source-git Documentation"
+title: "Source-git"
 draft: false
 weight: 5
 aliases: [/source-git]
+bookCollapseSection: true
 ---
+
+# Source-git documentation
 
 Let's talk about what source-git actually is.
 

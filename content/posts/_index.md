@@ -2,7 +2,10 @@
 title: "Blog Posts"
 draft: false
 weight: 2
+bookCollapseSection: true
 ---
+
+# Blog Posts
 
 - [December 2020](/posts/december-2020)
 - [November 2020](/posts/november-2020)

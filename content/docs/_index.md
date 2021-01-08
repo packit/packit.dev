@@ -2,7 +2,10 @@
 title: "Documentation"
 draft: false
 weight: 1
+bookCollapseSection: true
 ---
+
+# Documentation
 
 * [Onboarding Guide]({{< ref "guide" >}}) - How to start using Packit.
 * [Packit-as-a-Service]({{< ref "packit-as-a-service" >}}) - GitHub App that helps you continuously ensure that your project work in Fedora OS.

@@ -6,8 +6,9 @@ disableToc: false
 weight: 5
 ---
 
-Create a new bodhi update for the latest Fedora build of the upstream project.
+# create-bodhi-update
 
+Create a new bodhi update for the latest Fedora build of the upstream project.
 
 ## Requirements
 
@@ -33,20 +34,18 @@ Create a new bodhi update for the latest Fedora build of the upstream project.
 
 ## Help
 
-```bash
-Usage: packit create-update [OPTIONS] [PATH_OR_URL]
-
-  Create a bodhi update for the selected upstream project
-
-  PATH_OR_URL argument is a local path or a URL to the upstream git
-  repository, it defaults to the current working directory
-
-Options:
-  --dist-git-branch TEXT          Target branch in dist-git to release into.
-  --koji-build TEXT               Koji build (NVR) to add to the bodhi update
-                                  (can be specified multiple times)
-  --update-notes TEXT             Bodhi update notes
-  --update-type [security|bugfix|enhancement|newpackage]
-                                  Type of the bodhi update
-  -h, --help                      Show this message and exit.
-```
+    Usage: packit create-update [OPTIONS] [PATH_OR_URL]
+    
+      Create a bodhi update for the selected upstream project
+    
+      PATH_OR_URL argument is a local path or a URL to the upstream git
+      repository, it defaults to the current working directory
+    
+    Options:
+      --dist-git-branch TEXT          Target branch in dist-git to release into.
+      --koji-build TEXT               Koji build (NVR) to add to the bodhi update
+                                      (can be specified multiple times)
+      --update-notes TEXT             Bodhi update notes
+      --update-type [security|bugfix|enhancement|newpackage]
+                                      Type of the bodhi update
+      -h, --help                      Show this message and exit.

@@ -6,6 +6,8 @@ disableToc: false
 weight: 8
 ---
 
+# Actions
+
 You can probably find yourself in a situation where some part of the packit workflow needs to be
 tweaked for your package.
 
@@ -83,7 +85,7 @@ Additionally, packit sets a few env vars for specific actions
 
 In your package config they can be defined like this:
 
-```
+```yaml
 specfile_path: package.spec
 synced_files:
   - packit.yaml

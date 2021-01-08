@@ -31,7 +31,8 @@ $ brew install hugo
 
 ### Content
 
-All content [is organized](https://gohugo.io/content-management/organization) in [content](content/) directory tree.
+All content [is organized](https://gohugo.io/content-management/organization)
+in [content](content/) directory tree.
 
 ### Start Hugo server
 
@@ -49,17 +50,11 @@ from where the Github Pages are served.
 The secret used by the action is stored in
 [settings/secrets](https://github.com/packit/packit.dev/settings/secrets).
 
-### About page
-
-We want the [About page](https://github.com/packit/packit.dev/blob/master/content/about.md)
-to be visible on the top of the website, so we have to keep the `date:` in the `about.md` newer then in the other content files.
-If you find a better way, let us know.
-
 ### Themes
 
-Currently, we use [Grav Learn theme](https://github.com/matcornic/hugo-theme-learn).
+Currently, we use [Book theme](https://themes.gohugo.io/hugo-book).
 For complete list of themes for Hugo, see [this](https://themes.gohugo.io).
-If you want to use a theme:
+If you want to use a new theme:
 
 1. `git submodule init themes/<theme_name>`
 2. `git submodule update`
@@ -67,4 +62,5 @@ If you want to use a theme:
 
 ### Site Configuration
 
-[Configuration](https://gohugo.io/getting-started/configuration/) is stored in [config.toml](config.toml).
+[Configuration](https://gohugo.io/getting-started/configuration/)
+is stored in [config.toml](config.toml).
