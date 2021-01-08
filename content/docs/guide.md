@@ -5,6 +5,8 @@ disableToc: false
 weight: 1
 ---
 
+# Packit Guide
+
 ## Agenda
 
 Being fully on-board of the packit train may take some time and effort. This is

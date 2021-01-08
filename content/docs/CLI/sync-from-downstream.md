@@ -6,11 +6,11 @@ disableToc: false
 weight: 9
 ---
 
+# sync-from-downstream
 
 This is a detailed documentation for the downstream sync functionality of packit. The
 command creates a new pull request in upstream repository using a
 selected branch (master by default) from Fedora dist-git repository.
-
 
 ## Requirements
 
@@ -18,7 +18,6 @@ selected branch (master by default) from Fedora dist-git repository.
 * Packit config file placed in the upstream repository.
 * Pagure API tokens for Fedora Dist-git.
 * Github API token.
-
 
 ## Tutorial
 
@@ -52,7 +51,6 @@ using master dist-git branch
 syncing /tmp/tmph9npe78e/colin.spec
 PR created: https://api.github.com/repos/phracek/colin/pulls/3
 ```
-
 
 ## packit sync-from-downstream --help
 

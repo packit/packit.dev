@@ -5,8 +5,9 @@ disableToc: false
 weight: 3
 ---
 
-Submit a koji build for the selected branch in Fedora dist-git.
+# build
 
+Submit a koji build for the selected branch in Fedora dist-git.
 
 ## Requirements
 

@@ -7,6 +7,8 @@ weight: 4
 aliases: [/faq]
 ---
 
+# FAQ
+
 ### Can I use the packit service as soon as I install it into my repository?
 
 Thanks for your interest in Packit Service! In order to start using the

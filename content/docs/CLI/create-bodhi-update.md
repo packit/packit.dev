@@ -6,8 +6,9 @@ disableToc: false
 weight: 5
 ---
 
-Create a new bodhi update for the latest Fedora build of the upstream project.
+# create-bodhi-update
 
+Create a new bodhi update for the latest Fedora build of the upstream project.
 
 ## Requirements
 

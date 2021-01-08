@@ -6,6 +6,8 @@ disableToc: false
 weight: 8
 ---
 
+# srpm
+
 Create a SRPM of the present content in the upstream repository.
 
 By default, packit uses `git describe --tags --match '*.*'` to create a unique

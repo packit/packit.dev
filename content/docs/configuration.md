@@ -5,6 +5,8 @@ disableToc: false
 weight: 6
 ---
 
+# Configuration
+
 Packit uses a configuration file in the upstream repository. The config file is written in YAML language.
 
 You should place the file in the root of your upstream repo. Packit accepts these names:

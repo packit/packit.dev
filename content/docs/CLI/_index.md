@@ -1,11 +1,13 @@
 ---
-title: "Packit CLI Commands"
+title: "Packit CLI commands"
 date: 2019-07-09
 draft: false
 chapter: false
 weight: 7
 bookCollapseSection: true
 ---
+
+# Packit CLI commands
 
 * [build](/docs/cli/build/)
 * [create-bodhi-update](/docs/cli/create-bodhi-update/)

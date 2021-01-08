@@ -6,6 +6,8 @@ disableToc: false
 weight: 8
 ---
 
+# Actions
+
 You can probably find yourself in a situation where some part of the packit workflow needs to be
 tweaked for your package.
 

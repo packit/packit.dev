@@ -4,6 +4,9 @@ date: 2018-12-31T23:59:59+01:00
 draft: false
 weight: 4
 ---
+
+# Source-git design
+
 ### Source git is the place where the manual work is done
 
 This document serves as a detailed description of source-git. Please bear in

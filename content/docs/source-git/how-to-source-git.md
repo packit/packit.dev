@@ -1,9 +1,11 @@
 ---
-title: "How to create a source-git repository from upstream?"
+title: "Create source-git repo"
 date: 2020-02-20
 draft: false
 weight: 2
 ---
+
+# How to create a source-git repository from upstream?
 
 This guide goes into the depths of how can one create a source-git repo from
 the upstream project manually using git without any help from another tooling.
@@ -15,12 +17,10 @@ Though you don't need to do this the hard way, we have a command in packit,
 [init]({{< ref "/docs/CLI/init.md" >}}), which automates almost all the steps
 described below.
 
-
 ## Prerequisites
 
 * code
 * RPM spec file
-
 
 ## Code
 
