@@ -26,10 +26,13 @@ https://github.com/packit/packit
 
 ### Contact
 
-You can find us at Freenode IRC channel #packit, or feel free to create an
-issue in any of our GitHub projects.
+If you encounter a problem while using Packit-as-a-service, please open an
+[upstream issue](https://github.com/packit/packit-service/issues/new).
+In case of any other questions, feel free to contact
+[us](https://github.com/orgs/packit/teams/the-packit-team):
 
-We are also available on this e-mail: user-cont-team@redhat.com.
+- [freenode](https://freenode.net) **#packit**
+- **user-cont-team@redhat.com**
 
 ### The key principles of packit
 
