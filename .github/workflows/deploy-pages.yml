@@ -22,5 +22,6 @@ jobs:
           CNAME: packit.dev
           GITHUB_ACTOR: jpopelka
           HUGO_VERSION: 0.75.1
+          HUGO_EXTENDED: true
           TARGET_REPO: packit/packit.dev-github-pages
           TOKEN: ${{ secrets.TOKEN }}
