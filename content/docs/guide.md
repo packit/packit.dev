@@ -2,7 +2,7 @@
 title: "Onboarding Guide"
 draft: false
 disableToc: false
-weight: 1
+weight: 2
 ---
 
 # Onboarding Guide
