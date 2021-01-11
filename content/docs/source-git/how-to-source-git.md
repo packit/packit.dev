@@ -37,10 +37,9 @@ usually set as `Source0` in the spec file). We have two choices here:
 
 Let's have a look at how we can do this with chrony. We'll start by cloning the
 upstream repo:
-```
-$ git clone https://git.tuxfamily.org/chrony/chrony.git/
-$ cd chrony/
-```
+
+    $ git clone https://git.tuxfamily.org/chrony/chrony.git/
+    $ cd chrony/
 
 At the time of writing this guide:
 * We have chrony 4.0 in Fedora Rawhide
@@ -57,10 +56,8 @@ Let's do it!
 
 We are going to create a new branch, fedora-rawhide, to be the source-git for
 rawhide.
-```
-$ git checkout -B fedora-rawhide 4.0
-```
 
+    $ git checkout -B fedora-rawhide 4.0
 
 ## RPM spec file
 
@@ -71,34 +68,28 @@ Here lies another decision for you: to pick the source of your spec file.
 
 Since our use case is clear, Fedora Rawhide package maintenance, we'll gonna
 pick our spec file from [rawhide](https://src.fedoraproject.org/rpms/chrony/tree/master):
-```
-$ mkdir fedora/
-$ cd fedora/
-$ curl -O https://src.fedoraproject.org/rpms/chrony/raw/master/f/chrony.spec
-```
+
+    $ mkdir fedora/
+    $ cd fedora/
+    $ curl -O https://src.fedoraproject.org/rpms/chrony/raw/master/f/chrony.spec
 
 As we inspect the spec file, we can see there is an additional source,
 `chrony.dhclient`, which we also need to fetch in order to be able to build
 chrony.
 
-```
-$ curl -O https://src.fedoraproject.org/rpms/chrony/raw/master/f/chrony.dhclient
-```
+    $ curl -O https://src.fedoraproject.org/rpms/chrony/raw/master/f/chrony.dhclient
 
 Let's commit our changes:
-```
-$ cd ../
-$ git add .
-$ git commit -m "Fedora downstream packaging"
-```
+
+    $ cd ../
+    $ git add .
+    $ git commit -m "Fedora downstream packaging"
 
 How does our git history look now?
 
-```
-$ git log --oneline HEAD^^..
-3d2f796 (HEAD -> fedora-rawhide) Fedora downstream packaging
-d327cfe (tag: 4.0, origin/master, origin/HEAD, master) nts: save new server keys on start
-```
+    $ git log --oneline HEAD^^..
+    3d2f796 (HEAD -> fedora-rawhide) Fedora downstream packaging
+    d327cfe (tag: 4.0, origin/master, origin/HEAD, master) nts: save new server keys on start
 
 ### Downstream patches
 
@@ -111,11 +102,10 @@ In this stage, we are going to apply all downstream patches we have defined in
 our spec file.
 
 Right now there is only a single patch chrony has in rawhide, let's apply it:
-```
-$ curl -O https://src.fedoraproject.org/rpms/chrony/raw/master/f/chrony-nm-dispatcher-dhcp.patch
-$ git am chrony-nm-dispatcher-dhcp.patch
-Applying: examples/nm-dispatcher.dhcp: use sysconfig, detect dhclient
-```
+
+    $ curl -O https://src.fedoraproject.org/rpms/chrony/raw/master/f/chrony-nm-dispatcher-dhcp.patch
+    $ git am chrony-nm-dispatcher-dhcp.patch
+    Applying: examples/nm-dispatcher.dhcp: use sysconfig, detect dhclient
 
 The problem we have right now is that:
 1. the patch is applied in the spec file
@@ -124,12 +114,12 @@ The problem we have right now is that:
    and the git commit
 
 Let's correct that:
-```
-$ git commit --amend
-```
+
+    $ git commit --amend
 
 and append to the end of the commit message
-```
+
+```yaml
 present_in_specfile: true
 patch_name: chrony-nm-dispatcher-dhcp.patch
 ```
@@ -138,26 +128,23 @@ Now packit knows that a patch corresponding to this commit is already applied
 in spec file and its name is "chrony-nm-dispatcher-dhcp.patch".
 
 We can remove the patch file since it's no longer needed:
-```
-$ rm chrony-nm-dispatcher-dhcp.patch
-```
 
+    $ rm chrony-nm-dispatcher-dhcp.patch
 
 ## Building with packit
 
 We almost have all we need to build with packit: we just need to tell packit
 where the spec file is placed in the repository and which git ref represents the
 4.0 release.
-```
-$ cat >.packit.yaml <<EOF
----
-specfile_path: fedora/chrony.spec
-upstream_ref: '4.0'
-patch_generation_ignore_paths: ["fedora/"]
-EOF
-$ git add .packit.yaml
-$ git commit -m "add .packit.yaml"
-```
+
+    $ cat >.packit.yaml <<EOF
+    ---
+    specfile_path: fedora/chrony.spec
+    upstream_ref: '4.0'
+    patch_generation_ignore_paths: ["fedora/"]
+    EOF
+    $ git add .packit.yaml
+    $ git commit -m "add .packit.yaml"
 
 Let's break down the config file:
 * We tell packit where the spec file is
@@ -170,16 +157,15 @@ Let's break down the config file:
 For more info on packit's configuration, please head on to [the configuration page]({{< ref "/docs/configuration.md" >}}).
 
 That's it, the build should now work:
-```
-$ packit srpm
-Input directory is an upstream repository.
-Patch chrony-nm-dispatcher-dhcp.patch does not exist
-100%[=============================>]   195.00   eta 00:00:00 
-100%[=============================>]     1.63K  eta 00:00:00 
-SRPM: /home/tt/g/packit/packit.dev/chrony/chrony-4.0-2.g384bb4bd.fc33.src.rpm
-```
+
+    $ packit srpm
+    Input directory is an upstream repository.
+    Patch chrony-nm-dispatcher-dhcp.patch does not exist
+    100%[=============================>]   195.00   eta 00:00:00 
+    100%[=============================>]     1.63K  eta 00:00:00 
+    SRPM: /home/tt/g/packit/packit.dev/chrony/chrony-4.0-2.g384bb4bd.fc33.src.rpm
 
 now we can rebuild the SRPM in mock
-```
-$ mock --rebuild -r fedora-rawhide-x86_64 chrony-4.0-2.g384bb4bd.fc33.src.rpm
-```
+
+    $ mock --rebuild -r fedora-rawhide-x86_64 chrony-4.0-2.g384bb4bd.fc33.src.rpm
+

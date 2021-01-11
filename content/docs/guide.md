@@ -53,9 +53,11 @@ built from the master branch in Copr:
 Once you install packit locally, it's time to fill `.packit.yaml` — the
 configuration file packit is using. Packit can help to fill the initial
 template by running the `init` command:
-```
-$ packit init
-$ cat .packit.yaml
+
+    $ packit init
+    $ cat .packit.yaml
+
+```yaml
 # See the documentation for more information:
 # https://packit.dev/docs/configuration/
 
