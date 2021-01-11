@@ -2,7 +2,7 @@
 title: "Configuration"
 draft: false
 disableToc: false
-weight: 6
+weight: 7
 ---
 
 # Configuration

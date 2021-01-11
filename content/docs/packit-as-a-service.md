@@ -3,7 +3,7 @@ title: "Packit-as-a-Service"
 date: 2019-06-22
 draft: false
 disableToc: false
-weight: 2
+weight: 3
 aliases: [/packit-as-a-service]
 ---
 
