@@ -44,7 +44,7 @@ will see the application displayed there.
 
 In order to continue, please head to the main [Packit guide]({{< ref "guide" >}}).
 
-### How to check Packit Service works in your project?
+## How to check Packit Service works in your project?
 
 Currently, Packit Service is able only to build your changes and provide them as RPMs.
 Once you create a pull request, Packit Service builds the code from the
@@ -54,7 +54,7 @@ An example of Packit Service pull request:
 
 ![Packit service pull request](/packit-service-pr.png)
 
-### How to re-trigger Packit Service actions in your pull request?
+## How to re-trigger Packit Service actions in your pull request?
 
 Packit Service is able to schedule new builds based on a pull request comment:
 
@@ -77,7 +77,7 @@ it means the author of the pull request does not have commit access to the
 repository so the build cannot be scheduled. This is a perfect case for
 maintainers of the repository to post `/packit build` in the PR to get a build.
 
-### How to propose a new downstream update?
+## How to propose a new downstream update?
 
 Packit Service is able to propose updates of new upstream releases using this comment in an issue:
 
@@ -94,7 +94,7 @@ automatically closed.
 Only users with write or admin permissions to the repository can propose a new
 update.
 
-### Adding tests
+## Adding tests
 
 It is also possible to run tests against the freshly built rpms.
 See the [Testing Farm]({{< ref "testing-farm" >}}) documentation for details.

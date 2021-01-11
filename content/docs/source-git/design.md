@@ -7,7 +7,7 @@ weight: 4
 
 # Source-git design
 
-### Source git is the place where the manual work is done
+## Source git is the place where the manual work is done
 
 This document serves as a detailed description of source-git. Please bear in
 mind that some things are a subject to change — the overall design is pretty
@@ -16,7 +16,7 @@ solid, but details may be tinkered over time.
 **Authors**: Stef Walter, Tomas Tomecek
 
 
-### TL;DR
+## TL;DR
 
 Content of source-git repository is equivalent to dist-git, but uses upstream
 format: source files instead of tarballs, git commits instead of patches.
@@ -37,9 +37,8 @@ source-git.
 Upstream repositories and source-git repositories are pretty much the same
 thing. Creating source-git only makes sense when the upstream does not accept
 downstream spec file or adding spec file to such a project doesn't make sense.
-<!--more-->
 
-### Full description
+## Full description
 
 Source git becomes the place for creative and interesting work, including
 aspects of packaging requiring human effort. We allow dist-git to become an

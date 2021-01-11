@@ -27,7 +27,7 @@ Packit is then able to work with such a repo and:
 Let's describe all of these in detail.
 
 
-### Upstream git history or just an unpacked tarball?
+## Upstream git history or just an unpacked tarball?
 
 Your source-git repo can contain upstream git history if you want. Or it
 doesn't. The alternative is to unpack a tarball corresponding to an upstream
@@ -46,7 +46,7 @@ they can be directly committed to dist-git. You can control the ignore
 mechanism with config option `patch_generation_ignore_paths`.
 
 
-#### Example
+### Example
 
 Let's have a look at source-git repo for pacemaker package:
 ```
@@ -78,7 +78,7 @@ single commit with the upstream archive content, but it could have been the
 whole upstream git history.
 
 
-### Adding changes
+## Adding changes
 
 So, how can one add new changes into a source-git repo? That's simple - just
 commit them. If your repo is on GitHub (or another public forge), you can even
@@ -90,7 +90,7 @@ downstream packaging) will be:
 2. added to the spec file
 
 
-#### Controlling the patch process
+### Controlling the patch process
 
 With the process above you cannot name the patch file nor control where exactly
 should packit place the `Patch123: 123.patch` line in the specfile. There is a
@@ -136,7 +136,7 @@ Patch1:         drpm-0.3.0-workaround-ppc64le-gcc.patch
 ```
 
 
-#### Rebase or merge?
+### Rebase or merge?
 
 The most common workflow in the world of open source development is to accept
 pull requests and have merge commits in the git history. If the PRs are not
@@ -161,7 +161,7 @@ best:
    alter existing git history, yet makes it more complicated.
 
 
-### Creating an SRPM
+## Creating an SRPM
 
 The format between a source-git repo and the build system is a source RPM - 
 SRPM. We can then take the file and build it locally, send it to koji or copr
@@ -174,7 +174,7 @@ $ packit srpm
 SRPM: /home/tt/p/c/s/pacemaker/pacemaker-2.0.3-6.gbd127227.fc32.src.rpm
 ```
 
-#### How packit generates an SRPM from a source-git repo?
+### How packit generates an SRPM from a source-git repo?
 
 These are the steps:
 
@@ -186,7 +186,7 @@ These are the steps:
    archive and additional sources.
 
 
-### Updating your package in Fedora
+## Updating your package in Fedora
 
 In this chapter, we'd cover the "sync to dist-git" part listed above. When you
 use source-git to track a package in Fedora, the workflow is the same as if you

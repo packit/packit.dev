@@ -17,13 +17,10 @@ We have split the on-boarding process into multiple stages:
 4. The project has successful builds inside the service.
 5. Packit service handles Fedora Rawhide updates for you.
 
-
-## The guide
-
 We welcome all the suggestions to this guide, feel free to [open a new issue
 here](https://github.com/packit/packit.dev/issues/new).
 
-### Have packit tooling installed locally
+## Have packit tooling installed locally
 
 In order to start using packit, we suggest you install the tooling locally. All
 the logic is baked inside `packit` command - so once `packit srpm` (the command
@@ -51,7 +48,7 @@ built from the master branch in Copr:
 
     $ pip3 install --user git+https://github.com/packit/packit
 
-### RPM builds pass on your laptop.
+## RPM builds pass on your laptop.
 
 Once you install packit locally, it's time to fill `.packit.yaml` — the
 configuration file packit is using. Packit can help to fill the initial
@@ -95,20 +92,20 @@ Is your `packit srpm` finally passing? If not, feel free to reach out to us. If
 yes, let's proceed to the next level.
 
 
-### Running from the dist-git repository
+## Running from the dist-git repository
 
 When you are not allowed or do not want to run packit command from the upstream
 git repository, you can run commands from the cloned dist-git repository in the
 same way as you do from upstream.  Make sure, that you specify the
 `upstream_project_url` in your configuration.
 
-### You are approved to use packit-service.
+## You are approved to use packit-service.
 
 In order to start using packit service, our GitHub app, you need to [install it
 in your GitHub projects]({{< ref "packit-as-a-service" >}}). Then we need to
 approve you (usually takes only a few hours).
 
-### The project has successful builds inside the service.
+## The project has successful builds inside the service.
 
 If a SRPM can be created locally, all should be good in the service as well.
 That's the theory. In practice, your laptop and packit service sandbox
@@ -139,7 +136,7 @@ If you are looking for an inspiration for your .packit.yaml, check [packit's
 config file](https://github.com/packit/packit/blob/master/.packit.yaml)
 since we try to use all the latest features.
 
-### Packit service handles Fedora Rawhide updates for you.
+## Packit service handles Fedora Rawhide updates for you.
 
 So you already have `jobs` section in your config. Let's extend it with another
 job to push new upstream releases to Fedora rawhide.
