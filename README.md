@@ -7,27 +7,27 @@
 ### Installation
 
 This repository uses git submodules, so you have to `git clone --recurse-submodules` it.
+If you forget and realize later, just run:
+
+    $ git submodule init themes/book
+    $ git submodule update
 
 #### Fedora
 
-1. `dnf install hugo`
-2. `hugo help`
+    $ dnf install hugo
+    $ hugo help
 
 There's also a copr repo, but the newer versions not always work as expected, you have to experiment a bit:
 
-```
-$ dnf copr enable daftaupe/hugo
-```
+    $ dnf copr enable daftaupe/hugo
 
 #### MacOS
 
-```
-$ brew install hugo
-```
+    $ brew install hugo
 
 ### Add new post
 
-`hugo new posts/packit-xyz.md`
+    $ hugo new posts/packit-xyz.md
 
 ### Content
 
