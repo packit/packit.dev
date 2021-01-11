@@ -1,11 +1,11 @@
 ---
-title: "Packit Guide"
+title: "Onboarding Guide"
 draft: false
 disableToc: false
 weight: 1
 ---
 
-# Packit Guide
+# Onboarding Guide
 
 ## Agenda
 
