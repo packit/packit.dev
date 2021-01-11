@@ -26,7 +26,7 @@ event, e.g. clones an upstream repo.
 
 Currently, these are the actions you can use:
 
-### `propose-update` command
+## `propose-update` command
 
 |        | name                  | working directory | when run                                                                          | description                               |
 | ------ | --------------------- | ----------------- | --------------------------------------------------------------------------------  | ----------------------------------------- |
@@ -38,7 +38,7 @@ Currently, these are the actions you can use:
 |        | `get-current-version` | upstream git repo | when the current version needs to be found                                        | expect version as a stdout                |
 
 
-### Creating SRPM
+## Creating SRPM
 
 These applies to `srpm` command and building in COPR.
 
@@ -65,7 +65,7 @@ Sources correctly, e.g. `sed -i packaging/fedora/snapd.spec -e
 "s/https.*only-vendor.tar.xz/$correct_tarball_path/"`
 
 
-#### Environment variables set by packit
+### Environment variables set by packit
 
 Additionally, packit sets a few env vars for specific actions
 
