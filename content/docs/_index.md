@@ -16,3 +16,4 @@ bookCollapseSection: true
 * [Configuration for packit]({{< ref "configuration" >}}) - Configuration file description.
 * [Packit CLI](/docs/cli/) - Commands description.
 * [Actions]({{< ref "actions" >}}) - Further customize Packit's behaviour.
+* [Generated code in upstream archives]({{< ref "archive-not-matching-git" >}}) - When your release tarballs contain generated code and you need to patch it downstream.
