@@ -87,7 +87,7 @@ synced_files:
 upstream_package_name: packitos
 downstream_package_name: packit
 actions:
-    post-upstream-clone: "wget https://src.fedoraproject.org/rpms/packit/raw/master/f/packit.spec"
+    post-upstream-clone: "wget https://src.fedoraproject.org/rpms/packit/raw/master/f/packit.spec -O packit.spec"
 ```
 
 ## I have a template of a spec file in my repo: can packit work with it?
