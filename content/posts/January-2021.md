@@ -15,8 +15,8 @@ weight: 79
 
 ## Week 2 (January 11th - January 15th)
 
-- Branch deletions are now correctly ignored. (([packit-service#919](https://github.com/packit/packit-service/pull/919))
+- Branch deletions are now correctly ignored. ([packit-service#919](https://github.com/packit/packit-service/pull/919))
 - Multiple internal improvements have been done.
-  ([packit#1072](https://github.com/packit/packit-/pull/1072),
+  ([packit#1072](https://github.com/packit/packit/pull/1072),
   [packit-service#922](https://github.com/packit/packit-service/pull/922),
   [packit-service#923](https://github.com/packit/packit-service/pull/923))
