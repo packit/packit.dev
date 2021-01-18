@@ -164,32 +164,25 @@ to us](#how-can-i-contact-you).
 
 ## A command failed in packit-service: how do I reproduce it locally?
 
-We don't have an end-to-end solution to this, yet.
+Packit service runs all commands you defined in a
+[sandbox](https://github.com/packit/sandcastle) which is a kubernetes pod in a
+new project. If you need additional packages or binaries present in the
+sandbox, please [let us know](https://github.com/packit/sandcastle/issues/new).
 
 In the meantime, you can pull our production sandbox image and run the command
 inside. As an example, this is how we were debugging build problems with
 anaconda:
 
-1. Clone the upstream git repo.
+1. Clone your upstream git repo.
 
-2. Pull the sandbox image:
-
+2. Launch the container and bind-mount the upstream project inside:
 ```
-$ docker pull docker.io/usercont/sandcastle:prod
-```
-
-3. Launch the container and bind-mount the upstream project inside:
-
-```
-$ docker run -ti --rm -v $PWD:/anaconda docker.io/usercont/sandcastle:prod bash
+$ docker run -ti --rm --memory 768MB -v $PWD:/src -w /src docker.io/usercont/sandcastle:prod bash
 ```
 
 4. Run commands of your choice:
-
 ```
-[root@4af5dbd9c828 /]# cd /anaconda
-
-[root@4af5dbd9c828 anaconda]# ./configure
+[root@4af5dbd9c828 src]# ./configure
 checking for a BSD-compatible install... /usr/bin/install -c
 checking whether build environment is sane... yes
 checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
@@ -210,3 +203,43 @@ Our deployment is running in [OpenShift
 Online](https://www.openshift.com/products/online/) which is using docker as a
 container engine, that's why we are using docker here and not
 [podman](https://github.com/containers/podman).
+
+Since OpenShift [invokes pods using arbitrary
+UIDs](https://www.openshift.com/blog/a-guide-to-openshift-and-uids) and as you
+can see, the command above is invoked as root, it does not match production
+packit-service.  So, if running a local container didn't help you with
+reproducing the issue, you can try running it in openshift!
+
+Here is a simple python code how packit-service does it:
+```python
+from sandcastle import Sandcastle
+
+# this should be the path to your local clone of the upstream project
+git_repo_path: str = "fill-me"
+# kubernetes namespace to use
+k8s_namespace: str = "myproject"
+command = ["your", "command", "of", "choice"]
+
+# This is how your code gets copied (via rsync) into the openshift pod
+m_dir = MappedDir(git_repo_path, "/sandcastle", with_interim_pvc=True)
+
+o = Sandcastle(
+    image_reference="docker.io/usercont/sandcastle:prod",
+    k8s_namespace_name=k8s_namespace,
+    mapped_dir=m_dir
+)
+o.run()
+try:
+    output = o.exec(command=command)
+    print(output)
+finally:
+    o.delete_pod()
+```
+
+This script requires:
+ * [sandcastle](https://github.com/packit/sandcastle) installed
+ * being logged in an openshift cluster (`oc whoami` to confirm)
+ * rsync binary available
+
+If none of these helped you, please [reach out]({{< ref "#how-can-i-contact-you"
+>}}) to us and we'll try to help you.
