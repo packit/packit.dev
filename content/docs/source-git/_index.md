@@ -34,6 +34,8 @@ such a thing:
 
 * Downstream patches to be applied in the spec file
 
+![Source-git example](/source-git-diagram.png)
+
 
 ### Spec file
 
