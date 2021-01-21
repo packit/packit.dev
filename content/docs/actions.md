@@ -26,15 +26,14 @@ event, e.g. clones an upstream repo.
 
 Currently, these are the actions you can use:
 
-## `propose-update` command
+## `propose-downstream` command
 
 |        | name                  | working directory | when run                                                                          | description                               |
 | ------ | --------------------- | ----------------- | --------------------------------------------------------------------------------  | ----------------------------------------- |
 | [hook] | `post-upstream-clone` | upstream git repo | after cloning of the upstream repo (master) and before other operations           |                                           |
 | [hook] | `pre-sync`            | upstream git repo | after cloning and checkout to the correct (release) branch                        |                                           |
 |        | `prepare-files`       | upstream git repo | after cloning, checking out of both upstream and dist-git repos                   | replace patching and archive generation   |
-|        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                                    | replace patching                          |
-|        | `create-archive`      | upstream git repo | when the archive needs to be created                                              | replace the code for creating an archive  |
+|        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                                    | replace patching                          |                                         | replace the code for creating an archive  |
 |        | `get-current-version` | upstream git repo | when the current version needs to be found                                        | expect version as a stdout                |
 
 
@@ -52,17 +51,21 @@ These applies to `srpm` command and building in COPR.
 
 **create-archive** - is expected to return a relative path to the archive - relative within the repository. If there are more steps, then one of them has to return the archive name.
 
-**fix-spec-file** — this action performs these 3 operations on a spec file:
+**fix-spec-file** — this action updates the specfile so it's possible to have the spec reference 
+                    the tarball and unpack it. This method tries to perform 3 operations on a spec file:
 
-1. Replaces `Source0` with a local path to the generated tarball
-2. Changes first %setup (or %autosetup) macro in %prep and adds `-n` so the generated tarball can be unpacked
+1. Replaces Source configured by [`spec_source_id`](/docs/configuration/#spec_source_id) (default `Source0`) with a local path to the generated tarball
+2. Changes first `%setup` (or `%autosetup`) macro in `%prep` and adds `-n` so the generated 
+ tarball can be unpacked (it tries to extract the directory name directly from archive 
+ or uses the configured [`archive_root_dir_template`](/docs/configuration#archive_root_dir_template))
 3. Changes %version
 
 As an example how to use this, a package may define more Sources - in such a
-case, default implementation of fix-spec-file won't be able to update %prep
-correctly. You can write a simple shell script and use sed to set the new
-Sources correctly, e.g. `sed -i packaging/fedora/snapd.spec -e
-"s/https.*only-vendor.tar.xz/$correct_tarball_path/"`
+case, default implementation of `fix-spec-file` won't be able to update `%prep`
+correctly. You can write a simple shell script which will be run with the `cwd` set to 
+the root of the repository and use `sed` to set the new
+Sources correctly, e.g. `sed -i my_specfile_path -e
+"s/https.*only-vendor.tar.xz/my_correct_tarball_path/"`
 
 
 ### Environment variables set by packit

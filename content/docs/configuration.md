@@ -27,7 +27,8 @@ Both Packit-as-a-Service and packit tool use this configuration file.
 
 (*string*) Relative path to a spec file within the upstream repository.
 If not specified, defaults to:
-1. `downstream_package_name`.spec if `downstream_package_name` is set.
+1. `downstream_package_name.spec` if [`downstream_package_name`](#downstream_package_name) 
+is set.
 2. Else recursively search the tree and use the first spec file found.
 
 #### upstream_project_name
@@ -37,8 +38,8 @@ If not specified, defaults to:
 #### upstream_package_name
 
 (*string*) Name of the upstream repository (e.g. in PyPI), defaults to the
-name of the Github repository; this is used in `%prep` section to generate an
-archive.
+name of the Github repository; it's used when working with the upstream project,
+as a release archive name and as a directory name in that archive.
 
 #### upstream_project_url
 
@@ -54,7 +55,7 @@ new pull request (defaults to `true`) or push directly to dist-git (if set to
 
 #### sync_changelog
 
-(*bool*) When doing a new update in Fedora dist-git, the spec-file changelog
+(*bool*) When doing a new update in Fedora dist-git, the specfile changelog
 is synchronised when set to `true`. By default (`false`), everything but the changelog
 part is synchronized. Use this only when your changelogs are in sync since this overwrites the changelog in the downstream.
 
@@ -78,7 +79,7 @@ Github repository.
 
 #### dist_git_namespace
 
-(*string*) Namespace in dist-git URL (defaults to "rpms").
+(*string*) Namespace in dist-git URL (defaults to `rpms`).
 
 #### dist_git_base_url
 
@@ -87,9 +88,13 @@ Github repository.
 
 #### create_tarball_command
 
-(*list of strings*) A command which generates upstream tarball in the directory with the specfile
-(defaults to `git archive -o "{specfile_dir}/{package_name}-{version}.tar.gz" --prefix
-"{package_name}-{version}/" HEAD`).
+(*list of strings*) A command which generates upstream tarball in the directory with the specfile if the [`create-archive` action](/docs/actions/) is not defined.
+The default command is `git archive -o "{specfile_dir}/{package_name}-{version}.tar.gz" --prefix
+"{package_name}-{version}/" HEAD`, where:
+ - `specfile_dir` is the directory with the specfile
+ - `package_name` is `upstream_package_name` or, if not set, `downstream_package_name` 
+ - `version` is obtained by the [`get-current-version` action](/docs/actions/) or [`current_version_command`](#current_version_command)
+and if neither configured, by extracting from the tag
 
 #### current_version_command
 
@@ -135,15 +140,17 @@ packit will fill in the version argument.
 
 #### archive_root_dir_template
 
-(string) Packit is updating `%autosetup -n ...` line in a spec file. For this 
-purpose, it requires the name of the archive root directory. If packit is not 
-able to extract it from the archive, it is possible to specify it explicitly 
+(string) In the [`fix-spec-file` action](/docs/actions/) Packit changes first `%setup` (or `%autosetup`) macro 
+in `%prep` and adds `-n` so the generated tarball can be unpacked. For this 
+purpose, it requires the name of the directory in the source archive. For tar archives 
+with one directory, Packit gets it automatically. If Packit is not able to extract it 
+from the archive with the tar python module, it is possible to specify it explicitly 
 with this option. 
  
 Default value is `{upstream_pkg_name}-{version}`. 
  
 You can use following tags in string: 
-* `{upstream_pkg_name}` - upstream package name 
+* `{upstream_pkg_name}` - name of the upstream package
 * `{version}` - package version
 
 #### patch_generation_ignore_paths
@@ -154,24 +161,24 @@ option you can precisely specify paths to exclude.
 
 #### notifications
 
-There is only one notifcation configuration you can set up right now: disable
-the "Congratulations!" comment which packit sends after a successful build of a
+There is only one notification configuration you can set up right now: enable
+the "Congratulations!" comment which will packit send after a successful build of a
 pull request is done.
 
-The default behaviour is to send the comment with instructions how to install a
+The default behaviour is not to send the comment with instructions how to install a
 package with the change implemented in the pull request:
 
 ```yaml
 notifications:
   pull_request:
-    successful_build: true
+    successful_build: false
 ```
 
-You can disable the commenting by setting `successful_build` to `false`.
+You can enable the commenting by setting `successful_build` to `true`.
 
 #### copy_upstream_release_description
 (*bool*) When doing a new update in Fedora dist-git, the Github upstream release description
-is copied to the spec-file changelog when set to `true`. By default (`false`), 
+is copied to the specfile changelog when set to `true`. By default (`false`), 
 commit message titles (first line of a commit message) are copied.
 e.g. 
 - `copy_upstream_release_description = True`:
