@@ -20,3 +20,9 @@ weight: 79
   ([packit#1072](https://github.com/packit/packit/pull/1072),
   [packit-service#922](https://github.com/packit/packit-service/pull/922),
   [packit-service#923](https://github.com/packit/packit-service/pull/923))
+
+## Week 3 (January 18th - January 22th)
+
+- We have temporarily disabled the testing-farm support because the cluster with old runner has died and the new runner is not ready.
+  The tests are now skipped and you get `Testing farm is temporarily disabled.` status until we have the new runner available.
+  ([packit-service#929](https://github.com/packit/packit-service/pull/929))
