@@ -9,12 +9,12 @@ repos:
       - id: prettier
         exclude: archetypes|docs|data|layouts|resources|static|themes/*
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.3.0
+    rev: v3.4.0
     hooks:
       - id: check-merge-conflict
       - id: detect-private-key
   - repo: https://github.com/packit/pre-commit-hooks
-    rev: 76dd54a98306a9f6ecf6672aa7687d6f07091c4e
+    rev: a0ee4e8abebda41b5c2420a98d8251296df89e54
     hooks:
       - id: check-rebase
         args:
