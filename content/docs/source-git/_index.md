@@ -8,16 +8,17 @@ bookCollapseSection: true
 
 # Source-git documentation
 
-Let's talk about what source-git actually is.
-
 We initiated source-git as an alternative to working in
 [dist-git](https://github.com/release-engineering/dist-git). The need was
 especially amplified after we realized that many projects already do this. The
 problem was that everyone created a workflow and tooling for themselves which
-made it really hard to share knowledge and onboard new projects. Our intention
+made it really hard to share knowledge and on-board new projects. Our intention
 is to create an implementation which is highly configurable, easy to start with
 and provides both command-line tooling and a service which is tightly
 integrated with GitHub and GitLab.
+
+> Before you continue reading, we assume you are familiar with the [Fedora
+> Maintenance Guide](https://fedoraproject.org/wiki/Package_maintenance_guide).
 
 Source-git is a git repository which contains upstream sources and
 downstream-specific files: for packaging and code changes specific to a
@@ -39,23 +40,37 @@ such a thing:
 
 ### Spec file
 
-I'm going to answer the elephant in the room right away: "Do we really need to
-have a spec file in our upstream repo or a source-git repo?!" — No, you don't,
-though storing the spec file directly in the repository is the most convenient.
-Alternatively, packit needs to have a way to obtain the spec file, so, you can:
-* download it from anywhere you want
-* generate it
-* fill in a template spec file during a build process
+We are often being asked a question about spec files: "Do we really need to
+[have a spec file in our upstream repo or a source-git repo?!]({{< ref
+"faq#how-can-i-download-rpm-spec-file-if-it-is-not-part-of-upstream-repository"
+>}})" No, you don't, though storing the spec file directly in the repository
+will save you a lot of trouble - when you disconnect the repository from the
+build recipe, the spec file:
+* Adding or changing a build dependency will require changing the spec file in
+  the other location as well.
+* Someone may change the remote spec file and make builds fail suddenly.
+* Debugging build failures will be a nightmare because you simply can't edit
+  the spec file easily.
 
 
 ### Archive
 
-Packit needs to be able to get an archive for the current git checkout. By
-default this is done using `git-archive` command and you can override this in
-any way you want:
-* Use autotools or any build system of your choice
-* Use the native way of how archives are being generated in a particular ecosystem
-* Script it yourself
+Packit downloads the archive defined as `Source` or `Source0` in your spec file
+to produce a SRPM.
+
+
+### Downstream patch generation process
+
+Packit iterates over every git commit sitting on top off [`upstream_ref`]({{<
+ref "configuration.md#upstream_ref" >}}). `upstream_ref` is a border between
+upstream commits, usually matching an upstream release tag, and downstream
+commits.
+
+Packit distinguishes between 2 types of git commits:
+1. Those that change code (usually pulled from upstream) - Packit converts
+   these into patch files so they can be applied to the source tree in the
+   `%prep` section during the build process.
+2. Changes to packaging (spec file, other sources, changes to .packit.yaml).
 
 
 ### Downstream patches to be applied in the spec file
@@ -67,7 +82,7 @@ Stream or RHEL and apply the patches during the build process.
 Source-git is perfect for this because patches are stored as git commits and
 patch files are generated on the fly.
 
-The important part of the patch generation process is for packit to know, from
+The important part of the patch generation process is for Packit to know, from
 which commit it should start generating patches. The theory here is that you
 mark a certain commit and it should resemble the content of the archive. All
 the code changes on top are treated as downstream changes and the respective
@@ -78,5 +93,5 @@ be applied during the build process.
 
 This was just a gentle intro to source-git, for more info you can continue with:
 * [How to create a source-git repo?]({{< ref "/docs/source-git/how-to-source-git.md" >}})
-* [Working with source-git]({{< ref "/docs/source-git/work-with-source-git.md" >}})
+* [Working with source-git]({{< ref "/docs/source-git/work-with-source-git" >}})
 * [Source-git concept]({{< ref "/docs/source-git/design.md" >}})
