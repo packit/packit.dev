@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout master
-        uses: actions/checkout@v1
+      - name: Checkout branch
+        uses: actions/checkout@v2
         with:
           submodules: true
 
@@ -24,4 +24,5 @@ jobs:
           HUGO_VERSION: 0.75.1
           HUGO_EXTENDED: true
           TARGET_REPO: packit/packit.dev-github-pages
+          TARGET_BRANCH: main
           TOKEN: ${{ secrets.TOKEN }}
