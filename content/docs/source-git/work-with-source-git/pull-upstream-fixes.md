@@ -27,22 +27,23 @@ is then able to turn those commits into patch files with the ability to
 configure the whole process.
 
 As an example, let's try to do this with systemd, in the example below we'd be
-using https://gitlab.com/packit-service/src/systemd.
+using https://gitlab.com/packit-service/src/systemd. The remote mimics how
+`fedpkg fork` works.
 ```
 $ git remote -v
-origin      git@gitlab.com:TomasTomecek/systemd-stable.git (push)
-source-git  git@gitlab.com:packit-service/src/systemd.git (push)
+origin      git@gitlab.com:packit-service/src/systemd.git (push)
+ttomecek    git@gitlab.com:TomasTomecek/systemd-stable.git (push)
 upstream    git@github.com:systemd/systemd-stable.git (push)
 ```
 
 We have 3 remotes in the repo:
-1. `origin` — a fork of the source-git repo
-2. `source-git` — the official source-git repo where the downstream maintenance happens
+1. `origin` — the official source-git repo where the downstream maintenance happens
+2. `ttomecek` — a fork of the source-git repo
 3. `upstream` — the official upstream repository
 
 With this setup, we can fetch ref from the `upstream` remote, cherry-pick commits
-of our choice, push them to the fork `origin` and open a merge request against the
-repository referenced as `source-git` remote.
+of our choice, push them to the fork `ttomecek` and open a merge request against the
+repository referenced as the `origin` remote.
 
 
 ### Controlling the patch process
