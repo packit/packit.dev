@@ -25,27 +25,28 @@ Packit is then able to work with such a repo and:
 * And you are able to utilize all features of Packit-as-a-Service: RPM builds
   of PRs, tests on those builds, and getting feedback in pull (merge) requests.
 
-Let's describe all of these in detail.
 
 ### Example
 
-Let's have a look at source-git repo for pacemaker package:
+Let's have a look at source-git repo for systemd package:
 
     $ git log --online
-    bd12722 (HEAD -> c8s-test, origin/c8s-test, master) downstream packaging
-    7201e28 Refactor: controller: remove unused argument
-    91c557c Refactor: controller: convert active_op_t booleans to bitmask
-    2e90063 Refactor: controller: rename struct recurring_op_s to active_op_t
-    3ee90ce (tag: source-git-start) pacemaker-2.0.3 base
+    67e6197f91 Apply patch 0001-test-path-util-ignore-test-failure.patch
+    419ec28428 Apply patch 0001-test-path-util-do-not-fail-if-the-fd_is_mount_point-.patch
+    36d3e907dd Apply patch use-bfq-scheduler.patch
+    419e249eea add packit.yaml
+    49615ae7c6 add downstream distribution sources
+    dc057df84c (tag: v247.1) scope: on unified, make sure to unwatch all PIDs once they've been moved to the cgroup scope
 
-We have 5 commits:
-* bd12722 - top commit, contains a spec file so Packit won't create a patch file out of this one
-* 7201e28 - the 3rd downstream patch
-* 91c557c - the 2nd downstream patch
-* 2e90063 - the 1st downstream patch
-* 3ee90ce - the bottom commit, equals to an unpacked upstream tarball
+We can see 6 commits:
+* 67e6197f91 - HEAD commit, a downstream patch
+* 419ec28428 - a downstream patch
+* 36d3e907dd - a downstream patch
+* 419e249eea - a commit with packit.yaml
+* 49615ae7c6 - all the downstream sources: spec file, presets, ...
+* dc057df84c - upstream commit representing the 247.1 release followed by the rest of the upstream history
 
-packit.yaml has only two lines:
+packit.yaml looks like this:
 
     $ cat .packit.yaml
     ---
