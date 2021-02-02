@@ -30,7 +30,7 @@ weight: 79
 ## Week 4 (January 25th - January 29th)
 
 - The CLI and the service now detect name of the default branch of a repository
-  instead of assuming it to be called  `master`.
+  instead of assuming it to be called `master`.
   ([packit#1074](https://github.com/packit/packit/pull/1074),
   [packit-service#924](https://github.com/packit/packit-service/pull/924))
 - Build status page now points to the built SRPM uploaded to COPR.
