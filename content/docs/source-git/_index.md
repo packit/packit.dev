@@ -61,10 +61,18 @@ to produce a SRPM.
 
 ### Downstream patch generation process
 
-Packit iterates over every git commit sitting on top off [`upstream_ref`]({{<
-ref "configuration.md#upstream_ref" >}}). `upstream_ref` is a border between
-upstream commits, usually matching an upstream release tag, and downstream
-commits.
+The important part of the patch generation process is for Packit to know, from
+which commit it should start generating patches. The theory here is that you
+mark a certain commit and it should resemble the content of the archive. All
+the code changes on top are treated as downstream changes and the respective
+patch files are generated. The marked commit usually represents a specific
+upstream release. This means that all the generated patches need to be able to
+be applied during the build process.
+
+[`upstream_ref`]({{<ref "configuration.md#upstream_ref" >}})
+is this border between upstream commits,
+usually matching an upstream release tag, and downstream commits.
+Packit iterates over every git commit sitting on top off `upstream_ref`.
 
 Packit distinguishes between 2 types of git commits:
 1. Those that change code (usually pulled from upstream) - Packit converts
@@ -81,15 +89,6 @@ Stream or RHEL and apply the patches during the build process.
 
 Source-git is perfect for this because patches are stored as git commits and
 patch files are generated on the fly.
-
-The important part of the patch generation process is for Packit to know, from
-which commit it should start generating patches. The theory here is that you
-mark a certain commit and it should resemble the content of the archive. All
-the code changes on top are treated as downstream changes and the respective
-patch files are generated. The marked commit usually represents a specific
-upstream release. This means that all the generated patches need to be able to
-be applied during the build process.
-
 
 This was just a gentle intro to source-git, for more info you can continue with:
 * [How to create a source-git repo?]({{< ref "/docs/source-git/how-to-source-git.md" >}})
