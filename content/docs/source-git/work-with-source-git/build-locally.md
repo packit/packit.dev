@@ -15,21 +15,18 @@ We are going to use Packit to achieve such a thing, so please make sure you have
 [installed locally](/docs/guide/#have-packit-tooling-installed-locally).
 
 The command to create source RPMs is called `srpm` and that's how you can create one:
-```
-$ packit srpm
-SRPM: /home/tt/g/systemd/systemd-stable/systemd-247.1-2.g68d22b32.fc33.src.rpm
-```
+
+    $ packit srpm
+    SRPM: /home/tt/g/systemd/systemd-stable/systemd-247.1-2.g68d22b32.fc33.src.rpm
 
 Our changes worked! We can try building them, either in our local environment
 using Packit - this implies that all build dependencies are installed:
-```
-$ packit local-build
-```
+
+    $ packit local-build
 
 ...or in [mock](https://github.com/rpm-software-management/mock):
-```
-mock --rebuild -r fedora-rawhide-x86_64 ./systemd-247.1-2.g68d22b32.fc33.src.rpm
-```
+
+    mock --rebuild -r fedora-rawhide-x86_64 ./systemd-247.1-2.g68d22b32.fc33.src.rpm
 
 `-r` allows you [to pick a chroot]({{< ref "configuration.md#available-copr-build-targets" >}})
 of your choice and these are exactly the same which you can specify for builds

@@ -10,15 +10,13 @@ weight: 3
 Once your changes are merged into a source-git repo, the final step is to
 propose those changes to dist-git and get a production build.
 
-For both, we have a CLI command in Packit which are meant to be run from the
+For both, we have CLI commands in Packit which are meant to be run from the
 source-git's repo checkout.
 
 
 ### Propose...
 
-```
-$ packit propose-downstream --dist-git-branch main
-```
+    $ packit propose-downstream --dist-git-branch main
 
 The command above will take content of your source-git repository and creates a
 pull request for the matching dist-git repo (and dist-git's branch) with the
@@ -34,7 +32,5 @@ welcome to merge and celebrate for doing an update using source-git.
 You can either check out the dist-git repository yourself and perform `fedpkg
 build` as you're used to doing or run the following command from the same
 terminal session:
-```
-$ packit build --dist-git-branch main
-```
 
+    $ packit build --dist-git-branch main

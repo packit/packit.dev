@@ -29,12 +29,11 @@ configure the whole process.
 As an example, let's try to do this with systemd, in the example below we'd be
 using https://gitlab.com/packit-service/src/systemd. The remote mimics how
 `fedpkg fork` works.
-```
-$ git remote -v
-origin      git@gitlab.com:packit-service/src/systemd.git (push)
-ttomecek    git@gitlab.com:TomasTomecek/systemd-stable.git (push)
-upstream    git@github.com:systemd/systemd-stable.git (push)
-```
+
+    $ git remote -v
+    origin      git@gitlab.com:packit-service/src/systemd.git (push)
+    ttomecek    git@gitlab.com:TomasTomecek/systemd-stable.git (push)
+    upstream    git@github.com:systemd/systemd-stable.git (push)
 
 We have 3 remotes in the repo:
 1. `origin` — the official source-git repo where the downstream maintenance happens
