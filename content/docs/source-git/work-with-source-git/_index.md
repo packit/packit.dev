@@ -70,9 +70,13 @@ A common workflow in the world of open source development is to accept
 [merge](https://docs.gitlab.com/ee/development/contributing/merge_request_workflow.html)
 requests and have merge commits in the git history. If the PRs are not rebased
 against the main branch before the merge, the merge commits in the git-history
-may be heavily intertwined. Packit is able to work with such a state by
-creating an ephemeral branch with linear history and generate the patch files
-out of it. You can find more details in [the pull
+may be heavily intertwined. We are mentioning this because packit works with
+the recent git history.
+
+Packit is able to work with a git history where merge commits have parents
+behind [`upstream_ref`]({{<ref "configuration.md#upstream_ref" >}}). When it
+detects such state, packit creates an ephemeral branch with linear history and
+generates patch files out of it. You can find more details in [the pull
 request](https://github.com/packit/packit/pull/766) where this was developed.
 
 Picking up latest upstream changes into your downstream source-git repo has
@@ -80,15 +84,20 @@ multiple solutions and it's up to you to pick the one which suits your workflow
 best:
 
 1. **Rebase against the main upstream branch** (a.k.a. `git pull --rebase
-   upstream master`). This solution implies that you are able to perform the
+   upstream main`). This solution implies that you are able to perform the
    force-push operation (e.g. Fedora and CentOS dist-git instances don't allow
-   force-pushes). Packit will not help you with the rebase process in any way
-   and it's up to you to complete the rebase.
+   force-pushes). This solution creates the cleanest git-history though
+   force-pushing is not a best practices for working with a shared git-branch
+   so we suggest to use this only when necessary (e.g. when updating to a new
+   upstream release).
 2. **Create a new branch for every upstream release**. No rebase needed — may
-   require good branch hygiene since the number of branches can skyrocket. No
-   dedicated help from Packit again, you are running all the `git` commands.
-3. **Merge upstream changes** (a.k.a. `git merge upstream/master`). Does not
-   alter existing git history, yet makes it more complicated.
+   require good branch hygiene since the number of branches can skyrocket. This
+   is probably the easiest and most straightforward solution.
+3. **Merge upstream changes** (a.k.a. `git merge upstream/main`). Does not
+   alter existing git history, yet makes it more complicated. You also need to
+   make sure that downstream code changes (meaning, downstream patches) need to
+   be on top of the `upstream_ref` git ref so packit can process them
+   correctly.
 
 
 ### Common "how-tos" with source-git
