@@ -18,3 +18,19 @@ weight: 78
 - `--koji-target` option of the CLI's `build` command now accepts aliases.
   ([packit#1052](https://github.com/packit/packit/pull/1052))
 - The service runs on Fedora 33 now.
+
+## Week 6 (February 8th - February 12th)
+
+- `--dist-git-branches` option in the CLI's `propose-downstream` command was
+  fixed, it now respects set branches.
+  ([packit#1094](https://github.com/packit/packit/pull/1094))
+- The way Packit adds patches to spec-file in source-git repo was improved, now
+  it shouldn't fail if patches are sparsely numbered.
+  ([packit#1100](https://github.com/packit/packit/pull/1100))
+
+## Week 7 (February 15th - February 19th)
+
+- The service now handles issue/MR comments on Gitlab.
+  ([packit-service#985](https://github.com/packit/packit-service/pull/985))
+- `packit init` command now works with CentOS packages.
+  ([packit#1106](https://github.com/packit/packit/pull/1106))
