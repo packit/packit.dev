@@ -15,7 +15,7 @@ aliases: [/about]
   the right for you, there is still a way around, but may not be that simple.
   For example you can use
   [actions](/docs/actions/)
-  to replace default packit's behavior with a script of yours.
+  to replace packit's default behavior with a script of yours.
 
 - Reuse existing tools and services where it makes sense: don't reinvent the
   wheel.
@@ -26,7 +26,7 @@ aliases: [/about]
   - Packit service reacts to events and performs actions which you
     defined in your `packit.yaml`.
 
-- We don't break backwards compatibility just like that.
+- We don't break backward compatibility just like that.
 
 - Packit has a deprecation policy:
 
@@ -35,7 +35,7 @@ aliases: [/about]
     releases.
   - Deprecated content is advertised in our
     [changelog](https://github.com/packit/packit/blob/master/CHANGELOG.md),
-    printed in terminal or tracked in your issue tracker.
+    printed in the terminal or tracked in your issue tracker.
 
 - We care about artifacts which Fedora supports: at the moment it's RPMs,
   modules and container images.
@@ -44,7 +44,7 @@ aliases: [/about]
 
 - Packit respects Fedora guidelines.
 
-- We want latest content in Fedora Rawhide, but only if it works (the new
+- We want the latest content in Fedora Rawhide, but only if it works (the new
   content can be built and tests are passing).
 
 - Any task done by the automation system must be able to be performed by a
@@ -56,7 +56,7 @@ aliases: [/about]
   every two weeks. To accomplish this, the release and validation processes are
   completely automated.
 
-- All the tests are passing in CI systems for the main branches for all our
+- All tests are passing in CI systems for the main branches for all our
   projects. No excuses.
 
 - Contributions to packit must be possible by any developer, maintainer,
@@ -79,13 +79,13 @@ aliases: [/about]
   automated.
 
 - Developing in dist-git is cumbersome. Editing patch files and moving
-  tarballs around is not fun. Why not working with the source code itself?
+  tarballs around is not fun. Why not work with the source code itself?
   With [source-git](/docs/source-git/), you'll have upstream git history and the
   dist-git content combined in a single repository.
 
 - Let's use modern development techniques such as pull requests, code review,
   modern git forges, automation and continuous integration. We have computers
-  to do all the mundane tasks. Why we, as humans, should do such work?
+  to do all the mundane tasks. Why should we, as humans, do such work?
 
 - We want dist-git to be "a database of content in a release" rather a place
   to do actual work. On the other hand, you'll still be able to interact with

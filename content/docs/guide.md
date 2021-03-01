@@ -17,13 +17,13 @@ We have split the on-boarding process into multiple stages:
 4. The project has successful builds inside the service.
 5. Packit service handles Fedora Rawhide updates for you.
 
-We welcome all the suggestions to this guide, feel free to [open a new issue
+We welcome all kinds of suggestions to this guide, feel free to [open a new issue
 here](https://github.com/packit/packit.dev/issues/new).
 
 ## Have packit tooling installed locally
 
 In order to start using packit, we suggest you install the tooling locally. All
-the logic is baked inside `packit` command - so once `packit srpm` (the command
+the logic is baked inside the `packit` command - so once `packit srpm` (the command
 to create a source RPM locally from the current snapshot of the project) starts
 passing for you, it should work inside packit service as well.
 
@@ -32,7 +32,7 @@ This is how you can install packit if you are on Fedora Linux:
     $ sudo dnf install packit
 
 We publish packit to PyPI and it's available as `packitos` project — **packit
-at PyPI is something different**
+at PyPI is something different**.
 
     $ pip3 install --user packitos
 
@@ -140,7 +140,7 @@ since we try to use all the latest features.
 
 ## Packit service handles Fedora Rawhide updates for you.
 
-So you already have `jobs` section in your config. Let's extend it with another
+So you already have a `jobs` section in your config. Let's extend it with another
 job to push new upstream releases to Fedora rawhide.
 
 ```yaml
