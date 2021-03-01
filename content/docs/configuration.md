@@ -196,6 +196,17 @@ You can find more info in the documentation.
 - Use archive_root_dir_template 
 ```
 
+#### sources
+(*list of dicts*) A list of sources to override the URLs of `SourceX` entries in the spec-file.
+```yaml
+sources:
+  - path: rsync-3.1.3.tar.gz
+    url: https://git.centos.org/sources/rsync/c8s/82e7829c0b3cefbd33c233005341e2073c425629
+```
+`path` is the path relative to the directory with sources where the source will be placed. If a `SourceX` entry with 
+corresponding basename exists in the spec-file, the source will be downloaded from the `url` found in the configuration
+instead of the location defined in the spec-file.
+
 ### Minimal sample config
 
 This is a sample config which is meant for [packit](https://github.com/packit/packit) itself.
