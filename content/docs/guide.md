@@ -112,7 +112,7 @@ approve you (usually takes only a few hours).
 If a SRPM can be created locally, all should be good in the service as well.
 That's the theory. In practice, your laptop and packit service sandbox
 environment are vastly different. One thing which can happen easily is that a
-command is not available in the sandbox. Also, all the commands are ran using
+command is not available in the sandbox. Also, all the commands are run using
 an unprivileged user - you can't install anything or perform any privileged
 operation. In any case, feel free to reach out to us if you are having troubles
 and we'd be glad to help.
@@ -170,4 +170,3 @@ user](https://src.fedoraproject.org/user/packit) the ability to push.
 
 Creating pull requests is easy. `create_pr` defaults to true so the config
 starting this section is good enough.
-

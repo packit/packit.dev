@@ -18,7 +18,7 @@ not in a shell - if you need shell, just wrap your command like this: `bash -c
 "my fancy $command | grep success"`.
 
 All the actions are also executed inside Packit-as-a-Service. The service
-creates a new sandbox environment where the command is ran.
+creates a new sandbox environment where the command is run.
 
 Actions have a default behaviour which you can override, hooks don't have any -
 hooks are a way for you to perform operations after packit does a specific
