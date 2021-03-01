@@ -34,3 +34,17 @@ weight: 78
   ([packit-service#985](https://github.com/packit/packit-service/pull/985))
 - `packit init` command now works with CentOS packages.
   ([packit#1106](https://github.com/packit/packit/pull/1106))
+
+## Week 8 (February 22th - February 25th)
+
+- Sandcastle can run multiple commands in one sandbox, kudos to Tomas.
+  ([sandcastle#93](https://github.com/packit/sandcastle/pull/93))
+- MatejF & MatejM improved CLI's `create-update` to work with EPEL and add password prompt.
+  ([packit#1122](https://github.com/packit/packit/pull/1122),
+  [packit#1127](https://github.com/packit/packit/pull/1127))
+- Service runs builds for targets from `build` + `test` jobs, kudos to Laura.
+  ([packit-service#996](https://github.com/packit/packit-service/pull/996))
+- MatejF did a lot of small fixes and improvements of packit-service.
+  ([packit-service#989](https://github.com/packit/packit-service/pull/989),
+  [packit-service#993](https://github.com/packit/packit-service/pull/993),
+  [packit-service#994](https://github.com/packit/packit-service/pull/994))
