@@ -11,18 +11,18 @@ weight: 9
 You can probably find yourself in a situation where some part of the packit workflow needs to be
 tweaked for your package.
 
-Packit supports actions, a way to change default implementation for a command
-of your choice.  Packit is able to execute more commands. Each action can
-accept a list of commands. By default, the commands are executed directly and
-not in a shell - if you need shell, just wrap your command like this: `bash -c
+Packit supports actions, a way to change the default implementation for a command
+of your choice.  Packit is able to execute multiple commands. Each action accepts
+a list of commands. By default, the commands are executed directly and
+not in a shell - if you need a shell, just wrap your command like this: `bash -c
 "my fancy $command | grep success"`.
 
-All the actions are also executed inside Packit-as-a-Service. The service
+All actions are also executed inside Packit-as-a-Service. The service
 creates a new sandbox environment where the command is run.
 
 Actions have a default behaviour which you can override, hooks don't have any -
-hooks are a way for you to perform operations after packit does a specific
-event, e.g. clones an upstream repo.
+hooks are a way for you to perform operations following a certain packit event,
+e.g. cloning an upstream repo.
 
 Currently, these are the actions you can use:
 
@@ -34,12 +34,12 @@ Currently, these are the actions you can use:
 | [hook] | `pre-sync`            | upstream git repo | after cloning and checkout to the correct (release) branch                        |                                           |
 |        | `prepare-files`       | upstream git repo | after cloning, checking out of both upstream and dist-git repos                   | replace patching and archive generation   |
 |        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                                    | replace patching                          |                                         | replace the code for creating an archive  |
-|        | `get-current-version` | upstream git repo | when the current version needs to be found                                        | expect version as a stdout                |
+|        | `get-current-version` | upstream git repo | when the current version needs to be found                                        | expect version as a stdout parameter      |
 
 
 ## Creating SRPM
 
-These applies to `srpm` command and building in COPR.
+These apply to the `srpm` command and building in COPR.
 
 |        | name                  | working directory | when run                                                                          | description                               |
 | ------ | --------------------- | ----------------- | --------------------------------------------------------------------------------  | ----------------------------------------- |
@@ -51,18 +51,18 @@ These applies to `srpm` command and building in COPR.
 
 **create-archive** - is expected to return a relative path to the archive - relative within the repository. If there are more steps, then one of them has to return the archive name.
 
-**fix-spec-file** — this action updates the specfile so it's possible to have the spec reference 
+**fix-spec-file** — this action updates the specfile so it's possible to have the spec reference
                     the tarball and unpack it. This method tries to perform 3 operations on a spec file:
 
-1. Replaces Source configured by [`spec_source_id`](/docs/configuration/#spec_source_id) (default `Source0`) with a local path to the generated tarball
-2. Changes first `%setup` (or `%autosetup`) macro in `%prep` and adds `-n` so the generated 
- tarball can be unpacked (it tries to extract the directory name directly from archive 
+1. It replaces Source configured by [`spec_source_id`](/docs/configuration/#spec_source_id) (default `Source0`) with a local path to the generated tarball
+2. It changes the first `%setup` (or `%autosetup`) macro in `%prep` and adds `-n` so the generated
+ tarball can be unpacked (it tries to extract the directory name directly from the archive
  or uses the configured [`archive_root_dir_template`](/docs/configuration#archive_root_dir_template))
-3. Changes %version
+3. It changes %version
 
-As an example how to use this, a package may define more Sources - in such a
-case, default implementation of `fix-spec-file` won't be able to update `%prep`
-correctly. You can write a simple shell script which will be run with the `cwd` set to 
+For example a package may define multiple Sources. In such cases, the
+default implementation of `fix-spec-file` won't be able to update `%prep`
+correctly. You can write a simple shell script which will be run with the `cwd` set to
 the root of the repository and use `sed` to set the new
 Sources correctly, e.g. `sed -i my_specfile_path -e
 "s/https.*only-vendor.tar.xz/my_correct_tarball_path/"`
