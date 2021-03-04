@@ -177,7 +177,7 @@ anaconda:
 
 2. Launch the container and bind-mount the upstream project inside:
 ```
-$ docker run -ti --rm --memory 768MB -v $PWD:/src -w /src docker.io/usercont/sandcastle:prod bash
+$ docker run -ti --rm --memory 768MB -v $PWD:/src -w /src quay.io/packit/sandcastle:prod bash
 ```
 
 4. Run commands of your choice:
