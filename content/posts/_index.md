@@ -7,6 +7,7 @@ bookCollapseSection: true
 
 # Blog Posts
 
+- [March 2021](/posts/march-2021)
 - [February 2021](/posts/february-2021)
 - [January 2021](/posts/january-2021)
 - [December 2020](/posts/december-2020)
