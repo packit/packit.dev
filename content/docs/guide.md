@@ -27,9 +27,11 @@ the logic is baked inside the `packit` command - so once `packit srpm` (the comm
 to create a source RPM locally from the current snapshot of the project) starts
 passing for you, it should work inside packit service as well.
 
-This is how you can install packit RPM if you are on Fedora Linux:
+### Fedora Linux
 
     $ sudo dnf install packit
+
+### Red Hat Enterprise Linux or CentOS Stream 8
 
 On RHEL/CentOS 8 you can install RPM from [EPEL](https://fedoraproject.org/wiki/EPEL) repository.
 On CentOS, some dependencies are in PowerTools repository, so you have to enable it:
@@ -37,6 +39,8 @@ On CentOS, some dependencies are in PowerTools repository, so you have to enable
     $ sudo dnf install dnf-plugins-core epel-release
     $ sudo dnf config-manager --set-enabled powertools
     $ sudo dnf install packit
+
+### Via Fedora COPR
 
 You can also help us test the latest development snapshot by installing packit
 built from the master branch in Copr:
@@ -46,14 +50,20 @@ built from the master branch in Copr:
     $ # OR in case you have packit already installed from the Fedora repositories:
     $ sudo dnf upgrade packit
 
+### From PyPI
+
 We publish packit to PyPI and it's available as `packitos` project — **packit
 at PyPI is something different**.
 
     $ pip install --user packitos
 
+### From Source
+
 ... or installing it directly from GitHub:
 
     $ pip install --user git+https://github.com/packit/packit
+
+### In a container
 
 If none of the above work for you, try running it in a container
 from our Fedora based image. It contains packit installed from `main` branch,
