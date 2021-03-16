@@ -27,14 +27,30 @@ the logic is baked inside the `packit` command - so once `packit srpm` (the comm
 to create a source RPM locally from the current snapshot of the project) starts
 passing for you, it should work inside packit service as well.
 
-This is how you can install packit if you are on Fedora Linux:
+### Fedora Linux
+
+`packit` is available inside the official Fedora Linux repositories:
 
     $ sudo dnf install packit
+
+
+### Red Hat Enterprise Linux or CentOS Stream 8
+
+We publish `packit` to [EPEL](https://fedoraproject.org/wiki/EPEL) so you
+should first [make EPEL repositories
+available](https://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F)
+and then you can install `packit`:
+
+    $ sudo dnf install --enablerepo powertools packit
+
+### From PyPI
 
 We publish packit to PyPI and it's available as `packitos` project — **packit
 at PyPI is something different**.
 
     $ pip3 install --user packitos
+
+### Via Fedora COPR
 
 You can also help us test the latest development snapshot by installing packit
 built from the master branch in Copr:
@@ -44,9 +60,12 @@ built from the master branch in Copr:
     $ # OR in case you have packit already installed from the Fedora repositories:
     $ sudo dnf upgrade packit
 
+### From Source
+
 ... or installing it directly from GitHub:
 
     $ pip3 install --user git+https://github.com/packit/packit
+
 
 ## RPM builds pass on your laptop.
 
