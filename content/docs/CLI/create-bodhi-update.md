@@ -42,9 +42,13 @@ Create a new bodhi update for the latest Fedora build of the upstream project.
       repository, it defaults to the current working directory
     
     Options:
-      --dist-git-branch TEXT          Target branch in dist-git to release into.
+      --dist-git-branch TEXT          Comma separated list of target branches in
+                                      dist-git to create bodhi update in.
+                                      (defaults to repo's default branch)
+    
       --koji-build TEXT               Koji build (NVR) to add to the bodhi update
                                       (can be specified multiple times)
+    
       --update-notes TEXT             Bodhi update notes
       --update-type [security|bugfix|enhancement|newpackage]
                                       Type of the bodhi update
