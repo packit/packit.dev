@@ -454,21 +454,6 @@ Optional metadata:
 * **scratch** -- defaults to `false`, use to create scratch (test) builds
   instead of the real production builds
 
-**sync\_from\_downstream**
-
-Pick up a change (mass rebuild, proven packager rebuild or a fix) from Fedora
-dist-git and send it to upstream repository.
-
-Supported triggers: **commit**.
-
-**Example**
-
-```yaml
-jobs:
-- job: sync_from_downstream
-  trigger: commit
-```
-
 **propose_downstream**
 
 Land a new upstream release in Fedora. This job only makes sure the changes
