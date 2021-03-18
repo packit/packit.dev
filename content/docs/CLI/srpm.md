@@ -76,11 +76,10 @@ current_version_command: ["python3", "setup.py", "--version"]
     
     Options:
       --output FILE        Write the SRPM to FILE instead of current dir.
-      --remote TEXT        Name of the remote to discover upstream project URL, If
-                           this is not specified, default to origin.
       --upstream-ref TEXT  Git ref of the last upstream commit in the current
                            branch from which packit should generate patches (this
                            option implies the repository is source-git).
+    
       -h, --help           Show this message and exit.
 
 

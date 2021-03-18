@@ -1,5 +1,5 @@
 ---
-title: "propose-update"
+title: "propose-downstream"
 date: 2019-06-28
 draft: false
 disableToc: false
@@ -45,14 +45,14 @@ upstream release.
   release before copying files downstream.
 
 * Once you have performed the upstream release (and the new archive is up),
-  run `packit propose-update` in a working directory of your upstream
+  run `packit propose-downstream` in a working directory of your upstream
   repository:
   ```
   $ git clone https://github.com/user-cont/colin.git
 
   $ cd colin
 
-  $ packit propose-update
+  $ packit propose-downstream
   using "master" dist-git branch
   syncing ./colin.spec
   INFO: Downloading file from URL https://files.pythonhosted.org/packages/source/c/colin/colin-0.3.0.tar.gz
@@ -62,7 +62,7 @@ upstream release.
   PR created: https://src.fedoraproject.org/rpms/colin/pull-request/4
   ```
 
-  As you can see, one of the things `propose-update` does is, it downloads the
+  As you can see, one of the things `propose-downstream` does is, it downloads the
   upstream release tarball and uploads it to the lookaside cache. [This is
   required by the Fedora Packaging
   Guidelines](https://fedoraproject.org/wiki/Packaging:SourceURL#Referencing_Source).
@@ -72,9 +72,9 @@ upstream release.
 
 ## Help
 
-    Usage: packit propose-update [OPTIONS] [PATH_OR_URL] [VERSION]
+    Usage: packit propose-downstream [OPTIONS] [PATH_OR_URL] [VERSION]
     
-      Release current upstream release into Fedora
+      Land a new upstream release in Fedora.
     
       PATH_OR_URL argument is a local path or a URL to the upstream git
       repository, it defaults to the current working directory
@@ -84,22 +84,20 @@ upstream release.
     
     Options:
       --dist-git-branch TEXT  Comma separated list of target branches in dist-git
-                              to release into. (defaults to 'master')
+                              to release into. (defaults to repo's default branch)
     
       --dist-git-path TEXT    Path to dist-git repo to work in. Otherwise clone
                               the repo in a temporary directory.
     
       --local-content         Do not checkout release tag. Use the current state
-                              of the repo.
+                              of the repo. This option is set by default for
+                              source-git repos
     
       --force-new-sources     Upload the new sources also when the archive is
                               already in the lookaside cache.
     
       --no-pr                 Do not create a pull request to downstream
                               repository.
-    
-      --remote TEXT           Name of the remote to discover upstream project URL,
-                              If this is not specified, default to origin.
     
       --upstream-ref TEXT     Git ref of the last upstream commit in the current
                               branch from which packit should generate patches

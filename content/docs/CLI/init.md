@@ -104,12 +104,14 @@ If you want to learn more about working with source-git repos, there is a
                               Stream package; implies creating a source-git repo
     
       --dist-git-branch TEXT  Get spec file from this downstream branch, for
-                              Fedora this defaults to master, for CentOS it's c8s.
+                              Fedora this defaults to main, for CentOS it's c8s.
                               When --dist-git-path is set, the default is the
                               branch which is already checked out.
     
       --dist-git-path TEXT    Path to the dist-git repo to use. If this is
                               defined, --fedora-package and --centos-package are
                               ignored.
+    
+      -h, --help              Show this message and exit.
     
       -h, --help              Show this message and exit.

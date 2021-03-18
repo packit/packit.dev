@@ -61,11 +61,21 @@ PR created: https://api.github.com/repos/phracek/colin/pulls/3
       repository, it defaults to the current working directory
     
     Options:
-      --dist-git-branch TEXT  Source branch in dist-git for sync.
-      --upstream-branch TEXT  Target branch in upstream to sync to.
-      --no-pr                 Pull request is not create.
-      --fork / --no-fork      Push to a fork.
-      --remote-name TEXT      Name of the remote where packit should push. if this
-                              is not specified, it pushes to a fork if the repo
-                              can be forked.
+      --dist-git-branch TEXT  Comma separated list of target branches in dist-git
+                              to sync from. (defaults to repo's default branch)
+    
+      --upstream-branch TEXT  Target branch in upstream to sync to. (defaults to
+                              repo's default branch)
+    
+      --no-pr                 Do not create a pull request to upstream repository.
+      --fork / --no-fork      Push to a fork before creating a pull request.
+      --remote-to-push TEXT   Name of the remote where packit should push. If this
+                              is not specified, push to a fork if the repo can be
+                              forked.
+    
+      -f, --force             Don't discard changes in the git repo by default,
+                              unless this is set.
+    
+      -x, --exclude TEXT      File to exclude from sync
       -h, --help              Show this message and exit.
+
