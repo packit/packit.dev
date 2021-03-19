@@ -33,3 +33,10 @@ weight: 77
   created. ([packit-service#1019](https://github.com/packit/packit-service/pull/1019))
 - Matěj fixed an ugly bug which caused Packit Service not to react to
   installation events. ([packit-service#1018](https://github.com/packit/packit-service/pull/1018))
+
+## Week 11 (March 15th - March 19th)
+
+- Laura fixed a bug in the processing of GitHub App installations.
+  ([packit-service#1020](https://github.com/packit/packit-service/pull/1020))
+- Jirka fixed a bug that caused improper numbering of patches for source-git.
+  ([packit#1164](https://github.com/packit/packit/pull/1164))
