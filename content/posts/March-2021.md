@@ -43,14 +43,14 @@ weight: 77
 
 ## Week 12 (March 22th - March 26th)
 
-- Franta improved database schema. It will help us to match builds and tests together more easily and solve some UX problems.
+- Franta improved database schema. It will help us match builds and tests together more easily and solve some UX problems.
   ([packit-service#954](https://github.com/packit/packit-service/pull/954))
 - `packit init` CLI command has been updated to
   - place downstream packaging files in a subdirectory `.distro` instead of `fedora`.
     ([packit#1165](https://github.com/packit/packit/pull/1165))
   - enable using Stream 9 dist-git as a source.
     ([packit#1177](https://github.com/packit/packit/pull/1177))
-- Laura fixed syncing of specfile from downstream.
+- Laura reworked how specfiles are being synced from downstream dist-git repositories and we are running a PoC for packit's projects to test the new approach.
   ([packit-service#1023](https://github.com/packit/packit-service/pull/1023))
 - It's possible to specify a distinct test repository for tests in a test job.
   ([packit#1155](https://github.com/packit/packit/pull/1155))
