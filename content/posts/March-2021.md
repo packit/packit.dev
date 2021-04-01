@@ -57,3 +57,14 @@ weight: 77
   ([packit-service#1021](https://github.com/packit/packit-service/pull/1021))
 - `centos-stream` target is temporarily resolved to `centos-stream-8` to reflect a change in Copr.
   ([packit#1167](https://github.com/packit/packit/pull/1167))
+
+## Week 13 (March 29th - April 1st)
+
+- Jirka fixed a bug in `packit push-update`
+  ([packit#1191](https://github.com/packit/packit/pull/1191)).
+- Matěj introduced the `fedora-latest` alias for build and test targets, which
+  resolves to the latest _branched_ Fedora Linux
+  ([packit#1187](https://github.com/packit/packit/pull/1187)).
+- A custom path for the package config (aka `packit.yaml`) can be specified
+  using a new, top-level `-c, --config` option
+  ([packit#1184](https://github.com/packit/packit/pull/1184)).
