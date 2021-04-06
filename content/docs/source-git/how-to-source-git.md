@@ -71,19 +71,24 @@ pick our spec file from [rawhide](https://src.fedoraproject.org/rpms/chrony/tree
 
     $ mkdir fedora/
     $ cd fedora/
-    $ curl -O https://src.fedoraproject.org/rpms/chrony/raw/master/f/chrony.spec
+    $ curl -O https://src.fedoraproject.org/rpms/chrony/raw/rawhide/f/chrony.spec
 
 As we inspect the spec file, we can see there is an additional source,
 `chrony.dhclient`, which we also need to fetch in order to be able to build
 chrony.
 
-    $ curl -O https://src.fedoraproject.org/rpms/chrony/raw/master/f/chrony.dhclient
+    $ curl -O https://src.fedoraproject.org/rpms/chrony/raw/rawhide/f/chrony.dhclient
 
 Let's commit our changes:
 
     $ cd ../
     $ git add .
     $ git commit -m "Fedora downstream packaging"
+
+    [fedora-rawhide 934818b] Fedora downstream packaging
+     2 files changed, 663 insertions(+)
+     create mode 100644 fedora/chrony.dhclient
+     create mode 100644 fedora/chrony.spec
 
 How does our git history look now?
 
@@ -103,7 +108,7 @@ our spec file.
 
 Right now there is only a single patch chrony has in rawhide, let's apply it:
 
-    $ curl -O https://src.fedoraproject.org/rpms/chrony/raw/master/f/chrony-nm-dispatcher-dhcp.patch
+    $ curl -O https://src.fedoraproject.org/rpms/chrony/raw/main/f/chrony-nm-dispatcher-dhcp.patch
     $ git am chrony-nm-dispatcher-dhcp.patch
     Applying: examples/nm-dispatcher.dhcp: use sysconfig, detect dhclient
 
