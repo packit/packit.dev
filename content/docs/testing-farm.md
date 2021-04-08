@@ -26,8 +26,15 @@ In order to enable test execution simply include `tests` jobs in the `.packit.ya
         - fedora-all
 ```
 
-You can use `fedora-development`, `fedora-stable` or release specific targets
-such as `fedora-34-x86_64` for test targets as well.
+Required metadata:
+* **targets** - You can use `fedora-development`, `fedora-stable`, `fedora-all`
+  or release specific targets such as `fedora-34-x86_64`.
+
+Optional metadata:
+* **fmf_url** - Git repository containing the metadata (FMF) tree.
+  Use any format acceptable by the git clone command.
+* **fmf_ref** - Branch, tag or commit specifying the desired git revision.
+  Defaults to "master" when **fmf_url** is specified and **fmf_ref** is not.
 
 ## Restart Testing
 

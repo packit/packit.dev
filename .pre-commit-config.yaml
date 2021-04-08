@@ -7,7 +7,7 @@ repos:
     rev: v2.2.1
     hooks:
       - id: prettier
-        exclude: archetypes|docs|data|layouts|resources|static|themes/*
+        exclude: archetypes|docs|data|layouts|resources|static|themes/
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.4.0
     hooks:
