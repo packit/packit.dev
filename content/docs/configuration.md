@@ -86,26 +86,13 @@ Github repository.
 (*string*) URL of dist-git server, defaults to https://src.fedoraproject.org/
 (has to end with a slash).
 
-#### create_tarball_command
+#### create_tarball_command (**deprecated**)
 
-(*list of strings*) A command which generates upstream tarball in the directory with the specfile if the [`create-archive` action](/docs/actions/) is not defined.
-The default command is `git archive -o "{specfile_dir}/{package_name}-{version}.tar.gz" --prefix
-"{package_name}-{version}/" HEAD`, where:
- - `specfile_dir` is the directory with the specfile
- - `package_name` is `upstream_package_name` or, if not set, `downstream_package_name` 
- - `version` is obtained by the [`get-current-version` action](/docs/actions/) or [`current_version_command`](#current_version_command)
-and if neither configured, by extracting from the tag
+Please use [`create-archive` action](/docs/actions/)
 
-#### current_version_command
+#### current_version_command (**deprecated**)
 
-(*list of strings*) A command which prints current upstream version (hint:
-`git describe`) (defaults to `git describe --abbrev=0 --tags --match '*'`).
-
-This option affects the behavior of following CLI commands:
-* build
-* local-build
-* copr-build
-* srpm
+Please use [`get-current-version` action](/docs/actions/)
 
 #### actions
 
