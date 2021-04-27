@@ -179,8 +179,6 @@ If you have found an issue or have an RFE, you can file an [issue in nucleus pro
 [tmt]: https://tmt.readthedocs.io/
 [fedora-tmt]: https://docs.fedoraproject.org/en-US/ci/tmt
 [spec]: https://tmt.readthedocs.io/en/latest/spec.html
-[beakerlib]: https://github.com/beakerlib/beakerlib/wiki/man
-[selinux]: https://src.fedoraproject.org/tests/selinux/
 [systemd-tests]: https://github.com/systemd-rhel/tests
 [testing-farm-api]: https://testing-farm.gitlab.io/api
-[issues]: https://gitlab.com/testing-farm/nucleus/-/issues
+[issues]: https://gitlab.com/testing-farm/general/-/issues
