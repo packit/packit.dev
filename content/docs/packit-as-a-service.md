@@ -12,6 +12,7 @@ aliases: [/packit-as-a-service]
 [Packit-as-a-Service](https://github.com/marketplace/packit-as-a-service)
 is a [GitHub App](https://docs.github.com/apps/about-apps/)
 that helps you continuously ensure that your project work in Fedora OS.
+For Gitlab see [FAQ](/docs/faq#can-we-use-packit-with-gitlab).
 
 ## Easy to use
 

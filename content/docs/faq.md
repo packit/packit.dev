@@ -61,12 +61,21 @@ Packit connects the existing services ([Copr](https://copr.fedorainfracloud.org)
 
 Yes!
 
-Since GitLab doesn't have an app functionality to enable integration, you need
-to manually configure the webhooks: hop into Settings → Webhooks → Add Webhook
-and enter "https://prod.packit.dev/api/webhooks/gitlab"
+GitLab doesn't have an app functionality and we don't use the
+[Integrations](https://docs.gitlab.com/ee/user/project/integrations/overview.html)
+as it doesn't solve authentication.
+To enable Packit, you need to manually configure a webhook.
 
-Please bear in mind that not many people are using packit service via GitLab,
-so if anything doesn't work as expected, please reach out to us.
+Go to `Settings` -> `Webhooks` and add https://prod.packit.dev/api/webhooks/gitlab or
+https://stg.packit.dev/api/webhooks/gitlab as `URL`.
+Select `Push events`, `Comments`, `Issues events` and `Merge request events` as `Triggers`.
+Do not provide `Secret token` yet and click `Add webhook`.
+You should see the created hook at the bottom of the page now.
+Select `Test` and for example `Merge requests events`.
+At the top of the page appears a red
+`Hook executed successfully but returned HTTP 401 "X-Gitlab-Token not in request.headers"`.
+Wait a bit and check `Issues` of the project and after a while there should be
+a new confidential `Packit-Service Authentication` issue with instructions how to finish the setup.
 
 ## How can I download RPM spec file if it is not part of upstream repository?
 
