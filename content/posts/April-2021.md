@@ -43,3 +43,19 @@ weight: 76
   - The integration on packit-service side has been done by [Maťo](https://github.com/mfocko)
     ([packit-service#1056](https://github.com/packit/packit-service/pull/1056),
     [dashboard#95](https://github.com/packit/dashboard/pull/95)).
+
+## Week 17 (April 26th - April 30th)
+
+- When initiating a new source-git repo, packit adds info about sources to packit.yaml.
+  Also dist-git sources from the lookaside cache are not commited.
+  ([packit#1208](https://github.com/packit/packit/pull/1208),
+  [packit#1216](https://github.com/packit/packit/pull/1216)).
+- Franta added support for git repository cache into packit. The service part is yet to be done
+  ([packit#1214](https://github.com/packit/packit/pull/1214)).
+- Service reacts to `/packit` commands only when they appear alone on a line
+  ([packit-service#1065](https://github.com/packit/packit-service/pull/1065),
+  [packit-service#1083](https://github.com/packit/packit-service/pull/1083)).
+- Service doesn't create duplicate issues when configuration is invalid
+  ([packit-service#1075](https://github.com/packit/packit-service/pull/1075)).
+- We deprecated `current_version_command` and `create_tarball_command` in packit config
+  ([packit#1212](https://github.com/packit/packit/pull/1212)).
