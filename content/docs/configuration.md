@@ -121,7 +121,7 @@ the spec file.
 #### upstream_tag_template
 
 (*string*) Packit by default expects git tags to match versions (e.g. when
-doing the `propose-update` command) - if you are using a different tagging
+doing the `propose-downstream` command) - if you are using a different tagging
 scheme, let's say `v1.2.3` you can then set this parameter to `v{version}` and
 packit will fill in the version argument.
 

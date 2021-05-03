@@ -82,7 +82,7 @@ maintainers of the repository to post `/packit build` in the PR to get a build.
 
 Packit Service is able to propose updates of new upstream releases using this comment in an issue:
 
-    /packit propose-update
+    /packit propose-downstream
 
 If you want to propose the latest release into Fedora repositories,
 create an issue and add that comment into this issue and
