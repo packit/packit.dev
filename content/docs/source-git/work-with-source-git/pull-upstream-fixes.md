@@ -63,6 +63,10 @@ into account:
   default is `false` which will make Packit to define the patch in the spec
   file)
 
+There are more [patch metadata attributes]({{< ref "patch-metadata" >}}) and
+they are documented in our internal documentation for sake of not making this
+document too complex.
+
 Packit parses the metadata as yaml, hence the colon syntax.
 
 Example:
