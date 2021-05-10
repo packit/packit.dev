@@ -27,7 +27,7 @@ Both Packit-as-a-Service and packit tool use this configuration file.
 
 (*string*) Relative path to a spec file within the upstream repository.
 If not specified, defaults to:
-1. `downstream_package_name.spec` if [`downstream_package_name`](#downstream_package_name) 
+1. `downstream_package_name.spec` if [`downstream_package_name`](#downstream_package_name)
 is set.
 2. Else recursively search the tree and use the first spec file found.
 
@@ -64,6 +64,86 @@ part is synchronized. Use this only when your changelogs are in sync since this 
 (*list of strings or dicts*) A list of relative paths to files in the upstream
 repo which are meant to be copied to dist-git during an update (spec file path
 and config file path are set every time by default).
+
+Under the hood this will use `rsync --archive` to synchronise the paths
+between the upstream and the dist-git repo.
+
+The fields for a dictionary item in the list are the following:
+
+- *src*: A single path or a list of paths in the upstream repo that should be synced to dist-git.
+- *dest*: Path in the dist-git repo, where paths in `src` should be synced to.
+- *mkpath*: Flag to indicate if missing path components in `dest` should be created or not (default: false).
+- *delete*: Flag to indicate if extra content from `dest` should be deleted (default: false).
+- *filters*: List of [rsync filter rules] to be used during syncing.
+
+[rsync filter rules]: https://www.man7.org/linux/man-pages/man1/rsync.1.html#FILTER_RULES
+
+##### Examples:
+
+Copy a file from root of the upstream repo to dist-git:
+
+```yaml
+synced_files:
+  - packit.spec
+```
+
+If you copy `packit.yaml` downstream, you can then take advantage of
+`sync-from-downstream` command:
+
+```yaml
+synced_files:
+  - .packit.yaml
+```
+
+Rename or change the path of the synced file in dist-git:
+
+```yaml
+synced_files:
+  - src: packit.spec
+    dest: redhat/packit.spec
+```
+
+Paths also support globs. Copy everything from `fedora-packaging` folder and
+put it to the root of the dist-git repo:
+
+```yaml
+synced_files:
+  - src: fedora-packaging/*
+    dest: .
+```
+
+Sync the entire content of the `fedora-packaging` directory, and delete extra
+content found in the root of the dist-git repo; protect `.git*` files and the
+`sources` file from deletion:
+```yaml
+synced_files:
+  - src: fedora-packaging/
+    dest: .
+    delete: true
+    filters:
+    - "protect .git*"
+    - "protect sources"
+```
+
+Specify multiple source files to copy:
+
+```yaml
+synced_files:
+  - src:
+    - package.spec
+    - some-file
+    dest: .
+```
+
+Set `mkpath` to `true` to create missing path components in dist-git.
+In the example below, `subdir` is created if missing.
+
+```yaml
+synced_files:
+  - src: some.file
+    dest: subdir/some.file
+    mkpath: true
+```
 
 #### upstream_ref
 
@@ -127,16 +207,16 @@ packit will fill in the version argument.
 
 #### archive_root_dir_template
 
-(string) In the [`fix-spec-file` action](/docs/actions/) Packit changes first `%setup` (or `%autosetup`) macro 
-in `%prep` and adds `-n` so the generated tarball can be unpacked. For this 
-purpose, it requires the name of the directory in the source archive. For tar archives 
-with one directory, Packit gets it automatically. If Packit is not able to extract it 
-from the archive with the tar python module, it is possible to specify it explicitly 
-with this option. 
- 
-Default value is `{upstream_pkg_name}-{version}`. 
- 
-You can use following tags in string: 
+(string) In the [`fix-spec-file` action](/docs/actions/) Packit changes first `%setup` (or `%autosetup`) macro
+in `%prep` and adds `-n` so the generated tarball can be unpacked. For this
+purpose, it requires the name of the directory in the source archive. For tar archives
+with one directory, Packit gets it automatically. If Packit is not able to extract it
+from the archive with the tar python module, it is possible to specify it explicitly
+with this option.
+
+Default value is `{upstream_pkg_name}-{version}`.
+
+You can use following tags in string:
 * `{upstream_pkg_name}` - name of the upstream package
 * `{version}` - package version
 
@@ -165,22 +245,22 @@ You can enable the commenting by setting `successful_build` to `true`.
 
 #### copy_upstream_release_description
 (*bool*) When doing a new update in Fedora dist-git, the Github upstream release description
-is copied to the specfile changelog when set to `true`. By default (`false`), 
+is copied to the specfile changelog when set to `true`. By default (`false`),
 commit message titles (first line of a commit message) are copied.
-e.g. 
+e.g.
 - `copy_upstream_release_description = True`:
 ```
 %changelog
 * Thu Oct 15 2020 Packit Service <user-cont-team+packit-service@redhat.com> - 0.18.0-1
-Packit got new archive_root_dir_template config option to get custom archive root dir. 
+Packit got new archive_root_dir_template config option to get custom archive root dir.
 You can find more info in the documentation.
 ```
 - `copy_upstream_release_description = False` (default):
 ```
 %changelog
 * Thu Oct 15 2020 Packit Service <user-cont-team+packit-service@redhat.com> - 0.18.0-1
-- Use inner archive directory in %setup macro 
-- Use archive_root_dir_template 
+- Use inner archive directory in %setup macro
+- Use archive_root_dir_template
 ```
 
 #### sources
@@ -190,7 +270,7 @@ sources:
   - path: rsync-3.1.3.tar.gz
     url: https://git.centos.org/sources/rsync/c8s/82e7829c0b3cefbd33c233005341e2073c425629
 ```
-`path` is the path relative to the directory with sources where the source will be placed. If a `SourceX` entry with 
+`path` is the path relative to the directory with sources where the source will be placed. If a `SourceX` entry with
 corresponding basename exists in the spec-file, the source will be downloaded from the `url` found in the configuration
 instead of the location defined in the spec-file.
 
@@ -201,34 +281,6 @@ This is a sample config which is meant for [packit](https://github.com/packit/pa
 ```yaml
 # packit is named packitos on PyPI b/c packit name was already taken
 upstream_package_name: packitos
-```
-
-### More examples of `synced_files`
-
-```yaml
-synced_files:
-  # copy a file from root of the upstream repo to dist-git
-  - packit.spec
-
-  # if you copy packit.yaml downstream, you can then take advantage of
-  # `sync-from-downstream` command
-  - .packit.yaml
-
-  # src: a file in root of the upstream repository
-  # dest: path within the downstream repository
-  - src: packit.spec
-    dest: redhat/packit.spec
-
-  # also supports globbing: copy everything from fedora-packaging folder and
-  # put it to the root of the dist-git repo
-  - src: fedora-packaging/*
-    dest: .
-
-  # you can specify multiple source files as well:
-  - src:
-    - package.spec
-    - some-file
-    dest: .
 ```
 
 ## Packit-as-a-Service
