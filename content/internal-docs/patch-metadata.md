@@ -64,14 +64,6 @@ Patch file generated from the commit will have this name. This
 is useful when a patch is already defined in the spec file and we need to make
 the patch file match that `Patch` spec file entry.
 
-### `location_in_specfile`
-**Type**: int  
-**Default**: there is no default  
-**Example**: 2  
-Represents the ID of the patch entry in the spec file. The field **is not being
-used** right now when populating spec file with patch entries - it's only
-informational and does not change the patch process in any way.
-
 ### `description`
 **Type**: str  
 **Default**: empty string  
@@ -124,3 +116,14 @@ b677988 (tag: 0.1.0) upstream release 0.1.0
 Do not prepend leading `a/` or `b/` in the patch files. Use this when applying
 patches with `%patch -p1`.
 
+
+## Dropped metadata
+
+### `location_in_specfile`
+
+This attribute meant to represent ID of the patch within a spec file but it
+never worked like that so we dropped it completely. The problem was that rpm
+does not provide such information when applying patches: it provides a number
+which is an unrelated internal iterator. We are planning to supersede
+`location_in_specfile` with `patch_id`:
+https://issues.redhat.com/browse/PACKIT-1376
