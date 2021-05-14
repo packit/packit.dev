@@ -1,11 +1,11 @@
 ---
-title: "Internal Documentation"
+title: "Development Documentation"
 draft: false
 weight: 4
 bookCollapseSection: true
 ---
 
-# Internal Documentation
+# Development Documentation
 
 This is a home to documentation meant for the Packit team. Everyone is welcome to read.
 
