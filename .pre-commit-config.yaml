@@ -9,7 +9,7 @@ repos:
       - id: prettier
         exclude: archetypes|docs|data|layouts|resources|static|themes/
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.4.0
+    rev: v4.0.1
     hooks:
       - id: check-merge-conflict
       - id: detect-private-key
