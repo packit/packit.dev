@@ -113,5 +113,3 @@ If you want to learn more about working with source-git repos, there is a
                               ignored.
     
       -h, --help              Show this message and exit.
-    
-      -h, --help              Show this message and exit.
