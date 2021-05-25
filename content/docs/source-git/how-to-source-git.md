@@ -320,7 +320,7 @@ Try creating an update in the dist-git repository from the source-git
 repository you've just created. All the changes below are local.
 
     $ cd ../../
-    $ packit --config src/acl/.distro/source-git.yaml --pkg-tool fedpkg src/acl rpms/acl
+    $ packit --config src/acl/.distro/source-git.yaml --pkg-tool fedpkg update-dist-git src/acl rpms/acl
     2021-05-21 17:19:49.158 api.py            INFO   Won't be doing kinit, no credentials provided.
     2021-05-21 15:19:50.103 distgit.py        INFO   Archive 'acl-2.3.1.tar.gz' found in lookaside cache (skipping upload).
 
