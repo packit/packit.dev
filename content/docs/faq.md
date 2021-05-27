@@ -31,7 +31,7 @@ If you encounter a problem while using Packit-as-a-service, please open an
 In case of any other questions, feel free to contact
 [us](https://github.com/orgs/packit/teams/the-packit-team):
 
-- [freenode](https://freenode.net) **#packit**
+- **#packit** on [Libera.Chat](https://libera.chat/)
 - **user-cont-team@redhat.com**
 
 ## Why do I have to maintain .packit.yaml and a spec file upstream?
