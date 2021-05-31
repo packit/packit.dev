@@ -160,6 +160,7 @@ downstream_package_name: acl
 upstream_ref: v2.3.1
 patch_generation_ignore_paths:
   - .distro/
+patch_generation_patch_id_digits: 0
 sync_changelog: true
 synced_files:
   - src: .distro/
@@ -183,6 +184,10 @@ be uploaded to dist-git's lookaside-cache.
 generating downstream patches, to be added in dist-git. As `.distro` is the
 place where the files related to packaging are stored, set the configuration
 to ignore this path, so that there are no patch files generated for it.
+
+`patch_generation_patch_id_digits` tells Packit how many digits are used, at
+minimum, when adding `PatchN` tags to the spec-file. The patch in `acl` is in
+the form of `Patch1`, doesn't have a minimum width, so set this value to 0.
 
 Setting `sync_changelog` to `true` tells Packit to sync the changelog in the
 spec-file as is. This disables Packit's functionality to automatically update
@@ -320,7 +325,7 @@ Try creating an update in the dist-git repository from the source-git
 repository you've just created. All the changes below are local.
 
     $ cd ../../
-    $ packit --config src/acl/.distro/source-git.yaml --pkg-tool fedpkg update-dist-git src/acl rpms/acl
+    $ packit --config src/acl/.distro/source-git.yaml update-dist-git --pkg-tool fedpkg src/acl rpms/acl
     2021-05-21 17:19:49.158 api.py            INFO   Won't be doing kinit, no credentials provided.
     2021-05-21 15:19:50.103 distgit.py        INFO   Archive 'acl-2.3.1.tar.gz' found in lookaside cache (skipping upload).
 
@@ -330,42 +335,84 @@ Now check the dist-git repo to see if there are any changes:
     On branch rawhide
     Your branch is up to date with 'origin/rawhide'.
 
-    Changes not staged for commit:
-      (use "git add <file>..." to update what will be committed)
-      (use "git restore <file>..." to discard changes in working directory)
-            modified:   acl.spec
+    nothing to commit, working tree clean
 
-    no changes added to commit (use "git add" and/or "git commit -a")
+A clean working tree in this case means, that the transformation of source-git
+to dist-git resulted in the same content. Which is good.
+
+Try adding a new, dummy, change in source-git and update dist-git again, to
+see a new patch being added:
+
+    $ cd src/acl
+    $ echo 'A dummy change' >> README
+    $ git diff
+    diff --git a/README b/README
+    index abcfdc6..05c4af6 100644
+    --- a/README
+    +++ b/README
+    @@ -11,3 +11,4 @@ information and references to other related manual
+    pages.
+
+     For more information on the build process, please refer to
+      doc/PORTING.
+      +A dummy change
+    $ git commit -aF-
+    (reading log message from standard input)
+    Add a dummy change
+
+    description: a patch to try things out
+    [rawhide fb34af6] Add a dummy change
+     1 file changed, 1 insertion(+)
+
+    $ cd ../../
+    $ packit --config src/acl/.distro/source-git.yaml update-dist-git --pkg-tool fedpkg src/acl rpms/acl
+    2021-05-27 16:46:38.574 api.py            INFO   Won't be doing kinit, no credentials provided.
+    2021-05-27 14:46:39.747 distgit.py        INFO   Archive 'acl-2.3.1.tar.gz' found in lookaside cache (skipping upload).
+
+Check the diff in dist-git and the new patch generated from source-git:
+
     $ git -C rpms/acl diff
     diff --git a/acl.spec b/acl.spec
-    index 2bf7182..f8de503 100644
+    index 2bf7182..ac7bc75 100644
     --- a/acl.spec
     +++ b/acl.spec
-    @@ -12,8 +12,10 @@ BuildRequires: perl(FileHandle)
-     Requires: libacl%{?_isa} = %{version}-%{release}
-     Source: https://download-mirror.savannah.gnu.org/releases/acl/acl-%{version}.tar.gz
-
-    +# test/runwrapper: copy the preloaded library
-    +# Author: Kamil Dudka <kdudka@redhat.com>
+    @@ -15,6 +15,9 @@ Source: https://download-mirror.savannah.gnu.org/releases/acl/acl-%{version}.tar
      # avoid permission denied problem with LD_PRELOAD in the test-suite
-    -Patch1: 0001-acl-2.2.53-test-runwrapper.patch
-    +Patch0001: 0001-acl-2.2.53-test-runwrapper.patch
+     Patch1: 0001-acl-2.2.53-test-runwrapper.patch
 
+    +# a patch to try things out
+    +Patch2: 0002-Add-a-dummy-change.patch
+    +
      License: GPLv2+
      URL: https://savannah.nongnu.org/projects/acl
 
-As you can see, the spec-file was modified and the diff shows changes around
-the patch-lines. Although these changes are not wrong, having them is not
-really necessary, as there was no additional change in source-git that should
-result in modified content in dist-git. [Future versions] of Packit will make
-sure to add these lines back to the spec-file without generating unnecessary
-changes.
+    $ cat rpms/acl/0002-Add-a-dummy-change.patch
+    From fb34af687e2b650920775647a7c8d149c60403eb Mon Sep 17 00:00:00 2001
+    From: =?UTF-8?q?Hunor=20Csomort=C3=A1ni?= <csomh@redhat.com>
+    Date: Thu, 27 May 2021 16:42:19 +0200
+    Subject: [PATCH 2/2] Add a dummy change
+
+    description: a patch to try things out
+    ---
+     README | 1 +
+     1 file changed, 1 insertion(+)
+
+    diff --git a/README b/README
+    index abcfdc6..05c4af6 100644
+    --- a/README
+    +++ b/README
+    @@ -11,3 +11,4 @@ information and references to other related manual pages.
+
+     For more information on the build process, please refer to
+     doc/PORTING.
+    +A dummy change
+    --
+    2.31.1
 
 [acl]: https://savannah.nongnu.org/projects/acl
 [Fedora Source-git SIG]: https://fedoraproject.org/wiki/SIGs/Source-git
 [in the spec-file for Fedora Rawhide]: https://src.fedoraproject.org/rpms/acl/blob/rawhide/f/acl.spec
 [src.fedoraproject.org]: https://src.fedoraproject.org/
 [patch status]: https://docs.fedoraproject.org/en-US/packaging-guidelines/PatchUpstreamStatus/
-[Future versions]: https://github.com/packit/packit/pull/1244
 [a few metadata fields]: {{< ref "/development-docs/patch-metadata" >}}
 [from Copr]: {{< ref "/docs/guide#via-fedora-copr" >}}

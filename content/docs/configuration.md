@@ -226,6 +226,14 @@ You can use following tags in string:
 it excludes changes to the spec file and packit.yaml by default: with this
 option you can precisely specify paths to exclude.
 
+#### patch_generation_patch_id_digits
+
+(*integer*) The number of digits (minimum width) used for patch IDs when
+adding `PatchN` tags to a spec-file while updating dist-git from a source-git
+repository.  Defaults to 4, that is, patches will look like `PatchNNNN:
+<patch_name>`, and leading zeros are added, if needed. A value of 0 means "no
+minimum width".
+
 #### notifications
 
 There is only one notification configuration you can set up right now: enable
