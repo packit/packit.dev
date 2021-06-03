@@ -12,7 +12,8 @@ namespace, [Pull upstream fixes]({{< ref "pull-upstream-fixes" >}}).
 The metadata are a way for users and creators of source-git repos to be in
 control of how packit handles patch files. Users are not meant to set most of
 these - our tooling does that:
-[dist2src](https://github.com/packit/dist-git-to-source-git) and `packit init`.
+[dist2src](https://github.com/packit/dist-git-to-source-git) and `packit
+source-git init`.
 
 Ideally maintainers would just commit changes to source-git repos and have
 `%autosetup` to apply all the patches during `%prep`.
@@ -27,15 +28,15 @@ Author: Lennart Poettering <lennart@poettering.net>
 Date:   Mon Feb 4 10:23:43 2019 +0100
 
     pam-systemd: use secure_getenv() rather than getenv()
-    
+
     And explain why in a comment.
-    
+
     (cherry picked from commit 83d4ab55336ff8a0643c6aa627b31e351a24040a)
-    
+
     CVE-2019-3842
-    
+
     Resolves: #1687514
-    
+
     patch_name: 0563-pam-systemd-use-secure_getenv-rather-than-getenv.patch
     present_in_specfile: true
     location_in_specfile: 563
@@ -54,47 +55,47 @@ The metadata are stored in commit messages and have a key-value format parsed as
 yaml. The list of keys follows.
 
 ### `patch_name`
-**Type**: str  
+**Type**: str
 **Default**: the default comes from `git-format-patch`: "By default, each
 output file is numbered sequentially from 1, and uses the first line of the
-commit message"   
-**Content**: file name of the patch  
-**Example**: "my-fancy.patch"  
+commit message"
+**Content**: file name of the patch
+**Example**: "my-fancy.patch"
 Patch file generated from the commit will have this name. This
 is useful when a patch is already defined in the spec file and we need to make
 the patch file match that `Patch` spec file entry.
 
 ### `description`
-**Type**: str  
-**Default**: empty string  
+**Type**: str
+**Default**: empty string
 **Example**: "This patch is cherry-picked from upstream commit ea45faaa and
-resolves build failures on arm."  
+resolves build failures on arm."
 Human-friendly description of the patch file to be put above the spec file entry.
 
 ### `present_in_specfile`
-**Type**: bool  
+**Type**: bool
 **Default**: false (the default behaviour does not expect the patch is defined
-in the spec)  
-**Example**: false  
+in the spec)
+**Example**: false
 Is the patch present in spec? If yes, then don't create a new entry in the spec
 file. If no, add it to the spec.
 
 ### `ignore`
-**Type**: bool  
-**Default**: false  
-**Example**: true  
+**Type**: bool
+**Default**: false
+**Example**: true
 Skip this git commit when processing patches. This is handy for commits which
 change files in source-git repos but are not in an archive or are not meant to
 be utilized in `%prep`.
 
 ### `squash_commits`
-**Type**: bool  
-**Default**: false  
-**Example**: false  
+**Type**: bool
+**Default**: false
+**Example**: false
 This option is meant to be used to support `git-am` patch applications.
-`git-am` enables you to have multiple git commits for a single patch file. When
-creating source-git repos with `packit init`, only the last commit of a patch
-would be annotated with metadata.
+`git-am` enables you to have multiple git commits for a single patch file.
+When creating source-git repos with `packit source-git init`, only the last
+commit of a patch would be annotated with metadata.
 
 Example:
 
@@ -110,9 +111,9 @@ b677988 (tag: 0.1.0) upstream release 0.1.0
 ```
 
 ### `no_prefix`
-**Type**: bool  
-**Default**: false  
-**Example**: true  
+**Type**: bool
+**Default**: false
+**Example**: true
 Do not prepend leading `a/` or `b/` in the patch files. Use this when applying
 patches with `%patch -p1`.
 
