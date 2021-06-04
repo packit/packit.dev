@@ -55,43 +55,64 @@ The metadata are stored in commit messages and have a key-value format parsed as
 yaml. The list of keys follows.
 
 ### `patch_name`
+
 **Type**: str
+
 **Default**: the default comes from `git-format-patch`: "By default, each
 output file is numbered sequentially from 1, and uses the first line of the
 commit message"
+
 **Content**: file name of the patch
+
 **Example**: "my-fancy.patch"
+
 Patch file generated from the commit will have this name. This
 is useful when a patch is already defined in the spec file and we need to make
 the patch file match that `Patch` spec file entry.
 
 ### `description`
+
 **Type**: str
+
 **Default**: empty string
+
 **Example**: "This patch is cherry-picked from upstream commit ea45faaa and
 resolves build failures on arm."
+
 Human-friendly description of the patch file to be put above the spec file entry.
 
 ### `present_in_specfile`
+
 **Type**: bool
+
 **Default**: false (the default behaviour does not expect the patch is defined
 in the spec)
+
 **Example**: false
+
 Is the patch present in spec? If yes, then don't create a new entry in the spec
 file. If no, add it to the spec.
 
 ### `ignore`
+
 **Type**: bool
+
 **Default**: false
+
 **Example**: true
+
 Skip this git commit when processing patches. This is handy for commits which
 change files in source-git repos but are not in an archive or are not meant to
 be utilized in `%prep`.
 
 ### `squash_commits`
+
 **Type**: bool
+
 **Default**: false
+
 **Example**: false
+
 This option is meant to be used to support `git-am` patch applications.
 `git-am` enables you to have multiple git commits for a single patch file.
 When creating source-git repos with `packit source-git init`, only the last
@@ -111,9 +132,13 @@ b677988 (tag: 0.1.0) upstream release 0.1.0
 ```
 
 ### `no_prefix`
+
 **Type**: bool
+
 **Default**: false
+
 **Example**: true
+
 Do not prepend leading `a/` or `b/` in the patch files. Use this when applying
 patches with `%patch -p1`.
 
