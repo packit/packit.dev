@@ -2,9 +2,7 @@
 
 [packit.dev](https://packit.dev) website content
 
-## Hugo
-
-### Installation
+## Clone
 
 This repository uses git submodules, so you have to `git clone --recurse-submodules` it.
 If you forget and realize later, just run:
@@ -12,14 +10,17 @@ If you forget and realize later, just run:
     $ git submodule init themes/book
     $ git submodule update
 
+## [Hugo](https://gohugo.io)
+
 #### Fedora
 
     $ dnf install hugo
     $ hugo help
 
-There's also a copr repo, but the newer versions not always work as expected, you have to experiment a bit:
+#### CentOS/Epel
 
     $ dnf copr enable daftaupe/hugo
+    $ dnf install hugo
 
 #### MacOS
 
@@ -41,7 +42,7 @@ in [content](content/) directory tree.
 
 ### Rebuild content & Github Pages
 
-It's done automatically with each push to master. We use
+It's done automatically with each push to main. We use
 [Hugo Deploy GitHub Pages Action](https://github.com/marketplace/actions/hugo-deploy-github-pages)
 configured in [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml)
 which pushes the generated content into
