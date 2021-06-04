@@ -15,13 +15,13 @@ patches can't be applied in the upstream repo.
 
 ## The solution
 
-The provided solution will be performed in a [source-git]({{< ref "source-git" >}})
+The provided solution will be performed in a [source-git]({{< ref "/docs/source-git" >}})
 repository.
 
 When all your downstream patches apply cleanly on top of the upstream git repo
 for the particular git tag, then all is good and you don't need anything
-special. You can follow [the guide for the init command]({{< ref "init" >}}) to
-create such a source-git repo.
+special. You can follow [the guide for the source-git init command]({{< ref
+"/docs/cli/source-git/init" >}}) to create such a source-git repo.
 
 There is an issue when the patches require running tooling to regenerate code.
 Some upstream projects even use tooling which is not available downstream.

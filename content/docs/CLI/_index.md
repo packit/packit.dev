@@ -25,5 +25,7 @@ follow [our guide](/docs/guide/#have-packit-tooling-installed-locally).
 * [status](/docs/cli/status)
 * [sync-from-downstream](/docs/cli/sync-from-downstream/)
 * [validate-config](/docs/cli/validate-config)
+* [source-git init](/docs/cli/source-git/init)
+* [source-git update-dist-git](/docs/cli/source-git/update-dist-git)
 
 
