@@ -330,7 +330,8 @@ jobs:
 - job: propose_downstream
   trigger: release
   metadata:
-    dist_git_branches: fedora-all
+    dist_git_branches:
+      - fedora-all
 ```
 
 If you do not want to use the jobs then the `jobs` section in the configuration file should be empty:
@@ -511,7 +512,7 @@ Supported triggers: **release**.
 
 Optional metadata:
 
-* **dist-git-branches** - a (list of) branch(es) in dist-git where packit should work (defaults to `master`).
+* **dist_git_branches** - a (list of) branch(es) in dist-git where packit should work (defaults to `main`).
   You can also use `fedora-development`, `fedora-stable` and `fedora-all` aliases
   to not need to change the config file when the new system version is released.
 
@@ -524,7 +525,8 @@ jobs:
 - job: propose_downstream
   trigger: release
   metadata:
-    dist_git_branches: f32
+    dist_git_branches:
+      - f32
 ```
 
 This config would update Fedora Rawhide and Fedora 32 dist-git branches.
