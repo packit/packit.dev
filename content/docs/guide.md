@@ -173,7 +173,8 @@ jobs:
 - job: propose_downstream
   trigger: release
   metadata:
-    dist-git-branch: master
+    dist_git_branches:
+      - main
 ```
 
 Pretty clear I'd say: when a new upstream release happens, propose it to
@@ -187,7 +188,8 @@ jobs:
 - job: propose_downstream
   trigger: release
   metadata:
-    dist-git-branch: master
+    dist_git_branches:
+      - main
 ```
 
 Packit user in Fedora is not a proven packager, so you need to grant [packit
