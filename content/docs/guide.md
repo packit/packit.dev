@@ -43,7 +43,7 @@ On CentOS, some dependencies are in PowerTools repository, so you have to enable
 ### Via Fedora COPR
 
 You can also help us test the latest development snapshot by installing packit
-built from the master branch in Copr:
+built from the main branch in Copr:
 
     $ sudo dnf copr enable packit/packit-master
     $ sudo dnf install packit
@@ -160,7 +160,7 @@ jobs:
 Jobs are nicely described over [here](/docs/configuration/#jobs).
 
 If you are looking for an inspiration for your .packit.yaml, check [packit's
-config file](https://github.com/packit/packit/blob/master/.packit.yaml)
+config file](https://github.com/packit/packit/blob/main/.packit.yaml)
 since we try to use all the latest features.
 
 ## Packit service handles Fedora Rawhide updates for you.
@@ -178,7 +178,7 @@ jobs:
 ```
 
 Pretty clear I'd say: when a new upstream release happens, propose it to
-dist-git master branch: Fedora Rawhide. Packit enables you to decide whether
+dist-git main branch: Fedora Rawhide. Packit enables you to decide whether
 you want to do a direct push or create a pull request. If you want direct
 pushes, you need to set a global config option `create_pr` to `false`:
 

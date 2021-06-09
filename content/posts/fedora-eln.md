@@ -47,7 +47,7 @@ Fedora 33) and in Fedora ELN.
 Easy, right?
 
 Packit can also trigger builds when you push to a branch. If you want to have
-up to date builds of your master branch for ELN and development versions of
+up to date builds of your main branch for ELN and development versions of
 Fedora, here's how to set it up:
 
 ```
@@ -58,7 +58,7 @@ jobs:
       targets:
         - fedora-development
         - fedora-eln
-      branch: master
+      branch: main
 ```
 
 ### A real-life example

@@ -20,7 +20,7 @@ Submit a koji build for the selected branch in Fedora dist-git.
 
 1. [Place a config file for packit in the root of your upstream repository.](/docs/configuration/)
 
-2. The command below would perform `fedpkg build` in the Fedora dist-git master branch.
+2. The command below would perform `fedpkg build` in the Fedora dist-git main branch.
     ```
     $ cd my/ustream/project/
     $ packit build
