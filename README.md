@@ -37,7 +37,7 @@ in [content](content/) directory tree.
 
 ### Start Hugo server
 
-1. `make server` or `hugo server -D` (`-D` means 'show also content marked as draft')
+1. `hugo server`
 2. [Web Server](http://localhost:1313)
 
 ### Rebuild content & Github Pages
