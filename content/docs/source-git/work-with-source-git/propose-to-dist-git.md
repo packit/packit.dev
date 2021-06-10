@@ -22,6 +22,10 @@ The command above will take content of your source-git repository and creates a
 pull request for the matching dist-git repo (and dist-git's branch) with the
 spec file, additional sources and downstream patches.
 
+If you want to change something in the spec file, this is the right time to
+bump release, add a `%changelog` entry or adjust macros. Packit will copy the
+content of the source-git spec file downstream.
+
 Once the PR is up, you should wait for all the builds and tests to finish and
 succeed to be sure that all is good. When all checks shine with green, you are
 welcome to merge and celebrate for doing an update using source-git.
