@@ -10,7 +10,7 @@ weight: 9
 
 This is a detailed documentation for the downstream sync functionality of packit. The
 command creates a new pull request in upstream repository using a
-selected branch (master by default) from Fedora dist-git repository.
+selected branch (main by default) from Fedora dist-git repository.
 
 ## Requirements
 

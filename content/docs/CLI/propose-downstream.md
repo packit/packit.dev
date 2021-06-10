@@ -30,8 +30,7 @@ upstream release.
 
 * Place a file called `.packit.yaml` or `packit.yaml` in the root of your upstream repository.
    * The configuration is described [in this document](/docs/configuration/).
-   * Please get inspired from [an existing config](https://github.com/user-cont/colin/blob/master/.packit.yaml) in
-     colin project.
+   * Please get inspired from [an existing config](https://github.com/packit/packit/blob/main/.packit.yaml).
 
 * Place a spec file into your upstream project (and make sure that
   `specfile_path` in the config has a correct value).

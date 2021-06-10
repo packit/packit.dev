@@ -30,7 +30,7 @@ Currently, these are the actions you can use:
 
 |        | name                  | working directory | when run                                                                          | description                               |
 | ------ | --------------------- | ----------------- | --------------------------------------------------------------------------------  | ----------------------------------------- |
-| [hook] | `post-upstream-clone` | upstream git repo | after cloning of the upstream repo (master) and before other operations           |                                           |
+| [hook] | `post-upstream-clone` | upstream git repo | after cloning of the upstream repo (main) and before other operations             |                                           |
 | [hook] | `pre-sync`            | upstream git repo | after cloning and checkout to the correct (release) branch                        |                                           |
 |        | `prepare-files`       | upstream git repo | after cloning, checking out of both upstream and dist-git repos                   | replace patching and archive generation   |
 |        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                                    | replace patching                          |                                         | replace the code for creating an archive  |
@@ -43,7 +43,7 @@ These apply to the `srpm` command and building in COPR.
 
 |        | name                  | working directory | when run                                                                          | description                               |
 | ------ | --------------------- | ----------------- | --------------------------------------------------------------------------------  | ----------------------------------------- |
-| [hook] | `post-upstream-clone` | upstream git repo | after cloning of the upstream repo (master) and before other operations           |                                           |
+| [hook] | `post-upstream-clone` | upstream git repo | after cloning of the upstream repo (main) and before other operations             |                                           |
 |        | `get-current-version` | upstream git repo | when the current version needs to be found                                        | expect version as a stdout                |
 |        | `create-archive`      | upstream git repo | when the archive needs to be created                                              | replace the code for creating an archive  |
 |        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                                    | replace patching                          |

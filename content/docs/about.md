@@ -34,7 +34,7 @@ aliases: [/about]
   - Deprecated content can be removed or changed after at least 3 minor
     releases.
   - Deprecated content is advertised in our
-    [changelog](https://github.com/packit/packit/blob/master/CHANGELOG.md),
+    [changelog](https://github.com/packit/packit/blob/main/CHANGELOG.md),
     printed in the terminal or tracked in your issue tracker.
 
 - We care about artifacts which Fedora supports: at the moment it's RPMs,
