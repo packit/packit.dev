@@ -18,7 +18,7 @@ You should place the file in the root of your upstream repo. Packit accepts thes
 * `packit.yml`
 * `packit.json`
 
-Both Packit-as-a-Service and packit tool use this configuration file.
+Both Packit Service and packit tool use this configuration file.
 
 
 ## Top level keys

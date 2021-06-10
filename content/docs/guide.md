@@ -13,7 +13,7 @@ We have split the on-boarding process into multiple stages:
 
 1. Have packit tooling installed locally.
 2. RPM builds pass on your laptop.
-3. You are approved to use packit-service.
+3. You are approved to use Packit Service.
 4. The project has successful builds inside the service.
 5. Packit service handles Fedora Rawhide updates for you.
 
@@ -126,10 +126,10 @@ git repository, you can run commands from the cloned dist-git repository in the
 same way as you do from upstream.  Make sure, that you specify the
 `upstream_project_url` in your configuration.
 
-## You are approved to use packit-service.
+## You are approved to use Packit Service.
 
 In order to start using packit service, our GitHub app, you need to [install it
-in your GitHub projects]({{< ref "packit-as-a-service" >}}). Then we need to
+in your GitHub projects]({{< ref "packit-service" >}}). Then we need to
 approve you (usually takes only a few hours).
 
 ## The project has successful builds inside the service.
