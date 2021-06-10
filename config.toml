@@ -18,3 +18,9 @@ BookLogo = 'packit_logo.png'
 BookSection = '*'
 
 [menu]
+  [[menu.before]]
+    name = "Dashboard"
+    url = "https://dashboard.packit.dev"
+  [[menu.after]]
+    name = "Status page"
+    url = "https://status.packit.dev"
