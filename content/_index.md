@@ -21,10 +21,6 @@ components:
 
 Feel free to jump into [the guide]({{< ref "guide" >}}) for using packit.
 
-### Upstream repository
-
-https://github.com/packit/packit
-
 ### Contact
 
 If you encounter a problem while using Packit-as-a-service, please open an

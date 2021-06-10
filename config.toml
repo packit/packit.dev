@@ -18,6 +18,3 @@ BookLogo = 'packit_logo.png'
 BookSection = '*'
 
 [menu]
-  [[menu.after]]
-    name = "Github repo"
-    url = "https://github.com/packit/packit"
