@@ -8,16 +8,15 @@ disableToc: false
 # Packit
 
 Packit provides tooling and automation to integrate upstream open source
-projects into Fedora operating system. Packit project is composed of two main
-components:
+projects into [Fedora Linux](https://getfedora.org) or [CentOS Stream](https://www.centos.org/centos-stream/).
+Packit project is composed of two main components:
 
 1. [packit]({{< ref "cli" >}}), a CLI tool, which you can
    [install locally](/docs/guide/#have-packit-tooling-installed-locally)
    and start using right away.
 
-2. [Packit-as-a-Service]({{< ref "packit-as-a-service" >}}), a
-   [GitHub app](https://github.com/marketplace/packit-as-a-service) — it can provide you feedback
-   on how is your project integrated with Fedora Operating System.
+2. [Packit Service]({{< ref "packit-as-a-service" >}}), can provide you feedback
+   on how is your project integrated with Fedora Linux or CentOS Stream.
 
 Feel free to jump into [the guide]({{< ref "guide" >}}) for using packit.
 
