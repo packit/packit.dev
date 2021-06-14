@@ -25,7 +25,7 @@ Oh, wait!
 ### You can do this easily with Packit
 
 If your GitHub project is not using Packit yet, [here's a
-guide](https://packit.dev/packit-as-a-service/) how to start.
+guide](https://packit.dev/docs/packit-service) how to start.
 
 Once it's set up, you need to make sure that your pull requests are also being
 built in the `fedora-eln` target:

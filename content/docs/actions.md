@@ -17,7 +17,7 @@ a list of commands. By default, the commands are executed directly and
 not in a shell - if you need a shell, just wrap your command like this: `bash -c
 "my fancy $command | grep success"`.
 
-All actions are also executed inside Packit-as-a-Service. The service
+All actions are also executed inside Packit Service. The service
 creates a new sandbox environment where the command is run.
 
 Actions have a default behaviour which you can override, hooks don't have any -

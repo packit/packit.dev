@@ -1,24 +1,25 @@
 ---
-title: "Packit-as-a-Service"
+title: "Packit Service"
 date: 2019-06-22
 draft: false
 disableToc: false
 weight: 3
-aliases: [/packit-as-a-service]
+aliases: [/packit-as-a-service, /docs/packit-as-a-service]
 ---
 
-# Packit-as-a-Service
+# Packit Service
 
-[Packit-as-a-Service](https://github.com/marketplace/packit-as-a-service)
-is a [GitHub App](https://docs.github.com/apps/about-apps/)
-that helps you continuously ensure that your project work in Fedora OS.
-For Gitlab see [FAQ](/docs/faq#can-we-use-packit-with-gitlab).
+Helps you continuously ensure that your project works in Fedora Linux or CentOS Stream.
 
 ## Easy to use
 
-Using Packit Service is very straightforward: add one [config
-file](/docs/configuration/)
-to your repository together with the RPM spec file and you're good to go.
+Using Packit Service is very straightforward:
+add one [config file](/docs/configuration/)
+to your repository together with the RPM spec file.
+
+On Github you also need to install (see below) our
+[Github App](https://github.com/marketplace/packit-as-a-service),
+for Gitlab see [FAQ](/docs/faq#can-we-use-packit-with-gitlab).
 
 Packit Service validates your pull requests by building your software in Fedora OS.
 Once the builds are done, Packit lets you know how to install the

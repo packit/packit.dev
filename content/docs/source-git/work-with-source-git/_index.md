@@ -22,7 +22,7 @@ Packit is then able to work with such a repo and:
 
 * Sync the state into dist-git
 
-* And you are able to utilize all features of Packit-as-a-Service: RPM builds
+* And you are able to utilize all features of Packit Service: RPM builds
   of PRs, tests on those builds, and getting feedback in pull (merge) requests.
 
 

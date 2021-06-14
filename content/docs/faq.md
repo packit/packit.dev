@@ -19,7 +19,7 @@ on-boarding Fedora contributors (with a Fedora Account System account).
 
 ## Can I use packit service for any GitHub repository?
 
-Since packit service builds your PRs in Fedora COPR build service, by using
+Since Packit Service builds your PRs in Fedora COPR build service, by using
 Packit-as-a-service, your software needs to comply with [COPR
 rules](https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr).
 If any of these points are violated, we'll remove the builds and may put you on
@@ -27,7 +27,7 @@ a blocklist so you won't be able to use the service again.
 
 ## How can I contact you?
 
-If you encounter a problem while using Packit-as-a-service, please open an
+If you encounter a problem while using packit or Packit Service, please open an
 [upstream issue](https://github.com/packit/packit-service/issues/new).
 In case of any other questions, feel free to contact
 [us](https://github.com/orgs/packit/teams/the-packit-team):
