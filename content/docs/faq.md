@@ -12,8 +12,9 @@ aliases: [/faq]
 ## Can I use the packit service as soon as I install it into my repository?
 
 Thanks for your interest in Packit Service! In order to start using the
-service you need to be whitelisted, which is an action to be done by us. Once
-we put you on the whitelist, we'll get in touch with you. We are now
+service, your repository or namespace needs to be allowed,
+which is an action to be done by us.
+Once we put you on the allowlist, we'll get in touch with you. We are now
 on-boarding Fedora contributors (with a Fedora Account System account).
 
 ## Can I use packit service for any GitHub repository?
@@ -22,7 +23,7 @@ Since packit service builds your PRs in Fedora COPR build service, by using
 Packit-as-a-service, your software needs to comply with [COPR
 rules](https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr).
 If any of these points are violated, we'll remove the builds and may put you on
-a blacklist so you won't be able to use the service again.
+a blocklist so you won't be able to use the service again.
 
 ## How can I contact you?
 
