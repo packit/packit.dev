@@ -83,8 +83,8 @@ upstream release.
     
     Options:
       --dist-git-branch TEXT  Comma separated list of target branches in dist-git
-                              to release into. (defaults to repo's default branch)
     
+                              to release into. (defaults to all branches)
       --dist-git-path TEXT    Path to dist-git repo to work in. Otherwise clone
                               the repo in a temporary directory.
     
