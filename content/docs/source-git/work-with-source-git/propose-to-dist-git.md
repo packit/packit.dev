@@ -8,33 +8,35 @@ weight: 3
 # Propose your source-git content to dist-git
 
 Once your changes are merged into a source-git repo, the final step is to
-propose those changes to dist-git and get a production build.
-
-For both, we have CLI commands in Packit which are meant to be run from the
-source-git's repo checkout.
-
-
-### Propose...
-
-    $ packit propose-downstream --dist-git-branch main
-
-The command above will take content of your source-git repository and creates a
-pull request for the matching dist-git repo (and dist-git's branch) with the
-spec file, additional sources and downstream patches.
+propose those changes to dist-git and get a production build. Alternatively,
+you can open a dist-git merge request just to trigger the dist-git checks or
+see how the changes would look in dist-git.
 
 If you want to change something in the spec file, this is the right time to
 bump release, add a `%changelog` entry or adjust macros. Packit will copy the
-content of the source-git spec file downstream.
-
-Once the PR is up, you should wait for all the builds and tests to finish and
-succeed to be sure that all is good. When all checks shine with green, you are
-welcome to merge and celebrate for doing an update using source-git.
+content of the source-git spec to the dist-git repo.
 
 
-### ...and build
+### Update local dist-git checkout
 
-You can either check out the dist-git repository yourself and perform `fedpkg
-build` as you're used to doing or run the following command from the same
-terminal session:
+The first step is to update a local clone of a dist-git repo:
 
-    $ packit build --dist-git-branch main
+    $ packit source-git update-dist-git $SOURCE_GIT_REPO_PATH $DIST_GIT_REPO_PATH
+
+This command does not push any changes - everything happens only in your local
+environment. We advise you to inspect the changes done in your dist-git repo
+before pushing them out to be sure about them.
+
+If you are satisfied with the changes, put them in a new branch, push them out
+and create a merge request:
+
+    $ git switch -C resolve-bz-1234567
+    $ git push $USER_ID
+
+The premise is that the remote of your fork is named `$USER_ID` as this is how
+`centpkg fork` does it. Once pushed, create the merge request in your browser.
+
+From this point, you should follow the standard dist-git contribution process.
+
+Our team is working on simplifying this workflow so some steps described above
+will be automated in future.

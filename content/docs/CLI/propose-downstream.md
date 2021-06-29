@@ -70,39 +70,38 @@ upstream release.
 
 
 ## Help
-
     Usage: packit propose-downstream [OPTIONS] [PATH_OR_URL] [VERSION]
-    
+
       Land a new upstream release in Fedora.
-    
+
       PATH_OR_URL argument is a local path or a URL to the upstream git
       repository, it defaults to the current working directory
-    
+
       VERSION argument is optional, the latest upstream version will be used by
       default
-    
+
     Options:
       --dist-git-branch TEXT  Comma separated list of target branches in dist-git
-                              to release into. (defaults to repo's default branch)
-    
+                              to release into. (defaults to all branches)
+
       --dist-git-path TEXT    Path to dist-git repo to work in. Otherwise clone
                               the repo in a temporary directory.
-    
+
       --local-content         Do not checkout release tag. Use the current state
                               of the repo. This option is set by default for
                               source-git repos
-    
+
       --force-new-sources     Upload the new sources also when the archive is
                               already in the lookaside cache.
-    
+
       --no-pr                 Do not create a pull request to downstream
                               repository.
-    
+
       --upstream-ref TEXT     Git ref of the last upstream commit in the current
                               branch from which packit should generate patches
                               (this option implies the repository is source-git).
-    
+
       -f, --force             Don't discard changes in the git repo by default,
                               unless this is set.
-    
+
       -h, --help              Show this message and exit.
