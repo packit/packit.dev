@@ -174,7 +174,7 @@ Linters are tools which you can install from the distribution and they usually
 just require a path to files which they check. Here is a plan which you can use
 to run `rpmlint` on your spec file:
 
-```
+```yaml
 summary:
   Execute rpmlint on the spec file
 prepare:
