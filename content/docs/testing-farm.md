@@ -167,6 +167,26 @@ You can also reference a specific feature area instead:
 
 See the [stories](https://github.com/psss/fmf/tree/master/stories) directory to get some inspiration for organizing stories and requirements.
 
+### Running linters
+
+Running linters on your code is easy to setup using Testing Farm and tmt.
+Linters are tools which you can install from the distribution and they usually
+just require a path to files which they check. Here is a plan which you can use
+to run `rpmlint` on your spec file:
+
+```yaml
+summary:
+  Execute rpmlint on the spec file
+prepare:
+  - name: packages
+    how: install
+    package:
+    - rpmlint
+execute:
+  script:
+  - rpmlint fedora/python-ogr.spec
+```
+
 ## Testing Farm API
 
 Packit Service communicates with Testing Farm via its [API][testing-farm-api].
