@@ -29,6 +29,9 @@ In order to enable test execution simply include `tests` jobs in the `.packit.ya
 Required metadata:
 * **targets** - You can use `fedora-development`, `fedora-stable`, `fedora-all`
   or release specific targets such as `fedora-34-x86_64`.
+  Also `centos-7`, `centos-8` and `centos-stream-8`. The targets are mapped to
+  Testing Farm's [composes](https://api.dev.testing-farm.io/v0.1/composes)
+  when submitting the tests.
 
 Optional metadata:
 * **fmf_url** - Git repository containing the metadata (FMF) tree.

@@ -436,7 +436,7 @@ jobs:
   metadata:
     targets:
       - fedora-stable
-      - centos-stream-x86_64
+      - centos-stream-8-x86_64
 ```
 
 With this configuration, you'll get builds in all stable fedora releases
@@ -451,8 +451,8 @@ these are the same values packit accepts.
 * Install package `copr-cli` and run:
 ```
 $ copr-cli list-chroots
-centos-stream-aarch64
-centos-stream-x86_64
+centos-stream-8-aarch64
+centos-stream-8-x86_64
 custom-1-i386
 custom-1-x86_64
 epel-6-i386

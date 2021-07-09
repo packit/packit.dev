@@ -125,7 +125,7 @@ functionality.
 
 ## Can I use CentOS Stream with packit service?
 
-Yes, you can! It's very simple, just add `centos-stream-x86_64` as a target for
+Yes, you can! It's very simple, just add `centos-stream-8-x86_64` as a target for
 the `copr_build` job:
 
 ```yaml
@@ -134,7 +134,7 @@ jobs:
   trigger: pull_request
   metadata:
     targets:
-      - centos-stream-x86_64
+      - centos-stream-8-x86_64
 ```
 
 ## After adding tests I see error 'No FMF metadata found.'
