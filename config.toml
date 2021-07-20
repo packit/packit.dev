@@ -5,7 +5,7 @@ title = "Packit"
 theme = "book"
 defaultContentLanguageInSubdir = false
 paginate = 10
-googleAnalytics = "UA-143669536-1"
+# googleAnalytics = "UA-143669536-1"
 
 [outputs]
 home = ["HTML", "JSON"]
