@@ -472,6 +472,7 @@ fedora-32-armhfp
     Rawhide)
   * `fedora-latest` — the last versioned Fedora (not a Rawhide), it's not relevant if it is released or still developed
   * `fedora-all` — `fedora-stable` + `fedora-development`
+  * `epel-all` — all available versions of epel (currently `el-6`, `epel-7` and `epel-8`)
 
   The information about releases is get from Bodhi and because of the cache and
   required availability on Copr, it might take a while to get the newest state.
