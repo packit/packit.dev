@@ -10,8 +10,8 @@ This article is an extension to the document in the [Work with source-git]({{< r
 namespace, [Pull upstream fixes]({{< ref "pull-upstream-fixes" >}}).
 
 The metadata are a way for users and creators of source-git repos to be in
-control of how packit handles patch files. Users are not meant to set most of
-these - our tooling does that:
+control of how packit generates patch files from downstream commits. Users are
+not meant to set most of these - our tooling does that:
 [dist2src](https://github.com/packit/dist-git-to-source-git) and `packit
 source-git init`.
 
@@ -40,13 +40,12 @@ Date:   Mon Feb 4 10:23:43 2019 +0100
     patch_name: 0563-pam-systemd-use-secure_getenv-rather-than-getenv.patch
     present_in_specfile: true
     location_in_specfile: 563
-    squash_commits: true
 
 diff --git a/src/login/pam_systemd.c b/src/login/pam_systemd.c
 ...
 ```
 
-You can see the patch metadata are stored in the commit message on the last 4
+You can see the patch metadata are stored in the commit message on the last 3
 lines.
 
 ## Metadata
@@ -69,6 +68,9 @@ commit message"
 Patch file generated from the commit will have this name. This
 is useful when a patch is already defined in the spec file and we need to make
 the patch file match that `Patch` spec file entry.
+
+It is also used to merge multiple adjacent commits to a single patch file, by
+setting the same value for `patch_name` in their metadata.
 
 ### `description`
 
@@ -105,13 +107,17 @@ Skip this git commit when processing patches. This is handy for commits which
 change files in source-git repos but are not in an archive or are not meant to
 be utilized in `%prep`.
 
-### `squash_commits`
+### `squash_commits` (deprecated)
 
 **Type**: bool
 
 **Default**: false
 
 **Example**: false
+
+This key is **deprecated** as of `packit 0.35.0`, and replaced by setting the
+same [`patch_name`](#patch_name) in the commit message of adjacent commits, which should end
+up in the same patch file.
 
 This option is meant to be used to support `git-am` patch applications.
 `git-am` enables you to have multiple git commits for a single patch file.
