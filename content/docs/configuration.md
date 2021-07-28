@@ -467,10 +467,14 @@ fedora-32-armhfp
 ```
 
 * You can use aliases
-  * `fedora-stable` — stable versions of Fedora (e.g. Fedora 32 and 33)
-  * `fedora-development` — development versions of Fedora (e.g. Fedora 34 +
+  * `fedora-stable` — supported versions of Fedora (e.g. Fedora 33 and 34)
+  * `fedora-development` — development versions of Fedora, the branched version is used only when available (e.g. Fedora 35 +
     Rawhide)
+  * `fedora-latest` — the last versioned Fedora (not a Rawhide), it's not relevant if it is released or still developed
   * `fedora-all` — `fedora-stable` + `fedora-development`
+
+  The information about releases is get from Bodhi and because of the cache and
+  required availability on Copr, it might take a while to get the newest state.
 
   By default, the `x86_64` architecture will be used, but you you can
   override the default e.g. `fedora-stable-aarch64`.
