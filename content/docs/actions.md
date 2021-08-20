@@ -26,7 +26,9 @@ e.g. cloning an upstream repo.
 
 Currently, these are the actions you can use:
 
-## `propose-downstream` command
+## Command matrix
+
+### `propose-downstream` command
 
 |        | name                  | working directory | when run                                                                          | description                               |
 | ------ | --------------------- | ----------------- | --------------------------------------------------------------------------------  | ----------------------------------------- |
@@ -37,7 +39,7 @@ Currently, these are the actions you can use:
 |        | `get-current-version` | upstream git repo | when the current version needs to be found                                        | expect version as a stdout parameter      |
 
 
-## Creating SRPM
+### Creating SRPM
 
 These apply to the `srpm` command and building in COPR.
 
@@ -49,16 +51,41 @@ These apply to the `srpm` command and building in COPR.
 |        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                                    | replace patching                          |
 |        | `fix-spec-file`            | upstream git repo | after creation of a tarball and before running rpmbuild command                   | this action changes spec file to use the new tarball                          |
 
-**create-archive** - is expected to return a relative path to the archive - relative within the repository. If there are more steps, then one of them has to return the archive name.
+## Actions details
 
-**fix-spec-file** — this action updates the specfile so it's possible to have the spec reference
-                    the tarball and unpack it. This method tries to perform 3 operations on a spec file:
+All actions are executed in a locked-down OpenShift pod. Your commands are
+invoked with arbitrary UIDs from a high range. Some tools may experience
+problems with these UIDs, such as `tar`. You can observe an error like this:
+```
+tar: value 1021440000 out of uid_t range 0..2097151
+tar: Exiting with failure status due to previous errors
+```
+
+For `tar`, it's [recommended](https://github.com/packit/packit.dev/issues/192#issuecomment-729594207)
+to use the `pax` format (`tar -H pax`).
+
+If you run into similar issues with other tools, please consult documentation or maintainers of the project.
+
+### `create-archive`
+
+It is expected to return a relative path within the repository to the generated
+archive. If there are more steps, then one of them has to return the archive
+name. The best practice is to do it from the last step and print it: `bash -c
+'echo path/to/archive-$VERSION.tar.gz'`.
+
+### `fix-spec-file`
+
+By default, this action updates the spec file so it's possible to have a proper
+reference of the archive in the `%prep` section and unpack it during the build
+properly. The action tries to perform 3 operations on a spec file:
 
 1. It replaces Source configured by [`spec_source_id`](/docs/configuration/#spec_source_id) (default `Source0`) with a local path to the generated tarball
 2. It changes the first `%setup` (or `%autosetup`) macro in `%prep` and adds `-n` so the generated
  tarball can be unpacked (it tries to extract the directory name directly from the archive
  or uses the configured [`archive_root_dir_template`](/docs/configuration#archive_root_dir_template))
 3. It changes %version
+
+If you provide your own implementation, none of the above happens.
 
 For example a package may define multiple Sources. In such cases, the
 default implementation of `fix-spec-file` won't be able to update `%prep`
