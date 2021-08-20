@@ -75,9 +75,9 @@ name. The best practice is to do it from the last step and print it: `bash -c
 
 ### `fix-spec-file`
 
-By default, this action updates the specfile so it's possible to have the spec
-reference the content of the archive and unpack it during the build properly.
-The action tries to perform 3 operations on a spec file:
+By default, this action updates the spec file so it's possible to have a proper
+reference of the archive in the `%prep` section and unpack it during the build
+properly. The action tries to perform 3 operations on a spec file:
 
 1. It replaces Source configured by [`spec_source_id`](/docs/configuration/#spec_source_id) (default `Source0`) with a local path to the generated tarball
 2. It changes the first `%setup` (or `%autosetup`) macro in `%prep` and adds `-n` so the generated
