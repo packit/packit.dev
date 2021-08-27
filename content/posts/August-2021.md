@@ -29,3 +29,12 @@ weight: 72
   to unify the behaviour with reacting to triggering builds. ([packit-service#1187](https://github.com/packit/packit-service/pull/1187))
 - `packit validate-config` now checks also the value of the `specfile_path` configuration option
   and shows warning if the specified file is not present in the repository. ([packit#1342](https://github.com/packit/packit/pull/1342))
+
+## Week 34 (August 23rd - August 27th)
+
+- Packit now merges into base branch when checking out PRs.
+  ([packit#1344](https://github.com/packit/packit/pull/1344))
+- Packit `source-git udpate-dist-git` now supports using Git trailers to
+  define patch metadata, which controls how patches are generated and added
+  to the spec-file. ([packit#1336](https://github.com/packit/packit/pull/1336))
+- These changes will be applied next week (not this week as usual).
