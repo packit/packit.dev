@@ -32,9 +32,20 @@ weight: 72
 
 ## Week 34 (August 23rd - August 27th)
 
-- Packit now merges into base branch when checking out PRs.
+- Packit by default locally merges checked out pull requests into target branch.
+  Logging for checking out pull requests was improved to contain hashes and
+  summaries of last commit on both source and target branches.
   ([packit#1344](https://github.com/packit/packit/pull/1344))
-- Packit `source-git udpate-dist-git` now supports using Git trailers to
-  define patch metadata, which controls how patches are generated and added
-  to the spec-file. ([packit#1336](https://github.com/packit/packit/pull/1336))
+- Packit Service now runs Copr and Koji builds and following tests on Testing Farm
+  for pull requests on the code that would be a result of merging into the target branch.
+  In case merge conflicts occur during preparation of SRPM,
+  you can find more info in the SRPM logs.
+  ([packit-service#1206](https://github.com/packit/packit-service/pull/1206))
+- Packit's CLI `source-git update-dist-git` now supports using Git trailers to define patch metadata,
+  which will control how patches are generated and added to the spec-file.
+  `source-git init` uses this format to capture patch metadata when setting up
+  a source-git repo, instead of the YAML one.
+  To maintain backwards compatibility, the YAML format is still parsed,
+  but only if none of the patches defines metadata using Git trailers.
+  ([packit#1336](https://github.com/packit/packit/pull/1336))
 - These changes will be applied next week (not this week as usual).
