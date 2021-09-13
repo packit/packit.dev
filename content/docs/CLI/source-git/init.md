@@ -5,90 +5,108 @@ disableToc: false
 weight: 1
 ---
 
-# source-git init
+# `packit source-git init`
 
 Initialize a repository to serve as a [source-git repo]({{< ref "/docs/source-git" >}}).
 
 The biggest advantage of this command is the functionality to create source-git
 repos. Here's a quick rundown what packit does:
 
- * Pull upstream git history (the default is not pull and use the checked out
-   branch).
-
  * Fetches specfile and additional sources from Fedora or CentOS dist-git.
-
  * Apply downstream patches as commits.
-
- * Add packit config file.
+ * Add source-git configuration to control future syncing to dist-git.
 
 We have [a guide]({{< ref "/docs/source-git/how-to-source-git.md" >}}) on how
-to create source-git repos manually if you want to learn more.
+to create source-git repos manually if you want to understand the steps performed.
 
 ## Prerequisites
 
- * Git repo in the current working directory.
+ * A clone of the upstream repo with checked out branch which matches the base ref.
+ * The git ref of the upstream repo used as a base.
+ * A clean dist-git repository.
 
 ## Tutorial
 
 As an example, let's create a source-git repo out of
-[tmux](https://github.com/tmux/tmux).
+[systemd](https://github.com/systemd/systemd-stable). The project uses a
+dedicated repository to provide backports for actively maintained stable
+releases.
 
-First step is to clone the upstream repo:
+First step is to clone the respective dist-git repo (we'll use Fedora Rawhide
+in our case):
 
-    $ git clone https://github.com/tmux/tmux
-    $ cd tmux
+    $ cd $FEDORA_DIST_GIT_REPOS
+    $ fedpkg clone systemd
+    $ cd systemd
 
-Now we can run the `init` command and get our source-git repo:
+We should now determine the version in the specfile
 
-    $ packit init --fedora-package tmux
+    $ rpmspec -q --qf "%{version}" ./systemd.spec
+    249.4
 
-With the `--fedora-package` option we are telling packit to get downstream
-packaging files from Fedora dist-git.
+Since systemd-stable prefixes the backport releases with `v`, we know that we want to base our source-git repo on the `v249.4` tag:
 
-Yes, it was that simple.
+    $ cd $FEDORA_SOURCE_GIT_REPOS
+    $ git clone https://github.com/systemd/systemd-stable
+    $ cd systemd-stable
+    $ git checkout 'v249.4'
 
-Once the command finished successfully, we can create a SRPM and build it in
-mock to prove the source-git repo works:
+All the prereqs should be met now! We have the upstream clone with the proper
+tag checked out and the respective dist-git repo. We can now run the `source-git init`
+command:
 
-    $ packit srpm
-    SRPM: /home/tt/g/packit/packit.dev/tmux/tmux-3.1c-2.g17785c78.fc33.src.rpm
-    $ mock --rebuild -r fedora-rawhide-x86_64 ./*.src.rpm
-    ...
-    Wrote: /builddir/build/RPMS/tmux-3.1c-2.g17785c78.fc34.x86_64.rpm
-    Wrote: /builddir/build/RPMS/tmux-debugsource-3.1c-2.g17785c78.fc34.x86_64.rpm
-    Wrote: /builddir/build/RPMS/tmux-debuginfo-3.1c-2.g17785c78.fc34.x86_64.rpm
-    ...
-    INFO: Done(./tmux-3.1c-2.g17785c78.fc33.src.rpm) Config(fedora-rawhide-x86_64) 1 minutes 0 seconds
+    $ packit source-git init v249.4 $FEDORA_SOURCE_GIT_REPOS/systemd-stable $FEDORA_DIST_GIT_REPOS/systemd
 
-If you want to learn more about working with source-git repos, there is a
-[dedicated section]({{< ref "/docs/source-git" >}}) in our documentation.
+Once the command finishes successfully, your source-git repo is available for
+you at `$FEDORA_SOURCE_GIT_REPOS/systemd-stable`. Please head on to a section
+in this documentation which covers [working with source-git repos]({{< ref
+"/docs/source-git/work-with-source-git" >}}).
 
 ## Help
 
     $ packit source-git init --help
-    Usage: packit-dev source-git init [OPTIONS] [PATH_OR_URL]
+    Usage: packit source-git init [OPTIONS] UPSTREAM_REF SOURCE_GIT DIST_GIT
 
-      Initialize a source-git repository
+      Initialize SOURCE_GIT as a source-git repo by applying downstream patches
+      from DIST_GIT as Git commits on top of UPSTREAM_REF.
+
+      UPSTREAM_REF is a tag, branch or commit from SOURCE_GIT.
+
+      SOURCE_GIT and DIST_GIT are paths to the source-git and dist-git repos.
+      Branch names can be specified, separated by colons.
+
+      If a branch name is specified for SOURCE_GIT, the branch is checked out
+      and reset to UPSTREAM_REF.
+
+      If a branch name is specified for DIST_GIT, the branch is checked out
+      before setting up the source-git repo. This branch is expected to exist.
 
       To learn more about source-git, please check
 
           https://packit.dev/docs/source-git/
 
+      Examples:
+
+          $ packit source-git init v2.3.1 src/acl:rawhide rpms/acl:rawhide
+          $ packit source-git init --pkg-tool centpkg v2.3.1 src/acl rpms/acl
+
     Options:
-      --upstream-url TEXT     URL or local path to the upstream project; defaults
-                              to current git repository
-      --upstream-ref TEXT     Use this upstream git ref as a base for your source-
-                              git repo; defaults to current tip of the git
-                              repository
-      --fedora-package TEXT   Pick spec file from this Fedora Linux package;
-                              implies creating a source-git repo
-      --centos-package TEXT   Pick spec file from this CentOS Linux or CentOS
-                              Stream package; implies creating a source-git repo
-      --dist-git-branch TEXT  Get spec file from this downstream branch, for
-                              Fedora this defaults to main, for CentOS it's c9s.
-                              When --dist-git-path is set, the default is the
-                              branch which is already checked out.
-      --dist-git-path TEXT    Path to the dist-git repo to use. If this is
-                              defined, --fedora-package and --centos-package are
-                              ignored.
+      --upstream-url TEXT     Git URL of the upstream repository. It is saved in
+                              the source-git configuration if it is specified.
+
+      --upstream-remote TEXT  Name of the remote pointing to the upstream
+                              repository. If --upstream-url is not specified, the
+                              fetch URL of this remote is saved in the source-git
+                              configuration as the Git URL of the upstream
+                              project. Defaults to 'origin'.
+
+      --pkg-tool TEXT         Name or path of the packaging tool used to work with
+                              sources in the dist-git repo. A variant of 'rpkg'.
+                              Defaults to 'fedpkg' or the tool configured in the
+                              Packit configuration.
+
+      --pkg-name TEXT         The name of the package in the distro. Defaults to
+                              the directory name of DIST_GIT.
+
       -h, --help              Show this message and exit.
+
