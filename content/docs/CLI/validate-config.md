@@ -4,7 +4,7 @@ date: 2021-03-18T08:48:36+01:00
 draft: false
 weight: 30
 ---
-# validate-config
+# `packit validate-config`
 
 Validate the Packit configuration file.
 

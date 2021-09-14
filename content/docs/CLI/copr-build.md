@@ -5,7 +5,7 @@ draft: false
 weight: 35
 ---
 
-# copr-build
+# `packit copr-build`
 
 Submit a [Copr](https://copr.fedorainfracloud.org) build of the present content in the upstream repository.
 

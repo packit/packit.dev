@@ -6,7 +6,7 @@ disableToc: false
 weight: 9
 ---
 
-# sync-from-downstream
+# `packit sync-from-downstream`
 
 This is a detailed documentation for the downstream sync functionality of packit. The
 command creates a new pull request in upstream repository using a

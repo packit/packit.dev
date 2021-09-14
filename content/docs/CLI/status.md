@@ -5,7 +5,7 @@ draft: false
 weight: 15
 ---
 
-# status
+# `packit status`
 
 This command displays latest information related to the project - downstream
 pull requests, upstream releases, builds in Koji and Copr and updates in Bodhi.

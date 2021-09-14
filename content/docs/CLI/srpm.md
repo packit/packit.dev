@@ -6,7 +6,7 @@ disableToc: false
 weight: 8
 ---
 
-# srpm
+# `packit srpm`
 
 Create a SRPM of the present content in the upstream repository.
 

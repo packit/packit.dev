@@ -6,7 +6,7 @@ disableToc: false
 weight: 7
 ---
 
-# propose-downstream
+# `packit propose-downstream`
 
 This is a detailed documentation for the update functionality of packit. The
 command creates a new pull request in Fedora using a selected or latest
