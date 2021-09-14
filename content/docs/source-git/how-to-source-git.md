@@ -10,10 +10,11 @@ weight: 2
 This guide walks through the steps to create a source-git repository from an
 upstream project.
 
-Please bear in mind, that the structure of source-git repositories is still
-being discussed and in development. Due to this, this guide is subject to
-change. Consider joining the [Fedora Source-git SIG] if you are interested and
-would like to participate in the discussions.
+> We have a dedicated command which automates most of the steps described below:
+> [`packit source-git init`]({{< ref "/docs/CLI/source-git/init.md" >}})
+
+Consider joining the [Fedora Source-git SIG] if you are interested in the
+development of the source-git workflow.
 
 The process to construct a source-git repository and a branch to track
 downstream (distribution) work, which then can be synced to dist-git has the

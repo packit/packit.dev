@@ -5,7 +5,7 @@ draft: false
 weight: 25
 ---
 
-# local-build
+# `packit local-build`
 
 Create RPMs using content of the upstream repository.
 

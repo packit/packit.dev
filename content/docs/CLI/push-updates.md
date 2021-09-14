@@ -5,7 +5,7 @@ draft: false
 weight: 20
 ---
 
-# push-updates
+# `packit push-updates`
 
 Push the Bodhi updates that have been in testing for more than 'Stable days' (7 by default)
 to the stable.

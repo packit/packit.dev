@@ -5,7 +5,7 @@ disableToc: false
 weight: 3
 ---
 
-# init
+# `packit init`
 
 Initiate a repository to start using packit. By default this command adds
 `.packit.yaml` config file to the git repository in the current working

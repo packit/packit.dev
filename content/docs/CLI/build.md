@@ -5,7 +5,7 @@ disableToc: false
 weight: 3
 ---
 
-# build
+# `packit build`
 
 Submit a koji build for the selected branch in Fedora dist-git.
 

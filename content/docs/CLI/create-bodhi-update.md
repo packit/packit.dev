@@ -6,7 +6,7 @@ disableToc: false
 weight: 5
 ---
 
-# create-bodhi-update
+# `packit create-bodhi-update`
 
 Create a new bodhi update for the latest Fedora build of the upstream project.
 
