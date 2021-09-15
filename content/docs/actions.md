@@ -44,7 +44,7 @@ Currently, these are the actions you can use:
 | [hook] | `post-upstream-clone` | upstream git repo | after cloning of the upstream repo (main) and before other operations             |                                           |
 | [hook] | `pre-sync`            | upstream git repo | after cloning and checkout to the correct (release) branch                        |                                           |
 |        | `prepare-files`       | upstream git repo | after cloning, checking out of both upstream and dist-git repos                   | replace patching and archive generation   |
-|        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                                    | replace patching                          |                                         | replace the code for creating an archive  |
+|        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                                    | replace patching                          |
 |        | `get-current-version` | upstream git repo | when the current version needs to be found                                        | expect version as a stdout parameter      |
 
 
@@ -58,7 +58,7 @@ These apply to the `srpm` command and building in COPR.
 |        | `get-current-version` | upstream git repo | when the current version needs to be found                                        | expect version as a stdout                |
 |        | `create-archive`      | upstream git repo | when the archive needs to be created                                              | replace the code for creating an archive  |
 |        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                                    | replace patching                          |
-|        | `fix-spec-file`            | upstream git repo | after creation of a tarball and before running rpmbuild command                   | this action changes spec file to use the new tarball                          |
+|        | `fix-spec-file`       | upstream git repo | after creation of a tarball and before running rpmbuild command                   | this action changes spec file to use the new tarball                          |
 
 ## Actions details
 
@@ -128,10 +128,10 @@ Additionally, packit sets a few env vars for specific actions.
 
 **fix-spec-file**
 
-`PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)
-`PACKIT_PROJECT_COMMIT` — commit hash of the top commit
-`PACKIT_PROJECT_ARCHIVE` — expected name of the archive
-`PACKIT_RPMSPEC_RELEASE` — value for spec file's `%release` field which packit would set
+`PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)  
+`PACKIT_PROJECT_COMMIT` — commit hash of the top commit  
+`PACKIT_PROJECT_ARCHIVE` — expected name of the archive  
+`PACKIT_RPMSPEC_RELEASE` — value for spec file's `%release` field which packit would set  
 
 **create-archive**
 
