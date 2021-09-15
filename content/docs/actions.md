@@ -11,11 +11,20 @@ weight: 9
 You can probably find yourself in a situation where some part of the packit workflow needs to be
 tweaked for your package.
 
-Packit supports actions, a way to change the default implementation for a command
-of your choice.  Packit is able to execute multiple commands. Each action accepts
-a list of commands. By default, the commands are executed directly and
-not in a shell - if you need a shell, just wrap your command like this: `bash -c
-"my fancy $command | grep success"`.
+Packit supports actions, which can be used to change the default implementation
+of some of the steps in the workflow. Packit is able to execute multiple
+commands for a single action. Each action accepts a list of commands. By
+default, the commands are executed using python's
+[subprocess](https://docs.python.org/3/library/subprocess.html) module without
+shell. If you need a shell (e.g. you want to utilize an environment variable,
+subprocesses, pipelines, expansion or any shell syntax in your command), just
+wrap your command in a bash process:
+```
+bash -c "my fancy $command | grep success"
+```
+
+> It's important to quote the content of the `-c` option so shell interprets it
+> correctly as a single option input.
 
 All actions are also executed inside Packit Service. The service
 creates a new sandbox environment where the command is run.
@@ -97,7 +106,7 @@ Sources correctly, e.g. `sed -i my_specfile_path -e
 
 ### Environment variables set by packit
 
-Additionally, packit sets a few env vars for specific actions
+Additionally, packit sets a few env vars for specific actions.
 
 **fix-spec-file**
 
@@ -110,10 +119,25 @@ Additionally, packit sets a few env vars for specific actions
 `PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)
 `PACKIT_PROJECT_NAME_VERSION` — current name and version of the project (coming from `git describe`)
 
+If you want to see the content of those variables, you can print using `echo`
+in the specific action:
+```
+actions:
+  fix-spec-file:
+  - bash -c "echo PACKIT_PROJECT_VERSION=${PACKIT_PROJECT_VERSION}"
+```
+
+and then make sure to run `packit` with the `--debug` option:
+```
+$ packit --debug srpm
+...
+2021-09-15 09:01:36.821 commands.py       DEBUG  Command: bash -c echo PACKIT_PROJECT_VERSION=${PACKIT_PROJECT_VERSION}
+2021-09-15 09:01:36.826 logging.py        INFO   PACKIT_PROJECT_VERSION=0.14.0
+```
 
 -----
 
-In your package config they can be defined like this:
+Actions can be defined like this in your `.packit.yaml`:
 
 ```yaml
 specfile_path: package.spec
@@ -127,5 +151,5 @@ actions:
   prepare-files: "make prepare"
   create-archive:
   - "make archive"
-  - "ls"
+  - bash -c "ls -1 ./package-*.tar.gz"
 ```
