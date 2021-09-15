@@ -11,11 +11,20 @@ weight: 9
 You can probably find yourself in a situation where some part of the packit workflow needs to be
 tweaked for your package.
 
-Packit supports actions, a way to change the default implementation for a command
-of your choice.  Packit is able to execute multiple commands. Each action accepts
-a list of commands. By default, the commands are executed directly and
-not in a shell - if you need a shell, just wrap your command like this: `bash -c
-"my fancy $command | grep success"`.
+Packit supports actions, which can be used to change the default implementation
+of some of the steps in the workflow. Packit is able to execute multiple
+commands for a single action. Each action accepts a list of commands. By
+default, the commands are executed using python's
+[subprocess](https://docs.python.org/3/library/subprocess.html) module without
+shell. If you need a shell (e.g. you want to utilize an environment variable,
+subprocesses, pipelines, expansion or any shell syntax in your command), just
+wrap your command in a bash process:
+```
+bash -c "my fancy $command | grep success"
+```
+
+> It's important to quote the content of the `-c` option so shell interprets it
+> correctly as a single option input.
 
 All actions are also executed inside Packit Service. The service
 creates a new sandbox environment where the command is run.
@@ -35,7 +44,7 @@ Currently, these are the actions you can use:
 | [hook] | `post-upstream-clone` | upstream git repo | after cloning of the upstream repo (main) and before other operations             |                                           |
 | [hook] | `pre-sync`            | upstream git repo | after cloning and checkout to the correct (release) branch                        |                                           |
 |        | `prepare-files`       | upstream git repo | after cloning, checking out of both upstream and dist-git repos                   | replace patching and archive generation   |
-|        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                                    | replace patching                          |                                         | replace the code for creating an archive  |
+|        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                                    | replace patching                          |
 |        | `get-current-version` | upstream git repo | when the current version needs to be found                                        | expect version as a stdout parameter      |
 
 
@@ -49,7 +58,7 @@ These apply to the `srpm` command and building in COPR.
 |        | `get-current-version` | upstream git repo | when the current version needs to be found                                        | expect version as a stdout                |
 |        | `create-archive`      | upstream git repo | when the archive needs to be created                                              | replace the code for creating an archive  |
 |        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                                    | replace patching                          |
-|        | `fix-spec-file`            | upstream git repo | after creation of a tarball and before running rpmbuild command                   | this action changes spec file to use the new tarball                          |
+|        | `fix-spec-file`       | upstream git repo | after creation of a tarball and before running rpmbuild command                   | this action changes spec file to use the new tarball                          |
 
 ## Actions details
 
@@ -73,47 +82,81 @@ archive. If there are more steps, then one of them has to return the archive
 name. The best practice is to do it from the last step and print it: `bash -c
 'echo path/to/archive-$VERSION.tar.gz'`.
 
+If you can, please place the generated archive in the same directory as your
+spec file.
+
+If your project uses multiple archives, you should handle manipulation of your
+spec file yourself in the `fix-spec-file` action. You also have to put all the
+archives (spec file sources) in the same directory as your spec file.  Packit
+expects that project only have a single archive set as `Source0` — it does not
+have a mechanism to manipulate more sources right now.
+
 ### `fix-spec-file`
 
 By default, this action updates the spec file so it's possible to have a proper
 reference of the archive in the `%prep` section and unpack it during the build
 properly. The action tries to perform 3 operations on a spec file:
 
-1. It replaces Source configured by [`spec_source_id`](/docs/configuration/#spec_source_id) (default `Source0`) with a local path to the generated tarball
-2. It changes the first `%setup` (or `%autosetup`) macro in `%prep` and adds `-n` so the generated
- tarball can be unpacked (it tries to extract the directory name directly from the archive
- or uses the configured [`archive_root_dir_template`](/docs/configuration#archive_root_dir_template))
-3. It changes %version
+1. It replaces Source configured by
+   [`spec_source_id`](/docs/configuration/#spec_source_id) (default `Source0`)
+   with a local path to the generated archive.
+
+2. It changes the first `%setup` (or `%autosetup`) macro in `%prep` and adds
+   `-n` so the generated tarball can be unpacked (it tries to extract the
+   directory name directly from the archive or uses the configured
+   [`archive_root_dir_template`](/docs/configuration#archive_root_dir_template)).
+
+3. It updates %version in the spec file.
 
 If you provide your own implementation, none of the above happens.
 
-For example a package may define multiple Sources. In such cases, the
-default implementation of `fix-spec-file` won't be able to update `%prep`
-correctly. You can write a simple shell script which will be run with the `cwd` set to
-the root of the repository and use `sed` to set the new
-Sources correctly, e.g. `sed -i my_specfile_path -e
-"s/https.*only-vendor.tar.xz/my_correct_tarball_path/"`
-
+For example a package may define multiple Sources. In such a case, the default
+implementation of `fix-spec-file` won't be able to update `%prep` correctly.
+You can instead use the `sed` program to set the new Sources correctly, e.g.
+```
+actions:
+  fix-spec-file:
+  # define one of the Source variables correctly
+  - sed -i my_specfile_path -e "s/https.*only-vendor.tar.xz/my_correct_tarball_path/"
+  # fill in %release as if packit would have done it
+  - bash -c "sed -i my_specfile_path -r \"s/Release:(\s*)\S+/Release:\1${PACKIT_RPMSPEC_RELEASE}%{?dist}/\""
+```
 
 ### Environment variables set by packit
 
-Additionally, packit sets a few env vars for specific actions
+Additionally, packit sets a few env vars for specific actions.
 
 **fix-spec-file**
 
-`PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)
-`PACKIT_PROJECT_COMMIT` — commit hash of the top commit
-`PACKIT_PROJECT_ARCHIVE` — expected name of the archive
+`PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)  
+`PACKIT_PROJECT_COMMIT` — commit hash of the top commit  
+`PACKIT_PROJECT_ARCHIVE` — expected name of the archive  
+`PACKIT_RPMSPEC_RELEASE` — value for spec file's `%release` field which packit would set  
 
 **create-archive**
 
 `PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)
 `PACKIT_PROJECT_NAME_VERSION` — current name and version of the project (coming from `git describe`)
 
+If you want to see the content of those variables, you can print using `echo`
+in the specific action:
+```
+actions:
+  fix-spec-file:
+  - bash -c "echo PACKIT_PROJECT_VERSION=${PACKIT_PROJECT_VERSION}"
+```
+
+and then make sure to run `packit` with the `--debug` option:
+```
+$ packit --debug srpm
+...
+2021-09-15 09:01:36.821 commands.py       DEBUG  Command: bash -c echo PACKIT_PROJECT_VERSION=${PACKIT_PROJECT_VERSION}
+2021-09-15 09:01:36.826 logging.py        INFO   PACKIT_PROJECT_VERSION=0.14.0
+```
 
 -----
 
-In your package config they can be defined like this:
+Actions can be defined like this in your `.packit.yaml`:
 
 ```yaml
 specfile_path: package.spec
@@ -127,5 +170,5 @@ actions:
   prepare-files: "make prepare"
   create-archive:
   - "make archive"
-  - "ls"
+  - bash -c "ls -1 ./package-*.tar.gz"
 ```
