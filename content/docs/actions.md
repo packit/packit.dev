@@ -113,6 +113,7 @@ Additionally, packit sets a few env vars for specific actions.
 `PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)
 `PACKIT_PROJECT_COMMIT` — commit hash of the top commit
 `PACKIT_PROJECT_ARCHIVE` — expected name of the archive
+`PACKIT_RPMSPEC_RELEASE` — value for spec file's `%release` field which packit would set
 
 **create-archive**
 
