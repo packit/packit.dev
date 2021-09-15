@@ -82,27 +82,45 @@ archive. If there are more steps, then one of them has to return the archive
 name. The best practice is to do it from the last step and print it: `bash -c
 'echo path/to/archive-$VERSION.tar.gz'`.
 
+If you can, please place the generated archive in the same directory as your
+spec file.
+
+If your project uses multiple archives, you should handle manipulation of your
+spec file yourself in the `fix-spec-file` action. You also have to put all the
+archives (spec file sources) in the same directory as your spec file.  Packit
+expects that project only have a single archive set as `Source0` — it does not
+have a mechanism to manipulate more sources right now.
+
 ### `fix-spec-file`
 
 By default, this action updates the spec file so it's possible to have a proper
 reference of the archive in the `%prep` section and unpack it during the build
 properly. The action tries to perform 3 operations on a spec file:
 
-1. It replaces Source configured by [`spec_source_id`](/docs/configuration/#spec_source_id) (default `Source0`) with a local path to the generated tarball
-2. It changes the first `%setup` (or `%autosetup`) macro in `%prep` and adds `-n` so the generated
- tarball can be unpacked (it tries to extract the directory name directly from the archive
- or uses the configured [`archive_root_dir_template`](/docs/configuration#archive_root_dir_template))
-3. It changes %version
+1. It replaces Source configured by
+   [`spec_source_id`](/docs/configuration/#spec_source_id) (default `Source0`)
+   with a local path to the generated archive.
+
+2. It changes the first `%setup` (or `%autosetup`) macro in `%prep` and adds
+   `-n` so the generated tarball can be unpacked (it tries to extract the
+   directory name directly from the archive or uses the configured
+   [`archive_root_dir_template`](/docs/configuration#archive_root_dir_template)).
+
+3. It updates %version in the spec file.
 
 If you provide your own implementation, none of the above happens.
 
-For example a package may define multiple Sources. In such cases, the
-default implementation of `fix-spec-file` won't be able to update `%prep`
-correctly. You can write a simple shell script which will be run with the `cwd` set to
-the root of the repository and use `sed` to set the new
-Sources correctly, e.g. `sed -i my_specfile_path -e
-"s/https.*only-vendor.tar.xz/my_correct_tarball_path/"`
-
+For example a package may define multiple Sources. In such a case, the default
+implementation of `fix-spec-file` won't be able to update `%prep` correctly.
+You can instead use the `sed` program to set the new Sources correctly, e.g.
+```
+actions:
+  fix-spec-file:
+  # define one of the Source variables correctly
+  - sed -i my_specfile_path -e "s/https.*only-vendor.tar.xz/my_correct_tarball_path/"
+  # fill in %release as if packit would have done it
+  - bash -c "sed -i my_specfile_path -r \"s/Release:(\s*)\S+/Release:\1${PACKIT_RPMSPEC_RELEASE}%{?dist}/\""
+```
 
 ### Environment variables set by packit
 
