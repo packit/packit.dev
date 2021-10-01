@@ -45,7 +45,7 @@ On CentOS, some dependencies are in PowerTools repository, so you have to enable
 You can also help us test the latest development snapshot by installing packit
 built from the main branch in Copr:
 
-    $ sudo dnf copr enable packit/packit-master
+    $ sudo dnf copr enable packit/packit-dev
     $ sudo dnf install packit
     $ # OR in case you have packit already installed from the Fedora repositories:
     $ sudo dnf upgrade packit
