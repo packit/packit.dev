@@ -151,7 +151,7 @@ one for the source-code archives, there are no other rules to be added to
 
 Now, let's create the configuration which is going to be used when syncing
 content to dist-git. This is used to control certain aspects of syncing
-content to dist-git when using `packit update-dist-git`.
+content to dist-git when using `packit source-git update-dist-git`.
 
 Create a file called `.distro/source-git.yaml` with the following content:
 
@@ -233,7 +233,7 @@ strip white-space from the end of lines will result in unnecessary diff-chunks
 when syncing content back to dist-git.
 
 Note, that *acl* is using `%autosetup` to apply the patches in `%prep`, this
-is why the `%prep` section doesn't need an update. Because `packit
+is why the `%prep` section doesn't need an update. Because `packit source-git
 update-dist-git` doesn't support adding the `%patch` macros when adding
 patches to the spec-file during syncing, currently only packages using
 `%autosetup` are supported. At the time of writing, adding support for `%setup`
@@ -326,7 +326,7 @@ Try creating an update in the dist-git repository from the source-git
 repository you've just created. All the changes below are local.
 
     $ cd ../../
-    $ packit --config src/acl/.distro/source-git.yaml update-dist-git --pkg-tool fedpkg src/acl rpms/acl
+    $ packit --config src/acl/.distro/source-git.yaml source-git update-dist-git --pkg-tool fedpkg src/acl rpms/acl
     2021-05-21 17:19:49.158 api.py            INFO   Won't be doing kinit, no credentials provided.
     2021-05-21 15:19:50.103 distgit.py        INFO   Archive 'acl-2.3.1.tar.gz' found in lookaside cache (skipping upload).
 
@@ -366,7 +366,7 @@ see a new patch being added:
      1 file changed, 1 insertion(+)
 
     $ cd ../../
-    $ packit --config src/acl/.distro/source-git.yaml update-dist-git --pkg-tool fedpkg src/acl rpms/acl
+    $ packit --config src/acl/.distro/source-git.yaml source-git update-dist-git --pkg-tool fedpkg src/acl rpms/acl
     2021-05-27 16:46:38.574 api.py            INFO   Won't be doing kinit, no credentials provided.
     2021-05-27 14:46:39.747 distgit.py        INFO   Archive 'acl-2.3.1.tar.gz' found in lookaside cache (skipping upload).
 
