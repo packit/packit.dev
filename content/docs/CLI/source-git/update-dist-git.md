@@ -36,13 +36,13 @@ update the corresponding dist-git repository.
       To update a dist-git repo from source-git without uploading the source-
       archive to the lookaside cache and creating a commit with the updates, run:
 
-          $ packit -c src/curl/.distro/source-git.yaml update-dist-git \
+          $ packit -c src/curl/.distro/source-git.yaml source-git update-dist-git \
                   src/curl rpms/curl
 
       To also commit the changes and upload the source-archive to the lookaside-
       cache specify -m and --pkg-tool:
 
-          $ packit -c src/curl/.distro/source-git.yaml update-dist-git \
+          $ packit -c src/curl/.distro/source-git.yaml source-git update-dist-git \
                   -m'Update from source-git' --pkg-tool fedpkg \
                   src/curl rpms/curl
 
