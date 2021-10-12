@@ -18,3 +18,20 @@ weight: 70
   [ogr](https://github.com/packit/ogr) was moved to the
   [packit/packit-dev](https://copr.fedorainfracloud.org/coprs/packit/packit-dev/)
   Copr repo.
+
+## Week 40 (October 4th - October 8th)
+
+- [A bug](https://github.com/packit/packit/issues/1255) in Packit causing
+  issues with local build when the branch was named with prefix `rpm` has been
+  fixed.
+- To fulfill requests regarding updating targets on Copr repositories, Packit
+  Service will sync targets for the projects created by Packit Service (e.g.
+  pull requests, or non-set Copr repository for releases and branch builds)
+  and for Copr repositories **not owned by Packit** will try to extend the
+  list if necessary.
+- If you trigger packit jobs with one of `/packit _` commands, our bot gives
+  you a 👍 reaction to let you know that we are working on it.
+- Rerunning of failed tasks via Github Checks interface is now supported. You are now free to click those "Re-run" links.
+- [ogr documentation](https://packit.github.io/ogr/) is converted to
+  Google-style docstrings. In case there are any discrepancies, missing docs
+  or docstrings in different format, please open an issue.
