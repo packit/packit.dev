@@ -35,3 +35,17 @@ weight: 70
 - [ogr documentation](https://packit.github.io/ogr/) is converted to
   Google-style docstrings. In case there are any discrepancies, missing docs
   or docstrings in different format, please open an issue.
+
+## Week 41 (October 11th - October 15th)
+
+- We have added a new option to Packit CLI when creating Bodhi updates, you can
+  use `-b` or `--resolve- bugzillas` and specify IDs (separated by comma, e.g.
+  `-b 1` or `-b 1,2,3`) of bugzillas that are being closed by the update.
+  ([packit#1383](https://github.com/packit/packit/pull/1383))
+- Packit will deduce the version for SRPM from the spec file, if there are no
+  git tags or action for acquiring current version defined.
+  ([packit#1388](https://github.com/packit/packit/pull/1388))
+- It is possible to use `aarch64` architecture in the Testing Farm.
+  ([packit-service#1247](https://github.com/packit/packit-service/pull/1247))
+- Running tests via Testing Farm now supports `centos-6` target.
+  ([packit-service#1244](https://github.com/packit/packit-service/pull/1244))
