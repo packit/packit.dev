@@ -18,8 +18,11 @@ sources.
 You can override the archive and version commands in [packit.yaml](/docs/configuration/), e.g. this is
 what we use in [ogr](https://github.com/packit/ogr/blob/main/.packit.yaml), a library which packit is using:
 ```yaml
-create_tarball_command: ["python3", "setup.py", "sdist", "--dist-dir", "."]
-current_version_command: ["python3", "setup.py", "--version"]
+actions:
+  create-archive:
+    - python3 setup.py sdist --dist-dir ./fedora/
+    - bash -c "ls -1t ./fedora/*.tar.gz | head -n 1"
+  get-current-version: python3 setup.py --version
 ```
 
 
