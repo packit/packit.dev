@@ -49,3 +49,15 @@ weight: 70
   ([packit-service#1247](https://github.com/packit/packit-service/pull/1247))
 - Running tests via Testing Farm now supports `centos-6` target.
   ([packit-service#1244](https://github.com/packit/packit-service/pull/1244))
+
+## Week 42 (October 18th - October 22th)
+
+- We have introduced new options for generating SRPM packages:
+  ([packit#1396](https://github.com/packit/packit/pull/1396))
+  - `--no-bump` that prevents changing of the release in the SRPM,
+    which can be used for creating SRPMs on checked out tags/releases.
+  - `--release-suffix` that allows you to customize the suffix after the release number,
+    e.g. reference bugzilla or specific branch of the build.
+- Copr build installation instructions now contain detailed info about
+  the built packages, so you can install the precise build from your pull request.
+  ([dashboard#149](https://github.com/packit/dashboard/pull/149))
