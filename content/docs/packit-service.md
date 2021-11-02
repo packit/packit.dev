@@ -50,7 +50,7 @@ In order to continue, please head to the main [Packit guide]({{< ref "guide" >}}
 
 [Packit-as-a-Service-stg](https://github.com/apps/packit-as-a-service-stg) GitHub App
 runs the latest code. It can be used to verify latest changes until they get
-(every Mon/Tue) into the [prod instance](https://github.com/marketplace/packit-as-a-service).
+(every Tuesday) into the [prod instance](https://github.com/marketplace/packit-as-a-service).
 [See more details](https://github.com/packit/packit-service/issues/649#issue-629054035).
 
 ## How to check Packit Service works in your project?
