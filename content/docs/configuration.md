@@ -293,14 +293,13 @@ upstream_package_name: packitos
 
 ## Packit-as-a-Service
 
-As of July 2019, packit service doesn't have any web interface, so the only way
-to change its behaviour is via the config file you just read about.
+Packit service doesn't have any web interface to configure it,
+so the only way to change its behaviour is via the config file you just read about.
 
 When you open a pull request against your upstream repository, packit service
 picks up configuration file from your pull request, not from the branch against
 the PR is opened. This way, you can polish your .packit.yaml and see the
 results right away. (for more info, please see [packit-service#48](https://github.com/packit/packit-service/issues/48))
-
 
 ### Packit service jobs
 
