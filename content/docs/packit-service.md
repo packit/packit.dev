@@ -46,6 +46,13 @@ will see the application displayed there.
 
 In order to continue, please head to the main [Packit guide]({{< ref "guide" >}}).
 
+### Staging instance
+
+[Packit-as-a-Service-stg](https://github.com/apps/packit-as-a-service-stg) GitHub App
+runs the latest code. It can be used to verify latest changes until they get
+(every Mon/Tue) into the [prod instance](https://github.com/marketplace/packit-as-a-service).
+[See more details](https://github.com/packit/packit-service/issues/649#issue-629054035).
+
 ## How to check Packit Service works in your project?
 
 Currently, Packit Service is able only to build your changes and provide them as RPMs.
