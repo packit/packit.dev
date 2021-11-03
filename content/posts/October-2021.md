@@ -61,3 +61,13 @@ weight: 70
 - Copr build installation instructions now contain detailed info about
   the built packages, so you can install the precise build from your pull request.
   ([dashboard#149](https://github.com/packit/dashboard/pull/149))
+
+## Week 43 (October 25th - November 1st)
+
+- We have introduced a new configuration option `merge_pr_in_ci` that allows you to disable merging of PR into the base branch before creating SRPM in service. ([packit#1395](https://github.com/packit/packit/pull/1395), [packit-service#1261](https://github.com/packit/packit-service/pull/1261))
+- If the upstream spec file is located in a subdirectory (such as
+  `packaging/fedora/pkg.spec`), it is now correctly synced to the root of
+  the downstream repository, since that's where rpmbuild will look
+  for it. ([packit#1402](https://github.com/packit/packit/pull/1402))
+- The "Congratulations!" comment no longer has a disclaimer about our intentions to stop posting it by default. We have already made that move earlier this year, so the disclaimer is no longer relevant. ([packit-service#1260](https://github.com/packit/packit-service/pull/1260))
+- Deprecated configuration options `current_version_command` and `create_tarball_command` have been removed and are no longer supported. They are superseded by actions `get-current-version` and `create-archive`. ([packit#1397](https://github.com/packit/packit/pull/1397))
