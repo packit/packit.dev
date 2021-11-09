@@ -18,12 +18,12 @@ according to the [Metadata Specification][spec].
 In order to enable test execution simply include `tests` jobs in the `.packit.yaml` configuration:
 
 ```yaml
-    jobs:
-    - job: tests
-      trigger: pull_request
-      metadata:
-        targets:
-        - fedora-all
+jobs:
+- job: tests
+  trigger: pull_request
+  metadata:
+    targets:
+    - fedora-all
 ```
 The test job by default requires Copr build to be built before running tests and then
 it is installed into the testing environment.
@@ -39,11 +39,25 @@ To run tests that don't require Copr build to be built, test job needs to includ
 ```
 
 Required metadata:
-* **targets** - You can use `fedora-development`, `fedora-stable`, `fedora-all`
-  or release specific targets such as `fedora-34-x86_64`.
-  Also `centos-7`, `centos-8` and `centos-stream-8`. The targets are mapped to
-  Testing Farm's [composes](https://api.dev.testing-farm.io/v0.1/composes)
-  when submitting the tests.
+* **targets** - Specify which "builds" you want to test.
+[As with copr_build job](/docs/configuration#available-copr-build-targets) you can use
+specific targets such as `fedora-34-x86_64`. Or just the distro part,
+like `centos-stream-8`, in which case the architecture is `x86_64`. Or an alias,
+like `fedora-development`, `fedora-stable`, `fedora-all` or `epel-all`.
+Each target is then mapped to a [(tmt) distro](https://tmt.readthedocs.io/en/latest/spec/context.html#dimension)
+and to a [Testing farm's compose](https://api.dev.testing-farm.io/v0.1/composes)
+when submitting a test. You can override the default (target to distro) mapping by
+specifying `targets` as a dictionary instead of as a list.
+In the following example, the `epel-8-x86_64` build will be tested on `centos-8`
+distro (otherwise the default would be `centos-stream-8`) and for
+`epel-7-x86_64` build the default mapping (to `centos-7` distro) will be used:
+```yaml
+  metadata:
+    targets:
+      epel-8-x86_64:
+        distros: [centos-8]
+      epel-7-x86_64: {}
+```
 
 Optional metadata:
 * **fmf_url** - Git repository containing the metadata (FMF) tree.
