@@ -86,6 +86,11 @@ it means the author of the pull request does not have commit access to the
 repository so the build cannot be scheduled. This is a perfect case for
 maintainers of the repository to post `/packit build` in the PR to get a build.
 
+In Github Checks interface, it is also possible to re-trigger a specific task just by clicking on `Re-run`
+for the particular check:
+
+![Re-run Github check](/github-check-rerun.png)
+
 ## How to propose a new downstream update?
 
 Packit Service is able to propose updates of new upstream releases using this comment in an issue:
