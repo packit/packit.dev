@@ -25,6 +25,18 @@ In order to enable test execution simply include `tests` jobs in the `.packit.ya
         targets:
         - fedora-all
 ```
+The test job by default requires Copr build to be built before running tests and then
+it is installed into the testing environment.
+To run tests that don't require Copr build to be built, test job needs to include `skip_build` (described below) option in the metadata:
+```yaml
+  jobs:
+  - job: tests
+    trigger: pull_request
+    metadata:
+      targets:
+      - fedora-all
+      skip_build: true
+```
 
 Required metadata:
 * **targets** - You can use `fedora-development`, `fedora-stable`, `fedora-all`
@@ -38,11 +50,14 @@ Optional metadata:
   Use any format acceptable by the git clone command.
 * **fmf_ref** - Branch, tag or commit specifying the desired git revision.
   Defaults to "master" when **fmf_url** is specified and **fmf_ref** is not.
+* **skip_build** - Whether to skip the build phase and only run tests (defaults to false). 
+  Enabling this will cause no Copr build to be built and installed into the testing environment, 
+  only submitting request to Testing Farm (the selected components to be installed should be part of the TMT definitions).
 
 ## Restart Testing
 
 The testing will automatically start after an update to the pull request
-and successful Copr build.
+(and successful Copr build if `skip_build` is false).
 To trigger retesting manually (can come handy in case of infrastructure
 issues for example), you can use the following comment in the pull request:
 

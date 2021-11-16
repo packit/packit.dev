@@ -31,6 +31,9 @@ If not specified, defaults to:
 is set.
 2. Else recursively search the tree and use the first spec file found.
 
+If there are only test jobs with `skip_build` option defined (more about it [here](http://packit.dev/testing-farm/)), 
+spec file doesn't need to be present and its path doesn't need to be defined in the config.
+
 #### upstream_project_name
 
 (*string*) Deprecated since packit-0.7.0, use `upstream_package_name` instead.
