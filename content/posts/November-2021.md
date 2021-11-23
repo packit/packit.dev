@@ -30,3 +30,13 @@ weight: 69
   The action is supposed to generate whole changelog entry (including `- ` at
   the start of the lines) and has a priority over any other way we modify the
   changelog with. ([packit#1367](https://github.com/packit/packit/pull/1367))
+
+## Week 46 (November 15th - November 19th)
+
+- A new `env` config option has been added for specifying environment variables,
+  which are then passed to Testing Farm along with some more pre-defined
+  variables (e.g. name of the project, URL, etc).
+  ([packit#1411](https://github.com/packit/packit/pull/1411))
+  ([packit-service#1275](https://github.com/packit/packit-service/pull/1275))
+- The Github check run names are now shorter and easier to read.
+  ([packit-service#1281](https://github.com/packit/packit-service/pull/1281))
