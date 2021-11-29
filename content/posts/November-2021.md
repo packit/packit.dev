@@ -40,3 +40,11 @@ weight: 69
   ([packit-service#1275](https://github.com/packit/packit-service/pull/1275))
 - The Github check run names are now shorter and easier to read.
   ([packit-service#1281](https://github.com/packit/packit-service/pull/1281))
+
+## Week 47 (November 22th - November 26th)
+
+- You can set up a new `koji_build` job using the commit trigger to submit a
+  Koji build for a new commit in a dist-git branch. The configuration file
+  needs to be present in the dist-git for now
+  (the state for the new commit is used).
+  ([packit-service#1278](https://github.com/packit/packit-service/pull/1278))
