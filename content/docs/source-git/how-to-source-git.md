@@ -318,10 +318,6 @@ Save and exit.
 
 ## Test the source-git repository
 
-*The following requires Packit version 0.31.0 or higher, which at the time of
-writing this is not yet release. Alternatively you can install the latest
-development version [from Copr].*
-
 Try creating an update in the dist-git repository from the source-git
 repository you've just created. All the changes below are local.
 
@@ -416,4 +412,3 @@ Check the diff in dist-git and the new patch generated from source-git:
 [src.fedoraproject.org]: https://src.fedoraproject.org/
 [patch status]: https://docs.fedoraproject.org/en-US/packaging-guidelines/PatchUpstreamStatus/
 [a few metadata fields]: {{< ref "/development-docs/patch-metadata" >}}
-[from Copr]: {{< ref "/docs/guide#via-fedora-copr" >}}
