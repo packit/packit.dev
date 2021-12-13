@@ -48,3 +48,20 @@ weight: 69
   needs to be present in the dist-git for now
   (the state for the new commit is used).
   ([packit-service#1278](https://github.com/packit/packit-service/pull/1278))
+
+## Week 48 (November 29th - December 3rd)
+
+- External contributors can't trigger internal tests initially. Project
+  maintainers need to trigger the action via `/packit test` comment to run
+  the job.
+  ([packit-service#1302](https://github.com/packit/packit-service/pull/1302))
+  ([packit-service#1305](https://github.com/packit/packit-service/pull/1305))
+- A new `packit prepare-sources` command has been implemented for preparing
+  sources for an SRPM build using the content of an upstream repository.
+  ([packit#1424](https://github.com/packit/packit/pull/1424))
+- Packit now visibly informs about an ongoing cloning process to remove
+  potential confusion.
+  ([packit#1431](https://github.com/packit/packit/pull/1431))
+- The `upstream_package_name` config option is now checked for illegal
+  characters and an error is thrown if it contains them.
+  ([packit#1434](https://github.com/packit/packit/pull/1434))
