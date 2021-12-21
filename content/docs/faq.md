@@ -12,10 +12,14 @@ aliases: [/faq]
 ## Can I use the packit service as soon as I install it into my repository?
 
 Thanks for your interest in Packit Service! In order to start using the
-service, your repository or namespace needs to be allowed,
-which is an action to be done by us.
-Once we put you on the allowlist, we'll get in touch with you. We are now
-on-boarding Fedora contributors (with a Fedora Account System account).
+service, your repository or namespace needs to be allowed.
+For each installation we create a new issue in our
+[allowlist tracker](https://github.com/packit/notifications/issues/)
+to resolve this.
+Just be aware that we are now onboarding Fedora contributors who have
+a valid [Fedora Account System](https://fedoraproject.org/wiki/Account_System) account
+and have signed [FPCA](https://fedoraproject.org/wiki/Legal:Fedora_Project_Contributor_Agreement).
+So provide us enough information (your FAS account) in the issue.
 
 ## Can I use packit service for any GitHub repository?
 
