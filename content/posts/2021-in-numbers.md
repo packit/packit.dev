@@ -5,28 +5,28 @@ date: 2022-01-04
 
 # 2021 for Packit in numbers
 
-Let's take a look on the last year through some numbers.
+Let's take a look on the year 2021 through some numbers.
 We would like to show you some interesting statistics and charts
 that can describe the work of Packit during the year 2021.
 
 ## Github Application
 
-By now, we have `169` installations of our GitHub application and `41` of them is from the last year.
+As of now, we have `169` installations of our GitHub application and `41` of them is from the year 2021.
 Looking at the monthly numbers below, it looks like we are getting back to shape.
 
 ![GitHub installations in 2021](/images/2021-in-numbers-github-installations.png)
 
 ## Builds
 
-Compared to the previous year when we made `28 430` Copr builds for our users,
-we made `4.6` times more this year: `133 222` Copr builds.
+Compared to the year 2020 when we made `28 430` Copr builds for our users,
+we made `4.6` times more in the year 2021: `133 222` Copr builds.
 For those who remember the start of our project,
 we had a goal of `5` thousand for the [FLOCK](https://flocktofedora.org/) 2019.
 We are now two digits ahead!
 And if you are wondering how active is our user on Copr,
 we've created `2/3` of all the new Copr projects during the year.
 
-To made this happen, we've created `36 133` source RPM files in the last year.
+To made this happen, we've created `36 133` source RPM files in the year 2021.
 
 ![Copr builds in 2021](/images/2021-in-numbers-copr-builds.png)
 
