@@ -2,7 +2,7 @@
 title: "January 2022"
 date: 2022-01-03
 draft: false
-weight: 67
+weight: 66
 ---
 
 ## Week 1 (December 13th - January 2nd)
