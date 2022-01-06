@@ -55,6 +55,13 @@ as a release archive name and as a directory name in that archive.
 new pull request (defaults to `true`) or push directly to dist-git (if set to
 `false`).
 
+#### merge_pr_in_ci
+
+(*bool*) When Packit clones your repository while creating RPMs from your pull
+requests, it by default merges the pull request checkout into the main
+repository branch to be sure the changes are up to date. You can disable this
+behaviour by setting this field to `false` which will make Packit to work with
+your pull request git ref as it is.
 
 #### sync_changelog
 
