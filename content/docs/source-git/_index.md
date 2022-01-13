@@ -1,6 +1,5 @@
 ---
 title: "Source-git"
-draft: false
 weight: 6
 aliases: [/source-git]
 bookCollapseSection: true

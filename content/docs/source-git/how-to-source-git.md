@@ -1,7 +1,6 @@
 ---
 title: "Create source-git repo"
 date: 2020-02-20
-draft: false
 weight: 2
 ---
 

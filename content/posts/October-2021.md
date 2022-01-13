@@ -1,7 +1,6 @@
 ---
 title: "October 2021"
 date: 2021-10-04T11:00:11+02:00
-draft: false
 weight: 70
 ---
 

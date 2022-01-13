@@ -1,7 +1,6 @@
 ---
 title: "Working on the next major RHEL release, in your upstream repo"
 date: 2020-10-04
-draft: false
 weight: 83
 ---
 

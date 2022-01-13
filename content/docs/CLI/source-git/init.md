@@ -1,6 +1,5 @@
 ---
 title: "init"
-draft: false
 disableToc: false
 weight: 1
 ---

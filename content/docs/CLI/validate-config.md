@@ -1,7 +1,6 @@
 ---
 title: "validate-config"
 date: 2021-03-18T08:48:36+01:00
-draft: false
 weight: 30
 ---
 # `packit validate-config`
