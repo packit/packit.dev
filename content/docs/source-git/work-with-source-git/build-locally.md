@@ -1,7 +1,6 @@
 ---
 title: "Build current checkout locally"
 date: 2021-01-27T23:59:59+01:00
-draft: false
 weight: 4
 ---
 

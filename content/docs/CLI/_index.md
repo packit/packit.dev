@@ -1,7 +1,6 @@
 ---
 title: "Packit CLI"
 date: 2019-07-09
-draft: false
 chapter: false
 weight: 8
 bookCollapseSection: true

@@ -1,7 +1,6 @@
 ---
 title: "Packit"
 date: 2019-06-28
-draft: false
 disableToc: false
 ---
 

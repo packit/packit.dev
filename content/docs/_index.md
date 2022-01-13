@@ -1,6 +1,5 @@
 ---
 title: "User Documentation"
-draft: false
 weight: 1
 bookCollapseSection: true
 ---

@@ -1,7 +1,6 @@
 ---
 title: "create-bodhi-update"
 date: 2019-06-28
-draft: false
 disableToc: false
 weight: 5
 ---

@@ -1,6 +1,5 @@
 ---
 title: "Configuration"
-draft: false
 disableToc: false
 weight: 7
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Source-git design"
 date: 2018-12-31T23:59:59+01:00
-draft: false
 weight: 4
 ---
 

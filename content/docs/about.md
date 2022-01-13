@@ -1,7 +1,6 @@
 ---
 title: "About Packit"
 date: 2021-01-11
-draft: false
 disableToc: false
 weight: 1
 aliases: [/about]

@@ -1,7 +1,6 @@
 ---
 title: "August 2021"
 date: 2021-08-06
-draft: false
 weight: 72
 ---
 

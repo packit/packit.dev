@@ -1,6 +1,5 @@
 ---
 title: update-dist-git
-draft: false
 weight: 5
 
 ---

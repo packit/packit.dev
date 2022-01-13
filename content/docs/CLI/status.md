@@ -1,7 +1,6 @@
 ---
 title: "status"
 date: 2021-03-18T08:53:12+01:00
-draft: false
 weight: 15
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: "January 2022"
 date: 2022-01-03
-draft: false
 weight: 66
 ---
 

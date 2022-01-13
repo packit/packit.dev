@@ -1,7 +1,6 @@
 ---
 title: "Update a spec file"
 date: 2021-01-25T23:59:59+01:00
-draft: false
 weight: 1
 ---
 

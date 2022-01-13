@@ -1,7 +1,6 @@
 ---
 title: "copr-build"
 date: 2019-07-16
-draft: false
 weight: 35
 ---
 

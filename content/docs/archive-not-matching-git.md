@@ -1,6 +1,5 @@
 ---
 title: "Generated code in upstream archives"
-draft: false
 disableToc: false
 weight: 10
 ---

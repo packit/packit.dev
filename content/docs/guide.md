@@ -1,6 +1,5 @@
 ---
 title: "Onboarding Guide"
-draft: false
 disableToc: false
 weight: 2
 ---
