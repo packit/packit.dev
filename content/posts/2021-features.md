@@ -14,8 +14,10 @@ Some small, some really big. So, let's take a look at the most important ones:
 
 ## Dashboard
 
-The idea of having a dashboard for Packit service started as a Google Summer of Code 2020 project
+The idea of having a dashboard for Packit service started as a
+[Google Summer of Code 2020 project](https://communityblog.fedoraproject.org/gsoc-progress-report-dashboard-for-packit-july-1-aug-16-2020/)
 to provide a basic view of our service.
+Thanks [Anchit](https://github.com/IceWreck) for starting this!
 Nowadays, it's a core part of the project and it has replaced the result pages in plain HTML. Do you remember them?
 
 The dashboard can be found at [dashboard.packit.dev](https://dashboard.packit.dev).
