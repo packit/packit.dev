@@ -20,9 +20,8 @@ Nowadays, it's a core part of the project and it has replaced the result pages i
 
 The dashboard can be found at [dashboard.packit.dev](https://dashboard.packit.dev).
 
-As you can see in the following picture,
-the page we link on GitHub/Gitlab look now much nicer
-and the related pages are connected.
+Following picture shows a more convenient and visually-appealing view of builds and test runs.
+For better context, the relevant pages are a connected to each other.
 
 ![Dashboard: Copr Build result](/images/2021-features-dashboard-copr.png)
 
@@ -34,10 +33,10 @@ If you want to see the overall picture, use our [pipelines view](https://dashboa
 
 We consider our dashboard an important part of our service and are working on or planning more improvements:
 
-- We are doing some database schema updates to be able to better interconnect various pages.
 - We are working on personalised pages for a user or git-forge namespace.
 - We are planning to show info about other job types we support by the service as well;
   especially the `propose-downstream` one.
+- We are doing some database schema updates to be able to better interconnect various pages.
 - Do you have an idea for an improvement?
   Let us know by creating an issue [here](https://github.com/packit/dashboard/issues/new).
 
