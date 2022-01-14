@@ -36,7 +36,7 @@ In case of any other questions, feel free to contact
 [us](https://github.com/orgs/packit/teams/the-packit-team):
 
 - **#packit** on [Libera.Chat](https://libera.chat/)
-- **user-cont-team@redhat.com**
+- **hello@packit.dev**
 
 ## Why do I have to maintain .packit.yaml and a spec file upstream?
 

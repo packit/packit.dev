@@ -13,7 +13,7 @@ home = ["HTML", "JSON"]
 [params]
 subtitle = "Upstream project ← → Downstream distribution"
 brand = "Packit"
-email = "user-cont-team@redhat.com"
+email = "hello@packit.dev"
 BookLogo = 'packit_logo.png'
 BookSection = '*'
 
