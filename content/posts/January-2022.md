@@ -21,3 +21,13 @@ weight: 66
   branch where the changes are supposed to be merged, to the Testing Farm environment. This should
   help solving the issue of running tests from non-merged codebase on the Testing Farm side.
   ([packit/packit-service#1319](https://github.com/packit/packit-service/pull/1319))
+
+## Week 3 (January 10th - January 14th)
+
+- Packit no longer ignores `--no-bump` and `--release-suffix` options for
+  source-git repos.
+  [packit/packit#1452](https://github.com/packit/packit/pull/1452)
+- Packit now names local branch `pr/{pr_id}` when checking out a PR, even when
+  it's not being merged with the target branch. This results into NVR of the
+  build containing `pr{pr_id}` instead of `pr.changes{pr_id}`.
+  [packit/packit#1445](https://github.com/packit/packit/pull/1445)
