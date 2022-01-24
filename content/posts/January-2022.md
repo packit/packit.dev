@@ -4,13 +4,13 @@ date: 2022-01-03
 weight: 66
 ---
 
-## Week 1 (December 13th - January 2nd)
+## Week 0 (December 13th - January 2nd)
 
 - Dashboard shows a message when the SRPM build logs are not present instead of
   an empty page that might suggest logs are being loaded.
   ([packit/dashboard#158](https://github.com/packit/dashboard/pull/158))
 
-## Week 2 (January 3rd - January 7th)
+## Week 1 (January 3rd - January 7th)
 
 - Packit service now discards old (currently, this means 3 months) SRPM builds logs.
   ([packit/packit-service#1315](https://github.com/packit/packit-service/pull/1315))
@@ -22,7 +22,7 @@ weight: 66
   help solving the issue of running tests from non-merged codebase on the Testing Farm side.
   ([packit/packit-service#1319](https://github.com/packit/packit-service/pull/1319))
 
-## Week 3 (January 10th - January 14th)
+## Week 2 (January 10th - January 14th)
 
 - Packit no longer ignores `--no-bump` and `--release-suffix` options for
   source-git repos.
@@ -31,3 +31,12 @@ weight: 66
   it's not being merged with the target branch. This results into NVR of the
   build containing `pr{pr_id}` instead of `pr.changes{pr_id}`.
   [packit/packit#1445](https://github.com/packit/packit/pull/1445)
+
+## Week 3 (January 17th - January 21st)
+
+- `%changelog` sections in dist-git using the `%autochangelog` macro [are
+  preserved](https://github.com/packit/packit/pull/1453) when running
+  `propose-downstream`, except when `sync_changelog` is set to `true`.
+- When checking if directories hold a Git-tree, Packit now also allows [`.git`
+  to be a file with a `gitdir`](https://github.com/packit/packit/pull/1458)
+  reference, not only a directory.
