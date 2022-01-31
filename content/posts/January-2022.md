@@ -40,3 +40,12 @@ weight: 66
 - When checking if directories hold a Git-tree, Packit now also allows [`.git`
   to be a file with a `gitdir`](https://github.com/packit/packit/pull/1458)
   reference, not only a directory.
+
+## Week 4 (January 25th - January 28th)
+
+- SRPM build view contains info about build start and finished time.
+  [packit/dashboard#163](https://github.com/packit/dashboard/pull/163)
+- When submitting a distgit PR during `propose-downstream` job, we create
+  a `README.packit` file with some info about the sync the packit version used.
+  To avoid this you can add `create_sync_note: false` to conig file.
+  [packit/packit#1465](https://github.com/packit/packit/pull/1465)
