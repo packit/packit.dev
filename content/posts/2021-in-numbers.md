@@ -39,7 +39,7 @@ Sadly, we started saving the submit time of the test runs in June
 so we have numbers only for the second half of the year.
 The numbers are not so high as for the builds but still `18 498` test runs.
 
-![Test runs in 2021](/images/2021-in-numbers-copr-builds.png)
+![Test runs in 2021](/images/2021-in-numbers-test-runs.png)
 
 ## Top 20 projects in the number of PR Copr Builds
 
