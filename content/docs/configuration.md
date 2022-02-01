@@ -154,6 +154,14 @@ synced_files:
     mkpath: true
 ```
 
+#### create_sync_note
+
+(*bool*) Create or update a *README.packit* file in dist-git when doing a new update,
+telling that the repository is maintained by Packit and marking the version of `packit` creating the update.
+By default, this option is set to `true`. When set to `false`, *README.packit* is not created or updated.
+(A previously created *README.packit* needs to be removed manually).
+
+
 #### upstream_ref
 
 (*string*) Git reference to last upstream git commit (for source-git repos).
