@@ -76,6 +76,11 @@ issues for example), you can use the following comment in the pull request:
 
     /packit test
 
+Or if you want to re-trigger only failed tests, you can use the following comment
+in the pull request:
+
+    /packit retest-failed
+
 ## Creating Tests
 
 The easiest way to get started is to use the [tmt][tmt] tool

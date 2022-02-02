@@ -90,6 +90,16 @@ for the particular check:
 
 ![Re-run Github check](/github-check-rerun.png)
 
+Or it is possible to re-trigger every failed task using a pull request comment
+
+    /packit rebuild-failed
+
+which builds only failed builds and similar for testing farm
+
+    /packit retest-failed
+
+to re-trigger every failed test.
+
 ## How to propose a new downstream update?
 
 Packit Service is able to propose updates of new upstream releases using this comment in an issue:
