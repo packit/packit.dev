@@ -5,8 +5,10 @@ weight: 2
 
 # Source-git patch metadata
 
-This article is an extension to the document in the [Work with source-git]({{< ref "work-with-source-git" >}})
-namespace, [Pull upstream fixes]({{< ref "pull-upstream-fixes" >}}).
+Patch metadata have been superseded by
+[Git-native trailers]({{< ref "docs/source-git/work-with-source-git/control-patch-generation" >}}).
+This old patch metadata format is still supported if none of
+the Git-trailers are found in any of the commits.
 
 The metadata are a way for users and creators of source-git repos to be in
 control of how packit generates patch files from downstream commits. Users are

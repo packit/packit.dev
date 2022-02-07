@@ -280,10 +280,10 @@ by `git format-patch`), and that the [patch status] line is going to be
 included above the patch when it's added back to the spec-file while syncing
 to dist-git.
 
-Packit understands [a few metadata fields] which can be included in the commit
+Packit understands [Git-trailers] which can be included in the commit
 message, and used to tweak how patch-files are generated and included in the
-spec-file. You can include the patch status with the help of the `description`
-field, and specify the patch-file name with `patch_name`.
+spec-file. You can include the patch status with the help of the `Patch-status`
+field, and specify the patch-file name with `Patch-name`.
 
 Amend the last commit...
 
@@ -297,8 +297,8 @@ test/runwrapper: copy the preloaded library
 ... to a temporary directory because the original location might
 not be accessible by other users.
 
-patch_name: 0001-acl-2.2.53-test-runwrapper.patch
-description: |-
+Patch-name: 0001-acl-2.2.53-test-runwrapper.patch
+Patch-status: |-
     avoid permission denied problem with LD_PRELOAD in the test-suite
 
 # Please enter the commit message for your changes. Lines starting
@@ -410,4 +410,4 @@ Check the diff in dist-git and the new patch generated from source-git:
 [in the spec-file for Fedora Rawhide]: https://src.fedoraproject.org/rpms/acl/blob/rawhide/f/acl.spec
 [src.fedoraproject.org]: https://src.fedoraproject.org/
 [patch status]: https://docs.fedoraproject.org/en-US/packaging-guidelines/PatchUpstreamStatus/
-[a few metadata fields]: {{< ref "/development-docs/patch-metadata" >}}
+[Git-trailers]: {{< ref "control-patch-generation" >}}
