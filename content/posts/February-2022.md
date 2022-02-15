@@ -12,3 +12,8 @@ weight: 64
 - Packit-service now supports re-triggering against failed task using comment on
   pull request `/packit rebuild-failed` and similarly for testing farm: `/packit retest-failed`.
   ([packit-service#1303](https://github.com/packit/packit-service/pull/1303))
+
+## Week 6 (February 8th - February 14th)
+
+- Packit now correctly handles colons in git trailer values in source-git commits.
+  ([packit#1478](https://github.com/packit/packit/pull/1478))
