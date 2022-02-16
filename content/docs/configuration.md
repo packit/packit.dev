@@ -68,11 +68,21 @@ your pull request git ref as it is.
 is synchronised when set to `true`. By default (`false`), everything but the changelog
 part is synchronized. Use this only when your changelogs are in sync since this overwrites the changelog in the downstream.
 
-#### synced_files
+#### ~~synced_files~~ (deprecated)
 
 (*list of strings or dicts*) A list of relative paths to files in the upstream
 repo which are meant to be copied to dist-git during an update (spec file path
 and config file path are set every time by default).
+
+It is now deprecated in favor of *files_to_sync*. 
+
+#### files_to_sync
+
+(*list of strings or dicts*) A list of relative paths to files in the upstream
+repo which are meant to be copied to dist-git during an update.
+
+Spec file path and config file path are always included by `packit init`
+but can be manually removed from the list.
 
 Under the hood this will use `rsync --archive` to synchronise the paths
 between the upstream and the dist-git repo.
