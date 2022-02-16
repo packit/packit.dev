@@ -88,7 +88,7 @@ template by running the `init` command:
 specfile_path: packit.dev.spec
 
 # add or remove files that should be synced
-synced_files:
+files_to_sync:
     - packit.dev.spec
     - .packit.yaml
 

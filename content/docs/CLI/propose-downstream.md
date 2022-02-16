@@ -64,8 +64,7 @@ upstream release.
   upstream release tarball and uploads it to the lookaside cache. [This is
   required by the Fedora Packaging
   Guidelines](https://fedoraproject.org/wiki/Packaging:SourceURL#Referencing_Source).
-  Then it takes the spec file from the upstream repo, copies it downstream (while
-  also all the files set in the `synced_files`) and creates the downstream PR.
+Then it copies the files listed in `files_to_sync` (which by default includes the spec file) from the upstream repo to downstream and creates the downstream PR.
 
 
 ## Help

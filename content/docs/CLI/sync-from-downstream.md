@@ -32,7 +32,7 @@ github_token: 123
 pagure_user_token: 456
 ```
 
-* Files which are synced are mentioned in `.packit.yaml` as `synced_files` value.
+* The files which are synced are listed in `.packit.yaml` under the `files_to_sync` configuration key.
 
 * Once you want to sync Fedora dist-git repo into the upstream repo,
   run `packit sync-from-downstream` in a working directory of your upstream
