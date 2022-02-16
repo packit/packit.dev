@@ -162,7 +162,7 @@ patch_generation_ignore_paths:
   - .distro/
 patch_generation_patch_id_digits: 0
 sync_changelog: true
-synced_files:
+files_to_sync:
   - src: .distro/
     dest: .
     delete: true
@@ -193,7 +193,7 @@ Setting `sync_changelog` to `true` tells Packit to sync the changelog in the
 spec-file as is. This disables Packit's functionality to automatically update
 the changelog when syncing to dist-git.
 
-`synced_files` controls the way files are synced when updating dist-git. In
+`files_to_sync` controls the way files are synced when updating dist-git. In
 the context of the current source-git structure this means to syncing the
 content of `.distro` with the root of the dist-git repo. This is what the
 `src` and `dest` fields configure.
@@ -203,7 +203,7 @@ content of `.distro` with the root of the dist-git repo. This is what the
 `filters` is a list of `rsync` filters to be used to protect paths in `dest`
 and exclude paths in `src` from the sync operation.
 
-You can think about the `synced_files` section as describing the reverse of
+You can think about the `files_to_sync` section as describing the reverse of
 the rsync-command used to copy content from dist-git to `.distro`.
 
 We plan to make most of this configuration implicit, so most of it might

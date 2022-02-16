@@ -94,7 +94,7 @@ The configuration file with downloading the RPM spec file now looks like this:
 
 ```yaml
 specfile_path: packit.spec
-synced_files:
+files_to_sync:
   - packit.spec
   - .packit.yaml
 upstream_package_name: packitos

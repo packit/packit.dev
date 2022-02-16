@@ -159,7 +159,7 @@ Actions can be defined like this in your `.packit.yaml`:
 
 ```yaml
 specfile_path: package.spec
-synced_files:
+files_to_sync:
   - packit.yaml
   - package.spec
 upstream_package_name: package

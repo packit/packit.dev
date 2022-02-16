@@ -102,7 +102,7 @@ The fields for a dictionary item in the list are the following:
 Copy a file from root of the upstream repo to dist-git:
 
 ```yaml
-synced_files:
+files_to_sync:
   - packit.spec
 ```
 
@@ -110,14 +110,14 @@ If you copy `packit.yaml` downstream, you can then take advantage of
 `sync-from-downstream` command:
 
 ```yaml
-synced_files:
+files_to_sync:
   - .packit.yaml
 ```
 
 Rename or change the path of the synced file in dist-git:
 
 ```yaml
-synced_files:
+files_to_sync:
   - src: packit.spec
     dest: redhat/packit.spec
 ```
@@ -126,7 +126,7 @@ Paths also support globs. Copy everything from `fedora-packaging` folder and
 put it to the root of the dist-git repo:
 
 ```yaml
-synced_files:
+files_to_sync:
   - src: fedora-packaging/*
     dest: .
 ```
@@ -135,7 +135,7 @@ Sync the entire content of the `fedora-packaging` directory, and delete extra
 content found in the root of the dist-git repo; protect `.git*` files and the
 `sources` file from deletion:
 ```yaml
-synced_files:
+files_to_sync:
   - src: fedora-packaging/
     dest: .
     delete: true
@@ -147,7 +147,7 @@ synced_files:
 Specify multiple source files to copy:
 
 ```yaml
-synced_files:
+files_to_sync:
   - src:
     - package.spec
     - some-file
@@ -158,7 +158,7 @@ Set `mkpath` to `true` to create missing path components in dist-git.
 In the example below, `subdir` is created if missing.
 
 ```yaml
-synced_files:
+files_to_sync:
   - src: some.file
     dest: subdir/some.file
     mkpath: true
