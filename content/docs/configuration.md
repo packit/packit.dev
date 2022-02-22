@@ -309,6 +309,12 @@ sources:
 corresponding basename exists in the spec-file, the source will be downloaded from the `url` found in the configuration
 instead of the location defined in the spec-file.
 
+
+#### srpm_build_deps
+(*list of strings*) A list of RPM dependencies that are needed for your actions to be run when building SRPM. 
+For now, this key is used in Packit Service as an indicator to build your SRPMs in Copr and 
+the dependencies are then installed into the Copr build environment each time the build is triggered.
+Be aware that this is a preparation phase and we want to build all the packages in Copr by default.
 ### Minimal sample config
 
 This is a sample config which is meant for [packit](https://github.com/packit/packit) itself.
