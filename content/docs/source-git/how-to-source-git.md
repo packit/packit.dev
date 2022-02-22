@@ -285,6 +285,10 @@ message, and used to tweak how patch-files are generated and included in the
 spec-file. You can include the patch status with the help of the `Patch-status`
 field, and specify the patch-file name with `Patch-name`.
 
+One more Git-trailer that should be added in this step is
+`From-dist-git-commit`, which can be used later on to tell which dist-git
+commit was used to create this source-git repository.
+
 Amend the last commit...
 
     $ git commit --amend
@@ -300,6 +304,7 @@ not be accessible by other users.
 Patch-name: 0001-acl-2.2.53-test-runwrapper.patch
 Patch-status: |-
     avoid permission denied problem with LD_PRELOAD in the test-suite
+From-dist-git-commit: 08c7e74d0a58c9483d2f4f55a3fba2baffb09c3a
 
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
