@@ -17,3 +17,11 @@ weight: 64
 
 - Packit now correctly handles colons in git trailer values in source-git commits.
   ([packit#1478](https://github.com/packit/packit/pull/1478))
+
+## Week 7 (February 14th❤️ - February 18th)
+
+- Synchronization of default files can now be disabled using a new config
+  `files_to_sync`. Key `sync_files` is now deprecated.
+  ([packit#1483](https://github.com/packit/packit/pull/1483))
+  ([packit.dev#390](https://github.com/packit/packit.dev/pull/390))
+- `python3-setuptools_scm` is now available by default in the sandbox.
