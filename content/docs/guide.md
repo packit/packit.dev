@@ -68,9 +68,24 @@ If none of the above work for you, try running it in a container
 from our Fedora based image. It contains packit installed from `main` branch,
 i.e. the same you'd get by pip installing from Github.
 
-    $ podman run -ti --rm -v $PWD:/src --security-opt label=disable quay.io/packit/packit bash
+    $ podman run -ti --rm -v $PWD:/src:z quay.io/packit/packit bash
     $ packit
     Usage: packit [OPTIONS] COMMAND [ARGS]...
+
+Depending on the command you want to perform you need to mount secrets and
+configuration files, like in the following examples:
+
+#### packit copr-build
+
+    $ podman run -ti --rm -v ~/.config/copr:/root/.config/copr:z -v $PWD:/src:z quay.io/packit/packit bash
+    $ packit copr-build
+
+#### packit build
+
+    $ podman run -ti --rm -v ~/.ssh/:/root/.ssh:z -v $PWD:/src:z quay.io/packit/packit bash
+    $ fkinit -u <Fedora Account username>
+    $ packit build
+
 
 ## RPM builds pass on your laptop.
 
