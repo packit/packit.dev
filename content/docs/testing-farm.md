@@ -7,10 +7,8 @@ aliases: [/testing-farm]
 
 # Testing Farm
 
-Testing Farm is Packit's testing system.
-It is a containerized service for running tests.
-Test execution is configured via [Flexible Metadata Format][fmf],
-according to the [Metadata Specification][spec].
+[Testing Farm][tf] is Packit's testing system.
+Test execution is managed by [tmt][tmt] tool.
 
 ## Enable Testing
 
@@ -26,7 +24,8 @@ jobs:
 ```
 The test job by default requires Copr build to be built before running tests and then
 it is installed into the testing environment.
-To run tests that don't require Copr build to be built, test job needs to include `skip_build` (described below) option in the metadata:
+
+If you want to run tests without a Copr build, the test job needs to include `skip_build` (described below) option in the metadata:
 ```yaml
   jobs:
   - job: tests
@@ -83,13 +82,31 @@ in the pull request:
 
 ## Creating Tests
 
-The easiest way to get started is to use the [tmt][tmt] tool
+The easiest way to get started with defining tests is to use the [tmt][tmt] tool
 which will help you with the setup.
-Please follow [Fedora tmt page][fedora-tmt].
+Please follow [tmt's guide][tmt-guide] to get started.
+
+### Example test structure
+
+Once your project is initialized, this is how your structure can look like:
+```
+$ tmt
+Found 3 tests: /tests/full, /tests/smoke and /tests_recording.
+Found 4 plans: /plans/full, /plans/rpmlint, /plans/session-recording and /plans/smoke.
+Found 0 stories.
+
+$ ls -1 plans/
+full.fmf
+main.fmf
+rpmlint.fmf
+session-recording.fmf
+smoke.fmf
+```
 
 ## More Examples
 
-Get inspiration for a quick start from a couple of real-life examples!
+Get inspiration for a quick start from a couple of real-life examples! These
+samples live in `.fmf` files inside tests or plans directories.
 
 ### Using Filters
 
@@ -208,19 +225,25 @@ See the [stories](https://github.com/psss/fmf/tree/master/stories) directory to 
 Running linters on your code is easy to setup using Testing Farm and tmt.
 Linters are tools which you can install from the distribution and they usually
 just require a path to files which they check. Here is a plan which you can use
-to run `rpmlint` on your spec file:
+to run `rpmlint` on your spec file.
+
+We are checking our spec files with rpmlint in our project:
+* [ogr - plans/linters.fmf](https://github.com/packit/ogr/blob/main/plans/linters.fmf)
+* [Packit - plans/rpmlint.fmf](https://github.com/packit/packit/blob/main/plans/rpmlint.fmf)
 
 ```yaml
 summary:
   Execute rpmlint on the spec file
+discover:
+  how: shell
+  tests:
+  - name: rpmlint
+    test: rpmlint packit.spec
 prepare:
   - name: packages
     how: install
     package:
     - rpmlint
-execute:
-  script:
-  - rpmlint fedora/python-ogr.spec
 ```
 
 ## Testing Farm API
@@ -233,8 +256,10 @@ If you have found an issue or have an RFE, you can file an [issue in nucleus pro
 
 [fmf]: https://fmf.readthedocs.io/
 [tmt]: https://tmt.readthedocs.io/
+[tmt-guide]: https://tmt.readthedocs.io/en/latest/guide.html
 [fedora-tmt]: https://docs.fedoraproject.org/en-US/ci/tmt
 [spec]: https://tmt.readthedocs.io/en/latest/spec.html
 [systemd-tests]: https://github.com/systemd-rhel/tests
 [testing-farm-api]: https://testing-farm.gitlab.io/api
 [issues]: https://gitlab.com/testing-farm/general/-/issues
+[tf]: https://docs.testing-farm.io/general/0.1/index.html
