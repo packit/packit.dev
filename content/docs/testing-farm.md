@@ -113,10 +113,10 @@ samples live in `.fmf` files inside tests or plans directories.
 Use a custom `filter` in the discover step in order to choose relevant tests only:
 
 ```yaml
-    discover:
-        how: fmf
-        filter: "tier: 1"
-        repository: https://src.fedoraproject.org/tests/selinux
+discover:
+    how: fmf
+    filter: "tier: 1"
+    url: https://src.fedoraproject.org/tests/selinux
 ```
 
 ### Prepare Step
@@ -125,10 +125,10 @@ The `prepare` step can be used to define how test environment should be prepared
 Provide one or more paths to ansible playbooks:
 
 ```yaml
-    prepare:
-        how: ansible
-        playbooks:
-            - setup/packages.yml
+prepare:
+    how: ansible
+    playbook:
+        - setup/packages.yml
 ```
 
 ### Apache Test
@@ -136,16 +136,15 @@ Provide one or more paths to ansible playbooks:
 Here is an example of a simple integration test for the web server `httpd` and `curl` utility:
 
 ```yaml
-    /apache/smoke:
-        execute:
-            script:
-            - dnf -y install httpd curl
-            - systemctl start httpd
-            - echo foo > /var/www/html/index.html
-            - curl http://localhost/ | grep foo
+execute:
+    script:
+      - dnf -y install httpd curl
+      - systemctl start httpd
+      - echo foo > /var/www/html/index.html
+      - curl http://localhost/ | grep foo
 ```
 
-Plan `/apache/smoke` defines only the `execute` step.
+The plan above defines only the `execute` step.
 Individual shell commands are provided as a list.
 Testing will fail if any of the commands returns a non-zero exit status.
 
@@ -154,27 +153,26 @@ Testing will fail if any of the commands returns a non-zero exit status.
 Below you can find little bit more interesting example of a `systemd` test configuration:
 
 ```yaml
-    /systemd/smoke:
-        summary:
-            Basic set of quick smoke tests for systemd.
-        discover:
-            how: fmf
-            filter: "tier: 1 & distro: rhel-8"
-            repository: "https://github.com/systemd-rhel/tests"
-        prepare:
-            how: ansible
-            playbooks: [setup/packages.yml]
-        execute:
-            how: beakerlib
+summary:
+    Basic set of quick smoke tests for systemd.
+discover:
+    how: fmf
+    filter: "tier: 1 & distro: rhel-8"
+    url: "https://github.com/systemd-rhel/tests"
+prepare:
+    how: ansible
+    playbook: [setup/packages.yml]
+execute:
+    how: tmt
 ```
 
 This plan enables a set of Tier 1 tests from the shared [systemd tests][systemd-tests] repository.
 The meaning of individual attributes is as follows:
 
-- Summary — an optional but useful attribute describing high-level purpose of the plan.
-- Discover — instructs to fetch tests from given repository and select relevant ones by provided `filter`.
-- Prepare — specifies which ansible playbook should be applied to prepare environment for testing.
-- Execute — defines that the beakerlib framework should be used for running the tests.
+- summary — an optional but useful attribute describing high-level purpose of the plan.
+- discover — instructs to fetch tests from given repository and select relevant ones by provided `filter`.
+- prepare — specifies which ansible playbook should be applied to prepare environment for testing.
+- execute — defines that the `tmt` should be used for running the tests.
 
 ### FMF Tests
 
@@ -183,23 +181,22 @@ There are several plans defined under the [plans](https://github.com/psss/fmf/tr
 The `smoke` plan enables a super basic test checking availability of the `fmf` command:
 
 ```yaml
-    summary:
-    	Just a basic smoke test
-    execute:
-    	how: shell
-    	script: fmf --help
+summary:
+    Just a basic smoke test
+execute:
+    script: fmf --help
 ```
 
 Plan `features` is used to execute all available beakerlib tests from the `fmf` repository:
 
 ```yaml
-    summary:
-    	Essential command line features
-    discover:
-    	how: fmf
-    	repository: https://github.com/psss/fmf
-    execute:
-    	how: beakerlib
+summary:
+    Essential command line features
+discover:
+    how: fmf
+    url: https://github.com/psss/fmf
+execute:
+    how: tmt
 ```
 
 It is also possible to select only a subset of available tests.
@@ -208,14 +205,14 @@ Use an fmf `filter` like `tier:1` to select tests for execution.
 You can also reference a specific feature area instead:
 
 ```yaml
-    summary:
-    	Ensure that documentation is present
-    discover:
-    	how: fmf
-    	repository: https://github.com/psss/fmf
-    	filter: coverage:/stories/docs.*
-    execute:
-    	how: beakerlib
+summary:
+    Ensure that documentation is present
+discover:
+    how: fmf
+    url: https://github.com/psss/fmf
+    filter: coverage:/stories/docs.*
+execute:
+    how: tmt
 ```
 
 See the [stories](https://github.com/psss/fmf/tree/master/stories) directory to get some inspiration for organizing stories and requirements.
@@ -233,17 +230,19 @@ We are checking our spec files with rpmlint in our project:
 
 ```yaml
 summary:
-  Execute rpmlint on the spec file
+    Execute rpmlint on the spec file
 discover:
-  how: shell
-  tests:
-  - name: rpmlint
-    test: rpmlint packit.spec
+    how: shell
+    tests:
+      - name: rpmlint
+        test: rpmlint packit.spec
 prepare:
   - name: packages
     how: install
     package:
     - rpmlint
+execute:
+    how: tmt
 ```
 
 ## Testing Farm API
