@@ -25,3 +25,14 @@ weight: 64
   ([packit#1483](https://github.com/packit/packit/pull/1483))
   ([packit.dev#390](https://github.com/packit/packit.dev/pull/390))
 - `python3-setuptools_scm` is now available by default in the sandbox.
+
+## Week 8 (February 18th - February 28th)
+
+- Packit now allows specifying more test distros for one build target
+  to test on in Testing Farm in the configuration. The checks for the
+  test job will also contain the name of the actual test distro
+  (and not the build target as previously).
+- A new option, `srpm_build_deps`, in the packit configuration file  
+  can be used. Which is a list of RPM dependencies that are needed for
+  the actions to be run when building SRPM and is an indicator to build
+  the SRPMs in Copr.
