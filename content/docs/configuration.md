@@ -607,6 +607,18 @@ Optional metadata:
 * **scratch** -- defaults to `false`, use to create scratch (test) builds
   instead of the real production builds
 
+**Example**
+
+```yaml
+jobs:
+- job: koji_build
+  trigger: commit
+  metadata:
+    dist_git_branches:
+      - fedora-all
+      - epel-8
+```
+
 ## User configuration file
 
 When running packit as a tool locally, it is convenient to use a configuration
