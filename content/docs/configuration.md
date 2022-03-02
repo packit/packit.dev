@@ -498,7 +498,7 @@ fedora-32-armhfp
 ```
 
 * You can use aliases
-  * `fedora-stable` — supported versions of Fedora (e.g. Fedora 33 and 34)
+  * `fedora-stable` — supported versions of Fedora (e.g. Fedora 34 and 35)
   * `fedora-development` — development versions of Fedora, the branched version is used only when available (e.g. Fedora 35 +
     Rawhide)
   * `fedora-latest` — the last versioned Fedora (not a Rawhide), it's not relevant if it is released or still developed
@@ -564,10 +564,10 @@ jobs:
   trigger: release
   metadata:
     dist_git_branches:
-      - f32
+      - f35
 ```
 
-This config would update Fedora Rawhide and Fedora 32 dist-git branches.
+This config would update Fedora Rawhide and Fedora 35 dist-git branches.
 
 **tests**
 
