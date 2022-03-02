@@ -619,6 +619,52 @@ jobs:
       - epel-8
 ```
 
+**bodhi\_update** (preview)
+
+Create a new update in
+[Fedora Bodhi](bodhi.fedoraproject.org) for successful
+Koji build.
+A Packit config file needs to be in the dist-git repository
+to allow this job to be triggered.
+Packit loads the config from the commit the build is triggered from.
+
+For now, the Bodhi update is created only for builds submitted by the Packit FAS user.
+(See `koji_build` job for more details on how to set this up.)
+This is just for the early stage of this job and
+we can easily turn off that filter.
+Let us know if you need this condition to be removed.
+
+There is no UI provided by Packit for the job,
+but it is visible across Fedora systems
+like a manually created Bodhi update and you can utilise
+[Fedora Notifications](https://apps.fedoraproject.org/notifications/about)
+to tweak the notifications settings.
+
+Note that this job is really new and not mature yet -- let us know if you find anything problematic
+or any improvement we can implement.
+
+Supported triggers:
+
+* **commit** -- Packit uses the original action as a config trigger so you need to use `commit` as a trigger.
+  The real trigger is a successful Koji build (that was triggered from a commit).
+
+Required metadata:
+
+* **dist_git_branches** -- the name of the dist-git branch(es) the build we want to use is coming from.
+  Aliases like `fedora-all`, `fedora-stable` or `fedora-development` are supported.
+
+**Example**
+
+```yaml
+jobs:
+- job: bodhi_update
+  trigger: commit
+  metadata:
+    dist_git_branches:
+      - fedora-stable # rawhide updates are created automatically
+      - epel-8
+```
+
 ## User configuration file
 
 When running packit as a tool locally, it is convenient to use a configuration
