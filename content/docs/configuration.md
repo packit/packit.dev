@@ -511,6 +511,10 @@ fedora-32-armhfp
   By default, the `x86_64` architecture will be used, but you you can
   override the default e.g. `fedora-stable-aarch64`.
 
+**tests**
+
+See more about tests [here](http://packit.dev/testing-farm/).
+
 **production\_build**
 
 Create a SRPM and submit an RPM build
@@ -568,10 +572,6 @@ jobs:
 ```
 
 This config would update Fedora Rawhide and Fedora 35 dist-git branches.
-
-**tests**
-
-See more about tests [here](http://packit.dev/testing-farm/).
 
 **koji\_build**
 
