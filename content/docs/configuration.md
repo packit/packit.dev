@@ -511,8 +511,7 @@ fedora-32-armhfp
   By default, the `x86_64` architecture will be used, but you you can
   override the default e.g. `fedora-stable-aarch64`.
 
-
-**production\_build** (in preview, no reporting yet)
+**production\_build**
 
 Create a SRPM and submit an RPM build
 to [Fedora Koji](https://koji.fedoraproject.org/koji/) build system.
@@ -520,6 +519,9 @@ to [Fedora Koji](https://koji.fedoraproject.org/koji/) build system.
 At the moment it is not possible to run non-scratch production builds from upstream.
 For more info, please see [the following issue](https://pagure.io/releng/issue/9801).
 However, it is still possible to run scratch builds.
+
+For Koji builds from dist-git, see `koji_build`.
+(The naming is not ideal, but we don't want to change this because of the backwards compatibility.)
 
 Supported triggers:
 
@@ -570,6 +572,40 @@ This config would update Fedora Rawhide and Fedora 32 dist-git branches.
 **tests**
 
 See more about tests [here](http://packit.dev/testing-farm/).
+
+**koji\_build**
+
+Trigger the build in
+[Fedora Koji](https://koji.fedoraproject.org/koji/) build system
+as a reaction to a new dist-git commit.
+A Packit config file needs to be in the dist-git repository
+to allow this job to be triggered.
+Packit loads the config from the newly pushed commit.
+
+The build is triggered only for commits with a spec-file change.
+
+There is no UI provided by Packit for the job,
+but it is visible across Fedora systems (e.g. via dist-git commit status)
+like a manually created Koji build and you can utilise
+[Fedora Notifications](https://apps.fedoraproject.org/notifications/about)
+to get informed about the builds.
+
+For Koji builds from upstream, see `production_build`.
+(The naming is not ideal, but we don't want to change this because of the backwards compatibility.)
+
+Supported triggers:
+
+* **commit** -- reacts to new commits to the specified branch (in dist-git)
+
+Required metadata:
+
+* **dist_git_branches** -- the name of the dist-git branch we want to build for when using **commit** trigger.
+  Aliases like `fedora-all`, `fedora-stable` or `fedora-development` are supported.
+
+Optional metadata:
+
+* **scratch** -- defaults to `false`, use to create scratch (test) builds
+  instead of the real production builds
 
 ## User configuration file
 
