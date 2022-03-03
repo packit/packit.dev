@@ -19,6 +19,7 @@ Just be aware that we are now onboarding Fedora contributors who have
 a valid [Fedora Account System](https://fedoraproject.org/wiki/Account_System) account
 and have signed [FPCA](https://fedoraproject.org/wiki/Legal:Fedora_Project_Contributor_Agreement).
 So provide us enough information (your FAS account) in the issue.
+Until that, you will get a neutral status with `Namespace is not allowed!` message on your commits.
 
 ## Can I use packit service for any GitHub repository?
 
