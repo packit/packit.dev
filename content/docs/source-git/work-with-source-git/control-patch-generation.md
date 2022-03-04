@@ -41,7 +41,7 @@ unchanged.
 
 Example:
 
-```
+```yaml
 Patch-name: downstream.patch
 ```
 
@@ -56,13 +56,13 @@ The number of digits used for the IDs can be controlled with the
 
 The following Git-trailer
 
-```
+```yaml
 Patch-id: 100
 ```
 
 results in a following patch-tag in the spec-file:
 
-```
+```yaml
 Patch100: distribution.patch
 ```
 
@@ -75,13 +75,12 @@ downstream).
 If none is specified, the commit message of the distribution commit is going
 to be used, after all Git-trailers are stripped.
 
-To specify a pre-wrapped multiline string, use a YAML block scalar and prepend
-each line with `# `. This allows including empty lines, which otherwise would
-break Git-trailer parsing.
+To specify a pre-wrapped multiline string, use a YAML block scalar.
+To include empty lines, prepend each line with `# `.
 
 For example, the following Git-trailer:
 
-```
+```yaml
 Patch-status: |
     # This is a patch status.
     # Having multiple lines.
@@ -91,7 +90,7 @@ Patch-status: |
 
 Will be rendered as bellow in the spec-file:
 
-```
+```yaml
 # This is a patch status.
 # Having multiple lines.
 #
