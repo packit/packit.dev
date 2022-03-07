@@ -32,7 +32,7 @@ build log (e.g. builder-live.log.gz), you'll see a command at the top which
 Copr invokes to perform a build. Let's do that in a container.
 
 ```
-$ sudo podman run --privileged -ti fedora:36 bash
+$ podman run --privileged -ti fedora:36 bash
 ```
 
 (the reason for running root privileged container is that
