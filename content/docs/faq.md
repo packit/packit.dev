@@ -176,6 +176,12 @@ you need and us making them available for you.
 In the mean time we are solving these requests one by one, so [please reach out
 to us](#how-can-i-contact-you).
 
+As for the actions needed during SRPM builds, we are transitioning into a solution where SRPMs are built directly in Copr
+and  therefore for these actions, you can define your dependencies via [`srpm_build_deps`
+key](/docs/configuration/#srpm_build_deps) in the configuration file. 
+You can read more about this transition [here](/posts/copr-srpms).
+
+
 ## A command failed in packit-service: how do I reproduce it locally?
 
 Please read [this document on how to reproduce locally]({{< ref "reproduce-locally.md" >}}).

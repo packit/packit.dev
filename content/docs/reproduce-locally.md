@@ -27,6 +27,16 @@ When your SRPM is being built in Copr (because [`srpm_build_deps`]({{< ref
 "configuration.md#srpm_build_deps" >}}) is set in your packit config), this
 section describes how you can reproduce the build procedure locally.
 
+We invoke our CLI command `packit prepare-sources` in the Copr environment,
+the command may look like this for a job triggered by a pull request change:
+```
+$ packit prepare-sources --result-dir directory-to-place-sources --pr-id 150 
+--merge-pr --target-branch main --job-config-index 2 https://github.com/packit/packit
+```
+As a first step, you can run this command 
+locally on your computer (if you have installed the needed dependencies for your actions) 
+and see whether the sources are correctly prepared.
+
 Thankfully, Copr is very transparent how it performs builds. When you open a
 build log (e.g. builder-live.log.gz), you'll see a command at the top which
 Copr invokes to perform a build. Let's do that in a container.
