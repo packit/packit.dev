@@ -14,7 +14,7 @@ repos:
       - id: check-merge-conflict
       - id: detect-private-key
   - repo: https://github.com/packit/pre-commit-hooks
-    rev: b05e5e2196b725c98529c5c3861658ebcbf18783
+    rev: 3bf9afc5ede12a4ee26e9451f306edf255749396
     hooks:
       - id: check-rebase
         args:
