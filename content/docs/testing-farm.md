@@ -65,6 +65,27 @@ Optional metadata:
 * **skip_build** - Whether to skip the build phase and only run tests (defaults to false). 
   Enabling this will cause no Copr build to be built and installed into the testing environment, 
   only submitting request to Testing Farm (the selected components to be installed should be part of the TMT definitions).
+* **env** - A dictionary you can use to set any environment variable that will be available in the Testing Farm
+  environment where the tests are run.
+
+There are also environment variables set by Packit:
+* `PACKIT_FULL_REPO_NAME`
+* `PACKIT_UPSTREAM_NAME`
+* `PACKIT_UPSTREAM_URL`
+* `PACKIT_DOWNSTREAM_NAME`
+* `PACKIT_DOWNSTREAM_URL`
+* `PACKIT_PACKAGE_NAME`
+* `PACKIT_PACKAGE_NVR`
+* `PACKIT_BUILD_LOG_URL`
+* `PACKIT_SRPM_URL`
+* `PACKIT_COMMIT_SHA`
+
+And there are also pairs of variables for pull-request jobs:
+* `PACKIT_SOURCE_SHA` and `PACKIT_TARGET_SHA`
+* `PACKIT_SOURCE_BRANCH` and `PACKIT_TARGET_BRANCH`
+* `PACKIT_SOURCE_URL` and `PACKIT_TARGET_URL`
+
+Note that some of the variables do not need to be set if the value is unknown, irrelevant or not-configured.
 
 ## Restart Testing
 
