@@ -1,7 +1,6 @@
 ---
 title: FAQ
 date: 2019-07-24
-disableToc: false
 weight: 5
 aliases: [/faq]
 ---

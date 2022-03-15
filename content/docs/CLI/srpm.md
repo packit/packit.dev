@@ -1,7 +1,6 @@
 ---
 title: srpm
 date: 2019-06-28
-disableToc: false
 weight: 8
 ---
 

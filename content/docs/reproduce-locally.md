@@ -1,7 +1,6 @@
 ---
 title: Reproduce CI environment locally
 date: 2022-03-01
-disableToc: false
 weight: 10
 ---
 

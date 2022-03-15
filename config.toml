@@ -14,8 +14,8 @@ home = ["HTML", "JSON"]
 subtitle = "Upstream project ← → Downstream distribution"
 brand = "Packit"
 email = "hello@packit.dev"
-BookLogo = 'packit_logo.png'
-BookSection = '*'
+BookLogo = "packit_logo.png"
+BookSection = "*"
 
 [menu]
   [[menu.before]]

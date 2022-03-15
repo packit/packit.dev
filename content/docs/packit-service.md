@@ -1,7 +1,6 @@
 ---
 title: Packit Service
 date: 2019-06-22
-disableToc: false
 weight: 3
 aliases: [/packit-as-a-service, /docs/packit-as-a-service]
 ---
