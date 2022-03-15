@@ -1,7 +1,6 @@
 ---
-title: "Packit"
+title: Packit
 date: 2019-06-28
-disableToc: false
 ---
 
 # Packit

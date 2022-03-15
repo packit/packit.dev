@@ -1,6 +1,5 @@
 ---
-title: "Onboarding Guide"
-disableToc: false
+title: Onboarding Guide
 weight: 2
 ---
 

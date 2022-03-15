@@ -1,5 +1,5 @@
 ---
-title: "Update a spec file"
+title: Update a spec file
 date: 2021-01-25T23:59:59+01:00
 weight: 1
 ---

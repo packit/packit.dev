@@ -1,5 +1,5 @@
 ---
-title: "Source-git patch metadata"
+title: Source-git patch metadata
 weight: 2
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Development Documentation"
+title: Development Documentation
 weight: 4
 bookCollapseSection: true
 ---

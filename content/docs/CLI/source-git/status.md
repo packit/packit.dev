@@ -1,6 +1,6 @@
 ---
 title: status
-weight: 6
+weight: 2
 
 ---
 

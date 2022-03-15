@@ -1,5 +1,5 @@
 ---
-title: "copr-build"
+title: copr-build
 date: 2019-07-16
 weight: 35
 ---

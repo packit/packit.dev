@@ -1,5 +1,5 @@
 ---
-title: "Working with source-git"
+title: Working with source-git
 date: 2020-06-24T23:59:59+01:00
 weight: 3
 bookCollapseSection: true

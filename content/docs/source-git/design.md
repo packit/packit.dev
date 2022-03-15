@@ -1,5 +1,5 @@
 ---
-title: "Source-git design"
+title: Source-git design
 date: 2018-12-31T23:59:59+01:00
 weight: 4
 ---

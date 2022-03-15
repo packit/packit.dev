@@ -1,6 +1,5 @@
 ---
-title: "build"
-disableToc: false
+title: build
 weight: 3
 ---
 

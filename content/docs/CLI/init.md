@@ -1,6 +1,5 @@
 ---
-title: "init"
-disableToc: false
+title: init
 weight: 3
 ---
 

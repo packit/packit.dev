@@ -1,6 +1,6 @@
 ---
 title: update-dist-git
-weight: 5
+weight: 3
 
 ---
 

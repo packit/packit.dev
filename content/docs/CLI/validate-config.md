@@ -1,5 +1,5 @@
 ---
-title: "validate-config"
+title: validate-config
 date: 2021-03-18T08:48:36+01:00
 weight: 30
 ---

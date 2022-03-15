@@ -1,6 +1,5 @@
 ---
-title: "Generated code in upstream archives"
-disableToc: false
+title: Generated code in upstream archives
 weight: 10
 ---
 

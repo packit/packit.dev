@@ -1,6 +1,5 @@
 ---
-title: "Testing Farm"
-disableToc: false
+title: Testing Farm
 weight: 4
 aliases: [/testing-farm]
 ---

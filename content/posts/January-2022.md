@@ -1,5 +1,5 @@
 ---
-title: "January 2022"
+title: January 2022
 date: 2022-01-03
 weight: 66
 ---

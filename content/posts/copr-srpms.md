@@ -1,5 +1,5 @@
 ---
-title: "Building SRPMs in Copr"
+title: Building SRPMs in Copr
 date: 2022-03-07T12:57:40+01:00
 weight: 62
 ---

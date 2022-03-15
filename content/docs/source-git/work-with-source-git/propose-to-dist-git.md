@@ -1,5 +1,5 @@
 ---
-title: "Propose your source-git content to dist-git"
+title: Propose your source-git content to dist-git
 date: 2021-01-27T23:59:59+01:00
 weight: 5
 ---
