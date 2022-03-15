@@ -16,6 +16,7 @@ brand = "Packit"
 email = "hello@packit.dev"
 BookLogo = "packit_logo.png"
 BookSection = "*"
+BookTheme = "auto"
 
 [menu]
   [[menu.before]]
