@@ -1,5 +1,5 @@
 ---
-title: "About Packit"
+title: About Packit
 date: 2021-01-11
 disableToc: false
 weight: 1

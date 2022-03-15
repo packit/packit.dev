@@ -1,5 +1,5 @@
 ---
-title: "Packit CLI"
+title: Packit CLI
 date: 2019-07-09
 chapter: false
 weight: 8

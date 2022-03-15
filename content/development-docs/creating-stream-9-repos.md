@@ -1,5 +1,5 @@
 ---
-title: "Creating CentOS Stream 9 source-git repositories"
+title: Creating CentOS Stream 9 source-git repositories
 weight: 1
 ---
 

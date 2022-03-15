@@ -1,5 +1,5 @@
 ---
-title: "Configuration"
+title: Configuration
 disableToc: false
 weight: 7
 ---

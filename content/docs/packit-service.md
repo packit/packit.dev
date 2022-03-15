@@ -1,5 +1,5 @@
 ---
-title: "Packit Service"
+title: Packit Service
 date: 2019-06-22
 disableToc: false
 weight: 3

@@ -1,5 +1,5 @@
 ---
-title: "create-bodhi-update"
+title: create-bodhi-update
 date: 2019-06-28
 disableToc: false
 weight: 5

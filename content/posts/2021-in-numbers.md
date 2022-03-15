@@ -1,5 +1,5 @@
 ---
-title: "2021 in Numbers"
+title: 2021 in Numbers
 date: 2022-01-04
 weight: 67
 ---
