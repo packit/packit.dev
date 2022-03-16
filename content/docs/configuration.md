@@ -416,7 +416,7 @@ In this example, the job `some-job` would override `specfile_path` to
 
 #### Supported jobs
 
-**copr\_build**
+##### copr\_build
 
 Create a SRPM and submit an RPM build to [Fedora COPR](https://copr.fedorainfracloud.org/) build system.
 
@@ -474,7 +474,8 @@ With this configuration, you'll get builds in all stable fedora releases
 (excluding rawhide) and the CentOS stream.
 
 
-##### Available COPR build targets
+**Available COPR build targets**
+
 There are multiple places where you can get the latest list of available build targets:
 * Open your COPR project, then click "Settings" > "Build options" > "Chroots" -
 these are the same values packit accepts.
@@ -511,11 +512,11 @@ fedora-32-armhfp
   By default, the `x86_64` architecture will be used, but you you can
   override the default e.g. `fedora-stable-aarch64`.
 
-**tests**
+##### tests
 
 See more about tests [here](http://packit.dev/testing-farm/).
 
-**production\_build**
+##### production\_build
 
 Create a SRPM and submit an RPM build
 to [Fedora Koji](https://koji.fedoraproject.org/koji/) build system.
@@ -544,7 +545,7 @@ Optional metadata:
 * **scratch** -- defaults to `false`, use to create scratch (test) builds
   instead of the real production builds
 
-**propose_downstream**
+##### propose_downstream
 
 Land a new upstream release in Fedora. This job only makes sure the changes
 happen in Fedora dist-git - no builds. The global key `create_pr` controls
@@ -573,8 +574,7 @@ jobs:
 
 This config would update Fedora Rawhide and Fedora 35 dist-git branches.
 
-**koji\_build**
-
+##### koji_build
 Trigger the build in
 [Fedora Koji](https://koji.fedoraproject.org/koji/) build system
 as a reaction to a new dist-git commit.
@@ -619,7 +619,7 @@ jobs:
       - epel-8
 ```
 
-**bodhi\_update** (coming soon)
+##### bodhi\_update (coming soon)
 
 Create a new update in
 [Fedora Bodhi](bodhi.fedoraproject.org) for successful
