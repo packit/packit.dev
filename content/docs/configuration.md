@@ -498,7 +498,7 @@ fedora-32-armhfp
 ```
 
 * You can use aliases
-  * `fedora-stable` — supported versions of Fedora (e.g. Fedora 33 and 34)
+  * `fedora-stable` — supported versions of Fedora (e.g. Fedora 34 and 35)
   * `fedora-development` — development versions of Fedora, the branched version is used only when available (e.g. Fedora 35 +
     Rawhide)
   * `fedora-latest` — the last versioned Fedora (not a Rawhide), it's not relevant if it is released or still developed
@@ -511,8 +511,11 @@ fedora-32-armhfp
   By default, the `x86_64` architecture will be used, but you you can
   override the default e.g. `fedora-stable-aarch64`.
 
+**tests**
 
-**production\_build** (in preview, no reporting yet)
+See more about tests [here](http://packit.dev/testing-farm/).
+
+**production\_build**
 
 Create a SRPM and submit an RPM build
 to [Fedora Koji](https://koji.fedoraproject.org/koji/) build system.
@@ -520,6 +523,9 @@ to [Fedora Koji](https://koji.fedoraproject.org/koji/) build system.
 At the moment it is not possible to run non-scratch production builds from upstream.
 For more info, please see [the following issue](https://pagure.io/releng/issue/9801).
 However, it is still possible to run scratch builds.
+
+For Koji builds from dist-git, see `koji_build`.
+(The naming is not ideal, but we don't want to change this because of the backwards compatibility.)
 
 Supported triggers:
 
@@ -562,14 +568,102 @@ jobs:
   trigger: release
   metadata:
     dist_git_branches:
-      - f32
+      - f35
 ```
 
-This config would update Fedora Rawhide and Fedora 32 dist-git branches.
+This config would update Fedora Rawhide and Fedora 35 dist-git branches.
 
-**tests**
+**koji\_build**
 
-See more about tests [here](http://packit.dev/testing-farm/).
+Trigger the build in
+[Fedora Koji](https://koji.fedoraproject.org/koji/) build system
+as a reaction to a new dist-git commit.
+A Packit config file needs to be in the dist-git repository
+to allow this job to be triggered.
+Packit loads the config from the newly pushed commit.
+
+The build is triggered only for commits with a spec-file change.
+
+There is no UI provided by Packit for the job,
+but it is visible across Fedora systems (e.g. via dist-git commit status)
+like a manually created Koji build and you can utilise
+[Fedora Notifications](https://apps.fedoraproject.org/notifications/about)
+to get informed about the builds.
+
+For Koji builds from upstream, see `production_build`.
+(The naming is not ideal, but we don't want to change this because of the backwards compatibility.)
+
+Supported triggers:
+
+* **commit** -- reacts to new commits to the specified branch (in dist-git)
+
+Required metadata:
+
+* **dist_git_branches** -- the name of the dist-git branch we want to build for when using **commit** trigger.
+  Aliases like `fedora-all`, `fedora-stable` or `fedora-development` are supported.
+
+Optional metadata:
+
+* **scratch** -- defaults to `false`, use to create scratch (test) builds
+  instead of the real production builds
+
+**Example**
+
+```yaml
+jobs:
+- job: koji_build
+  trigger: commit
+  metadata:
+    dist_git_branches:
+      - fedora-all
+      - epel-8
+```
+
+**bodhi\_update** (coming soon)
+
+Create a new update in
+[Fedora Bodhi](bodhi.fedoraproject.org) for successful
+Koji build.
+A Packit config file needs to be in the dist-git repository
+to allow this job to be triggered.
+Packit loads the config from the commit the build is triggered from.
+
+For now, the Bodhi update is created only for builds submitted by the Packit FAS user.
+(See `koji_build` job for more details on how to set this up.)
+This is just for the early stage of this job and
+we can easily turn off that filter.
+Let us know if you need this condition to be removed.
+
+There is no UI provided by Packit for the job,
+but it is visible across Fedora systems
+like a manually created Bodhi update and you can utilise
+[Fedora Notifications](https://apps.fedoraproject.org/notifications/about)
+to tweak the notifications settings.
+
+Note that this job is really new and not mature yet -- let us know if you find anything problematic
+or any improvement we can implement.
+
+Supported triggers:
+
+* **commit** -- Packit uses the original action as a config trigger so you need to use `commit` as a trigger.
+  The real trigger is a successful Koji build (that was triggered from a commit).
+
+Required metadata:
+
+* **dist_git_branches** -- the name of the dist-git branch(es) the build we want to use is coming from.
+  Aliases like `fedora-all`, `fedora-stable` or `fedora-development` are supported.
+
+**Example**
+
+```yaml
+jobs:
+- job: bodhi_update
+  trigger: commit
+  metadata:
+    dist_git_branches:
+      - fedora-stable # rawhide updates are created automatically
+      - epel-8
+```
 
 ## User configuration file
 
