@@ -47,7 +47,7 @@ and create [Bodhi](https://bodhi.fedoraproject.org) updates! [Learn more.](/docs
 
 ### How does Packit look like in action?
 
-![Packit workflow](/images/build_test_workflow.jpg)
+{{< workflow >}}
 
 ### Why start using Packit?
 
