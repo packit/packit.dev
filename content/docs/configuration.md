@@ -278,9 +278,15 @@ notifications:
 You can enable the commenting by setting `successful_build` to `true`.
 
 #### copy_upstream_release_description
+
 (*bool*) When doing a new update in Fedora dist-git, the Github upstream release description
 is copied to the specfile changelog when set to `true`. By default (`false`),
 commit message titles (first line of a commit message) are copied.
+But be aware that the release description is copied as is, without any processing
+and the result needs to fulfill the spec-file syntax.
+Be specially careful when using characters like `%` that can be interpreted as macros.
+Also, use `-` for bullet points instead of `*` so the line is not interpreted as a new changelog entry.
+
 e.g.
 - `copy_upstream_release_description = True`:
 ```
