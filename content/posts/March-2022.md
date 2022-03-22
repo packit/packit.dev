@@ -59,7 +59,7 @@ weight: 63
 ## Week 11 (March 15th - March 21st)
 
 - When using Packit CLI for creating Bodhi updates,
-  you can now set fas_username and fas_password in your Packit user config
+  you can now set `fas_username` and `fas_password` in your Packit user config
   to not be asked about that when the command is executed.
   Also, this allows Packit GitHub application to use this as well
   so you can look forward to Bodhi updates created by Packit
