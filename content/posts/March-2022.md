@@ -55,3 +55,10 @@ weight: 63
 - Packit no longer provides a misleading comment when it fails to update a set of
   targets on its own Copr projects.
   ([packit-service#1397](https://github.com/packit/packit-service/pull/1397))
+
+## Week 11 (March 15th - March 21st)
+
+- When using Packit CLI for creating Bodhi updates,
+  you can now set fas_username and fas_password in your Packit user config
+  to not be asked about that when the command is executed.
+  ([packit#1517](https://github.com/packit/packit/pull/1517))
