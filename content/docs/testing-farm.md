@@ -244,6 +244,8 @@ Linters are tools which you can install from the distribution and they usually
 just require a path to files which they check. Here is a plan which you can use
 to run `rpmlint` on your spec file.
 
+#### rpmlint
+
 We are checking our spec files with rpmlint in our project:
 * [ogr - plans/linters.fmf](https://github.com/packit/ogr/blob/main/plans/linters.fmf)
 * [Packit - plans/rpmlint.fmf](https://github.com/packit/packit/blob/main/plans/rpmlint.fmf)
@@ -261,6 +263,34 @@ prepare:
     how: install
     package:
     - rpmlint
+execute:
+    how: tmt
+```
+
+#### rpminspect
+
+[`rpminspect`](https://github.com/rpminspect/rpminspect) can analyze your SRPMs
+and give you information related to licensing, metadata, manpages, desktop app
+metadata, file ownership & permissions and much much more.
+
+Here's a tmt plan you can use to have rpminspect invoked on SRPMs produced by Packit:
+
+```yaml
+summary:
+    Fetch SRPM and check it with rpminspect
+discover:
+    how: shell
+    tests:
+      - name: rpminspect
+        test: rpminspect-fedora /tmp/*.src.rpm
+prepare:
+  - name: packages
+    how: install
+    package:
+    - rpminspect
+    - rpminspect-data-fedora
+  - how: shell
+    script: cd /tmp && curl -O ${PACKIT_SRPM_URL}
 execute:
     how: tmt
 ```
