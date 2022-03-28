@@ -65,3 +65,24 @@ weight: 63
   so you can look forward to Bodhi updates created by Packit
   (will be announced and described in a dedicated post).
   ([packit#1517](https://github.com/packit/packit/pull/1517))
+
+## Week 12 (March 22nd - March 28th)
+
+- We have updated contact information to `Packit <hello@packit.dev>`.
+  ([packit-service#1410](https://github.com/packit/packit-service/pull/1410))
+- Interactions with Bodhi should be now more reliable when creating Bodhi updates.
+  ([packit#1528](https://github.com/packit/packit/pull/1528))
+- Packit will no longer error out when trying to create a new Copr repository
+  when it is already present.
+  ([packit#1527](https://github.com/packit/packit/pull/1527))
+- There is a new `packit_instances` key that you can use to specify the Packit
+  instances you want to use for working on your jobs. Nothing will change for our
+  production users, but users of our stage instance need to use this key to
+  preserve the support of the stage instance -- they can set both stg and prod in
+  the `packit_instances` list to use both, or use just one. Just be careful with
+  the downstream jobs where both instances work with the same services.
+  This new option works like other Packit options so you can set it on the top
+  level and/or (re)define it on the job level.
+  More information about our staging instance can be found here:
+  [packit#1530](https://github.com/packit/packit/discussions/1530).
+  ([packit#1417](https://github.com/packit/packit-service/pull/1417))
