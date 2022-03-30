@@ -280,9 +280,9 @@ You can enable the commenting by setting `successful_build` to `true`.
 #### issue_repository
 
 Use this key to be notified about errors of the downstream jobs (Koji build and Bodhi update).
-This repository can be any GitHub/GitLab/Pagure repository
-where issues are enabled and Packit has an identity on that instance.
-(Let us know if you need some other instance to be supported.)
+The value can be a URL of any GitHub/GitLab/Pagure project
+where issues are enabled and Packit has an identity on that git forger instance.
+(Let us know if you need another instance to be supported.)
 By default, no issue will be created and if the issue already exists,
 a new comment will be added.
 
