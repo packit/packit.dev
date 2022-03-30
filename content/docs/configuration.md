@@ -346,7 +346,7 @@ Just be aware that:
   both instances will work with the production instances of Fedora systems.
 
 Please, let us know when something looks weird or does not work with the staging app.
-By doing that, you are helping us be sure that we don't break your use-case.
+By doing that, you are helping us to be sure that we don't break your use-case.
 
 ## Packit-as-a-Service
 
