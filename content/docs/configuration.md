@@ -320,14 +320,6 @@ instead of the location defined in the spec-file.
 For now, this key is used in Packit Service as an indicator to build your SRPMs in Copr and 
 the dependencies are then installed into the Copr build environment each time the build is triggered.
 Be aware that this is a preparation phase and we want to build all the packages in Copr by default.
-### Minimal sample config
-
-This is a sample config which is meant for [packit](https://github.com/packit/packit) itself.
-
-```yaml
-# packit is named packitos on PyPI b/c packit name was already taken
-upstream_package_name: packitos
-```
 
 ## Packit-as-a-Service
 
