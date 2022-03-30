@@ -277,6 +277,15 @@ notifications:
 
 You can enable the commenting by setting `successful_build` to `true`.
 
+#### issue_repository
+
+Use this key to be notified about errors of the downstream jobs (Koji build and Bodhi update).
+This repository can be any GitHub/GitLab/Pagure repository
+where issues are enabled and Packit has an identity on that instance.
+(Let us know if you need some other instance to be supported.)
+By default, no issue will be created and if the issue already exists,
+a new comment will be added.
+
 #### copy_upstream_release_description
 
 (*bool*) When doing a new update in Fedora dist-git, the Github upstream release description
