@@ -321,6 +321,24 @@ For now, this key is used in Packit Service as an indicator to build your SRPMs 
 the dependencies are then installed into the Copr build environment each time the build is triggered.
 Be aware that this is a preparation phase and we want to build all the packages in Copr by default.
 
+#### packit_instances
+(*list of strings*) If you want to help us with catching issues or need some feature sooner than other users,
+you can use our staging instance that has the freshest code we have.
+For that, you can specify the instance(s) that will react to your jobs by using this configuration option.
+It uses `["prod"]` as the default, but you can set both (`["prod", "stg"]`) or just stage (`["stg"]`).
+You can also have a different setup for each job -- see [how the overriding works](#overriding-global-parameters)
+in the config file.
+
+Just be aware that:
+* You still need to install [the staging GitHub application](https://github.com/apps/packit-as-a-service-stg).
+* Staging application has fewer resources and can be a bit slower in responses.
+* If you use both instances, you will have twice the number of commit statuses.
+* Picking just one instance might be better for downstream jobs since
+  both instances will work with the production instances of Fedora systems.
+
+Please, let us know when something looks weird or does not work with the staging app.
+By doing that, you are helping us be sure that we don't break your use-case.
+
 ## Packit-as-a-Service
 
 Packit service doesn't have any web interface to configure it,
