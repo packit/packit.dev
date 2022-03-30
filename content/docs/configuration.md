@@ -277,6 +277,15 @@ notifications:
 
 You can enable the commenting by setting `successful_build` to `true`.
 
+#### issue_repository
+
+Use this key to be notified about errors of the downstream jobs (Koji build and Bodhi update).
+The value can be a URL of any GitHub/GitLab/Pagure project
+where issues are enabled and Packit has an identity on that git forger instance.
+(Let us know if you need another instance to be supported.)
+By default, no issue will be created and if the issue already exists,
+a new comment will be added.
+
 #### copy_upstream_release_description
 
 (*bool*) When doing a new update in Fedora dist-git, the Github upstream release description
@@ -320,14 +329,24 @@ instead of the location defined in the spec-file.
 For now, this key is used in Packit Service as an indicator to build your SRPMs in Copr and 
 the dependencies are then installed into the Copr build environment each time the build is triggered.
 Be aware that this is a preparation phase and we want to build all the packages in Copr by default.
-### Minimal sample config
 
-This is a sample config which is meant for [packit](https://github.com/packit/packit) itself.
+#### packit_instances
+(*list of strings*) If you want to help us with catching issues or need some feature sooner than other users,
+you can use our staging instance that has the freshest code we have.
+For that, you can specify the instance(s) that will react to your jobs by using this configuration option.
+It uses `["prod"]` as the default, but you can set both (`["prod", "stg"]`) or just stage (`["stg"]`).
+You can also have a different setup for each job -- see [how the overriding works](#overriding-global-parameters)
+in the config file.
 
-```yaml
-# packit is named packitos on PyPI b/c packit name was already taken
-upstream_package_name: packitos
-```
+Just be aware that:
+* You still need to install [the staging GitHub application](https://github.com/apps/packit-as-a-service-stg).
+* Staging application has fewer resources and can be a bit slower in responses.
+* If you use both instances, you will have twice the number of commit statuses.
+* Picking just one instance might be better for downstream jobs since
+  both instances will work with the production instances of Fedora systems.
+
+Please, let us know when something looks weird or does not work with the staging app.
+By doing that, you are helping us to be sure that we don't break your use-case.
 
 ## Packit-as-a-Service
 
