@@ -523,16 +523,27 @@ fedora-32-armhfp
 ...
 ```
 
-* You can use aliases
-  * `fedora-stable` — supported versions of Fedora (e.g. Fedora 34 and 35)
-  * `fedora-development` — development versions of Fedora, the branched version is used only when available (e.g. Fedora 35 +
-    Rawhide)
-  * `fedora-latest` — the last versioned Fedora (not a Rawhide), it's not relevant if it is released or still developed
-  * `fedora-all` — `fedora-stable` + `fedora-development`
-  * `epel-all` — all available versions of epel (currently `el-6`, `epel-7` and `epel-8`)
+* It's also possible to use aliases, to reference a subset of the active
+  Fedora Linux releases:
+  * `fedora-all` - all active releases, which includes released and branched
+    versions and Rawhide (e.g. `fedora-34`, `fedora-35`, `fedora-36`,
+    `fedora-rawhide`).
+  * `fedora-stable` — the current (two or three) released and supported
+    versions (e.g. `fedora-34`, `fedora-35`).
+  * `fedora-development` — development versions of Fedora; the branched
+    version is used only when available (e.g. `fedora-36`, `fedora-rawhide`)
+  * `fedora-latest` — the last versioned Fedora (not a Rawhide), regardless if
+    it's released or still under development.
+  * `fedora-latest-stable` — the latest released Fedora version (e.g.
+    `fedora-35`).
+  * `fedora-branched` — all branched releases, that is: everything, except
+    Rawhide (e.g. `fedora-34`, `fedora-35`, `fedora-36`).
+* `epel-all` is an alias for the current active EPEL versions (e.g. `epel-7`,
+  `epel-8`, `epel-9`)
 
-  The information about releases is get from Bodhi and because of the cache and
-  required availability on Copr, it might take a while to get the newest state.
+  The information about releases is retrieved from Bodhi and because of the
+  cache and required availability on Copr, it might take a while to get the
+  newest state.
 
   By default, the `x86_64` architecture will be used, but you you can
   override the default e.g. `fedora-stable-aarch64`.
