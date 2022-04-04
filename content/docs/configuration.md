@@ -438,6 +438,33 @@ jobs:
 In this example, the job `some-job` would override `specfile_path` to
 `somewhere/else/package.spec` instead of using `./package.spec`.
 
+#### Aliases
+
+To not need to change the config file when the new system version is released,
+Packit provides multiple aliases to reference a subset of the active
+Fedora Linux releases:
+* `fedora-all` - all active releases, which includes released and branched
+  versions and Rawhide (e.g. `fedora-34`, `fedora-35`, `fedora-36`,
+  `fedora-rawhide`).
+* `fedora-stable` — the current (two or three) released and supported
+  versions (e.g. `fedora-34`, `fedora-35`).
+* `fedora-development` — development versions of Fedora; the branched
+  version is used only when available (e.g. `fedora-36`, `fedora-rawhide`)
+* `fedora-latest` — the last versioned Fedora (not a Rawhide), regardless if
+  it's released or still under development.
+* `fedora-latest-stable` — the latest released Fedora version (e.g.
+  `fedora-35`).
+* `fedora-branched` — all branched releases, that is: everything, except
+Rawhide (e.g. `fedora-34`, `fedora-35`, `fedora-36`).
+
+There is also an alias for EPEL
+([Extra Packages for Enterprise Linux](https://docs.fedoraproject.org/en-US/epel/)):
+* `epel-all` is an alias for the current active EPEL versions (e.g. `epel-7`,
+  `epel-8`, `epel-9`)
+
+The information about releases is retrieved from Bodhi and because of the
+cache and required availability on Copr, it might take a while to get the
+newest state.
 
 #### Supported jobs
 
@@ -523,27 +550,8 @@ fedora-32-armhfp
 ...
 ```
 
-* It's also possible to use aliases, to reference a subset of the active
-  Fedora Linux releases:
-  * `fedora-all` - all active releases, which includes released and branched
-    versions and Rawhide (e.g. `fedora-34`, `fedora-35`, `fedora-36`,
-    `fedora-rawhide`).
-  * `fedora-stable` — the current (two or three) released and supported
-    versions (e.g. `fedora-34`, `fedora-35`).
-  * `fedora-development` — development versions of Fedora; the branched
-    version is used only when available (e.g. `fedora-36`, `fedora-rawhide`)
-  * `fedora-latest` — the last versioned Fedora (not a Rawhide), regardless if
-    it's released or still under development.
-  * `fedora-latest-stable` — the latest released Fedora version (e.g.
-    `fedora-35`).
-  * `fedora-branched` — all branched releases, that is: everything, except
-    Rawhide (e.g. `fedora-34`, `fedora-35`, `fedora-36`).
-* `epel-all` is an alias for the current active EPEL versions (e.g. `epel-7`,
-  `epel-8`, `epel-9`)
-
-  The information about releases is retrieved from Bodhi and because of the
-  cache and required availability on Copr, it might take a while to get the
-  newest state.
+* You can also use the [aliases provided by Packit](#aliases)
+  to not need to change the config file when the new system version is released.
 
   By default, the `x86_64` architecture will be used, but you you can
   override the default e.g. `fedora-stable-aarch64`.
@@ -572,7 +580,9 @@ Supported triggers:
 
 Required metadata:
 
-* **branch** -- the name of the branch we want to build for when using **commit** trigger
+* **branch** -- the name of the branch we want to build for when using **commit** trigger.
+  You can also use the [aliases provided by Packit](#aliases)
+  to not need to change the config file when the new system version is released.
 
 Optional metadata:
 
@@ -592,7 +602,7 @@ Supported triggers: **release**.
 Optional metadata:
 
 * **dist_git_branches** - a (list of) branch(es) in dist-git where packit should work (defaults to `main`).
-  You can also use `fedora-development`, `fedora-stable` and `fedora-all` aliases
+  You can also use the [aliases provided by Packit](#aliases)
   to not need to change the config file when the new system version is released.
 
 **Example**
@@ -636,7 +646,8 @@ Supported triggers:
 Required metadata:
 
 * **dist_git_branches** -- the name of the dist-git branch we want to build for when using **commit** trigger.
-  Aliases like `fedora-all`, `fedora-stable` or `fedora-development` are supported.
+  You can also use the [aliases provided by Packit](#aliases)
+  to not need to change the config file when the new system version is released.
 
 Optional metadata:
 
@@ -687,7 +698,8 @@ Supported triggers:
 Required metadata:
 
 * **dist_git_branches** -- the name of the dist-git branch(es) the build we want to use is coming from.
-  Aliases like `fedora-all`, `fedora-stable` or `fedora-development` are supported.
+  You can also use the [aliases provided by Packit](#aliases)
+  to not need to change the config file when the new system version is released.
 
 **Example**
 
