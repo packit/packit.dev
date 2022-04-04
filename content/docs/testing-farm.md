@@ -39,8 +39,11 @@ Required metadata:
 * **targets** - Specify which "builds" you want to test.
 [As with copr_build job](/docs/configuration#available-copr-build-targets) you can use
 specific targets such as `fedora-34-x86_64`. Or just the distro part,
-like `centos-stream-8`, in which case the architecture is `x86_64`. Or an alias,
-like `fedora-development`, `fedora-stable`, `fedora-all` or `epel-all`.
+like `centos-stream-8`, in which case the architecture is `x86_64`.
+
+You can also use the [aliases provided by Packit](/docs/configuration#aliases)
+to not need to change the config file when the new system version is released.
+
 Each target is then mapped to a [(tmt) distro](https://tmt.readthedocs.io/en/latest/spec/context.html#dimension)
 and to a [Testing farm's compose](https://api.dev.testing-farm.io/v0.1/composes)
 when submitting a test. You can override the default (target to distro) mapping by
