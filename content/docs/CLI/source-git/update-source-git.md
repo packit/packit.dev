@@ -19,7 +19,7 @@ packaging work is going to happen there.
 
     $ packit source-git update-source-git --help
     Usage: packit source-git update-source-git [OPTIONS] DIST_GIT SOURCE_GIT
-                                                   REVISION_RANGE
+                                               [REVISION_RANGE]
 
       Update a source-git repository based on a dist-git repository.
 
@@ -29,7 +29,8 @@ packaging work is going to happen there.
       Revision range represents part of dist-git history which is supposed to be
       synchronized. Use `HEAD~..` if you want to synchronize the last commit from
       dist-git. For more information on possible revision range formats, see
-      gitrevisions(7).
+      gitrevisions(7). If the revision range is not specified, dist-git commits
+      with no counterpart in source-git will be synchronized.
 
       If patches or the sources file in the spec file changed, the command exits
       with return code 2. Such changes are not supported by this command, code
@@ -52,14 +53,16 @@ packaging work is going to happen there.
 
       Examples
 
-      Take the last commit (HEAD) of systemd dist-git repo and copy the spec file
-      and other packaging files into the source-git repo:
+      Take the extra (not synchronized) commit(s) of systemd dist-git repo and
+      copy the spec file and other packaging files into the source-git repo:
 
-          $ packit source-git update-source-git rpms/systemd src/systemd HEAD~..
+          $ packit source-git update-source-git rpms/systemd src/systemd
 
       Synchronize changes from the last three dist-git commits:
 
           $ packit source-git update-source-git rpms/systemd src/systemd HEAD~3..
 
     Options:
-      -h, --help  Show this message and exit.
+      -f, --force  Don't check the synchronization status of the source-git and
+                   dist-git repos prior to performing the update.
+      -h, --help   Show this message and exit.
