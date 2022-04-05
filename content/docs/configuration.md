@@ -565,15 +565,16 @@ See more about tests [here](/testing-farm/).
 
 ##### production\_build
 
-Create a SRPM and submit an RPM build
+Create a SRPM from upstream and submit a scratch RPM build
 to [Fedora Koji](https://koji.fedoraproject.org/koji/) build system.
 
-At the moment it is not possible to run non-scratch production builds from upstream.
+At the moment it is not possible to run non-scratch Koji builds from upstream.
 For more info, please see [the following issue](https://pagure.io/releng/issue/9801).
-However, it is still possible to run scratch builds.
 
-For Koji builds from dist-git, see `koji_build`.
-(The naming is not ideal, but we don't want to change this because of the backwards compatibility.)
+If you want to do official Koji builds, the sources need to be present in
+dist-git: job [`koji_build`]({{< ref "#koji_build" >}}) can take care of that.
+(The naming is not ideal, but we don't want to change this because of the
+backwards compatibility.)
 
 Supported triggers:
 
@@ -591,8 +592,6 @@ Optional metadata:
 
 * **targets** -- a (list of) targets we want to build for,
   list of supported targets can be listed using with `koji list-targets`
-* **scratch** -- defaults to `false`, use to create scratch (test) builds
-  instead of the real production builds
 
 ##### propose_downstream
 
