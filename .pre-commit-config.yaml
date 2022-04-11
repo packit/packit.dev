@@ -4,12 +4,12 @@
 
 repos:
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v2.5.1
+    rev: v2.6.2
     hooks:
       - id: prettier
         exclude: archetypes|docs|data|layouts|resources|static|themes/
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.1.0
+    rev: v4.2.0
     hooks:
       - id: check-merge-conflict
       - id: detect-private-key
