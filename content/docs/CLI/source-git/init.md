@@ -14,8 +14,9 @@ repos. Here's a quick rundown what packit does:
  * Apply downstream patches as commits.
  * Add source-git configuration to control future syncing to dist-git.
 
-We have [a guide]({{< ref "/source-git/how-to-source-git.md" >}}) on how
-to create source-git repos manually if you want to understand the steps performed.
+We have [a guide]({{< ref
+"/source-git/work-with-source-git/create-source-git.md" >}}) on how to create
+source-git repos manually if you want to understand the steps performed.
 
 ## Prerequisites
 

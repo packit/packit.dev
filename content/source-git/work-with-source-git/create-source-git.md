@@ -1,7 +1,7 @@
 ---
-title: Create source-git repo
+title: Create a source-git repo
 date: 2020-02-20
-weight: 2
+weight: 5
 ---
 
 # How to create a source-git repository?

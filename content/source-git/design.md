@@ -6,284 +6,184 @@ weight: 1
 
 # Source-git design
 
-## Source git is the place where the manual work is done
-
 This document serves as a detailed description of source-git. Please bear in
-mind that some things are a subject to change — the overall design is pretty
-solid, but details may be tinkered over time.
+mind that some things are a subject to change. Paragraphs marked with "‼️💣️" are
+known to require further work to be better defined.
 
-**Authors**: Stef Walter, Tomas Tomecek
+**Authors**: Stef Walter, Tomas Tomecek  
+**Updates by:** Hunor Csomortáni
 
+## What is source-git?
 
-## TL;DR
+Source-git is a repository format and the related processes, tooling and bots,
+that are intended to enable using forks of the upstream projects to maintain,
+update and build packages in a distribution. By "distribution" we mean
+distributions in the RHEL ecosystem (Fedora Linux, CentOS Stream and RHEL), but
+the tools and processes probably could be applied to any RPM based distribution.
 
-Content of source-git repository is equivalent to dist-git, but uses upstream
-format: source files instead of tarballs, git commits instead of patches.
+## Motivation
 
-You can host this repository, or the specific git branch, anywhere you want. If
-you open a pull request, you will receive feedback on the changes:
+Traditionally dist-git is the format used to maintain, develop and release
+software in these distributions. In dist-git the source archive of an upstream
+release is stored in the lookaside cache, while downstream (distribution
+specific) changes are checked-in as patch files in Git. This layout resembles
+SRPMs, and so it's easily consumed by build systems, but it makes it somewhat
+difficult for humans to make sense of the content. Additionally, transforming
+upstream content (which most of the time originates from a Git repo) to dist-git
+has become a tedious activity, with a plethora of tooling available to do very
+similar things.
 
-* Does the package build with the changes?
-* Do all the package tests pass?
-* How about tests of the dependant packages?
-* Are the changes good to be included in Fedora?
+The dist-git format also has the side effect of making the adoption of modern
+Git-workflows somewhat more difficult (reviewing changes in patch-files requires
+a higher cognitive effort) and raising the bar for new contributors, who know
+how to contribute using Git, but need to learn about dist-git before touching
+any package.
 
-The goal of packit is to provide automation and tooling to interact with
-source-git repositories so you don't have to touch dist-git ever again. Our
-plan is to center development experience around upstream repositories and
-source-git.
-
-Upstream repositories and source-git repositories are pretty much the same
-thing. Creating source-git only makes sense when the upstream does not accept
-downstream spec file or adding spec file to such a project doesn't make sense.
-
-## Full description
-
-Source git becomes the place for creative and interesting work, including
-aspects of packaging requiring human effort. We allow dist-git to become an
-auto-maintained location, used for tracking the current state of
-Fedora, rather than the place where any actual development happens.
-
-Because source git is the location for creative work, we can use modern
-tooling, GitHub, GitLab, Pagure, pull requests, code review, continuous
-integration and other modern development workflows.
-
-In many cases source git can be the upstream project git itself (mostly with
-projects where downstream maintainer is also the upstream maintainer). In other
-cases source git can be a fork of upstream git (such as with the Linux kernel).
-
-We take cues from projects that already do this. We use the distributed nature
-of git repositories to overcome obstacles where certain parts of a package
-(patches, spec, tests) can not (due to embargoes/secrets) or will not (due the
-upstream project) be included in the upstream source git.
-
-Bots are perfect candidates to perform the mundane tasks of auto-maintaining
-dist-git. Whenever a bot gets stuck, it can always ask maintainer for help (or
-the maintainer can perform the action for the bot).
-
+With source-git the goal is to:
+- Enable using these well-known Git-workflows in packaging activities.
+- Automate and standardize the tedious task of converting from one repository
+  format to the other.
+  
+If you think about it, "source-git" is really just good old plain "Git", used as
+it meant to be used by Linus.
 
 ## Premises
-One of the fundamentally useless manual activities when a maintaining a package
-in Fedora is moving code from one git repository format to another. 
-a) git is distributed b) dist-git content is mostly boilerplate or regurgitated data.
+
+One of the fundamentally useless manual activities when maintaining a package
+in Fedora is transforming source code from one Git repository format to another.
+Git is distributed. Dist-git content is mostly boilerplate or regurgitated data.
+
+Using an upstream format during packaging makes collaboration easier, and lowers
+the entry barrier for new contributors by enabling a development workflow which
+they are already familiar with.
 
 Linux distributions gain an advantage from having patches incorporated upstream
 and not carrying them downstream.
 
-Human effort should not be focused on repetitive automatible tasks related to
+Human effort should not be focused on repetitive, automatable tasks related to
 churn and moving code around.
 
-Dist-git is used as a store of state for build tools (like koji). Reinventing
-dist-git itself fundamentally, means reinventing a lot of tooling.
+Dist-git is used as a store of state for build tools (like Koji). Reinventing
+dist-git itself fundamentally, would mean reinventing a lot of tooling.
 
+## An addon to dist-git
 
-## Principles
-Dist-git tracks the inputs for and source state of a package build in Fedora.
-It is not a place for development. It is the place where integration happens.
+We recognize, that an extensive ecosystem of tooling and services was developed
+to work with dist-git. Because of this, replacing dist-git with source-git is
+not feasible.
 
-A Dist-git branch may diverge from the stable state of a Fedora release. The
-stable state is represented by which builds were tagged into the stable
-compose, not by what is in dist-git.
+This is why we think about source-git as *an addon to dist-git*.
 
-Aim to do Fedora development of a package in source git. Either directly in
-upstream or in downstream git forks and branches of the upstream (see the
-kernel for longest running example of this).
+Content of source-git repository is equivalent to dist-git, but uses upstream
+format: source files instead of tarballs, Git commits instead of patches.
 
-Any repetitive task, whether repetitive for a single package, or repetitive
-across packages should be owned by bots auto-maintaining dist-git. Any creative
-non-automatable human task should be done in source git.
+Bots are responsible to transform and maintain content in dist-git, so that
+humans can do all the work in source-git. If bots fail, humans can still step in
+and do the work. Bots and humans use the same tools to do the transformation.
 
-We are starting this project open source from the beginning.
+All tooling already in place that interacts with dist-git continues to interact
+with dist-git. Bots are responsible to bring CI results from dist-git to
+source-git for convenience.
 
+This means that using source-git to maintain a package adds an overhead compared
+to directly working in dist-git. Though on the positive side, enables packagers
+and contributors to use a Git workflow they are already familiar with from
+upstream projects.
 
-## Acceptance Criteria
-In the ideal path, dist-git should be completely automatically “maintained”
-(already done to varying extents in the kernel, systemd, cockpit, ostree, conu,
-colin and other packages).
+Source-git might not be a solution for many packages at the early stages, and
+might not be a solution at all for some packages. This is why, *source-git is
+opt-in*, and can be opted out at any point in time if so decided.
 
-It must be trivially possible to opt in and out of auto-maintenance for a given
-dist-git branch.
+## Repository location
 
-It should continue to be possible for a human to fix up a dist-git branch, in
-cases where a task was done incorrectly by a bot. Bots may overwrite such
-fixups.
+Source-git repositories are hosted and shared in a Git forge chosen by the
+distribution. This helps the community developing the distribution to be in
+control of these repositories.
 
-Each auto-maintained dist-git branch tracks a branch in a source git
-repository. The source git branch should share a common git history with the
-upstream project branches if maintainer desires such functionality.
+Teams of developers maintaining packages in multiple distributions can choose to
+have a single repository at a location of their choice, have dedicated branches
+for each distribution, and sync these branches to the source-git repositories of
+each distribution. 
 
-Each time the HEAD of the git source branch changes, a process is started to
-update dist-git to reflect those changes. This process may also be triggered
-manually via a tool. If the dist-git is not in an expected state (last commit
-is not from the bot), the bot should report such divergence.
+## Layout
 
-Only the most recent signed commit is a candidate for pulling into dist-git.
+A source-git repository is based on a fork of the upstream project.
 
-Source code and patches are pulled from source git branch:
+The files required to create the package for the distribution are stored in the
+`.distro` directory.
 
-* The source code is the git source branch itself.
-* The latest git tag of the git source branch is treated as the release.
-* It must be possible to ignore certain tag patterns.
-* Any commits after that tag in the git source branch are treated as additional
-  patches to be distributed.
-* In order to turn it into an SRPM and include it into dist-git it may be
-  automatically turned into a tarball via an archive command on its latest tag.
-* It must also be possible to use released tarballs from a project if available
-  and necessary for a given dist-git repository, and layer patch files on top
-  in dist-git.
+This includes:
 
-Spec files are pulled from source:
+* the spec file,
+* other files required to be present in dist-git (test files, scripts used in
+  building the package, package configuration etc.),
+* a `source-git.yaml` file to configure how the content of the repo should be
+  transformed to dist-git.
 
-* In the ideal case a spec file is maintained upstream in the same git
-  repository as the source code. This is similar to how many projects have a
-  Dockerfile.
-* When upstream does not accept a spec file, it should be placed as an
-  additional commit in the source git branch, and carried as if it were a
-  patch.
-* To allow trivial revert, review and merge workflows, the release number of
-  the spec file is automatically generated (eg: SuSE and OBS). The release
-  number should be present in the SRPM file name and contents.
-* `%changelog` in an SRPM is automatically generated from the commits in source
-  git repository. Various techniques may be used to collapse history.
-* Project specific tooling in the source git repo can be used to generate the
-  spec file (eg: as seen today in the kernel). We must provide reference
-  implementation of such script.
-* A spec file can be auto-generated for new packages, and reviewed by a human,
-  who can do FIXUPs.
-  * See: https://github.com/clearlinux/autospec
+## History and branching
 
-Tests are pulled from source:
+By default, branching in source-git mirrors branching in dist-git. In a
+source-git context, let's call these branches "downstream branches".
 
-* Components of the operating system have integration and acceptance tests.
-* In the ideal case these are maintained upstream in the given project. They
-  are treated similar to source code.
-* When an upstream does not accept a test, it should be placed as an additional
-  commit in the branch of the git source repository, and carried as if it was a
-  patch.
-* Tests should be wrapped in such a way that anyone can easily (2 commands at
-  most) execute them locally and iterate on them with good velocity. These
-  tests need to pass in order the component to be included in a compose.
+Downstream branches share their history with the upstream release they are based
+upon, and contain additional commits to add the `.distro` directory and its
+content, and to introduce downstream changes to the upstream source code.
 
-After a bot makes a change to dist-git it automatically triggers the koji build.
+![Source-git example](/source-git-diagram.png)
 
-The build in koji is validated that it works with the rest of the operating
-system packages in that branches compose. If it does it is then tagged into the
-compose.
+When transforming content to dist-git, tooling
+* prepares and uploads the source archive to dist-git's lookaside cache;
+* generates patch files for downstream changes, if any, and updates the
+  spec file accordingly (changes to `.distro` are filtered out);
+* updates other files in dist-git with the content of `.distro` (except
+  `source-git.yaml`).
 
-When validation fails, feedback goes back to the upstream project. At an
-absolute minimum the owner of the source git change. But it must be possible to
-send feedback to a minimal set of Git Forges (GitHub, GitLab, etc.).
+The way patch files are generated and included in the spec file is controlled by
+Git-trailers in the commit messages of downstream commits.
 
-Instead of configuring the bots globally, the bot entry points (configuration)
-should live in the dist-git repositories (or source-git). The entry points may
-contain package specific code and variables that can affect the bot
-implementation for that repository.
+## Configuration
 
-Manual activities take place on source git. Humans may be involved in:
+`.distro/source-git.yaml` tells tooling how to interact with the source-git
+repo, including:
 
-* Investigation of build, test, or packaging failures
-* Material changes to spec files
-* Material changes to test wrappers
-* Writing documentation that describe the new changes
-* Changes to packaging and delivery policy
+* where to pull upstream changes from;
+* how the content of the source-git repo should be transformed to dist-git;
+  * how to generate or get the source archive to be uploaded to the lookaside
+    cache;
+  * how to generate patches from downstream commits;
+* the dist-git repo and branch tracked.
 
-We must get credentials for the bots to perform these activities. We must
-implement metering in the beginning to prevent bots going wild across the
-entire dist-git repository.
+The configuration format is based on the [Packit configuration]({{< ref
+configuration.md >}}).
 
-Any change to the bots must self-validate by comparing recent bot behavior on
-recently changed dist-git repositories, and seeing if they have similar
-behavior.
+Placing this configuration file in a branch in source-git indicates that the
+source-git branch should be auto-maintained. The configuration file may be
+removed to turn off auto-maintenance of the branch.
 
-## Specifications and Interfaces
+For an example see [Configure syncing to distgit]({{< ref
+"create-source-git.md#configure-syncing-to-dist-git" >}}).
 
-### Configuration in dist-git
-In order to automate dist-git and pull from source git, an extensible
-configuration file would be placed in dist-git (or source-git).
+‼️💣️ Content from a source-git repository can be committed to a dist-git
+repository only if the target dist-git branch makes a reference to the
+source-git repo and branch from which the update originates.
 
-Placing this config in a branch in dist-git indicates that that dist-git branch
-should be auto-maintained. The config may be removed to turn off
-auto-maintenance. There is one config per auto-maintained branch, e.g. a config
-in f28 dist-git branch implies the branch is auto-maintained and points to
-specific source git branch.
+> TODO: have an explicit documentation of `source-git.yaml`.
 
-It should at a minimum support:
+## Workflows
 
-* Which source git repository to pull from.
-* Which branch in that source git repository to pull from.
-* Optional: A container to do dist-git population with
-* Defaults to the ‘default’ container (see below)
-* Optional: An expression that describes how to parse tags in source git as versions
-* This can be completely overridden by the container (see below)
-* Eg: v4.9-rc8 -> 4.9
-* Optional: Which Koji buildroots to build in
-* Defaults to the one decided by fedpkg
-* Optional: GPG key ids considered valid for signing packages.
+Contribution to source-git happens through pull requests (aka. merge requests).
 
+Bots create mirror PRs in dist-git for each source-git PR opened, and make CI
+results of those mirror PRs available in source-git.
 
-### Source git best practices
-New upstream releases will result in new source-git branches. We can't rebase
-existing branches since we would lose the provenance.
+‼️💣️ Changes merged in source-git are synced to dist-git.
 
-![The diagram](/source-git-best-practices.svg.png)
+Updates created in dist-git are synced back to source-git via pull requests
+opened by bots. This functionality serves to accommodate changes done by
+provenpackagers across multiple repositories.
 
-The diagram showcases how upstream releases (git tags) correspond to source git
-dist-git branches. New releases are automatically detected and proposed as a
-pull request. Once the packaging is completed, new corresponding branch is
-created and the new release should land in a continuously development (cont-dev)
-branch. Please bear in mind, that in order for a pull request to be merged, it
-needs to pass all the validation. Therefore in order for the 1.1.0 upstream
-release to land in the 1.1.0 source git branch, all the tests have to pass.
+Commits need to be signed in order to be transformed to dist-git.
 
-It’s up to a maintainer then to cherry-pick which changes should land in a
-selected downstream dist-git branch.
+Bots sign the commits they create.
 
-
-### Population of dist-git
-The actual population of dist-git and source git. Specification of the
-population process:
-
-* The input, checked out source git will be placed in a known path.
-* The container should process the input and place it to a well known path.
-* The container image can live in any registry.
-* Every maintainer will be able to create a container image to perform the
-  population on their own, given it follows the specification.
-
-After the population process is done, the bot collects the output, performs a
-commit, signs it and pushes to dist-git.
-
-These two population mechanisms (=container images) will be available to maintainers:
-
-* Default: produce an archive out of the source git content. No patch files.
-* Upstream tarball: Take upstream release tarball and lay additional commits as patches on top.
-  * Use case: Cockpit (where tarball very diverged from git)
-
-
-### Signing of source git
-This is a description of the initial proposal to perform signing of commits.
-Our expectation is that the design will evolve over time.
-
-The HEAD commit on the tracked branch in source git, which represents the
-content to land in dist-git (see above), must be signed. When new commits are
-pushed to source git, a bot checks signatures used to sign those commits. The
-signature IDs which are approved to push to dist-git need to be specified in a
-configuration file placed in dist-git. If the signature ID is not in the
-configuration file, the commit is not synced and the bot notifies owners of the
-source git repository.
-
-Workflow:
-
-* A new signed commit is pushed to source git.
-* A bot detects the commit, validates that it is signed using an approved
-  signature.
-  * If not, notifies maintainer to resolve the issue.
-* If the signature is valid, the bot prepares population of dist-git.
-  * It uses the mechanism described in in previous section “Population of dist-git”.
-  * Before pushing to dist-git, the bot signs the commit with its own key.
-  * The bot also references the respective source git commit(s).
-* The commit is pushed to dist-git.
-
-Summary: all commits in dist-git, which are curated by a bot, are signed with
-bot’s key. The commit message then references the commits in source git. All
-the mentioned commits need to be signed so it’s possible to figure out who
-authored and approved the work.
+> TODO: Rebase or merge?
