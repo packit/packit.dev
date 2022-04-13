@@ -1,7 +1,7 @@
 ---
 title: Source-git design
 date: 2018-12-31T23:59:59+01:00
-weight: 4
+weight: 1
 ---
 
 # Source-git design

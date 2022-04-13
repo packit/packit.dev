@@ -90,6 +90,6 @@ Source-git is perfect for this because patches are stored as git commits and
 patch files are generated on the fly.
 
 This was just a gentle intro to source-git, for more info you can continue with:
+* [Source-git design]({{< ref "/source-git/design.md" >}})
 * [How to create a source-git repo?]({{< ref "/source-git/how-to-source-git.md" >}})
 * [Working with source-git]({{< ref "/source-git/work-with-source-git" >}})
-* [Source-git concept]({{< ref "/source-git/design.md" >}})
