@@ -1,6 +1,6 @@
 ---
 title: Source-git
-weight: 6
+weight: 2
 aliases: [/source-git]
 bookCollapseSection: true
 ---
@@ -90,6 +90,6 @@ Source-git is perfect for this because patches are stored as git commits and
 patch files are generated on the fly.
 
 This was just a gentle intro to source-git, for more info you can continue with:
-* [How to create a source-git repo?]({{< ref "/docs/source-git/how-to-source-git.md" >}})
-* [Working with source-git]({{< ref "/docs/source-git/work-with-source-git" >}})
-* [Source-git concept]({{< ref "/docs/source-git/design.md" >}})
+* [How to create a source-git repo?]({{< ref "/source-git/how-to-source-git.md" >}})
+* [Working with source-git]({{< ref "/source-git/work-with-source-git" >}})
+* [Source-git concept]({{< ref "/source-git/design.md" >}})

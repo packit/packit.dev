@@ -6,7 +6,7 @@ weight: 2
 # Source-git patch metadata
 
 Patch metadata have been superseded by
-[Git-native trailers]({{< ref "docs/source-git/work-with-source-git/control-patch-generation" >}}).
+[Git-native trailers]({{< ref "source-git/work-with-source-git/control-patch-generation" >}}).
 This old patch metadata format is still supported if none of
 the Git-trailers are found in any of the commits.
 

@@ -5,7 +5,7 @@ weight: 1
 
 # `packit source-git init`
 
-Initialize a repository to serve as a [source-git repo]({{< ref "/docs/source-git" >}}).
+Initialize a repository to serve as a [source-git repo]({{< ref "/source-git" >}}).
 
 The biggest advantage of this command is the functionality to create source-git
 repos. Here's a quick rundown what packit does:
@@ -14,7 +14,7 @@ repos. Here's a quick rundown what packit does:
  * Apply downstream patches as commits.
  * Add source-git configuration to control future syncing to dist-git.
 
-We have [a guide]({{< ref "/docs/source-git/how-to-source-git.md" >}}) on how
+We have [a guide]({{< ref "/source-git/how-to-source-git.md" >}}) on how
 to create source-git repos manually if you want to understand the steps performed.
 
 ## Prerequisites
@@ -58,7 +58,7 @@ command:
 Once the command finishes successfully, your source-git repo is available for
 you at `$FEDORA_SOURCE_GIT_REPOS/systemd-stable`. Please head on to a section
 in this documentation which covers [working with source-git repos]({{< ref
-"/docs/source-git/work-with-source-git" >}}).
+"/source-git/work-with-source-git" >}}).
 
 By default, using `%autosetup` in the `%prep` section of the specfile is required. 
 You can use `--ignore-missing-autosetup` option to enforce running the command 

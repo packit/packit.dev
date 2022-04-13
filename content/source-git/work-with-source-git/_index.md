@@ -10,7 +10,7 @@ bookCollapseSection: true
 This document is focused on how Packit treats a source-git repo.
 
 If you are looking for the design concept of source-git, please [read it
-here]({{< ref "/docs/source-git/design.md" >}}).
+here]({{< ref "/source-git/design.md" >}}).
 
 The source-git concept is fairly simple - take an upstream repo and
 shove downstream content on top of it. Easy right?

@@ -13,7 +13,7 @@ patches can't be applied in the upstream repo.
 
 ## The solution
 
-The provided solution will be performed in a [source-git]({{< ref "/docs/source-git" >}})
+The provided solution will be performed in a [source-git]({{< ref "/source-git" >}})
 repository.
 
 When all your downstream patches apply cleanly on top of the upstream git repo
