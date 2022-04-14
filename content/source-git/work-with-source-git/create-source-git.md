@@ -1,7 +1,7 @@
 ---
-title: Create source-git repo
+title: Create a source-git repo
 date: 2020-02-20
-weight: 2
+weight: 5
 ---
 
 # How to create a source-git repository?
@@ -156,11 +156,13 @@ Create a file called `.distro/source-git.yaml` with the following content:
 
 ```yaml
 ---
-downstream_package_name: acl
+upstream_project_url: https://git.savannah.nongnu.org/git/acl.git
 upstream_ref: v2.3.1
+downstream_package_name: acl
+specfile_path: .distro/acl.spec
 patch_generation_ignore_paths:
   - .distro/
-patch_generation_patch_id_digits: 0
+patch_generation_patch_id_digits: 1
 sync_changelog: true
 files_to_sync:
   - src: .distro/
@@ -173,12 +175,17 @@ files_to_sync:
       - "exclude .gitignore"
 ```
 
-`downstream_package_name` tells `packit` the name of the package.
+`upstream_project_url` is the URL of the upstream repository. This is saved to
+be used by future operations.
 
 `upstream_ref` is the Git ref to be used to tell where upstream history ends
 and downstream history starts. Packit uses this value to tell which version of
 the source-archive to download from the URL specified in `Source`, in order to
 be uploaded to dist-git's lookaside-cache.
+
+`downstream_package_name` tells `packit` the name of the package.
+
+`specfile_path` specifies where the specfile is to be found.
 
 `patch_generation_ignore_paths` lists the paths which should be ignored when
 generating downstream patches, to be added in dist-git. As `.distro` is the

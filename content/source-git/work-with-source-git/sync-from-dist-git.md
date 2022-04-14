@@ -1,7 +1,7 @@
 ---
 title: Sync back changes made in dist-git
 date: 2022-02-22
-weight: 6
+weight: 60
 ---
 
 # Sync back changes made in dist-git
