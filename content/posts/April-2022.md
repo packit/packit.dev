@@ -40,3 +40,9 @@ weight: 62
 - `revision-range` argument of the source-git `update-source-git` command is now optional. If not specified,
   dist-git commits with no counterpart in source-git are synchronized.
   ([packit#1547](https://github.com/packit/packit/pull/1547))
+
+## Week 15 (April 12th - April 14th)
+
+- We have implemented reporting of status for the propose-downstream job which means that you can now
+  see the progress of the job via check runs/commit statuses on the particular release commits.
+  ([packit-service#1435](https://github.com/packit/packit-service/pull/1435))
