@@ -183,10 +183,6 @@ pattern with `branches/`, e.g. for a branch matching `*-release` set to `branche
 (*string*) Name of the RPM package in Fedora, defaults to the name of the
 Github repository.
 
-#### downstream_branch_name
-
-(*string*) Name of the branch in dist-git which corresponds to the current source-git branch. Defaults to the name of the current source-git branch. This is meant to be used in source-git projects only.
-
 #### dist_git_namespace
 
 (*string*) Namespace in dist-git URL (defaults to `rpms`).
