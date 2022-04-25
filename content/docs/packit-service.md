@@ -29,6 +29,21 @@ in all current Fedora OS releases via [Testing Farm](/docs/testing-farm).
 Packit is also available as a [CLI tool](https://github.com/packit/packit/blob/main/README.md),
 so you can always try things locally on your own. Note that testing is not currently supported with the CLI tool.
 
+
+## Requirements for running Packit Service jobs
+
+As a first step, you need to have a valid [Fedora Account System](https://fedoraproject.org/wiki/Account_System) account to be approved by us and start using Packit Service.
+Besides that:
+* If you want to configure builds via Packit Service, your software needs to comply with [Copr guidelines](https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr) 
+ since we use Fedora Copr for the builds. Therefore, please, make sure you read them before configuring the [Packit Service build job](/docs/configuration/#copr_build).
+* If you are interested in using [internal instance of the Testing Farm](https://docs.testing-farm.io/general/0.1/services.html#_red_hat_ranch)
+to run your tests in, please, [reach out to us](/#contact), since for this job, an additional approval on our side is needed.
+* For retrying the build and test jobs via `/packit build` and `/packit test` pull request comments, you need to have write access to the repository or be the 
+author of the pull request.
+* Similarly, for retrying the propose downstream job via `/packit propose-downstream` issue comment, you need to have write access to
+the repository.
+
+
 ## Integrating Packit-as-a-Service into your project or organization from GitHub Marketplace
 
 1. Navigate to the ["Packit-as-a-Service" GitHub
@@ -74,13 +89,13 @@ or the shorter version
 So whenever you run into a flake or feel like you want to retrigger, just type
 that comment into the PR and enjoy some fine, fresh builds.
 
-The standard requirements for permissions still apply, so if you see this
+The requirements stated in the [previous section](#requirements-for-running-packit-service-jobs) apply, so if you see this
 message
 
     Only users with write or admin permissions to the repository can trigger
     Packit-as-a-Service
 
-it means the author of the pull request does not have commit access to the
+it means the author of the pull request does not have write access to the
 repository so the build cannot be scheduled. This is a perfect case for
 maintainers of the repository to post `/packit build` in the PR to get a build.
 
