@@ -10,9 +10,6 @@ This document serves as a detailed description of source-git. Please bear in
 mind that some things are a subject to change. Paragraphs marked with "‼️💣️" are
 known to require further work to be better defined.
 
-**Authors**: Stef Walter, Tomas Tomecek  
-**Updates by:** Hunor Csomortáni
-
 ## What is source-git?
 
 Source-git is a repository format and the related processes, tooling and bots,
@@ -68,9 +65,10 @@ dist-git itself fundamentally, would mean reinventing a lot of tooling.
 
 ## An addon to dist-git
 
-We recognize, that an extensive ecosystem of tooling and services was developed
-to work with dist-git. Because of this, replacing dist-git with source-git is
-not feasible.
+We recognize, that an extensive ecosystem of tooling and services was
+developed to work with dist-git, and because of this replacing dist-git in the
+immediate future is not feasible. On the long run though, once source-git
+proved itself, this can become possible.
 
 This is why we think about source-git as *an addon to dist-git*.
 
