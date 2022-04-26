@@ -67,8 +67,11 @@ and create [Bodhi](https://bodhi.fedoraproject.org) updates! [Learn more.](/docs
 4. _We are here to help_ - In case of questions, feel free to contact
    [us](https://github.com/orgs/packit/teams/the-packit-team):
 
-   - **#packit** on [Libera.Chat](https://libera.chat/)
-   - **hello@packit.dev**
+#### Contact
+
+- **#packit:fedora.im** on [Matrix](https://matrix.org/)
+- **#packit** on [Libera.Chat](https://libera.chat/)
+- **hello@packit.dev**
 
 {{< button relref="/docs/guide" >}}Get started{{< /button >}}
 
