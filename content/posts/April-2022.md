@@ -46,3 +46,10 @@ weight: 62
 - We have implemented reporting of status for the propose-downstream job which means that you can now
   see the progress of the job via check runs/commit statuses on the particular release commits.
   ([packit-service#1435](https://github.com/packit/packit-service/pull/1435))
+
+## Week 16 (April 19th - April 25th)
+
+- The bug in our service about not setting Github and Gitlab statuses in case of lack of permissions was fixed.
+  ([packit/packit-service#1457](https://github.com/packit/packit-service/pull/1457))
+- Packit's CLI `source-git update-*` commands now check whether the target repository is pristine and in case not raise an error.
+  ([packit/packit#1562](https://github.com/packit/packit/pull/1562))
