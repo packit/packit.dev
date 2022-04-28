@@ -9,8 +9,9 @@ weight: 5
 This guide walks through the steps to create a source-git repository from an
 upstream project.
 
-> We have a dedicated command which automates most of the steps described below:
-> [`packit source-git init`]({{< ref "/docs/CLI/source-git/init.md" >}})
+> We have a dedicated command which automates most of the steps described
+> below: [`packit source-git init`]({{< ref "/docs/CLI/source-git/init.md"
+> >}})
 
 Consider joining the [Fedora Source-git SIG] if you are interested in the
 development of the source-git workflow.
@@ -30,15 +31,16 @@ following steps:
 5. Test the source-git repository by trying to sync the content to the
    corresponding dist-git repository.
 
-As an example, let's see the steps one would need to take to create a source-git
-repository for [acl] and a branch to track distribution work in Fedora Rawhide.
+As an example, let's see the steps one would need to take to create a
+source-git repository for [acl] and a branch to track distribution work in
+Fedora Rawhide.
 
 ## Identify the upstream Git repository and version
 
-Let's search for an official project URL for *acl* [in the spec-file for Fedora
-Rawhide]. This could be done by using the web interface for
-[src.fedoraproject.org], too, but as the dist-git repository is needed later on,
-it makes sense to clone it using `fedpkg`:
+Let's search for an official project URL for *acl* [in the spec-file for
+Fedora Rawhide]. This could be done by using the web interface for
+[src.fedoraproject.org], too, but as the dist-git repository is needed later
+on, it makes sense to clone it using `fedpkg`:
 
     $ mkdir rpms
     $ fedpkg clone -a acl rpms/acl
@@ -82,8 +84,8 @@ one to clone it:
 From the version field of the spec-file we can tell that Fedora Rawhide has
 *acl* version 2.3.1. We search the upstream Git repository for the tag which
 points to the commit corresponding to this version. This commit is going to be
-the starting point of the `rawhide` branch on which the distribution work
-in Fedora Rawhide is going to be tracked.
+the starting point of the `rawhide` branch on which the distribution work in
+Fedora Rawhide is going to be tracked.
 
     $ cd src/acl
     $ git tag --list | grep 2.3.1
@@ -96,9 +98,9 @@ in Fedora Rawhide is going to be tracked.
 
 In source-git, files required to package and test the software in a
 distribution are stored in a `.distro` subdirectory. This allows keeping these
-files separate from the source code. The distribution agnostic name was
-chosen in order to enable the easy sharing of the packaging work between
-different distributions.
+files separate from the source code. The distribution agnostic name was chosen
+in order to enable the easy sharing of the packaging work between different
+distributions.
 
 Let's create and populate this directory:
 
@@ -129,8 +131,8 @@ A quick explanation of the filters used in the rsync-command above:
   lookaside-cache is excluded. Upstream sources are part of the working tree
   in source-git.
 - The `.git` directory of the dist-git repo, and other `.git*` files are
-  excluded. These are specific to the dist-git repository. They are
-  re-created later on, as needed, using a content specific to source-git.
+  excluded. These are specific to the dist-git repository. They are re-created
+  later on, as needed, using a content specific to source-git.
 
 As gitignore rules in the upstream repo and dist-git might be different, we
 need to reset these for the `.distro` directory. In the case of *acl* for
@@ -213,8 +215,8 @@ and exclude paths in `src` from the sync operation.
 You can think about the `files_to_sync` section as describing the reverse of
 the rsync-command used to copy content from dist-git to `.distro`.
 
-We plan to make most of this configuration implicit, so most of it might
-not be required in the future.
+We plan to make most of this configuration implicit, so most of it might not
+be required in the future.
 
 ## Update the spec-file and apply the downstream patches
 
@@ -242,8 +244,8 @@ Note, that *acl* is using `%autosetup` to apply the patches in `%prep`, this
 is why the `%prep` section doesn't need an update. Because `packit source-git
 update-dist-git` doesn't support adding the `%patch` macros when adding
 patches to the spec-file during syncing, currently only packages using
-`%autosetup` are supported. At the time of writing, adding support for `%setup`
-is still not decided.
+`%autosetup` are supported. At the time of writing, adding support for
+`%setup` is still not decided.
 
 At this point, the `.distro` directory is ready, and can be commited as the
 first commit on the `rawhide` branch.
@@ -287,10 +289,10 @@ by `git format-patch`), and that the [patch status] line is going to be
 included above the patch when it's added back to the spec-file while syncing
 to dist-git.
 
-Packit understands [Git-trailers] which can be included in the commit
-message, and used to tweak how patch-files are generated and included in the
-spec-file. You can include the patch status with the help of the `Patch-status`
-field, and specify the patch-file name with `Patch-name`.
+Packit understands [Git-trailers] which can be included in the commit message,
+and used to tweak how patch-files are generated and included in the spec-file.
+You can include the patch status with the help of the `Patch-status` field,
+and specify the patch-file name with `Patch-name`.
 
 One more Git-trailer that should be added in this step is
 `From-dist-git-commit`, which can be used later on to tell which dist-git
@@ -417,9 +419,6 @@ Check the diff in dist-git and the new patch generated from source-git:
     --
     2.31.1
 
-[acl]: https://savannah.nongnu.org/projects/acl
-[Fedora Source-git SIG]: https://fedoraproject.org/wiki/SIGs/Source-git
-[in the spec-file for Fedora Rawhide]: https://src.fedoraproject.org/rpms/acl/blob/rawhide/f/acl.spec
-[src.fedoraproject.org]: https://src.fedoraproject.org/
-[patch status]: https://docs.fedoraproject.org/en-US/packaging-guidelines/PatchUpstreamStatus/
+[acl]: https://savannah.nongnu.org/projects/acl [Fedora Source-git SIG]: https://fedoraproject.org/wiki/SIGs/Source-git [in the spec-file for Fedora Rawhide]: https://src.fedoraproject.org/rpms/acl/blob/rawhide/f/acl.spec
+[src.fedoraproject.org]: https://src.fedoraproject.org/ [patch status]: https://docs.fedoraproject.org/en-US/packaging-guidelines/PatchUpstreamStatus/
 [Git-trailers]: {{< ref "control-patch-generation" >}}

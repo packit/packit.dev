@@ -9,7 +9,7 @@ bookCollapseSection: true
 
 Source-git is an addon on top of
 [dist-git](https://github.com/release-engineering/dist-git), and aims to provide
-and alternative to maintain packages using an upstream format.
+an alternative to maintain packages using an upstream format.
 
 Many packages are already maintained like this (ex: kernel, systemd), and teams
 created their own workflows and tooling to support their specific use case. This
