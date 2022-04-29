@@ -47,11 +47,12 @@ as a release archive name and as a directory name in that archive.
 (*string*) URL of the upstream project (e.g.
 `https://github.com/packit/packit`).
 
-#### create_pr
+#### create_pr (only in CLI)
 
 (*bool*) When doing a new update in Fedora dist-git, should packit create a
 new pull request (defaults to `true`) or push directly to dist-git (if set to
-`false`).
+`false`). This option can be used only locally in the CLI, but can be overriden
+via `--pr/--no-pr` option. Deployed Packit ignores this setting.
 
 #### merge_pr_in_ci
 
@@ -597,7 +598,7 @@ Optional metadata:
 
 Land a new upstream release in Fedora. This job only makes sure the changes
 happen in Fedora dist-git - no builds. The global key `create_pr` controls
-whether a pull request is created or changes are pushed directly.
+whether a pull request is created or changes are pushed directly (only from CLI).
 
 Supported triggers: **release**.
 
