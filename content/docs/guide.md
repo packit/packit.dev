@@ -191,9 +191,8 @@ jobs:
 ```
 
 Pretty clear I'd say: when a new upstream release happens, propose it to
-dist-git main branch: Fedora Rawhide. Packit enables you to decide whether
-you want to do a direct push or create a pull request. If you want direct
-pushes, you need to set a global config option `create_pr` to `false`:
+dist-git main branch: Fedora Rawhide. When running locally, you can set `create_pr`
+option to `false`:
 
 ```yaml
 create_pr: false
@@ -205,8 +204,9 @@ jobs:
       - main
 ```
 
-Packit user in Fedora is not a proven packager, so you need to grant [packit
-user](https://src.fedoraproject.org/user/packit) the ability to push.
+This option is ignored in Packit running on GitHub for security reasons and **is not**
+recommended either. Packit user in Fedora is not a proven packager, so you need
+to grant [packit user](https://src.fedoraproject.org/user/packit) the ability to push.
 
-Creating pull requests is easy. `create_pr` defaults to true so the config
-starting this section is good enough.
+And that's about it. Now you should be able to use the core features of the Packit.
+If you have any questions, feel free to reach out to us.
