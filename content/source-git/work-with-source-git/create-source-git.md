@@ -10,8 +10,7 @@ This guide walks through the steps to create a source-git repository from an
 upstream project.
 
 > We have a dedicated command which automates most of the steps described
-> below: [`packit source-git init`]({{< ref "/docs/CLI/source-git/init.md"
-> >}})
+> below: [`packit source-git init`]({{< ref "/docs/CLI/source-git/init.md" >}})
 
 Consider joining the [Fedora Source-git SIG] if you are interested in the
 development of the source-git workflow.
