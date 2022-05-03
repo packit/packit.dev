@@ -1,0 +1,14 @@
+---
+- name: Install hugo
+  hosts: all
+  tasks:
+    - name: Install hugo
+      ansible.builtin.dnf:
+        name:
+          - hugo
+        state: latest
+      become: true
+    - name: Pull themes
+      ansible.builtin.command: git submodule update --init
+      args:
+        chdir: "{{ zuul.project.src_dir }}"

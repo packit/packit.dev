@@ -1,0 +1,8 @@
+---
+- name: Build the website with hugo
+  hosts: all
+  tasks:
+    - name: Build the website with hugo
+      ansible.builtin.command: hugo
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
