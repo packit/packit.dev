@@ -688,7 +688,7 @@ jobs:
       - epel-8
 ```
 
-##### bodhi\_update (coming soon)
+##### bodhi\_update
 
 Create a new update in
 [Fedora Bodhi](bodhi.fedoraproject.org) for successful
