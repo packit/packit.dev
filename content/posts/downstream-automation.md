@@ -38,7 +38,7 @@ jobs:
 How does the `propose-downstream` work?
 As a first step, the archive is saved to lookaside cache
 and after that, Packit updates the dist-git content (mainly `sources` file and spec-file)
-via pull-requests for the specified branches. (Direct push is possible by setting a
+via pull-requests for the specified branches. (Direct push is possible only for CLI by setting a
 [`create_pr` option](https://packit.dev/docs/configuration/#create_pr) to `false`.)
 
 If you use [`copy_upstream_release_description: true`](https://packit.dev/docs/configuration/#copy_upstream_release_description),
