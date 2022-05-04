@@ -216,7 +216,7 @@ jobs:
 This option is ignored in Packit running on GitHub for security reasons and **is not**
 recommended either.
 
-Here, CI systems and packagers needs to step in and verify the proposed changes.
+Here, CI systems and packagers need to step in and verify the proposed changes.
 
 Once the pull-request is merged, you can use a [`koji_build` job](/docs/configuration/#koji_build) to trigger the Koji build
 for new dist-git commits. It can be configured like this:
