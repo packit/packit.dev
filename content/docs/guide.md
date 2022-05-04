@@ -230,7 +230,7 @@ jobs:
       - fedora-all
 ```
 
-And to not need to wait for the successful build and create a Bodhi update yourself,
+And if you do not wish to wait for the successful build and create the Bodhi update yourself,
 just configure [another Packit job](/docs/configuration/#bodhi_update) to create it automatically:
 
 ```yaml

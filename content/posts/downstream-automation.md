@@ -7,7 +7,7 @@ weight: 68
 # Downstream automation is here
 
 Finally, it's here. Now, you can do the whole Fedora release with the help of Packit.
-Let's take a look at how this works on an example of [OGR](https://github.com/packit/ogr), the Python library we develop:
+Let's take a look at how it works on an example of [OGR](https://github.com/packit/ogr), the Python library we develop.
 
 ## Upstream
 
@@ -45,11 +45,11 @@ If you use [`copy_upstream_release_description: true`](https://packit.dev/docs/c
 as in the config above,
 the changelog entry will use the GitHub release description field.
 (Just make sure the formatting is compatible with spec-file.
-E.g. use `-` instead of `*` for lists not to create multiple changelog entries.)
+E.g. use `-` instead of `*` for lists to not create multiple changelog entries.)
 
-And how it is triggered?
+And how is it triggered?
 Packit gets the information about the newly created release from GitHub (via webhook),
-load the config from the release commit and if there is a `propose-downstream` job
+loads the config from the release commit and if there is a `propose-downstream` job
 defined, the workflow begins.
 
 Here are the pull-requests created by Packit:
