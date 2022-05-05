@@ -605,13 +605,13 @@ Supported triggers:
 Required metadata:
 
 * **branch** -- the name of the branch we want to build for when using **commit** trigger.
-  You can also use the [aliases provided by Packit](#aliases)
-  to not need to change the config file when the new system version is released.
 
 Optional metadata:
 
 * **targets** -- a (list of) targets we want to build for,
-  list of supported targets can be listed using with `koji list-targets`
+  list of supported targets can be listed using with `koji list-targets`.
+  You can also use the [aliases provided by Packit](#aliases)
+  to not need to change the config file when the new system version is released.
 
 ##### propose_downstream
 
