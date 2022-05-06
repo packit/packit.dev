@@ -688,7 +688,7 @@ jobs:
       - epel-8
 ```
 
-##### bodhi\_update (coming soon)
+##### bodhi\_update
 
 Create a new update in
 [Fedora Bodhi](bodhi.fedoraproject.org) for successful
@@ -702,6 +702,8 @@ For now, the Bodhi update is created only for builds submitted by the Packit FAS
 This is just for the early stage of this job and
 we can easily turn off that filter.
 Let us know if you need this condition to be removed.
+Also, you need to give `commit` rights to `packit` FAS user
+for your package in dist-git settings.
 
 There is no UI provided by Packit for the job,
 but it is visible across Fedora systems
