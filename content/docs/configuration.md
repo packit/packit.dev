@@ -520,6 +520,8 @@ Optional metadata:
   Defaults to `False`.
   The value is represented as `delete_after_days` in Copr project settings
   (`True` is `-1` and `False` is `60`).
+* **enable_net** -- Specifies whether created Copr build should have access to network during its build.
+  Defaults to `True` (Copr default).
 
 When using a custom `owner`, Packit Service asks for `builder` permission the
 first time it tries to build in the project. In case the configuration of the
