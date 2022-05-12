@@ -95,6 +95,15 @@ Example usage:
 There is also one special setting, if you set `release_suffix` to empty string
 (`release_suffix: ""`), it will act as a `--no-bump` (that you can use via CLI).
 
+It is also possible to define `release_suffix` at the top-level of your packit
+config. In that situation all jobs and SRPM, Copr, Koji and RPM build from CLI
+will inherit the `release_suffix` that you have set. We **advise** caution when
+doing such thing, because inheriting the release suffix value by Copr or Koji
+build may easily cause confusion, break the ordering of the NVRs of the RPMs and
+also may cause usage of RPMs **that are not meant** for production use. In such
+scenarios, please try to make sure RPMs built by Packit are easily
+distinguishable from the RPMs meant for production use.
+
 #### files_to_sync
 
 (*list of strings or dicts*) A list of relative paths to files in the upstream
