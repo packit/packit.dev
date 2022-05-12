@@ -670,6 +670,11 @@ Packit loads the config from the newly pushed commit.
 
 The build is triggered only for commits with a spec-file change.
 
+Only commits authored by Packit are being acted upon so the [proven packager
+workflow](https://docs.fedoraproject.org/en-US/fesco/Provenpackager_policy/) is
+preserved, [details
+here](https://github.com/packit/packit-service/issues/1490).
+
 There is no UI provided by Packit for the job,
 but it is visible across Fedora systems (e.g. via dist-git commit status)
 like a manually created Koji build and you can utilise
