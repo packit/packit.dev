@@ -32,7 +32,20 @@ so you can always try things locally on your own. Note that testing is not curre
 
 ## Requirements for running Packit Service jobs
 
-As a first step, you need to have a valid [Fedora Account System](https://fedoraproject.org/wiki/Account_System) account to be approved by us and start using Packit Service.
+As a first step, you need to have a valid [Fedora Account System](https://fedoraproject.org/wiki/Account_System) 
+account to be approved by us and start using Packit Service.
+We require our new users to have `GitHub Username` field set in the FAS account so that we can automatically
+check for the match between the `GitHub Username` field in the FAS account and the GitHub account that triggers the verification. 
+During the installation, we try to check the FAS account with the same
+username as the GitHub account that triggers the installation and if the check
+fails, we create a new issue in our
+[allowlist tracker](https://github.com/packit/notifications/issues/).
+You can provide the FAS account in a comment
+as `/packit verify-fas my-fas-username` in the issue we create 
+for your installation. This will trigger the automatic check.
+Until that, you will get a neutral status with `Namespace is not allowed!` 
+message on your commits.
+
 Besides that:
 * If you want to configure builds via Packit Service, your software needs to comply with [Copr guidelines](https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr) 
  since we use Fedora Copr for the builds. Therefore, please, make sure you read them before configuring the [Packit Service build job](/docs/configuration/#copr_build).

@@ -11,14 +11,10 @@ aliases: [/faq]
 
 Thanks for your interest in Packit Service! In order to start using the
 service, your repository or namespace needs to be allowed.
-For each installation we create a new issue in our
-[allowlist tracker](https://github.com/packit/notifications/issues/)
-to resolve this.
 Just be aware that we are now onboarding Fedora contributors who have
 a valid [Fedora Account System](https://fedoraproject.org/wiki/Account_System) account.
-So provide us enough information (your FAS account) in the issue.
-Until that, you will get a neutral status with `Namespace is not allowed!` message on your commits.
-You can find more info about requirements to run Packit Service jobs [here](/docs/packit-service#requirements-for-running-packit-service-jobs).
+For more details on how to get allowed for our service, please read
+the requirements [here](/docs/packit-service#requirements-for-running-packit-service-jobs).
 
 ## Can I use packit service for any GitHub repository?
 
