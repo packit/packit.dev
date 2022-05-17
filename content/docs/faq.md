@@ -143,7 +143,7 @@ it means you forgot to initialize the metadata tree with `fmf init`
 and include the `.fmf` directory in the pull request.
 See [Testing Farm documentation](/docs/testing-farm) for more information.
 
-## Does packit work with [rpmautospec](https://docs.pagure.org/Fedora-Infra.rpmautospec/)?
+## Does packit work with rpmautospec?
 
 Good that you ask. It does, packit works with rpmautospec quite nicely.
 
