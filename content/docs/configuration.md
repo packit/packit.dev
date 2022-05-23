@@ -526,7 +526,8 @@ Required metadata:
 Optional metadata:
 
 * **timeout** - (seconds) give up watching a build after timeout, defaults to 7200s, i.e. 2 hours
-* **owner** - a namespace in Copr where the build should happen (defaults to packit)
+* **owner** - a namespace in Copr where the build should happen (defaults to packit).
+  Prefix with `@` in case of a group.
 * **project** - a name of the Copr project (defaults to `"{github_namespace}-{repository_name}-{pr_id}"`)
 * **additional_repos** - a list of additional buildroot repositories
 * **list_on_homepage** -- The project will be shown on Copr frontend homepage if set to `True`.
