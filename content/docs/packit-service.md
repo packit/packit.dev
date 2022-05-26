@@ -148,3 +148,33 @@ update.
 
 It is also possible to run tests against the freshly built rpms.
 See the [Testing Farm]({{< ref "testing-farm" >}}) documentation for details.
+
+## Supported git forges
+
+### GitHub
+
+The majority of Packit users host their projects on GitHub, therefore we focus mainly on supporting the GitHub App. All of our workflows are supported and tested on GitHub. We utilize majority of new GitHub features that can be used in GitHub Apps.
+
+### GitLab
+
+GitLab support is mainly experimental and is influenced by the presence of CentOS Stream source-git workflow. **We do not verify** the functionality of the GitLab support on the day-to-day basis as we do with the GitHub App.
+
+#### How to set up Packit on GitLab
+
+GitLab doesn't have an app functionality and we don't use the [Integrations](https://docs.gitlab.com/ee/user/project/integrations/overview.html) as it doesn't solve authentication.
+To enable Packit, you need to manually configure a webhook.
+
+1. Go to `Settings → Webhooks` and add https://prod.packit.dev/api/webhooks/gitlab or https://stg.packit.dev/api/webhooks/gitlab as the `URL`.
+   ![GitLab webhooks](/images/gitlab/webhooks.png)
+2. Select `Push events`, `Comments`, `Issues events`, `Merge request events` and `Release events` as the `Triggers`.
+   Do not provide `Secret token` yet and click `Add webhook`.
+   You should see the created hook at the bottom of the page now.
+   ![Setting up webhook](/images/gitlab/set_up_webhook.png)
+3. Select `Test` and for example `Merge requests events`.
+   At the top of the page appears a red `Hook executed successfully but returned HTTP 401 "X-Gitlab-Token not in request.headers"`.
+4. Wait a bit and check `Issues` of the project and after a while there should be
+   a new confidential `Packit-Service Authentication` issue with the instructions how to finish the setup.
+
+### Pagure
+
+We have rudimentary support for the Pagure instances since they are used in the propose-downstream workflow. Packit cannot be set up as a CI (in the same sense as on GitHub or GitLab) on Pagure instances, since the demand for this feature is not significant. The differences between GitHub/GitLab and Pagure APIs would result in many workarounds to be implemented, if possible at all. You can track the progress in the [related issue](https://github.com/packit/packit-service/issues/556) on GitHub.
