@@ -153,7 +153,7 @@ See the [Testing Farm]({{< ref "testing-farm" >}}) documentation for details.
 
 ### GitHub
 
-Majority of Packit users host their projects on GitHub, therefore we focus mainly on supporting the GitHub App. All of our workflows are supported and tested on GitHub and also we utilize majority of new GitHub features that can be used in GitHub Apps.
+The majority of Packit users host their projects on GitHub, therefore we focus mainly on supporting the GitHub App. All of our workflows are supported and tested on GitHub. We utilize majority of new GitHub features that can be used in GitHub Apps.
 
 ### GitLab
 
@@ -165,9 +165,11 @@ GitLab doesn't have an app functionality and we don't use the [Integrations](htt
 To enable Packit, you need to manually configure a webhook.
 
 1. Go to `Settings → Webhooks` and add https://prod.packit.dev/api/webhooks/gitlab or https://stg.packit.dev/api/webhooks/gitlab as the `URL`.
+   ![GitLab webhooks](/images/gitlab/webhooks.png)
 2. Select `Push events`, `Comments`, `Issues events`, `Merge request events` and `Release events` as the `Triggers`.
    Do not provide `Secret token` yet and click `Add webhook`.
    You should see the created hook at the bottom of the page now.
+   ![Setting up webhook](/images/gitlab/set_up_webhook.png)
 3. Select `Test` and for example `Merge requests events`.
    At the top of the page appears a red `Hook executed successfully but returned HTTP 401 "X-Gitlab-Token not in request.headers"`.
 4. Wait a bit and check `Issues` of the project and after a while there should be
@@ -175,4 +177,4 @@ To enable Packit, you need to manually configure a webhook.
 
 ### Pagure
 
-We have a rudimentary support for the Pagure instances, since they are used in the propose-downstream workflow. Packit cannot be set up as a CI (in the same sense as on GitHub or GitLab) on Pagure instances, since the demand for this feature is not significant and also differences between GitHub/GitLab and Pagure are significant, which would result in many workarounds to be implemented, if possible at all.
+We have rudimentary support for the Pagure instances since they are used in the propose-downstream workflow. Packit cannot be set up as a CI (in the same sense as on GitHub or GitLab) on Pagure instances, since the demand for this feature is not significant. The differences between GitHub/GitLab and Pagure APIs would result in many workarounds to be implemented, if possible at all. You can track the progress in the [related issue](https://github.com/packit/packit-service/issues/556) on GitHub.

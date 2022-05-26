@@ -59,8 +59,7 @@ Packit connects the existing services ([Copr](https://copr.fedorainfracloud.org)
 
 ## Can we use Packit with Gitlab?
 
-Yes!
-
+Yes! You can find instructions at the [Packit Service page](/docs/packit-service#gitlab).
 
 ## How can I download RPM spec file if it is not part of upstream repository?
 
