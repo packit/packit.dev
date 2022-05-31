@@ -671,10 +671,13 @@ Packit loads the config from the newly pushed commit.
 
 The build is triggered only for commits with a spec-file change.
 
-Only commits authored by Packit are being acted upon so the [proven packager
+By default, only merged pull requests created by Packit are being acted upon so the [proven packager
 workflow](https://docs.fedoraproject.org/en-US/fesco/Provenpackager_policy/) is
 preserved, [details
-here](https://github.com/packit/packit-service/issues/1490).
+here](https://github.com/packit/packit-service/issues/1490). You can override this behaviour by specifying
+`allowed_pr_authors` and/or `allowed_committers` in the job metadata (see below). For direct pushes, the committer needs to
+be specified in the  `allowed_committers` and for merged pull requests the author of the PR needs to be
+specified in the `allowed_pr_authors` .
 
 There is no UI provided by Packit for the job,
 but it is visible across Fedora systems (e.g. via dist-git commit status)
@@ -699,6 +702,10 @@ Optional metadata:
 
 * **scratch** -- defaults to `false`, use to create scratch (test) builds
   instead of the real production builds
+* **allowed_pr_authors** - a list of FAS accounts of PR authors whose merged pull requests will trigger koji builds
+  (defaults to `['packit']`).
+* **allowed_committers** - a list of FAS accounts of committers whose pushes to dist-git will trigger koji builds
+  (defaults to an empty list).
 
 **Example**
 
