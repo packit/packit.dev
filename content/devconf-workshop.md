@@ -74,3 +74,11 @@ Use a URL of one of the dist-git pull-requests submitting this change to claim t
 The package is setup to create a Bodhi update for successful Koji builds
 for all the branched Fedora versions.
 Use a URL of one of the dist-git pull-requests submitting this change to claim this.
+
+### (9) Questionnaire: bonus task
+
+The workshop is also a really nice opportunity to see users trying
+to setup Packit, fighting with the documentation and hitting various obstacles.
+Since we want to learn from that experience and ideally fix those issues,
+please complete [this form](https://forms.gle/KFeHYafnSEDcEALL6)
+once you are done with other tasks.
