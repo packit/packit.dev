@@ -17,25 +17,23 @@ In order to enable test execution simply include `tests` jobs in the `.packit.ya
 jobs:
 - job: tests
   trigger: pull_request
-  metadata:
-    targets:
-    - fedora-all
+  targets:
+  - fedora-all
 ```
 The test job by default requires Copr build to be built before running tests and then
 it is installed into the testing environment.
 
-If you want to run tests without a Copr build, the test job needs to include `skip_build` (described below) option in the metadata:
+If you want to run tests without a Copr build, the test job needs to include `skip_build` (described below) option in the job configuration:
 ```yaml
   jobs:
   - job: tests
     trigger: pull_request
-    metadata:
-      targets:
-      - fedora-all
-      skip_build: true
+    targets:
+    - fedora-all
+    skip_build: true
 ```
 
-Required metadata:
+Required parameters:
 * **targets** - Specify which "builds" you want to test.
 [As with copr_build job](/docs/configuration#available-copr-build-targets) you can use
 specific targets such as `fedora-34-x86_64`. Or just the distro part,
@@ -52,14 +50,13 @@ In the following example, the `epel-8-x86_64` build will be tested on `centos-8`
 distro (otherwise the default would be `centos-stream-8`) and for
 `epel-7-x86_64` build the default mapping (to `centos-7` distro) will be used:
 ```yaml
-  metadata:
-    targets:
-      epel-8-x86_64:
-        distros: [centos-8]
-      epel-7-x86_64: {}
+  targets:
+    epel-8-x86_64:
+      distros: [centos-8]
+    epel-7-x86_64: {}
 ```
 
-Optional metadata:
+Optional parameters:
 * **fmf_url** - Git repository containing the metadata (FMF) tree.
   Use any format acceptable by the git clone command.
 * **fmf_ref** - Branch, tag or commit specifying the desired git revision.

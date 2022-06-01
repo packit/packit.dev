@@ -115,9 +115,8 @@ the `copr_build` job:
 jobs:
 - job: copr_build
   trigger: pull_request
-  metadata:
-    targets:
-      - centos-stream-8-x86_64
+  targets:
+    - centos-stream-8-x86_64
 ```
 
 ## After adding tests I see error 'No FMF metadata found.'

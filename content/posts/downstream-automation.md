@@ -29,10 +29,9 @@ copy_upstream_release_description: true
 jobs:
   - job: propose_downstream
     trigger: release
-    metadata:
-      dist_git_branches:
-        - fedora-all
-        - epel-8
+    dist_git_branches:
+      - fedora-all
+      - epel-8
 ```
 
 How does the `propose-downstream` work?
@@ -77,10 +76,9 @@ Here is a job definition for the package we use as an example:
 jobs:
   - job: koji_build
     trigger: commit
-    metadata:
-      dist_git_branches:
-        - fedora-all
-        - epel-8
+    dist_git_branches:
+      - fedora-all
+      - epel-8
 ```
 
 There is no UI provided by Packit for the job,
@@ -104,10 +102,9 @@ Here is a job definition:
 jobs:
   - job: bodhi_update
     trigger: commit
-    metadata:
-      dist_git_branches:
-        - fedora-branched # rawhide updates are created automatically
-        - epel-8
+    dist_git_branches:
+      - fedora-branched # rawhide updates are created automatically
+      - epel-8
 ```
 
 The packit config is loaded from the commit the build is triggered from.

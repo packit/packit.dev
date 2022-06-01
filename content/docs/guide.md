@@ -163,9 +163,8 @@ every change in a PR:
 jobs:
 - job: copr_build
   trigger: pull_request
-  metadata:
-    targets:
-    - fedora-all
+  targets:
+  - fedora-all
 ```
 
 `fedora-all` stands for all currently available Fedora releases.
@@ -185,9 +184,8 @@ job to push new upstream releases to Fedora rawhide:
 jobs:
 - job: propose_downstream
   trigger: release
-  metadata:
-    dist_git_branches:
-      - main
+  dist_git_branches:
+    - main
 ```
 
 Pretty clear I'd say: when a new upstream release happens, propose it to
@@ -208,9 +206,8 @@ create_pr: false
 jobs:
 - job: propose_downstream
   trigger: release
-  metadata:
-    dist_git_branches:
-      - main
+  dist_git_branches:
+    - main
 ```
 
 This option is ignored in Packit running on GitHub for security reasons and **is not**
@@ -225,9 +222,8 @@ for new dist-git commits. It can be configured like this:
 jobs:
 - job: koji_build
   trigger: commit
-  metadata:
-    dist_git_branches:
-      - fedora-all
+  dist_git_branches:
+    - fedora-all
 ```
 
 And if you do not wish to wait for the successful build and create the Bodhi update yourself,
@@ -237,9 +233,8 @@ just configure [another Packit job](/docs/configuration/#bodhi_update) to create
 jobs:
 - job: bodhi_update
   trigger: commit
-  metadata:
-    dist_git_branches:
-      - fedora-branched # rawhide updates are created automatically
+  dist_git_branches:
+    - fedora-branched # rawhide updates are created automatically
 ```
 
 
