@@ -526,6 +526,10 @@ Optional parameters:
   (`True` is `-1` and `False` is `60`).
 * **enable_net** -- Specifies whether created Copr build should have access to network during its build.
   Defaults to `True` (Copr default).
+* **identifier** -- Suffix added to the name of a GitHub check run. This is
+  useful when you have multiple `copr_build` jobs with different configuration.
+  For example if you [set this to "mock"](https://github.com/rpm-software-management/mock/pull/902/checks?check_run_id=6530714905), then a check run for Rawhide would be
+  named "rpm-build:fedora-rawhide-x86\_64:mock".
 
 When using a custom `owner`, Packit Service asks for `builder` permission the
 first time it tries to build in the project. In case the configuration of the
