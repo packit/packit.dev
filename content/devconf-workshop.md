@@ -1,7 +1,6 @@
 ---
 title: "DevConf.cz Mini Workshop"
 date: 2022-06-02
-draft: true
 ---
 
 # DevConf.cz Mini Workshop: Packit and Fedora: downstream story continues
