@@ -58,10 +58,11 @@ Use a URL of the pull-request with successful scratch build to claim this.
 
 #### (6) Dist-git update
 
-There is a dist-git pull-request created for each Fedora version
+There is a dist-git pull-request created for the last released Fedora version
 once there is a new upstream release.
-The pull-request needs to update a specfile.
-Use a URL of one of the pull-requests to claim this.
+Create a new fictive release `98.76.54` to trigger that.
+(Hint: Don't forget to bump the version in specfile.)
+Use a URL of of the pull-request to claim this.
 
 #### (7) Koji build
 
