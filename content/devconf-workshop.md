@@ -94,13 +94,13 @@ The package is setup to trigger Koji build for new dist-git commits
 done for merged pull-request submitted by user `packit` and for new pushes done by user `packit-stg`.
 Use a URL of one of the dist-git pull-requests submitting this change to claim this.
 
-### (8) Bodhi update
+#### (8) Bodhi update
 
 The package is setup to create a Bodhi update for successful Koji builds
 for all the branched Fedora versions.
 Use a URL of one of the dist-git pull-requests submitting this change to claim this.
 
-### (9) Questionnaire: bonus task
+#### (9) Questionnaire: bonus task
 
 The workshop is also a really nice opportunity to see users trying
 to setup Packit, fighting with the documentation and hitting various obstacles.
