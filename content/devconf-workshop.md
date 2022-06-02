@@ -43,7 +43,7 @@ date: 2022-06-02
 ### Scoring
 
 - point for every successful task
-- claim of completion in form of URL sent to <<add a GitHub discussion thread URL>>
+- claim of completion in form of URL sent to [GitHub discussion thread](https://github.com/packit/packit/discussions/1606)
 - full descriptions of the tasks follows:
 
 #### (1) PR Copr build
