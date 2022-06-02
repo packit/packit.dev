@@ -16,6 +16,31 @@ draft: true
 - time: 25 minutes (timer on screen)
 - winner is the team with the most points and the first one if multiple teams get all the points
 
+### Packages
+
+- python-readthedocs-sphinx-ext
+  - https://github.com/readthedocs/readthedocs-sphinx-ext
+  - https://src.fedoraproject.org/rpms/python-readthedocs-sphinx-ext
+  - hint: remove the patch from specfile (patch already merged upstream)
+- golang-github-spacemonkeygo-openssl
+  - https://github.com/spacemonkeygo/openssl
+  - https://src.fedoraproject.org/rpms/golang-github-spacemonkeygo-openssl
+  - hint: in specfile, remove the line with commit and move the line with version before the %gometa
+- golang-github-10gen-escaper
+  - https://github.com/10gen/escaper
+  - https://src.fedoraproject.org/rpms/golang-github-10gen-escaper
+  - hint: in specfile, remove the line with commit and move the line with version before the %gometa
+- nyancat
+  - https://github.com/klange/nyancat
+  - http://src.fedoraproject.org/rpms/nyancat
+- - your package
+
+### Hints:
+
+- Create a fork of the GitHub project.
+- To make the work easier, put your specfile to the upstream project (=fork).
+  (There is a way how to avoid this but requires some tweaking.)
+
 ### Scoring
 
 - point for every successful task
