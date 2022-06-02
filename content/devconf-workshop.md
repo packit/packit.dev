@@ -7,7 +7,7 @@ date: 2022-06-02
 
 ## Competition
 
-### Rules:
+### Rules
 
 - package for a team
 - points for various usage of Packit
@@ -34,7 +34,7 @@ date: 2022-06-02
   - http://src.fedoraproject.org/rpms/nyancat
 - - your package
 
-### Hints:
+### Hints
 
 - Create a fork of the GitHub project.
 - To make the work easier, put your specfile to the upstream project (=fork).
