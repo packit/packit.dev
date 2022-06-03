@@ -140,9 +140,9 @@ rpmautospec utilizes two RPM macros:
 
 If you want your upstream spec file to also work well when `rpmautospec-rpm-macros` is not installed, set `Release` to this:
 
-    Release:  %{?autorelease}%{!?autorelease:1{?dist}}
+    Release:  %{?autorelease}%{!?autorelease:1%{?dist}}
 
-This construct uses `autorelease` macro if it's defined, and if it's not, it sets release to `1{?dist}`.
+This construct uses `autorelease` macro if it's defined, and if it's not, it sets release to `1%{?dist}`.
 
 For `%changelog`, you don't need to include the changelog file upstream and you can have it downstream only, which makes sense - changelog is specific to a release.
 
