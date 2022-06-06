@@ -411,19 +411,16 @@ If there is no `jobs` section in the configuration file, jobs default to:
 jobs:
 - job: copr_build
   trigger: pull_request
-  metadata:
-    targets: fedora-stable
+  targets: [fedora-stable]
 
 - job: tests
   trigger: pull_request
-  metadata:
-    targets: fedora-stable
+  targets: [fedora-stable]
 
 - job: propose_downstream
   trigger: release
-  metadata:
-    dist_git_branches:
-      - fedora-all
+  dist_git_branches:
+    - fedora-all
 ```
 
 If you do not want to use the jobs then the `jobs` section in the configuration file should be empty:
@@ -438,15 +435,6 @@ Every job has two mandatory keys:
 2. `trigger` - what is the trigger for the job?
 
 Every job only supports a specific set of triggers.
-
-Jobs can also accept additional configuration in a key `metadata` which has dict as a value:
-```yaml
-jobs:
-- job: some-job
-  trigger: ran-out-of-beer
-  metadata:
-    key: value
-```
 
 
 ##### Overriding global parameters
@@ -466,8 +454,7 @@ specfile_path: package.spec
 jobs:
 - job: some-job
   trigger: ran-out-of-beer
-  metadata:
-    key: value
+  targets: [fedora-stable]
   specfile_path: somewhere/else/package.spec
 ```
 
@@ -517,13 +504,13 @@ Supported triggers:
 * **commit** -- reacts to new commits to the specified branch
 * **release** -- check out content of the tag associated with the release
 
-Required metadata:
+Required parameters:
 
-* **targets** - a (list of) mock chroot(s) where the build is going to be
+* **targets** - (a list of) mock chroot(s) where the build is going to be
   executed (example `fedora-rawhide-x86_64`): for more info [see below](#available-copr-build-targets).
 * **branch** - the name of the branch we want to build for when using **commit** trigger
 
-Optional metadata:
+Optional parameters:
 
 * **timeout** - (seconds) give up watching a build after timeout, defaults to 7200s, i.e. 2 hours
 * **owner** - a namespace in Copr where the build should happen (defaults to packit).
@@ -539,6 +526,10 @@ Optional metadata:
   (`True` is `-1` and `False` is `60`).
 * **enable_net** -- Specifies whether created Copr build should have access to network during its build.
   Defaults to `True` (Copr default).
+* **identifier** -- Suffix added to the name of a GitHub check run. This is
+  useful when you have multiple `copr_build` jobs with different configuration.
+  For example if you [set this to "mock"](https://github.com/rpm-software-management/mock/pull/902/checks?check_run_id=6530714905), then a check run for Rawhide would be
+  named "rpm-build:fedora-rawhide-x86\_64:mock".
 
 When using a custom `owner`, Packit Service asks for `builder` permission the
 first time it tries to build in the project. In case the configuration of the
@@ -558,10 +549,9 @@ you use custom `owner`.
 jobs:
 - job: copr_build
   trigger: pull_request
-  metadata:
-    targets:
-      - fedora-stable
-      - centos-stream-8-x86_64
+  targets:
+    - fedora-stable
+    - centos-stream-8-x86_64
 ```
 
 With this configuration, you'll get builds in all stable fedora releases
@@ -621,13 +611,13 @@ Supported triggers:
 * **commit** -- reacts to new commits to the specified branch
 * **release** -- check out content of the tag associated with the release
 
-Required metadata:
+Required parameters:
 
 * **branch** -- the name of the branch we want to build for when using **commit** trigger.
 
-Optional metadata:
+Optional parameters:
 
-* **targets** -- a (list of) targets we want to build for,
+* **targets** -- (a list of) targets we want to build for,
   list of supported targets can be listed using with `koji list-targets`.
   You can also use the [aliases provided by Packit](#aliases)
   to not need to change the config file when the new system version is released.
@@ -640,7 +630,7 @@ whether a pull request is created or changes are pushed directly (only from CLI)
 
 Supported triggers: **release**.
 
-Optional metadata:
+Optional parameters:
 
 * **dist_git_branches** - a (list of) branch(es) in dist-git where packit should work (defaults to `main`).
   You can also use the [aliases provided by Packit](#aliases)
@@ -654,9 +644,8 @@ jobs:
   trigger: release
 - job: propose_downstream
   trigger: release
-  metadata:
-    dist_git_branches:
-      - f35
+  dist_git_branches:
+    - f35
 ```
 
 This config would update Fedora Rawhide and Fedora 35 dist-git branches.
@@ -675,7 +664,7 @@ By default, only merged pull requests created by Packit are being acted upon so 
 workflow](https://docs.fedoraproject.org/en-US/fesco/Provenpackager_policy/) is
 preserved, [details
 here](https://github.com/packit/packit-service/issues/1490). You can override this behaviour by specifying
-`allowed_pr_authors` and/or `allowed_committers` in the job metadata (see below). For direct pushes, the committer needs to
+`allowed_pr_authors` and/or `allowed_committers` in the job configuration (see below). For direct pushes, the committer needs to
 be specified in the  `allowed_committers` and for merged pull requests the author of the PR needs to be
 specified in the `allowed_pr_authors` .
 
@@ -692,13 +681,13 @@ Supported triggers:
 
 * **commit** -- reacts to new commits to the specified branch (in dist-git)
 
-Required metadata:
+Required parameters:
 
 * **dist_git_branches** -- the name of the dist-git branch we want to build for when using **commit** trigger.
   You can also use the [aliases provided by Packit](#aliases)
   to not need to change the config file when the new system version is released.
 
-Optional metadata:
+Optional parameters:
 
 * **scratch** -- defaults to `false`, use to create scratch (test) builds
   instead of the real production builds
@@ -713,10 +702,9 @@ Optional metadata:
 jobs:
 - job: koji_build
   trigger: commit
-  metadata:
-    dist_git_branches:
-      - fedora-all
-      - epel-8
+  dist_git_branches:
+    - fedora-all
+    - epel-8
 ```
 
 ##### bodhi\_update
@@ -750,7 +738,7 @@ Supported triggers:
 * **commit** -- Packit uses the original action as a config trigger so you need to use `commit` as a trigger.
   The real trigger is a successful Koji build (that was triggered from a commit).
 
-Required metadata:
+Required parameters:
 
 * **dist_git_branches** -- the name of the dist-git branch(es) the build we want to use is coming from.
   You can also use the [aliases provided by Packit](#aliases)
@@ -762,10 +750,9 @@ Required metadata:
 jobs:
 - job: bodhi_update
   trigger: commit
-  metadata:
-    dist_git_branches:
-      - fedora-stable # rawhide updates are created automatically
-      - epel-8
+  dist_git_branches:
+    - fedora-stable # rawhide updates are created automatically
+    - epel-8
 ```
 
 ## User configuration file
