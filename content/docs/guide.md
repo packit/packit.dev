@@ -162,8 +162,11 @@ a [`srpm_build_deps` option](https://packit.dev/docs/configuration/#srpm_build_d
 In any case, feel free to reach out to us if you are having troubles
 and we'd be glad to help.
 
+
+Packit supports various functions in form of jobs you can can configure.
+(All the jobs are described [here](https://packit.dev/docs/configuration/#supported-jobs).)
 In order to get RPM builds for every change in your project, you need add a
-section `jobs` inside your .packit.yaml and set up a job to do RPM builds for
+section `jobs` inside your .packit.yaml and set up a `copr_build` job to do RPM builds for
 every change in a PR:
 
 ```yaml
