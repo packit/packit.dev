@@ -153,7 +153,13 @@ That's the theory. In practice, your laptop and packit service sandbox
 environment are vastly different. One thing which can happen easily is that a
 command is not available in the sandbox. Also, all the commands are run using
 an unprivileged user - you can't install anything or perform any privileged
-operation. In any case, feel free to reach out to us if you are having troubles
+operation. If you want to tweak the environment,
+you can do the SRPM builds in Copr environment instead.
+There, you can specify the requirements yourself.
+The change can be done by specifying
+a [`srpm_build_deps` option](https://packit.dev/docs/configuration/#srpm_build_deps).
+(We are planning to move there all the builds in the future.)
+In any case, feel free to reach out to us if you are having troubles
 and we'd be glad to help.
 
 In order to get RPM builds for every change in your project, you need add a
