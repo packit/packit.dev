@@ -17,7 +17,7 @@ to your repository together with the RPM spec file.
 
 On Github you also need to install (see below) our
 [Github App](https://github.com/marketplace/packit-as-a-service),
-for Gitlab see [FAQ](/docs/faq#can-we-use-packit-with-gitlab).
+for Gitlab see [the section bellow](#GitLab).
 
 Packit Service validates your pull requests by building your software in Fedora OS.
 Once the builds are done, Packit lets you know how to install the
