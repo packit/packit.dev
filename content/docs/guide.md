@@ -142,8 +142,9 @@ same way as you do from upstream.  Make sure, that you specify the
 ## You are approved to use Packit Service.
 
 In order to start using packit service, our GitHub app, you need to [install it
-in your GitHub projects]({{< ref "packit-service" >}}). Then we need to
-approve you (usually takes only a few hours).
+in your GitHub projects]({{< ref "packit-service" >}}) and get approved.
+(The approval process can be done by you without any manual interaction
+by the Packit team.)
 
 ## The project has successful builds inside the service.
 
