@@ -142,8 +142,9 @@ same way as you do from upstream.  Make sure, that you specify the
 ## You are approved to use Packit Service.
 
 In order to start using packit service, our GitHub app, you need to [install it
-in your GitHub projects]({{< ref "packit-service" >}}). Then we need to
-approve you (usually takes only a few hours).
+in your GitHub projects]({{< ref "packit-service" >}}) and get approved.
+(The approval process can be done by you without any manual interaction
+by the Packit team.)
 
 ## The project has successful builds inside the service.
 
@@ -152,11 +153,20 @@ That's the theory. In practice, your laptop and packit service sandbox
 environment are vastly different. One thing which can happen easily is that a
 command is not available in the sandbox. Also, all the commands are run using
 an unprivileged user - you can't install anything or perform any privileged
-operation. In any case, feel free to reach out to us if you are having troubles
+operation. If you want to tweak the environment,
+you can do the SRPM builds in Copr environment instead.
+There, you can specify the requirements yourself.
+The change can be done by specifying
+a [`srpm_build_deps` option](https://packit.dev/docs/configuration/#srpm_build_deps).
+(We are planning to move there all the builds in the future.)
+In any case, feel free to reach out to us if you are having troubles
 and we'd be glad to help.
 
+
+Packit supports various functions in form of jobs you can configure.
+(All the jobs are described [here](https://packit.dev/docs/configuration/#supported-jobs).)
 In order to get RPM builds for every change in your project, you need add a
-section `jobs` inside your .packit.yaml and set up a job to do RPM builds for
+section `jobs` inside your .packit.yaml and set up a `copr_build` job to do RPM builds for
 every change in a PR:
 
 ```yaml
