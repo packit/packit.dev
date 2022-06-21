@@ -9,6 +9,10 @@ weight: 20
 Push the Bodhi updates that have been in testing for more than 'Stable days' (7 by default)
 to the stable.
 
+If you are not authenticated with the bodhi server, please make sure that you
+navigate in your browser to the URL provided by the bodhi-client and then paste
+the `code=XX...` to the terminal when prompted.
+
 
 ## Help
 
