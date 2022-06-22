@@ -54,7 +54,7 @@ We've started with Fedora Linux because we work for Red Hat and we ❤ Fedora.
 ## How is Packit different from other services?
 
 Packit connects the existing services ([Copr](https://copr.fedorainfracloud.org),
-[Pagure](https://src.fedoraproject.org), [Koji](https://koji.fedoraproject.org),
+[Fedora dist-git](https://src.fedoraproject.org), [Koji](https://koji.fedoraproject.org),
 [Bodhi](https://bodhi.fedoraproject.org)) together.
 
 ## Can we use Packit with Gitlab?
