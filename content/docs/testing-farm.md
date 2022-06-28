@@ -61,6 +61,9 @@ Optional parameters:
   Use any format acceptable by the git clone command.
 * **fmf_ref** - Branch, tag or commit specifying the desired git revision.
   Defaults to "master" when **fmf_url** is specified and **fmf_ref** is not.
+* **tmt_plan** - Run plans by the given name. Can be passed as a regular
+  expression.
+* **tf_post_install_script** - Bash script as a string to run during the guest provisioning. 
 * **skip_build** - Whether to skip the build phase and only run tests (defaults to false). 
   Enabling this will cause no Copr build to be built and installed into the testing environment, 
   only submitting request to Testing Farm (the selected components to be installed should be part of the TMT definitions).
