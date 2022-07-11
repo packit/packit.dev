@@ -32,48 +32,52 @@ instead of using hardcoded versions.
 
 #### New upstream release
 The process of releasing a new version starts in the upstream repository by creating a 
-new upstream release. Packit gets the information about the newly created release from GitHub,
+new upstream release. Packit gets the information about the newly created release (not a git tag) from GitHub,
 loads the config from the release commit and if there is a `propose_downstream` job
 defined, the workflow begins.
 Users with write or admin permissions to the repository can retrigger an
-update via a comment in an issue:
+update via a comment in any open issue:
 
     /packit propose-downstream
 
 #### Uploading archive to lookaside cache
-The upstream archive needs to be downloaded by Packit at first and then uploaded to the lookaside cache.
+The upstream archive needs to be downloaded by Packit first and then uploaded to the lookaside cache.
+By default, Packit downloads sources defined in the specfile that contain URLs.
+You can override these URLs via [`sources`](/docs/configuration#sources) configuration key.
 
-For our Python packages, [we use](https://github.com/packit/packit/blob/main/.github/workflows/pypi-publish.yml) a 
-[GitHub action](https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows) that automatically builds and uploads the archive to PyPI 
-on each new release. Then during `propose_downstream`, Packit tries to download the archive from the PyPI and 
-also utilises retries in case the upstream archive is not 
-available in the time of running the job.
+For Python packages, you can use a 
+[GitHub action](https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows)
+([example setup of Packit itself](https://github.com/packit/packit/blob/main/.github/workflows/pypi-publish.yml))
+that automatically builds and uploads the archive to PyPI 
+on each new release. Then during propose downstream, Packit tries to download the archive from the provided URL.
+If the download fails because the upstream archive is not available at the time of running the job, 
+the job is scheduled to be retried later. 
 
 #### Updating dist-git content
 After saving the archive in the lookaside cache,
-Packit updates the dist-git content (mainly `sources` file and spec-file) via pull requests for the specified branches.
-When running [locally](/docs/cli/propose-downstream), you can set `create_pr` option in the configuration to `false`
-to directly push to a dist-git branch. This option is ignored in Packit running on GitHub/GitLab for security reasons and **is not**
-recommended either.
+Packit updates the dist-git content (mainly `sources` file and spec file) via pull requests for the specified branches.
+You can configure which files in the upstream repo should be copied to dist-git during an update
+via [`files_to_sync`](/docs/configuration/#files_to_sync) configuration key.
 
-The version in the spec-file is set to the version that Packit gets from the upstream tag 
+The version in the spec file is set to the version that Packit gets from the upstream tag 
 corresponding to the release that triggered the job. If the version and tag differ, 
 you can specify the [`upstream_tag_template`](/docs/configuration/#upstream_tag_template)
 configuration option so that Packit can extract the correct version.
 
 If you use [`copy_upstream_release_description: true`](/docs/configuration/#copy_upstream_release_description),
 the changelog entry will use the GitHub release description field.
-(Just make sure the formatting is compatible with spec-file.
+(Just make sure the formatting is compatible with spec file.
 E.g. use `-` instead of `*` for lists to not create multiple changelog entries.)
 There is also [`sync_changelog`](/docs/configuration/#sync_changelog) configuration option to enable syncing 
 the whole changelog.
 
 
-
 During proposing a new update, you will get updates of the job status via commit statuses/checks
 on the release commit. These will provide links to our dashboard where you can find all the information about 
-the job including the logs. You can check all `propose_downstream` runs in `Propose Downstreams` tab in [`Jobs` 
+the job including the logs. You can check all propose downstream runs in `Propose Downstreams` tab in [`Jobs` 
 section of our dashboard](https://dashboard.packit.dev/jobs).
+
+![Dashboard view for propose downstreams](/images/propose-downstream-dashboard.png)
 
 After Packit successfully creates the dist-git pull requests, 
 it's on downstream CI systems and maintainer(s) to check the changes and merge
@@ -83,10 +87,10 @@ the pull requests.
 After having the dist-git content updated, you can easily automate also building in Koji.
 You can simply configure Packit to react to the new commits in your dist-git repository and create
 Koji builds by having
-a Packit configuration (when using `propose_downstream` job, the Packit configuration is synced by default) in your 
+a Packit configuration (when using `propose_downstream` job, you can configure Packit to sync the file) in your 
 dist-git repository that includes a `koji_build` job.
 Then, if Packit is informed (via fedora-messaging bus) about a new commit in the configured dist-git branch, it submits a new build in Koji
-like maintainers usually do. (The commits without any spec-file change are skipped.)
+like maintainers usually do. (The commits without any spec file change are skipped.)
 
 By default, only merged pull requests created by Packit are being acted upon, but 
 you can override this behaviour by specifying
@@ -106,7 +110,8 @@ There is no UI provided by Packit for the job,
 but it is visible across Fedora systems (like you can see in the following image)
 like a manually created Koji build and you can utilise
 [Fedora Notifications](https://apps.fedoraproject.org/notifications/about)
-to get informed about the builds.
+to get informed about the builds. Also, you can configure a repository where should we
+open issues in case of errors during the job via [`issue_repository`](/docs/configuration#issue_repository) configuration key.
 
 
 ## Bodhi update job
@@ -128,4 +133,5 @@ jobs:
 The packit config is loaded from the commit the build is triggered from.
 Just don't forget to give `commit` rights to `packit` FAS user
 for your package in dist-git settings so Packit can create the update for you.
+The `issue_repository` configuration key mentioned in the Koji build job applies here as well.
 
