@@ -4,7 +4,7 @@ date: 2019-06-28
 weight: 5
 ---
 
-# `packit create-bodhi-update`
+# `packit create-update`
 
 Create a new bodhi update for the latest Fedora build of the upstream project.
 
