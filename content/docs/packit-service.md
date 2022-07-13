@@ -129,20 +129,8 @@ to re-trigger every failed test.
 
 ## How to propose a new downstream update?
 
-Packit Service is able to propose updates of new upstream releases using this comment in an issue:
-
-    /packit propose-downstream
-
-If you want to propose the latest release into Fedora repositories,
-create an issue and add that comment into this issue and
-Packit service triggers and pushes it directly into Fedora dist-git repositories.
-
-If all jobs ([propose_downstream](/docs/configuration/#supported-jobs),
-defined in `packit.yaml` file, finished successfully, then the issue is
-automatically closed.
-
-Only users with write or admin permissions to the repository can propose a new
-update.
+Packit Service is able to propose updates of new upstream releases by configuring `propose-downstream` job.
+See [our release guide](./fedora-releases-guide.md) for more info.
 
 ## Adding tests
 

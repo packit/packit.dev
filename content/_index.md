@@ -42,7 +42,7 @@ trigger tests directly on different platforms. [Learn more.](https://packit.dev/
 
 With Packit, you can easily
 get your upstream releases to the [Fedora dist-git](https://src.fedoraproject.org), automatically submit builds in [Koji](https://koji.fedoraproject.org/koji/)
-and create [Bodhi](https://bodhi.fedoraproject.org) updates! [Learn more.](/docs/configuration/#propose_downstream)
+and create [Bodhi](https://bodhi.fedoraproject.org) updates! [Learn more.](/docs/fedora-releases-guide)
 {{< /columns >}}
 
 ### How does Packit look like in action?

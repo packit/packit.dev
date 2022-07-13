@@ -188,68 +188,10 @@ since we try to use all the latest features.
 ## Packit service handles Fedora updates for you.
 
 So you already have a `jobs` section in your config. Let's extend it with another
-job to push new upstream releases to Fedora rawhide:
-
-```yaml
-jobs:
-- job: propose_downstream
-  trigger: release
-  dist_git_branches:
-    - main
-```
-
-Pretty clear I'd say: when a new upstream release happens, propose it to
-dist-git main branch: Fedora Rawhide.
-
-If you are wondering if you can use this for other branches as well,
-you will not be disappointed.
-That is exactly why there is a `dist_git_branches` key where you can specify the list of
-all the dist-git branches you want to update.
-And if you don't want to change the configuration every release,
-take a look at [aliases](/docs/configuration/#aliases) you can use instead of hardcoded versions.
-
-When running locally, you can set `create_pr` option to `false`
-to directly push to a dist-git branch:
-
-```yaml
-create_pr: false
-jobs:
-- job: propose_downstream
-  trigger: release
-  dist_git_branches:
-    - main
-```
-
-This option is ignored in Packit running on GitHub for security reasons and **is not**
-recommended either.
-
-Here, CI systems and packagers need to step in and verify the proposed changes.
-
-Once the pull-request is merged, you can use a [`koji_build` job](/docs/configuration/#koji_build) to trigger the Koji build
-for new dist-git commits. It can be configured like this:
-
-```yaml
-jobs:
-- job: koji_build
-  trigger: commit
-  dist_git_branches:
-    - fedora-all
-```
-
-And if you do not wish to wait for the successful build and create the Bodhi update yourself,
-just configure [another Packit job](/docs/configuration/#bodhi_update) to create it automatically:
-
-```yaml
-jobs:
-- job: bodhi_update
-  trigger: commit
-  dist_git_branches:
-    - fedora-branched # rawhide updates are created automatically
-```
+jobs that will handle the Fedora updates: `propose_downstream`, `koji_build` and `bodhi_udpate`.
+These are explained in detail in our [release guide](fedora-releases-guide.md).
 
 
-Packit user in Fedora is not a proven packager, so you need
-to grant [packit user](https://src.fedoraproject.org/user/packit) the ability to push.
 
 And that's about it. Now you should be able to use the core features of the Packit.
 If you have any questions, feel free to [reach out to us](https://packit.dev/#contact).

@@ -626,8 +626,7 @@ Optional parameters:
 ##### propose_downstream
 
 Land a new upstream release in Fedora. This job only makes sure the changes
-happen in Fedora dist-git - no builds. The global key `create_pr` controls
-whether a pull request is created or changes are pushed directly (only from CLI).
+happen in Fedora dist-git - no builds. A pull request is created as a result.
 
 Supported triggers: **release**.
 
