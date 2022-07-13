@@ -711,7 +711,7 @@ jobs:
 ##### bodhi\_update
 
 Create a new update in
-[Fedora Bodhi](bodhi.fedoraproject.org) for successful
+[Fedora Bodhi](https://bodhi.fedoraproject.org) for successful
 Koji build.
 A Packit config file needs to be in the dist-git repository
 to allow this job to be triggered.
