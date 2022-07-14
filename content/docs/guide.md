@@ -115,10 +115,10 @@ Until that, you will get a neutral status with `Namespace is not allowed!`
 message on your commits.
 
 Besides that:
-* If you want to configure builds via Packit Service,
+* If you want to configure builds via Packit,
   your software needs to comply with [Copr guidelines](https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr)
   since we use [Fedora Copr](src.fedoraproject.org/) for the builds.
-  Therefore, please, make sure you read them before configuring the [Packit Service build job](/docs/configuration/#copr_build).
+  Therefore, please, make sure you read them before configuring the [Packit build job](/docs/configuration/#copr_build).
 * If you are interested in using [internal instance of the Testing Farm](https://docs.testing-farm.io/general/0.1/services.html#_red_hat_ranch)
   to run your tests in, please, [reach out to us](/#contact), since for this job, an additional approval on our side is needed.
 * For retrying the [build](/docs/configuration/#copr_build) and [test](/docs/configuration/#tests) jobs via `/packit build` and `/packit test` pull request comments,
@@ -339,19 +339,19 @@ If you are looking for an inspiration for your .packit.yaml, check [packit's
 config file](https://github.com/packit/packit/blob/main/.packit.yaml)
 since we try to use all the latest features.
 
-## Check Packit Service works
+## Check Packit works
 
-With the configuration above, Packit Service is able only to build your changes and provide them as RPMs.
-Once you create a pull request, Packit Service builds the code from the
+With the configuration above, Packit is able only to build your changes and provide them as RPMs.
+Once you create a pull request, Packit builds the code from the
 pull request in COPR repository and reports back COPR build status to the pull request.
 
-An example of Packit Service pull request:
+An example of Packit pull request:
 
-![Packit service pull request](/packit-service-pr.png)
+![Packit pull request](/packit-service-pr.png)
 
-## How to re-trigger Packit Service actions in your pull request?
+## How to re-trigger Packit actions in your pull request?
 
-Packit Service is able to schedule new builds based on a pull request comment:
+Packit is able to trigger new builds based on a pull request comment:
 
     /packit copr-build
 
@@ -386,7 +386,7 @@ which builds only failed builds and similar for testing farm
 
 to re-trigger every failed test.
 
-#### Packit service handles Fedora updates for you.
+#### Packit handles Fedora updates for you.
 
 So you already have a `jobs` section in your config. Let's extend it with another
 jobs that will handle the Fedora updates: `propose_downstream`, `koji_build` and `bodhi_udpate`.
