@@ -14,10 +14,8 @@ follow [our guide](/docs/guide/#have-packit-tooling-installed-locally).
 ## Commands
 
 * [build](/docs/cli/build/)
-* [copr-build](/docs/cli/copr-build/)
 * [create-update](/docs/cli/create-bodhi-update/)
 * [init](/docs/cli/init/)
-* [local-build](/docs/cli/local-build/)
 * [propose-downstream](/docs/cli/propose-downstream/)
 * [push-updates](/docs/cli/push-updates)
 * [srpm](/docs/cli/srpm/)

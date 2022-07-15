@@ -21,7 +21,7 @@ The command to create source RPMs is called `srpm` and that's how you can create
 Our changes worked! We can try building them, either in our local environment
 using Packit - this implies that all build dependencies are installed:
 
-    $ packit local-build
+    $ packit build locally
 
 ...or in [mock](https://github.com/rpm-software-management/mock):
 
