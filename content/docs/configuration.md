@@ -319,8 +319,16 @@ Use this key to be notified about errors of the downstream jobs (Koji build and 
 The value can be a URL of any GitHub/GitLab/Pagure project
 where issues are enabled and Packit has an identity on that git forger instance.
 (Let us know if you need another instance to be supported.)
-By default, no issue will be created and if the issue already exists,
-a new comment will be added.
+It does not need to be an upstream repository,
+you can also enable an issue tracker for the dist-git repository
+and use this as a place for those notifications.
+Or, you can set up a dedicated project for receiving such notifications.
+
+By default, no issue will be created so Packit doesn't unintentionally spam any repository.
+(E.g. Since those jobs are defined in downstream, upstream project does not need to be aware of Packit.)
+
+If you configure this option, Packit will not create an issue when it already exists.
+In that case, the issue will be reused and a new comment will be added.
 
 #### copy_upstream_release_description
 
