@@ -316,11 +316,20 @@ You can enable the commenting by setting `successful_build` to `true`.
 #### issue_repository
 
 Use this key to be notified about errors of the downstream jobs (Koji build and Bodhi update).
-The value can be a URL of any GitHub/GitLab/Pagure project
+The value can be a URL of any GitHub/GitLab/Pagure project including dist-git
 where issues are enabled and Packit has an identity on that git forger instance.
+Alternatively, you can set up a dedicated project for receiving such notifications.
 (Let us know if you need another instance to be supported.)
-By default, no issue will be created and if the issue already exists,
-a new comment will be added.
+It does not need to be an upstream repository,
+you can also enable an issue tracker for the dist-git repository
+and use this as a place for those notifications.
+Or, you can set up a dedicated project for receiving such notifications.
+
+By default, no issue will be created so Packit doesn't unintentionally spam any repository.
+(E.g. Since those jobs are defined in downstream, upstream project does not need to be aware of Packit.)
+
+By enabling this setting, Packit will either create a new issue or add a comment to an already existing issue.
+In that case, the issue will be reused and a new comment will be added.
 
 #### copy_upstream_release_description
 
