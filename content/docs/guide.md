@@ -42,9 +42,13 @@ We utilize majority of new GitHub features that can be used in GitHub Apps.
 
 1. Navigate to the ["Packit-as-a-Service" GitHub
    application](https://github.com/marketplace/packit-as-a-service).
+   ![Packit GitHub application](/images/guide/guide_github_app.png)
 2. Under "Pricing and setup", click "Install it for free".
+   ![Packit GitHub application: Plan](/images/guide/guide_github_app_plan.png)
 3. Click "Complete order and begin installation".
+   ![Packit GitHub application: Order](/images/guide/guide_github_app_order.png)
 4. Install the "Packit-as-a-Service" to repositories of your choice.
+   ![Packit GitHub application: Installation](/images/guide/guide_github_app_installation.png)
 
 Once installed, you will see the ["Packit-as-a-Service" GitHub
 application](https://github.com/marketplace/packit-as-a-service) in your
@@ -59,6 +63,8 @@ runs the latest code. It can be used to verify latest changes until they get
 (every Tuesday) into the [production instance](https://github.com/marketplace/packit-as-a-service).
 If you want to enjoy the freshest features and help us with the development,
 see more details [here](https://github.com/packit/packit/discussions/1530).
+
+![Packit GitHub application: Staging instance](/images/guide/guide_github_app_stg.png)
 
 
 ### GitLab
@@ -108,11 +114,16 @@ fails, we create a new issue in our
 [allowlist tracker](https://github.com/packit/notifications/issues/).
 (You will be tagged in that issue and should get a GitHub notification about that.)
 
+![Packit approval issue](/images/guide/guide_approval_issue.png)
+
 You can provide the FAS account in a comment
 as `/packit verify-fas <my-fas-username>` in the issue we create
 for your installation. This will trigger the automatic check.
 Until that, you will get a neutral status with `Namespace is not allowed!`
 message on your commits.
+
+![Packit approval issue: add mapping in the FAS settings](/images/guide/guide_approval_fas_settings.png)
+![Packit approval issue: add mapping by a comment](/images/guide/guide_approval_comments.png)
 
 Besides that:
 * If you want to configure builds via Packit,
