@@ -74,16 +74,16 @@ i.e. the same you'd get by pip installing from Github.
 Depending on the command you want to perform you need to mount secrets and
 configuration files, like in the following examples:
 
-#### packit copr-build
+#### Copr build
 
     $ podman run -ti --rm -v ~/.config/copr:/root/.config/copr:z -v $PWD:/src:z quay.io/packit/packit bash
-    $ packit copr-build
+    $ packit build in-copr
 
-#### packit build
+#### Koji build
 
     $ podman run -ti --rm -v ~/.ssh/:/root/.ssh:z -v $PWD:/src:z quay.io/packit/packit bash
     $ fkinit -u <Fedora Account username>
-    $ packit build
+    $ packit build in-koji
 
 
 ## RPM builds pass on your laptop.
