@@ -89,6 +89,25 @@ To enable Packit, you need to manually configure a webhook.
 4. Wait a bit and check `Issues` of the project and after a while there should be
    a new confidential `Packit-Service Authentication` issue with the instructions how to finish the setup.
 
+##### GitLab Pipelines
+
+With some limitations (but tweakability) you can also use Packit as a GitLab pipeline
+using the Packit's [CLI](/docs/cli) from the regularly built
+[`quay.io/packit/packit` image](https://quay.io/repository/packit/packit).
+As you can see in the following example, it's really straightforward and explicit:
+
+```yaml
+image: quay.io/packit/packit
+
+srpm_build:
+  stage: build
+  script:
+  - packit srpm
+  artifacts:
+    paths:
+      - "*.src.rpm"
+    expire_in: 1 week
+```
 
 ### Pagure
 
