@@ -121,7 +121,9 @@ You can track the progress in the [related issue](https://github.com/packit/pack
 ## 2. Approval
 
 As a next step, you need to have a valid [Fedora Account System](https://fedoraproject.org/wiki/Account_System)
-account to be able to start using Packit Service.
+account to be able to start using Packit Service in an upstream project.
+For GitHub, we have an automated way of self-approval,
+for other instances, [contact us](/#contact) and we will approve you manually.
 We require our new users to have `GitHub Username` field set in the FAS account so that we can automatically
 check for the match between the `GitHub Username` field in the FAS account and the GitHub account that triggers the verification.
 (If you don't know, where to set this value,
