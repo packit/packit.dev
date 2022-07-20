@@ -383,7 +383,10 @@ An example of Packit pull request:
 
 ## How to re-trigger Packit actions in your pull request?
 
-Packit is able to trigger new builds based on a pull request comment:
+In general, you can put a `/packit <job-you-want-to-trigger>` comment
+to trigger the Packit job manually.
+
+So for [Copr builds](/docs/configuration/#copr_build), Packit is able to trigger new builds based on a pull request comment:
 
     /packit copr-build
 
@@ -393,6 +396,8 @@ or the shorter version
 
 So whenever you run into a flake or feel like you want to retrigger, just type
 that comment into the PR and enjoy some fine, fresh builds.
+
+For [`propose_downstream`](/docs/configuration/#propose_downstream), you need to place that comment to any issue.
 
 The requirements stated [above](#approval) apply, so if you see this message
 
