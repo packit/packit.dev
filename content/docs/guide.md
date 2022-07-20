@@ -165,10 +165,8 @@ Packit uses a configuration file to let Packit know what to do, when to do it an
 As a format, it uses YAML and here are all the valid names:
 * `.packit.yaml`
 * `.packit.yml`
-* `.packit.json`
 * `packit.yaml`
 * `packit.yml`
-* `packit.json`
 
 And where do you need to place this config file?
 Whenever you need to use Packit -- the concept is easy:

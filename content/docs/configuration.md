@@ -11,10 +11,8 @@ You should place the file in the root of your upstream repo. Packit accepts thes
 
 * `.packit.yaml`
 * `.packit.yml`
-* `.packit.json`
 * `packit.yaml`
 * `packit.yml`
-* `packit.json`
 
 Both Packit Service and packit tool use this configuration file.
 
