@@ -6,7 +6,7 @@ aliases: [/packit-service, /packit-as-a-service, /docs/packit-as-a-service]
 
 # Packit Onboarding Guide
 
-Let's take a look on how to start using Packit and how to get most of it.
+Let's take a look on how to start using Packit and how to get the most out of it.
 
 This guide is focused on the service use-case, but Packit is also available as a [CLI tool](https://github.com/packit/packit/blob/main/README.md),
 so you can always [try things locally](/docs/cli/) on your own.
@@ -14,14 +14,14 @@ Note that running tests in Testing farm infrastructure is not currently supporte
 Unlike the service, CLI uses your own identities when connecting to other service like [Copr](https://copr.fedorainfracloud.org/)
 or [Fedora dist-git](https://src.fedoraproject.org/).
 
-To start using Packit, you need three things:
+To start using Packit, you need to do three things:
 
-1. setup integration (so Packit is notified about your activities and can provide feedback)
+1. set up integration (so Packit is notified about your activities and can provide feedback)
 2. be approved (self-done mapping of your forge identity to FAS identity so we know who you are)
 3. configure the wanted features
 
 
-## 1. Setup Packit integration
+## 1. Set up Packit integration
 
 The integration is dependent on the service the upstream project is hosted on.
 In case you want to use Packit on your downstream repository for downstream jobs
@@ -70,7 +70,7 @@ see more details [here](https://github.com/packit/packit/discussions/1530).
 ### GitLab
 
 GitLab support is mainly experimental and is influenced by the presence of CentOS Stream source-git workflow.
-**We do not verify** the functionality of the GitLab support on the day-to-day basis as we do with the GitHub App.
+**We do not verify** the functionality of the GitLab support on a day-to-day basis as we do with the GitHub App.
 
 
 #### How to set up Packit on GitLab
@@ -114,7 +114,7 @@ srpm_build:
 We have rudimentary support for the Pagure instances since they are used in the downstream workflow.
 Packit cannot be set up as a CI (in the same sense as on GitHub or GitLab) on Pagure instances,
 since the demand for this feature is not significant.
-The differences between GitHub/GitLab and Pagure APIs would result in many workarounds to be implemented, if possible at all.
+The differences between GitHub/GitLab and Pagure APIs would result in many workarounds having to be implemented, if it would be possible at all.
 You can track the progress in the [related issue](https://github.com/packit/packit-service/issues/556) on GitHub.
 
 
@@ -127,7 +127,7 @@ for other instances, [contact us](/#contact) and we will approve you manually.
 We require our new users to have `GitHub Username` field set in the FAS account so that we can automatically
 check for the match between the `GitHub Username` field in the FAS account and the GitHub account that triggers the verification.
 (If you don't know, where to set this value,
-the URL looks like this: `https://accounts.fedoraproject.org/user/{my-fas-username}/settings/profile/#github`.)
+the URL looks like this: `https://accounts.fedoraproject.org/user/<my-fas-username>/settings/profile/#github`.)
 
 During the installation, we try to check the FAS account with the same
 username as the GitHub account that triggers the installation and if the check
@@ -171,7 +171,7 @@ As a format, it uses YAML and here are all the valid names:
 And where do you need to place this config file?
 Whenever you need to use Packit -- the concept is easy:
 Packit loads the config file from the repository and commit related to the event it reacts to.
-E.g. if Packit works with pull-requests, it takes config from the HEAD commit of the pull-request,
+E.g. if Packit reacts to a pull request, it takes config from the HEAD commit of the pull request,
 if Packit works with releases, the release commit is used
 and if Packit works with downstream Koji build,
 the respective dist-git commit is used.
@@ -224,7 +224,7 @@ There are a few version-related config options you might need to set:
 ### Jobs
 
 Packit's feature set is really wide and does not need to to be used as a whole pipeline.
-To let user decide what and when is needed, Packit uses concept of so-called `jobs`.
+To let user decide what and when should run, Packit uses concept of so-called `jobs`.
 Each job represents a feature of Packit. All the jobs are defined under the `jobs` key.
 For each job you need to specify the following information:
 * `job`: the type of the job, the feature you want Packit to do.
@@ -379,11 +379,11 @@ If you are looking for an inspiration for your .packit.yaml, check [packit's
 config file](https://github.com/packit/packit/blob/main/.packit.yaml)
 since we try to use all the latest features.
 
-## Check Packit works
+## Check that Packit works
 
 With the configuration above, Packit is able only to build your changes and provide them as RPMs.
 Once you create a pull request, Packit builds the code from the
-pull request in COPR repository and reports back COPR build status to the pull request.
+pull request in Copr repository and reports back Copr build status to the pull request.
 
 An example of Packit pull request:
 
