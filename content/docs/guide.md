@@ -217,7 +217,7 @@ There are a few version-related config options you might need to set:
   Specifies a format of upstream tags if it doesn't contain just a version.
 * [`get-current-version` action](/docs/actions/):
   Command to get a project version in the current state of the project.
-* [`release_suffix`(/docs/configuration/#release_suffix):
+* [`release_suffix`](/docs/configuration/#release_suffix):
   Used to influence release field of artifacts provided by Packit.
 
 
