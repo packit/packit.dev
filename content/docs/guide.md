@@ -188,24 +188,24 @@ More details can be found on a dedicated [configuration page](/docs/configuratio
 
 You need to provide some basic information to let Packit understand your project and package.
 You can use `packit init` command (when [running Packit locally](/docs/cli/)) to get a basic structure.
-It will look like this:
+It will look like this (name of the package is guessed from the directory name):
 
 
 ```yaml
 # See the documentation for more information:
 # https://packit.dev/docs/configuration/
 
-specfile_path: directory.spec
+specfile_path: package.spec
 
 # add or remove files that should be synced
 files_to_sync:
-    - directory.spec
+    - package.spec
     - .packit.yaml
 
 # name in upstream package repository/registry (e.g. in PyPI)
-upstream_package_name: directory
+upstream_package_name: package
 # downstream (Fedora) RPM package name
-downstream_package_name: directory
+downstream_package_name: package
 ```
 
 We know that every project is a bit different and Packit can't guess everything
@@ -296,33 +296,6 @@ passing for you, it should work inside packit service as well.
 
 
 #### RPM builds pass on your laptop
-
-Once you [install packit locally](/docs/cli/#installation), it's time to fill `.packit.yaml` — the
-configuration file packit is using. Packit can help to fill the initial
-template by running the `init` command:
-
-    $ packit init
-    $ cat .packit.yaml
-
-```yaml
-# See the documentation for more information:
-# https://packit.dev/docs/configuration/
-
-specfile_path: directory.spec
-
-# add or remove files that should be synced
-files_to_sync:
-    - directory.spec
-    - .packit.yaml
-
-# name in upstream package repository/registry (e.g. in PyPI)
-upstream_package_name: directory
-# downstream (Fedora) RPM package name
-downstream_package_name: directory
-```
-
-Head on to page [configuration]({{< ref "configuration" >}}) to learn more
-about the config file.
 
 Packit needs an RPM spec file to build your package. The spec file does not
 need to be included in the upstream repo and can be generated on the fly or
