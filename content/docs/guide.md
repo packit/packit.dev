@@ -13,6 +13,8 @@ so you can always [try things locally](/docs/cli/) on your own.
 Note that running tests in Testing farm infrastructure is not currently supported with the CLI tool.
 Unlike the service, CLI uses your own identities when connecting to other service like [Copr](https://copr.fedorainfracloud.org/)
 or [Fedora dist-git](https://src.fedoraproject.org/).
+Packit CLI is **NOT** a client of the Packit GitHub app,
+`packit` command  directly interacts with the services.
 
 To start using Packit, you need to do three things:
 
