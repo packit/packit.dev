@@ -11,10 +11,8 @@ You should place the file in the root of your upstream repo. Packit accepts thes
 
 * `.packit.yaml`
 * `.packit.yml`
-* `.packit.json`
 * `packit.yaml`
 * `packit.yml`
-* `packit.json`
 
 Both Packit Service and packit tool use this configuration file.
 
@@ -816,14 +814,3 @@ them in a public (such as a GitHub repository). The configuration file here is
 located on your workstation, please do NOT confuse it with a config file for
 your project - that one is described above in the first section of this
 document.
-
-#### Server-side configuration
-
-These values are used to configure packit service. No need to bother with them, they serve as a documentation for us, packit service developers.
-
- Key name                     | Type            | Description
-------------------------------|-----------------|----------------------------------------------------------------------
- `keytab_path`                | string          | path to a Kerberos keytab file (requires `fas_user` to be set)
- `github_app_id`              | string          | github app ID used for authentication
- `github_app_cert_path`       | string          | path to a certificate associated with a github app
- `webhook_secret`             | string          | when specified in a Github App settings, GitHub uses it to create a hash signature with each payload

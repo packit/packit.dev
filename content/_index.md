@@ -81,6 +81,6 @@ and create [Bodhi](https://bodhi.fedoraproject.org) updates! [Learn more.](/docs
    [install locally](/docs/guide/#have-packit-tooling-installed-locally)
    and start using right away,
 
-2. a [service]({{< ref "packit-service" >}}), which provides you feedback
+2. a [service]({{< ref "guide" >}}), which provides you feedback
    on how is your project integrated with [Fedora Linux](https://getfedora.org), [CentOS Stream](https://www.centos.org/centos-stream/)
    and other distributions.
