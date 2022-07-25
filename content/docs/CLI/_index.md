@@ -10,7 +10,7 @@ bookCollapseSection: true
 
 ## Installation
 
-There are various way how to install [packit CLI](https://github.com/packit/packit).
+There are various ways how to install [packit CLI](https://github.com/packit/packit).
 Pick what suits you the best:
 
 ### Fedora Linux
