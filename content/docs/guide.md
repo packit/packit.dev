@@ -1,7 +1,7 @@
 ---
 title: Packit Onboarding Guide
 weight: 2
-aliases: [/packit-service, /packit-as-a-service, /docs/packit-as-a-service]
+aliases: [/packit-service, /packit-as-a-service, /docs/packit-service, /docs/packit-as-a-service]
 ---
 
 # Packit Onboarding Guide
