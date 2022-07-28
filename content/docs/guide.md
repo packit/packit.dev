@@ -1,7 +1,7 @@
 ---
 title: Packit Onboarding Guide
 weight: 2
-aliases: [/packit-service, /packit-as-a-service, /docs/packit-as-a-service]
+aliases: [/packit-service, /packit-as-a-service, /docs/packit-service, /docs/packit-as-a-service]
 ---
 
 # Packit Onboarding Guide
@@ -362,7 +362,7 @@ pull request in Copr repository and reports back Copr build status to the pull r
 
 An example of Packit pull request:
 
-![Packit pull request](/packit-service-pr.png)
+![Packit pull request](/images/guide/guide_pr_status.png)
 
 ## How to re-trigger Packit actions in your pull request?
 
