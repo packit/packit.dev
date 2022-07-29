@@ -356,11 +356,18 @@ since we try to use all the latest features.
 
 ## Check that Packit works
 
-With the configuration above, Packit is able only to build your changes and provide them as RPMs.
-Once you create a pull request, Packit builds the code from the
-pull request in Copr repository and reports back Copr build status to the pull request.
+With the configuration above, Packit will build your changes and provide them as RPMs.
+Once you create a pull request, Packit will:
+1. Check out the PR.
+2. Merge it to the target branch (this can be configured by the
+   [`merge_pr_in_ci`](https://packit.dev/docs/configuration/#merge_pr_in_ci)
+   configuration option).
+3. Submit a build using the code that results from the merge in the Copr build
+   system [in Packit's
+   namespace](https://copr.fedorainfracloud.org/coprs/packit/).
+4. Report results about the Copr build status to the pull request.
 
-An example of Packit pull request:
+An example of Packit's checks in a pull request:
 
 ![Packit pull request](/images/guide/guide_pr_status.png)
 
