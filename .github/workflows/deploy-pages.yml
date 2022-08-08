@@ -21,7 +21,7 @@ jobs:
         env:
           CNAME: packit.dev
           GITHUB_ACTOR: jpopelka
-          HUGO_VERSION: 0.80.0
+          HUGO_VERSION: 0.93.3
           HUGO_EXTENDED: true
           TARGET_REPO: packit/packit.dev-github-pages
           TARGET_BRANCH: main
