@@ -10,3 +10,12 @@ weight: 59
 - Packit CLI can now build RPMs in mock. For more information see https://packit.dev/docs/cli/build/mock ([packit#1662](https://github.com/packit/packit/pull/1662))
 - When using Packit before being allowed, Packit newly links an approval issue where the self-approval can be performed. ([packit-service#1596](https://github.com/packit/packit-service/pull/1596))
 - A downstream koji-build can now be re-triggered by adding a comment containing `/packit koji-build` into a dist-git pull request with target branch corresponding to the branch the build should be acted upon. ([packit-service#1586](https://github.com/packit/packit-service/pull/1586))
+
+## Week 31 (August 2nd – August 8th)
+
+- Action `fix_spec_file` can change a spec file - Packit now preserves that change.
+  ([packit#1679](https://github.com/packit/packit/pull/1679))
+- BREAKING CHANGE: fixed an issue where the repo was searched for the specfile
+  before checking if `downstream_package_name` is set, and
+  `<downstream_package_name>.spec` can be used as the `specfile_path`.
+  ([packit#1663](https://github.com/packit/packit/pull/1663))
