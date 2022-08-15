@@ -19,3 +19,8 @@ weight: 59
   before checking if `downstream_package_name` is set, and
   `<downstream_package_name>.spec` can be used as the `specfile_path`.
   ([packit#1663](https://github.com/packit/packit/pull/1663))
+
+## Week 32 (August 9th – August 15th)
+
+- We have fixed an issue when propose downstream didn't retry to download sources that were not yet available at the time of the first attempt. ([packit-service#1609](https://github.com/packit/packit-service/pull/1609))
+- When creating Copr builds, Packit will now retry multiple times in case there is a GitHub outage or an internal error. ([packit-service#1589](https://github.com/packit/packit-service/pull/1589))
