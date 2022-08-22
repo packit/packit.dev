@@ -21,7 +21,7 @@ prepared sources are moved to the `result-dir`.
 
 
     Usage: packit prepare-sources [OPTIONS] [PATH_OR_URL]
-    
+
       Prepare sources for a new SRPM build using content of the upstream
       repository. Determine version, create an archive or download upstream and
       create patches for sourcegit, fix/update the specfile to use the right
@@ -33,25 +33,34 @@ prepared sources are moved to the `result-dir`.
       repository, it defaults to the current working directory
     
     Options:
-      --result-dir DIR            Copy the sources into DIR. By default,
-                                  `prepare_sources_result` directory in the
-                                  current working directory is created.
-    
-      --upstream-ref TEXT         Git ref of the last upstream commit in the
-                                  current branch from which packit should generate
-                                  patches (this option implies the repository is
-                                  source-git).
-    
-      --bump / --no-bump          Specifies whether to bump version or not.
-      --release-suffix TEXT       Specifies release suffix. Allows to override
-                                  default generated:{current_time}.{sanitized_curr
-                                  ent_branch}{git_desc_suffix}
-    
-      --ref TEXT                  Git reference to checkout.
-      --pr-id TEXT                Specifies PR to checkout.
-      --merge-pr / --no-merge-pr  Specifies whether to merge PR into the base
-                                  branch in case pr-id is specified.
-    
-      -h, --help                  Show this message and exit.
+      --result-dir DIR                Copy the sources into DIR. By default,
+                                      `prepare_sources_result` directory in the
+                                      current working directory is created.
+      --upstream-ref TEXT             Git ref of the last upstream commit in the
+                                      current branch from which packit should
+                                      generate patches (this option implies the
+                                      repository is source-git).
+      --bump / --no-bump              Specifies whether to bump version or not.
+      --release-suffix TEXT           Specifies release suffix. Allows to override
+                                      default generated:{current_time}.{sanitized_
+                                      current_branch}{git_desc_suffix}
+      --default-release-suffix        Allows to use default, packit-generated,
+                                      release suffix when some release_suffix is
+                                      specified in the configuration.
+      --job-config-index INTEGER      Internal option to override package config
+                                      found in the repository with job config with
+                                      given index (needed for packit service).
+      --ref TEXT                      Git reference to checkout.
+      --pr-id TEXT                    Specifies PR to checkout.
+      --merge-pr / --no-merge-pr      Specifies whether to merge PR into the base
+                                      branch in case pr-id is specified.
+      --target-branch TEXT            Specifies target branch which PR should be
+                                      merged into.
+      --create-symlinks / --no-create-symlinks
+                                      Specifies whether Packit should create
+                                      symlinks or copy the files (e.g. archive
+                                      outside specfile dir).
+      -h, --help                      Show this message and exit.
+
 
 
