@@ -24,3 +24,19 @@ weight: 59
 
 - We have fixed an issue when propose downstream didn't retry to download sources that were not yet available at the time of the first attempt. ([packit-service#1609](https://github.com/packit/packit-service/pull/1609))
 - When creating Copr builds, Packit will now retry multiple times in case there is a GitHub outage or an internal error. ([packit-service#1589](https://github.com/packit/packit-service/pull/1589))
+
+## Week 33 (August 16th – August 22nd)
+
+- Packit CLI can now submit VM images in [Red Hat Image Builder](https://console.redhat.com/insights/image-builder).
+  All build-related commands have now consistent `--wait` / `--no-wait` options.
+  ([packit#1666](https://github.com/packit/packit/pull/1666))
+- Packit `prepare-sources` command now has a `--create-symlinks` / `--no-create-symlinks` option,
+  which enables copying the archive instead of symlinking. This will be used in the Copr environment,
+  where symlinking the archive previously caused issues.
+  ([packit#1682](https://github.com/packit/packit/pull/1682))
+- We have fixed the handling of the situation when Packit lacks permission to update a Copr project.
+  ([packit#1684](https://github.com/packit/packit/pull/1684))
+- Dashboard should now load data for [jobs](https://dashboard.packit.dev/jobs) faster because
+  the database querying has been improved and also queries are done only when needed.
+  ([packit-service#1617](https://github.com/packit/packit-service/pull/1617),
+  [dashboard#189](https://github.com/packit/dashboard/pull/189))
