@@ -331,7 +331,7 @@ In that case, the issue will be reused and a new comment will be added.
 
 #### copy_upstream_release_description
 
-(*bool*) When doing a new update in Fedora dist-git, the Github upstream release description
+(*bool*) When doing a new update in Fedora dist-git, the [Github upstream release description](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)
 is copied to the specfile changelog when set to `true`. By default (`false`),
 commit message titles (first line of a commit message) are copied.
 But be aware that the release description is copied as is, without any processing
