@@ -19,7 +19,7 @@ Packit CLI is **NOT** a client of the Packit GitHub app,
 To start using Packit, you need to do three things:
 
 1. set up integration (so Packit is notified about your activities and can provide feedback)
-2. be approved (self-done mapping of your forge identity to FAS identity so we know who you are)
+2. be approved (self-done mapping of your forge identity to FAS identity, so we know who you are)
 3. configure the wanted features
 
 
@@ -37,7 +37,7 @@ Here are the supported git-forges:
 
 The majority of Packit users host their projects on GitHub, therefore we focus mainly on supporting the GitHub App.
 All of our workflows are supported and tested on GitHub.
-We utilize majority of new GitHub features that can be used in GitHub Apps.
+We utilize the majority of new GitHub features that can be used in GitHub Apps.
 
 
 ### How to set up Packit on GitHub
@@ -61,7 +61,7 @@ will see the application displayed there.
 ### Staging instance
 
 [Packit-as-a-Service-stg](https://github.com/apps/packit-as-a-service-stg) GitHub App
-runs the latest code. It can be used to verify latest changes until they get
+runs the latest code. It can be used to verify the latest changes until they get
 (every Tuesday) into the [production instance](https://github.com/marketplace/packit-as-a-service).
 If you want to enjoy the freshest features and help us with the development,
 see more details [here](https://github.com/packit/packit/discussions/1530).
@@ -77,10 +77,13 @@ GitLab support is mainly experimental and is influenced by the presence of CentO
 
 #### How to set up Packit on GitLab
 
-GitLab doesn't have an app functionality and we don't use the [Integrations](https://docs.gitlab.com/ee/user/project/integrations/overview.html) as it doesn't solve authentication.
+GitLab doesn't have an app functionality, and we don't use the
+[Integrations](https://docs.gitlab.com/ee/user/project/integrations/overview.html)
+as it doesn't solve authentication.
 To enable Packit, you need to manually configure a webhook.
 
-1. Go to `Settings → Webhooks` and add https://prod.packit.dev/api/webhooks/gitlab or https://stg.packit.dev/api/webhooks/gitlab as the `URL`.
+1. Go to `Settings → Webhooks` and add https://prod.packit.dev/api/webhooks/gitlab
+   or https://stg.packit.dev/api/webhooks/gitlab as the `URL`.
    ![GitLab webhooks](/images/gitlab/webhooks.png)
 2. Select `Push events`, `Comments`, `Issues events`, `Merge request events` and `Release events` as the `Triggers`.
    Do not provide `Secret token` yet and click `Add webhook`.
@@ -125,7 +128,7 @@ You can track the progress in the [related issue](https://github.com/packit/pack
 As a next step, you need to have a valid [Fedora Account System](https://fedoraproject.org/wiki/Account_System)
 account to be able to start using Packit Service in an upstream project.
 For GitHub, we have an automated way of self-approval,
-for other instances, [contact us](/#contact) and we will approve you manually.
+for other instances, [contact us](/#contact), and we will approve you manually.
 We require our new users to have `GitHub Username` field set in the FAS account so that we can automatically
 check for the match between the `GitHub Username` field in the FAS account and the GitHub account that triggers the verification.
 (If you don't know, where to set this value,
@@ -225,7 +228,7 @@ There are a few version-related config options you might need to set:
 
 ### Jobs
 
-Packit's feature set is really wide and does not need to to be used as a whole pipeline.
+Packit's feature set is really wide and does not need to be used as a whole pipeline.
 To let user decide what and when should run, Packit uses concept of so-called `jobs`.
 Each job represents a feature of Packit. All the jobs are defined under the `jobs` key.
 For each job you need to specify the following information:
@@ -253,7 +256,7 @@ jobs:
     - fedora-all
 ```
 
-Most of the attributes can be defined both on global level (outside of the `jobs` key)
+Most of the attributes can be defined both on global level (outside the `jobs` key)
 or for a single job only (like e.g. `targets` in the snippet above).
 More about this overriding mechanism can be found [here](/docs/configuration/#overriding-global-parameters).
 Another useful feature are [aliases](/docs/configuration/#aliases) used to avoid
@@ -328,7 +331,7 @@ There, you can specify the requirements yourself.
 The change can be done by specifying
 a [`srpm_build_deps` option](https://packit.dev/docs/configuration/#srpm_build_deps).
 (We are planning to move there all the builds in the future.)
-In any case, feel free to reach out to us if you are having troubles
+In any case, feel free to reach out to us if you are having troubles,
 and we'd be glad to help.
 
 

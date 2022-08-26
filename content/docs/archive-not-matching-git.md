@@ -17,7 +17,7 @@ The provided solution will be performed in a [source-git]({{< ref "/source-git" 
 repository.
 
 When all your downstream patches apply cleanly on top of the upstream git repo
-for the particular git tag, then all is good and you don't need anything
+for the particular git tag, then all is good, and you don't need anything
 special. You can follow [the guide for the source-git init command]({{< ref
 "/docs/cli/source-git/init" >}}) to create such a source-git repo.
 
@@ -74,5 +74,5 @@ ignore: true
 There is a tool to achieve this within the packit project:
 [dist-git-to-source-git](https://github.com/packit/dist-git-to-source-git).
 Thought this tool was mainly used by the packit team and was not meant to be
-used outside of the team, please [reach out]({{< ref
+used outside the team, please [reach out]({{< ref
 "faq#how-can-i-contact-you" >}}) and the team will be happy to assist you.

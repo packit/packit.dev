@@ -38,4 +38,4 @@ The premise is that the remote of your fork is named `$USER_ID` as this is how
 From this point, you should follow the standard dist-git contribution process.
 
 Our team is working on simplifying this workflow so some steps described above
-will be automated in future.
+will be automated in the future.

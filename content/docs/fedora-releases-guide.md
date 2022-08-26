@@ -108,7 +108,7 @@ jobs:
 
 There is no UI provided by Packit for the job,
 but it is visible across Fedora systems (like you can see in the following image)
-like a manually created Koji build and you can utilise
+like a manually created Koji build, and you can utilise
 [Fedora Notifications](https://apps.fedoraproject.org/notifications/about)
 to get informed about the builds. Also, you can configure a repository where should we
 open issues in case of errors during the job via [`issue_repository`](/docs/configuration#issue_repository) configuration key.
