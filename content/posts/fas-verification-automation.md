@@ -5,7 +5,7 @@ weight: 94
 ---
 
 As you may already know, for using Packit Service
-Github App we [require our users to have a valid Fedora Account System account](/docs/packit-service/#requirements-for-running-packit-service-jobs).
+GitHub App we [require our users to have a valid Fedora Account System account](/docs/packit-service/#requirements-for-running-packit-service-jobs).
 We were verifying the newcomers until now manually, but in recent weeks, we have implemented an automated solution
 for it. Let's take a closer look at how it is done currently and what have we improved!
 
@@ -23,7 +23,7 @@ So how does the verification work now?
 
 For each new GitHub installation, we first check whether there isn't a FAS account with the same login as the one
 that triggered the installation. If we find such an account, we check whether the `GitHub Username` in this FAS account matches
-the Github login of the one that triggered the installation. To get the information about the FAS accounts, we
+the GitHub login of the one that triggered the installation. To get the information about the FAS accounts, we
 use the [`fasjson-client` library](https://github.com/fedora-infra/fasjson-client).
 If this check doesn't prove any match, we create an issue in the
 `packit/notifications` repository as previously. This is what it looks like:

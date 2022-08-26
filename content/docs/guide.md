@@ -398,10 +398,10 @@ it means the author of the pull request does not have write access to the
 repository so the build cannot be scheduled. This is a perfect case for
 maintainers of the repository to post `/packit build` in the PR to get a build.
 
-In Github Checks interface, it is also possible to re-trigger a specific task just by clicking on `Re-run`
+In GitHub Checks interface, it is also possible to re-trigger a specific task just by clicking on `Re-run`
 for the particular check:
 
-![Re-run Github check](/github-check-rerun.png)
+![Re-run GitHub check](/github-check-rerun.png)
 
 Or it is possible to re-trigger every failed task using a pull request comment
 

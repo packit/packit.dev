@@ -53,7 +53,7 @@ at PyPI is something different**.
 
 If none of the above work for you, try running it in a container
 from our Fedora based image. It contains packit installed from `main` branch,
-i.e. the same you'd get by pip installing from Github.
+i.e. the same you'd get by pip installing from GitHub.
 
     $ podman run -ti --rm -v $PWD:/src:z quay.io/packit/packit bash
     $ packit

@@ -13,14 +13,14 @@ upstream release.
 
 ## Requirements
 
-* Upstream git repository on Github.
+* Upstream git repository on GitHub.
 * Upstream release (read, git tag) where version in spec file is equivalent to
   the name of the git tag.
 * Packit config file placed in the upstream repository.
 * Spec file present in the upstream repository and is correct in a given
   release.
 * Pagure API tokens for Fedora Dist-git.
-* Github API token.
+* GitHub API token.
 * Valid Fedora Kerberos ticket.
 
 

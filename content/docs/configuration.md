@@ -37,7 +37,7 @@ spec file doesn't need to be present and its path doesn't need to be defined in 
 #### upstream_package_name
 
 (*string*) Name of the upstream repository (e.g. in PyPI), defaults to the
-name of the Github repository; it's used when working with the upstream project,
+name of the GitHub repository; it's used when working with the upstream project,
 as a release archive name and as a directory name in that archive.
 
 #### upstream_project_url
@@ -215,7 +215,7 @@ pattern with `branches/`, e.g. for a branch matching `*-release` set to `branche
 #### downstream_package_name
 
 (*string*) Name of the RPM package in Fedora, defaults to the name of the
-Github repository.
+GitHub repository.
 
 #### dist_git_namespace
 
@@ -332,7 +332,7 @@ In that case, the issue will be reused and a new comment will be added.
 
 #### copy_upstream_release_description
 
-(*bool*) When doing a new update in Fedora dist-git, the [Github upstream release description](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)
+(*bool*) When doing a new update in Fedora dist-git, the [GitHub upstream release description](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)
 is copied to the specfile changelog when set to `true`. By default (`false`),
 commit message titles (first line of a commit message) are copied.
 But be aware that the release description is copied as is, without any processing
@@ -803,7 +803,7 @@ authentication:
         instance_url: https://src.fedoraproject.org
 ```
 
-The GitHub token is needed when packit interacts with Github API,
+The GitHub token is needed when packit interacts with GitHub API,
 get it at https://github.com/settings/tokens (getting full read & write repo scope should be enough).
 The Pagure token needed to access REST API,
 get it at https://src.fedoraproject.org/settings#nav-api-tab

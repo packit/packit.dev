@@ -53,7 +53,7 @@ We are prepared to help you with that.
 
 If you want to keep an eye on what we are currently working on, check our [_Packit upstream work_ board on GitHub](https://github.com/orgs/packit/projects/4).
 
-![Github: Packit upstream work](/images/2021-features-github-project.png)
+![GitHub: Packit upstream work](/images/2021-features-github-project.png)
 
 ## Testing Farm
 
@@ -88,7 +88,7 @@ To get users quickly know that we accepted the task and started working on it, w
 
 ![Packit Service: reactions](/images/2021-features-thumbs-up.png)
 
-Speaking of statuses, we switched to a more feature-rich API called Github Check Runs.
+Speaking of statuses, we switched to a more feature-rich API called GitHub Check Runs.
 It allows us to create a separate result page where we can show more information
 -- e.g. more links when needed and more space for hints when there is a problem.
 You can also find the run results on a separate `Checks` tab of the pull-requests page.

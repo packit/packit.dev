@@ -9,7 +9,7 @@ Submit a Koji build for the selected branch in Fedora dist-git.
 
 ## Requirements
 
-* Upstream git repository on Github.
+* Upstream git repository on GitHub.
 * Packit config file placed in the upstream repository.
 * Valid Fedora Kerberos ticket.
 
