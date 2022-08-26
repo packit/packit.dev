@@ -30,9 +30,9 @@ is set.
 If there are only test jobs with `skip_build` option defined (more about it [here](http://packit.dev/testing-farm/)), 
 spec file doesn't need to be present and its path doesn't need to be defined in the config.
 
-#### upstream_project_name
+#### ~~upstream_project_name~~ (deprecated)
 
-(*string*) Deprecated since packit-0.7.0, use `upstream_package_name` instead.
+(*string*) Deprecated since packit-0.7.0, use [`upstream_package_name`](#upstream_package_name) instead.
 
 #### upstream_package_name
 
@@ -74,7 +74,7 @@ part is synchronized. Use this only when your changelogs are in sync since this 
 repo which are meant to be copied to dist-git during an update (spec file path
 and config file path are set every time by default).
 
-It is now deprecated in favor of *files_to_sync*. 
+It is now deprecated in favor of [`files_to_sync`](#files_to_sync).
 
 #### release_suffix
 
@@ -226,11 +226,11 @@ Github repository.
 (*string*) URL of dist-git server, defaults to https://src.fedoraproject.org/
 (has to end with a slash).
 
-#### create_tarball_command (**deprecated**)
+#### ~~create_tarball_command~~ (deprecated)
 
 Please use [`create-archive` action](/docs/actions/)
 
-#### current_version_command (**deprecated**)
+#### ~~current_version_command~~ (deprecated)
 
 Please use [`get-current-version` action](/docs/actions/)
 
@@ -261,8 +261,9 @@ the spec file.
 #### upstream_tag_template
 
 (*string*) Packit by default expects git tags to match versions (e.g. when
-doing the `propose-downstream` command) - if you are using a different tagging
-scheme, let's say `v1.2.3` you can then set this parameter to `v{version}` and
+doing the [`propose-downstream` command](/docs/cli/propose-downstream/)) -
+if you are using a different tagging scheme, let's say `v1.2.3`
+you can then set this parameter to `v{version}` and
 packit will fill in the version argument.
 
 #### archive_root_dir_template
@@ -446,8 +447,9 @@ Every job only supports a specific set of triggers.
 
 ##### Overriding global parameters
 
-You are able to override your global parameters (such as `specfile_path`,
-`downstream_package_name`, `actions`...) for every job. This is very useful
+You are able to override your global parameters (such as [`specfile_path`](#specfile_path),
+[`downstream_package_name`](#downstream_package_name),
+[`actions`](#actions)...) for every job. This is very useful
 when you want to set up a build or a test matrix using different parameters or
 configuration. It's also useful when your release workflow differs between
 Fedora and EPEL.
@@ -465,7 +467,7 @@ jobs:
   specfile_path: somewhere/else/package.spec
 ```
 
-In this example, the job `some-job` would override `specfile_path` to
+In this example, the job `some-job` would override [`specfile_path`](#specfile_path) to
 `somewhere/else/package.spec` instead of using `./package.spec`.
 
 #### Aliases
@@ -681,7 +683,7 @@ like a manually created Koji build and you can utilise
 [Fedora Notifications](https://apps.fedoraproject.org/notifications/about)
 to get informed about the builds.
 
-For Koji builds from upstream, see `production_build`.
+For Koji builds from upstream, see [`production_build`](#production_build).
 (The naming is not ideal, but we don't want to change this because of the backwards compatibility.)
 
 Supported triggers:
@@ -724,7 +726,7 @@ to allow this job to be triggered.
 Packit loads the config from the commit the build is triggered from.
 
 For now, the Bodhi update is created only for builds submitted by the Packit FAS user.
-(See `koji_build` job for more details on how to set this up.)
+(See [`koji_build`](#koji_build) job for more details on how to set this up.)
 This is just for the early stage of this job and
 we can easily turn off that filter.
 Let us know if you need this condition to be removed.
