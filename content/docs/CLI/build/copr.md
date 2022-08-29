@@ -10,7 +10,7 @@ Submit a [Copr](https://copr.fedorainfracloud.org) build of the present content 
 
 ## Requirements
 
-* Upstream git repository on Github.
+* Upstream git repository on GitHub.
 * Packit config file placed in the upstream repository.
 * [~/.config/copr](https://copr.fedorainfracloud.org/api/)
 

@@ -10,7 +10,7 @@ Create a new bodhi update for the latest Fedora build of the upstream project.
 
 ## Requirements
 
-* Upstream git repository on Github.
+* Upstream git repository on GitHub.
 * Packit config file placed in the upstream repository.
 
 

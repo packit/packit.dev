@@ -98,7 +98,7 @@ As an example, this is how we were debugging build problems with anaconda:
 $ podman run -ti --rm --memory 768MB -v $PWD:/src -w /src quay.io/packit/sandcastle:prod bash
 ```
 
-4. Run commands of your choice:
+3. Run commands of your choice:
 ```
 [root@4af5dbd9c828 src]# ./configure
 checking for a BSD-compatible install... /usr/bin/install -c

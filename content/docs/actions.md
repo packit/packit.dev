@@ -10,14 +10,14 @@ You can probably find yourself in a situation where some part of the packit work
 tweaked for your package.
 
 Packit supports actions, which can be used to change the default implementation
-of some of the steps in the workflow. Packit is able to execute multiple
+of some steps in the workflow. Packit is able to execute multiple
 commands for a single action. Each action accepts a list of commands. By
 default, the commands are executed using python's
 [subprocess](https://docs.python.org/3/library/subprocess.html) module without
 shell. If you need a shell (e.g. you want to utilize an environment variable,
 subprocesses, pipelines, expansion or any shell syntax in your command), just
 wrap your command in a bash process:
-```
+```shell
 bash -c "my fancy $command | grep success"
 ```
 
@@ -37,26 +37,26 @@ Currently, these are the actions you can use:
 
 ### `propose-downstream` command
 
-|        | name                  | working directory | when run                                                                          | description                               |
-| ------ | --------------------- | ----------------- | --------------------------------------------------------------------------------  | ----------------------------------------- |
-| [hook] | `post-upstream-clone` | upstream git repo | after cloning of the upstream repo (main) and before other operations             |                                           |
-| [hook] | `pre-sync`            | upstream git repo | after cloning and checkout to the correct (release) branch                        |                                           |
-|        | `prepare-files`       | upstream git repo | after cloning, checking out of both upstream and dist-git repos                   | replace patching and archive generation   |
-|        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                                    | replace patching                          |
-|        | `get-current-version` | upstream git repo | when the current version needs to be found                                        | expect version as a stdout parameter      |
+|        | name                  | working directory | when run                                                              | description                             |
+|--------|-----------------------|-------------------|-----------------------------------------------------------------------|-----------------------------------------|
+| [hook] | `post-upstream-clone` | upstream git repo | after cloning of the upstream repo (main) and before other operations |                                         |
+| [hook] | `pre-sync`            | upstream git repo | after cloning and checkout to the correct (release) branch            |                                         |
+|        | `prepare-files`       | upstream git repo | after cloning, checking out of both upstream and dist-git repos       | replace patching and archive generation |
+|        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                        | replace patching                        |
+|        | `get-current-version` | upstream git repo | when the current version needs to be found                            | expect version as a stdout parameter    |
 
 
 ### Creating SRPM
 
 These apply to the `srpm` command and building in COPR.
 
-|        | name                  | working directory | when run                                                                          | description                               |
-| ------ | --------------------- | ----------------- | --------------------------------------------------------------------------------  | ----------------------------------------- |
-| [hook] | `post-upstream-clone` | upstream git repo | after cloning of the upstream repo (main) and before other operations             |                                           |
-|        | `get-current-version` | upstream git repo | when the current version needs to be found                                        | expect version as a stdout                |
-|        | `create-archive`      | upstream git repo | when the archive needs to be created                                              | replace the code for creating an archive  |
-|        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                                    | replace patching                          |
-|        | `fix-spec-file`       | upstream git repo | after creation of a tarball and before running rpmbuild command                   | this action changes spec file to use the new tarball                          |
+|        | name                  | working directory | when run                                                              | description                                          |
+|--------|-----------------------|-------------------|-----------------------------------------------------------------------|------------------------------------------------------|
+| [hook] | `post-upstream-clone` | upstream git repo | after cloning of the upstream repo (main) and before other operations |                                                      |
+|        | `get-current-version` | upstream git repo | when the current version needs to be found                            | expect version as a stdout                           |
+|        | `create-archive`      | upstream git repo | when the archive needs to be created                                  | replace the code for creating an archive             |
+|        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                        | replace patching                                     |
+|        | `fix-spec-file`       | upstream git repo | after creation of a tarball and before running rpmbuild command       | this action changes spec file to use the new tarball |
 
 ## Actions details
 
@@ -111,7 +111,7 @@ If you provide your own implementation, none of the above happens.
 For example a package may define multiple Sources. In such a case, the default
 implementation of `fix-spec-file` won't be able to update `%prep` correctly.
 You can instead use the `sed` program to set the new Sources correctly, e.g.
-```
+```yaml
 actions:
   fix-spec-file:
   # define one of the Source variables correctly
@@ -138,7 +138,7 @@ Additionally, packit sets a few env vars for specific actions.
 
 If you want to see the content of those variables, you can print using `echo`
 in the specific action:
-```
+```yaml
 actions:
   fix-spec-file:
   - bash -c "echo PACKIT_PROJECT_VERSION=${PACKIT_PROJECT_VERSION}"

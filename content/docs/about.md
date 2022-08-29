@@ -20,7 +20,7 @@ aliases: [/about]
 
 - You can consume packit in two forms:
 
-  - Packit tool can run on your laptop and you run commands you want.
+  - Packit tool can run on your laptop, and you run commands you want.
   - Packit service reacts to events and performs actions which you
     defined in your `packit.yaml`.
 

@@ -22,7 +22,7 @@ Since Packit Service builds your PRs in Fedora COPR build service, by using
 Packit-as-a-service, your software needs to comply with [COPR
 rules](https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr).
 If any of these points are violated, we'll remove the builds and may put you on
-a blocklist so you won't be able to use the service again.
+a blocklist, so you won't be able to use the service again.
 
 ## How can I contact you?
 
@@ -151,7 +151,7 @@ We are running all commands, defined by you, in a sandbox which is locked-down.
 At the moment we don't have any mechanism for you to define the dependencies
 you need and us making them available for you.
 
-In the mean time we are solving these requests one by one, so [please reach out
+In the meantime we are solving these requests one by one, so [please reach out
 to us](#how-can-i-contact-you).
 
 As for the actions needed during SRPM builds, we are transitioning into a solution where SRPMs are built directly in Copr

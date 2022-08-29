@@ -20,7 +20,7 @@ jobs:
   targets:
   - fedora-all
 ```
-The test job by default requires Copr build to be built before running tests and then
+The test job by default requires Copr build to be built before running tests, and then
 it is installed into the testing environment.
 
 If you want to run tests without a Copr build, the test job needs to include `skip_build` (described below) option in the job configuration:
@@ -89,7 +89,7 @@ And there are also pairs of variables for pull-request jobs:
 * `PACKIT_SOURCE_BRANCH` and `PACKIT_TARGET_BRANCH`
 * `PACKIT_SOURCE_URL` and `PACKIT_TARGET_URL`
 
-Note that some of the variables do not need to be set if the value is unknown, irrelevant or not-configured.
+Note that some variables do not need to be set if the value is unknown, irrelevant or not-configured.
 
 ## Restart Testing
 
@@ -175,7 +175,7 @@ Testing will fail if any of the commands returns a non-zero exit status.
 
 ### Systemd Tests
 
-Below you can find little bit more interesting example of a `systemd` test configuration:
+Below you can find a bit more interesting example of a `systemd` test configuration:
 
 ```yaml
 summary:
@@ -244,8 +244,8 @@ See the [stories](https://github.com/psss/fmf/tree/master/stories) directory to 
 
 ### Running linters
 
-Running linters on your code is easy to setup using Testing Farm and tmt.
-Linters are tools which you can install from the distribution and they usually
+Running linters on your code is easy to set up using Testing Farm and tmt.
+Linters are tools which you can install from the distribution, and they usually
 just require a path to files which they check. Here is a plan which you can use
 to run `rpmlint` on your spec file.
 

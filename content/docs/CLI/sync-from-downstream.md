@@ -15,7 +15,7 @@ selected branch (main by default) from Fedora dist-git repository.
 * Fedora dist-git repository.
 * Packit config file placed in the upstream repository.
 * Pagure API tokens for Fedora Dist-git.
-* Github API token.
+* GitHub API token.
 
 ## Tutorial
 
