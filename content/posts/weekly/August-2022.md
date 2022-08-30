@@ -40,3 +40,13 @@ weight: 59
   the database querying has been improved and also queries are done only when needed.
   ([packit-service#1617](https://github.com/packit/packit-service/pull/1617),
   [dashboard#189](https://github.com/packit/dashboard/pull/189))
+
+## Week 34 (August 23rd – August 29th)
+
+- `packit propose-downstream` is now more informative when sources cannot be
+  downloaded. ([packit#1698](https://github.com/packit/packit/pull/1698))
+- No more annoying issues will be created after a successful _propose
+  downstream_. ([packit#1693](https://github.com/packit/packit/pull/1693))
+- We have fixed an issue with reporting results when multiple Testing Farm
+  jobs with identifiers are configured.
+  ([packit-service#1634](https://github.com/packit/packit-service/pull/1634))
