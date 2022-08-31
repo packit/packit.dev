@@ -321,15 +321,16 @@ If yes, let's proceed to the next level.
 #### The project has successful builds inside the service
 
 If a SRPM can be created locally, all should be good in the service as well.
-That's the theory. In practice, your laptop and packit service sandbox
-environment are vastly different. One thing which can happen easily is that a
-command is not available in the sandbox. Also, all the commands are run using
-an unprivileged user - you can't install anything or perform any privileged
-operation. If you want to tweak the environment,
+That's the theory. In practice, your laptop and packit service
+environment are vastly different. For installations made before September 6, 20222,
+Packit's own sandboxing system is used -- there, you're commands are run as unprivileged user
+and you can't install anything or perform any privileged operation.
+If you want to tweak the environment,
 you can do the SRPM builds in Copr environment instead.
 There, you can specify the requirements yourself.
-The change can be done by specifying
-a [`srpm_build_deps` option](https://packit.dev/docs/configuration/#srpm_build_deps).
+This is the default for installations made since September 6, 2022,
+but the change can also be done by specifying
+an [`srpm_build_deps` option](https://packit.dev/docs/configuration/#srpm_build_deps).
 (We are planning to move there all the builds in the future.)
 In any case, feel free to reach out to us if you are having troubles,
 and we'd be glad to help.

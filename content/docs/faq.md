@@ -147,12 +147,8 @@ For `%changelog`, you don't need to include the changelog file upstream and you 
 
 ## How do I install dependencies for my commands in packit-service?
 
-We are running all commands, defined by you, in a sandbox which is locked-down.
-At the moment we don't have any mechanism for you to define the dependencies
-you need and us making them available for you.
-
-In the meantime we are solving these requests one by one, so [please reach out
-to us](#how-can-i-contact-you).
+For installations made before September 6, 20222,
+Packit runs all the commands, defined by you, in a sandbox which is locked-down.
 
 As for the actions needed during SRPM builds, we are transitioning into a solution where SRPMs are built directly in Copr
 and  therefore for these actions, you can define your dependencies via [`srpm_build_deps`

@@ -97,7 +97,9 @@ to kick off this process and therefore started opening PRs with dependencies con
 the RPM builds functionality the most. During this phase, you can reach out to us with your feedback and we can
 improve it even more!
 
-The next step will be to get rid of using our sandbox for building SRPMs at all. We do not have an exact date
+As a next step, we use the new approach for GitHub app installations made since September 6, 20222.
+
+The last step will be to get rid of using our sandbox for building SRPMs at all. We do not have an exact date
 for this currently and will act accordingly to your feedback, but we are looking forward to that moment.
 Since we don't want to break your CI results because of missing dependencies, we will use the previously linked list of deps.
 As the list is pretty long, we encourage you to define your dependencies on your own. If you will
