@@ -322,8 +322,8 @@ If yes, let's proceed to the next level.
 
 If a SRPM can be created locally, all should be good in the service as well.
 That's the theory. In practice, your laptop and packit service
-environment are vastly different. For installations made before September 6, 20222,
-Packit's own sandboxing system is used -- there, you're commands are run as unprivileged user
+environment are vastly different. For installations made before September 6, 2022,
+Packit's own sandboxing system is used -- there, your commands are run as unprivileged user
 and you can't install anything or perform any privileged operation.
 If you want to tweak the environment,
 you can do the SRPM builds in Copr environment instead.
