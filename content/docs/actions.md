@@ -44,6 +44,7 @@ Currently, these are the actions you can use:
 |        | `prepare-files`       | upstream git repo | after cloning, checking out of both upstream and dist-git repos       | replace patching and archive generation |
 |        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                        | replace patching                        |
 |        | `get-current-version` | upstream git repo | when the current version needs to be found                            | expect version as a stdout parameter    |
+|        | `changelog-entry`     | upstream git repo | when adding a new changelog entry to the specfile                     | stdout is used as a changelog entry     |
 
 
 ### Creating SRPM
@@ -57,6 +58,7 @@ These apply to the `srpm` command and building in COPR.
 |        | `create-archive`      | upstream git repo | when the archive needs to be created                                  | replace the code for creating an archive             |
 |        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                        | replace patching                                     |
 |        | `fix-spec-file`       | upstream git repo | after creation of a tarball and before running rpmbuild command       | this action changes spec file to use the new tarball |
+|        | `changelog-entry`     | upstream git repo | when adding a new changelog entry to the specfile                     | stdout is used as a changelog entry                  |
 
 ## Actions details
 
@@ -169,4 +171,6 @@ actions:
   create-archive:
   - "make archive"
   - bash -c "ls -1 ./package-*.tar.gz"
+  changelog-entry:
+  - echo "New release"
 ```
