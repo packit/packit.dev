@@ -15,3 +15,10 @@ weight: 58
   ([packit-service#1605](https://github.com/packit/packit-service/pull/1605))
 - We have implemented checking the available composes before submitting the tests for both internal and public Testing
   Farm. ([packit-service#1628](https://github.com/packit/packit-service/pull/1628))
+
+## Week 36 (September 6th – September 12th)
+
+- When querying Bodhi for information about Fedora/EPEL releases to resolve aliases,
+  packit now correctly handles pagination of API results. This resolves an issue that caused
+  Fedora 37 not to be pointed to from any alias.
+  ([packit#1704](https://github.com/packit/packit/pull/1704))
