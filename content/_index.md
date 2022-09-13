@@ -65,7 +65,7 @@ and create [Bodhi](https://bodhi.fedoraproject.org) updates! [Learn more.](/docs
    any time.
 
 4. _We are here to help_ - In case of questions, feel free to contact
-   [us](https://github.com/orgs/packit/teams/the-packit-team):
+   [us](https://github.com/orgs/packit/people):
 
 #### Contact
 
