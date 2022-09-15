@@ -15,7 +15,8 @@ Doing Fedora releases with Packit means utilising our 3 jobs - `propose_downstre
 `bodhi_update` - where each of the jobs takes care of a different part of the release process.
 
 ## Propose downstream job
-For enabling the propose downstream job, you need to have [Packit Service installed](/docs/packit-service) 
+For enabling the propose downstream job, you need to have
+[Packit Service installed](/docs/guide/#1-set-up-packit-integration)
 and have a `propose_downstream` job in the configuration file for the given upstream repository.
 The [propose_downstream job](/docs/configuration/#propose_downstream) should be then configured like this:
 
