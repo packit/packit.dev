@@ -22,3 +22,8 @@ weight: 58
   packit now correctly handles pagination of API results. This resolves an issue that caused
   Fedora 37 not to be pointed to from any alias.
   ([packit#1704](https://github.com/packit/packit/pull/1704))
+
+## Week 37 (September 13th – September 19th)
+
+- Added support for filenames specified in source URL fragments, for example: `https://example.com/foo/1.0/download.cgi#/%{name}-%{version}.tar.gz` ([specfile#100](https://github.com/packit/specfile/pull/100))
+- Some more underlying improvements to our libraries and deployment.
