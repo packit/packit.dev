@@ -27,3 +27,13 @@ weight: 58
 
 - Added support for filenames specified in source URL fragments, for example: `https://example.com/foo/1.0/download.cgi#/%{name}-%{version}.tar.gz` ([specfile#100](https://github.com/packit/specfile/pull/100))
 - Some more underlying improvements to our libraries and deployment.
+
+## Week 38 (September 20th – September 26th)
+
+- Propose downstream job now pushes changes even when it's not creating a new pull request. This allows updating existing pull requests. ([packit#1725](https://github.com/packit/packit/pull/1725))
+- Packit now deduces Copr targets for Copr builds when you have set your custom Copr project to be used. ([packit-service#1673](https://github.com/packit/packit-service/pull/1673))
+- Retriggering tasks via re-run button in Github commit checks when there are configured identifiers for jobs should now work correctly. ([packit-service#1671](https://github.com/packit/packit-service/pull/1671))
+- Packit now reports a pending state rather than an error on Testing Farm runs in case the related copr build has not finished yet. ([packit-service#1669](https://github.com/packit/packit-service/pull/1669))
+- Users can now **allow** building in a custom Copr project from a _git-forge_ project.
+  User has to add manually the _git-forge_ project reference to the Copr project settings.
+  As an example, we should add _github.com/packit/ogr_ to the list named _Packit forge project allowed_ in our _packit-dev_ Copr project settings: https://copr.fedorainfracloud.org/coprs/packit/packit-dev/edit#packit_forge_projects_allowed. ([packit-service#1638](https://github.com/packit/packit-service/pull/1638))
