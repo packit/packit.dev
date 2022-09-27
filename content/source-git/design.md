@@ -155,7 +155,7 @@ repo, including:
 * the dist-git repo and branch tracked.
 
 The configuration format is based on the [Packit configuration]({{< ref
-configuration.md >}}).
+configuration >}}).
 
 Placing this configuration file in a branch in source-git indicates that the
 source-git branch should be auto-maintained. The configuration file may be
