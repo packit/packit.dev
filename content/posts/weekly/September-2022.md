@@ -37,3 +37,8 @@ weight: 58
 - Users can now **allow** building in a custom Copr project from a _git-forge_ project.
   User has to add manually the _git-forge_ project reference to the Copr project settings.
   As an example, we should add _github.com/packit/ogr_ to the list named _Packit forge project allowed_ in our _packit-dev_ Copr project settings: https://copr.fedorainfracloud.org/coprs/packit/packit-dev/edit#packit_forge_projects_allowed. ([packit-service#1638](https://github.com/packit/packit-service/pull/1638))
+
+## Week 39 (September 27th – October 3rd)
+
+- We have improved mapping of Testing Farm Composes, if you have set your own custom mapping and the TF Compose is available, it will be used as is without any additional modifications we do (version, etc.). ([packit-service#1675](https://github.com/packit/packit-service/pull/1675))
+- We have added support for running the tests with Copr builds built by Packit in another pull request (in a different repository). You can read more about this feature in [our documentation](https://packit.dev/docs/testing-farm/#running-tests-with-builds-from-another-pull-request). ([packit-service#1658](https://github.com/packit/packit-service/pull/1658))
