@@ -111,7 +111,7 @@ It is also possible to run the tests with Copr builds built by Packit in another
 multiple projects and needs to be tested together.
 These tests are possible to trigger only via a comment containing the argument specifying the pull request as:
 
-    /packit test repo/namespace#pr_id
+    /packit test <namespace>/<repo>#<pr_id>
 
 The requirement is that in the specified PR, there were recent successful builds created by Packit
 for the targets configured in the repository with the "main" pull request.
