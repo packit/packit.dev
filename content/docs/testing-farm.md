@@ -105,6 +105,19 @@ in the pull request:
 
     /packit retest-failed
 
+## Running tests with builds from another pull request
+It is also possible to run the tests with Copr builds built by Packit in another pull request 
+(in a different repository). This can be useful when you are working on a change that spans 
+multiple projects and needs to be tested together.
+These tests are possible to trigger only via a comment containing the argument specifying the pull request as:
+
+    /packit test repo/namespace#pr_id
+
+The requirement is that in the specified PR, there were recent successful builds created by Packit
+for the targets configured in the repository with the "main" pull request.
+This is a new feature, so the behaviour may be adjusted in the future. 
+Please reach out back to us for help or with your suggestions.
+
 ## Creating Tests
 
 The easiest way to get started with defining tests is to use the [tmt][tmt] tool
