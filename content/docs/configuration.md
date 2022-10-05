@@ -518,7 +518,8 @@ Required parameters:
 
 * **targets** - (a list of) mock chroot(s) where the build is going to be
   executed (example `fedora-rawhide-x86_64`, defaults to `fedora-stable`): for
-  more info [see below](#available-copr-build-targets).
+  more info [see below](#available-copr-build-targets). Does not need to be
+  defined if using a custom Copr project (we fetch targets from the Copr settings).
 * **branch** - the name of the branch we want to build for when using **commit** trigger
 
 Optional parameters:
@@ -603,6 +604,10 @@ fedora-32-armhfp
 
   By default, the `x86_64` architecture will be used, but you you can
   override the default e.g. `fedora-stable-aarch64`.
+
+* If you are using custom Copr repository for your Copr builds, you don't have
+  to define the targets at all and they will be deduced from your custom Copr
+  project.
 
 ##### tests
 
