@@ -23,7 +23,7 @@ Packit will create a SRPM out of the current checkout. Simple and clear.
 ## SRPM builds in Copr
 
 When your SRPM is being built in Copr (because [`srpm_build_deps`]({{< ref
-"configuration.md#srpm_build_deps" >}}) is set in your packit config or
+"configuration/#srpm_build_deps" >}}) is set in your packit config or
 you installed Packit GitHub application since September 6, 2022), this
 section describes how you can reproduce the build procedure locally.
 
@@ -86,7 +86,7 @@ Packit by default runs all commands you defined in a
 [sandbox](https://github.com/packit/sandcastle) which is a kubernetes pod in a
 new project. If you need additional packages or binaries present in the
 sandbox, you should migrate your SRPM builds to be done in Copr using
-[`srpm_build_deps`]({{< ref "configuration.md#srpm_build_deps" >}}).
+[`srpm_build_deps`]({{< ref "configuration/#srpm_build_deps" >}}).
 
 You can reproduce our sandbox environment: Firstly, you should pull our
 production sandbox image and run commands of your choice inside the container.

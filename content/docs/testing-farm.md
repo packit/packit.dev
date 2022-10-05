@@ -144,7 +144,8 @@ smoke.fmf
 ## More Examples
 
 Get inspiration for a quick start from a couple of real-life examples! These
-samples live in `.fmf` files inside tests or plans directories.
+samples live in `.fmf` files inside tests or plans directories. You can also have a look 
+at [tmt examples site](https://tmt.readthedocs.io/en/stable/examples.html).
 
 ### Using Filters
 

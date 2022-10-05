@@ -575,7 +575,7 @@ With this configuration, you'll get builds in all stable fedora releases
 (excluding rawhide) and the CentOS stream.
 
 
-**Available COPR build targets**
+##### Available COPR build targets
 
 There are multiple places where you can get the latest list of available build targets:
 * Open your COPR project, then click "Settings" > "Build options" > "Chroots" -

@@ -27,7 +27,7 @@ using Packit - this implies that all build dependencies are installed:
 
     mock --rebuild -r fedora-rawhide-x86_64 ./systemd-247.1-2.g68d22b32.fc33.src.rpm
 
-`-r` allows you [to pick a chroot]({{< ref "configuration.md#available-copr-build-targets" >}})
+`-r` allows you [to pick a chroot](configuration/#available-copr-build-targets)
 of your choice and these are exactly the same which you can specify for builds
 in your `packit.yaml`.
 
