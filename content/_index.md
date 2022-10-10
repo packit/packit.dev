@@ -51,7 +51,8 @@ and create [Bodhi](https://bodhi.fedoraproject.org) updates! [Learn more.](/docs
 
 ### Why start using Packit?
 
-1. _Easy to configure_ - Feel free to jump into [our guide]({{< ref "guide" >}}) or check directly the [configuration documentation](/docs/configuration).
+1. _Easy to configure_ - Feel free to jump into [our guide]({{< ref "guide" >}}) or check
+   directly the [configuration documentation](/docs/configuration) and [configuration examples](/docs/configuration/examples).
 
 2. _Stable users_ - [Systemd](https://github.com/systemd/systemd/blob/45cab6e3c1d542d66c293a3a722c08412386f335/.packit.yml),
    [cockpit](https://github.com/cockpit-project/cockpit/blob/b0398fafe302b7c453db0e10a49f9d70e37727e2/packit.yaml),
