@@ -78,7 +78,7 @@ aliases: [/about]
 
 - Developing in dist-git is cumbersome. Editing patch files and moving
   tarballs around is not fun. Why not work with the source code itself?
-  With [source-git](/docs/source-git/), you'll have upstream git history and the
+  With [source-git](/source-git/), you'll have upstream git history and the
   dist-git content combined in a single repository.
 
 - Let's use modern development techniques such as pull requests, code review,
@@ -88,6 +88,6 @@ aliases: [/about]
 - We want dist-git to be "a database of content in a release" rather a place
   to do actual work. On the other hand, you'll still be able to interact with
   dist-git the same way. We are not taking that away.
-  [Source-git](/docs/source-git/) is meant to be the modern, better alternative.
+  [Source-git](/source-git/) is meant to be the modern, better alternative.
 
 DevConf.cz ["Auto-maintain your package" talk](https://www.youtube.com/watch?v=KpF27v6K4Oc).
