@@ -14,7 +14,7 @@ service, your repository or namespace needs to be allowed.
 Just be aware that we are now onboarding Fedora contributors who have
 a valid [Fedora Account System](https://fedoraproject.org/wiki/Account_System) account.
 For more details on how to get allowed for our service, please read
-the requirements [here](/docs/packit-service#requirements-for-running-packit-service-jobs).
+about the process [here](/docs/guide/#2-approval).
 
 ## Can I use packit service for any GitHub repository?
 
@@ -59,7 +59,7 @@ Packit connects the existing services ([Copr](https://copr.fedorainfracloud.org)
 
 ## Can we use Packit with Gitlab?
 
-Yes! You can find instructions at the [Packit Service page](/docs/packit-service#gitlab).
+Yes! You can find instructions at the [Packit Service page](/docs/guide#gitlab).
 
 ## How can I download RPM spec file if it is not part of upstream repository?
 

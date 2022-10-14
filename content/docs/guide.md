@@ -271,7 +271,7 @@ hardcoded values that changes when there is a new distribution release.
   or to provide long-term Copr repositories.)
 * [`tests`](/docs/configuration/#tests): Test suit using TMT/FMF definition run in the [Testing Farm](TBD)
   (Can be used as a next step to Copr build or without build at all.)
-* [`production_build`](/docs/configuration/#production_build): A scratch Koji build triggered for the upstream state of project.
+* [`upstream_koji_build`](/docs/configuration/#upstream_koji_build): A scratch Koji build triggered for the upstream state of project.
 * [`propose_downstream`](/docs/configuration/#propose_downstream): For upstream release, Packit prepares a Fedora release.
   (Source is saved to the Lookaside Cache and a dist-git pull-request is created for each configured branch.)
 * [`koji_build`](/docs/configuration/#koji_build): A downstream Koji build triggered when there is a new dist-git commit in a given branch.

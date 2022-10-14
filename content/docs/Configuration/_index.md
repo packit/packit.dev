@@ -496,7 +496,9 @@ Additionally, `epel-all` can be used as an alias for the current active
 
 The aliases above can be used both to specify targets when [building in
 Copr](#copr_build) or [running tests](/testing-farm/), and to reference
-[dist-git branches](#production_build) of different system versions.
+dist-git branches of different system versions
+(e.g. for [`propose_downstream` job](#propose_downstream)
+or downstream jobs like [`koji_build](#koji_build) or [`bodhi_update`](#bodhi_update)).
 
 The information about releases is retrieved from Bodhi and because of the
 cache and required availability on Copr, it might take a while to get the
@@ -613,7 +615,7 @@ fedora-32-armhfp
 
 See more about tests [here](/testing-farm/).
 
-##### production\_build
+##### upstream_koji_build
 
 Create a SRPM from upstream and submit a scratch RPM build
 to [Fedora Koji](https://koji.fedoraproject.org/koji/) build system.
@@ -623,8 +625,9 @@ For more info, please see [the following issue](https://pagure.io/releng/issue/9
 
 If you want to do official Koji builds, the sources need to be present in
 dist-git: job [`koji_build`]({{< ref "#koji_build" >}}) can take care of that.
-(The naming is not ideal, but we don't want to change this because of the
-backwards compatibility.)
+
+(The job used to be called `production_build` but we are deprecating that name in favour of
+the more explicit `upstream_koji_build`.)
 
 Supported triggers:
 
@@ -694,8 +697,7 @@ like a manually created Koji build, and you can utilise
 [Fedora Notifications](https://apps.fedoraproject.org/notifications/about)
 to get informed about the builds.
 
-For Koji builds from upstream, see [`production_build`](#production_build).
-(The naming is not ideal, but we don't want to change this because of the backwards compatibility.)
+For Koji builds from upstream, see [`upstream_koji_build`](#upstream_koji_build).
 
 Supported triggers:
 

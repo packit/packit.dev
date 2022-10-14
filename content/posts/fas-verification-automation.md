@@ -5,7 +5,7 @@ weight: 94
 ---
 
 As you may already know, for using Packit Service
-GitHub App we [require our users to have a valid Fedora Account System account](/docs/packit-service/#requirements-for-running-packit-service-jobs).
+GitHub App we [require our users to have a valid Fedora Account System account](/docs/guide/#2-approval).
 We were verifying the newcomers until now manually, but in recent weeks, we have implemented an automated solution
 for it. Let's take a closer look at how it is done currently and what have we improved!
 
