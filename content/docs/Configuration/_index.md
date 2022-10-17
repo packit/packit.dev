@@ -438,6 +438,40 @@ jobs: []
 
 ```
 
+Packit configuration supports [YAML Merge Key syntax](https://yaml.org/type/merge.html), which can be used to reduce duplication of configuration. Please see the example:
+```yaml
+# before
+jobs:
+- job: copr_build
+  trigger: pull_request
+  targets:
+  - centos-stream-8-x86_64
+  - centos-stream-9-x86_64
+  - fedora-all
+
+- job: copr_build
+  trigger: commit
+  branch: main
+  targets:
+  - centos-stream-8-x86_64
+  - centos-stream-9-x86_64
+  - fedora-all
+
+# after
+jobs:
+- &copr
+  job: copr_build
+  trigger: pull_request
+  targets:
+  - centos-stream-8-x86_64
+  - centos-stream-9-x86_64
+  - fedora-all
+
+- <<: *copr
+  trigger: commit
+  branch: main
+```
+
 Every job has two mandatory keys:
 
 1. `job` - name of the job (you can imagine this as a CLI command)
