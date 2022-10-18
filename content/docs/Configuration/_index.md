@@ -726,10 +726,13 @@ be specified in the  `allowed_committers` and for merged pull requests the autho
 specified in the `allowed_pr_authors` .
 
 There is no UI provided by Packit for the job,
-but it is visible across Fedora systems (e.g. via dist-git commit status)
-like a manually created Koji build, and you can utilise
+but it is visible across Fedora systems (as you can see in the following image).
+The koji build behaves as it was created manually, and you can utilise
 [Fedora Notifications](https://apps.fedoraproject.org/notifications/about)
-to get informed about the builds.
+to be informed about the builds. Also, you can configure a repository where should we
+open issues in case of errors during the job via [`issue_repository`](/docs/configuration#issue_repository) configuration key.
+
+You can retrigger a build by typing `/packit koji-build` in the pull request Pagure interface.
 
 For Koji builds from upstream, see [`upstream_koji_build`](#upstream_koji_build).
 
