@@ -114,6 +114,8 @@ The koji build behaves as it was created manually, and you can utilise
 to be informed about the builds. Also, you can configure a repository where should we
 open issues in case of errors during the job via [`issue_repository`](/docs/configuration#issue_repository) configuration key.
 
+You can retrigger a build by typing `/packit koji-build` in the pull request Pagure interface.
+
 
 ## Bodhi update job
 Lastly, you can again similarly to Koji builds, configure Packit to react to successful Koji builds and create
