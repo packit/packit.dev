@@ -836,6 +836,7 @@ The acceptable names are the same as for the package config:
 |-----------------------|--------|---------------------------------------------------------------------------------------------------|
 | `debug`               | bool   | enable debug logs                                                                                 |
 | `fas_user`            | string | username in Fedora account system; this is utilized when authenticating with Bodhi using Kerberos |
+| `kerberos_realm`      | string | Kerberos realm to use for authentication, example "FEDORAPROJECT.ORG"                             |
 | `authentication`      | dict   | tokens for services (GitHub, Pagure)                                                              |
 | `upstream_git_remote` | string | name of the git remote to discover upstream project URL from                                      |
 
