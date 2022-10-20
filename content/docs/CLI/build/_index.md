@@ -16,6 +16,7 @@ Subcommand that groups all RPM build related commands together.
 * [`in-mock`](/docs/cli/build/mock)
 * [`in-copr`](/docs/cli/build/copr)
 * [`in-koji`](/docs/cli/build/koji)
+* [`in-image-builder`](/docs/cli/build/in-image-builder)
 
 ## Help
 
@@ -29,6 +30,7 @@ Subcommand that groups all RPM build related commands together.
 
     Commands:
       in-copr  Build selected upstream project in Copr.
+      in-image-builder  Create a VM image in Image Builder.
       in-koji  Build selected upstream project in Fedora.
       in-mock  Build RPMs in mock using content of the upstream repository.
       locally  Create RPMs using content of the upstream repository.
