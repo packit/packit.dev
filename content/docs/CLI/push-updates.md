@@ -13,6 +13,9 @@ If you are not authenticated with the bodhi server, please make sure that you
 navigate in your browser to the URL provided by the bodhi-client and then paste
 the `code=XX...` to the terminal when prompted.
 
+If you set `fas_user` and `kerberos_realm` in your "~/.config/packit.yaml" and
+have an active Kerberos TGT, you will be automatically authenticated.
+
 
 ## Help
 
