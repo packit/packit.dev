@@ -814,6 +814,53 @@ jobs:
     - epel-8
 ```
 
+##### vm_image_build
+
+**PACKIT GITHUB APP IS NOT PROCESSING THIS JOB IN ANY WAY.**
+
+Before we implement this in the app, please refer to the [CLI guide]({{< ref "in-image-builder.md" >}}).
+
+Supported triggers:
+
+* **pull_request** -- Packit does not react to this job yet.
+
+Image Parameters (Packit does not sanitize these and just passes them to Image Builder;
+check [Image Builder's API
+documentation](https://console.redhat.com/docs/api/image-builder) for details).
+
+* **image_request** -- values passed to [the "image_requests" field](https://console.redhat.com/docs/api/image-builder/v1#operations-default-ComposeImage) of Image Builder's API
+* **image_customizations** -- values passed to [the "customizations" field](https://console.redhat.com/docs/api/image-builder/v1#operations-default-ComposeImage) of Image Builder's API
+* **image_distribution** -- name of the "base image" (examples: rhel-90, fedora-36)
+
+Required parameters:
+
+* **copr_chroot** -- name of the chroot to use for installing packages in the image
+* **owner** -- Copr project owner
+* **project** -- Copr project name
+
+
+**Example**
+
+```yaml
+jobs:
+- job: vm_image_build
+  trigger: pull_request
+  image_request:
+    architecture: x86_64
+    image_type: aws
+    upload_request:
+      type: aws
+      options:
+        share_with_accounts: ["123456789"]
+  image_customizations:
+    packages: [foo-bar]
+  image_distribution: fedora-36
+  owner: john-foo
+  project: foo-bar-martini
+  copr_chroot: fedora-36-x86_64
+```
+
+
 ## User configuration file
 
 When running packit as a tool locally, it is convenient to use a configuration
@@ -839,6 +886,7 @@ The acceptable names are the same as for the package config:
 | `kerberos_realm`      | string | Kerberos realm to use for authentication, example "FEDORAPROJECT.ORG"                             |
 | `authentication`      | dict   | tokens for services (GitHub, Pagure)                                                              |
 | `upstream_git_remote` | string | name of the git remote to discover upstream project URL from                                      |
+| `redhat_api_refresh_token` | string | Red Hat API token, can be obtained [here](https://access.redhat.com/management/api) |
 
 The `authentication` is a dictionary where:
 * key is a hostname, url or name that can be mapped to a service-type, for example `github.com` or `pagure`
