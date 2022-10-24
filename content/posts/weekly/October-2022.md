@@ -25,3 +25,7 @@ weight: 57
   Users will get a neutral status describing the change when the old names are in use. The status will become a warning
   starting in November and the old names will be removed by the end of the year. ([packit-service#1656](https://github.com/packit/packit-service/pull/1656))
 - We've fixed the Markdown table format in the GitHub checks page, which was broken when the user's repo was not allowed to use Packit. ([packit-service#1688](https://github.com/packit/packit-service/pull/1688))
+
+## Week 42 (October 17th – October 23rd)
+
+- Packit now won't repeatedly comment in pull requests about the need to migrate configuration of allowed forge projects to Copr. ([packit-service#1716](https://github.com/packit/packit-service/pull/1716))
