@@ -579,8 +579,10 @@ Optional parameters:
   For example if you [set this to "mock"](https://github.com/rpm-software-management/mock/pull/902/checks?check_run_id=6530714905), then a check run for Rawhide would be
   named "rpm-build:fedora-rawhide-x86\_64:mock".
 
+
+##### Using a custom Copr project
 When using a custom Copr project (by specifying `project` and `owner`), the GitHub repo has to be listed in the
-**Packit forge project allowed** field in the **Copr project settings** so that the Copr builds can be actually run.
+**Packit allowed forge projects** field in the **Copr project settings** so that the Copr builds can be actually run.
 As an example the string *github.com/osbuild/osbuild* has to be inserted
 into https://copr.fedorainfracloud.org/coprs/g/osbuild/osbuild/edit/#packit_forge_projects_allowed.
 
@@ -592,6 +594,12 @@ settings.
 
 If you do not want to give us `admin` permission, you can update the project
 settings manually in Copr based on the guidance Packit Service gives.
+
+You can also directly edit the permissions yourself without waiting for the Packit request 
+by running:
+
+    $ copr-cli edit-permissions --builder packit [--admin packit] <project>
+
 
 Boolean values (`list_on_homepage` and `preserve_project`) are not updated when
 you use custom `owner`.
