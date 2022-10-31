@@ -73,6 +73,13 @@ see more details [here](https://github.com/packit/packit/discussions/1530).
 
 GitLab support is mainly experimental and is influenced by the presence of CentOS Stream source-git workflow.
 **We do not verify** the functionality of the GitLab support on a day-to-day basis as we do with the GitHub App.
+Most of the code is forge-independent so you can use the very same functionality both on GitHub and GitLab.
+The only difference is the setup and small UI differences because of the limits of the specific forge.
+You can use Packit on any GitLab instance, if:
+* The GitLab instance is publically available.
+* Packit has an identity for that instance.
+  (Currently only `gitlab.com` and `gitlab.freedesktop.org`,
+  but let us know if you need any other instance to be supported.)
 
 
 #### How to set up Packit on GitLab
