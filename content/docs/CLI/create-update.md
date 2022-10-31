@@ -1,5 +1,5 @@
 ---
-title: create-bodhi-update
+title: create-update
 date: 2019-06-28
 weight: 5
 ---
