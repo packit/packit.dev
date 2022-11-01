@@ -29,3 +29,12 @@ weight: 57
 ## Week 42 (October 17th – October 23rd)
 
 - Packit now won't repeatedly comment in pull requests about the need to migrate configuration of allowed forge projects to Copr. ([packit-service#1716](https://github.com/packit/packit-service/pull/1716))
+
+## Week 43 (October 25th – October 31th)
+
+- Fixed an issue with version and release in a spec file being updated even if `--no-bump` flag was specified.
+  Also fixed an issue when `None` appeared in release instead of a number.
+  ([packit#1753](https://github.com/packit/packit/pull/1753))
+- We have improved the handling of test jobs which should fix related issues with reporting and triggering
+  that occurred when multiple test jobs were configured.
+  ([packit-service#1717](https://github.com/packit/packit-service/pull/1717))
