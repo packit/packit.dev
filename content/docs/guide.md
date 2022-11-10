@@ -78,7 +78,7 @@ The only difference is the setup and small UI differences because of the limits 
 You can use Packit on any GitLab instance, if:
 * The GitLab instance is publically available.
 * Packit has an identity for that instance.
-  (Currently only `gitlab.com`, `gitlab.freedesktop.org` and `gitlab.gnome.org`
+  (Currently only `gitlab.com`, `gitlab.freedesktop.org` and `gitlab.gnome.org`,
   but let us know if you need any other instance to be supported.)
 
 
