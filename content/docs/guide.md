@@ -96,7 +96,7 @@ To enable Packit, you need to manually configure a webhook.
    Do not provide `Secret token` yet and click `Add webhook`.
    You should see the created hook at the bottom of the page now.
    ![Setting up webhook](/images/gitlab/set_up_webhook.png)
-3. Select `Test` and for example `Merge requests events`.
+3. Select `Test` and for example `Push event`.
    At the top of the page appears a red `Hook executed successfully but returned HTTP 401 "X-Gitlab-Token not in request.headers"`.
 4. Wait a bit and check `Issues` of the project and after a while there should be
    a new confidential `Packit-Service Authentication` issue with the instructions how to finish the setup.
