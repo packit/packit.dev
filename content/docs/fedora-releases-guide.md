@@ -17,7 +17,9 @@ Doing Fedora releases with Packit means utilising our 3 jobs - `propose_downstre
 ## Propose downstream job
 For enabling the propose downstream job, you need to have
 [Packit Service installed](/docs/guide/#1-set-up-packit-integration)
-and have a `propose_downstream` job in the configuration file for the given upstream repository.
+and have a `propose_downstream` job in the configuration file for the given upstream repository
+(this job is also run by default if there is no `jobs` section
+in the configuration, see [jobs configuration](/docs/configuration/#packit-service-jobs)).
 The [propose_downstream job](/docs/configuration/#propose_downstream) should be then configured like this:
 
 ```yaml
