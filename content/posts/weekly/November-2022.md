@@ -19,3 +19,7 @@ weight: 56
 - Packit GitHub app will not modify a package version when `release_suffix` configuration option is empty. ([packit-service#1738](https://github.com/packit/packit-service/pull/1738))
 - Our `specfile` parser now supports localized tags (e.g. `Summary(fr)`) and tags with qualifiers (e.g. `Requires(post)`). ([specfile#132](https://github.com/packit/specfile/pull/132))
 - SRPM build logs are now deleted after 30 days instead of 90 days. This doesn't apply to SRPM builds done in Copr, which deletes the logs after 14 days. ([packit/packit-service#1745](https://github.com/packit/packit-service/pull/1745))
+
+## Week 46 (November 15th – November 21st)
+
+- `srpm_build_deps` can be now configured also on the job configuration level. ([packit-service#1757](https://github.com/packit/packit-service/pull/1757))
