@@ -23,3 +23,7 @@ weight: 56
 ## Week 46 (November 15th – November 21st)
 
 - `srpm_build_deps` can be now configured also on the job configuration level. ([packit-service#1757](https://github.com/packit/packit-service/pull/1757))
+
+## Week 47 (November 22nd – November 28th)
+
+- The Copr build logs URL now points to logs that are available even while building. ([packit-service#1767](https://github.com/packit/packit-service/pull/1767))
