@@ -114,5 +114,7 @@ specified.
 Strip source and destination prefixes from diffs. This is the same as running
 `git format-patch --no-prefix`.
 
-[Git-trailers]: https://git-scm.com/docs/git-interpret-trailers [`packit source-git init`]: {{<ref "/docs/cli/source-git/init">}}
-[`patch_generation_patch_id_digits`]: {{<ref "/docs/configuration#patch_generation_patch_id_digits">}} [source-git patch metadata]: {{<ref "/development-docs/patch-metadata">}}
+[Git-trailers]: https://git-scm.com/docs/git-interpret-trailers
+[`packit source-git init`]: {{<ref "/docs/cli/source-git/init">}}
+[`patch_generation_patch_id_digits`]: {{<ref "/docs/configuration#patch_generation_patch_id_digits">}}
+[source-git patch metadata]: {{<ref "/development-docs/patch-metadata">}}
