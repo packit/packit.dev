@@ -25,10 +25,16 @@ Both Packit Service and packit tool use this configuration file.
 If not specified, defaults to:
 1. `downstream_package_name.spec` if [`downstream_package_name`](#downstream_package_name)
 is set.
-2. Else recursively search the tree and use the first spec file found.
+2. (*deprecated*) Else recursively search the tree and use the first spec file found.
 
 If there are only test jobs with `skip_build` option defined (more about it [here](http://packit.dev/testing-farm/)), 
 spec file doesn't need to be present and its path doesn't need to be defined in the config.
+
+The functionality to recursively search for a specfile is deprecated and it's
+going to be [removed](https://github.com/packit/packit/issues/1799) in a
+future version (>0.64.0) of Packit. We recommend projects to explicitly set
+`specfile_path` or rely on the `<downstream_package_name>.spec` default, by
+setting `downstream_package_name`.
 
 #### ~~upstream_project_name~~ (deprecated)
 
