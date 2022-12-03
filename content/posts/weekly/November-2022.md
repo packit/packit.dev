@@ -23,3 +23,11 @@ weight: 56
 ## Week 46 (November 15th – November 21st)
 
 - `srpm_build_deps` can be now configured also on the job configuration level. ([packit-service#1757](https://github.com/packit/packit-service/pull/1757))
+
+## Week 47 (November 22nd – November 28th)
+
+- We have changed the limit for our [SLO1](https://packit.dev/docs/service-level-objectives/#slo1-changes-to-github-prs-receive-a-status-update-within-15-seconds-in-99-of-cases): it was increased from 15s to 30s to account for setting all statuses. ([packit-service#1776](https://github.com/packit/packit-service/pull/1776))
+- The job names deprecated in October (`build` alias of `copr_build` and `production_build` replaced by `upstream_koji_build`) newly lead to an error state (was `neutral` ) of the deprecated status created by Packit.
+  The old names will be removed by the end of the year. ([packit-service#1777](https://github.com/packit/packit-service/pull/1777))
+- The Copr build logs URL now points to logs that are available even while building. ([packit-service#1767](https://github.com/packit/packit-service/pull/1767))
+- Fixed an issue that caused empty lines originally inside changelog entries to appear at the end. ([specfile#140](https://github.com/packit/specfile/pull/140))
