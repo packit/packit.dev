@@ -830,13 +830,9 @@ jobs:
 
 ##### vm_image_build
 
-**PACKIT GITHUB APP IS NOT PROCESSING THIS JOB IN ANY WAY.**
-
-Before we implement this in the app, please refer to the [CLI guide]({{< ref "in-image-builder.md" >}}).
-
 Supported triggers:
 
-* **pull_request** -- Packit does not react to this job yet.
+* **pull_request** 
 
 Image Parameters (Packit does not sanitize these and just passes them to Image Builder;
 check [Image Builder's API
