@@ -339,7 +339,7 @@ There, you can specify the requirements yourself.
 This is the default for installations made since September 6, 2022,
 but the change can also be done by specifying
 an [`srpm_build_deps` option](https://packit.dev/docs/configuration/#srpm_build_deps).
-(We are planning to move there all the builds in the future.)
+(We are planning to move there all the builds in January 2023.)
 In any case, feel free to reach out to us if you are having troubles,
 and we'd be glad to help.
 
