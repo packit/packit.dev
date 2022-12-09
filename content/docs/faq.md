@@ -143,7 +143,8 @@ If you want your upstream spec file to also work well when `rpmautospec-rpm-macr
 
 This construct uses `autorelease` macro if it's defined, and if it's not, it sets release to `1%{?dist}`.
 
-For `%changelog`, you don't need to include the changelog file upstream and you can have it downstream only, which makes sense - changelog is specific to a release.
+For `%changelog`, you don't need to include the changelog file upstream.
+You can have it downstream only, which makes sense - changelog is specific to a release.
 
 ## How do I install dependencies for my commands in packit-service?
 
@@ -154,7 +155,6 @@ As for the actions needed during SRPM builds, we are transitioning into a soluti
 and  therefore for these actions, you can define your dependencies via [`srpm_build_deps`
 key](/docs/configuration/#srpm_build_deps) in the configuration file. 
 You can read more about this transition [here](/posts/copr-srpms).
-
 
 ## A command failed in packit-service: how do I reproduce it locally?
 

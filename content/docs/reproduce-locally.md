@@ -23,8 +23,8 @@ Packit will create a SRPM out of the current checkout. Simple and clear.
 ## SRPM builds in Copr
 
 When your SRPM is being built in Copr (because [`srpm_build_deps`]({{< ref
-"configuration/#srpm_build_deps" >}}) is set in your packit config or
-you installed Packit GitHub application since September 6, 2022), this
+"configuration/#srpm_build_deps" >}}) is set in your packit config, or
+you installed Packit GitHub application after September 6, 2022), this
 section describes how you can reproduce the build procedure locally.
 
 We invoke our CLI command `packit prepare-sources` in the Copr environment,

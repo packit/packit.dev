@@ -44,15 +44,11 @@ them to a separate directory. So with the new implementation,
 with each request to run (S)RPM build, Packit sends a dynamically created "script" to Copr that invokes our new command.
 Here is what the script can look like:
 
-```
-#!/bin/sh
-
-git config --global user.email "hello@packit.dev"
-git config --global user.name "Packit"
-resultdir=$PWD
-packit -d prepare-sources --result-dir "$resultdir" --pr-id 676 --job-config-index 2 https://github.com/packit/ogr
-
-```
+    #!/bin/sh
+    git config --global user.email "hello@packit.dev"
+    git config --global user.name "Packit"
+    resultdir=$PWD
+    packit -d prepare-sources --result-dir "$resultdir" --pr-id 676 --job-config-index 2 https://github.com/packit/ogr
 
 You can see that a pull request should be checked out or which job defined
 in your Packit job config is the trigger of this action. And that's it! Copr finds the sources and builds SRPM from them.
@@ -65,11 +61,11 @@ Since this change is pretty significant, we wanted to start using this workflow 
 before we get rid of the previous workflow for SRPMs.
 At first, we tested how does the new solution work in our projects. The only disadvantage
 was that the actual build process
-takes a little bit longer than in sandcastle as we get an isolated environment where all the packages are installed for each new build.
+takes a little longer than in sandcastle as we get an isolated environment where all the packages are installed for each new build.
 On the other hand, Copr usually starts the build very soon after it is submitted, so no long wait time until some other build is finished.
 In the initial implementation, we installed a list of dependencies
 [which are present](https://github.com/packit/sandcastle/blob/ece539650770fea057877f0c97074acf506fada4/files/install-rpm-packages.yaml#L5) in our
-sandbox which also increased the build time a little bit.
+sandbox which also increased the build time a bit.
 
 So as the following step we added the functionality to define dependencies for actions in the
 Packit config file with [`srpm_build_deps` key](/docs/configuration/#srpm_build_deps).
@@ -92,9 +88,9 @@ srpm_build_deps:
 We also decided that presence of this key in the config will be for some period an indicator to build the SRPMs in Copr. With this approach, anyone can configure
 their dependencies and play with adding and adjusting them as needed without directly breaking
 the builds in their repository. When the builds in the PR pass, the configuration change can be merged and the new approach
-used for the whole repository. We wanted
+will be used for the whole repository. We wanted
 to kick off this process and therefore started opening PRs with dependencies configuration for projects that use
-the RPM builds functionality the most. During this phase, you can reach out to us with your feedback and we can
+the RPM builds functionality the most. During this phase, you can reach out to us with your feedback, so we can
 improve it even more!
 
 As a next step, we use the new approach for GitHub app installations made since September 6, 2022.
@@ -102,5 +98,5 @@ As a next step, we use the new approach for GitHub app installations made since 
 The last step will be to get rid of using our sandbox for building SRPMs at all. We do not have an exact date
 for this currently and will act accordingly to your feedback, but we are looking forward to that moment.
 Since we don't want to break your CI results because of missing dependencies, we will use the previously linked list of deps.
-As the list is pretty long, we encourage you to define your dependencies on your own. If you will
+As the list is pretty long, we encourage you to define your dependencies on your own. If you
 bump into any troubles with setting up SRPM builds in Copr, please, reach out to us, we will be glad to help!
