@@ -298,6 +298,13 @@ or are run in a particular step as a hook (with no action run by default).
 Take a look at the tables [here](/docs/actions/) to know what actions are available for each job.
 
 
+### Users
+
+Packit checks if the user has sufficient permissions to complete a job (this depends on the job type).
+For this reason the profile of a Packit user has to be accessible.
+For example, on Github this means that the membership of a user to their team has to be public (see https://github.com/orgs/[org_name]/people/[user_name] ).
+
+
 ### How to try that for real
 
 In order to start using Packit, we suggest you [install the tooling locally](/docs/cli/#installation). All
