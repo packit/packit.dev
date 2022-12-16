@@ -849,6 +849,10 @@ Required parameters:
 * **owner** -- Copr project owner
 * **project** -- Copr project name
 
+Image builds are only triggered after a collaborator places a comment `/packit
+vm-image-build` in a pull request. The image builds are **NOT** submitted
+automatically. This is a subject to change as we improve the integration in future.
+
 
 **Example**
 

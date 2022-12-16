@@ -15,7 +15,7 @@ Create a VM image in Image Builder defined in your "packit.yaml" using your Copr
   * https://www.redhat.com/en/blog/using-hosted-image-builder-its-api
   * https://console.redhat.com/docs/api/image-builder
   * https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/composing_a_customized_rhel_system_image/index
-* Red Hat API token set as `redhat_api_refresh_token` in `~/.config/packit.yaml`; the token can obtained [here](https://access.redhat.com/management/api)
+* Red Hat API token set as `redhat_api_refresh_token` in `~/.config/packit.yaml`; the token can be obtained [here](https://access.redhat.com/management/api)
 * Packit config with a `vm_image_build` job defined
 
 
@@ -32,6 +32,10 @@ Create a VM image in Image Builder defined in your "packit.yaml" using your Copr
     ```
 
 3. Navigate to the [Image Builder web interface](https://console.redhat.com/insights/image-builder) to use your image once the build is complete.
+
+
+As of December 2022, Packit Github app can now submit builds to Red Hat Image
+Builder, for more details see the `vm_image_build` job description.
 
 
 ## Help
