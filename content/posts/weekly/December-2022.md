@@ -49,3 +49,9 @@ weight: 55
   be aware that no modifications done to such data will be preserved. You must use
   `with` to make changes.
   ([specfile#153](https://github.com/packit/specfile/pull/153))
+
+## Week 50 (December 13th – December 19th)
+
+- Context managers are no longer shared between `Specfile` instances, making it possible
+  to work with more than one `Specfile` instance at a time.
+  ([specfile#157](https://github.com/packit/specfile/pull/157))
