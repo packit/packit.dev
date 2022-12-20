@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    if: github.repository == 'packit/packit.dev'
+    if: github.repository_owner == 'packit'
     runs-on: ubuntu-latest
 
     steps:
@@ -20,9 +20,9 @@ jobs:
         uses: benmatselby/hugo-deploy-gh-pages@master
         env:
           CNAME: packit.dev
-          GITHUB_ACTOR: jpopelka
-          HUGO_VERSION: 0.93.3
+          GITHUB_ACTOR: usercont-release-bot
+          HUGO_VERSION: 0.98.0
           HUGO_EXTENDED: true
           TARGET_REPO: packit/packit.dev-github-pages
           TARGET_BRANCH: main
-          TOKEN: ${{ secrets.TOKEN }}
+          TOKEN: ${{ secrets.RELEASEBOT_GITHUB_TOKEN }}
