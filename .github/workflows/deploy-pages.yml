@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    if: github.repository == 'packit/packit.dev'
+    if: github.repository_owner == 'packit'
     runs-on: ubuntu-latest
 
     steps:
