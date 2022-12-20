@@ -20,9 +20,9 @@ jobs:
         uses: benmatselby/hugo-deploy-gh-pages@master
         env:
           CNAME: packit.dev
-          GITHUB_ACTOR: jpopelka
+          GITHUB_ACTOR: usercont-release-bot
           HUGO_VERSION: 0.93.3
           HUGO_EXTENDED: true
           TARGET_REPO: packit/packit.dev-github-pages
           TARGET_BRANCH: main
-          TOKEN: ${{ secrets.TOKEN }}
+          TOKEN: ${{ secrets.RELEASEBOT_GITHUB_TOKEN }}
