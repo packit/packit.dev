@@ -539,7 +539,7 @@ The aliases above can be used both to specify targets when [building in
 Copr](#copr_build) or [running tests](/testing-farm/), and to reference
 dist-git branches of different system versions
 (e.g. for [`propose_downstream` job](#propose_downstream)
-or downstream jobs like [`koji_build](#koji_build) or [`bodhi_update`](#bodhi_update)).
+or downstream jobs like [`koji_build`](#koji_build) or [`bodhi_update`](#bodhi_update)).
 
 The information about releases is retrieved from Bodhi and because of the
 cache and required availability on Copr, it might take a while to get the
