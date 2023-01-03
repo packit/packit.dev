@@ -388,12 +388,8 @@ instead of the location defined in the spec-file.
 
 
 #### srpm_build_deps
-(*list of strings*) A list of RPM dependencies that are needed for your actions to be run when building SRPM. 
-For now, this key is used in Packit Service as an indicator to build your SRPMs in Copr and 
-the dependencies are then installed into the Copr build environment each time the build is triggered.
-Be aware that this is a preparation phase, and we want to build all the packages in Copr by default.
-As a next step, we use Copr build environment also for Packit GitHub app installations since September 6, 2022.
-And we want to switch to building all SRPMs in Copr in January 2023.
+(*list of strings*) A list of RPM dependencies that are needed for your actions to be run when building a SRPM.
+The dependencies are installed into the Copr build environment each time the build is triggered.
 
 #### packit_instances
 (*list of strings*) If you want to help us with catching issues or need some feature sooner than other users,

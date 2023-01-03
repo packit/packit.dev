@@ -338,16 +338,9 @@ If yes, let's proceed to the next level.
 
 If a SRPM can be created locally, all should be good in the service as well.
 That's the theory. In practice, your laptop and packit service
-environment are vastly different. For installations made before September 6, 2022,
-Packit's own sandboxing system is used -- there, your commands are run as unprivileged user
-and you can't install anything or perform any privileged operation.
-If you want to tweak the environment,
-you can do the SRPM builds in Copr environment instead.
-There, you can specify the requirements yourself.
-This is the default for installations made since September 6, 2022,
-but the change can also be done by specifying
-an [`srpm_build_deps` option](https://packit.dev/docs/configuration/#srpm_build_deps).
-(We are planning to move there all the builds in January 2023.)
+environment are vastly different. In the service you can specify
+the requirements with the
+[`srpm_build_deps` option](https://packit.dev/docs/configuration/#srpm_build_deps).
 In any case, feel free to reach out to us if you are having troubles,
 and we'd be glad to help.
 
