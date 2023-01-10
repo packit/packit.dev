@@ -1,7 +1,7 @@
 ---
 title: "Packit January 2023"
 date: 2023-01-02T15:00:00+01:00
-weight: 57
+weight: 54
 ---
 
 ## Week 0 🌄 (December 20th 2022 – January 2nd 2023)
