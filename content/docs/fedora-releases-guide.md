@@ -11,8 +11,13 @@ Let's split the release process into single steps:
 4. Koji builds
 5. Bodhi updates
 
-Doing Fedora releases with Packit means utilising our 3 jobs - `propose_downstream`, `koji_build` and 
-`bodhi_update` - where each of the jobs takes care of a different part of the release process.
+Doing Fedora releases with Packit means utilising our 4 jobs:
+1. `propose_downstream`
+2. `koji_build`
+3. `bodhi_update`
+4. `pull_from_upstream`
+
+Every job takes care of a different part of the release process.
 
 ## Propose downstream job
 For enabling the propose downstream job, you need to have
@@ -85,6 +90,18 @@ section of our dashboard](https://dashboard.packit.dev/jobs).
 After Packit successfully creates the dist-git pull requests, 
 it's on downstream CI systems and maintainer(s) to check the changes and merge
 the pull requests.
+
+## `pull_from_upstream` job
+[**NEW**] Starting January 2023, we have provided a new way to get fresh
+upstream releases in Fedora Linux.
+
+The [`pull_from_upstream` job](/docs/configuration/#pull_from_upstream) is
+defined in dist-git only and provides the `propose_downstream`
+functionality. This means that Packit doesn't need to be set up in the
+upstream project: everything is configured in Fedora dist-git. So when a new
+upstream release happens and
+[release-monitoring.org](https://release-monitoring.org/) detects it, you'll
+get dist-git pull requests with it automatically.
 
 ## Koji build job
 After having the dist-git content updated, you can easily automate also building in Koji.
