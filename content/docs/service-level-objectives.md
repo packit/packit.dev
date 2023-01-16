@@ -23,7 +23,7 @@ We want you to know as soon as possible that Packit is working on your request.
 
 ![SLO 1](/images/slo1.png)
 
-## SLO2: 98% of builds have status set to success or failure within 12 hours
+## SLO2: 98% of builds have status set to success or failure within 5 minutes after the Copr build has finished
 
 Once Packit works on a build, you should see that the work is done within a
 reasonable time.
