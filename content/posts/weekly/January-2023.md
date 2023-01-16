@@ -30,3 +30,4 @@ weight: 54
 
 - When configuring Copr chroot (target in Packit terminology) specific configuration, make sure to specify additional_modules as a string: module names separated with a comma, example: "httpd:2.4,python:4". ([packit#1826](https://github.com/packit/packit/pull/1826))
 - We have fixed a bug which caused long Copr build end reporting time on a few occurrences. ([packit-service#1838](https://github.com/packit/packit-service/pull/1838))
+- A few fixes has been implemented to make it possible to use [`propose-downstream` job](https://packit.dev/docs/configuration/#propose_downstream) on GitLab. ([packit-service#1842](https://github.com/packit/packit-service/pull/1842), [packit-service#1844](https://github.com/packit/packit-service/pull/1844), [packit-service#1845](https://github.com/packit/packit-service/pull/1845), [packit-service#1846](https://github.com/packit/packit-service/pull/1846))
