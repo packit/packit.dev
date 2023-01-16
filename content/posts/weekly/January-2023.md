@@ -25,3 +25,8 @@ weight: 54
 - All classes including `Specfile` itself can now be copied using the standard
   `copy()` and `deepcopy()` functions from `copy` module.
   ([specfile#176](https://github.com/packit/specfile/pull/176))
+
+## Week 2 (January 10th – January 16th)
+
+- When configuring Copr chroot (target in Packit terminology) specific configuration, make sure to specify additional_modules as a string: module names separated with a comma, example: "httpd:2.4,python:4". ([packit#1826](https://github.com/packit/packit/pull/1826))
+- We have fixed a bug which caused long Copr build end reporting time on a few occurrences. ([packit-service#1838](https://github.com/packit/packit-service/pull/1838))
