@@ -336,6 +336,13 @@ By default, no issue will be created so Packit doesn't unintentionally spam any 
 By enabling this setting, Packit will either create a new issue or add a comment to an already existing issue.
 In that case, the issue will be reused and a new comment will be added.
 
+When a downstream job (e.g. Koji build or Bodhi update) fails,
+you can re-trigger the failed job through a comment like 
+`/packit koji-build` or `/packit create-update` in the opened issue.
+The Packit app has to be installed in the issue repository and the 
+user, who commented, needs to have write permissions
+into the repository in order for the retriggering to work.
+
 #### copy_upstream_release_description
 
 (*bool*) When doing a new update in Fedora dist-git, the [GitHub upstream release description](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)
