@@ -626,6 +626,41 @@ With this configuration, you'll get builds in all stable fedora releases
 (excluding rawhide) and the CentOS stream.
 
 
+##### Target-specific configuration
+You can define a specific build configuration for different targets (chroots in
+context of Copr). For example, there are packages that are architecture
+specific and not available for all architectures. Or you may want [modules](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/introduction-to-modules_using-appstream)
+enabled for builds in CentOS Stream 8.
+
+[Copr allows specifying additional packages, modules and repos](https://python-copr.readthedocs.io/en/latest/client_v3/proxies.html#project-chroot) for individual targets.
+
+Setting this in packit.yaml requires targets to be a mapping. If you require
+this functionality, this is the preferred solution over specifying multiple
+jobs. Example:
+```yaml
+jobs
+- job: copr_build
+  trigger: pull_request
+  targets:
+    centos-stream-8:
+      additional_repos:
+       - http://koji.katello.org/releases/yum/foreman-nightly/el8/x86_64/
+      additional_modules: "foreman:el8,ruby:2.7,nodejs:12,postgresql:12"
+    fedora-rawhide: {}
+    fedora-37: {}
+```
+
+In this case, both Fedora targets don't have anything specific and would use
+packages and modules from the base distro, while CentOS Stream 8 will use a
+custom yum repo and 4 specific modules.
+
+You can define these three options:
+* `additional_packages` (list) – install additional packages before the build
+* `additional_repos` (list) – enable these yum repositories before installing any packages
+* `additional_modules` (str) – enable these modules before installing packages,
+  specified as comma-separated string: `MODULE:STREAM,MODULE2:STREAM2,...`
+
+
 ##### Available COPR build targets
 
 There are multiple places where you can get the latest list of available build targets:
