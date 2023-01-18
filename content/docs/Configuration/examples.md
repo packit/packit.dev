@@ -216,6 +216,18 @@ jobs:
 ```
 {{< /details >}}
 
+{{< details title="Creating dist-git pull requests on upstream releases defined in the dist-git repository" >}}
+```yaml
+upstream_project_url: https://github.com/packit/packit
+...
+jobs:
+- job: pull_from_upstream
+  trigger: release
+  dist_git_branches: 
+    - fedora-all
+```
+{{< /details >}}
+
 {{< details title="Running Koji builds when the Packit pull requests in dist-git are merged" >}}
 ```yaml
 - job: koji_build
