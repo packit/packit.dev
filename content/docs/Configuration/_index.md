@@ -782,6 +782,7 @@ Requirements:
 * Upstream release monitoring is active for the package. [The monitoring
   status](https://docs.fedoraproject.org/en-US/package-maintainers/Upstream_Release_Monitoring/)
   in dist-git should be set to `Monitoring`).
+* [`upstream_project_url`](#upstream_project_url) is defined in the configuration.
 
 Supported triggers: **release**.
 
@@ -794,6 +795,8 @@ Optional parameters:
 **Example**
 
 ```yaml
+upstream_project_url: https://github.com/packit/packit
+...
 jobs:
 - job: pull_from_upstream
   trigger: release
