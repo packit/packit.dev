@@ -108,8 +108,6 @@ jobs:
 ```
 
 The packit config is loaded from the commit the build is triggered from.
-Just don't forget to give `commit` rights to `packit` FAS user
-for your package in dist-git settings so Packit can create the update for you.
 
 Here is an example of the resulting Bodhi update:
 
