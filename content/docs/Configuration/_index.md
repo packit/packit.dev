@@ -48,7 +48,7 @@ as a release archive name and as a directory name in that archive.
 
 #### upstream_project_url
 
-(*string*) URL of the upstream project (e.g.
+(*string*) URL of the upstream git project (e.g.
 `https://github.com/packit/packit`).
 
 #### create_pr (only in CLI)
@@ -320,7 +320,7 @@ You can enable the commenting by setting `successful_build` to `true`.
 
 #### issue_repository
 
-Use this key to be notified about errors of the downstream jobs (Koji build and Bodhi update).
+Use this key to be notified about errors of the downstream jobs (Koji build, Bodhi update, pull from upstream).
 The value can be a URL of any GitHub/GitLab/Pagure project including dist-git
 where issues are enabled and Packit has an identity on that git forger instance.
 Alternatively, you can set up a dedicated project for receiving such notifications.
