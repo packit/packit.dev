@@ -32,6 +32,9 @@ Submit a [Copr](https://copr.fedorainfracloud.org) build of the present content 
     
       PATH_OR_URL argument is a local path or a URL to the upstream git
       repository, it defaults to the current working directory.
+
+      Copr configuration needs to be set before usage. 
+      https://docs.pagure.org/copr.copr/user_documentation.html#quick-start
     
     Options:
       --nowait                      Don't wait for build
