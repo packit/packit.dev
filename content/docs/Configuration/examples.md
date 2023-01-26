@@ -205,6 +205,20 @@ jobs:
   ```
 {{< /details >}}
 
+{{< details title="Providing custom tmt context" >}}
+```yaml
+- job: tests
+  trigger: pull_request
+  targets:
+    - fedora-all
+  tf_extra_params:
+    environments:
+      - tmt:
+          context:
+            how: "full"
+  ```
+{{< /details >}}
+
 ### Fedora release automation
 
 {{< details title="Creating dist-git pull requests on upstream releases" >}}
