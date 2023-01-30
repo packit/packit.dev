@@ -11,11 +11,11 @@ As you will see in the following paragraphs, the year 2022 was really fruitful f
 
 We have made a huge improvement in downstream automation. At the beginning of the year, we [finished the workflow](https://packit.dev/posts/downstream-automation/) and you are now able to use Packit to get your release from upstream via dist-git and Koji to Bodhi. As usual, you can pick just what you need. This workflow consists of three jobs:
 
-- propose-downstream: as a reaction to an upstream release, the source archive is saved to a lookaside cache, spec-file is updated and sent as a pull request to Fedora dist-git.
-- koji-build: as a reaction to a new dist-git commit, a new Koji build is triggered (you can specify allowed authors of a commit or merged pull request).
-- bodhi-update: as a reaction to a successfully finished Koji build, a new Bodhi update is created
+- `propose-downstream`: as a reaction to an upstream release, the source archive is saved to a lookaside cache, spec-file is updated and sent as a pull request to Fedora dist-git.
+- `koji-build`: as a reaction to a new dist-git commit, a new Koji build is triggered (you can specify allowed authors of a commit or merged pull request).
+- `bodhi-update`: as a reaction to a successfully finished Koji build, a new Bodhi update is created
 
-TODO: imag (bodhi-update?)
+TODO: image (bodhi-update?)
 
 But that wasn’t all. At the very end of the year, the Packit team implemented an alternative to the `propose-downstream` job that we call `pull-from-upstream`. The logic of the job is the very same: the source archive is saved to a lookaside cache, spec-file is updated and sent as a pull request to Fedora dist-git. The only – and main – difference is that the job is defined downstream (in the default dist-git branch, `rawhide` or its `main` alias) so you don’t need to install Packit in the upstream repository. The information about a new release is received from the [Upstream Release Monitoring](). The `pull-from-upstream` job is mainly targeted to the Fedora maintainers without upstream access or with upstream not being supported by Packit. (This job works with any upstream usingi git.) The setup is nicely described in [this blog post](). And if you want a dedicated documentation page for the Fedora downstream automation, look at https://packit.dev/docs/fedora-releases-guide/.
 
