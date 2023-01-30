@@ -21,7 +21,7 @@ But that wasn’t all. At the very end of the year, the Packit team implemented 
 
 TODO: image (pull-from-upstream)
 
-And that’s still not all, we’ve also added `propose-downstream` and `pull-from-upstream` to our dashboard. You can now see them in the Pipelines view. Also, logs can be checked on a detail page (that can be accessed from a status of a release commit).
+And that’s still not all, we’ve also added `propose-downstream` to our dashboard. You can now the jobs in the Pipelines view. Also, logs can be checked on a detail page (that can be accessed from a status of a release commit).
 
 TODO: image (pipelines with propose-downstream>)
 
