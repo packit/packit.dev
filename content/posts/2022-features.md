@@ -33,9 +33,8 @@ TODO: image (issue to retrigger)
 
 ## SRPM in Copr
 
-During the year, you might have realised that Packit has moved the builds of SRPM files to Copr. For more details, take a look at the [relevant page](), but let’s shortly describe the benefits:
+Throughout the 2022 we have implemented support for building SRPMs in the Copr and slowly started introducing newly-onboarded projects to use Copr right from the start. The definitive switch to Copr has been done at the beginning of 2023. For more details, take a look at the [relevant blog post](https://packit.dev/posts/copr-srpms/), but let’s shortly describe the benefits:
 Most importantly, you can now use [`srpm_build_deps`](https://packit.dev/docs/configuration/#srpm_build_deps) config option to specify the dependencies needed for the build. With the [old solution](https://github.com/packit/sandcastle), this process was manual, global and had to be done by Packit maintainers. Another advantage of being able to use Copr for SRPM builds is access to the SRPM artifacts.
-The move had multiple stages to ease the transition but now, all of our users build SRPMs in Copr.
 
 ## Self-mapping of FAS account
 
