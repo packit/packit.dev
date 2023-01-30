@@ -11,13 +11,13 @@ As you will see in the following paragraphs, the year 2022 was really fruitful f
 
 We have made a huge improvement in downstream automation. At the beginning of the year, we [finished the workflow](https://packit.dev/posts/downstream-automation/) and you are now able to use Packit to get your release from upstream via dist-git and Koji to Bodhi. As usual, you can pick just what you need. This workflow consists of three jobs:
 
-- `propose-downstream`: as a reaction to an upstream release, the source archive is saved to a lookaside cache, spec-file is updated and sent as a pull request to Fedora dist-git.
+- `propose-downstream`: as a reaction to an upstream release, the source archive is saved to a lookaside cache, specfile is updated and sent as a pull request to Fedora dist-git.
 - `koji-build`: as a reaction to a new dist-git commit, a new Koji build is triggered (you can specify allowed authors of a commit or merged pull request).
 - `bodhi-update`: as a reaction to a successfully finished Koji build, a new Bodhi update is created
 
 TODO: image (bodhi-update?)
 
-But that wasn’t all. At the very end of the year, the Packit team implemented an alternative to the `propose-downstream` job that we call `pull-from-upstream`. The logic of the job is the very same: the source archive is saved to a lookaside cache, spec-file is updated and sent as a pull request to Fedora dist-git. The only – and main – difference is that the job is defined downstream (in the default dist-git branch, `rawhide` or its `main` alias) so you don’t need to install Packit in the upstream repository. The information about a new release is received from the [Upstream Release Monitoring](). The `pull-from-upstream` job is mainly targeted to the Fedora maintainers without upstream access or with upstream not being supported by Packit. (This job works with any upstream usingi git.) The setup is nicely described in [this blog post](). And if you want a dedicated documentation page for the Fedora downstream automation, look at https://packit.dev/docs/fedora-releases-guide/.
+But that wasn’t all. At the very end of the year, the Packit team implemented an alternative to the `propose-downstream` job that we call `pull-from-upstream`. The logic of the job is the very same: the source archive is saved to a lookaside cache, specfile is updated and sent as a pull request to Fedora dist-git. The only – and main – difference is that the job is defined downstream (in the default dist-git branch, `rawhide` or its `main` alias) so you don’t need to install Packit in the upstream repository. The information about a new release is received from the [Upstream Release Monitoring](). The `pull-from-upstream` job is mainly targeted to the Fedora maintainers without upstream access or with upstream not being supported by Packit. (This job works with any upstream usingi git.) The setup is nicely described in [this blog post](). And if you want a dedicated documentation page for the Fedora downstream automation, look at https://packit.dev/docs/fedora-releases-guide/.
 
 TODO: image (pull-from-upstream)
 
@@ -47,9 +47,9 @@ If you wonder why we check permissions for the installation, we have good news f
 
 If you have multiple connected projects (as we do) and work on a feature spreading more of them, the following feature might come in handy. You can use a commit command with a reference to the other pull request and Packit will use Copr builds from both pull requests during the tests. Want to know more? Check this blog post: https://packit.dev/posts/testing-farm-triggering/
 
-## Spec-file library
+## Specfile library
 
-This one might not be relevant to most of our users, but we would still like to announce, that we’ve created a Python library for spec-file manipulation. It can not only parse various weird spec files but also can edit them with as little diff as possible. Also, the code is really interesting so check it out. Now, it’s used by Packit and [Rebase Helper](https://github.com/rebase-helper/rebase-helper) and you can watch [this demo](https://www.youtube.com/watch?v=yzMfBPdFXZY&t=17s) if you want to know more.
+This one might not be relevant to most of our users, but we would still like to announce, that we’ve created a Python library for specfile manipulation. It can not only parse various weird spec files but also can edit them with as little diff as possible. Also, the code is really interesting so check it out. Now, it’s used by Packit and [Rebase Helper](https://github.com/rebase-helper/rebase-helper) and you can watch [this demo](https://www.youtube.com/watch?v=yzMfBPdFXZY&t=17s) if you want to know more.
 In case you’ve missed that, this is not the first time we’ve extracted a part of our codebase for wider usage – another nice example is a [forge-independent Python library for GitHub/GitLab/Pagure API called OGR](https://github.com/packit/ogr/).
 
 ## VM Image Builds
