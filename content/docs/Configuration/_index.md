@@ -598,6 +598,9 @@ Optional parameters:
   useful when you have multiple `copr_build` jobs with different configuration.
   For example if you [set this to "mock"](https://github.com/rpm-software-management/mock/pull/902/checks?check_run_id=6530714905), then a check run for Rawhide would be
   named "rpm-build:fedora-rawhide-x86\_64:mock".
+* **module_hotfixes** -- The project will have `module_hotfixes=1` in the Copr generated repo files.
+  This is useful when you build packages that need to be installed in a modular context.
+  Defaults to `False`.
 
 
 ##### Using a custom Copr project
