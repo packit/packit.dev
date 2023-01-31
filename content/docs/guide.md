@@ -232,7 +232,8 @@ There are a few version-related config options you might need to set:
   Command to get a project version in the current state of the project.
 * [`release_suffix`](/docs/configuration/#release_suffix):
   Used to influence release field of artifacts provided by Packit.
-
+* [`update_release`](/docs/configuration/#update_release):
+  To not modify the version and release.
 
 ### Jobs
 
