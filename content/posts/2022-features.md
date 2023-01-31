@@ -25,7 +25,7 @@ And that’s still not all, we’ve also added `propose-downstream` to [our dash
 
 TODO: image (pipelines with propose-downstream>)
 
-Still not convinced we’ve done a lot? When using various downstream jobs, you can still hit an issue now and then. (messages from Fedora infrastructure can get lost or some flake error can occur.) Packit automatically retries to overcome temporary issues, but sometimes it’s not enough or there is a real problem that needs to be fixed elsewhere. We can’t resolve the real problems for you, but we can help let you retry the job when needed. And you have two places where to do that.
+Still not convinced we’ve done a lot? When using various downstream jobs, you can still hit an issue now and then. (Messages from Fedora infrastructure can get lost or some intermittent error can occur.) Packit automatically retries to overcome temporary issues, but sometimes it’s not enough or there is a real problem that needs to be fixed elsewhere. We can’t resolve the real problems for you, but we can help let you retry the job when needed. And you have two places where to do that.
 
 As you might be used to with the `propose-downstream` job, you can use comments in an upstream issue to retrigger Bodhi updates and Koji builds as well. Just configure [`issue_repository`](https://packit.dev/docs/configuration/#issue_repository) so Packit knows where to create issues in case of problems. (This does not need to be an upstream issue and this repository can be used for multiple projects.) Alternatively, if you use dist-git pull requests (either made by Packit or other maintainers), you can use a pull request comment to retrigger Koji Build or Bodhi update.
 
