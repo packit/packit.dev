@@ -54,18 +54,18 @@ If you wonder why we check permissions for the installation, we have good news f
 
 ## Multiple-project test runs
 
-If you have multiple connected projects (as we do) and work on a feature spreading more of them, the following feature might come in handy. You can use a commit command with a reference to the other pull request and Packit will use Copr builds from both pull requests during the tests. Want to know more? Check this blog post: https://packit.dev/posts/testing-farm-triggering/
+If you have multiple connected projects (as we do) and work on a feature spanning more of them, the following feature might come in handy. You can use a commit command with a reference to the other pull request and Packit will use Copr builds from both pull requests during the tests. Want to know more? Check this blog post: https://packit.dev/posts/testing-farm-triggering/
 
 ![Test with external build](/images/2022-blog/test-for-external-build.png)
 
 ## Specfile library
 
-This one might not be relevant to most of our users, but we would still like to announce, that we’ve created [a Python library](https://github.com/packit/specfile) for specfile manipulation. It can not only parse various weird spec files but also can edit them with as little diff as possible. Also, the code is really interesting so check it out. Now, it’s used by Packit and [Rebase Helper](https://github.com/rebase-helper/rebase-helper) and you can watch [this demo](https://www.youtube.com/watch?v=yzMfBPdFXZY&t=17s) if you want to know more.
+This one might not be relevant to most of our users, but we would still like to announce, that we’ve created [a Python library](https://github.com/packit/specfile) for specfile manipulation. It can not only parse various weird spec files but also can edit them with as little diff as possible. Also, the code is really interesting so check it out. Now, it’s used by Packit and [rebase-helper](https://github.com/rebase-helper/rebase-helper) and you can watch [this demo](https://www.youtube.com/watch?v=yzMfBPdFXZY&t=17s) if you want to know more.
 In case you’ve missed that, this is not the first time we’ve extracted a part of our codebase for wider usage – another nice example is a [forge-independent Python library for GitHub/GitLab/Pagure API called OGR](https://github.com/packit/ogr/).
 
 ## VM Image Builds
 
-Having Copr builds available for your pull-requests is really nice, but you can now have VM image builds as well. It will be really wasteful to do this for each and every commit so we decided to trigger this by a `/packit vm-image-build ` comment. Similarly to other jobs, Packit uses an external system to do the hard work. This feature is possible thanks to the [Red Hat Image Builder](https://console.redhat.com/insights/image-builder). This feature is a fresh start on this journey and we are investigating the possibilities of Packit in this field. Check [our documentation](https://packit.dev/docs/configuration/#vm_image_build) and let us know what you think.
+Having Copr builds available for your pull-requests is really nice, but you can now have VM image builds as well. It would be really wasteful to do this for each and every commit so we decided to trigger this by a `/packit vm-image-build ` comment. Similarly to other jobs, Packit uses an external system to do the hard work. This feature is possible thanks to the [Red Hat Image Builder](https://console.redhat.com/insights/image-builder). This feature is a fresh start on this journey and we are investigating the possibilities of Packit in this field. Check [our documentation](https://packit.dev/docs/configuration/#vm_image_build) and let us know what you think.
 
 ![VM image build as a result of the comment](/images/2022-blog/vm-image-build.png)
 
