@@ -15,21 +15,27 @@ We have made a huge improvement in downstream automation. At the beginning of th
 - `koji-build`: as a reaction to a new dist-git commit, a new Koji build is triggered (you can specify allowed authors of a commit or merged pull request).
 - `bodhi-update`: as a reaction to a successfully finished Koji build, a new Bodhi update is created
 
-TODO: image (bodhi-update?)
+![Detail of a Bodhi update created by Packit](/images/2022-blog/bodhi-update.png)
 
 But that wasn’t all. At the very end of the year, the Packit team implemented an alternative to the `propose-downstream` job that we call `pull-from-upstream`. The logic of the job is the very same: the source archive is saved to a lookaside cache, specfile is updated and sent as a pull request to Fedora dist-git. The only – and main – difference is that the job is defined downstream (in the default dist-git branch, `rawhide` or its `main` alias) so you don’t need to install Packit in the upstream repository. The information about a new release is received from the [Upstream Release Monitoring](https://docs.fedoraproject.org/en-US/package-maintainers/Upstream_Release_Monitoring). The `pull-from-upstream` job is mainly targeted to the Fedora maintainers without upstream access or with upstream not being supported by Packit. (This job works with any upstream using git.) The setup is nicely described in [this blog post](https://packit.dev/posts/pull-from-upstream). And if you want a dedicated documentation page for the Fedora downstream automation, look at https://packit.dev/docs/fedora-releases-guide/.
 
-TODO: image (pull-from-upstream)
+![Pull request created by a pull-from-upstream workflow](/images/2022-blog/pull-from-upstream.png)
 
 And that’s still not all, we’ve also added `propose-downstream` to [our dashboard](https://dashboard.packit.dev). You can now the jobs in [the Pipelines view](https://dashboard.packit.dev/pipelines). Also, logs can be checked on a detail page (that can be accessed from a status of a release commit).
 
-TODO: image (pipelines with propose-downstream>)
+![Propose downstream result page](/images/2022-blog/propose-downstream-result-page.png)
 
 Still not convinced we’ve done a lot? When using various downstream jobs, you can still hit an issue now and then. (Messages from Fedora infrastructure can get lost or some intermittent error can occur.) Packit automatically retries to overcome temporary issues, but sometimes it’s not enough or there is a real problem that needs to be fixed elsewhere. We can’t resolve the real problems for you, but we can help let you retry the job when needed. And you have two places where to do that.
 
 As you might be used to with the `propose-downstream` job, you can use comments in an upstream issue to retrigger Bodhi updates and Koji builds as well. Just configure [`issue_repository`](https://packit.dev/docs/configuration/#issue_repository) so Packit knows where to create issues in case of problems. (This does not need to be an upstream issue and this repository can be used for multiple projects.) Alternatively, if you use dist-git pull requests (either made by Packit or other maintainers), you can use a pull request comment to retrigger Koji Build or Bodhi update.
 
-TODO: image (issue to retrigger)
+![Comment to recreate a Bodhi update](/images/2022-blog/dist-git-pull-request-comment.png)
+
+If you are interested in what Packit has done for its users, you can take a look at the activity of the `packit` (or `packit-stg`) FAS user in [dist-git](https://src.fedoraproject.org/user/packit), [Koji](https://koji.fedoraproject.org/koji/userinfo?userID=4641) or [Bodhi](https://bodhi.fedoraproject.org/users/packit).
+
+![Dist-git activity of Packit user](/images/2022-blog/packit-dist-git-activity.png)
+![Koji builds triggered by Packit user](/images/2022-blog/packit-koji-builds.png)
+![Bodhi updates created by Packit user](/images/2022-blog/packit-bodhi-updates-all.png)
 
 ## SRPM in Copr
 
@@ -43,9 +49,13 @@ If you are interested in how this works, take a look at the blog post we’ve pr
 
 If you wonder why we check permissions for the installation, we have good news for you. This year, we plan to improve the permission schema, do the checks for each job, and require only what is needed. But more about the plans for 2023 later.
 
+![Self-mapping process in an issue](/images/verify-fas.png)
+
 ## Multiple-project test runs
 
 If you have multiple connected projects (as we do) and work on a feature spreading more of them, the following feature might come in handy. You can use a commit command with a reference to the other pull request and Packit will use Copr builds from both pull requests during the tests. Want to know more? Check this blog post: https://packit.dev/posts/testing-farm-triggering/
+
+![Test with external build](/images/2022-blog/test-for-external-build.png)
 
 ## Specfile library
 
@@ -56,7 +66,7 @@ In case you’ve missed that, this is not the first time we’ve extracted a par
 
 Having Copr builds available for your pull-requests is really nice, but you can now have VM image builds as well. It will be really wasteful to do this for each and every commit so we decided to trigger this by a `/packit vm-image-build ` comment. Similarly to other jobs, Packit uses an external system to do the hard work. This feature is possible thanks to the [Red Hat Image Builder](https://console.redhat.com/insights/image-builder). This feature is a fresh start on this journey and we are investigating the possibilities of Packit in this field. Check [our documentation](https://packit.dev/docs/configuration/#vm_image_build) and let us know what you think.
 
-TODO: image
+![VM image build as a result of the comment](/images/2022-blog/vm-image-build.png)
 
 ## Plans for the next year
 
