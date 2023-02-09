@@ -64,7 +64,7 @@ Optional parameters:
 * **tmt_plan** - Run plans by the given name. Can be passed as a regular
   expression.
 * **tf_post_install_script** - Bash script as a string to run during the guest provisioning. 
-* **tf_extra_params** - a free-form dict that allows specifying extra parameters to Testing Farm. For a complete list of parameters, refer to [Testing Farm documentation](https://testing-farm.gitlab.io/api/#operation/requestsPost). The dict must follow the structure of the Testing Farm request. Options specified in the dict have the highest precedence, i.e. can override Packit's defaults. Refer to [configuration examples](/docs/configuration/examples/#tests) for more information.
+* **tf_extra_params** - a free-form dict that allows specifying extra parameters to Testing Farm. For a complete list of parameters, refer to [Testing Farm documentation](https://testing-farm.gitlab.io/api/#operation/requestsPost). The dict must follow the structure of the Testing Farm request. Options specified in the dict have the highest precedence, i.e. can override Packit's defaults. Beware of indentation-sensitivity of the YAML format. You can verify that the option is processed correctly using a [YAML parser](https://yaml-online-parser.appspot.com/). Refer to [configuration examples](/docs/configuration/examples/#tests) for more information.
 * **skip_build** - Whether to skip the build phase and only run tests (defaults to false). 
   Enabling this will cause no Copr build to be built and installed into the testing environment, 
   only submitting request to Testing Farm (the selected components to be installed should be part of the TMT definitions).
