@@ -95,8 +95,8 @@ improve it even more!
 
 As a next step, we use the new approach for GitHub app installations made since September 6, 2022.
 
-The last step will be to get rid of using our sandbox for building SRPMs at all.
-Current plan is to switch to building all SRPMs in Copr in January 2023.
+And as of January 10th 2023, we switched to building all SRPMs in Copr
+and thus got rid of using our sandbox for building SRPMs entirely.
 
 Since we don't want to break your CI results because of missing dependencies, we will use the previously linked list of deps.
 As the list is pretty long, we encourage you to define your dependencies on your own. If you
