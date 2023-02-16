@@ -289,7 +289,7 @@ execute:
 
 #### rpminspect
 
-[`rpminspect`](https://github.com/rpminspect/rpminspect) can analyze your SRPMs
+[`rpminspect`](https://github.com/rpminspect/rpminspect) can analyze your packages
 and give you information related to licensing, metadata, manpages, desktop app
 metadata, file ownership & permissions and much much more.
 
@@ -297,7 +297,7 @@ Here's a tmt plan you can use to have rpminspect invoked on SRPMs produced by Pa
 
 ```yaml
 summary:
-    Fetch SRPM and check it with rpminspect
+    Check rpm files with rpminspect
 discover:
     how: shell
     tests:
@@ -314,6 +314,31 @@ prepare:
 execute:
     how: tmt
 ```
+
+You can run rpminspect also using the CentOS Stream configuration. This should prepare you before opening CentOS Stream dist-git MRs.
+```yaml
+summary:
+    Check rpm files with rpminspect
+discover:
+    how: shell
+    tests:
+      - name: rpminspect SRPM
+        test: rpminspect-centos -v -t VERIFY --profile=centos-stream-9-devel /tmp/*.src.rpm
+prepare:
+  - name: packages
+    how: install
+    package:
+    - rpminspect
+    - rpminspect-data-centos
+  - how: shell
+    script: cd /tmp && curl -O ${PACKIT_SRPM_URL}
+execute:
+    how: tmt
+```
+
+Since rpminspect is under active development, you should consider installing the latest version from this Copr project: https://copr.fedorainfracloud.org/coprs/dcantrell/rpminspect/
+
+You can also inspect binary RPM files, [we will make this easy to do as well in future](https://github.com/packit/packit.dev/issues/607).
 
 ## Testing Farm API
 
