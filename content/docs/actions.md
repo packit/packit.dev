@@ -138,6 +138,11 @@ Additionally, packit sets a few env vars for specific actions.
 `PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)
 `PACKIT_PROJECT_NAME_VERSION` — current name and version of the project (coming from `git describe`)
 
+**changelog-entry**
+
+`PACKIT_PROJECT_VERSION` — version to be set in the specfile, set when relevant 
+(e.g. when syncing upstream release downstream)
+
 If you want to see the content of those variables, you can print using `echo`
 in the specific action:
 ```yaml
@@ -172,5 +177,5 @@ actions:
   - "make archive"
   - bash -c "ls -1 ./package-*.tar.gz"
   changelog-entry:
-  - echo "New release"
+  - echo "New release ${PACKIT_PROJECT_VERSION}"
 ```
