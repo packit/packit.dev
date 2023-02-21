@@ -84,7 +84,7 @@ It is now deprecated in favor of [`files_to_sync`](#files_to_sync).
 
 #### update_release
 
-(*bool*) Packit by default modifies Version and Release in the spec file when
+(*bool*) Packit by default modifies Release in the spec file when
 creating a SRPM. If you don't want this, you can prevent it with
 
     update_release: false
