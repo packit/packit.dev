@@ -106,7 +106,7 @@ properly. The action tries to perform 3 operations on a spec file:
    directory name directly from the archive or uses the configured
    [`archive_root_dir_template`](/docs/configuration#archive_root_dir_template)).
 
-3. It updates %version in the spec file.
+3. It updates Version and Release in the spec file.
 
 If you provide your own implementation, none of the above happens.
 
@@ -118,7 +118,7 @@ actions:
   fix-spec-file:
   # define one of the Source variables correctly
   - sed -i my_specfile_path -e "s/https.*only-vendor.tar.xz/my_correct_tarball_path/"
-  # fill in %release as if packit would have done it
+  # fill in Release as if packit would have done it
   - bash -c "sed -i my_specfile_path -r \"s/Release:(\s*)\S+/Release:\1${PACKIT_RPMSPEC_RELEASE}%{?dist}/\""
 ```
 

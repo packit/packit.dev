@@ -40,7 +40,12 @@ prepared sources are moved to the `result-dir`.
                                       current branch from which packit should
                                       generate patches (this option implies the
                                       repository is source-git).
-      --bump / --no-bump              Specifies whether to bump version or not.
+      --update-release / --no-update-release
+                                      Specifies whether to update Release.
+                                      Defaults to value set in configuration,
+                                      which defaults to yes.
+      --bump / --no-bump              Deprecated. Use --[no-]update-release
+                                      instead.
       --release-suffix TEXT           Specifies release suffix. Allows to override
                                       default generated:{current_time}.{sanitized_
                                       current_branch}{git_desc_suffix}
