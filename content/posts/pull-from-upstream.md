@@ -109,7 +109,9 @@ Currently, retriggering is not possible, but it's in our
 ## Few words in the end
 
 `pull_from_upstream` has just been implemented; therefore, we encourage you to help
-test it out and make it perfect! We believe this functionality
+test it out and make it perfect! There are still some limitations (e.g. regarding upstreams,
+see [documentation](/docs/configuration#pull_from_upstream)), which we are trying to resolve as soon as possible.
+We believe this functionality
 could be beneficial for maintainers of Fedora packages and could even be integrated further.
 Any [suggestions](https://github.com/packit/packit-service/issues/new) and feedback are welcomed
 (see [contacts](https://packit.dev/#contact)).
