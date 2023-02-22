@@ -31,6 +31,13 @@ get-current-version:
 ```
 {{< /details >}}
 
+{{< details title="Getting version for Ruby packages from the gemspec" >}}
+```yaml
+get-current-version:
+  - ruby -rrubygems -e 'puts Gem::Specification::load(Dir.glob("*.gemspec").first).version'
+```
+{{< /details >}}
+
 ### Manipulating spec file
 {{< details title="Downloading specfile from the dist-git repo" >}}
 ```yaml
