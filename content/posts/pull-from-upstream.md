@@ -44,7 +44,9 @@ In Anitya, there are multiple backends you can configure the mapping for.
 Besides GitHub or GitLab, you can use e.g. PyPI, pagure, or
 [many others](https://release-monitoring.org/static/docs/user-guide.html#backends).
 Also, be aware that there can be a delay in retrieving the new version,
-so the update to Fedora is usually not created instantly.
+so the update to Fedora is usually not created instantly (e.g. for Python projects,
+it is better to configure PyPI backend rather than GitHub since the monitoring
+there is much less delayed).
 {{< /hint >}}
 
 ### Packit configuration
