@@ -108,6 +108,10 @@ also notified about errors:
 Currently, retriggering is not possible, but it's in our
 [plan](https://github.com/packit/packit-service/issues/1829) to implement it soon.
 
+Also, if you need to do any change in the pull request, you need to locally fetch the source branch
+of the Packit's pull request and push it (with a fix) to your fork (as it is not possible to push to the branch
+created in the Packit's fork).
+
 ## Few words in the end
 
 `pull_from_upstream` has just been implemented; therefore, we encourage you to help

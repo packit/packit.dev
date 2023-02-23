@@ -769,6 +769,10 @@ jobs:
 
 This config would update Fedora Rawhide and Fedora 35 dist-git branches.
 
+If you need to do any change in the pull request, you need to locally fetch the source branch 
+of the Packit's pull request and push it (with a fix) to your fork (as it is not possible to push to the branch 
+created in the Packit's fork).
+
 ##### pull_from_upstream
 
 A dist-git only job that opens a new dist-git pull request in
@@ -820,6 +824,9 @@ jobs:
 Once a new upstream release happens, Packit will open a pull request with it in
 all active Fedora releases and EPEL 9.
 
+If you need to do any change in the pull request, you need to locally fetch the source branch 
+of the Packit's pull request and push it (with a fix) to your fork (as it is not possible to push to the branch 
+created in the Packit's fork).
 
 ##### koji_build
 Trigger the build in
