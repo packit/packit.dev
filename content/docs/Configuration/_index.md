@@ -343,8 +343,8 @@ By enabling this setting, Packit will either create a new issue or add a comment
 In that case, the issue will be reused and a new comment will be added.
 
 When a downstream job (e.g. Koji build or Bodhi update) fails,
-you can re-trigger the failed job through a comment like 
-`/packit koji-build` or `/packit create-update` in the opened issue.
+you can re-trigger the failed job by  
+`/packit koji-build` or `/packit create-update` comment in the opened issue by Packit.
 The Packit app has to be installed in the issue repository and the 
 user, who commented, needs to have write permissions
 into the repository in order for the retriggering to work.
@@ -839,7 +839,7 @@ The koji build behaves as it was created manually, and you can utilise
 to be informed about the builds. Also, you can configure a repository where should we
 open issues in case of errors during the job via [`issue_repository`](/docs/configuration#issue_repository) configuration key.
 
-You can retrigger a build by typing `/packit koji-build` in the pull request Pagure interface.
+For retriggering the job, see [our release guide](/docs/fedora-releases-guide).
 
 For Koji builds from upstream, see [`upstream_koji_build`](#upstream_koji_build).
 
@@ -893,6 +893,8 @@ but it is visible across Fedora systems
 like a manually created Bodhi update, and you can utilise
 [Fedora Notifications](https://apps.fedoraproject.org/notifications/about)
 to tweak the notifications settings.
+
+For retriggering the job, see [our release guide](/docs/fedora-releases-guide).
 
 Note that this job is really new and not mature yet -- let us know if you find anything problematic
 or any improvement we can implement.

@@ -43,10 +43,6 @@ The process of releasing a new version starts in the upstream repository by crea
 new upstream release. Packit gets the information about the newly created release (not a git tag) from GitHub,
 loads the config from the release commit and if there is a `propose_downstream` job
 defined, the workflow begins.
-Users with write or admin permissions to the repository can retrigger an
-update via a comment in any open issue:
-
-    /packit propose-downstream
 
 #### Uploading archive to lookaside cache
 The upstream archive needs to be downloaded by Packit first and then uploaded to the lookaside cache.
@@ -91,6 +87,12 @@ After Packit successfully creates the dist-git pull requests,
 it's on downstream CI systems and maintainer(s) to check the changes and merge
 the pull requests.
 
+#### Retriggering
+Users with write or admin permissions to the repository can retrigger an
+update via a comment in any open issue in the upstream repository:
+
+    /packit propose-downstream
+
 ## `pull_from_upstream` job
 [**NEW**] Starting January 2023, we have provided a new way to get fresh
 upstream releases in Fedora Linux.
@@ -133,7 +135,16 @@ The koji build behaves as it was created manually, and you can utilise
 to be informed about the builds. Also, you can configure a repository where should we
 open issues in case of errors during the job via [`issue_repository`](/docs/configuration#issue_repository) configuration key.
 
-You can retrigger a build by typing `/packit koji-build` in the pull request Pagure interface.
+#### Retriggering
+You can retrigger a build by a comment in a dist-git pull request:
+
+    /packit koji-build
+
+The build will be triggered for the target branch of the pull request. The user who
+posts this comment needs to be a packager.
+
+If Packit created an issue in the configured `issue_repository`, you can place the same comment in that
+issue to retrigger the builds (see [`issue_repository`](/docs/configuration#issue_repository) for details).
 
 
 ## Bodhi update job
@@ -155,3 +166,13 @@ jobs:
 The packit config is loaded from the commit the build is triggered from.
 The `issue_repository` configuration key mentioned in the Koji build job applies here as well.
 
+#### Retriggering
+You can retrigger an update by a comment in a dist-git pull request:
+
+    /packit create-update
+
+The update will be triggered for the target branch of the pull request. The user who
+posts this comment needs to be a packager and have write access to the dist-git repository.
+
+If Packit created an issue in the configured `issue_repository`, you can place the same comment in that
+issue to retrigger the updates (see [`issue_repository`](/docs/configuration#issue_repository) for details).
