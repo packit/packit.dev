@@ -771,7 +771,11 @@ This config would update Fedora Rawhide and Fedora 35 dist-git branches.
 
 If you need to do any change in the pull request, you need to locally fetch the source branch 
 of the Packit's pull request and push it (with a fix) to your fork (as it is not possible to push to the branch 
-created in the Packit's fork).
+created in the Packit's fork):
+
+
+    git fetch ssh://$USER.fedoraproject.org/forks/packit/rpms/$YOUR_PACKAGE.git refs/heads/*:refs/remotes/packit/*
+    git cherry-pick packit/$VERSION-$BRANCH-update-propose_downstream
 
 ##### pull_from_upstream
 
@@ -826,7 +830,10 @@ all active Fedora releases and EPEL 9.
 
 If you need to do any change in the pull request, you need to locally fetch the source branch 
 of the Packit's pull request and push it (with a fix) to your fork (as it is not possible to push to the branch 
-created in the Packit's fork).
+created in the Packit's fork):
+
+    git fetch ssh://$USER.fedoraproject.org/forks/packit/rpms/$YOUR_PACKAGE.git refs/heads/*:refs/remotes/packit/*
+    git cherry-pick packit/$VERSION-$BRANCH-update-pull_from_upstream
 
 ##### koji_build
 Trigger the build in
