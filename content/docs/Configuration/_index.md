@@ -769,6 +769,14 @@ jobs:
 
 This config would update Fedora Rawhide and Fedora 35 dist-git branches.
 
+If you need to do any change in the pull request, you need to locally fetch the source branch 
+of the Packit's pull request and push it (with a fix) to your fork (as it is not possible to push to the branch 
+created in the Packit's fork):
+
+
+    git fetch ssh://$USER.fedoraproject.org/forks/packit/rpms/$YOUR_PACKAGE.git refs/heads/*:refs/remotes/packit/*
+    git cherry-pick packit/$VERSION-$BRANCH-update-propose_downstream
+
 ##### pull_from_upstream
 
 A dist-git only job that opens a new dist-git pull request in
@@ -788,6 +796,13 @@ Requirements:
   status](https://docs.fedoraproject.org/en-US/package-maintainers/Upstream_Release_Monitoring/)
   in dist-git should be set to `Monitoring`).
 * [`upstream_project_url`](#upstream_project_url) is defined in the configuration.
+
+{{< hint info >}}
+Upstreams (defined in `upstream_project_url`) hosted in these Git forges are currently supported: https://github.com, https://gitlab.com, https://gitlab.freedesktop.org,
+https://gitlab.gnome.org, https://salsa.debian.org.
+Support for working with upstreams in all Git forges is planned to be 
+worked on shortly ([see](https://github.com/packit/packit-service/issues/1907)).
+{{< /hint >}}
 
 Supported triggers: **release**.
 
@@ -813,6 +828,12 @@ jobs:
 Once a new upstream release happens, Packit will open a pull request with it in
 all active Fedora releases and EPEL 9.
 
+If you need to do any change in the pull request, you need to locally fetch the source branch 
+of the Packit's pull request and push it (with a fix) to your fork (as it is not possible to push to the branch 
+created in the Packit's fork):
+
+    git fetch ssh://$USER.fedoraproject.org/forks/packit/rpms/$YOUR_PACKAGE.git refs/heads/*:refs/remotes/packit/*
+    git cherry-pick packit/$VERSION-$BRANCH-update-pull_from_upstream
 
 ##### koji_build
 Trigger the build in

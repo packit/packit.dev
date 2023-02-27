@@ -44,7 +44,9 @@ In Anitya, there are multiple backends you can configure the mapping for.
 Besides GitHub or GitLab, you can use e.g. PyPI, pagure, or
 [many others](https://release-monitoring.org/static/docs/user-guide.html#backends).
 Also, be aware that there can be a delay in retrieving the new version,
-so the update to Fedora is usually not created instantly.
+so the update to Fedora is usually not created instantly (e.g. for Python projects,
+it is better to configure PyPI backend rather than GitHub since the monitoring
+there is much less delayed).
 {{< /hint >}}
 
 ### Packit configuration
@@ -106,10 +108,19 @@ also notified about errors:
 Currently, retriggering is not possible, but it's in our
 [plan](https://github.com/packit/packit-service/issues/1829) to implement it soon.
 
+Also, if you need to do any change in the pull request, you need to locally fetch the source branch
+of the Packit's pull request and push it (with a fix) to your fork (as it is not possible to push to the branch
+created in the Packit's fork):
+
+    git fetch ssh://$USER.fedoraproject.org/forks/packit/rpms/$YOUR_PACKAGE.git refs/heads/*:refs/remotes/packit/*
+    git cherry-pick packit/$VERSION-$BRANCH-update-pull_from_upstream
+
 ## Few words in the end
 
 `pull_from_upstream` has just been implemented; therefore, we encourage you to help
-test it out and make it perfect! We believe this functionality
+test it out and make it perfect! There are still some limitations (e.g. regarding upstreams,
+see [documentation](/docs/configuration#pull_from_upstream)), which we are trying to resolve as soon as possible.
+We believe this functionality
 could be beneficial for maintainers of Fedora packages and could even be integrated further.
 Any [suggestions](https://github.com/packit/packit-service/issues/new) and feedback are welcomed
 (see [contacts](https://packit.dev/#contact)).
