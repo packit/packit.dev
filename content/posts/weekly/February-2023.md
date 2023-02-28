@@ -15,3 +15,11 @@ weight: 53
 - Packit now provides `PACKIT_PROJECT_VERSION` environment variable when running `changelog-entry` action. ([packit#1853](https://github.com/packit/packit/pull/1853))
 - Packit CLI now requires bodhi in version 7.0.0 at minimum. ([packit#1844](https://github.com/packit/packit/pull/1844))
 - You can now specify branches for a job triggered by a commit with a regex. ([packit-service#1909](https://github.com/packit/packit-service/pull/1909))
+
+## Week 8 (February 21st – February 27th)
+
+- `packit validate-config` CLI command now provides details about errors when it cannot parse the config file. ([packit#1861](https://github.com/packit/packit/pull/1861))
+- `--update-release`/`--no-update-release` CLI flag now affects only `Release`, not `Version`. ([packit#1857](https://github.com/packit/packit/pull/1857))
+- Packit does fewer API calls when searching for the package configuration file in remote repositories. ([packit#1846](https://github.com/packit/packit/pull/1846))
+- Commit statuses/check names will now contain the name of the branch or release for the build and test jobs with `commit` or `release` trigger.
+  This will prevent the collision of the names. ([packit-service#1920](https://github.com/packit/packit-service/pull/1920))
