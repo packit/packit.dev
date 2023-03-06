@@ -23,3 +23,14 @@ weight: 53
 - Packit does fewer API calls when searching for the package configuration file in remote repositories. ([packit#1846](https://github.com/packit/packit/pull/1846))
 - Commit statuses/check names will now contain the name of the branch or release for the build and test jobs with `commit` or `release` trigger.
   This will prevent the collision of the names. ([packit-service#1920](https://github.com/packit/packit-service/pull/1920))
+
+## Week 9 (February 28th – March 6th)
+
+- Aliases logic was updated to account for the upcoming Fedora release (Bodhi now marks such release as `frozen`). From now on, Fedora 38 updates will be created even when the release is frozen. ([packit#1863](https://github.com/packit/packit/pull/1863))
+- `packit validate-config` now correctly checks glob-patterns in 'files_to_sync' ([packit#1865](https://github.com/packit/packit/pull/1865)) and provides details about errors when it cannot parse a config file. ([packit#1861](https://github.com/packit/packit/pull/1861))
+- Pull-from-upstream jobs are now displayed on our dashboard 🥳 https://dashboard.packit.dev/jobs/pull-from-upstreams ([packit-service#1951](https://github.com/packit/packit-service/pull/1951), [packit-service#1939](https://github.com/packit/packit-service/pull/1939))
+- Packit will no longer automatically request access to the forks on GitLab. This will prevent us from spamming one-time contributors with requesting the access, whereas the regular contributors can add Packit following the instructions from the comments on the MRs, so they can receive the results of Packit pipeline right from the commit statuses. ([packit-service#1946](https://github.com/packit/packit-service/pull/1946))
+- Packit will retry tasks that are interrupted by a worker shutdown. This should improve throughput and reduce cases where there is no outcome, i.e. "builds should have been done but nothing happened". ([packit-service#1935](https://github.com/packit/packit-service/pull/1935))
+- OGR now understands a few community-hosted GitLab instances that could not be determined automatically from the hostname. Thanks to that, you don't need to hardcode these instances to be mapped correctly. ([ogr#775](https://github.com/packit/ogr/pull/775))
+
+Thank you, [@SpyTec](https://github.com/SpyTec) for so many [wonderful changes in our dasbhoard](https://github.com/packit/dashboard/pulls?q=is%3Apr+author%3ASpyTec).
