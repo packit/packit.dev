@@ -35,7 +35,8 @@ Currently, these are the actions you can use:
 
 ## Command matrix
 
-### `propose-downstream` command
+### Syncing the release
+These apply to `propose-downstream` command/job and `pull-from-upstream` job.
 
 |        | name                  | working directory | when run                                                              | description                             |
 |--------|-----------------------|-------------------|-----------------------------------------------------------------------|-----------------------------------------|
