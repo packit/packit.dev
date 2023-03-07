@@ -429,7 +429,7 @@ to re-trigger every failed test.
 #### Packit handles Fedora updates for you.
 
 So you already have a `jobs` section in your config. Let's extend it with another
-jobs that will handle the Fedora updates: `propose_downstream`, `koji_build` and `bodhi_udpate`.
+jobs that will handle the Fedora updates: `propose_downstream`/`pull_from_upstream`, `koji_build` and `bodhi_udpate`.
 These are explained in detail in our [release guide](/docs/fedora-releases-guide).
 
 And that's about it. Now you should be able to use the core features of the Packit.

@@ -105,6 +105,21 @@ upstream release happens and
 [release-monitoring.org](https://release-monitoring.org/) detects it, you'll
 get dist-git pull requests with it automatically.
 
+For customization of the job, you may need to define additional configuration options, most commonly:
+- If the version from release monitoring and Git tag differ, 
+you should specify the [`upstream_tag_template`](/docs/configuration/#upstream_tag_template).
+- You can configure which files (if any) in the upstream repo should be copied to dist-git during an update
+via [`files_to_sync`](/docs/configuration/#files_to_sync) configuration key.
+- By default, Packit downloads sources defined in the spec file that contain URLs.
+You can override these URLs via [`sources`](/docs/configuration#sources) configuration key.
+- You may utilise some of the [actions](/docs/actions/#syncing-the-release) 
+for overriding the Packit default behaviour, for example:
+  - for the changelog entry generation, if you do not want the default `git log` output, you can use your own command(s):
+  
+        changelog-entry:
+            echo "New release ${PACKIT_PROJECT_VERSION}"
+
+
 You can check all the job runs with details and logs in [this view](https://dashboard.packit.dev/jobs/pull-from-upstreams).
 You can also configure a repository where we should
 open issues in case of errors during the job via [`issue_repository`](/docs/configuration#issue_repository) 
