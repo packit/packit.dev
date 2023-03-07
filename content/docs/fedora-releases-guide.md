@@ -78,8 +78,8 @@ the whole changelog.
 
 During proposing a new update, you will get updates of the job status via commit statuses/checks
 on the release commit. These will provide links to our dashboard where you can find all the information about 
-the job including the logs. You can check all propose downstream runs in `Propose Downstreams` tab in [`Jobs` 
-section of our dashboard](https://dashboard.packit.dev/jobs).
+the job including the logs. You can also check all propose downstream runs in 
+[this view](https://dashboard.packit.dev/jobs/propose-downstreams).
 
 ![Dashboard view for propose downstreams](/images/propose-downstream-dashboard.png)
 
@@ -105,6 +105,13 @@ upstream release happens and
 [release-monitoring.org](https://release-monitoring.org/) detects it, you'll
 get dist-git pull requests with it automatically.
 
+You can check all the job runs with details and logs in [this view](https://dashboard.packit.dev/jobs/pull-from-upstreams).
+You can also configure a repository where we should
+open issues in case of errors during the job via [`issue_repository`](/docs/configuration#issue_repository) 
+configuration key.
+
+
+![Dashboard view for pull_from_upstream](/images/pull-from-upstream-dashboard.png)
 ## Koji build job
 After having the dist-git content updated, you can easily automate also building in Koji.
 You can simply configure Packit to react to the new commits in your dist-git repository and create
