@@ -5,17 +5,16 @@ weight: 9
 # How to do Fedora releases with Packit
 
 Let's split the release process into single steps:
-1. New upstream release 
-2. Uploading archive to lookaside cache
-3. Updating dist-git content 
-4. Koji builds
-5. Bodhi updates
+1. [New upstream release](#new-upstream-release)
+2. [Upload archive to lookaside cache](#upload-archive-to-lookaside-cache)
+3. [Update dist-git content](#update-dist-git-content)
+4. [Koji builds](#koji-build-job)
+5. [Bodhi updates](#bodhi-update-job)
 
-Doing Fedora releases with Packit means utilising our 4 jobs:
-1. `propose_downstream`
-2. `koji_build`
-3. `bodhi_update`
-4. `pull_from_upstream`
+Doing Fedora releases with Packit means utilising these jobs:
+1. [`propose_downstream`](#propose-downstream-job) or [`pull_from_upstream`](#pull-from-upstream-job)
+2. [`koji_build`](#koji-build-job)
+3. [`bodhi_update`](#bodhi-update-job)
 
 Every job takes care of a different part of the release process.
 
@@ -44,7 +43,7 @@ new upstream release. Packit gets the information about the newly created releas
 loads the config from the release commit and if there is a `propose_downstream` job
 defined, the workflow begins.
 
-#### Uploading archive to lookaside cache
+#### Upload archive to lookaside cache
 The upstream archive needs to be downloaded by Packit first and then uploaded to the lookaside cache.
 By default, Packit downloads sources defined in the specfile that contain URLs.
 You can override these URLs via [`sources`](/docs/configuration#sources) configuration key.
@@ -57,7 +56,7 @@ on each new release. Then during propose downstream, Packit tries to download th
 If the download fails because the upstream archive is not available at the time of running the job, 
 the job is scheduled to be retried later. 
 
-#### Updating dist-git content
+#### Update dist-git content
 After saving the archive in the lookaside cache,
 Packit updates the dist-git content (mainly `sources` file and spec file) via pull requests for the specified branches.
 You can configure which files in the upstream repo should be copied to dist-git during an update
@@ -93,7 +92,7 @@ update via a comment in any open issue in the upstream repository:
 
     /packit propose-downstream
 
-## `pull_from_upstream` job
+## Pull from upstream job
 [**NEW**] Starting January 2023, we have provided a new way to get fresh
 upstream releases in Fedora Linux.
 
@@ -127,6 +126,7 @@ configuration key.
 
 
 ![Dashboard view for pull_from_upstream](/images/pull-from-upstream-dashboard.png)
+
 ## Koji build job
 After having the dist-git content updated, you can easily automate also building in Koji.
 You can simply configure Packit to react to the new commits in your dist-git repository and create
