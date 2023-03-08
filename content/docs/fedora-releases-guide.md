@@ -6,8 +6,8 @@ weight: 9
 
 Let's split the release process into single steps:
 1. [New upstream release](#new-upstream-release)
-2. [Uploading archive to lookaside cache](#uploading-archive-to-lookaside-cache)
-3. [Updating dist-git content](#updating-dist-git-content)
+2. [Upload archive to lookaside cache](#upload-archive-to-lookaside-cache)
+3. [Update dist-git content](#update-dist-git-content)
 4. [Koji builds](#koji-build-job)
 5. [Bodhi updates](#bodhi-update-job)
 
@@ -43,7 +43,7 @@ new upstream release. Packit gets the information about the newly created releas
 loads the config from the release commit and if there is a `propose_downstream` job
 defined, the workflow begins.
 
-#### Uploading archive to lookaside cache
+#### Upload archive to lookaside cache
 The upstream archive needs to be downloaded by Packit first and then uploaded to the lookaside cache.
 By default, Packit downloads sources defined in the specfile that contain URLs.
 You can override these URLs via [`sources`](/docs/configuration#sources) configuration key.
@@ -56,7 +56,7 @@ on each new release. Then during propose downstream, Packit tries to download th
 If the download fails because the upstream archive is not available at the time of running the job, 
 the job is scheduled to be retried later. 
 
-#### Updating dist-git content
+#### Update dist-git content
 After saving the archive in the lookaside cache,
 Packit updates the dist-git content (mainly `sources` file and spec file) via pull requests for the specified branches.
 You can configure which files in the upstream repo should be copied to dist-git during an update
