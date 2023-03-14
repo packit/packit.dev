@@ -18,3 +18,4 @@ source-git repositories using the `packit` CLI.
 * [Building current source-git checkout locally]({{< ref "build-locally.md" >}})
 * [Proposing your source-git content to dist-git]({{< ref "propose-to-dist-git.md" >}})
 * [Sync back changes made in dist-git]({{< ref "sync-from-dist-git.md" >}})
+* [Fix diverged history]({{< ref "fix-diverged-history.md" >}})
