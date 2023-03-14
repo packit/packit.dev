@@ -20,7 +20,7 @@ content of the source-git spec to the dist-git repo.
 
 The first step is to update a local clone of a dist-git repo:
 
-    $ packit source-git update-dist-git $SOURCE_GIT_REPO_PATH $DIST_GIT_REPO_PATH
+    $ packit source-git update-dist-git -m "a comment" $SOURCE_GIT_REPO_PATH $DIST_GIT_REPO_PATH
 
 This command does not push any changes - everything happens only in your local
 environment. We advise you to inspect the changes done in your dist-git repo
