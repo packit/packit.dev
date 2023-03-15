@@ -10,3 +10,5 @@ This is a home to documentation meant for the Packit team. Everyone is welcome t
 
 * [Creating and pushing CentOS Stream 9 repositories to GitLab]({{< ref "creating-stream-9-repos" >}}).
 * [Patch metadata documentation]({{< ref "patch-metadata" >}})
+
+![Packit workflow schema](/images/workflow.png)
