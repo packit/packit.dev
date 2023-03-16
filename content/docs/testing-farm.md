@@ -70,6 +70,10 @@ Optional parameters:
   only submitting request to Testing Farm (the selected components to be installed should be part of the TMT definitions).
 * **env** - A dictionary you can use to set any environment variable that will be available in the Testing Farm
   environment where the tests are run.
+* **identifier** – Suffix added to the name of a GitHub check run. This is useful
+  when you have multiple `tests` jobs with different configuration. For
+  example if you set this to `e2e-tests`, then a check run for Rawhide would be
+  named `testing-farm:fedora-rawhide-x86_64:e2e-tests`.
 
 There are also environment variables set by Packit:
 * `PACKIT_FULL_REPO_NAME`
