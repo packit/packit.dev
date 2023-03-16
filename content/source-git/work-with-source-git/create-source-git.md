@@ -418,6 +418,9 @@ Check the diff in dist-git and the new patch generated from source-git:
     --
     2.31.1
 
-[acl]: https://savannah.nongnu.org/projects/acl [Fedora Source-git SIG]: https://fedoraproject.org/wiki/SIGs/Source-git [in the spec-file for Fedora Rawhide]: https://src.fedoraproject.org/rpms/acl/blob/rawhide/f/acl.spec
-[src.fedoraproject.org]: https://src.fedoraproject.org/ [patch status]: https://docs.fedoraproject.org/en-US/packaging-guidelines/PatchUpstreamStatus/
+[acl]: https://savannah.nongnu.org/projects/acl
+[Fedora Source-git SIG]: https://fedoraproject.org/wiki/SIGs/Source-git
+[in the spec-file for Fedora Rawhide]: https://src.fedoraproject.org/rpms/acl/blob/rawhide/f/acl.spec
+[src.fedoraproject.org]: https://src.fedoraproject.org/
+[patch status]: https://docs.fedoraproject.org/en-US/packaging-guidelines/PatchUpstreamStatus/
 [Git-trailers]: {{< ref "control-patch-generation" >}}
