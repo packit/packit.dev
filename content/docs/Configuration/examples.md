@@ -156,12 +156,14 @@ jobs:
 {{< /details >}}
 
 {{< details title="Running tests in internal Testing Farm instance" >}}
+Please, let us know if you want to use the internal Testing Farm;
+we have to enable it for you.
 ```yaml
 - job: tests
   targets:
     - fedora-all
   use_internal_tf: True
-  ```
+```
 {{< /details >}}
 
 {{< details title="Running only tests (without builds)">}}
