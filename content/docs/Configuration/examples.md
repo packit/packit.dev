@@ -161,7 +161,8 @@ we have to enable it for you.
 ```yaml
 - job: tests
   targets:
-    - fedora-all
+    centos-stream-9-x86_64:
+      distros: [RHEL-9.3.0-Nightly]
   use_internal_tf: True
 ```
 {{< /details >}}
