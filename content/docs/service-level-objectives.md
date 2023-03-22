@@ -17,7 +17,7 @@ We have 3 objectives defined for Packit right now.
 of the state in time when this document was written so that you can see some
 actual numbers.*
 
-## SLO1: Changes to GitHub PRs receive a status update within 30 seconds in 99% of cases
+## SLO1: Changes to GitHub PRs receive the first status update within 15 seconds in 99% of cases
 
 We want you to know as soon as possible that Packit is working on your request.
 
