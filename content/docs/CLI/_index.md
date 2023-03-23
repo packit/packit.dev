@@ -76,7 +76,7 @@ configuration files, like in the following examples:
 ## Commands
 
 * [build](/docs/cli/build/)
-* [create-update](/docs/cli/create-bodhi-update/)
+* [create-update](/docs/cli/create-update/)
 * [init](/docs/cli/init/)
 * [propose-downstream](/docs/cli/propose-downstream/)
 * [push-updates](/docs/cli/push-updates)
