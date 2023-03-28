@@ -12,7 +12,16 @@ Submit a [Copr](https://copr.fedorainfracloud.org) build of the present content 
 
 * Upstream git repository on GitHub.
 * Packit config file placed in the upstream repository.
-* [~/.config/copr](https://copr.fedorainfracloud.org/api/)
+* `~/.config/copr`
+
+A minimum copr configure file is:
+```
+[copr-cli]
+copr_url = https://copr.fedorainfracloud.org
+gssapi = true
+```
+This uses GSSAPI (see [`fkinit`](https://fedoraproject.org/wiki/Infrastructure/Kerberos#How_to_use_kerberos_auth_with_Fedora_Infrastructure)
+for more details). Alternatively you can use copr API token available [here](https://copr.fedorainfracloud.org/api/).
 
 ## Tutorial
 
