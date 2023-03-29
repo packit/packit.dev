@@ -89,6 +89,9 @@ creating a SRPM. If you don't want this, you can prevent it with
 
     update_release: false
 
+This option only applies to SRPM creation and doesn't affect [`propose_downstream`](#propose_downstream)
+and [`pull_from_upstream`](#pull_from_upstream) jobs.
+
 #### release_suffix
 
 (*templated string*) String that can be used to override the default release suffix
@@ -120,6 +123,9 @@ inheritance, you can define:
     release_suffix: null
 
 If you don't want the release to be modified at all, see [update_release](#update_release).
+
+This option only applies to SRPM creation and doesn't affect [`propose_downstream`](#propose_downstream)
+and [`pull_from_upstream`](#pull_from_upstream) jobs.
 
 #### files_to_sync
 
