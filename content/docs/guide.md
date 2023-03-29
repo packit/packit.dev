@@ -233,7 +233,7 @@ There are a few version-related config options you might need to set:
 * [`release_suffix`](/docs/configuration/#release_suffix):
   Used to influence release field of artifacts provided by Packit.
 * [`update_release`](/docs/configuration/#update_release):
-  To not modify the version and release.
+  Whether to modify release when creating SRPM.
 
 ### Jobs
 
