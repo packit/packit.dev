@@ -120,7 +120,7 @@ actions:
   # define one of the Source variables correctly
   - sed -i my_specfile_path -e "s/https.*only-vendor.tar.xz/my_correct_tarball_path/"
   # fill in Release as if packit would have done it
-  - bash -c "sed -i my_specfile_path -r \"s/Release:(\s*)\S+/Release:\1${PACKIT_RPMSPEC_RELEASE}%{?dist}/\""
+  - bash -c "sed -i -r \"s/Release:(\s*)\S+/Release:\1${PACKIT_RPMSPEC_RELEASE}%{?dist}/\" my_specfile_path"
 ```
 
 ### Environment variables set by packit
