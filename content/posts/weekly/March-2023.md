@@ -18,3 +18,8 @@ weight: 53
   This allows upstream repositories to mix different tag-patterns in the same repository,
   but consider only one to tell the latest version.
   ([packit#1891](https://github.com/packit/packit/pull/1891))
+
+## Week 13 (March 28th – April 3rd)
+
+- Packit now preserves `%autorelease` during `propose_downstream` and `pull_from_upstream`. ([packit#1904](https://github.com/packit/packit/pull/1904))
+- Since in GitLab, it is not possible to overwrite the pending statuses, Packit now provides more generic descriptions and URLs when setting the first pending status. ([packit-service#1975](https://github.com/packit/packit-service/pull/1975))
