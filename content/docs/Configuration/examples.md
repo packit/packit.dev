@@ -229,6 +229,27 @@ jobs:
   ```
 {{< /details >}}
 
+{{< details title="Tag cloud resources in Testing Farm" >}}
+Tag cloud resources in Testing Farm to a specific team or project.
+Make sure to update `sst_change_me` to your RHEL SST name or name
+of the project. If not set, cloud costs are reported against
+`Packit Service`. The `BusinessUnit` key name is required, please
+do not change it.
+```yaml
+- job: tests
+  trigger: pull_request
+  targets:
+    - fedora-all
+  # Tag cloud resources for tmt
+  tf_extra_params:
+    environments:
+      - settings:
+          provisioning:
+            tags:
+              BusinessUnit: sst_change_me
+```
+{{< /details >}}
+
 ### Fedora release automation
 
 {{< details title="Creating dist-git pull requests on upstream releases" >}}
