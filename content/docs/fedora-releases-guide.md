@@ -162,8 +162,8 @@ You can retrigger a build by a comment in a dist-git pull request:
 
     /packit koji-build
 
-The build will be triggered for the target branch of the pull request. The user who
-posts this comment needs to be a packager.
+The build will be triggered for the target branch of the pull request using the most recent commit on the target branch
+(NOT the HEAD commit of the pull request). The user who posts this comment needs to be a packager.
 
 If Packit created an issue in the configured `issue_repository`, you can place the same comment in that
 issue to retrigger the builds (see [`issue_repository`](/docs/configuration#issue_repository) for details).
