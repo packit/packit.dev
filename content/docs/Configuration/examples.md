@@ -230,7 +230,7 @@ jobs:
 {{< /details >}}
 
 {{< details title="Tag cloud resources in Testing Farm" >}}
-Tag cloud resources in Testing Farm to a specific team or project.
+Tag cloud resources in Testing Farm to a specific Red Hat team or a project. If you are not a Red Hat employee, this section is not relevant for you.
 Make sure to update `sst_change_me` to your RHEL SST name or name
 of the project. If not set, cloud costs are reported against
 `Packit Service`. The `BusinessUnit` key name is required, please
