@@ -13,3 +13,9 @@ weight: 53
 - Packit now supports monorepo configuration in CLI ([packit#1864](https://github.com/packit/packit/pull/1864))
 - Packit should now correctly catch the logs if any of the user actions fail during `propose_downstream`. ([packit#1939](https://github.com/packit/packit/pull/1939))
 - Packit now resets `Release` field in dist-git spec file to 1 when the version in upstream spec file is not up-to-date with the release that triggered `propose_downstream`. ([packit#1940](https://github.com/packit/packit/pull/1940))
+
+## Week 16 (April 18th – April 24th)
+
+- Packit now complies with [PEP 621](https://peps.python.org/pep-0621/) and stores project metadata in `pyproject.toml`. ([packit#1913](https://github.com/packit/packit/pull/1913))
+- Packit now properly respects `upstream_ref` for tags that start with "a", "b", "c", "e", "n", "r", "s". ([packit#1943](https://github.com/packit/packit/pull/1943))
+- Packit Service now supports multi package configuration (a.k.a. monorepo configuration). ([packit-service#1982](https://github.com/packit/packit-service/pull/1982))
