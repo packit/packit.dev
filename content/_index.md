@@ -73,6 +73,7 @@ and create [Bodhi](https://bodhi.fedoraproject.org) updates! [Learn more.](/docs
 - **#packit:fedora.im** on [Matrix](https://matrix.org/)
 - **#packit** on [Libera.Chat](https://libera.chat/)
 - **hello@packit.dev**
+- **@packit** on {{< rawhtml >}}<a rel="me" href="https://fosstodon.org/@packit">Fosstodon</a>{{< /rawhtml >}}
 
 {{< button relref="/docs/guide" >}}Get started{{< /button >}}
 
