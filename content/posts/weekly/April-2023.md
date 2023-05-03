@@ -19,3 +19,11 @@ weight: 53
 - Packit now complies with [PEP 621](https://peps.python.org/pep-0621/) and stores project metadata in `pyproject.toml`. ([packit#1913](https://github.com/packit/packit/pull/1913))
 - Packit now properly respects `upstream_ref` for tags that start with "a", "b", "c", "e", "n", "r", "s". ([packit#1943](https://github.com/packit/packit/pull/1943))
 - Packit Service now supports multi package configuration (a.k.a. monorepo configuration). ([packit-service#1982](https://github.com/packit/packit-service/pull/1982))
+
+## Week 17-18 (April 25th – May 3rd)
+
+- Detection of `%autorelease` usage in dist-git spec file during `propose-downstream` and `pull-from-upstream` has been improved and Packit will always preserve it. ([packit#1949](https://github.com/packit/packit/pull/1949))
+- We have fixed an issue that prevented you from building in Copr and Koji on release in the GitLab upstream. ([packit-service#2027](https://github.com/packit/packit-service/pull/2027))
+- Allow running tmt tests with fmf root outside of git root ([packit-service#2007](https://github.com/packit/packit-service/pull/2007))
+- When reacting to branch pushes, Packit now correctly checks whether the branch name matches the configuration for the test jobs with configured `commit` trigger. ([packit-service#2015](https://github.com/packit/packit-service/pull/2015))
+- Propose downstream job triggered by an issue comment now correctly loads the configuration from the upstream repository. ([packit-service#2021](https://github.com/packit/packit-service/pull/2021))
