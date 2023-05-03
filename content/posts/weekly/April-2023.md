@@ -26,4 +26,4 @@ weight: 53
 - We have fixed an issue that prevented you from building in Copr and Koji on release in the GitLab upstream. ([packit-service#2027](https://github.com/packit/packit-service/pull/2027))
 - TMT tests can now be run with FMF root outside of git root. ([packit-service#2007](https://github.com/packit/packit-service/pull/2007))
 - When reacting to branch pushes, Packit now correctly checks whether the branch name matches the configuration for the test jobs with configured `commit` trigger. ([packit-service#2015](https://github.com/packit/packit-service/pull/2015))
-- Propose downstream job triggered by an issue comment now correctly loads the configuration from the upstream repository. ([packit-service#2021](https://github.com/packit/packit-service/pull/2021))
+- The `propose-downstream` job triggered by an issue comment now correctly loads the configuration from the upstream repository. ([packit-service#2021](https://github.com/packit/packit-service/pull/2021))
