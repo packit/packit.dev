@@ -11,10 +11,15 @@ Test execution is managed by [tmt][tmt] tool.
 
 ## Enable Testing
 
-In order to enable test execution simply include `tests` jobs in the `.packit.yaml` configuration:
+In order to enable test execution simply include `tests` and required `copr_build` jobs in the `.packit.yaml` configuration:
 
 ```yaml
 jobs:
+- job: copr_build
+  trigger: pull_request
+  targets:
+  - fedora-all
+  
 - job: tests
   trigger: pull_request
   targets:

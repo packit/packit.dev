@@ -148,6 +148,11 @@ jobs:
 
 {{< details title="Running tests in Testing Farm" >}}
 ```yaml
+- job: copr_build
+  trigger: pull_request
+  targets:
+    - fedora-all
+     
 - job: tests
   trigger: pull_request
   targets:
@@ -159,10 +164,16 @@ jobs:
 Please, let us know if you want to use the internal Testing Farm;
 we have to enable it for you.
 ```yaml
-- job: tests
+- job: copr_build
+  trigger: pull_request
   targets:
-    centos-stream-9-x86_64:
-      distros: [RHEL-9.3.0-Nightly]
+    - epel-8-x86_64
+    
+- job: tests
+  trigger: pull_request
+  targets:
+    epel-8-x86_64:
+      distros: [RHEL-8.8.0-Nightly]
   use_internal_tf: True
 ```
 {{< /details >}}
@@ -170,6 +181,7 @@ we have to enable it for you.
 {{< details title="Running only tests (without builds)">}}
 ```yaml
 - job: tests
+  trigger: pull_request
   targets:
     - fedora-all
   skip_build: True
@@ -178,7 +190,14 @@ we have to enable it for you.
 
 {{< details title="Defining mapping between build and test targets" >}}
 ```yaml
+- job: copr_build
+  trigger: pull_request
+  targets:
+    - epel-7-x86_64
+    - epel-8-x86_64
+    
 - job: tests
+  trigger: pull_request
   targets:
     epel-7-x86_64:
       distros: [centos-7, oraclelinux-7]
@@ -189,6 +208,11 @@ we have to enable it for you.
 
 {{< details title="Specifying where the FMF metadata are placed (other than default)" >}}
 ```yaml
+- job: copr_build
+  trigger: pull_request
+  targets:
+    - fedora-all
+    
 - job: tests
   trigger: pull_request
   targets:
@@ -201,6 +225,11 @@ we have to enable it for you.
 {{< details title="Running more types of tests" >}}
 ```yaml
 jobs:
+- job: copr_build
+  trigger: pull_request
+  targets:
+    - fedora-all
+    
 - job: tests
   trigger: pull_request
   targets:
@@ -217,6 +246,11 @@ jobs:
 
 {{< details title="Providing custom tmt context" >}}
 ```yaml
+- job: copr_build
+  trigger: pull_request
+  targets:
+    - fedora-all
+     
 - job: tests
   trigger: pull_request
   targets:
@@ -236,6 +270,11 @@ of the project. If not set, cloud costs are reported against
 `Packit Service`. The `BusinessUnit` key name is required, please
 do not change it.
 ```yaml
+- job: copr_build
+  trigger: pull_request
+  targets:
+    - fedora-all
+    
 - job: tests
   trigger: pull_request
   targets:
