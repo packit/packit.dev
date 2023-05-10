@@ -17,13 +17,11 @@ Pick what suits you the best:
 
     $ sudo dnf install packit
 
-### Red Hat Enterprise Linux or CentOS Stream 8
+### Red Hat Enterprise Linux or CentOS Stream 9
 
-On RHEL/CentOS 8 you can install RPM from [EPEL](https://fedoraproject.org/wiki/EPEL) repository.
-On CentOS, some dependencies are in PowerTools repository, so you have to enable it:
+On RHEL/CentOS Stream 9 you can install RPM from [EPEL](https://fedoraproject.org/wiki/EPEL) repository.
 
-    $ sudo dnf install dnf-plugins-core epel-release
-    $ sudo dnf config-manager --set-enabled powertools
+    $ sudo dnf install epel-release
     $ sudo dnf install packit
 
 ### Via Fedora COPR
@@ -38,8 +36,14 @@ built from the main branch in Copr:
 
 ### From PyPI
 
-We publish packit to PyPI and it's available as `packitos` project — **packit
-at PyPI is something different**.
+When you install packit with `pip`,
+some of the dependencies need to be compiled from sources,
+for example on Fedora you first need to install a few devel packages:
+
+    $ sudo dnf install gcc python3-devel libcurl-devel krb5-devel openssl-devel
+
+Packit on PyPI is available as [packitos](https://pypi.org/project/packitos)
+project (packit at PyPI is something different).
 
     $ pip install --user packitos
 
@@ -48,6 +52,8 @@ at PyPI is something different**.
 ... or installing it directly from GitHub:
 
     $ pip install --user git+https://github.com/packit/packit
+
+You will need to install some devel packages first, see above section.
 
 ### In a container
 
