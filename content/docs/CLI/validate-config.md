@@ -12,7 +12,7 @@ Validate the Packit configuration file.
 
     Usage: packit validate-config [OPTIONS] [PATH_OR_URL]
 
-      Validate PackageConfig validation.
+      Validate PackageConfig.
 
       - checks missing values
       - checks incorrect types
