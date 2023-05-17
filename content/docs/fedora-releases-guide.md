@@ -74,7 +74,7 @@ E.g. use `-` instead of `*` for lists to not create multiple changelog entries.)
 There is also [`sync_changelog`](/docs/configuration/#sync_changelog) configuration option to enable syncing 
 the whole changelog.
 
-Be aware that Packit does not sign its commits so it can't open pull requests
+Be aware that Packit does not sign-off its commits so it can't open pull requests
 if the ` Enforce signed-off commits in pull-request` option is set in the dist-git project settings.
 
 During proposing a new update, you will get updates of the job status via commit statuses/checks
