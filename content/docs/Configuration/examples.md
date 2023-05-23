@@ -299,6 +299,25 @@ do not change it.
 ```
 {{< /details >}}
 
+{{< details title="Providing additional Testing Farm artifacts" >}}
+```yaml
+- job: copr_build
+  trigger: pull_request
+  targets:
+    - fedora-all
+     
+- job: tests
+  trigger: pull_request
+  targets:
+    - fedora-all
+  tf_extra_params:
+    environments:
+      - artifacts:
+          - type: repository
+            id: 123:fedora-38
+  ```
+{{< /details >}}
+
 ### Fedora release automation
 
 {{< details title="Creating dist-git pull requests on upstream releases" >}}
