@@ -603,6 +603,9 @@ Optional parameters:
 * **module_hotfixes** -- The project will have `module_hotfixes=1` in the Copr generated repo files.
   This is useful when you build packages that need to be installed in a modular context.
   Defaults to `False`.
+* **follow_fedora_branching** -- The project will get branched automatically by
+  the Copr. This setting is useful if you're releasing to the Copr.
+  Defaults to `False`.
 
 
 ##### Using a custom Copr project
