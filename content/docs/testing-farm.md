@@ -88,6 +88,8 @@ Optional parameters:
   Use any format acceptable by the git clone command.
 * **fmf_ref** - Branch, tag or commit specifying the desired git revision.
   Defaults to "master" when **fmf_url** is specified and **fmf_ref** is not.
+* **fmf_path** - Path to the fmf root (the parent path where `.fmf` folder is located) relative to the git root.
+  Defaults to `.` (git root).
 * **tmt_plan** - Run plans by the given name. Can be passed as a regular
   expression.
 * **tf_post_install_script** - Bash script as a string to run during the guest provisioning. 

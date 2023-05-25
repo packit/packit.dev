@@ -206,7 +206,17 @@ we have to enable it for you.
   ```
 {{< /details >}}
 
-{{< details title="Specifying where the FMF metadata are placed (other than default)" >}}
+{{< details title="Specifying where the FMF metadata are placed in the current repository" >}}
+```yaml
+- job: tests
+  trigger: pull_request
+  targets:
+    - fedora-all
+  fmf_path: .distro/tmt
+  ```
+{{< /details >}}
+
+{{< details title="Specifying where the FMF metadata are placed outside the current repository" >}}
 ```yaml
 - job: copr_build
   trigger: pull_request
