@@ -60,6 +60,43 @@ jobs:
   - fedora-latest-stable
 ```
 
+If you want to trigger tests via pull request comment and not by every new commit into the pull request, the test job needs to include `manual_trigger` (described below) option in the job configuration:
+```yaml
+  jobs:
+  - job: tests
+    trigger: pull_request
+    targets:
+    - fedora-all
+    skip_build: true
+    manual_trigger: true
+```
+
+Another usefull config is `labels` option:
+```yaml
+  jobs:
+  - job: tests
+    trigger: pull_request
+    targets:
+    - fedora-all
+    skip_build: true
+    manual_trigger: true
+    identifier: regression-upgrade
+    labels:
+      - upgrade
+      - regression
+      
+    - job: tests
+    trigger: pull_request
+    targets:
+    - fedora-all
+    skip_build: true
+    manual_trigger: true
+    identifier: upgrade
+    labels:
+      - regression
+```
+For more info see [Running group of tests with same label](#running-group-of-tests-with-same-label)
+
 Required parameters:
 * **targets** - Specify which "builds" you want to test.
 [As with copr_build job](/docs/configuration#available-copr-build-targets) you can use
@@ -108,6 +145,8 @@ You can verify that the option is processed correctly using a [YAML parser](http
   when you have multiple `tests` jobs with different configuration. For
   example if you set this to `e2e-tests`, then a check run for Rawhide would be
   named `testing-farm:fedora-rawhide-x86_64:e2e-tests`.
+* **manual_trigger** - Whether to trigger Testing Farm jobs only manually (via pull request comment `/packit test`  (`/packit-stg test` for staging instance) or rerunning the check in the GitHub UI) or not (defaults to false). 
+* **labels** - List of labels that group several jobs together. Users then use them when manually triggering the jobs like `/packit test --labels regression,upgrade`.
 
 There are also environment variables set by Packit:
 * `PACKIT_FULL_REPO_NAME`
@@ -156,6 +195,16 @@ The requirement is that in the specified PR, there were recent successful builds
 for the targets configured in the repository with the "main" pull request.
 This is a new feature, so the behaviour may be adjusted in the future. 
 Please reach out back to us for help or with your suggestions.
+
+## Running tests with a specific identifier
+It is possible to run a specific job via `/packit test` command. 
+The user just needs to specify the argument `--identifier <job_identifier>` and Packit will trigger only the job with this identifier.
+The whole command should look like this: `/packit test --identifier my-job-id`
+
+## Running a group of tests with the same label
+Users can trigger a specific group of jobs that has a specific value in the list of `labels` option.
+The command to pickup these jobs is `/packit test --labels regression,upgrade` where either `regression` or `upgrade` must be present in `labels` option for the job.
+The labels should be in the format of comma-separated string.
 
 ## Creating Tests
 
