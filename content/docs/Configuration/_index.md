@@ -578,11 +578,13 @@ Required parameters:
   executed (example `fedora-rawhide-x86_64`, defaults to `fedora-stable`): for
   more info [see below](#available-copr-build-targets). Does not need to be
   defined if using a custom Copr project (we fetch targets from the Copr settings).
-* **branch** - the name of the branch we want to build for when using **commit** trigger
 
 Optional parameters:
 
-* **timeout** - (seconds) give up watching a build after timeout, defaults to 7200s, i.e. 2 hours
+* **branch** - the name of the branch we want to build for when using **commit** trigger 
+(defaults to the repository's default branch) or target branch when using **pull_request** trigger
+  (default behaviour is reacting to all pull requests in the repository).
+* **timeout** - (seconds) give up watching a build after timeout, defaults to 7200s, i.e. 2 hours.
 * **owner** - a namespace in Copr where the build should happen (defaults to packit).
   Prefix with `@` in case of a group.
 * **project** - a name of the Copr project (defaults to `"{github_namespace}-{repository_name}-{pr_id}"`)
@@ -740,16 +742,15 @@ Supported triggers:
 * **commit** -- reacts to new commits to the specified branch
 * **release** -- check out content of the tag associated with the release
 
-Required parameters:
-
-* **branch** -- the name of the branch we want to build for when using **commit** trigger.
-
 Optional parameters:
 
 * **targets** -- (a list of) targets we want to build for,
   list of supported targets can be listed using with `koji list-targets`.
   You can also use the [aliases provided by Packit](#aliases)
   to not need to change the config file when the new system version is released.
+* **branch** -- the name of the branch we want to build for when using **commit** trigger
+(defaults to the repository's default branch) or target branch when using **pull_request** trigger
+(default behaviour is reacting to all pull requests in the repository).
 
 ##### propose_downstream
 
