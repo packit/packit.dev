@@ -42,12 +42,12 @@ via pull-requests for the specified branches. (Direct push is possible only for 
 
 If you use [`copy_upstream_release_description: true`](https://packit.dev/docs/configuration/#copy_upstream_release_description),
 as in the config above,
-the changelog entry will use the GitHub release description field.
+the changelog entry will use the GitHub/GitLab release description field.
 (Just make sure the formatting is compatible with spec-file.
 E.g. use `-` instead of `*` for lists to not create multiple changelog entries.)
 
 And how is it triggered?
-Packit gets the information about the newly created release from GitHub (via webhook),
+Packit gets the information about the newly created release from GitHub/GitLab (via webhook),
 loads the config from the release commit and if there is a `propose-downstream` job
 defined, the workflow begins.
 

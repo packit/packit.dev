@@ -39,7 +39,7 @@ instead of using hardcoded versions.
 
 #### New upstream release
 The process of releasing a new version starts in the upstream repository by creating a 
-new upstream release. Packit gets the information about the newly created release (not a git tag) from GitHub,
+new upstream release. Packit gets the information about the newly created release (not a git tag) from GitHub/GitLab,
 loads the config from the release commit and if there is a `propose_downstream` job
 defined, the workflow begins.
 
@@ -68,7 +68,7 @@ you can specify the [`upstream_tag_template`](/docs/configuration/#upstream_tag_
 configuration option so that Packit can extract the correct version.
 
 If you use [`copy_upstream_release_description: true`](/docs/configuration/#copy_upstream_release_description),
-the changelog entry will use the GitHub release description field.
+the changelog entry will use the GitHub/GitLab release description field.
 (Just make sure the formatting is compatible with spec file.
 E.g. use `-` instead of `*` for lists to not create multiple changelog entries.)
 There is also [`sync_changelog`](/docs/configuration/#sync_changelog) configuration option to enable syncing 
