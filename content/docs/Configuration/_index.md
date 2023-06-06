@@ -357,8 +357,8 @@ into the repository in order for the retriggering to work.
 
 #### copy_upstream_release_description
 
-(*bool*) When doing a new update in Fedora dist-git, the [GitHub upstream release description](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)
-is copied to the specfile changelog when set to `true`. By default (`false`),
+(*bool*) When doing a new update in Fedora dist-git, the [GitHub](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)
+ or [GitLab](https://docs.gitlab.com/ee/user/project/releases/) upstream release description is copied to the specfile changelog when set to `true`. By default (`false`),
 commit message titles (first line of a commit message) are copied.
 But be aware that the release description is copied as is, without any processing
 and the result needs to fulfill the spec-file syntax.
