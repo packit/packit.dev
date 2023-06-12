@@ -88,7 +88,7 @@ You can find detailed documentation for jobs [here](/docs/configuration#supporte
 ### Builds
 
 
-{{< details title="Running builds in Copr" >}}
+{{< details title="Running builds in Copr for all pull requests" >}}
 ```yaml
 - job: copr_build
   trigger: pull_request
@@ -97,7 +97,17 @@ You can find detailed documentation for jobs [here](/docs/configuration#supporte
 ```
 {{< /details >}}
 
-{{< details title="Running builds in custom Copr project" >}}
+{{< details title="Running builds in Copr for pull requests with 'main' target branch" >}}
+```yaml
+- job: copr_build
+  trigger: pull_request
+  branch: main
+  targets:
+    - fedora-all
+```
+{{< /details >}}
+
+{{< details title="Running builds in custom Copr project for pushes to 'main'" >}}
 Configuring building in Copr project `@oamg/convert2rhel`:
 ```yaml
 - job: copr_build
@@ -135,7 +145,7 @@ jobs:
 ```
 {{< /details >}}
 
-{{< details title="Running builds in Koji" >}}
+{{< details title="Running builds in Koji for all pull requests" >}}
 ```yaml
 - job: upstream_koji_build
   trigger: pull_request
@@ -144,9 +154,19 @@ jobs:
 ```
 {{< /details >}}
 
+{{< details title="Running builds in Koji for pull requests with 'main' target branch" >}}
+```yaml
+- job: upstream_koji_build
+  trigger: pull_request
+  branch: main
+  targets:
+    - fedora-all
+```
+{{< /details >}}
+
 ### Tests
 
-{{< details title="Running tests in Testing Farm" >}}
+{{< details title="Running tests in Testing Farm for all pull requests" >}}
 ```yaml
 - job: copr_build
   trigger: pull_request
@@ -155,6 +175,22 @@ jobs:
      
 - job: tests
   trigger: pull_request
+  targets:
+    - fedora-all
+```
+{{< /details >}}
+
+{{< details title="Running tests in Testing Farm for pull requests with 'main' target branch" >}}
+```yaml
+- job: copr_build
+  trigger: pull_request
+  branch: main
+  targets:
+    - fedora-all
+     
+- job: tests
+  trigger: pull_request
+  branch: main
   targets:
     - fedora-all
 ```
