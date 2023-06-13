@@ -6,9 +6,10 @@ bookCollapseSection: true
 
 # Development Documentation
 
-This is a home to documentation meant for the Packit team. Everyone is welcome to read.
+This is an architecture diagram describing the subparts of packit with the links to the source code:
 
-* [Creating and pushing CentOS Stream 9 repositories to GitLab]({{< ref "creating-stream-9-repos" >}}).
-* [Patch metadata documentation]({{< ref "patch-metadata" >}})
+{{< architecture >}}
+
+And here is a diagram of all the services Packit communicates with:
 
 ![Packit workflow schema](/images/workflow.png)
