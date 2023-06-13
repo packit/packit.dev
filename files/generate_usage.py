@@ -50,7 +50,7 @@ def generate_usage_treemap():
         )
         click.echo(
             f"""<figure>
-    <embed type="image/svg+xml" src="/usage/{job_name}.svg" />
+    <embed type="image/svg+xml" src="/images/usage/{job_name}.svg" />
 </figure>"""
         )
         data = {
@@ -60,7 +60,7 @@ def generate_usage_treemap():
         generate_graph(
             f"Packit: {job_name_human_readable}",
             data=data,
-            path=f"./static/usage/{job_name}.svg",
+            path=f"./static/images/usage/{job_name}.svg",
             value_text=("builds" if "build" in job_name else "runs"),
         )
 
