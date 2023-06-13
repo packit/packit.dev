@@ -38,31 +38,34 @@ def generate_usage_treemap():
         method="GET", url="https://prod.packit.dev/api/usage?top=1000&from=1994-01-01"
     )
     result = json.loads(response.content)
-    for job_name, job_data in result["jobs"].items():
-        job_name_human_readable = (
-            job_name.replace("_", " ")
-            .capitalize()
-            .replace(" Groups", "s")
-            .replace(" Targets", "s")
-            .replace("Vm", "VM")
-            .replace("Tft", "TFT")
-            .replace("Srpm", "SRPM")
-        )
-        click.echo(
-            f"""<figure>
+
+    with open("./layouts/shortcodes/usagecharts.html", "w") as short_code_file:
+
+        for job_name, job_data in result["jobs"].items():
+            job_name_human_readable = (
+                job_name.replace("_", " ")
+                .capitalize()
+                .replace(" Groups", "s")
+                .replace(" Targets", "s")
+                .replace("Vm", "VM")
+                .replace("Tft", "TFT")
+                .replace("Srpm", "SRPM")
+            )
+            short_code_file.write(
+                f"""<figure>
     <embed type="image/svg+xml" src="/images/usage/{job_name}.svg" />
-</figure>"""
-        )
-        data = {
-            p.removeprefix("https://github.com/"): c
-            for p, c in job_data["top_projects_by_job_runs"].items()
-        }
-        generate_graph(
-            f"Packit: {job_name_human_readable}",
-            data=data,
-            path=f"./static/images/usage/{job_name}.svg",
-            value_text=("builds" if "build" in job_name else "runs"),
-        )
+</figure>\n"""
+            )
+            data = {
+                p.removeprefix("https://github.com/"): c
+                for p, c in job_data["top_projects_by_job_runs"].items()
+            }
+            generate_graph(
+                f"Packit: {job_name_human_readable}",
+                data=data,
+                path=f"./static/images/usage/{job_name}.svg",
+                value_text=("builds" if "build" in job_name else "runs"),
+            )
 
 
 if __name__ == "__main__":
