@@ -26,8 +26,8 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="1.0536005"
-     inkscape:cx="490.69831"
-     inkscape:cy="318.90645"
+     inkscape:cx="474.56317"
+     inkscape:cy="305.61868"
      inkscape:window-width="1920"
      inkscape:window-height="1131"
      inkscape:window-x="0"
@@ -92,7 +92,8 @@
   <a
      id="a403"
      xlink:href="https://github.com/packit/packit-service/tree/stable/packit_service/service"
-     transform="translate(-173.58121,78.243215)">
+     transform="translate(-173.58121,78.243215)"
+     target="_blank">
     <g
        id="g40">
       <g
@@ -201,7 +202,8 @@
   <a
      id="a510"
      xlink:href="https://github.com/packit/packit-service/tree/stable/packit_service/worker"
-     transform="translate(-173.58121,78.243215)">
+     transform="translate(-173.58121,78.243215)"
+     target="_blank">
     <g
        id="g156">
       <rect
@@ -228,7 +230,8 @@
   <a
      id="a303"
      xlink:href="https://github.com/packit/dashboard/tree/stable"
-     transform="translate(-173.58121,78.243215)">
+     transform="translate(-173.58121,78.243215)"
+     target="_blank">
     <g
        id="g682">
       <g
@@ -312,7 +315,8 @@
   <a
      id="a485"
      xlink:href="https://github.com/packit/packit/tree/stable"
-     transform="translate(-53.77879,145.50692)">
+     transform="translate(-53.77879,145.50692)"
+     target="_blank">
     <g
        id="g481"
        transform="translate(280.19758,-191.30774)">
