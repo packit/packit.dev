@@ -1,6 +1,6 @@
 ---
 title: Creating CentOS Stream 9 source-git repositories
-weight: 1
+weight: 2
 ---
 
 # Creating CentOS Stream 9 source-git repositories

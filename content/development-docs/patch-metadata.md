@@ -1,6 +1,6 @@
 ---
 title: Source-git patch metadata
-weight: 2
+weight: 3
 ---
 
 # Source-git patch metadata
