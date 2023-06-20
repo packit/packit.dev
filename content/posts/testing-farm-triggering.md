@@ -39,6 +39,7 @@ Hooray! The copr builds from PR 165 were installed before the tests were run in 
 ### Wrapping up
 
 We hope that this new feature makes upstream testing even more convenient than it previously was.
-The feature is still quite new and we would love to hear what you think about it.
-As always, if you run into any trouble or have any ideas how to improve this functionality, do not hesitate to reach out to us.
+The feature is still quite new, and we would love to hear what you think about it.
+As always, if you run into any trouble or have any ideas how to improve this functionality,
+do not hesitate to [reach out to us](/#contact).
 We will be happy to help.

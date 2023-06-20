@@ -122,7 +122,7 @@ Yes, we have a status page where you can check if everything is ok with our serv
 It can be found at [status.packit.dev](https://status.packit.dev/)
 On the page, you can find a list of incidents we resolved or are trying to fix.
 If you don't see any incident and still think the service isn't working as expected, please,
-let us know (see [contacts](https://packit.dev/#contact)).
+let us know (see [contacts](/#contact)).
 Another useful source of information is the [pipelines view](https://dashboard.packit.dev/pipelines) on our dashboard.
 
 ![Packit Status Page: systems](/images/2021-features-status-1.png)
@@ -131,4 +131,4 @@ Another useful source of information is the [pipelines view](https://dashboard.p
 ## Future
 
 As you see, we managed to accomplish a lot last year. And what you can expect this year?
-[Let us know](https://packit.dev/#contact) if you have some ideas and want to influence that!
+[Let us know]({{< ref "faq#how-can-i-contact-you" >}}) if you have some ideas and want to influence that!

@@ -100,4 +100,5 @@ and thus got rid of using our sandbox for building SRPMs entirely.
 
 Since we don't want to break your CI results because of missing dependencies, we will use the previously linked list of deps.
 As the list is pretty long, we encourage you to define your dependencies on your own. If you
-bump into any troubles with setting up SRPM builds in Copr, please, reach out to us, we will be glad to help!
+bump into any troubles with setting up SRPM builds in Copr, please,
+[reach out to us](/#contact), we will be glad to help!

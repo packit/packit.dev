@@ -74,5 +74,4 @@ ignore: true
 There is a tool to achieve this within the packit project:
 [dist-git-to-source-git](https://github.com/packit/dist-git-to-source-git).
 Thought this tool was mainly used by the packit team and was not meant to be
-used outside the team, please [reach out]({{< ref
-"faq#how-can-i-contact-you" >}}) and the team will be happy to assist you.
+used outside the team, please [reach out](/#contact) and the team will be happy to assist you.

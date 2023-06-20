@@ -28,11 +28,7 @@ a blocklist, so you won't be able to use the service again.
 
 If you encounter a problem while using packit or Packit Service, please open an
 [upstream issue](https://github.com/packit/packit-service/issues/new).
-In case of any other questions, feel free to contact
-[us](https://github.com/orgs/packit/teams/the-packit-team):
-
-- **#packit** on [Libera.Chat](https://libera.chat/)
-- **hello@packit.dev**
+In case of any other questions, feel free to [contact us](/#contact).
 
 ## Why do I have to maintain .packit.yaml and a spec file upstream?
 
