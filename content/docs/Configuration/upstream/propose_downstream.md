@@ -1,5 +1,6 @@
 ---
-title: Downstream release
+title: Propose downstream
+weight: 4
 ---
 
 # `job: propose_downstream`

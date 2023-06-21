@@ -1,5 +1,6 @@
 ---
 title: Copr builds
+weight: 1
 ---
 
 # `job: copr_build`

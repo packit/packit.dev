@@ -1,5 +1,6 @@
 ---
 title: Koji builds
+weight: 2
 ---
 
 # `job: koji_build`

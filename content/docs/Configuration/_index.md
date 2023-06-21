@@ -567,8 +567,8 @@ newest state.
   1. [`copr_build`](upstream/copr_build)
   2. [`tests`](/testing-farm/) <!-- possibly migrate to the current directory -->
   3. [`upstream_koji_build`](upstream/upstream_koji_build)
-  4. [`propose_downstream`](upstream/propose_downstream)
-  5. [`vm_image_build`](upstream/vm_image_build)
+  4. [`vm_image_build`](upstream/vm_image_build)
+  5. [`propose_downstream`](upstream/propose_downstream)
 * Downstream jobs
   1. [`pull_from_upstream`](downstream/pull_from_upstream)
   2. [`koji_build`](downstream/koji_build)

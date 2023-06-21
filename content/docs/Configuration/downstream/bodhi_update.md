@@ -1,5 +1,6 @@
 ---
 title: Bodhi updates
+weight: 3
 ---
 
 # `job: bodhi_update`

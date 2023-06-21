@@ -1,5 +1,6 @@
 ---
-title: Release from downstream
+title: Pull from upstream
+weight: 1
 ---
 
 # `job: pull_from_upstream`

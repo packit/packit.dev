@@ -1,5 +1,6 @@
 ---
 title: VM Image Builds
+weight: 3
 ---
 
 # `job: vm_image_build`
