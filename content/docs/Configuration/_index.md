@@ -144,7 +144,8 @@ The fields for a dictionary item in the list are the following:
 - *dest*: Path in the dist-git repo, where paths in `src` should be synced to.
 - *mkpath*: Flag to indicate if missing path components in `dest` should be created or not (default: false).
 - *delete*: Flag to indicate if extra content from `dest` should be deleted (default: false).
-- *filters*: List of [rsync filter rules] to be used during syncing.
+- *filters*: List of [rsync filter rules] to be used during syncing. Note that the rules apply relative
+  to the source and/or destination path (e.g. a `protect` filter applies relative to `dest` path)
 
 [rsync filter rules]: https://www.man7.org/linux/man-pages/man1/rsync.1.html#FILTER_RULES
 
