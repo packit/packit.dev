@@ -5,7 +5,7 @@ weight: 1
 
 # `job: copr_build`
 
-Create an SRPM and submit an RPM build to [Fedora COPR](https://copr.fedorainfracloud.org/) build system.
+Create an SRPM and submit an RPM build to [Fedora Copr](https://copr.fedorainfracloud.org/) build system.
 
 
 ## Supported triggers
@@ -75,7 +75,7 @@ by running:
     $ copr-cli edit-permissions --builder packit [--admin packit] <project>
 
 
-Boolean values (`list_on_homepage` and `preserve_project`) are not updated when
+Boolean values (`list_on_homepage`, `preserve_project` and `follow_fedora_branching`) are not updated when
 you use custom `owner`.
 
 ### Example
@@ -90,14 +90,13 @@ jobs:
 ```
 
 With this configuration, you'll get builds in all stable fedora releases
-(excluding rawhide) and the CentOS stream.
+(excluding rawhide) and the CentOS Stream.
 
 
 ## Target-specific configuration
 
 You can define a specific build configuration for different targets (chroots in
-context of Copr). For example, there are packages that are architecture
-specific and not available for all architectures. Or you may want [modules](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/introduction-to-modules_using-appstream)
+context of Copr). For example, there are packages that are architecture-specific and not available for all architectures. Or you may want [modules](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/introduction-to-modules_using-appstream)
 enabled for builds in CentOS Stream 8.
 
 [Copr allows specifying additional packages, modules and repos](https://python-copr.readthedocs.io/en/latest/client_v3/proxies.html#project-chroot) for individual targets.
@@ -155,7 +154,7 @@ fedora-32-armhfp
 …
 ```
 
-* You can also use the [aliases provided by Packit](#aliases)
+* You can also use the [aliases provided by Packit](/docs/configuration/#aliases)
   to not need to change the config file when the new system version is released.
 
   By default, the `x86_64` architecture will be used, but you you can
