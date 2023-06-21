@@ -256,7 +256,7 @@ Please use [`get-current-version` action](/docs/actions/)
 #### actions
 
 (*string*) Custom actions/hooks overwriting the default behavior of packit
-(more in [Actions](/docs/actions/)).
+(more in [Actions](/actions/)).
 
 #### jobs
 
@@ -502,6 +502,18 @@ Every job has two mandatory keys:
 
 Every job only supports a specific set of triggers.
 
+### Supported jobs
+
+* Upstream jobs
+  1. [`copr_build`](upstream/copr_build)
+  2. [`tests`](upstream/tests)
+  3. [`upstream_koji_build`](upstream/upstream_koji_build)
+  4. [`vm_image_build`](upstream/vm_image_build)
+  5. [`propose_downstream`](upstream/propose_downstream)
+* Downstream jobs
+  1. [`pull_from_upstream`](downstream/pull_from_upstream)
+  2. [`koji_build`](downstream/koji_build)
+  3. [`bodhi_update`](downstream/bodhi_update)
 
 ##### Overriding global parameters
 
@@ -561,18 +573,7 @@ The information about releases is retrieved from Bodhi and because of the
 cache and required availability on Copr, it might take a while to get the
 newest state.
 
-### Supported jobs
 
-* Upstream jobs
-  1. [`copr_build`](upstream/copr_build)
-  2. [`tests`](/testing-farm/) <!-- possibly migrate to the current directory -->
-  3. [`upstream_koji_build`](upstream/upstream_koji_build)
-  4. [`vm_image_build`](upstream/vm_image_build)
-  5. [`propose_downstream`](upstream/propose_downstream)
-* Downstream jobs
-  1. [`pull_from_upstream`](downstream/pull_from_upstream)
-  2. [`koji_build`](downstream/koji_build)
-  3. [`bodhi_update`](downstream/bodhi_update)
 
 ## User configuration file
 

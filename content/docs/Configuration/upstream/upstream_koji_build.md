@@ -1,6 +1,6 @@
 ---
 title: Koji builds
-weight: 2
+weight: 3
 ---
 
 # `job: upstream_koji_build`
