@@ -18,7 +18,7 @@ Both Packit Service and Packit CLI use this configuration file.
 
 ## Top-level keys
 
-Here you can see a list of the options that can be defined at the top-level and
+Here you can see a list of options that can be defined at the top-level and
 shared by all of the jobs.
 
 #### specfile_path
@@ -45,7 +45,7 @@ name of the GitHub repository; it's used when working with the upstream project,
 as a release archive name and as a directory name in that archive.
 
 {{< hint info >}}
-Previously known as `upstream_project_name` and has been deprecated since Packit
+Previously known as `upstream_project_name`, which has been deprecated since Packit
 0.7.0
 {{< /hint >}}
 
@@ -213,10 +213,6 @@ files_to_sync:
 
 {{< hint info >}}
 This option is a successor to `synced_files` that has been already deprecated.
-
-(*list of strings or dicts*) A list of relative paths to files in the upstream
-repo which are meant to be copied to dist-git during an update (spec file path
-and config file path are set every time by default).
 {{< /hint >}}
 
 #### create_sync_note
