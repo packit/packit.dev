@@ -546,7 +546,7 @@ In this example, the job `some-job` would override [`specfile_path`](#specfile_p
 
 To not need to change the config file when the new system version is released,
 Packit provides multiple aliases to reference a subset of the active
-Fedora Linux releases:
+releases:
 * `fedora-all` - all active releases, which includes released and branched
   versions and Rawhide (e.g. `fedora-34`, `fedora-35`, `fedora-36`,
   `fedora-rawhide`).
@@ -560,10 +560,8 @@ Fedora Linux releases:
   `fedora-35`).
 * `fedora-branched` — all branched releases, that is: everything, except
 Rawhide (e.g. `fedora-34`, `fedora-35`, `fedora-36`).
-
-Additionally, `epel-all` can be used as an alias for the current active
-[EPEL](https://docs.fedoraproject.org/en-US/epel/) versions (e.g. `epel-7`,
-`epel-8`, `epel-9`)
+* `epel-all` - current active [EPEL](https://docs.fedoraproject.org/en-US/epel/)
+versions (e.g. `epel-7`, `epel-8`, `epel-9`)
 
 The aliases above can be used both to specify targets when [building in
 Copr](#copr_build) or [running tests](/testing-farm/), and to reference
