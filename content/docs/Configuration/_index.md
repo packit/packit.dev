@@ -247,16 +247,16 @@ GitHub repository.
 
 #### ~~create_tarball_command~~ (deprecated)
 
-Please use [`create-archive` action](/docs/actions/)
+Please use [`create-archive` action](actions/)
 
 #### ~~current_version_command~~ (deprecated)
 
-Please use [`get-current-version` action](/docs/actions/)
+Please use [`get-current-version` action](actions/)
 
 #### actions
 
 (*string*) Custom actions/hooks overwriting the default behavior of packit
-(more in [Actions](/actions/)).
+(more in [Actions](actions/)).
 
 #### jobs
 
@@ -287,7 +287,7 @@ packit will fill in the version argument.
 
 #### archive_root_dir_template
 
-(string) In the [`fix-spec-file` action](/docs/actions/) Packit changes first `%setup` (or `%autosetup`) macro
+(string) In the [`fix-spec-file` action](/docs/configuration/actions/) Packit changes first `%setup` (or `%autosetup`) macro
 in `%prep` and adds `-n` so the generated tarball can be unpacked. For this
 purpose, it requires the name of the directory in the source archive. For tar archives
 with one directory, Packit gets it automatically. If Packit is not able to extract it

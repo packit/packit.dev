@@ -228,7 +228,7 @@ The full list can be found [here](/docs/configuration/#top-level-keys).
 There are a few version-related config options you might need to set:
 * [`upstream_tag_template`](/docs/configuration/#upstream_tag_template):
   Specifies a format of upstream tags if it doesn't contain just a version.
-* [`get-current-version` action](/docs/actions/):
+* [`get-current-version` action](/docs/configuration/actions/):
   Command to get a project version in the current state of the project.
 * [`release_suffix`](/docs/configuration/#release_suffix):
   Used to influence release field of artifacts provided by Packit.
@@ -296,7 +296,7 @@ Actions are a way how to redefine or tweak the Packit's workflows.
 These are user-defined commands that can replace a part of Packit's job (e.g. to get version, or to create a tarball)
 or are run in a particular step as a hook (with no action run by default).
 
-Take a look at the tables [here](/docs/actions/) to know what actions are available for each job.
+Take a look at the tables [here](/docs/configuration/actions/) to know what actions are available for each job.
 
 
 ### Users

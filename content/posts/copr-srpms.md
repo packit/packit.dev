@@ -11,7 +11,7 @@ you have already read about how does Packit build your [SRPMs](http://ftp.rpm.or
 If not, then just a short recap:
 Each time an RPM build is triggered, Packit builds an SRPM and then submits
 the created SRPM file to Copr where Copr takes care of building the actual RPMs.
-Since you can modify the behaviour of building SRPMs by defining [actions](/docs/actions/),
+Since you can modify the behaviour of building SRPMs by defining [actions](/docs/configuration/actions/),
 this process needs to be run in an isolated environment. For this, we implemented our
 [sandboxing mechanism](https://github.com/packit/sandcastle),
 which simply runs the provided commands in an Openshift pod freshly created for each build.

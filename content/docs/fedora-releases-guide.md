@@ -113,7 +113,7 @@ you should specify the [`upstream_tag_template`](/docs/configuration/#upstream_t
 via [`files_to_sync`](/docs/configuration/#files_to_sync) configuration key.
 - By default, Packit downloads sources defined in the spec file that contain URLs.
 You can override these URLs via [`sources`](/docs/configuration#sources) configuration key.
-- You may utilise some of the [actions](/docs/actions/#syncing-the-release) 
+- You may utilise some of the [actions](/docs/configuration/actions/#syncing-the-release)
 for overriding the Packit default behaviour, for example:
   - for the changelog entry generation, if you do not want the default `git log` output, you can use your own command(s):
   
