@@ -8,7 +8,7 @@ bookCollapseSection: true
 
 * [About]({{< ref "about" >}}) - Key principles of Packit.
 * [Onboarding Guide]({{< ref "guide" >}}) - How to start using Packit.
-* [Testing Farm]({{< ref "testing-farm" >}}) - Guide to Packit's service for running tests.
+* [Testing Farm](/docs/configuration/upstream/tests) - Guide to Packit's service for running tests.
 * [Frequently Asked Questions]({{< ref "faq" >}}) - Whys, Whats, contacts.
 * [Source-git](/docs/source-git/) - Source-git concept and how to work with it.
 * [Configuration for packit]({{< ref "configuration" >}}) - Configuration file description.
