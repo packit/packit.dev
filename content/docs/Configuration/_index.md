@@ -429,8 +429,6 @@ picks up configuration file from your pull request, not from the branch against
 the PR is opened. This way, you can polish your .packit.yaml and see the
 results right away. (for more info, please see [packit-service#48](https://github.com/packit/packit-service/issues/48))
 
-### Packit service jobs
-
 Once the service starts handling events of your repository, it needs to have a
 clear definition of what it should do.
 
@@ -518,7 +516,8 @@ Every job only supports a specific set of triggers.
   2. [`koji_build`](downstream/koji_build)
   3. [`bodhi_update`](downstream/bodhi_update)
 
-##### Overriding global parameters
+
+## Overriding global parameters
 
 You are able to override your global parameters (such as [`specfile_path`](#specfile_path),
 [`downstream_package_name`](#downstream_package_name),
@@ -543,7 +542,7 @@ jobs:
 In this example, the job `some-job` would override [`specfile_path`](#specfile_path) to
 `somewhere/else/package.spec` instead of using `./package.spec`.
 
-#### Aliases
+## Aliases
 
 To not need to change the config file when the new system version is released,
 Packit provides multiple aliases to reference a subset of the active
