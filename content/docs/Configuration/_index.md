@@ -36,15 +36,16 @@ future version (>0.64.0) of Packit. We recommend projects to explicitly set
 `specfile_path` or rely on the `<downstream_package_name>.spec` default, by
 setting `downstream_package_name`.
 
-#### ~~upstream_project_name~~ (deprecated)
-
-(*string*) Deprecated since packit-0.7.0, use [`upstream_package_name`](#upstream_package_name) instead.
-
 #### upstream_package_name
 
 (*string*) Name of the upstream repository (e.g. in PyPI), defaults to the
 name of the GitHub repository; it's used when working with the upstream project,
 as a release archive name and as a directory name in that archive.
+
+{{< hint info >}}
+Previously known as `upstream_project_name` and has been deprecated since Packit
+0.7.0
+{{< /hint >}}
 
 #### upstream_project_url
 
@@ -73,14 +74,6 @@ your pull request git ref as it is.
 (*bool*) When doing a new update in Fedora dist-git, the specfile changelog
 is synchronized when set to `true`. By default (`false`), everything but the changelog
 part is synchronized. Use this only when your changelogs are in sync since this overwrites the changelog in the downstream.
-
-#### ~~synced_files~~ (deprecated)
-
-(*list of strings or dicts*) A list of relative paths to files in the upstream
-repo which are meant to be copied to dist-git during an update (spec file path
-and config file path are set every time by default).
-
-It is now deprecated in favor of [`files_to_sync`](#files_to_sync).
 
 #### update_release
 
@@ -215,6 +208,14 @@ files_to_sync:
     dest: subdir/some.file
     mkpath: true
 ```
+
+{{< hint info >}}
+This option is a successor to `synced_files` that has been already deprecated.
+
+(*list of strings or dicts*) A list of relative paths to files in the upstream
+repo which are meant to be copied to dist-git during an update (spec file path
+and config file path are set every time by default).
+{{< /hint >}}
 
 #### create_sync_note
 
