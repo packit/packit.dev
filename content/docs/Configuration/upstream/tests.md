@@ -1,7 +1,7 @@
 ---
 title: Testing Farm
 weight: 2
-aliases: [/testing-farm]
+aliases: [/testing-farm, /docs/testing-farm]
 ---
 
 # Testing Farm

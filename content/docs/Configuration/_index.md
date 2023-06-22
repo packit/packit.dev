@@ -14,10 +14,12 @@ You should place the file in the root of your upstream repo. Packit accepts thes
 * `packit.yaml`
 * `packit.yml`
 
-Both Packit Service and packit tool use this configuration file.
+Both Packit Service and Packit CLI use this configuration file.
 
+## Top-level keys
 
-## Top level keys
+Here you can see a list of options that can be defined at the top-level and
+shared by all of the jobs.
 
 #### specfile_path
 
@@ -36,15 +38,16 @@ future version (>0.64.0) of Packit. We recommend projects to explicitly set
 `specfile_path` or rely on the `<downstream_package_name>.spec` default, by
 setting `downstream_package_name`.
 
-#### ~~upstream_project_name~~ (deprecated)
-
-(*string*) Deprecated since packit-0.7.0, use [`upstream_package_name`](#upstream_package_name) instead.
-
 #### upstream_package_name
 
 (*string*) Name of the upstream repository (e.g. in PyPI), defaults to the
 name of the GitHub repository; it's used when working with the upstream project,
 as a release archive name and as a directory name in that archive.
+
+{{< hint info >}}
+Previously known as `upstream_project_name`, which has been deprecated since Packit
+0.7.0
+{{< /hint >}}
 
 #### upstream_project_url
 
@@ -73,14 +76,6 @@ your pull request git ref as it is.
 (*bool*) When doing a new update in Fedora dist-git, the specfile changelog
 is synchronized when set to `true`. By default (`false`), everything but the changelog
 part is synchronized. Use this only when your changelogs are in sync since this overwrites the changelog in the downstream.
-
-#### ~~synced_files~~ (deprecated)
-
-(*list of strings or dicts*) A list of relative paths to files in the upstream
-repo which are meant to be copied to dist-git during an update (spec file path
-and config file path are set every time by default).
-
-It is now deprecated in favor of [`files_to_sync`](#files_to_sync).
 
 #### update_release
 
@@ -215,6 +210,10 @@ files_to_sync:
     dest: subdir/some.file
     mkpath: true
 ```
+
+{{< hint info >}}
+This option is a successor to `synced_files` that has been already deprecated.
+{{< /hint >}}
 
 #### create_sync_note
 
@@ -418,15 +417,13 @@ By doing that, you are helping us to be sure that we don't break your use-case.
 
 ## Packit-as-a-Service
 
-Packit service doesn't have any web interface to configure it,
+Packit Service doesn't have any web interface to configure it,
 so the only way to change its behaviour is via the config file you just read about.
 
 When you open a pull request against your upstream repository, packit service
 picks up configuration file from your pull request, not from the branch against
 the PR is opened. This way, you can polish your .packit.yaml and see the
 results right away. (for more info, please see [packit-service#48](https://github.com/packit/packit-service/issues/48))
-
-### Packit service jobs
 
 Once the service starts handling events of your repository, it needs to have a
 clear definition of what it should do.
@@ -515,7 +512,8 @@ Every job only supports a specific set of triggers.
   2. [`koji_build`](downstream/koji_build)
   3. [`bodhi_update`](downstream/bodhi_update)
 
-##### Overriding global parameters
+
+## Overriding global parameters
 
 You are able to override your global parameters (such as [`specfile_path`](#specfile_path),
 [`downstream_package_name`](#downstream_package_name),
@@ -540,11 +538,11 @@ jobs:
 In this example, the job `some-job` would override [`specfile_path`](#specfile_path) to
 `somewhere/else/package.spec` instead of using `./package.spec`.
 
-#### Aliases
+## Aliases
 
 To not need to change the config file when the new system version is released,
 Packit provides multiple aliases to reference a subset of the active
-Fedora Linux releases:
+releases:
 * `fedora-all` - all active releases, which includes released and branched
   versions and Rawhide (e.g. `fedora-34`, `fedora-35`, `fedora-36`,
   `fedora-rawhide`).
@@ -558,10 +556,8 @@ Fedora Linux releases:
   `fedora-35`).
 * `fedora-branched` — all branched releases, that is: everything, except
 Rawhide (e.g. `fedora-34`, `fedora-35`, `fedora-36`).
-
-Additionally, `epel-all` can be used as an alias for the current active
-[EPEL](https://docs.fedoraproject.org/en-US/epel/) versions (e.g. `epel-7`,
-`epel-8`, `epel-9`)
+* `epel-all` - current active [EPEL](https://docs.fedoraproject.org/en-US/epel/)
+versions (e.g. `epel-7`, `epel-8`, `epel-9`)
 
 The aliases above can be used both to specify targets when [building in
 Copr](#copr_build) or [running tests](/testing-farm/), and to reference
@@ -573,11 +569,19 @@ The information about releases is retrieved from Bodhi and because of the
 cache and required availability on Copr, it might take a while to get the
 newest state.
 
-
-
 ## User configuration file
 
-When running packit as a tool locally, it is convenient to use a configuration
+{{< hint danger >}}
+
+Since API tokens are a very sensitive information, please **DO NOT** ever store
+them in a public (such as a GitHub repository). The configuration file here is
+located on your workstation, please **DO NOT** confuse it with a config file for
+your project - that one is described above in the first section of this
+document.
+
+{{< /hint >}}
+
+When running Packit as a tool locally, it is convenient to use a configuration
 file to provide data such as API tokens. Packit respects `XDG_CONFIG_HOME`
 environment variable. If not set, it looks inside `~/.config/` directory.
 
@@ -585,28 +589,28 @@ The acceptable names are the same as for the package config:
 
 * `.packit.yaml`
 * `.packit.yml`
-* `.packit.json`
 * `packit.yaml`
 * `packit.yml`
-* `packit.json`
-
 
 ### Values
 
-| Key name              | Type   | Description                                                                                       |
-|-----------------------|--------|---------------------------------------------------------------------------------------------------|
-| `debug`               | bool   | enable debug logs                                                                                 |
-| `fas_user`            | string | username in Fedora account system; this is utilized when authenticating with Bodhi using Kerberos |
-| `kerberos_realm`      | string | Kerberos realm to use for authentication, example "FEDORAPROJECT.ORG"                             |
-| `authentication`      | dict   | tokens for services (GitHub, Pagure)                                                              |
-| `upstream_git_remote` | string | name of the git remote to discover upstream project URL from                                      |
-| `redhat_api_refresh_token` | string | Red Hat API token, can be obtained [here](https://access.redhat.com/management/api) |
+| Key name                   | Type   | Description                                                                                       |
+|----------------------------|--------|---------------------------------------------------------------------------------------------------|
+| `debug`                    | bool   | enable debug logs                                                                                 |
+| `fas_user`                 | string | username in Fedora account system; this is utilized when authenticating with Bodhi using Kerberos |
+| `kerberos_realm`           | string | Kerberos realm to use for authentication, example "FEDORAPROJECT.ORG"                             |
+| `authentication`           | dict   | tokens for services (GitHub, Pagure)                                                              |
+| `upstream_git_remote`      | string | name of the git remote to discover upstream project URL from                                      |
+| `redhat_api_refresh_token` | string | Red Hat API token, can be obtained [here](https://access.redhat.com/management/api)               |
+
+#### Authentication dictionary
 
 The `authentication` is a dictionary where:
 * key is a hostname, url or name that can be mapped to a service-type, for example `github.com` or `pagure`
 * value is a dictionary with keys: `token` and `instance_url` (optional)
 
-e.g.:
+##### Example
+
 ```yaml
 authentication:
     github.com:
@@ -623,9 +627,3 @@ get it at https://src.fedoraproject.org/settings#nav-api-tab
 
 Specifying tokens as direct keys `github_token` and `pagure_user_token`
 has been deprecated and will be removed in future versions.
-
-Since API tokens are a very sensitive information, please do NOT ever store
-them in a public (such as a GitHub repository). The configuration file here is
-located on your workstation, please do NOT confuse it with a config file for
-your project - that one is described above in the first section of this
-document.
