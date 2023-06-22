@@ -12,7 +12,7 @@ aliases: [/about]
 - Packit aims to make things easy and right. But if the default behavior is not
   the right for you, there is still a way around, but may not be that simple.
   For example you can use
-  [actions](/docs/actions/)
+  [actions](/docs/configuration/actions/)
   to replace packit's default behavior with a script of yours.
 
 - Reuse existing tools and services where it makes sense: don't reinvent the

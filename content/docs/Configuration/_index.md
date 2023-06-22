@@ -247,16 +247,16 @@ GitHub repository.
 
 #### ~~create_tarball_command~~ (deprecated)
 
-Please use [`create-archive` action](/docs/actions/)
+Please use [`create-archive` action](actions/)
 
 #### ~~current_version_command~~ (deprecated)
 
-Please use [`get-current-version` action](/docs/actions/)
+Please use [`get-current-version` action](actions/)
 
 #### actions
 
 (*string*) Custom actions/hooks overwriting the default behavior of packit
-(more in [Actions](/docs/actions/)).
+(more in [Actions](actions/)).
 
 #### jobs
 
@@ -287,7 +287,7 @@ packit will fill in the version argument.
 
 #### archive_root_dir_template
 
-(string) In the [`fix-spec-file` action](/docs/actions/) Packit changes first `%setup` (or `%autosetup`) macro
+(string) In the [`fix-spec-file` action](/docs/configuration/actions/) Packit changes first `%setup` (or `%autosetup`) macro
 in `%prep` and adds `-n` so the generated tarball can be unpacked. For this
 purpose, it requires the name of the directory in the source archive. For tar archives
 with one directory, Packit gets it automatically. If Packit is not able to extract it
@@ -502,6 +502,18 @@ Every job has two mandatory keys:
 
 Every job only supports a specific set of triggers.
 
+### Supported jobs
+
+* Upstream jobs
+  1. [`copr_build`](upstream/copr_build)
+  2. [`tests`](upstream/tests)
+  3. [`upstream_koji_build`](upstream/upstream_koji_build)
+  4. [`vm_image_build`](upstream/vm_image_build)
+  5. [`propose_downstream`](upstream/propose_downstream)
+* Downstream jobs
+  1. [`pull_from_upstream`](downstream/pull_from_upstream)
+  2. [`koji_build`](downstream/koji_build)
+  3. [`bodhi_update`](downstream/bodhi_update)
 
 ##### Overriding global parameters
 
@@ -561,445 +573,6 @@ The information about releases is retrieved from Bodhi and because of the
 cache and required availability on Copr, it might take a while to get the
 newest state.
 
-#### Supported jobs
-
-##### copr\_build
-
-Create a SRPM and submit an RPM build to [Fedora COPR](https://copr.fedorainfracloud.org/) build system.
-
-Supported triggers:
-
-* **pull_request** -- check out content of the pull request
-* **commit** -- reacts to new commits to the specified branch
-* **release** -- check out content of the tag associated with the release
-
-Required parameters:
-
-* **targets** - (a list of) mock chroot(s) where the build is going to be
-  executed (example `fedora-rawhide-x86_64`, defaults to `fedora-stable`): for
-  more info [see below](#available-copr-build-targets). Does not need to be
-  defined if using a custom Copr project (we fetch targets from the Copr settings).
-
-Optional parameters:
-
-* **branch** - the name of the branch we want to build for when using **commit** trigger 
-(defaults to the repository's default branch) or target branch when using **pull_request** trigger
-  (default behaviour is reacting to all pull requests in the repository).
-* **timeout** - (seconds) give up watching a build after timeout, defaults to 7200s, i.e. 2 hours.
-* **owner** - a namespace in Copr where the build should happen (defaults to packit).
-  Prefix with `@` in case of a group.
-* **project** - a name of the Copr project (defaults to `"{github_namespace}-{repository_name}-{pr_id}"`)
-* **additional_repos** - a list of additional buildroot repositories
-* **list_on_homepage** -- The project will be shown on Copr frontend homepage if set to `True`.
-  Defaults to `False`.
-  The value is represented as `unlisted_on_hp` in Copr project settings.
-* **preserve_project** -- The project will not be removed after 60 days if set to `True`.
-  Defaults to `False`.
-  The value is represented as `delete_after_days` in Copr project settings
-  (`True` is `-1` and `False` is `60`).
-* **enable_net** -- Specifies whether created Copr build should have access to network during its build.
-  Defaults to `False` (Copr default, switched to `False` in June 2022).
-* **identifier** -- Suffix added to the name of a GitHub check run. This is
-  useful when you have multiple `copr_build` jobs with different configuration.
-  For example if you [set this to "mock"](https://github.com/rpm-software-management/mock/pull/902/checks?check_run_id=6530714905), then a check run for Rawhide would be
-  named "rpm-build:fedora-rawhide-x86\_64:mock".
-* **module_hotfixes** -- The project will have `module_hotfixes=1` in the Copr generated repo files.
-  This is useful when you build packages that need to be installed in a modular context.
-  Defaults to `False`.
-* **follow_fedora_branching** -- The project will get branched automatically by
-  the Copr. This setting is useful if you're releasing to the Copr.
-  Defaults to `False`.
-
-
-##### Using a custom Copr project
-When using a custom Copr project (by specifying `project` and `owner`), the GitHub repo has to be listed in the
-**Packit allowed forge projects** field in the **Copr project settings** so that the Copr builds can be actually run.
-As an example the string *github.com/osbuild/osbuild* has to be inserted
-into https://copr.fedorainfracloud.org/coprs/g/osbuild/osbuild/edit/#packit_forge_projects_allowed.
-
-When using a custom `owner`, Packit Service asks for `builder` permission the
-first time it tries to build in the project. In case the configuration of the
-Copr project (e.g. adding new `targets`) need to be updated, Packit Service asks
-for `admin` permission. You need to approve these requests in the Copr project
-settings.
-
-If you do not want to give us `admin` permission, you can update the project
-settings manually in Copr based on the guidance Packit Service gives.
-
-You can also directly edit the permissions yourself without waiting for the Packit request 
-by running:
-
-    $ copr-cli edit-permissions --builder packit [--admin packit] <project>
-
-
-Boolean values (`list_on_homepage` and `preserve_project`) are not updated when
-you use custom `owner`.
-
-**Example**
-
-```yaml
-jobs:
-- job: copr_build
-  trigger: pull_request
-  targets:
-    - fedora-stable
-    - centos-stream-8-x86_64
-```
-
-With this configuration, you'll get builds in all stable fedora releases
-(excluding rawhide) and the CentOS stream.
-
-
-##### Target-specific configuration
-You can define a specific build configuration for different targets (chroots in
-context of Copr). For example, there are packages that are architecture
-specific and not available for all architectures. Or you may want [modules](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/introduction-to-modules_using-appstream)
-enabled for builds in CentOS Stream 8.
-
-[Copr allows specifying additional packages, modules and repos](https://python-copr.readthedocs.io/en/latest/client_v3/proxies.html#project-chroot) for individual targets.
-
-Setting this in packit.yaml requires targets to be a mapping. If you require
-this functionality, this is the preferred solution over specifying multiple
-jobs. Example:
-```yaml
-jobs
-- job: copr_build
-  trigger: pull_request
-  targets:
-    centos-stream-8:
-      additional_repos:
-       - http://koji.katello.org/releases/yum/foreman-nightly/el8/x86_64/
-      additional_modules: "foreman:el8,ruby:2.7,nodejs:12,postgresql:12"
-    fedora-rawhide: {}
-    fedora-37: {}
-```
-
-In this case, both Fedora targets don't have anything specific and would use
-packages and modules from the base distro, while CentOS Stream 8 will use a
-custom yum repo and 4 specific modules.
-
-You can define these three options:
-* `additional_packages` (list) – install additional packages before the build
-* `additional_repos` (list) – enable these yum repositories before installing any packages
-* `additional_modules` (str) – enable these modules before installing packages,
-  specified as comma-separated string: `MODULE:STREAM,MODULE2:STREAM2,...`
-
-
-##### Available COPR build targets
-
-There are multiple places where you can get the latest list of available build targets:
-* Open your COPR project, then click "Settings" > "Build options" > "Chroots" -
-these are the same values packit accepts.
-
-* Install package `copr-cli` and run:
-```
-$ copr-cli list-chroots
-centos-stream-8-aarch64
-centos-stream-8-x86_64
-custom-1-i386
-custom-1-x86_64
-epel-6-i386
-epel-6-x86_64
-epel-7-aarch64
-epel-7-x86_64
-epel-8-aarch64
-epel-8-x86_64
-fedora-32-aarch64
-fedora-32-armhfp
-...
-```
-
-* You can also use the [aliases provided by Packit](#aliases)
-  to not need to change the config file when the new system version is released.
-
-  By default, the `x86_64` architecture will be used, but you you can
-  override the default e.g. `fedora-stable-aarch64`.
-
-* If you are using custom Copr repository for your Copr builds, you don't have
-  to define the targets at all and they will be deduced from your custom Copr
-  project.
-
-##### tests
-
-See more about tests [here](/testing-farm/).
-
-##### upstream_koji_build
-
-Create a SRPM from upstream and submit a scratch RPM build
-to [Fedora Koji](https://koji.fedoraproject.org/koji/) build system.
-
-At the moment it is not possible to run non-scratch Koji builds from upstream.
-For more info, please see [the following issue](https://pagure.io/releng/issue/9801).
-
-If you want to do official Koji builds, the sources need to be present in
-dist-git: job [`koji_build`]({{< ref "#koji_build" >}}) can take care of that.
-
-(The job used to be called `production_build` but we are deprecating that name in favour of
-the more explicit `upstream_koji_build`.)
-
-Supported triggers:
-
-* **pull_request** -- check out content of the pull request
-* **commit** -- reacts to new commits to the specified branch
-* **release** -- check out content of the tag associated with the release
-
-Optional parameters:
-
-* **targets** -- (a list of) targets we want to build for,
-  list of supported targets can be listed using with `koji list-targets`.
-  You can also use the [aliases provided by Packit](#aliases)
-  to not need to change the config file when the new system version is released.
-* **branch** -- the name of the branch we want to build for when using **commit** trigger
-(defaults to the repository's default branch) or target branch when using **pull_request** trigger
-(default behaviour is reacting to all pull requests in the repository).
-
-##### propose_downstream
-
-Land a new upstream release in Fedora. This job only makes sure the changes
-happen in Fedora dist-git - no builds. A pull request is created as a result.
-
-Supported triggers: **release**.
-
-Optional parameters:
-
-* **dist_git_branches** - a (list of) branch(es) in dist-git where packit should work (defaults to `main`).
-  You can also use the [aliases provided by Packit](#aliases)
-  to not need to change the config file when the new system version is released.
-
-**Example**
-
-```yaml
-jobs:
-- job: propose_downstream
-  trigger: release
-- job: propose_downstream
-  trigger: release
-  dist_git_branches:
-    - f35
-```
-
-This config would update Fedora Rawhide and Fedora 35 dist-git branches.
-
-If you need to do any change in the pull request, you need to locally fetch the source branch 
-of the Packit's pull request and push it (with a fix) to your fork (as it is not possible to push to the branch 
-created in the Packit's fork):
-
-
-    git fetch https://src.fedoraproject.org/forks/packit/rpms/$YOUR_PACKAGE.git refs/heads/*:refs/remotes/packit/*
-    git cherry-pick packit/$VERSION-$BRANCH-update-propose_downstream
-
-##### pull_from_upstream
-
-A dist-git only job that opens a new dist-git pull request in
-src.fedoraproject.org when a new upstream release happens using a notification
-from [release-monitoring.org](https://release-monitoring.org/).
-
-This job utilizes the same logic as `propose_downstream` with the only
-exception that it is defined and executed in dist-git.
-
-Use [`issue_repository`](#issue_repository) option to get information about
-possible failures during the update process.
-
-Requirements:
-* The job is defined in a Packit config in the default branch of the dist-git
-  repository (`rawhide`). Packit configs on other branches are ignored.
-* Upstream release monitoring is active for the package. [The monitoring
-  status](https://docs.fedoraproject.org/en-US/package-maintainers/Upstream_Release_Monitoring/)
-  in dist-git should be set to `Monitoring`).
-* [`upstream_project_url`](#upstream_project_url) is defined in the configuration.
-
-{{< hint info >}}
-Upstreams (defined in `upstream_project_url`) hosted in these Git forges are currently supported: https://github.com, https://gitlab.com, https://gitlab.freedesktop.org,
-https://gitlab.gnome.org, https://salsa.debian.org.
-Support for working with upstreams in all Git forges is planned to be 
-worked on shortly ([see](https://github.com/packit/packit-service/issues/1907)).
-{{< /hint >}}
-
-Supported triggers: **release**.
-
-Optional parameters:
-
-* **dist_git_branches** - a (list of) branch(es) in dist-git where packit should work (defaults to `main`).
-  You can also use the [aliases provided by Packit](#aliases)
-  to not need to change the config file when the new system version is released.
-
-**Example**
-
-```yaml
-upstream_project_url: https://github.com/packit/packit
-...
-jobs:
-- job: pull_from_upstream
-  trigger: release
-  dist_git_branches:
-    - fedora-all
-    - epel-9
-```
-
-Once a new upstream release happens, Packit will open a pull request with it in
-all active Fedora releases and EPEL 9.
-
-If you need to do any change in the pull request, you need to locally fetch the source branch 
-of the Packit's pull request and push it (with a fix) to your fork (as it is not possible to push to the branch 
-created in the Packit's fork):
-
-    git fetch https://src.fedoraproject.org/forks/packit/rpms/$YOUR_PACKAGE.git refs/heads/*:refs/remotes/packit/*
-    git cherry-pick packit/$VERSION-$BRANCH-update-pull_from_upstream
-
-For more details, check [our release guide](/docs/fedora-releases-guide).
-
-##### koji_build
-Trigger the build in
-[Fedora Koji](https://koji.fedoraproject.org/koji/) build system
-as a reaction to a new dist-git commit.
-A Packit config file needs to be in the dist-git repository
-to allow this job to be triggered.
-Packit loads the config from the newly pushed commit.
-
-The build is triggered only for commits with a spec-file change.
-
-By default, only merged pull requests created by Packit are being acted upon so the [proven packager
-workflow](https://docs.fedoraproject.org/en-US/fesco/Provenpackager_policy/) is
-preserved, [details
-here](https://github.com/packit/packit-service/issues/1490). You can override this behaviour by specifying
-`allowed_pr_authors` and/or `allowed_committers` in the job configuration (see below). For direct pushes, the committer needs to
-be specified in the  `allowed_committers` and for merged pull requests the author of the PR needs to be
-specified in the `allowed_pr_authors` .
-
-There is no UI provided by Packit for the job,
-but it is visible across Fedora systems (as you can see in the following image).
-The koji build behaves as it was created manually, and you can utilise
-[Fedora Notifications](https://apps.fedoraproject.org/notifications/about)
-to be informed about the builds. Also, you can configure a repository where should we
-open issues in case of errors during the job via [`issue_repository`](/docs/configuration#issue_repository) configuration key.
-
-For retriggering the job, see [our release guide](/docs/fedora-releases-guide).
-
-For Koji builds from upstream, see [`upstream_koji_build`](#upstream_koji_build).
-
-Supported triggers:
-
-* **commit** -- reacts to new commits to the specified branch (in dist-git)
-
-Required parameters:
-
-* **dist_git_branches** -- the name of the dist-git branch we want to build for when using **commit** trigger.
-  You can also use the [aliases provided by Packit](#aliases)
-  to not need to change the config file when the new system version is released.
-
-Optional parameters:
-
-* **scratch** -- defaults to `false`, use to create scratch (test) builds
-  instead of the real production builds
-* **allowed_pr_authors** - a list of FAS accounts of PR authors whose merged pull requests will trigger koji builds
-  (defaults to `['packit']`).
-* **allowed_committers** - a list of FAS accounts of committers whose pushes to dist-git will trigger koji builds
-  (defaults to an empty list).
-
-**Example**
-
-```yaml
-jobs:
-- job: koji_build
-  trigger: commit
-  dist_git_branches:
-    - fedora-all
-    - epel-8
-```
-
-##### bodhi\_update
-
-Create a new update in
-[Fedora Bodhi](https://bodhi.fedoraproject.org) for successful
-Koji build.
-A Packit config file needs to be in the dist-git repository
-to allow this job to be triggered.
-Packit loads the config from the commit the build is triggered from.
-
-For now, the Bodhi update is created only for builds submitted by the Packit FAS user.
-(See [`koji_build`](#koji_build) job for more details on how to set this up.)
-This is just for the early stage of this job, and
-we can easily turn off that filter.
-Let us know if you need this condition to be removed.
-
-There is no UI provided by Packit for the job,
-but it is visible across Fedora systems
-like a manually created Bodhi update, and you can utilise
-[Fedora Notifications](https://apps.fedoraproject.org/notifications/about)
-to tweak the notifications settings.
-
-For retriggering the job, see [our release guide](/docs/fedora-releases-guide).
-
-Note that this job is really new and not mature yet -- let us know if you find anything problematic
-or any improvement we can implement.
-
-Supported triggers:
-
-* **commit** -- Packit uses the original action as a config trigger, so you need to use `commit` as a trigger.
-  The real trigger is a successful Koji build (that was triggered from a commit).
-
-Required parameters:
-
-* **dist_git_branches** -- the name of the dist-git branch(es) the build we want to use is coming from.
-  You can also use the [aliases provided by Packit](#aliases)
-  to not need to change the config file when the new system version is released.
-
-**Example**
-
-```yaml
-jobs:
-- job: bodhi_update
-  trigger: commit
-  dist_git_branches:
-    - fedora-stable # rawhide updates are created automatically
-    - epel-8
-```
-
-##### vm_image_build
-
-Supported triggers:
-
-* **pull_request** 
-
-Image Parameters (Packit does not sanitize these and just passes them to Image Builder;
-check [Image Builder's API
-documentation](https://console.redhat.com/docs/api/image-builder) for details).
-
-* **image_request** -- values passed to [the "image_requests" field](https://console.redhat.com/docs/api/image-builder/v1#operations-default-ComposeImage) of Image Builder's API
-* **image_customizations** -- values passed to [the "customizations" field](https://console.redhat.com/docs/api/image-builder/v1#operations-default-ComposeImage) of Image Builder's API
-* **image_distribution** -- name of the "base image" (examples: rhel-90, fedora-36)
-
-Required parameters:
-
-* **copr_chroot** -- name of the chroot to use for installing packages in the image
-* **owner** -- Copr project owner
-* **project** -- Copr project name
-
-Image builds are only triggered after a collaborator places a comment `/packit
-vm-image-build` in a pull request. The image builds are **NOT** submitted
-automatically. This is a subject to change as we improve the integration in future.
-
-
-**Example**
-
-```yaml
-jobs:
-- job: vm_image_build
-  trigger: pull_request
-  image_request:
-    architecture: x86_64
-    image_type: aws
-    upload_request:
-      type: aws
-      options:
-        share_with_accounts: ["123456789"]
-  image_customizations:
-    packages: [foo-bar]
-  image_distribution: fedora-36
-  owner: john-foo
-  project: foo-bar-martini
-  copr_chroot: fedora-36-x86_64
-```
 
 
 ## User configuration file

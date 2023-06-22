@@ -1,7 +1,7 @@
 ---
 title: Examples 
 date: 2022-09-22
-weight: 1
+weight: 4
 ---
 
 # Configuration examples 

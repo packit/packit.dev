@@ -64,9 +64,9 @@ Yes! You can find instructions at the [Packit Service page](/docs/guide#gitlab).
 ## How can I download RPM spec file if it is not part of upstream repository?
 
 If you do not want to have the RPM spec file in your upstream repository,
-you can download it in [actions](/docs/actions/) section.
+you can download it in [actions](/docs/configuration/actions/) section.
 
-Add [`actions`](/docs/actions/) section to your packit.yaml configuration file and
+Add [`actions`](/docs/configuration/actions/) section to your packit.yaml configuration file and
 download the spec file in a hook `post_upstream_clone`. The environment where
 these commands are run is limited, so make sure to install relevant packages
 using the [`srpm_build_deps`](/docs/configuration/#srpm_build_deps) option.

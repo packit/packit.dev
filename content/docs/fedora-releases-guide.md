@@ -24,7 +24,7 @@ For enabling the propose downstream job, you need to have
 and have a `propose_downstream` job in the configuration file for the given upstream repository
 (this job is also run by default if there is no `jobs` section
 in the configuration, see [jobs configuration](/docs/configuration/#packit-service-jobs)).
-The [propose_downstream job](/docs/configuration/#propose_downstream) should be then configured like this:
+The [propose_downstream job](/docs/configuration/upstream/propose_downstream) should be then configured like this:
 
 ```yaml
 jobs:
@@ -98,7 +98,7 @@ update via a comment in any open issue in the upstream repository:
 [**NEW**] Starting January 2023, we have provided a new way to get fresh
 upstream releases in Fedora Linux.
 
-The [`pull_from_upstream` job](/docs/configuration/#pull_from_upstream) is
+The [`pull_from_upstream` job](/docs/configuration/downstream/pull_from_upstream) is
 defined in dist-git only and provides the `propose_downstream`
 functionality. This means that Packit doesn't need to be set up in the
 upstream project: everything is configured in Fedora dist-git. So when a new
@@ -113,7 +113,7 @@ you should specify the [`upstream_tag_template`](/docs/configuration/#upstream_t
 via [`files_to_sync`](/docs/configuration/#files_to_sync) configuration key.
 - By default, Packit downloads sources defined in the spec file that contain URLs.
 You can override these URLs via [`sources`](/docs/configuration#sources) configuration key.
-- You may utilise some of the [actions](/docs/actions/#syncing-the-release) 
+- You may utilise some of the [actions](/docs/configuration/actions/#syncing-the-release)
 for overriding the Packit default behaviour, for example:
   - for the changelog entry generation, if you do not want the default `git log` output, you can use your own command(s):
   
@@ -140,9 +140,9 @@ like maintainers usually do. (The commits without any spec file change are skipp
 
 By default, only merged pull requests created by Packit are being acted upon, but 
 you can override this behaviour by specifying
-`allowed_pr_authors` and/or `allowed_committers` in the [job configuration](/docs/configuration/#koji_build). 
+`allowed_pr_authors` and/or `allowed_committers` in the [job configuration](/docs/configuration/downstream/koji_build). 
 
-The [koji_build job](/docs/configuration/#koji_build) can be configured like this:
+The [koji_build job](/docs/configuration/downstream/koji_build) can be configured like this:
 
 ```yaml
 jobs:
@@ -177,7 +177,7 @@ Bodhi updates by having a Packit configuration in your dist-git repository that 
 Once Packit is informed (via fedora-messaging bus) about the successful Koji build for the configured branch,
 it creates a new update for that branch in Bodhi for you.
 
-The [bodhi_update job](/docs/configuration/#bodhi_update) can be configured like this:
+The [bodhi_update job](/docs/configuration/downstream/bodhi_update) can be configured like this:
 
 ```yaml
 jobs:
