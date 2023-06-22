@@ -99,7 +99,7 @@ For more info see [Running group of tests with same label](#running-group-of-tes
 
 Required parameters:
 * **targets** - Specify which "builds" you want to test.
-[As with copr_build job](/docs/configuration#available-copr-build-targets) you can use
+[As with copr_build job](/docs/configuration/upstream/copr_build#available-copr-build-targets) you can use
 specific targets such as `fedora-34-x86_64`. Or just the distro part,
 like `centos-stream-8`, in which case the architecture is `x86_64`.
 

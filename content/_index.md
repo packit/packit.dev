@@ -29,7 +29,7 @@ and bring upstream releases to Fedora Linux.
 Packit uses [Copr build system](https://copr.fedorainfracloud.org/) to build RPMs from your code changes. This way,
 you can validate your package will be correctly built from each pull request and also have your changes installable by anyone
 via YUM repository created in Copr.
-[Learn more.](/docs/configuration/#copr_build)
+[Learn more.](/docs/configuration/upstream/copr_build/)
 <--->
 
 #### Testing

@@ -27,7 +27,7 @@ To start using Packit, you need to do three things:
 
 The integration is dependent on the service the upstream project is hosted on.
 In case you want to use Packit on your downstream repository for downstream jobs
-([Koji build](/docs/configuration/#koji_build) and [Bodhi update](/docs/configuration/#bodhi_update)),
+([Koji build](/docs/configuration/downstream/koji_build) and [Bodhi update](/docs/configuration/downstream/bodhi_update)),
 you don't need to enable anything.
 Just place your config file into the dist-git repository.
 
@@ -162,13 +162,13 @@ message on your commits.
 Besides that:
 * If you want to configure builds via Packit,
   your software needs to comply with [Copr guidelines](https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr)
-  since we use [Fedora Copr](src.fedoraproject.org/) for the builds.
-  Therefore, please, make sure you read them before configuring the [Packit build job](/docs/configuration/#copr_build).
+  since we use [Fedora Copr](https://copr.fedorainfracloud.org) for the builds.
+  Therefore, please, make sure you read them before configuring the [Packit build job](/docs/configuration/upstream/copr_build).
 * If you are interested in using [internal instance of the Testing Farm](https://docs.testing-farm.io/general/0.1/services.html#_red_hat_ranch)
   to run your tests in, please, [reach out to us](/#contact), since for this job, an additional approval on our side is needed.
-* For retrying the [build](/docs/configuration/#copr_build) and [test](/docs/configuration/#tests) jobs via `/packit build` and `/packit test` pull request comments,
+* For retrying the [build](/docs/configuration/upstream/copr_build) and [test](/docs/configuration/upstream/tests) jobs via `/packit build` and `/packit test` pull request comments,
   you need to have write access to the repository or be the author of the pull request.
-* Similarly, for retrying the [propose downstream job](/docs/configuration/#propose_downstream) via `/packit propose-downstream` issue comment,
+* Similarly, for retrying the [propose downstream job](/docs/configuration/upstream/propose_downstream) via `/packit propose-downstream` issue comment,
   you need to have write access to the repository.
 
 
@@ -274,17 +274,17 @@ hardcoded values that changes when there is a new distribution release.
 
 ### Available jobs
 
-* [`copr_build`](/docs/configuration/#copr_build): An RPM build triggered for pull-requests, new branch commits or releases.
+* [`copr_build`](/docs/configuration/upstream/copr_build): An RPM build triggered for pull-requests, new branch commits or releases.
   (Can be used to verify that package is buildable,
   to easily install package including the proposed change
   or to provide long-term Copr repositories.)
-* [`tests`](/docs/configuration/#tests): Test suit using TMT/FMF definition run in the [Testing Farm](TBD)
+* [`tests`](/docs/configuration/upstream/tests): Test suit using TMT/FMF definition run in the [Testing Farm](TBD)
   (Can be used as a next step to Copr build or without build at all.)
-* [`upstream_koji_build`](/docs/configuration/#upstream_koji_build): A scratch Koji build triggered for the upstream state of project.
-* [`propose_downstream`](/docs/configuration/#propose_downstream): For upstream release, Packit prepares a Fedora release.
+* [`upstream_koji_build`](/docs/configuration/upstream/upstream_koji_build): A scratch Koji build triggered for the upstream state of project.
+* [`propose_downstream`](/docs/configuration/upstream/propose_downstream): For upstream release, Packit prepares a Fedora release.
   (Source is saved to the Lookaside Cache and a dist-git pull-request is created for each configured branch.)
-* [`koji_build`](/docs/configuration/#koji_build): A downstream Koji build triggered when there is a new dist-git commit in a given branch.
-* [`bodhi_update`](/docs/configuration/#bodhi_update): A Bodhi update created for a successfully finished Koji build.
+* [`koji_build`](/docs/configuration/downstream/koji_build): A downstream Koji build triggered when there is a new dist-git commit in a given branch.
+* [`bodhi_update`](/docs/configuration/downstream/bodhi_update): A Bodhi update created for a successfully finished Koji build.
 
 
 More about the jobs and how to tweak them can be found on a [configuration page](/docs/configuration#jobs).
@@ -389,7 +389,7 @@ An example of Packit's checks in a pull request:
 In general, you can put a `/packit <job-you-want-to-trigger>` comment
 to trigger the Packit job manually.
 
-So for [Copr builds](/docs/configuration/#copr_build), Packit is able to trigger new builds based on a pull request comment:
+So for [Copr builds](/docs/configuration/upstream/copr_build), Packit is able to trigger new builds based on a pull request comment:
 
     /packit copr-build
 
@@ -400,7 +400,7 @@ or the shorter version
 So whenever you run into a flake or feel like you want to retrigger, just type
 that comment into the PR and enjoy some fine, fresh builds.
 
-For [`propose_downstream`](/docs/configuration/#propose_downstream), you need to place that comment to any issue.
+For [`propose_downstream`](/docs/configuration/upstream/propose_downstream), you need to place that comment to any issue.
 
 The requirements stated [above](#approval) apply, so if you see this message
 

@@ -23,7 +23,7 @@ Create a VM image in Image Builder defined in your "packit.yaml" using your Copr
 
 1. [Place a config file for packit in the root of your upstream repository.](/docs/configuration/)
 
-2. Add a [`vm_image_build` job](/docs/configuration/#vm_image_build).
+2. Add a [`vm_image_build` job](/docs/configuration/upstream/vm_image_build).
 
 2. Submit a request to Red Hat Image Builder:
     ```

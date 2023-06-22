@@ -65,7 +65,7 @@ In case you’ve missed that, this is not the first time we’ve extracted a par
 
 ## VM Image Builds
 
-Having Copr builds available for your pull-requests is really nice, but you can now have VM image builds as well. It would be really wasteful to do this for each and every commit so we decided to trigger this by a `/packit vm-image-build ` comment. Similarly to other jobs, Packit uses an external system to do the hard work. This feature is possible thanks to the [Red Hat Image Builder](https://console.redhat.com/insights/image-builder). This feature is a fresh start on this journey and we are investigating the possibilities of Packit in this field. Check [our documentation](https://packit.dev/docs/configuration/#vm_image_build) and let us know what you think.
+Having Copr builds available for your pull-requests is really nice, but you can now have VM image builds as well. It would be really wasteful to do this for each and every commit so we decided to trigger this by a `/packit vm-image-build ` comment. Similarly to other jobs, Packit uses an external system to do the hard work. This feature is possible thanks to the [Red Hat Image Builder](https://console.redhat.com/insights/image-builder). This feature is a fresh start on this journey and we are investigating the possibilities of Packit in this field. Check [our documentation](https://packit.dev/docs/configuration/upstream/vm_image_build) and let us know what you think.
 
 ![VM image build as a result of the comment](/images/2022-blog/vm-image-build.png)
 

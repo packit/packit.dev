@@ -6,7 +6,7 @@ weight: 92
 
 In the previous year, we [automated](/posts/downstream-automation) the Fedora downstream release process in Packit.
 The first step of the release process, propagating the upstream release to Fedora,
-is covered by the [`propose_downstream`](/docs/configuration/#propose_downstream) job.
+is covered by the [`propose_downstream`](/docs/configuration/upstream/propose_downstream) job.
 This job updates the sources in Fedora, the spec file, and other needed files and creates pull requests with the changes
 in the dist-git repository.
 
@@ -54,7 +54,7 @@ there is much less delayed).
 To automatically pull the upstream release as a reaction to the bug in Bugzilla, `pull_from_upstream` job
 together with the `upstream_project_url` configuration option, needs to be defined in the default branch
 (`rawhide`) of the dist-git repository in the Packit configuration file (see
-[our documentation](/docs/configuration#pull_from_upstream)). The [`upstream_project_url`](/docs/configuration/#upstream_project_url) needs to be a URL
+[our documentation](/docs/configuration/downstream/pull_from_upstream)). The [`upstream_project_url`](/docs/configuration/#upstream_project_url) needs to be a URL
 pointing to a Git repository so that we can do `git` commands on it.
 
 ## `pull_from_upstream` in action
@@ -119,7 +119,7 @@ created in the Packit's fork):
 
 `pull_from_upstream` has just been implemented; therefore, we encourage you to help
 test it out and make it perfect! There are still some limitations (e.g. regarding upstreams,
-see [documentation](/docs/configuration#pull_from_upstream)), which we are trying to resolve as soon as possible.
+see [documentation](/docs/configuration/downstream/pull_from_upstream)), which we are trying to resolve as soon as possible.
 We believe this functionality
 could be beneficial for maintainers of Fedora packages and could even be integrated further.
 Any [suggestions](https://github.com/packit/packit-service/issues/new) and feedback are welcomed
