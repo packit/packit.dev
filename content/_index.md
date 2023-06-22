@@ -70,10 +70,10 @@ and create [Bodhi](https://bodhi.fedoraproject.org) updates! [Learn more.](/docs
 
 #### Contact
 
-- **#packit:fedora.im** on [Matrix](https://matrix.org/)
-- **#packit** on [Libera.Chat](https://libera.chat/)
-- **hello@packit.dev**
-- **@packit** on {{< rawhtml >}}<a rel="me" href="https://fosstodon.org/@packit">Fosstodon</a>{{< /rawhtml >}}
+- [#packit:fedora.im](https://chat.fedoraproject.org/#/room/#packit:fedora.im) (Element/Matrix)
+- [#packit:libera.chat](https://libera.chat) (IRC)
+- hello@packit.dev
+- {{< rawhtml >}}<a rel="me" href="https://fosstodon.org/@packit">@packit@fosstodon.org</a>{{< /rawhtml >}} (Mastodon)
 
 {{< button relref="/docs/guide" >}}Get started{{< /button >}}
 

@@ -331,7 +331,7 @@ git repository, you can run commands from the cloned dist-git repository in the
 same way as you do from upstream.  Make sure, that you specify the
 `upstream_project_url` in your configuration.
 
-Is your `packit srpm` finally passing? If not, feel free to reach out to us.
+Is your `packit srpm` finally passing? If not, feel free to [reach out to us](/#contact).
 If yes, let's proceed to the next level.
 
 #### The project has successful builds inside the service
@@ -341,8 +341,8 @@ That's the theory. In practice, your laptop and packit service
 environment are vastly different. In the service you can specify
 the requirements with the
 [`srpm_build_deps` option](https://packit.dev/docs/configuration/#srpm_build_deps).
-In any case, feel free to reach out to us if you are having troubles,
-and we'd be glad to help.
+In any case, feel free to [reach out to us](/#contact)
+if you are having troubles, and we'd be glad to help.
 
 
 As described [above](#jobs), Packit supports various functions in form of jobs you can configure.
@@ -433,7 +433,7 @@ jobs that will handle the Fedora updates: `propose_downstream`/`pull_from_upstre
 These are explained in detail in our [release guide](/docs/fedora-releases-guide).
 
 And that's about it. Now you should be able to use the core features of the Packit.
-If you have any questions, feel free to [reach out to us](https://packit.dev/#contact).
+If you have any questions, feel free to [reach out to us](/#contact).
 
 
 We welcome all kinds of suggestions to this guide, feel free to [open a new issue

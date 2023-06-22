@@ -123,7 +123,7 @@ see [documentation](/docs/configuration/downstream/pull_from_upstream)), which w
 We believe this functionality
 could be beneficial for maintainers of Fedora packages and could even be integrated further.
 Any [suggestions](https://github.com/packit/packit-service/issues/new) and feedback are welcomed
-(see [contacts](https://packit.dev/#contact)).
+(see [contacts](/#contact)).
 
 If you are interested in details of customization of
 the `pull_from_upstream` job and in the whole downstream automation, make sure to check out
