@@ -14,10 +14,12 @@ You should place the file in the root of your upstream repo. Packit accepts thes
 * `packit.yaml`
 * `packit.yml`
 
-Both Packit Service and packit tool use this configuration file.
+Both Packit Service and Packit CLI use this configuration file.
 
+## Top-level keys
 
-## Top level keys
+Here you can see a list of the options that can be defined at the top-level and
+shared by all of the jobs.
 
 #### specfile_path
 
@@ -419,7 +421,7 @@ By doing that, you are helping us to be sure that we don't break your use-case.
 
 ## Packit-as-a-Service
 
-Packit service doesn't have any web interface to configure it,
+Packit Service doesn't have any web interface to configure it,
 so the only way to change its behaviour is via the config file you just read about.
 
 When you open a pull request against your upstream repository, packit service
