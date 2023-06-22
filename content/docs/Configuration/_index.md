@@ -576,11 +576,19 @@ The information about releases is retrieved from Bodhi and because of the
 cache and required availability on Copr, it might take a while to get the
 newest state.
 
-
-
 ## User configuration file
 
-When running packit as a tool locally, it is convenient to use a configuration
+{{< hint danger >}}
+
+Since API tokens are a very sensitive information, please **DO NOT** ever store
+them in a public (such as a GitHub repository). The configuration file here is
+located on your workstation, please **DO NOT** confuse it with a config file for
+your project - that one is described above in the first section of this
+document.
+
+{{< /hint >}}
+
+When running Packit as a tool locally, it is convenient to use a configuration
 file to provide data such as API tokens. Packit respects `XDG_CONFIG_HOME`
 environment variable. If not set, it looks inside `~/.config/` directory.
 
@@ -588,28 +596,28 @@ The acceptable names are the same as for the package config:
 
 * `.packit.yaml`
 * `.packit.yml`
-* `.packit.json`
 * `packit.yaml`
 * `packit.yml`
-* `packit.json`
-
 
 ### Values
 
-| Key name              | Type   | Description                                                                                       |
-|-----------------------|--------|---------------------------------------------------------------------------------------------------|
-| `debug`               | bool   | enable debug logs                                                                                 |
-| `fas_user`            | string | username in Fedora account system; this is utilized when authenticating with Bodhi using Kerberos |
-| `kerberos_realm`      | string | Kerberos realm to use for authentication, example "FEDORAPROJECT.ORG"                             |
-| `authentication`      | dict   | tokens for services (GitHub, Pagure)                                                              |
-| `upstream_git_remote` | string | name of the git remote to discover upstream project URL from                                      |
-| `redhat_api_refresh_token` | string | Red Hat API token, can be obtained [here](https://access.redhat.com/management/api) |
+| Key name                   | Type   | Description                                                                                       |
+|----------------------------|--------|---------------------------------------------------------------------------------------------------|
+| `debug`                    | bool   | enable debug logs                                                                                 |
+| `fas_user`                 | string | username in Fedora account system; this is utilized when authenticating with Bodhi using Kerberos |
+| `kerberos_realm`           | string | Kerberos realm to use for authentication, example "FEDORAPROJECT.ORG"                             |
+| `authentication`           | dict   | tokens for services (GitHub, Pagure)                                                              |
+| `upstream_git_remote`      | string | name of the git remote to discover upstream project URL from                                      |
+| `redhat_api_refresh_token` | string | Red Hat API token, can be obtained [here](https://access.redhat.com/management/api)               |
+
+#### Authentication dictionary
 
 The `authentication` is a dictionary where:
 * key is a hostname, url or name that can be mapped to a service-type, for example `github.com` or `pagure`
 * value is a dictionary with keys: `token` and `instance_url` (optional)
 
-e.g.:
+##### Example
+
 ```yaml
 authentication:
     github.com:
@@ -626,9 +634,3 @@ get it at https://src.fedoraproject.org/settings#nav-api-tab
 
 Specifying tokens as direct keys `github_token` and `pagure_user_token`
 has been deprecated and will be removed in future versions.
-
-Since API tokens are a very sensitive information, please do NOT ever store
-them in a public (such as a GitHub repository). The configuration file here is
-located on your workstation, please do NOT confuse it with a config file for
-your project - that one is described above in the first section of this
-document.
