@@ -129,6 +129,12 @@ configuration key.
 
 ![Dashboard view for pull_from_upstream](/images/pull-from-upstream-dashboard.png)
 
+#### Retriggering
+Packagers with write access to the dist-git repository can retrigger the job
+via a comment in any dist-git pull request:
+
+    /packit pull-from-upstream
+
 ## Koji build job
 After having the dist-git content updated, you can easily automate also building in Koji.
 You can simply configure Packit to react to the new commits in your dist-git repository and create
