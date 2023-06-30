@@ -427,6 +427,34 @@ Since rpminspect is under active development, you should consider installing the
 
 You can also inspect binary RPM files, [we will make this easy to do as well in future](https://github.com/packit/packit.dev/issues/607).
 
+### csmock
+
+You can not only run linters on your SRPM file but also run static/dynamic analysis using [csmock](https://github.com/csutils/csmock).
+
+Here is a test definition of the check: (The result manipulation is here to be able to see the html report directly on the Testing Farm Result page.)
+
+
+```yaml
+summary:
+    Check SRPM files with csmock
+discover:
+    how: shell
+    tests:
+      - name: csmock
+        test: "csmock --all-tools /tmp/*.src.rpm -o $TMT_TEST_DATA --force && echo -e '- result: pass' > $TMT_TEST_DATA/results.yaml || echo -e '- result: fail' > $TMT_TEST_DATA/results.yaml ; echo -e '  name: /\n  log:\n  - scan.log\n  - scan-results.html' >> $TMT_TEST_DATA/results.yaml"
+        result: custom
+        require: bash
+prepare:
+  - name: packages
+    how: install
+    package:
+    - csmock
+  - how: shell
+    script: cd /tmp && curl -O ${PACKIT_SRPM_URL}
+execute:
+    how: tmt
+```
+
 ## Testing Farm API
 
 Packit Service communicates with Testing Farm via its [API][testing-farm-api].
