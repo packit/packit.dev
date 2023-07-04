@@ -21,13 +21,67 @@ Both Packit Service and Packit CLI use this configuration file.
 Here you can see a list of options that can be defined at the top-level and
 shared by all of the jobs.
 
+#### packages
+
+(*dict*) This key was introduced mainly to enable support for monorepositories, upstream repositories
+mapping to multiple downstream packages. It holds a dictionary of `{<package_name>: <package_object>}`.
+
+A configuration utilising the `packages` key may look like this:
+```yaml
+packages:
+
+  python-copr:
+    downstream_package_name: python-copr
+    upstream_package_name: copr
+    paths: 
+      - ./python
+    specfile_path: python-copr.spec
+    files_to_sync: 
+      - python-copr.spec
+
+  copr-cli:
+    downstream_package_name: copr-cli
+    upstream_package_name: copr-cli
+    paths: 
+      - ./cli
+    specfile_path: copr-cli.spec
+    files_to_sync: 
+      - copr-cli.spec
+```
+
+If the configuration doesn't include the `packages` key, it is expected that there is only one package
+and the package-specific options can be defined on the top level:
+
+```yaml
+downstream_package_name: python-copr
+upstream_package_name: copr
+paths: 
+  - ./python
+specfile_path: python-copr.spec
+files_to_sync: 
+  - python-copr.spec
+```
+
+#### jobs
+
+(*list of dicts*) A list of job definitions for Packit Service: see
+[Packit Service jobs configuration](jobs) for details.
+
+### Package-specific keys
+#### paths
+(*list*) List of relative paths in the upstream repository, which should be considered for the particular package
+(used mainly for monorepositories). Defaults to the root of the repository (`["./"]`).
+
 #### specfile_path
 
 (*string*) Relative path to a spec file within the upstream repository.
 If not specified, defaults to:
-1. `downstream_package_name.spec` if [`downstream_package_name`](#downstream_package_name)
-is set.
-2. (*deprecated*) Else recursively search the tree and use the first spec file found.
+1. `<downstream_package_name>.spec` if [`downstream_package_name`](#downstream_package_name)
+is set (`<downstream_package_name>.spec` in all the `paths` when using `paths`).
+2. (*deprecated*) Else recursively search the tree and use the first spec file found
+(Recursively search all the `paths` of the package when using `paths`).
+
+Both in 1. and 2., when `paths` are defined, they are searched in the order in which they are defined in the configuration.
 
 If there are only test jobs with `skip_build` option defined (more about it [here](http://packit.dev/testing-farm/)), 
 spec file doesn't need to be present and its path doesn't need to be defined in the config.
@@ -233,7 +287,7 @@ pattern with `branches/`, e.g. for a branch matching `*-release` set to `branche
 #### downstream_package_name
 
 (*string*) Name of the RPM package in Fedora, defaults to the name of the
-GitHub repository.
+GitHub repository. In case of using the `packages` key, the defaults are the keys of the dictionary.
 
 #### dist_git_namespace
 
@@ -256,11 +310,6 @@ Please use [`get-current-version` action](actions/)
 
 (*string*) Custom actions/hooks overwriting the default behavior of packit
 (more in [Actions](actions/)).
-
-#### jobs
-
-(*list of dicts*) A list of job definitions for packit service: see
-[below](#supported-jobs) for details.
 
 #### allowed_gpg_keys
 
@@ -392,7 +441,6 @@ sources:
 corresponding basename exists in the spec-file, the source will be downloaded from the `url` found in the configuration
 instead of the location defined in the spec-file.
 
-
 #### srpm_build_deps
 (*list of strings*) A list of RPM dependencies that are needed for your actions to be run when building a SRPM.
 The dependencies are installed into the Copr build environment each time the build is triggered.
@@ -415,128 +463,6 @@ Just be aware that:
 Please, let us know when something looks weird or does not work with the staging app.
 By doing that, you are helping us to be sure that we don't break your use-case.
 
-## Packit-as-a-Service
-
-Packit Service doesn't have any web interface to configure it,
-so the only way to change its behaviour is via the config file you just read about.
-
-When you open a pull request against your upstream repository, packit service
-picks up configuration file from your pull request, not from the branch against
-the PR is opened. This way, you can polish your .packit.yaml and see the
-results right away. (for more info, please see [packit-service#48](https://github.com/packit/packit-service/issues/48))
-
-Once the service starts handling events of your repository, it needs to have a
-clear definition of what it should do.
-
-The tasks the packit service should do are defined in section `jobs`. The section is a list of dicts:
-```yaml
-jobs:
-- {key: value}
-- {}
-```
-
-If there is no `jobs` section in the configuration file, jobs default to:
-```yaml
-jobs:
-- job: copr_build
-  trigger: pull_request
-  targets: [fedora-stable]
-
-- job: tests
-  trigger: pull_request
-  targets: [fedora-stable]
-
-- job: propose_downstream
-  trigger: release
-  dist_git_branches:
-    - fedora-all
-```
-
-If you do not want to use the jobs then the `jobs` section in the configuration file should be empty:
-```yaml
-jobs: []
-
-```
-
-Packit configuration supports [YAML Merge Key syntax](https://yaml.org/type/merge.html), which can be used to reduce duplication of configuration. Please see the example:
-```yaml
-# before
-jobs:
-- job: copr_build
-  trigger: pull_request
-  targets:
-  - centos-stream-8-x86_64
-  - centos-stream-9-x86_64
-  - fedora-all
-
-- job: copr_build
-  trigger: commit
-  branch: main
-  targets:
-  - centos-stream-8-x86_64
-  - centos-stream-9-x86_64
-  - fedora-all
-
-# after
-jobs:
-- &copr
-  job: copr_build
-  trigger: pull_request
-  targets:
-  - centos-stream-8-x86_64
-  - centos-stream-9-x86_64
-  - fedora-all
-
-- <<: *copr
-  trigger: commit
-  branch: main
-```
-
-Every job has two mandatory keys:
-
-1. `job` - name of the job (you can imagine this as a CLI command)
-2. `trigger` - what is the trigger for the job?
-
-Every job only supports a specific set of triggers.
-
-### Supported jobs
-
-* Upstream jobs
-  1. [`copr_build`](upstream/copr_build)
-  2. [`tests`](upstream/tests)
-  3. [`upstream_koji_build`](upstream/upstream_koji_build)
-  4. [`vm_image_build`](upstream/vm_image_build)
-  5. [`propose_downstream`](upstream/propose_downstream)
-* Downstream jobs
-  1. [`pull_from_upstream`](downstream/pull_from_upstream)
-  2. [`koji_build`](downstream/koji_build)
-  3. [`bodhi_update`](downstream/bodhi_update)
-
-
-## Overriding global parameters
-
-You are able to override your global parameters (such as [`specfile_path`](#specfile_path),
-[`downstream_package_name`](#downstream_package_name),
-[`actions`](#actions)...) for every job. This is very useful
-when you want to set up a build or a test matrix using different parameters or
-configuration. It's also useful when your release workflow differs between
-Fedora and EPEL.
-
-In order to do such a thing, just set a value you want to override in the
-respective job.
-
-Example:
-```yaml
-specfile_path: package.spec
-jobs:
-- job: some-job
-  trigger: ran-out-of-beer
-  targets: [fedora-stable]
-  specfile_path: somewhere/else/package.spec
-```
-
-In this example, the job `some-job` would override [`specfile_path`](#specfile_path) to
-`somewhere/else/package.spec` instead of using `./package.spec`.
 
 ## Aliases
 
@@ -560,10 +486,10 @@ Rawhide (e.g. `fedora-34`, `fedora-35`, `fedora-36`).
 versions (e.g. `epel-7`, `epel-8`, `epel-9`)
 
 The aliases above can be used both to specify targets when [building in
-Copr](#copr_build) or [running tests](/testing-farm/), and to reference
+Copr](upstream/copr_build) or [running tests](/testing-farm/), and to reference
 dist-git branches of different system versions
-(e.g. for [`propose_downstream` job](#propose_downstream)
-or downstream jobs like [`koji_build`](#koji_build) or [`bodhi_update`](#bodhi_update)).
+(e.g. for [`propose_downstream` job](upstream/propose_downstream)
+or downstream jobs like [`koji_build`](downstream/koji_build) or [`bodhi_update`](downstream/bodhi_update)).
 
 The information about releases is retrieved from Bodhi and because of the
 cache and required availability on Copr, it might take a while to get the
