@@ -15,7 +15,7 @@ happen in Fedora dist-git - no builds. A pull request is created as a result.
 ## Optional parameters
 
 * **dist_git_branches** - a (list of) branch(es) in dist-git where packit should work (defaults to `main` which represents _Fedora Rawhide_).
-  You can also use the [aliases provided by Packit](#aliases)
+  You can also use the [aliases provided by Packit](/docs/configuration#aliases)
   to not need to change the config file when the new system version is released.
 
 ## Example

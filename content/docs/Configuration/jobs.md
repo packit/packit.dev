@@ -106,9 +106,9 @@ jobs:
 
 ### Overriding global parameters in jobs
 
-You are able to override your global parameters (such as [`specfile_path`](#specfile_path),
-[`downstream_package_name`](#downstream_package_name),
-[`actions`](#actions)...) for every job. This is very useful
+You are able to override your global parameters (such as [`specfile_path`](/docs/configuration#specfile_path),
+[`downstream_package_name`](/docs/configuration#downstream_package_name),
+[`actions`](/docs/configuration/actions)...) for every job. This is very useful
 when you want to set up a build or a test matrix using different parameters or
 configuration. It's also useful when your release workflow differs between
 Fedora and EPEL.
@@ -126,7 +126,7 @@ jobs:
   specfile_path: somewhere/else/package.spec
 ```
 
-In this example, the job `some-job` would override [`specfile_path`](#specfile_path) to
+In this example, the job `some-job` would override [`specfile_path`](/docs/configuration#specfile_path) to
 `somewhere/else/package.spec` instead of using `./package.spec`.
 
 ## Supported jobs

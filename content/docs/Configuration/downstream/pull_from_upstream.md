@@ -12,7 +12,7 @@ from [release-monitoring.org](https://release-monitoring.org/).
 This job utilizes the same logic as `propose_downstream` with the only
 exception that it is defined and executed in dist-git.
 
-Use [`issue_repository`](#issue_repository) option to get information about
+Use [`issue_repository`](/docs/configuration#issue_repository) option to get information about
 possible failures during the update process.
 
 ## Requirements
@@ -22,7 +22,7 @@ possible failures during the update process.
 * Upstream release monitoring is active for the package. [The monitoring
   status](https://docs.fedoraproject.org/en-US/package-maintainers/Upstream_Release_Monitoring/)
   in dist-git should be set to `Monitoring`).
-* [`upstream_project_url`](#upstream_project_url) is defined in the configuration.
+* [`upstream_project_url`](/docs/configuration#upstream_project_url) is defined in the configuration.
 
 {{< hint info >}}
 Upstreams (defined in `upstream_project_url`) hosted in these Git forges are currently supported: https://github.com, https://gitlab.com, https://gitlab.freedesktop.org,
@@ -38,7 +38,7 @@ worked on shortly ([see](https://github.com/packit/packit-service/issues/1907)).
 ## Optional parameters
 
 * **dist_git_branches** - a (list of) branch(es) in dist-git where packit should work (defaults to `main`).
-  You can also use the [aliases provided by Packit](#aliases)
+  You can also use the [aliases provided by Packit](/docs/configuration#aliases)
   to not need to change the config file when the new system version is released.
 
 ## Example

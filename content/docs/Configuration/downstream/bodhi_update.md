@@ -13,7 +13,7 @@ to allow this job to be triggered.
 Packit loads the config from the commit the build is triggered from.
 
 For now, the Bodhi update is created only for builds submitted by the Packit FAS user.
-(See [`koji_build`](#koji_build) job for more details on how to set this up.)
+(See [`koji_build`](/docs/configuration/downstream/koji_build) job for more details on how to set this up.)
 This is just for the early stage of this job, and
 we can easily turn off that filter.
 Let us know if you need this condition to be removed.
@@ -37,7 +37,7 @@ or any improvement we can implement.
 ## Required parameters
 
 * **dist_git_branches** -- the name of the dist-git branch(es) the build we want to use is coming from.
-  You can also use the [aliases provided by Packit](#aliases)
+  You can also use the [aliases provided by Packit](/docs/configuration#aliases)
   to not need to change the config file when the new system version is released.
 
 ## Example
