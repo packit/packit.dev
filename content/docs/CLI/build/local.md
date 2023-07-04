@@ -28,4 +28,8 @@ Create RPMs using content of the upstream repository.
       --default-release-suffix  Allows to use default, packit-generated, release
                                 suffix when some release_suffix is specified in
                                 the configuration.
+      -p, --package TEXT        Package to build, if more than one available, like
+                                in a monorepo configuration. Use it multiple times
+                                to select multiple packages.Defaults to all the
+                                packages listed inside the config.
       -h, --help                Show this message and exit.
