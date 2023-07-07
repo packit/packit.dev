@@ -24,7 +24,9 @@ shared by all of the jobs.
 #### packages
 
 (*dict*) This key was introduced mainly to enable support for monorepositories, upstream repositories
-mapping to multiple downstream packages. It holds a dictionary of `{<package_name>: <package_object>}`.
+mapping to multiple downstream packages. It holds a dictionary of `{<package_name>: <package_configuration>}` where
+package configuration consists of the keys introduced in [Package-specific keys section](#package-specific-keys)
+(the only exception is the [`upstream_project_url`](#upstream_project_url) which can be defined only on the top level).
 
 A configuration utilising the `packages` key may look like this:
 ```yaml
@@ -71,6 +73,7 @@ files_to_sync:
 #### paths
 (*list*) List of relative paths in the upstream repository, which should be considered for the particular package
 (used mainly for monorepositories). Defaults to the root of the repository (`["./"]`).
+This is the only key that can appear only inside [`packages`](#packages) dictionary values.
 
 #### specfile_path
 

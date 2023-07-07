@@ -6,23 +6,20 @@ weight: 1
 
 # Packit Service jobs configuration
 
-Packit Service doesn't have any web interface to configure it,
-so the only way to change its behaviour is via the config file generally described [here](/docs/configuration).
+Packit Service doesn't have any web interface, but its behaviour can be configured via the config file 
+generally described [here](/docs/configuration).
 
-When you open a pull request against your upstream repository, packit service
-picks up configuration file from your pull request, not from the branch against
-the PR is opened. This way, you can polish your .packit.yaml and see the
-results right away. (for more info, please see [packit-service#48](https://github.com/packit/packit-service/issues/48))
-
-Once the service starts handling events of your repository, it needs to have a
-clear definition of what it should do.
-
-The tasks the packit service should do are defined in section `jobs`. The section is a list of dicts:
+The tasks Packit Service should do should be defined in the `jobs` section. The section is a list of dictionaries:
 ```yaml
 jobs:
 - {key: value}
 - {}
 ```
+
+When there is an action (pull request, commit, etc.) in the upstream repository, Packit Service takes the config 
+file from the relevant git ref (release tag for release, PR head for pull requests, related dist-git commit for downstream jobs).
+Then, it tries to find a matching job in the `jobs` sections for the particular event (e.g. for pull request, jobs with
+`pull_request` trigger are matched).
 
 If there is no `jobs` section in the configuration file, jobs default to:
 ```yaml
@@ -89,7 +86,9 @@ jobs:
 (*str*) what is the trigger for the job? Every job only supports a specific set of triggers.
 
 #### packages
-(*list*) Optional, list of package object names (when using monorepositories). If a job object has no such key, all packages of a monorepo should be handled.
+(*list*) Optional, list of package object names (when using monorepositories). If a job object has no such key, 
+all packages of a monorepo should be handled. The package object names need to be defined
+in the [`packages`](/docs/configuration#packages) dictionary.
 
 Here is an example of the configuration of the job including the `packages`:
 ```yaml
