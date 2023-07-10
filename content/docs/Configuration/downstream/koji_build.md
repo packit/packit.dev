@@ -31,7 +31,7 @@ open issues in case of errors during the job via [`issue_repository`](/docs/conf
 
 For retriggering the job, see [our release guide](/docs/fedora-releases-guide).
 
-For Koji builds from upstream, see [`upstream_koji_build`](#upstream_koji_build).
+For Koji builds from upstream, see [`upstream_koji_build`](/docs/configuration/upstream/upstream_koji_build).
 
 ## Supported triggers
 
@@ -40,7 +40,7 @@ For Koji builds from upstream, see [`upstream_koji_build`](#upstream_koji_build)
 ## Required parameters
 
 * **dist_git_branches** -- the name of the dist-git branch we want to build for when using **commit** trigger.
-  You can also use the [aliases provided by Packit](#aliases)
+  You can also use the [aliases provided by Packit](/docs/configuration#aliases)
   to not need to change the config file when the new system version is released.
 
 ## Optional parameters

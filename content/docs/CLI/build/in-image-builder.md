@@ -40,8 +40,6 @@ Builder, for more details see the `vm_image_build` job description.
 
 ## Help
 
-
-
     Usage: packit build in-image-builder [OPTIONS] IMAGE_NAME [PATH_OR_URL]
     
       Create a VM image in Image Builder.
@@ -68,4 +66,10 @@ Builder, for more details see the `vm_image_build` job description.
                                   for the image build. The type needs to be
                                   vm_image_build.
       --wait / --no-wait          Wait for the build to finish
+      -p, --package TEXT          Package to build, if more than one available,
+                                  like in a monorepo configuration. Use it
+                                  multiple times to select multiple
+                                  packages.Defaults to all the packages listed
+                                  inside the config.
       -h, --help                  Show this message and exit.
+

@@ -31,4 +31,8 @@ Create RPMs in mock using content of the upstream repository.
       -r, --root TEXT           Uses specified chroot configuration. If ends with
                                 '.cfg', then it is treated as full path to the
                                 mock configuration.
+      -p, --package TEXT        Package to build, if more than one available, like
+                                in a monorepo configuration. Use it multiple times
+                                to select multiple packages.Defaults to all the
+                                packages listed inside the config.
       -h, --help                Show this message and exit.

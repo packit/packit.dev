@@ -95,7 +95,7 @@ Another usefull config is `labels` option:
     labels:
       - regression
 ```
-For more info see [Running group of tests with same label](#running-group-of-tests-with-same-label)
+For more info see [Running group of tests with same label](/docs/configuration#running-group-of-tests-with-same-label)
 
 Required parameters:
 * **targets** - Specify which "builds" you want to test.

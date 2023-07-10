@@ -19,9 +19,8 @@ prepared sources are moved to the `result-dir`.
 
 ## Help
 
-
     Usage: packit prepare-sources [OPTIONS] [PATH_OR_URL]
-
+    
       Prepare sources for a new SRPM build using content of the upstream
       repository. Determine version, create an archive or download upstream and
       create patches for sourcegit, fix/update the specfile to use the right
@@ -65,6 +64,11 @@ prepared sources are moved to the `result-dir`.
                                       Specifies whether Packit should create
                                       symlinks or copy the files (e.g. archive
                                       outside specfile dir).
+      -p, --package TEXT              Package to prepare, if more than one
+                                      available, like in a monorepo configuration.
+                                      Use it multiple times to select multiple
+                                      packages.Defaults to all the packages listed
+                                      inside the config.
       -h, --help                      Show this message and exit.
 
 
