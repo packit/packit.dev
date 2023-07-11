@@ -97,7 +97,7 @@ Another usefull config is `labels` option:
 ```
 For more info see [Running group of tests with same label](/docs/configuration#running-group-of-tests-with-same-label)
 
-Required parameters:
+## Required parameters
 * **targets** - Specify which "builds" you want to test.
 [As with copr_build job](/docs/configuration/upstream/copr_build#available-copr-build-targets) you can use
 specific targets such as `fedora-34-x86_64`. Or just the distro part,
@@ -120,7 +120,7 @@ distro (otherwise the default would be `centos-stream-8`) and for
     epel-7-x86_64: {}
 ```
 
-Optional parameters:
+## Optional parameters
 * **fmf_url** - Git repository containing the metadata (FMF) tree.
   Use any format acceptable by the git clone command.
 * **fmf_ref** - Branch, tag or commit specifying the desired git revision.
