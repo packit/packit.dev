@@ -7,3 +7,5 @@ bookCollapseSection: true
 # Usage charts
 
 {{< usagecharts >}}
+
+_The numbers are collected per git forge namespace._

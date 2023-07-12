@@ -8,6 +8,8 @@ import requests
 import json
 import pygal
 
+from collections import defaultdict
+
 
 def generate_graph(title, data, path, value_text="builds"):
     """
@@ -19,7 +21,7 @@ def generate_graph(title, data, path, value_text="builds"):
         truncate_legend=32,
     )
 
-    for name, value in data.items():
+    for name, value in data:
         # This condition is needed for rendering non-grouped data
         if isinstance(value, int):
             value = {name: value}
@@ -56,13 +58,18 @@ def generate_usage_treemap():
     <embed type="image/svg+xml" src="/images/usage/{job_name}.svg" />
 </figure>\n"""
             )
-            data = {
-                p.removeprefix("https://github.com/"): c
-                for p, c in job_data["top_projects_by_job_runs"].items()
-            }
+
+            data_namespaces = defaultdict(int)
+            for p, c in job_data["top_projects_by_job_runs"].items():
+                data_namespaces[
+                    p.removeprefix("https://github.com/").rsplit("/", maxsplit=1)[0]
+                ] += c
+
+            sorted_data = sorted(data_namespaces.items(), key=lambda x: -x[1])  # [:3]
+
             generate_graph(
                 f"Packit: {job_name_human_readable}",
-                data=data,
+                data=sorted_data,
                 path=f"./static/images/usage/{job_name}.svg",
                 value_text=("builds" if "build" in job_name else "runs"),
             )
