@@ -3,10 +3,10 @@
   hosts: all
   tasks:
     - name: Install hugo
-      ansible.builtin.dnf:
-        name:
-          - hugo
-        state: latest
+      ansible.builtin.unarchive:
+        src: https://github.com/gohugoio/hugo/releases/download/v0.98.0/hugo_extended_0.98.0_Linux-64bit.tar.gz
+        remote_src: true
+        dest: /usr/bin/
       become: true
     - name: Pull themes
       ansible.builtin.command: git submodule update --init
