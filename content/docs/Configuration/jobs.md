@@ -103,6 +103,10 @@ jobs:
       - copr-backend
 ```
 
+#### manual_trigger
+(*bool*) Option that enables triggering the job only manually (via pull-request/issue comment or rerunning GitHub check).
+Defaults to `false`.
+
 ### Overriding global parameters in jobs
 
 You are able to override your global parameters (such as [`specfile_path`](/docs/configuration#specfile_path),
