@@ -380,7 +380,8 @@ execute:
 and give you information related to licensing, metadata, manpages, desktop app
 metadata, file ownership & permissions and much much more.
 
-Here's a tmt plan you can use to have rpminspect invoked on SRPMs produced by Packit:
+Here's a tmt plan you can use to have rpminspect invoked on SRPMs and binary RPMs built in Copr
+(these are available by Testing Farm in `/var/share/test-artifacts`):
 
 ```yaml
 summary:
@@ -388,44 +389,48 @@ summary:
 discover:
     how: shell
     tests:
-      - name: rpminspect
-        test: rpminspect-fedora /tmp/*.src.rpm
+      - name: rpminspect SRPM and RPMs
+        test: for rpm in /var/share/test-artifacts/*.rpm; do rpminspect-fedora -E metadata $rpm; done
 prepare:
   - name: packages
     how: install
     package:
     - rpminspect
     - rpminspect-data-fedora
-  - how: shell
-    script: cd /tmp && curl -O ${PACKIT_SRPM_URL}
 execute:
     how: tmt
+adjust:
+    enabled: false
+    when: distro == centos-stream-9
 ```
 
-You can run rpminspect also using the CentOS Stream configuration. This should prepare you before opening CentOS Stream dist-git MRs.
+You can run rpminspect also using the CentOS Stream configuration (see also the `adjust` section in the snippets). 
+This should prepare you before opening CentOS Stream dist-git MRs:
+
 ```yaml
 summary:
     Check rpm files with rpminspect
 discover:
     how: shell
     tests:
-      - name: rpminspect SRPM
-        test: rpminspect-centos -v -t VERIFY --profile=centos-stream-9-devel /tmp/*.src.rpm
+      - name: rpminspect SRPM and RPMs
+        test: for rpm in /var/share/test-artifacts/*.rpm; do rpminspect-centos -E metadata -v -t VERIFY --profile=centos-stream-9-devel $rpm; done
 prepare:
   - name: packages
     how: install
     package:
     - rpminspect
     - rpminspect-data-centos
-  - how: shell
-    script: cd /tmp && curl -O ${PACKIT_SRPM_URL}
 execute:
     how: tmt
+adjust:
+    enabled: false
+    when: distro == fedora
 ```
+As these plans rely on the Testing Farm environment (downloaded RPMs), they are not reproducible manually, but you can reproduce them
+via `tmt-reproducer.sh` provided by Testing Farm.
 
 Since rpminspect is under active development, you should consider installing the latest version from this Copr project: https://copr.fedorainfracloud.org/coprs/dcantrell/rpminspect/
-
-You can also inspect binary RPM files, [we will make this easy to do as well in future](https://github.com/packit/packit.dev/issues/607).
 
 ### csmock
 
