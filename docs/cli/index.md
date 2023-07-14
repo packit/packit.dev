@@ -24,7 +24,7 @@ On RHEL/CentOS Stream 9 you can install RPM from [EPEL](https://fedoraproject.or
     $ sudo dnf install epel-release
     $ sudo dnf install packit
 
-### Via Fedora COPR
+### From Fedora Copr
 
 You can also help us test the latest development snapshot by installing packit
 built from the main branch in Copr:
