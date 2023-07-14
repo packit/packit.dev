@@ -6,7 +6,7 @@ sidebar_position: 3
 # Source-git patch metadata
 
 Patch metadata have been superseded by
-[Git-native trailers]({{< ref "source-git/work-with-source-git/control-patch-generation" >}}).
+[Git-native trailers](/source-git/work-with-source-git/control-patch-generation).
 This old patch metadata format is still supported if none of
 the Git-trailers are found in any of the commits.
 
@@ -56,15 +56,12 @@ yaml. The list of keys follows.
 
 ### `patch_name`
 
-**Type**: str
-
-**Default**: the default comes from `git-format-patch`: "By default, each
+* **Type**: str
+* **Default**: the default comes from `git-format-patch`: "By default, each
 output file is numbered sequentially from 1, and uses the first line of the
 commit message"
-
-**Content**: file name of the patch
-
-**Example**: "my-fancy.patch"
+* **Content**: file name of the patch
+* **Example**: "my-fancy.patch"
 
 Patch file generated from the commit will have this name. This
 is useful when a patch is already defined in the spec file and we need to make
@@ -75,34 +72,28 @@ setting the same value for `patch_name` in their metadata.
 
 ### `description`
 
-**Type**: str
-
-**Default**: empty string
-
-**Example**: "This patch is cherry-picked from upstream commit ea45faaa and
+* **Type**: str
+* **Default**: empty string
+* **Example**: "This patch is cherry-picked from upstream commit ea45faaa and
 resolves build failures on arm."
 
 Human-friendly description of the patch file to be put above the spec file entry.
 
 ### `present_in_specfile`
 
-**Type**: bool
-
-**Default**: false (the default behaviour does not expect the patch is defined
+* **Type**: bool
+* **Default**: false (the default behaviour does not expect the patch is defined
 in the spec)
-
-**Example**: false
+* **Example**: false
 
 Is the patch present in spec? If yes, then don't create a new entry in the spec
 file. If no, add it to the spec.
 
 ### `ignore`
 
-**Type**: bool
-
-**Default**: false
-
-**Example**: true
+* **Type**: bool
+* **Default**: false
+* **Example**: true
 
 Skip this git commit when processing patches. This is handy for commits which
 change files in source-git repos but are not in an archive or are not meant to
@@ -110,11 +101,9 @@ be utilized in `%prep`.
 
 ### `squash_commits` (deprecated)
 
-**Type**: bool
-
-**Default**: false
-
-**Example**: false
+* **Type**: bool
+* **Default**: false
+* **Example**: false
 
 This key is **deprecated** as of `packit 0.35.0`, and replaced by setting the
 same [`patch_name`](#patch_name) in the commit message of adjacent commits, which should end
@@ -140,11 +129,9 @@ b677988 (tag: 0.1.0) upstream release 0.1.0
 
 ### `no_prefix`
 
-**Type**: bool
-
-**Default**: false
-
-**Example**: true
+* **Type**: bool
+* **Default**: false
+* **Example**: true
 
 Do not prepend leading `a/` or `b/` in the patch files. Use this when applying
 patches with `%patch -p1`.

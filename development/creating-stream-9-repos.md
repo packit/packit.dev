@@ -27,7 +27,7 @@ Here is how the repositories should be set up:
 
 ## How to create such repo
 
-[using `packit source-git init`]({{< ref "/docs/cli/source-git/init" >}})
+[using `packit source-git init`](/docs/cli/source-git/init)
 
 ## Pushing the repository to GitLab
 

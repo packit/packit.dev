@@ -1,6 +1,6 @@
 ---
 title: Development
-sidebar_position: 4
+sidebar_position: 0
 slug: /
 ---
 
@@ -8,7 +8,7 @@ slug: /
 
 This is an architecture diagram describing the subparts of packit with the links to the source code:
 
-{{< architecture >}}
+<!-- TODO: architecture -->
 
 And here is a diagram of all the services Packit communicates with:
 
