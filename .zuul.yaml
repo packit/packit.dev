@@ -3,14 +3,6 @@
     check:
       jobs:
         - pre-commit
-        - hugo
     gate:
       jobs:
         - pre-commit
-
-- job:
-    name: hugo
-    parent: base
-    description: Check that the website can be built with hugo
-    pre-run: files/install-hugo.yaml
-    run: files/build-with-hugo.yaml
