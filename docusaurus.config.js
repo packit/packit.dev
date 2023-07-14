@@ -105,6 +105,7 @@ const config = {
         id: "posts",
         routeBasePath: "posts",
         path: "posts",
+        authorsMapPath: "../authors.yml",
         feedOptions: {
           type: "all",
           title: "Packit Blog",
@@ -119,6 +120,7 @@ const config = {
         id: "weekly",
         routeBasePath: "posts/weekly",
         path: "weekly",
+        authorsMapPath: "../authors.yml",
         feedOptions: {
           type: "all",
           title: "Packit Weekly",

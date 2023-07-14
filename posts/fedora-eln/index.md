@@ -2,6 +2,7 @@
 title: "Working on the next major RHEL release, in your upstream repo"
 date: 2020-10-04
 weight: 99
+authors: ttomecek
 ---
 
 [Fedora EL Niño](https://docs.fedoraproject.org/en-US/eln/) (ELN) is such an

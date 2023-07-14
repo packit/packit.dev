@@ -2,6 +2,7 @@
 title: "Automatic pulling of upstream releases to Fedora"
 date: 2023-01-23T09:23:44+01:00
 weight: 92
+authors: lbarczio
 ---
 
 In the previous year, we [automated](/posts/downstream-automation) the Fedora downstream release process in Packit.

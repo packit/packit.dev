@@ -2,6 +2,7 @@
 title: "Packit's pre-commit hooks"
 date: 2023-05-16T11:00:00
 weight: 90
+authors: jpopelka
 ---
 
 ## pre-commit

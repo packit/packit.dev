@@ -1,0 +1,46 @@
+flachman:
+  name: František Lachman
+  email: flachman@redhat.com
+  url: https://github.com/lachmanfrantisek
+  image_url: https://github.com/lachmanfrantisek.png
+
+fnecas:
+  name: František Nečas
+  url: https://github.com/FrNecas
+  image_url: https://github.com/FrNecas.png
+
+jpopelka:
+  name: Jiří Popelka
+  email: jpopelka@redhat.com
+  url: https://github.com/jpopelka
+  image_url: https://github.com/jpopelka.png
+
+lbarczio:
+  name: Laura Barcziová
+  email: lbarczio@redhat.com
+  url: https://github.com/lbarcziova
+  image_url: https://github.com/lbarcziova.png
+
+mfocko:
+  name: Matej Focko
+  email: mfocko@redhat.com
+  url: https://github.com/mfocko
+  image_url: https://github.com/mfocko.png
+
+mmassari:
+  name: Maja Massarini
+  email: mmassari@redhat.com
+  url: https://github.com/majamassarini
+  image_url: https://github.com/majamassarini.png
+
+nforro:
+  name: Nikola Forró
+  email: nforro@redhat.com
+  url: https://github.com/nforro
+  image_url: https://github.com/nforro.png
+
+ttomecek:
+  name: Tomáš Tomeček
+  email: ttomecek@redhat.com
+  url: https://github.com/TomasTomecek
+  image_url: https://github.com/TomasTomecek.png

@@ -2,6 +2,7 @@
 title: 2021 in Numbers
 date: 2022-01-04
 weight: 98
+authors: flachman
 ---
 
 # 2021 for Packit in numbers

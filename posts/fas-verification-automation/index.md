@@ -2,6 +2,7 @@
 title: "Automation of FAS verification in Packit Service"
 date: 2022-05-24
 weight: 94
+authors: lbarczio
 ---
 
 As you may already know, for using Packit Service

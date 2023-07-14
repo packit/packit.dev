@@ -2,6 +2,7 @@
 title: "2022 for Packit"
 date: 2023-01-28T11:58:50+01:00
 weight: 91
+authors: flachman
 ---
 
 ## Packit project in 2022

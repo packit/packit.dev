@@ -2,6 +2,7 @@
 title: "Handling of Release field in propose_downstream job"
 date: 2023-05-23T12:00:00
 weight: 90
+authors: nforro
 ---
 
 ## Handling of `Release` field in `propose_downstream` job

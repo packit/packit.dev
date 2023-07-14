@@ -2,6 +2,7 @@
 title: (Tests) job triggering improvements
 date: 2023-07-11T08:46:18+02:00
 weight: 88
+authors: lbarczio
 ---
 
 Recently, we received multiple contributions from the Strimzi team, specifically [Jakub Stejskal](https://github.com/Frawless)

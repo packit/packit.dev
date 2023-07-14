@@ -2,6 +2,7 @@
 title: Introducing monorepository support
 date: 2023-07-04T09:20:06+02:00
 weight: 89
+authors: lbarczio
 ---
 
 We are very happy to announce a major enhancement to Packit! We have now added support for

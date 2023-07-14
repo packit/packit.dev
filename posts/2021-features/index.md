@@ -3,6 +3,7 @@ title: 2021 for Packit
 date: 2022-01-12T09:23:38+01:00
 draft: false
 weight: 97
+authors: flachman
 ---
 
 # Packit project in 2021
