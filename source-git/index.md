@@ -1,6 +1,6 @@
 ---
 title: Source-git
-sidebar_position: 2
+sidebar_position: 0
 # aliases: [/source-git]
 
 id: index
@@ -20,8 +20,12 @@ Our goal is to create an implementation which is configurable, easy to start
 with, and to provide both command-line tooling and the related bots to help to
 adopt and use the workflow.
 
-> Before you continue reading, we assume you are familiar with the [Fedora
-> Maintenance Guide](https://fedoraproject.org/wiki/Package_maintenance_guide).
+:::info
+
+Before you continue reading, we assume you are familiar with the [Fedora
+Maintenance Guide](https://fedoraproject.org/wiki/Package_maintenance_guide).
+
+:::
 
 Source-git is a Git repository which contains upstream sources and
 downstream-specific files: for packaging and code changes specific to a
@@ -30,5 +34,5 @@ Linux.
 
 For more info continue with:
 
-* [Source-git design]({{< ref "/source-git/design.md" >}})
-* [Working with source-git]({{< ref "/source-git/work-with-source-git" >}})
+* [Source-git design](design)
+* [Working with source-git](work-with-source-git)

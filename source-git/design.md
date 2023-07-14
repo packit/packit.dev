@@ -154,15 +154,13 @@ repo, including:
   * how to generate patches from downstream commits;
 * the dist-git repo and branch tracked.
 
-The configuration format is based on the [Packit configuration]({{< ref
-configuration >}}).
+The configuration format is based on the [Packit configuration](/docs/configuration).
 
 Placing this configuration file in a branch in source-git indicates that the
 source-git branch should be auto-maintained. The configuration file may be
 removed to turn off auto-maintenance of the branch.
 
-For an example see [Configure syncing to distgit]({{< ref
-"create-source-git.md#configure-syncing-to-dist-git" >}}).
+For an example see [Configure syncing to distgit](work-with-source-git/create-source-git#configure-syncing-to-dist-git).
 
 ‼️💣️ Content from a source-git repository can be committed to a dist-git
 repository only if the target dist-git branch makes a reference to the
