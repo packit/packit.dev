@@ -95,8 +95,13 @@ update via a comment in any open issue in the upstream repository:
     /packit propose-downstream
 
 ## Pull from upstream job
-[**NEW**] Starting January 2023, we have provided a new way to get fresh
+
+:::tip New feature
+
+Starting January 2023, we have provided a new way to get fresh
 upstream releases in Fedora Linux.
+
+:::
 
 The [`pull_from_upstream` job](/docs/configuration/downstream/pull_from_upstream) is
 defined in dist-git only and provides the `propose_downstream`

@@ -13,9 +13,13 @@ the work on new features and start stabilizing the service to get our budget bac
 
 We have 3 objectives defined for Packit right now.
 
-*Screenshots below are not being updated in real time. They are just a snapshot
+:::caution
+
+Screenshots below are not being updated in real time. They are just a snapshot
 of the state in time when this document was written so that you can see some
-actual numbers.*
+actual numbers.
+
+:::
 
 ## SLO1: Changes to GitHub PRs receive the first status update within 15 seconds in 99% of cases
 

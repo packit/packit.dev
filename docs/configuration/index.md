@@ -89,11 +89,15 @@ Both in 1. and 2., when `paths` are defined, they are searched in the order in w
 If there are only test jobs with `skip_build` option defined (more about it [here](http://packit.dev/testing-farm/)), 
 spec file doesn't need to be present and its path doesn't need to be defined in the config.
 
+:::caution
+
 The functionality to recursively search for a specfile is deprecated and it's
 going to be [removed](https://github.com/packit/packit/issues/1799) in a
 future version (>0.64.0) of Packit. We recommend projects to explicitly set
 `specfile_path` or rely on the `<downstream_package_name>.spec` default, by
 setting `downstream_package_name`.
+
+:::
 
 #### upstream_package_name
 
@@ -101,10 +105,12 @@ setting `downstream_package_name`.
 name of the GitHub repository; it's used when working with the upstream project,
 as a release archive name and as a directory name in that archive.
 
-{{< hint info >}}
+:::info
+
 Previously known as `upstream_project_name`, which has been deprecated since Packit
 0.7.0
-{{< /hint >}}
+
+:::
 
 #### upstream_project_url
 
@@ -268,9 +274,11 @@ files_to_sync:
     mkpath: true
 ```
 
-{{< hint info >}}
+:::info
+
 This option is a successor to `synced_files` that has been already deprecated.
-{{< /hint >}}
+
+:::
 
 #### create_sync_note
 
@@ -500,7 +508,7 @@ newest state.
 
 ## User configuration file
 
-{{< hint danger >}}
+:::danger
 
 Since API tokens are a very sensitive information, please **DO NOT** ever store
 them in a public (such as a GitHub repository). The configuration file here is
@@ -508,7 +516,7 @@ located on your workstation, please **DO NOT** confuse it with a config file for
 your project - that one is described above in the first section of this
 document.
 
-{{< /hint >}}
+:::
 
 When running Packit as a tool locally, it is convenient to use a configuration
 file to provide data such as API tokens. Packit respects `XDG_CONFIG_HOME`

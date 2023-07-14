@@ -34,6 +34,16 @@ built from the main branch in Copr:
     $ # OR in case you have packit already installed from the Fedora repositories:
     $ sudo dnf upgrade packit
 
+:::tip
+
+We have multiple Copr repositories:
+* `packit-releases` — contains latest releases, even before they get pushed to
+  _stable_ as updates by Bodhi
+* `packit-dev` — contains latest Packit (from the `main` branch)
+* `packit-stable` — contains Packit that runs on our production
+
+:::
+
 ### From PyPI
 
 When you install packit with `pip`,
