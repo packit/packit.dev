@@ -10,6 +10,8 @@ GitHub App we [require our users to have a valid Fedora Account System account](
 We were verifying the newcomers until now manually, but in recent weeks, we have implemented an automated solution
 for it. Let's take a closer look at how it is done currently and what have we improved!
 
+<!--truncate-->
+
 Formerly, the process of verification by us started by waiting for the users to provide
 us their FAS username, then checking whether the provided FAS account
 exists and matches, and finally, manually adding the account to our allowlist in the database. For the communication with

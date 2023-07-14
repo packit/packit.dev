@@ -11,6 +11,8 @@ authors: jpopelka
 a lot of time by automatically checking your changes before you
 commit and/or push them out.
 
+<!--truncate-->
+
 For example, in our [packit repo](https://github.com/packit/packit/blob/main/.pre-commit-config.yaml)
 we run various hooks upon each commit:
 [Black (Python code formatter)](https://github.com/psf/black),

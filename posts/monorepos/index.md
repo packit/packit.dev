@@ -10,6 +10,8 @@ monorepositories, enabling the integration of upstream repositories containing m
 If you have a repository in the monorepo format, Packit can now help you automate the integration to downstream
 distributions both from CLI and as a service.
 
+<!--truncate-->
+
 ## Configuration
 
 Let's take a look at how a monorepository should be configured so that Packit can automate the process!

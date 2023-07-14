@@ -20,6 +20,8 @@ To cover this case, we came up with a new job called `pull_from_upstream`, which
 to `propose_downstream`, but is configured directly in the dist-git repository.
 Let's now look at how to set it up and how it works.
 
+<!--truncate-->
+
 ## Setup
 
 ### Upstream release monitoring

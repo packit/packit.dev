@@ -5,6 +5,10 @@ weight: 96
 authors: lbarczio
 ---
 
+Let's find out how Packit builds your SRPMs in the Copr.
+
+<!--truncate-->
+
 ### Introduction
 
 If you use Packit to build RPMs for your upstream code changes, likely,

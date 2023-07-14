@@ -10,6 +10,8 @@ and [David Kornel](https://github.com/kornys),
 for the functionality of manual triggering of jobs and other related improvements, mostly focusing on the testing
 UX. We are very happy about these and would like to showcase the results of their awesome contributions.
 
+<!--truncate-->
+
 Strimzi team wanted to onboard Packit to ease their testing in pull requests, but they have had multiple test suites that could run
 for a long time, and they did not want to run all of the test suites for each new commit in a pull request.
 

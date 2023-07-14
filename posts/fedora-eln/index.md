@@ -14,6 +14,8 @@ awesome idea. It enables building rawhide packages in two distinct buildroots:
 This way you can make sure that your new upstream release builds fine in the
 next RHEL.
 
+<!--truncate-->
+
 But this feedback might be a little bit too late: the upstream
 release already happened and the code was imported in Fedora dist-git, so
 fixing an issue will require repeating the whole process. Wouldn't it be better

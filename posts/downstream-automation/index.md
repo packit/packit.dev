@@ -10,6 +10,8 @@ authors: flachman
 Finally, it's here. Now, you can do the whole Fedora release with the help of Packit.
 Let's take a look at how it works on an example of [OGR](https://github.com/packit/ogr), the Python library we develop.
 
+<!--truncate-->
+
 ## Upstream
 
 The process of releasing a new version starts in the upstream repository.

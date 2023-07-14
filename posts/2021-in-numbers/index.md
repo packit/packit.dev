@@ -13,6 +13,8 @@ that can describe the work of Packit during the year 2021.
 If you are more interested in new features,
 let's take a look on our [second post](../2021-features).
 
+<!--truncate-->
+
 ## GitHub Application
 
 As of now, we have `169` installations of our GitHub application and `41` of them is from the year 2021.

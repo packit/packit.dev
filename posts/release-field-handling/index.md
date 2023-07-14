@@ -9,6 +9,8 @@ authors: nforro
 
 We have recently made some fixes to the process of handling the `Release` field regarding the `%autorelease` macro, so let's take that opportunity to explain how it works.
 
+<!--truncate-->
+
 You can maintain the `Release` field manually, you can use a dummy value or you can take advantage of the `%autorelease` macro.
 
 ### Maintaining `Release` manually

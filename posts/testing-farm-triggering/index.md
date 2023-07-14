@@ -9,6 +9,8 @@ Do you contribute to projects which depend on each other?
 Would you like to test changes spanning multiple repositories together before merging them to the main branch?
 Then look no further, Packit's new feature of the Testing Farm integration is what you are looking for!
 
+<!--truncate-->
+
 ### How it works
 
 To enable such testing, there is no additional configuration required in your `packit.yaml`, the typical [Testing Farm configuration](/docs/testing-farm/) is sufficient.

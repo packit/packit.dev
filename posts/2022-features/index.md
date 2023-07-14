@@ -7,7 +7,9 @@ authors: flachman
 
 ## Packit project in 2022
 
-As you will see in the following paragraphs, the year 2022 was really fruitful for the Packit project. Without further ado, let’s take a look at what the Packit team accomplished last year:
+As you will see in the following paragraphs, the year 2022 was really fruitful for the Packit project. Without further ado, let’s take a look at what the Packit team accomplished last year!
+
+<!--truncate-->
 
 ## Fedora automation
 
