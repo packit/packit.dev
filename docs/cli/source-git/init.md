@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # `packit source-git init`
 
-Initialize a repository to serve as a [source-git repo]({{< ref "/source-git" >}}).
+Initialize a repository to serve as a [source-git repo](/source-git).
 
 The biggest advantage of this command is the functionality to create source-git
 repos. Here's a quick rundown what packit does:
@@ -14,8 +14,7 @@ repos. Here's a quick rundown what packit does:
  * Apply downstream patches as commits.
  * Add source-git configuration to control future syncing to dist-git.
 
-We have [a guide]({{< ref
-"/source-git/work-with-source-git/create-source-git.md" >}}) on how to create
+We have [a guide](/source-git/work-with-source-git/create-source-git) on how to create
 source-git repos manually if you want to understand the steps performed.
 
 ## Prerequisites

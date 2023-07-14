@@ -157,4 +157,4 @@ You can read more about this transition [here](/posts/copr-srpms).
 
 ## A command failed in packit-service: how do I reproduce it locally?
 
-Please read [this document on how to reproduce locally]({{< ref "reproduce-locally.md" >}}).
+Please read [this document on how to reproduce locally](reproduce-locally).

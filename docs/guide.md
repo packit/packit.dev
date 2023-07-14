@@ -319,10 +319,10 @@ passing for you, it should work inside packit service as well.
 Packit needs an RPM spec file to build your package. The spec file does not
 need to be included in the upstream repo and can be generated on the fly or
 downloaded (e.g. from Fedora dist-git).
-Please check out our [FAQ]({{< ref "faq" >}}) to read about some other common questions.
+Please check out our [FAQ](/docs/faq) to read about some other common questions.
 
 You can also read more about the SRPM process
-in [the document]({{< ref "cli/srpm" >}}) dedicated to the `srpm` command.
+in [the document](/docs/cli/srpm) dedicated to the `srpm` command.
 
 ##### Running from the dist-git repository
 
