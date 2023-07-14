@@ -147,9 +147,20 @@ const config = {
           { to: "/posts", label: "Blog Posts", position: "left" },
           { to: "/posts/weekly", label: "Weekly Updates", position: "left" },
           {
-            href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
+            href: "https://dashboard.packit.dev",
+            label: "Dashboard",
             position: "right",
+          },
+          {
+            href: "https://status.packit.dev/",
+            label: "Status",
+            position: "right",
+          },
+          {
+            href: "https://github.com/packit",
+            // label: "GitHub",
+            position: "right",
+            className: "header-github-link",
           },
         ],
       },
@@ -160,8 +171,12 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Tutorial",
-                to: "/docs/index",
+                label: "Onboarding guide",
+                to: "/docs/guide",
+              },
+              {
+                label: "Fedora releases guide",
+                to: "/docs/fedora-releases-guide",
               },
             ],
           },
@@ -169,16 +184,12 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
+                label: "Matrix",
+                href: "https://chat.fedoraproject.org/#/room/#packit:fedora.im",
               },
               {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
+                label: "@packit@fosstodon.org",
+                href: "https://fosstodon.org/@packit",
               },
             ],
           },
@@ -186,17 +197,17 @@ const config = {
             title: "More",
             items: [
               {
-                label: "Blog",
-                to: "/blog",
+                label: "Blog Posts",
+                to: "/posts",
               },
               {
                 label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                href: "https://github.com/packit",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Packit is a Red Hat sponsered free software project. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
