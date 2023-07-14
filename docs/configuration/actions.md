@@ -123,7 +123,7 @@ actions:
   - bash -c "sed -i -r \"s/Release:(\s*)\S+/Release:\1${PACKIT_RPMSPEC_RELEASE}%{?dist}/\" my_specfile_path"
 ```
 
-### Environment variables set by packit
+## Environment variables set by packit
 
 Additionally, packit sets a few env vars for specific actions.
 

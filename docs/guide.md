@@ -40,7 +40,7 @@ All of our workflows are supported and tested on GitHub.
 We utilize the majority of new GitHub features that can be used in GitHub Apps.
 
 
-### How to set up Packit on GitHub
+#### How to set up Packit on GitHub
 
 1. Navigate to the ["Packit-as-a-Service" GitHub
    application](https://github.com/marketplace/packit-as-a-service).
@@ -58,7 +58,7 @@ project settings. In the left sidebar, click "Integration & services" and you
 will see the application displayed there.
 
 
-### Staging instance
+#### Staging instance
 
 [Packit-as-a-Service-stg](https://github.com/apps/packit-as-a-service-stg) GitHub App
 runs the latest code. It can be used to verify the latest changes until they get
