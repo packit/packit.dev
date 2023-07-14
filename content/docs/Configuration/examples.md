@@ -73,6 +73,16 @@ create-archive:
 ```
 {{< /details >}}
 
+{{< details title="Creating archive with git submodules" >}}
+```yaml
+create-archive:
+  - git submodule update --init
+  # Create an archive file with the ‹pkg› directory prefix
+  - bash -c 'git ls-files --recurse-submodules | tar --transform "s|^|pkg/|" -caf .packit/pkg.tar.gz -T-'
+  - echo '.packit/pkg.tar.gz'
+```
+{{< /details >}}
+
 ### Custom changelog generation
 {{< details title="Using changelog entry from a file" >}}
 ```yaml
