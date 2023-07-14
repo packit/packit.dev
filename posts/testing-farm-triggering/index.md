@@ -1,8 +1,9 @@
 ---
 title: "Running tests with builds from another PR"
 date: 2022-12-21
-weight: 93
 authors: fnecas
+tags:
+  - testing-farm
 ---
 
 Do you contribute to projects which depend on each other?

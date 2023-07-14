@@ -1,11 +1,12 @@
 ---
 title: "2022 for Packit"
 date: 2023-01-28T11:58:50+01:00
-weight: 91
 authors: flachman
+tags:
+  - 2022
+  - yearly-features
+  - summary
 ---
-
-## Packit project in 2022
 
 As you will see in the following paragraphs, the year 2022 was really fruitful for the Packit project. Without further ado, let’s take a look at what the Packit team accomplished last year!
 

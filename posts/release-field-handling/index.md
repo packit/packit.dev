@@ -1,11 +1,11 @@
 ---
 title: "Handling of Release field in propose_downstream job"
 date: 2023-05-23T12:00:00
-weight: 90
 authors: nforro
+tags:
+  - specfile
+  - propose-downstream
 ---
-
-## Handling of `Release` field in `propose_downstream` job
 
 We have recently made some fixes to the process of handling the `Release` field regarding the `%autorelease` macro, so let's take that opportunity to explain how it works.
 

@@ -1,11 +1,10 @@
 ---
 title: "Packit's pre-commit hooks"
 date: 2023-05-16T11:00:00
-weight: 90
 authors: jpopelka
+tags:
+  - workflow
 ---
-
-## pre-commit
 
 [pre-commit](https://pre-commit.com) is a wonderful tool that saves you
 a lot of time by automatically checking your changes before you
@@ -15,11 +14,12 @@ commit and/or push them out.
 
 For example, in our [packit repo](https://github.com/packit/packit/blob/main/.pre-commit-config.yaml)
 we run various hooks upon each commit:
-[Black (Python code formatter)](https://github.com/psf/black),
-[Prettier (code formatter)](https://github.com/prettier/prettier),
-[Flake8 (Python source code checker)](https://pypi.org/project/flake8),
-[Mypy (static type checker for Python)](https://github.com/python/mypy),
-and [several other pre-commit hooks](https://github.com/pre-commit/pre-commit-hooks).
+
+- [Black (Python code formatter)](https://github.com/psf/black),
+- [Prettier (code formatter)](https://github.com/prettier/prettier),
+- [Flake8 (Python source code checker)](https://pypi.org/project/flake8),
+- [Mypy (static type checker for Python)](https://github.com/python/mypy),
+- and [several other pre-commit hooks](https://github.com/pre-commit/pre-commit-hooks).
 
 ## Our pre-commit hooks
 

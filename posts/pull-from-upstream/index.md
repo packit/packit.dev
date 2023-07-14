@@ -1,8 +1,9 @@
 ---
 title: "Automatic pulling of upstream releases to Fedora"
 date: 2023-01-23T09:23:44+01:00
-weight: 92
 authors: lbarczio
+tags:
+  - downstream
 ---
 
 In the previous year, we [automated](/posts/downstream-automation) the Fedora downstream release process in Packit.
@@ -30,7 +31,6 @@ Let's now look at how to set it up and how it works.
 of a project. The bug is automatically created by
 [Upstream Release Monitoring](https://docs.fedoraproject.org/en-US/package-maintainers/Upstream_Release_Monitoring/).
 To enable the Upstream Release Monitoring:
-{{< columns >}}
 
 1. Add the upstream project (if it is not there yet)
    to [Anitya](https://release-monitoring.org/) and configure the mapping to a Fedora package:
@@ -40,9 +40,8 @@ To enable the Upstream Release Monitoring:
 
 ![Monitoring in dist-git](img/dist-git-monitoring.png)
 
-{{< /columns >}}
+:::info
 
-{{< hint info >}}
 In Anitya, there are multiple backends you can configure the mapping for.
 Besides GitHub or GitLab, you can use e.g. PyPI, pagure, or
 [many others](https://release-monitoring.org/static/docs/user-guide.html#backends).
@@ -50,7 +49,8 @@ Also, be aware that there can be a delay in retrieving the new version,
 so the update to Fedora is usually not created instantly (e.g. for Python projects,
 it is better to configure PyPI backend rather than GitHub since the monitoring
 there is much less delayed).
-{{< /hint >}}
+
+:::
 
 ### Packit configuration
 

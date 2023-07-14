@@ -1,8 +1,10 @@
 ---
 title: Building SRPMs in Copr
 date: 2022-03-07T12:57:40+01:00
-weight: 96
 authors: lbarczio
+tags:
+  - srpm
+  - copr
 ---
 
 Let's find out how Packit builds your SRPMs in the Copr.

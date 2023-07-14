@@ -1,8 +1,9 @@
 ---
 title: "Downstream automation is here"
 date: 2022-05-06
-weight: 95
 authors: flachman
+tags:
+  - propose-downstream
 ---
 
 # Downstream automation is here
