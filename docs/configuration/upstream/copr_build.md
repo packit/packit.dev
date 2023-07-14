@@ -10,9 +10,9 @@ Create an SRPM and submit an RPM build to [Fedora Copr](https://copr.fedorainfra
 
 ## Supported triggers
 
-* **pull_request** -- check out content of the pull request
-* **commit** -- reacts to new commits to the specified branch
-* **release** -- check out content of the tag associated with the release
+* **pull_request** - check out content of the pull request
+* **commit** - reacts to new commits to the specified branch
+* **release** - check out content of the tag associated with the release
 
 
 ## Required parameters
@@ -33,23 +33,23 @@ Create an SRPM and submit an RPM build to [Fedora Copr](https://copr.fedorainfra
   Prefix with `@` in case of a group.
 * **project** - a name of the Copr project (defaults to `"{github_namespace}-{repository_name}-{pr_id}"`)
 * **additional_repos** - a list of additional buildroot repositories
-* **list_on_homepage** -- The project will be shown on Copr frontend homepage if set to `True`.
+* **list_on_homepage** - The project will be shown on Copr frontend homepage if set to `True`.
   Defaults to `False`.
   The value is represented as `unlisted_on_hp` in Copr project settings.
-* **preserve_project** -- The project will not be removed after 60 days if set to `True`.
+* **preserve_project** - The project will not be removed after 60 days if set to `True`.
   Defaults to `False`.
   The value is represented as `delete_after_days` in Copr project settings
   (`True` is `-1` and `False` is `60`).
-* **enable_net** -- Specifies whether created Copr build should have access to network during its build.
+* **enable_net** - Specifies whether created Copr build should have access to network during its build.
   Defaults to `False` (Copr default, switched to `False` in June 2022).
-* **identifier** -- Suffix added to the name of a GitHub check run. This is
+* **identifier** - Suffix added to the name of a GitHub check run. This is
   useful when you have multiple `copr_build` jobs with different configuration.
   For example if you [set this to "mock"](https://github.com/rpm-software-management/mock/pull/902/checks?check_run_id=6530714905), then a check run for Rawhide would be
   named "rpm-build:fedora-rawhide-x86\_64:mock".
-* **module_hotfixes** -- The project will have `module_hotfixes=1` in the Copr generated repo files.
+* **module_hotfixes** - The project will have `module_hotfixes=1` in the Copr generated repo files.
   This is useful when you build packages that need to be installed in a modular context.
   Defaults to `False`.
-* **follow_fedora_branching** -- The project will get branched automatically by
+* **follow_fedora_branching** - The project will get branched automatically by
   the Copr. This setting is useful if you're releasing to the Copr.
   Defaults to `False`.
 

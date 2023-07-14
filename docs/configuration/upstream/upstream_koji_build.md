@@ -19,16 +19,16 @@ the more explicit `upstream_koji_build`.)
 
 ## Supported triggers
 
-* **pull_request** -- check out content of the pull request
-* **commit** -- reacts to new commits to the specified branch
-* **release** -- check out content of the tag associated with the release
+* **pull_request** - check out content of the pull request
+* **commit** - reacts to new commits to the specified branch
+* **release** - check out content of the tag associated with the release
 
 ## Optional parameters
 
-* **targets** -- (a list of) targets we want to build for,
+* **targets** - (a list of) targets we want to build for,
   list of supported targets can be listed using with `koji list-targets`.
   You can also use the [aliases provided by Packit](/docs/configuration#aliases)
   to not need to change the config file when the new system version is released.
-* **branch** -- the name of the branch we want to build for when using **commit** trigger
+* **branch** - the name of the branch we want to build for when using **commit** trigger
 (defaults to the repository's default branch) or target branch when using **pull_request** trigger
 (default behaviour is reacting to all pull requests in the repository).

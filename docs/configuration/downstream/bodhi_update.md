@@ -26,17 +26,17 @@ to tweak the notifications settings.
 
 For retriggering the job, see [our release guide](/docs/fedora-releases-guide).
 
-Note that this job is really new and not mature yet -- let us know if you find anything problematic
+Note that this job is really new and not mature yet — let us know if you find anything problematic
 or any improvement we can implement.
 
 ## Supported triggers
 
-* **commit** -- Packit uses the original action as a config trigger, so you need to use `commit` as a trigger.
+* **commit** - Packit uses the original action as a config trigger, so you need to use `commit` as a trigger.
   The real trigger is a successful Koji build (that was triggered from a commit).
 
 ## Required parameters
 
-* **dist_git_branches** -- the name of the dist-git branch(es) the build we want to use is coming from.
+* **dist_git_branches** - the name of the dist-git branch(es) the build we want to use is coming from.
   You can also use the [aliases provided by Packit](/docs/configuration#aliases)
   to not need to change the config file when the new system version is released.
 
