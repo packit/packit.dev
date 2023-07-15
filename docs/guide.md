@@ -1,7 +1,6 @@
 ---
 title: Packit Onboarding Guide
 sidebar_position: 2
-aliases: [/packit-service, /packit-as-a-service, /docs/packit-service, /docs/packit-as-a-service]
 ---
 
 # Packit Onboarding Guide

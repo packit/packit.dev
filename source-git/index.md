@@ -1,8 +1,6 @@
 ---
 title: Source-git
 sidebar_position: 0
-# aliases: [/source-git]
-
 id: index
 ---
 

@@ -2,7 +2,6 @@
 title: FAQ
 date: 2019-07-24
 sidebar_position: 100
-aliases: [/faq]
 ---
 
 # FAQ

@@ -1,7 +1,6 @@
 ---
 title: Testing Farm
 sidebar_position: 2
-aliases: [/testing-farm, /docs/testing-farm]
 ---
 
 # Testing Farm

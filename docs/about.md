@@ -2,7 +2,6 @@
 title: About Packit
 date: 2021-01-11
 sidebar_position: 1
-aliases: [/about]
 ---
 
 # About Packit

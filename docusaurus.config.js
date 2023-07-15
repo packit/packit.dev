@@ -129,6 +129,45 @@ const config = {
         editUrl: EDIT_URL,
       },
     ],
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          { from: ["/about"], to: "/docs/about" },
+          { from: ["/faq"], to: "/docs/faq" },
+          {
+            from: ["/testing-farm", "/docs/testing-farm"],
+            to: "/docs/configuration/upstream/tests",
+          },
+          {
+            from: [
+              "/packit-service",
+              "/packit-as-a-service",
+              "/docs/packit-service",
+              "/docs/packit-as-a-service",
+            ],
+            to: "/docs/guide",
+          },
+          {
+            from: [
+              "/posts/weekly/january-2022",
+              "/posts/weekly/february-2022",
+              "/posts/weekly/march-2022",
+              "/posts/weekly/april-2022",
+              "/posts/weekly/may-2022",
+              "/posts/weekly/june-2022",
+              "/posts/weekly/july-2022",
+              "/posts/weekly/august-2022",
+              "/posts/weekly/september-2022",
+              "/posts/weekly/october-2022",
+              "/posts/weekly/november-2022",
+              "/posts/weekly/december-2022",
+            ],
+            to: "/posts/weekly/2022",
+          },
+        ],
+      },
+    ],
   ],
 
   themeConfig:
