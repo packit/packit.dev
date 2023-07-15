@@ -10,5 +10,9 @@ import:
 
 	# Research
 	([[ -d .research-docs ]] && rm -rf .research-docs research) || true
-	git clone https://github.com/packit/research.git .research-docs
+
+	# temporary workaround to fix the build
+	git clone https://github.com/mfocko/research.git .research-docs
+	(cd .research-docs && git checkout docusaurus)
+
 	mv .research-docs/research research
