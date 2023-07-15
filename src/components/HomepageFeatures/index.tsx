@@ -1,52 +1,59 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
+import Link from "@docusaurus/Link";
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<"svg">>;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Easy to Use",
-    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
+    title: "Building RPMs",
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Packit uses{" "}
+        <Link to="https://copr.fedorainfracloud.org">Copr build system</Link> to
+        build RPMs from your code changes. This way, you can validate your
+        package will be correctly built from each pull request and also have
+        your changes installable by anyone via YUM repository created in Copr.{" "}
+        <Link to="/docs/configuration/upstream/copr_build">Learn more.</Link>
       </>
     ),
   },
   {
-    title: "Focus on What Matters",
-    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+    title: "Testing",
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Packit runs your tests in{" "}
+        <Link to="https://docs.testing-farm.io/general/0.1/index.html">
+          Testing Farm
+        </Link>{" "}
+        and can test either the RPM package built in Copr or trigger tests
+        directly on different platforms.{" "}
+        <Link to="/docs/configuration/upstream/tests">Learn more.</Link>
       </>
     ),
   },
   {
-    title: "Powered by React",
-    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    title: "Automating Fedora Releases",
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        With Packit, you can easily get your upstream releases to the{" "}
+        <Link to="https://src.fedoraproject.org/">Fedora dist-git</Link>,
+        automatically submit builds in{" "}
+        <Link to="https://koji.fedoraproject.org/koji/">Koji</Link> and create{" "}
+        <Link to="https://bodhi.fedoraproject.org/">Bodhi</Link> updates!{" "}
+        <Link to="/docs/fedora-releases-guide">Learn more.</Link>
       </>
     ),
   },
 ];
 
-function Feature({ title, Svg, description }: FeatureItem) {
+function Feature({ title, description }: FeatureItem) {
   return (
     <div className={clsx("col col--4")}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
         <p>{description}</p>
@@ -59,6 +66,7 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
+        <h1>What key features does Packit offer?</h1>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
@@ -68,3 +76,5 @@ export default function HomepageFeatures(): JSX.Element {
     </section>
   );
 }
+
+export { FeatureItem, Feature, HomepageFeatures };

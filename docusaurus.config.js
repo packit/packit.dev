@@ -61,7 +61,7 @@ const sections = [
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Packit",
-  tagline: "»TODO«",
+  tagline: "Automate and ease the work of maintainers and developers",
   favicon: "img/favicon.png",
 
   url: "https://packit.dev",
