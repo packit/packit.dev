@@ -1,7 +1,11 @@
 import:
 	# Deployment
 	([[ -d .deployment-docs ]] && rm -rf .deployment-docs deployment) || true
-	git clone https://github.com/packit/deployment.git .deployment-docs
+
+	# temporary workaround to fix the build
+	git clone https://github.com/mfocko/deployment.git .deployment-docs
+	(cd .deployment-docs && git checkout docusaurus)
+
 	mv .deployment-docs/docs/deployment deployment
 
 	# Research
