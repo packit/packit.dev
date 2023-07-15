@@ -126,6 +126,7 @@ const config = {
           title: "Packit Weekly",
           description: "Weekly updates by Packit",
         },
+        blogSidebarCount: 12,
         editUrl: EDIT_URL,
       },
     ],
