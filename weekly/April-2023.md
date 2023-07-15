@@ -1,5 +1,5 @@
 ---
-title: "Packit April 2023"
+title: "April 2023"
 date: 2023-04-17T15:00:00+01:00
 tags:
   - 2023
