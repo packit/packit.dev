@@ -1,10 +1,8 @@
 ---
-title: Source-git
+title: Source-git documentation
 sidebar_position: 0
 id: index
 ---
-
-# Source-git documentation
 
 Source-git is an addon on top of
 [dist-git](https://github.com/release-engineering/dist-git), and aims to provide

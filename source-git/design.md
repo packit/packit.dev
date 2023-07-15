@@ -1,5 +1,5 @@
 ---
-title: Source-git design
+title: Design
 date: 2018-12-31T23:59:59+01:00
 sidebar_position: 1
 ---

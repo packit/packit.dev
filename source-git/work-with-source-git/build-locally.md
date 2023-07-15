@@ -11,7 +11,7 @@ pushing them out. Just make sure that all code changes are committed, otherwise
 Packit won't be able to create patch files out of them.
 
 We are going to use Packit to achieve such a thing, so please make sure you have it
-[installed locally](/docs/guide/#have-packit-tooling-installed-locally).
+[installed locally](/docs/guide#have-packit-tooling-installed-locally).
 
 The command to create source RPMs is called `srpm` and that's how you can create one:
 
@@ -27,12 +27,12 @@ using Packit - this implies that all build dependencies are installed:
 
     mock --rebuild -r fedora-rawhide-x86_64 ./systemd-247.1-2.g68d22b32.fc33.src.rpm
 
-`-r` allows you [to pick a chroot](configuration/#available-copr-build-targets)
+`-r` allows you [to pick a chroot](/docs/configuration/upstream/copr_build#available-copr-build-targets)
 of your choice and these are exactly the same which you can specify for builds
 in your `packit.yaml`.
 
 If the build is passing locally, it may be time to [propose your changes to
-dist-git]({{< ref "propose-to-dist-git.md" >}}).
+dist-git](propose-to-dist-git).
 
 
 ## How Packit generates an SRPM from a source-git repo?

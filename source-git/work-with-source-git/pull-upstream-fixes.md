@@ -96,4 +96,4 @@ And this is how a corresponding spec file looks (shortened for brevity)
     %autosetup -p1
 
 [Git-trailers]: https://git-scm.com/docs/git-interpret-trailers
-[Controlling patch generation]: {{<ref "control-patch-generation">}}
+[Controlling patch generation]: control-patch-generation

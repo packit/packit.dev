@@ -6,15 +6,14 @@ sidebar_position: 10
 
 # Working with source-git
 
-For the design concept of source-git, please [read here]({{< ref
-"/source-git/design.md" >}}). These pages are focused on how to work
+For the design concept of source-git, please [read here](/source-git/design). These pages are focused on how to work
 source-git repositories using the `packit` CLI.
 
-* [Create a source-git repo]({{< ref "create-source-git.md" >}})
-* [Updating a spec file]({{< ref "update-spec.md" >}})
-* [Pulling fixes from upstream]({{< ref "pull-upstream-fixes.md" >}})
-* [Controlling patch generation]({{< ref "control-patch-generation.md " >}})
-* [Building current source-git checkout locally]({{< ref "build-locally.md" >}})
-* [Proposing your source-git content to dist-git]({{< ref "propose-to-dist-git.md" >}})
-* [Sync back changes made in dist-git]({{< ref "sync-from-dist-git.md" >}})
-* [Fix diverged history]({{< ref "fix-diverged-history.md" >}})
+* [Create a source-git repo](create-source-git)
+* [Updating a spec file](update-spec)
+* [Pulling fixes from upstream](pull-upstream-fixes)
+* [Controlling patch generation](control-patch-generation)
+* [Building current source-git checkout locally](build-locally)
+* [Proposing your source-git content to dist-git](propose-to-dist-git)
+* [Sync back changes made in dist-git](sync-from-dist-git)
+* [Fix diverged history](fix-diverged-history)
