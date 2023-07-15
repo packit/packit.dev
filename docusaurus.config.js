@@ -50,12 +50,17 @@ class Section {
 const sections = [
   new Section("docs", "Documentation"),
   new Section("source-git", "Source-git"),
+  new Section("development", "Development"),
   new Section(
     "deployment",
     "Deployment",
     "https://github.com/packit/deployment/tree/main/docs",
   ),
-  new Section("development", "Development"),
+  new Section(
+    "research",
+    "Research",
+    "https://github.com/packit/research/tree/main",
+  ),
 ];
 
 /** @type {import('@docusaurus/types').Config} */

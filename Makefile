@@ -9,6 +9,6 @@ import:
 	mv .deployment-docs/docs/deployment deployment
 
 	# Research
-	# ([[ -d .research-docs ]] && rm -rf .research-docs research) || true
-	# git clone https://github.com/packit/research.git .research-docs
-	# mv .research-docs/research research
+	([[ -d .research-docs ]] && rm -rf .research-docs research) || true
+	git clone https://github.com/packit/research.git .research-docs
+	mv .research-docs/research research
