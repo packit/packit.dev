@@ -232,15 +232,33 @@ const config = {
             ],
           },
           {
-            title: "Community",
+            title: "Contact",
             items: [
               {
-                label: "Matrix",
-                href: "https://chat.fedoraproject.org/#/room/#packit:fedora.im",
+                html: `
+                  <a href="https://chat.fedoraproject.org/#/room/#packit:fedora.im">
+                    #packit:fedora.im
+                  </a> (Element / Matrix)
+                `,
               },
               {
-                label: "@packit@fosstodon.org",
-                href: "https://fosstodon.org/@packit",
+                html: `
+                  <a href="https://libera.chat/">
+                    #packit:libera.chat
+                  </a> (IRC)
+                `,
+              },
+              {
+                html: `
+                  <a href="mailto:hello@packit.dev">hello@packit.dev</a>
+                `,
+              },
+              {
+                html: `
+                  <a href="https://fosstodon.org/@packit" rel="me">
+                    @packit@fosstodon.org
+                  </a> (Mastodon)
+                `,
               },
             ],
           },
