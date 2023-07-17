@@ -8,20 +8,12 @@ install-dependencies: import
 import:
 	# Deployment
 	([[ -d .deployment-docs ]] && rm -rf .deployment-docs deployment) || true
-
-	# temporary workaround to fix the build
-	git clone https://github.com/mfocko/deployment.git .deployment-docs
-	(cd .deployment-docs && git checkout docusaurus)
-
+	git clone https://github.com/packit/deployment.git .deployment-docs
 	mv .deployment-docs/docs/deployment deployment
 
 	# Research
 	([[ -d .research-docs ]] && rm -rf .research-docs research) || true
-
-	# temporary workaround to fix the build
-	git clone https://github.com/mfocko/research.git .research-docs
-	(cd .research-docs && git checkout docusaurus)
-
+	git clone https://github.com/packit/research.git .research-docs
 	mv .research-docs/research research
 
 .PHONY: run-dev import
