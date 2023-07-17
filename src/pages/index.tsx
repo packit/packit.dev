@@ -67,7 +67,7 @@ function PackitDescription() {
   }
 
   return (
-    <section className={styles.features}>
+    <section className="padding-top--lg">
       <div className="container">
         <div className="row">
           {about.map((props, idx) => (
@@ -141,24 +141,28 @@ function Why() {
 
 function Parts() {
   return (
-    <section>
+    <section className={styles.features}>
       <div className="container">
-        <h3>What does Packit consist of?</h3>
-        <ul>
-          <li>
-            A <Link to="/docs/cli">CLI tool</Link> which you can install locally
-            and start using right away.
-          </li>
-          <li>
-            A <Link to="/docs/guide">service</Link> whcih provides you feedback
-            on how is your project integrated with{" "}
-            <Link to="https://getfedora.org/">Fedora Linux</Link>,{" "}
-            <Link to="https://www.centos.org/centos-stream/">
-              CentOS Stream
-            </Link>{" "}
-            and other distributions.
-          </li>
-        </ul>
+        <div className="row">
+          <h3>What does Packit consist of?</h3>
+        </div>
+        <div className="row">
+          <ul>
+            <li>
+              A <Link to="/docs/cli">CLI tool</Link> which you can install
+              locally and start using right away.
+            </li>
+            <li>
+              A <Link to="/docs/guide">service</Link> whcih provides you
+              feedback on how is your project integrated with{" "}
+              <Link to="https://getfedora.org/">Fedora Linux</Link>,{" "}
+              <Link to="https://www.centos.org/centos-stream/">
+                CentOS Stream
+              </Link>{" "}
+              and other distributions.
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   );

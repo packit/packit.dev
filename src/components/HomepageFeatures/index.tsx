@@ -66,7 +66,9 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
-        <h1>What key features does Packit offer?</h1>
+        <div className="row">
+          <h1>What key features does Packit offer?</h1>
+        </div>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
