@@ -1,7 +1,7 @@
 ---
 title: Packit Service jobs configuration 
 date: 2023-07-03
-weight: 1
+sidebar_position: 1
 ---
 
 # Packit Service jobs configuration
