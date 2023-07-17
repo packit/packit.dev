@@ -5,14 +5,36 @@ Repository containing documentation and GH Actions used for deployment of the
 
 ### Installation
 
+For the initial installation you can use
+
+```
+$ make install-dependencies
+```
+
+This makefile target imports `deployment` and `research` docs and also installs
+`yarn` and the JS dependencies for the webpage.
+
+> **Note**
+> This needs to be done only once. Importing of the “nested” docs is done on
+> each run of the makefile target
+
+### Installation
+
 ```
 $ yarn
 ```
 
 ### Local Development
 
+> **Note**
+> It's faster to use `yarn start` or `make run-dev` that are described here than
+> rebuilding the site over and over.
+
 ```
 $ yarn start
+# or use the makefile target that also downloads the latest versions of
+# deployment and research docs
+$ make run-dev
 ```
 
 This command starts a local development server and opens up a browser window.
@@ -21,6 +43,27 @@ Most changes are reflected live without having to restart the server.
 > **Note**
 > If you do not wish to automatically open the browser, since it's annoying. You
 > can pass `--no-open` switch.
+
+#### Containerization
+
+It is more complicated to be run from container, since apart from docs there are
+also JS dependencies stored in the `node_modules`.
+
+> **mf's setup**
+>
+> I have a distrobox container based on `alpine:latest` with just:
+>
+> - make
+> - git
+> - yarnpkg
+>
+> And then I run it via:
+>
+>     distrobox-enter js -- make run-dev
+
+> **Note** > _Full_ containerization of this setup would require similar approach as with
+> dashboard (installing JS dependencies and **building** whole webpage), which
+> would take more time here.
 
 ### Content
 
@@ -35,6 +78,7 @@ Majority of content is in the directories in this repository, namely:
 There's also “imported” documentation:
 
 - [deployment](https://github.com/packit/deployment/tree/main/docs/deployment)
+- [research](https://github.com/packit/research/tree/main/research)
 
 > **Warning**
 > For the imported documentation, update the documentation in the linked

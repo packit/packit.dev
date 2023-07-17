@@ -1,3 +1,10 @@
+run-dev: import
+	yarn start
+
+install-dependencies: import
+	sudo dnf -y install yarnpkg
+	yarn install
+
 import:
 	# Deployment
 	([[ -d .deployment-docs ]] && rm -rf .deployment-docs deployment) || true
@@ -16,3 +23,5 @@ import:
 	(cd .research-docs && git checkout docusaurus)
 
 	mv .research-docs/research research
+
+.PHONY: run-dev import
