@@ -67,7 +67,7 @@ files_to_sync:
 #### jobs
 
 (*list of dicts*) A list of job definitions for Packit Service: see
-[Packit Service jobs configuration](jobs) for details.
+[Packit Service jobs configuration](configuration/jobs) for details.
 
 ### Package-specific keys
 #### paths
@@ -86,7 +86,7 @@ is set (`<downstream_package_name>.spec` in all the `paths` when using `paths`).
 
 Both in 1. and 2., when `paths` are defined, they are searched in the order in which they are defined in the configuration.
 
-If there are only test jobs with `skip_build` option defined (more about it [here](http://packit.dev/testing-farm/)), 
+If there are only test jobs with `skip_build` option defined (more about it [here](configuration/upstream/tests)), 
 spec file doesn't need to be present and its path doesn't need to be defined in the config.
 
 :::caution
@@ -311,16 +311,16 @@ GitHub repository. In case of using the `packages` key, the defaults are the key
 
 #### ~~create_tarball_command~~ (deprecated)
 
-Please use [`create-archive` action](actions/)
+Please use [`create-archive` action](configuration/actions/)
 
 #### ~~current_version_command~~ (deprecated)
 
-Please use [`get-current-version` action](actions/)
+Please use [`get-current-version` action](configuration/actions/)
 
 #### actions
 
 (*string*) Custom actions/hooks overwriting the default behavior of packit
-(more in [Actions](actions/)).
+(more in [Actions](configuration/actions/)).
 
 #### allowed_gpg_keys
 
@@ -346,7 +346,7 @@ packit will fill in the version argument.
 
 #### archive_root_dir_template
 
-(string) In the [`fix-spec-file` action](/docs/configuration/actions/) Packit changes first `%setup` (or `%autosetup`) macro
+(string) In the [`fix-spec-file` action](configuration/actions/) Packit changes first `%setup` (or `%autosetup`) macro
 in `%prep` and adds `-n` so the generated tarball can be unpacked. For this
 purpose, it requires the name of the directory in the source archive. For tar archives
 with one directory, Packit gets it automatically. If Packit is not able to extract it
@@ -497,10 +497,11 @@ Rawhide (e.g. `fedora-34`, `fedora-35`, `fedora-36`).
 versions (e.g. `epel-7`, `epel-8`, `epel-9`)
 
 The aliases above can be used both to specify targets when [building in
-Copr](upstream/copr_build) or [running tests](/testing-farm/), and to reference
-dist-git branches of different system versions
-(e.g. for [`propose_downstream` job](upstream/propose_downstream)
-or downstream jobs like [`koji_build`](downstream/koji_build) or [`bodhi_update`](downstream/bodhi_update)).
+Copr](configuration/upstream/copr_build) or [running tests](configuration/upstream/tests),
+and to reference dist-git branches of different system versions
+(e.g. for [`propose_downstream` job](configuration/upstream/propose_downstream)
+or downstream jobs like [`koji_build`](configuration/downstream/koji_build)
+or [`bodhi_update`](configuration/downstream/bodhi_update)).
 
 The information about releases is retrieved from Bodhi and because of the
 cache and required availability on Copr, it might take a while to get the

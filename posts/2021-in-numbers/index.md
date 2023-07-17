@@ -14,7 +14,7 @@ Let's take a look on the year 2021 through some numbers.
 We would like to show you some interesting statistics and charts
 that can describe the work of Packit during the year 2021.
 If you are more interested in new features,
-let's take a look on our [second post](../2021-features).
+let's take a look on our [second post](/posts/2021-features).
 
 <!--truncate-->
 

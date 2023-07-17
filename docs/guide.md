@@ -277,7 +277,7 @@ hardcoded values that changes when there is a new distribution release.
   (Can be used to verify that package is buildable,
   to easily install package including the proposed change
   or to provide long-term Copr repositories.)
-* [`tests`](/docs/configuration/upstream/tests): Test suit using TMT/FMF definition run in the [Testing Farm](TBD)
+* [`tests`](/docs/configuration/upstream/tests): Test suit using TMT/FMF definition run in the [Testing Farm](https://docs.testing-farm.io/general/0.1/index.html)
   (Can be used as a next step to Copr build or without build at all.)
 * [`upstream_koji_build`](/docs/configuration/upstream/upstream_koji_build): A scratch Koji build triggered for the upstream state of project.
 * [`propose_downstream`](/docs/configuration/upstream/propose_downstream): For upstream release, Packit prepares a Fedora release.

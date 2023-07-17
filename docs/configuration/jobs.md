@@ -135,12 +135,12 @@ In this example, the job `some-job` would override [`specfile_path`](/docs/confi
 ## Supported jobs
 
 * Upstream jobs
-  1. [`copr_build`](../upstream/copr_build)
-  2. [`tests`](../upstream/tests)
-  3. [`upstream_koji_build`](../upstream/upstream_koji_build)
-  4. [`vm_image_build`](../upstream/vm_image_build)
-  5. [`propose_downstream`](../upstream/propose_downstream)
+  1. [`copr_build`](upstream/copr_build)
+  2. [`tests`](upstream/tests)
+  3. [`upstream_koji_build`](upstream/upstream_koji_build)
+  4. [`vm_image_build`](upstream/vm_image_build)
+  5. [`propose_downstream`](upstream/propose_downstream)
 * Downstream jobs
-  1. [`pull_from_upstream`](../downstream/pull_from_upstream)
-  2. [`koji_build`](../downstream/koji_build)
-  3. [`bodhi_update`](../downstream/bodhi_update)
+  1. [`pull_from_upstream`](downstream/pull_from_upstream)
+  2. [`koji_build`](downstream/koji_build)
+  3. [`bodhi_update`](downstream/bodhi_update)

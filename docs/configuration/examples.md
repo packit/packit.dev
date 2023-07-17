@@ -7,7 +7,7 @@ sidebar_position: 4
 # Configuration examples 
 
 ## Examples for actions
-You can find detailed documentation for actions [here](/docs/actions).
+You can find detailed documentation for actions [here](/docs/configuration/actions).
 
 ### Getting version
 <details>

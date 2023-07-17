@@ -30,5 +30,5 @@ Linux.
 
 For more info continue with:
 
-* [Source-git design](design)
-* [Working with source-git](work-with-source-git)
+* [Source-git design](source-git/design)
+* [Working with source-git](source-git/work-with-source-git)

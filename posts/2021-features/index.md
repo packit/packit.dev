@@ -11,7 +11,7 @@ tags:
 # Packit project in 2021
 
 The previous year 2021 wasn't interesting only because of the increased usage of Packit
-(you can see more in [the previous post](../2021-in-numbers)).
+(you can see more in [the previous post](/posts/2021-in-numbers)).
 The whole Packit team made a lot of improvements during the year.
 Some small, some really big. So, let's take a look at the most important ones!
 
