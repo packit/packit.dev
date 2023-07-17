@@ -77,9 +77,8 @@ const config = {
   projectName: "packit.dev", // Usually your repo name.
   trailingSlash: false,
 
-  // TODO: Switch back to throw
-  onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "throw",
 
   i18n: {
     defaultLocale: "en",
