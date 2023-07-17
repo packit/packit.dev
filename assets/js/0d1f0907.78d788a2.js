@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpackit_dev=self.webpackChunkpackit_dev||[]).push([[3056],{9054:s=>{s.exports=JSON.parse('{"label":"copr","permalink":"/posts/tags/copr","allTagsPath":"/posts/tags","count":1}')}}]);

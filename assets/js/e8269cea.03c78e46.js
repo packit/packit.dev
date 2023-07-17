@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpackit_dev=self.webpackChunkpackit_dev||[]).push([[8208],{88735:e=>{e.exports=JSON.parse('{"label":"2021","permalink":"/posts/weekly/tags/2021","allTagsPath":"/posts/weekly/tags","count":1}')}}]);
