@@ -15,10 +15,11 @@ class Section {
   //   editUrl: Base of the URL that is generated at the end of any page of the
   //     given documentation. This URL is different for the deployment or
   //     research docs.
-  constructor(path, label, editUrl) {
+  constructor(path, label, editUrl, nested) {
     this.path = path;
     this.label = label;
     this.editUrl = editUrl || EDIT_URL;
+    this.nested = nested;
   }
 
   // Generates a Docusaurus plugin entry.
@@ -37,20 +38,25 @@ class Section {
 
   // Generates an item for the navigation bar.
   navbar() {
+    if (this.nested) {
+      return {
+        type: "dropdown",
+        label: this.label,
+        to: this.path,
+        items: this.nested.map((section) => section.navbar()),
+      };
+    }
+
     return {
       type: "doc",
       docId: "index",
       docsPluginId: this.path,
-      position: "left",
       label: this.label,
     };
   }
 }
 
-const sections = [
-  new Section("docs", "Documentation"),
-  new Section("source-git", "Source-git"),
-  new Section("development", "Development"),
+const developmentSections = [
   new Section(
     "deployment",
     "Deployment",
@@ -61,6 +67,12 @@ const sections = [
     "Research",
     "https://github.com/packit/research/tree/main",
   ),
+];
+
+const sections = [
+  new Section("docs", "Documentation"),
+  new Section("source-git", "Source-git"),
+  new Section("development", "Development", undefined, developmentSections),
 ];
 
 /** @type {import('@docusaurus/types').Config} */
@@ -103,6 +115,7 @@ const config = {
 
   plugins: [
     ...sections.map((section) => section.docs()),
+    ...developmentSections.map((section) => section.docs()),
     [
       "@docusaurus/plugin-content-blog",
       {
@@ -199,8 +212,12 @@ const config = {
         },
         items: [
           ...sections.map((section) => section.navbar()),
-          { to: "/posts", label: "Blog Posts", position: "left" },
-          { to: "/posts/weekly", label: "Weekly Updates", position: "left" },
+          {
+            type: "dropdown",
+            label: "Blog Posts",
+            to: "/posts",
+            items: [{ to: "/posts/weekly", label: "Weekly Updates" }],
+          },
           {
             href: "https://dashboard.packit.dev",
             label: "Dashboard",
