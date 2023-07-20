@@ -1,9 +1,12 @@
-run-dev: import
+run-dev: import generate-usage
 	yarn start
 
 install-dependencies: import
 	sudo dnf -y install yarnpkg
 	yarn install
+
+generate-usage:
+	python3 files/generate_usage.py
 
 import:
 	# Deployment
