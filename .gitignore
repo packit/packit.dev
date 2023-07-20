@@ -29,3 +29,6 @@ yarn-error.log*
 
 deployment
 research
+
+# Generated usage graphs
+static/img/usage/*.svg
