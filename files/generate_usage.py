@@ -7,11 +7,12 @@ import click
 import requests
 import json
 import pygal
+from pygal.style import DefaultStyle, DarkStyle
 
 from collections import defaultdict
 
 
-def generate_graph(title, data, path, value_text="builds"):
+def generate_graph(title, data, path, value_text="builds", style=DefaultStyle):
     """
     Generate a treemap from our data
     """
@@ -19,6 +20,7 @@ def generate_graph(title, data, path, value_text="builds"):
         title=title,
         value_formatter=("{} " + value_text).format,
         truncate_legend=32,
+        style=style,
     )
 
     for name, value in data:
@@ -41,37 +43,32 @@ def generate_usage_treemap():
     )
     result = json.loads(response.content)
 
-    with open("./layouts/shortcodes/usagecharts.html", "w") as short_code_file:
+    for job_name, job_data in result["jobs"].items():
+        job_name_human_readable = (
+            job_name.replace("_", " ")
+            .capitalize()
+            .replace(" Groups", "s")
+            .replace(" Targets", "s")
+            .replace("Vm", "VM")
+            .replace("Tft", "TFT")
+            .replace("Srpm", "SRPM")
+        )
 
-        for job_name, job_data in result["jobs"].items():
-            job_name_human_readable = (
-                job_name.replace("_", " ")
-                .capitalize()
-                .replace(" Groups", "s")
-                .replace(" Targets", "s")
-                .replace("Vm", "VM")
-                .replace("Tft", "TFT")
-                .replace("Srpm", "SRPM")
-            )
-            short_code_file.write(
-                f"""<figure>
-    <embed type="image/svg+xml" src="/images/usage/{job_name}.svg" />
-</figure>\n"""
-            )
+        data_namespaces = defaultdict(int)
+        for p, c in job_data["top_projects_by_job_runs"].items():
+            data_namespaces[
+                p.removeprefix("https://github.com/").rsplit("/", maxsplit=1)[0]
+            ] += c
 
-            data_namespaces = defaultdict(int)
-            for p, c in job_data["top_projects_by_job_runs"].items():
-                data_namespaces[
-                    p.removeprefix("https://github.com/").rsplit("/", maxsplit=1)[0]
-                ] += c
+        sorted_data = sorted(data_namespaces.items(), key=lambda x: -x[1])  # [:3]
 
-            sorted_data = sorted(data_namespaces.items(), key=lambda x: -x[1])  # [:3]
-
+        for style, style_class in (("light", DefaultStyle), ("dark", DarkStyle)):
             generate_graph(
                 f"Packit: {job_name_human_readable}",
                 data=sorted_data,
-                path=f"./static/images/usage/{job_name}.svg",
+                path=f"./static/img/usage/{job_name}_{style}.svg",
                 value_text=("builds" if "build" in job_name else "runs"),
+                style=style_class,
             )
 
 
