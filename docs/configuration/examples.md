@@ -437,7 +437,7 @@ do not change it.
     environments:
       - artifacts:
           - type: repository
-            id: 123:fedora-38
+            id: https://my.repo/repository
   ```
 
 </details>
