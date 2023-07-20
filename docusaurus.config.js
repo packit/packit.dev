@@ -287,6 +287,10 @@ const config = {
             title: "More",
             items: [
               {
+                label: "Usage Charts",
+                to: "/usage",
+              },
+              {
                 label: "Blog Posts",
                 to: "/posts",
               },
