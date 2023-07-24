@@ -48,6 +48,12 @@ worked on shortly ([see](https://github.com/packit/packit-service/issues/1907)).
   You can also use the [aliases provided by Packit](/docs/configuration#aliases)
   to not need to change the config file when the new system version is released.
 
+## Retriggering
+Packagers with write access to the dist-git repository can retrigger the job
+via a comment in any dist-git pull request:
+
+    /packit pull-from-upstream
+
 ## Example
 
 ```yaml
