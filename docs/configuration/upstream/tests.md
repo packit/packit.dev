@@ -70,7 +70,7 @@ If you want to trigger tests via pull request comment and not by every new commi
     manual_trigger: true
 ```
 
-Another usefull config is `labels` option:
+Another useful config is `labels` option:
 ```yaml
   jobs:
   - job: tests
@@ -94,7 +94,7 @@ Another usefull config is `labels` option:
     labels:
       - regression
 ```
-For more info see [Running group of tests with same label](/docs/configuration#running-group-of-tests-with-same-label)
+For more info see [Running group of tests with same label](/docs/configuration/upstream/tests#running-group-of-tests-with-same-label)
 
 ## Required parameters
 * **targets** - Specify which "builds" you want to test.
@@ -202,7 +202,7 @@ The whole command should look like this: `/packit test --identifier my-job-id`
 
 ## Running a group of tests with the same label
 Users can trigger a specific group of jobs that has a specific value in the list of `labels` option.
-The command to pickup these jobs is `/packit test --labels regression,upgrade` where either `regression` or `upgrade` must be present in `labels` option for the job.
+The command to pick up these jobs is `/packit test --labels regression,upgrade` where either `regression` or `upgrade` must be present in `labels` option for the job.
 The labels should be in the format of comma-separated string.
 
 ## Creating Tests
