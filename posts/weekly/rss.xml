@@ -20,7 +20,7 @@ string appeared inside an expression expansion, it could lead to improper parsin
 after accessing the options. (<a href="https://github.com/packit/specfile/pull/253" target="_blank" rel="noopener noreferrer">specfile#253</a>)</li><li>packit.dev has a new format! As the content has expanded a lot in the recent year, we decided to switch to using
 <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer">Docosaurus</a>:
 now all the documentation is in one place and this format also enables additional features for our blog posts.
-(<a href="https://github.com/packit/packit.dev/pull/694" target="_blank" rel="noopener noreferrer">packit.dev#694</a>)</li></ul>]]></content:encoded>
+(<a href="https://github.com/packit/packit.dev/pull/694" target="_blank" rel="noopener noreferrer">packit.dev#694</a>)</li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="weeks-2930-july-18th--july-31st">Weeks 29–30 (July 18th – July 31st)<a href="#weeks-2930-july-18th--july-31st" class="hash-link" aria-label="Direct link to Weeks 29–30 (July 18th – July 31st)" title="Direct link to Weeks 29–30 (July 18th – July 31st)">​</a></h2><ul><li>With plenty of team members on vacation, we didn't manage to implement any significant new features during these two weeks.</li></ul>]]></content:encoded>
             <category>2023</category>
         </item>
         <item>
