@@ -1,6 +1,6 @@
 ---
 title: How to do Fedora releases with Packit
-sidebar_position: 9
+sidebar_position: 8
 ---
 # How to do Fedora releases with Packit
 
