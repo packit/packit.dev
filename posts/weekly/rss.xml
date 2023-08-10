@@ -4,10 +4,23 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 10 Jul 2023 13:49:53 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 07 Aug 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 31 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2023/08/07/</link>
+            <guid>https://packit.dev/posts/weekly/2023/08/07/</guid>
+            <pubDate>Mon, 07 Aug 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[- Licenses in Packit specfiles are now confirmed to be SPDX-compatible. (example PR: packit#2026)]]></description>
+            <content:encoded><![CDATA[<ul><li>Licenses in Packit specfiles are now confirmed to be SPDX-compatible. (example PR: <a href="https://github.com/packit/packit/pull/2026" target="_blank" rel="noopener noreferrer">packit#2026</a>)
+If you are interested in more details, see a <a href="https://www.youtube.com/watch?v=Hjhe6jtx3Zw&amp;t=8651s" target="_blank" rel="noopener noreferrer">talk</a> from Flock 2023 by Mirek.</li></ul>]]></content:encoded>
+            <author>mfocko@redhat.com (Matej Focko)</author>
+            <category>2023-August</category>
+            <category>2023</category>
+            <category>August</category>
+        </item>
         <item>
             <title><![CDATA[July 2023]]></title>
             <link>https://packit.dev/posts/weekly/July-2023</link>

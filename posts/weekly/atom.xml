@@ -2,11 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2023-07-10T13:49:53.000Z</updated>
+    <updated>2023-08-07T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 31 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2023/08/07/</id>
+        <link href="https://packit.dev/posts/weekly/2023/08/07/"/>
+        <updated>2023-08-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[- Licenses in Packit specfiles are now confirmed to be SPDX-compatible. (example PR: packit#2026)]]></summary>
+        <content type="html"><![CDATA[<ul><li>Licenses in Packit specfiles are now confirmed to be SPDX-compatible. (example PR: <a href="https://github.com/packit/packit/pull/2026" target="_blank" rel="noopener noreferrer">packit#2026</a>)
+If you are interested in more details, see a <a href="https://www.youtube.com/watch?v=Hjhe6jtx3Zw&amp;t=8651s" target="_blank" rel="noopener noreferrer">talk</a> from Flock 2023 by Mirek.</li></ul>]]></content>
+        <author>
+            <name>Matej Focko</name>
+            <email>mfocko@redhat.com</email>
+            <uri>https://github.com/mfocko</uri>
+        </author>
+        <category label="2023-August" term="2023-August"/>
+        <category label="2023" term="2023"/>
+        <category label="August" term="August"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[July 2023]]></title>
         <id>https://packit.dev/posts/weekly/July-2023</id>

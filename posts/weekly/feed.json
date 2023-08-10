@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2023/08/07/",
+            "content_html": "<ul><li>Licenses in Packit specfiles are now confirmed to be SPDX-compatible. (example PR: <a href=\"https://github.com/packit/packit/pull/2026\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2026</a>)\nIf you are interested in more details, see a <a href=\"https://www.youtube.com/watch?v=Hjhe6jtx3Zw&amp;t=8651s\" target=\"_blank\" rel=\"noopener noreferrer\">talk</a> from Flock 2023 by Mirek.</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2023/08/07/",
+            "title": "Week 31 in Packit",
+            "summary": "- Licenses in Packit specfiles are now confirmed to be SPDX-compatible. (example PR: packit#2026)",
+            "date_modified": "2023-08-07T00:00:00.000Z",
+            "author": {
+                "name": "Matej Focko",
+                "url": "https://github.com/mfocko"
+            },
+            "tags": [
+                "2023-August",
+                "2023",
+                "August"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/July-2023",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-27-july-4th--july-10th\">Week 27 (July 4th – July 10th)<a href=\"#week-27-july-4th--july-10th\" class=\"hash-link\" aria-label=\"Direct link to Week 27 (July 4th – July 10th)\" title=\"Direct link to Week 27 (July 4th – July 10th)\">​</a></h2><ul><li>Packit now correctly reloads upstream specfile after running <code>pre-sync</code> action. (<a href=\"https://github.com/packit/packit/pull/2006\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2006</a>)</li></ul><h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-28-july-11th--july-17th\">Week 28 (July 11th – July 17th)<a href=\"#week-28-july-11th--july-17th\" class=\"hash-link\" aria-label=\"Direct link to Week 28 (July 11th – July 17th)\" title=\"Direct link to Week 28 (July 11th – July 17th)\">​</a></h2><ul><li>Packit now includes instructions on how to checkout the dist-git PR locally when syncing the release.\n(<a href=\"https://github.com/packit/packit-service/pull/2116\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2116</a>)</li><li>We have fixed a bug in processing options of <code>%prep</code> macros in our <code>specfile</code> library. For instance, when a quoted\nstring appeared inside an expression expansion, it could lead to improper parsing, rendering the spec file invalid\nafter accessing the options. (<a href=\"https://github.com/packit/specfile/pull/253\" target=\"_blank\" rel=\"noopener noreferrer\">specfile#253</a>)</li><li>packit.dev has a new format! As the content has expanded a lot in the recent year, we decided to switch to using\n<a href=\"https://docusaurus.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Docosaurus</a>:\nnow all the documentation is in one place and this format also enables additional features for our blog posts.\n(<a href=\"https://github.com/packit/packit.dev/pull/694\" target=\"_blank\" rel=\"noopener noreferrer\">packit.dev#694</a>)</li></ul><h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"weeks-2930-july-18th--july-31st\">Weeks 29–30 (July 18th – July 31st)<a href=\"#weeks-2930-july-18th--july-31st\" class=\"hash-link\" aria-label=\"Direct link to Weeks 29–30 (July 18th – July 31st)\" title=\"Direct link to Weeks 29–30 (July 18th – July 31st)\">​</a></h2><ul><li>With plenty of team members on vacation, we didn't manage to implement any significant new features during these two weeks.</li></ul>",
             "url": "https://packit.dev/posts/weekly/July-2023",
