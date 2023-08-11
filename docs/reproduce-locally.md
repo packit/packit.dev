@@ -9,20 +9,8 @@ sidebar_position: 10
 This used to be a question [in our FAQ](faq#a-command-failed-in-packit-service-how-do-i-reproduce-it-locally) and
 now we have a dedicated document to cover this.
 
-
-## SRPM builds locally
-
-```
-$ packit srpm
-```
-
-Packit will create a SRPM out of the current checkout. Simple and clear.
-
-
 ## SRPM builds in Copr
-
-When your SRPM is being built in Copr (because [`srpm_build_deps`](configuration/#srpm_build_deps) is set in your packit config, or
-you installed Packit GitHub application after September 6, 2022), this
+For Copr builds, the corresponding SRPM builds are being built in directly in Copr. This
 section describes how you can reproduce the build procedure locally.
 
 We invoke our CLI command `packit prepare-sources` in the Copr environment,
@@ -36,7 +24,7 @@ locally on your computer (if you have installed the needed dependencies for your
 and see whether the sources are correctly prepared.
 
 Thankfully, Copr is very transparent how it performs builds. When you open a
-build log (e.g. builder-live.log.gz), you'll see a command at the top which
+build log (e.g. `builder-live.log.gz`), you'll see a command at the top which
 Copr invokes to perform a build. Let's do that in a container.
 
 ```
@@ -78,13 +66,11 @@ I am deliberately making this a HTML comment. One can actually feed this json in
  "task_id": "3580370"}
 -->
 
-## SRPM builds in our sandbox
+## `actions` commands run in our sandbox
 
-Packit by default runs all commands you defined in a
-[sandbox](https://github.com/packit/sandcastle) which is a kubernetes pod in a
-new project. If you need additional packages or binaries present in the
-sandbox, you should migrate your SRPM builds to be done in Copr using
-[`srpm_build_deps`](configuration/#srpm_build_deps).
+Packit by default runs all commands from `actions` (e.g. during syncing the release or building SRPMs for Koji builds)
+you defined in a [sandbox](https://github.com/packit/sandcastle) which is a Kubernetes pod in a
+new project (the only exception are the commands run during SRPM build for Copr builds described above; they are run in the Copr).
 
 You can reproduce our sandbox environment: Firstly, you should pull our
 production sandbox image and run commands of your choice inside the container.
