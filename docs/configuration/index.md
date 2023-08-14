@@ -474,6 +474,18 @@ Just be aware that:
 Please, let us know when something looks weird or does not work with the staging app.
 By doing that, you are helping us to be sure that we don't break your use-case.
 
+#### upstream_tag_include
+(*string*) This field requires a Python regex pattern. It's used with `re.match` to:
+- include tags: When identifying the latest upstream tag, this pattern filters in specific tags.
+- in Packit Service: In `propose_downstream` and `pull_from_upstream` jobs, it determines whether a specific release 
+should trigger a reaction.
+
+#### upstream_tag_exclude
+(*string*) This field requires a Python regex pattern. It's used with `re.match` to:
+- exclude tags: When identifying the latest upstream tag, this pattern omits certain tags.
+- in Packit Service: In `propose_downstream` and `pull_from_upstream` jobs, it determines whether a specific release 
+should trigger a reaction.
+
 
 ## Aliases
 

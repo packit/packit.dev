@@ -472,6 +472,23 @@ jobs:
 </details>
 
 <details>
+  <summary>Creating dist-git pull requests on upstream releases matching specified tag pattern defined in the dist-git repository</summary>
+
+```yaml
+upstream_project_url: https://github.com/packit/packit
+...
+jobs:
+- job: pull_from_upstream
+  trigger: release
+  dist_git_branches: 
+    - fedora-all
+  upstream_tag_include: "^2\..+"
+  upstream_tag_exclude: "^.+\.1\..+"
+```
+
+</details>
+
+<details>
   <summary>Running Koji builds when the Packit pull requests in dist-git are merged</summary>
 
 ```yaml

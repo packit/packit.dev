@@ -41,7 +41,9 @@ instead of using hardcoded versions.
 The process of releasing a new version starts in the upstream repository by creating a 
 new upstream release. Packit gets the information about the newly created release (not a git tag) from GitHub/GitLab,
 loads the config from the release commit and if there is a `propose_downstream` job
-defined, the workflow begins.
+defined, the workflow begins. If you want to restrict what releases with corresponding tags Packit should react on, 
+you can utilise the configuration options [`upstream_tag_include`](/docs/configuration/#upstream_tag_include) and
+[`upstream_tag_exclude`](/docs/configuration/#upstream_tag_exclude).
 
 #### Upload archive to lookaside cache
 The upstream archive needs to be downloaded by Packit first and then uploaded to the lookaside cache.
@@ -109,7 +111,9 @@ functionality. This means that Packit doesn't need to be set up in the
 upstream project: everything is configured in Fedora dist-git. So when a new
 upstream release happens and
 [release-monitoring.org](https://release-monitoring.org/) detects it, you'll
-get dist-git pull requests with it automatically.
+get dist-git pull requests with it automatically. If you want to restrict what releases with corresponding tags Packit should react on, 
+you can utilise the configuration options [`upstream_tag_include`](/docs/configuration/#upstream_tag_include) and
+[`upstream_tag_exclude`](/docs/configuration/#upstream_tag_exclude).
 
 For customization of the job, you may need to define additional configuration options, most commonly:
 - If the version from release monitoring and Git tag differ, 
