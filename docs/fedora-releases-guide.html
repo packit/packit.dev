@@ -15,7 +15,7 @@
 <link rel="alternate" type="application/rss+xml" href="/posts/weekly/rss.xml" title="Packit Weekly RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/posts/weekly/atom.xml" title="Packit Weekly Atom Feed">
 <link rel="alternate" type="application/json" href="/posts/weekly/feed.json" title="Packit Weekly JSON Feed"><link rel="stylesheet" href="/assets/css/styles.3595ad89.css">
-<link rel="preload" href="/assets/js/runtime~main.561fc076.js" as="script">
+<link rel="preload" href="/assets/js/runtime~main.768699e1.js" as="script">
 <link rel="preload" href="/assets/js/main.b33acce9.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
@@ -30,7 +30,9 @@ dist-git branches you want to update and also utilise <a href="/docs/configurati
 instead of using hardcoded versions.</p><h4 class="anchor anchorWithStickyNavbar_LWe7" id="new-upstream-release">New upstream release<a href="#new-upstream-release" class="hash-link" aria-label="Direct link to New upstream release" title="Direct link to New upstream release">​</a></h4><p>The process of releasing a new version starts in the upstream repository by creating a
 new upstream release. Packit gets the information about the newly created release (not a git tag) from GitHub/GitLab,
 loads the config from the release commit and if there is a <code>propose_downstream</code> job
-defined, the workflow begins.</p><h4 class="anchor anchorWithStickyNavbar_LWe7" id="upload-archive-to-lookaside-cache">Upload archive to lookaside cache<a href="#upload-archive-to-lookaside-cache" class="hash-link" aria-label="Direct link to Upload archive to lookaside cache" title="Direct link to Upload archive to lookaside cache">​</a></h4><p>The upstream archive needs to be downloaded by Packit first and then uploaded to the lookaside cache.
+defined, the workflow begins. If you want to restrict what releases with corresponding tags Packit should react on,
+you can utilise the configuration options <a href="/docs/configuration#upstream_tag_include"><code>upstream_tag_include</code></a> and
+<a href="/docs/configuration#upstream_tag_exclude"><code>upstream_tag_exclude</code></a>.</p><h4 class="anchor anchorWithStickyNavbar_LWe7" id="upload-archive-to-lookaside-cache">Upload archive to lookaside cache<a href="#upload-archive-to-lookaside-cache" class="hash-link" aria-label="Direct link to Upload archive to lookaside cache" title="Direct link to Upload archive to lookaside cache">​</a></h4><p>The upstream archive needs to be downloaded by Packit first and then uploaded to the lookaside cache.
 By default, Packit downloads sources defined in the specfile that contain URLs.
 You can override these URLs via <a href="/docs/configuration#sources"><code>sources</code></a> configuration key.</p><p>For Python packages, you can use a
 <a href="https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows" target="_blank" rel="noopener noreferrer">GitHub action</a>
@@ -63,7 +65,9 @@ functionality. This means that Packit doesn&#x27;t need to be set up in the
 upstream project: everything is configured in Fedora dist-git. So when a new
 upstream release happens and
 <a href="https://release-monitoring.org/" target="_blank" rel="noopener noreferrer">release-monitoring.org</a> detects it, you&#x27;ll
-get dist-git pull requests with it automatically.</p><p>For customization of the job, you may need to define additional configuration options, most commonly:</p><ul><li>If the version from release monitoring and Git tag differ,
+get dist-git pull requests with it automatically. If you want to restrict what releases with corresponding tags Packit should react on,
+you can utilise the configuration options <a href="/docs/configuration#upstream_tag_include"><code>upstream_tag_include</code></a> and
+<a href="/docs/configuration#upstream_tag_exclude"><code>upstream_tag_exclude</code></a>.</p><p>For customization of the job, you may need to define additional configuration options, most commonly:</p><ul><li>If the version from release monitoring and Git tag differ,
 you should specify the <a href="/docs/configuration#upstream_tag_template"><code>upstream_tag_template</code></a>.</li><li>You can configure which files (if any) in the upstream repo should be copied to dist-git during an update
 via <a href="/docs/configuration#files_to_sync"><code>files_to_sync</code></a> configuration key.</li><li>By default, Packit downloads sources defined in the spec file that contain URLs.
 You can override these URLs via <a href="/docs/configuration#sources"><code>sources</code></a> configuration key.</li><li>You may utilise some of the <a href="/docs/configuration/actions#syncing-the-release">actions</a>
@@ -107,7 +111,7 @@ issue to retrigger the updates (see <a href="/docs/configuration#issue_repositor
                     @packit@fosstodon.org
                   </a> (Mastodon)
                 </li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/usage">Usage Charts</a></li><li class="footer__item"><a class="footer__link-item" href="/posts">Blog Posts</a></li><li class="footer__item"><a href="https://github.com/packit" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 Packit is a Red Hat sponsored free software project. Built with Docusaurus.</div></div></div></footer></div>
-<script src="/assets/js/runtime~main.561fc076.js"></script>
+<script src="/assets/js/runtime~main.768699e1.js"></script>
 <script src="/assets/js/main.b33acce9.js"></script>
 </body>
 </html>
