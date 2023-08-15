@@ -153,7 +153,7 @@ function Parts() {
               locally and start using right away.
             </li>
             <li>
-              A <Link to="/docs/guide">service</Link> whcih provides you
+              A <Link to="/docs/guide">service</Link> which provides you
               feedback on how is your project integrated with{" "}
               <Link to="https://getfedora.org/">Fedora Linux</Link>,{" "}
               <Link to="https://www.centos.org/centos-stream/">
