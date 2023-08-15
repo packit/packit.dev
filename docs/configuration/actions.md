@@ -178,5 +178,5 @@ actions:
   - "make archive"
   - bash -c "ls -1 ./package-*.tar.gz"
   changelog-entry:
-  - echo "New release ${PACKIT_PROJECT_VERSION}"
+  - bash -c "echo - New release ${PACKIT_PROJECT_VERSION}"
 ```
