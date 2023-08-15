@@ -84,7 +84,7 @@ Another useful config is `labels` option:
       - upgrade
       - regression
       
-    - job: tests
+  - job: tests
     trigger: pull_request
     targets:
     - fedora-all

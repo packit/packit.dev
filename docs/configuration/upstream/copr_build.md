@@ -107,7 +107,7 @@ jobs.
 
 ### Example 
 ```yaml
-jobs
+jobs:
 - job: copr_build
   trigger: pull_request
   targets:
