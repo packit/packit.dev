@@ -56,9 +56,13 @@ command:
     $ packit source-git init v249.4 $FEDORA_SOURCE_GIT_REPOS/systemd-stable $FEDORA_DIST_GIT_REPOS/systemd
 
 Once the command finishes successfully, your source-git repo is available for
-you at `$FEDORA_SOURCE_GIT_REPOS/systemd-stable`. Please head on to a section
-in this documentation which covers [working with source-git repos]({{< ref
-"/source-git/work-with-source-git" >}}).
+you at `$FEDORA_SOURCE_GIT_REPOS/systemd-stable`.
+If you're about to push the created repo to a forge in order to use
+[our automation](https://github.com/packit/hardly), don't forget to push
+the existing upstream tags as well (`git push --tags`), otherwise, the automation won't work.
+
+Please head on to a section in this documentation which covers
+[working with source-git repos](/source-git/work-with-source-git).
 
 By default, using `%autosetup` in the `%prep` section of the specfile is required. 
 You can use `--ignore-missing-autosetup` option to enforce running the command 
