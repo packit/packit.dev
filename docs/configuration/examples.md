@@ -482,8 +482,8 @@ jobs:
   trigger: release
   dist_git_branches: 
     - fedora-all
-  upstream_tag_include: "^2\..+"
-  upstream_tag_exclude: "^.+\.1\..+"
+  upstream_tag_include: "^2\\..+"
+  upstream_tag_exclude: "^.+\\.1\\..+"
 ```
 
 </details>
