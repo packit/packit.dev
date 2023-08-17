@@ -1,6 +1,7 @@
 ---
 title: Week 32 in Packit
 date: 2023-08-14
+authors: flachman
 tags:
   - 2023-August
   - 2023
