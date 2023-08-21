@@ -5,12 +5,16 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
-            "id": "https://packit.dev/posts/weekly/2023/08/14/",
+            "id": "https://packit.dev/posts/weekly/2023/week-32",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-32-august-8th--august-14th\">Week 32 (August 8th – August 14th)<a href=\"#week-32-august-8th--august-14th\" class=\"hash-link\" aria-label=\"Direct link to Week 32 (August 8th – August 14th)\" title=\"Direct link to Week 32 (August 8th – August 14th)\">​</a></h2><ul><li>Two new configuration options for filtering when getting latest upstream release tag were introduced: <code>upstream_tag_include</code> and <code>upstream_tag_exclude</code>. They should contain a Python regex that can be used as an argument in <code>re.match</code>. (<a href=\"https://github.com/packit/packit/pull/2030\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2030</a>, <a href=\"https://github.com/packit/packit-service/pull/2138\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2138</a>)</li><li>Retriggering of <code>pull-from-upstream</code> via a comment will now use the correct configuration file from the default dist-git branch. (<a href=\"https://github.com/packit/packit-service/pull/2140\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2140</a>)</li><li>The <code>pull-from-upstream</code> job can now be used with upstream repos that are not hosted on a supported git forge. (<a href=\"https://github.com/packit/packit-service/pull/2137\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2137</a>)</li></ul>",
-            "url": "https://packit.dev/posts/weekly/2023/08/14/",
+            "url": "https://packit.dev/posts/weekly/2023/week-32",
             "title": "Week 32 in Packit",
             "summary": "Week 32 (August 8th – August 14th)",
             "date_modified": "2023-08-14T00:00:00.000Z",
+            "author": {
+                "name": "František Lachman",
+                "url": "https://github.com/lachmanfrantisek"
+            },
             "tags": [
                 "2023-August",
                 "2023",
@@ -18,9 +22,9 @@
             ]
         },
         {
-            "id": "https://packit.dev/posts/weekly/2023/08/07/",
+            "id": "https://packit.dev/posts/weekly/2023/week-31",
             "content_html": "<ul><li>Licenses in Packit specfiles are now confirmed to be SPDX-compatible. (example PR: <a href=\"https://github.com/packit/packit/pull/2026\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2026</a>)\nIf you are interested in more details, see a <a href=\"https://www.youtube.com/watch?v=Hjhe6jtx3Zw&amp;t=8651s\" target=\"_blank\" rel=\"noopener noreferrer\">talk</a> from Flock 2023 by Mirek.</li></ul>",
-            "url": "https://packit.dev/posts/weekly/2023/08/07/",
+            "url": "https://packit.dev/posts/weekly/2023/week-31",
             "title": "Week 31 in Packit",
             "summary": "- Licenses in Packit specfiles are now confirmed to be SPDX-compatible. (example PR: packit#2026)",
             "date_modified": "2023-08-07T00:00:00.000Z",

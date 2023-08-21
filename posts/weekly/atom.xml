@@ -9,19 +9,24 @@
     <icon>https://packit.dev/img/favicon.png</icon>
     <entry>
         <title type="html"><![CDATA[Week 32 in Packit]]></title>
-        <id>https://packit.dev/posts/weekly/2023/08/14/</id>
-        <link href="https://packit.dev/posts/weekly/2023/08/14/"/>
+        <id>https://packit.dev/posts/weekly/2023/week-32</id>
+        <link href="https://packit.dev/posts/weekly/2023/week-32"/>
         <updated>2023-08-14T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Week 32 (August 8th – August 14th)]]></summary>
         <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-32-august-8th--august-14th">Week 32 (August 8th – August 14th)<a href="#week-32-august-8th--august-14th" class="hash-link" aria-label="Direct link to Week 32 (August 8th – August 14th)" title="Direct link to Week 32 (August 8th – August 14th)">​</a></h2><ul><li>Two new configuration options for filtering when getting latest upstream release tag were introduced: <code>upstream_tag_include</code> and <code>upstream_tag_exclude</code>. They should contain a Python regex that can be used as an argument in <code>re.match</code>. (<a href="https://github.com/packit/packit/pull/2030" target="_blank" rel="noopener noreferrer">packit#2030</a>, <a href="https://github.com/packit/packit-service/pull/2138" target="_blank" rel="noopener noreferrer">packit-service#2138</a>)</li><li>Retriggering of <code>pull-from-upstream</code> via a comment will now use the correct configuration file from the default dist-git branch. (<a href="https://github.com/packit/packit-service/pull/2140" target="_blank" rel="noopener noreferrer">packit-service#2140</a>)</li><li>The <code>pull-from-upstream</code> job can now be used with upstream repos that are not hosted on a supported git forge. (<a href="https://github.com/packit/packit-service/pull/2137" target="_blank" rel="noopener noreferrer">packit-service#2137</a>)</li></ul>]]></content>
+        <author>
+            <name>František Lachman</name>
+            <email>flachman@redhat.com</email>
+            <uri>https://github.com/lachmanfrantisek</uri>
+        </author>
         <category label="2023-August" term="2023-August"/>
         <category label="2023" term="2023"/>
         <category label="August" term="August"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Week 31 in Packit]]></title>
-        <id>https://packit.dev/posts/weekly/2023/08/07/</id>
-        <link href="https://packit.dev/posts/weekly/2023/08/07/"/>
+        <id>https://packit.dev/posts/weekly/2023/week-31</id>
+        <link href="https://packit.dev/posts/weekly/2023/week-31"/>
         <updated>2023-08-07T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[- Licenses in Packit specfiles are now confirmed to be SPDX-compatible. (example PR: packit#2026)]]></summary>
         <content type="html"><![CDATA[<ul><li>Licenses in Packit specfiles are now confirmed to be SPDX-compatible. (example PR: <a href="https://github.com/packit/packit/pull/2026" target="_blank" rel="noopener noreferrer">packit#2026</a>)
