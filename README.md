@@ -166,6 +166,8 @@ them nested `img` directory containing the pictures used in the blog post.
 > There's only one picture used in the weekly, so there are just markdown files
 > and one shared `img` directory.
 
+With weekly posts, we have the following structure: `./weekly/$YEAR_NUMBER/week-$WEEK_NUMBER.md`.
+
 #### Aliases
 
 Aliases are set globally in the [configuration](docusaurus.config.js).
