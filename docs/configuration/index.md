@@ -515,6 +515,15 @@ and to reference dist-git branches of different system versions
 or downstream jobs like [`koji_build`](configuration/downstream/koji_build)
 or [`bodhi_update`](configuration/downstream/bodhi_update)).
 
+:::info
+
+You can combine aliases with architecture where appropriate (e.g. in Copr targets).
+You can do this by suffixing the alias with
+an architecture (e.g. `fedora-stable-aarch64`).
+By default, the `x86_64` architecture is used.
+
+:::
+
 The information about releases is retrieved from Bodhi and because of the
 cache and required availability on Copr, it might take a while to get the
 newest state.
