@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2023-08-14T00:00:00.000Z</updated>
+    <updated>2023-08-28T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 34 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2023/week-34</id>
+        <link href="https://packit.dev/posts/weekly/2023/week-34"/>
+        <updated>2023-08-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 34 (August 22nd – August 28th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-34-august-22nd--august-28th">Week 34 (August 22nd – August 28th)<a href="#week-34-august-22nd--august-28th" class="hash-link" aria-label="Direct link to Week 34 (August 22nd – August 28th)" title="Direct link to Week 34 (August 22nd – August 28th)">​</a></h2><ul><li>We have fixed a bug in <code>packit source-git init</code> caused by the changed behaviour in the newer version of rpmbuild. (<a href="https://github.com/packit/packit/pull/2048" target="_blank" rel="noopener noreferrer">packit#2048</a>)</li><li>We have fixed an issue in our API endpoint that could cause DoS until manual intervention from our team. (<a href="https://github.com/packit/packit-service/pull/2164" target="_blank" rel="noopener noreferrer">packit-service#2164</a>)</li><li>We have fixed a bug causing broken retriggering of Github checks. (<a href="https://github.com/packit/packit-service/pull/2161" target="_blank" rel="noopener noreferrer">packit-service#2161</a>)</li><li>SRPM build commit statuses, for monorepos projects, are now being correctly updated. (<a href="https://github.com/packit/packit-service/pull/2157" target="_blank" rel="noopener noreferrer">packit-service#2157</a>)</li><li>We have fixed the bug resulting in incorrect reporting for tests when retriggering a build of a different target that was not configured for tests. (<a href="https://github.com/packit/packit-service/pull/2144" target="_blank" rel="noopener noreferrer">packit-service#2144</a>)</li><li>We have fixed an issue that caused retriggers of Testing Farm to fail, if you specified any labels in the comment and had one or more test job definitions without any labels specified. (<a href="https://github.com/packit/packit-service/pull/2156" target="_blank" rel="noopener noreferrer">packit-service#2156</a>)</li><li>Macro definitions and tags gained a new <code>valid</code> attribute. A macro definition/tag is considered valid if it doesn't appear in a false branch of any condition appearing in the spec file. (<a href="https://github.com/packit/specfile/pull/276" target="_blank" rel="noopener noreferrer">specfile#276</a>)</li></ul>]]></content>
+        <author>
+            <name>Matej Focko</name>
+            <email>mfocko@redhat.com</email>
+            <uri>https://github.com/mfocko</uri>
+        </author>
+        <category label="2023-August" term="2023-August"/>
+        <category label="2023" term="2023"/>
+        <category label="August" term="August"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 32 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2023/week-32</id>
