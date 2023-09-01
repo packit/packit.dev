@@ -125,7 +125,15 @@ actions:
 
 ## Environment variables set by packit
 
-Additionally, packit sets a few env vars for specific actions.
+Additionally, packit sets several environment variables for the actions:
+
+`PACKIT_UPSTREAM_PROJECT_NAME` — set to the `upstream_package_name` value, if any  
+`PACKIT_DOWNSTREAM_PROJECT_NAME` — set to the `downstream_package_name` value, if any  
+`PACKIT_CONFIG_PACKAGE_NAME` — set to the package name key for the `packages` dictionary in a monorepo project,
+falls back to the `downstream_package_name` or, if not set, to `upstream_package_name`
+
+
+There are also action-specific environment variables:
 
 **fix-spec-file**
 
@@ -143,6 +151,15 @@ Additionally, packit sets a few env vars for specific actions.
 
 `PACKIT_PROJECT_VERSION` — version to be set in the specfile, set when relevant 
 (e.g. when syncing upstream release downstream)
+
+**release synchronization actions** (`propose-downstream` and `pull-from-upstream`)  
+*post-upstream-clone*
+*pre-sync*
+*prepare-files*
+*create-patches*
+
+`PACKIT_UPSTREAM_REPO` — absolute path to cloned upstream git repo  
+`PACKIT_DOWNSTREAM_REPO` — absolute path to cloned downstream git repo
 
 If you want to see the content of those variables, you can print using `echo`
 in the specific action:
