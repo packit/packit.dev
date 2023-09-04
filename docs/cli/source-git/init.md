@@ -118,7 +118,4 @@ It will be the base of your source-git repository.
                                   configured in the Packit configuration.
       --pkg-name TEXT             The name of the package in the distro. Defaults
                                   to the directory name of DIST_GIT.
-      --ignore-missing-autosetup  Do not require %autosetup macro to be used in
-                                  %prep section of specfile. By default,
-                                  %autosetup is required.
       -h, --help                  Show this message and exit.
