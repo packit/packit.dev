@@ -62,8 +62,30 @@ will see the application displayed there.
 [Packit-as-a-Service-stg](https://github.com/apps/packit-as-a-service-stg) GitHub App
 runs the latest code. It can be used to verify the latest changes until they get
 (every Tuesday) into the [production instance](https://github.com/marketplace/packit-as-a-service).
-If you want to enjoy the freshest features and help us with the development,
-see more details [here](https://github.com/packit/packit/discussions/1530).
+
+Few points to consider:
+- You might want to install both applications together to not disrupt your current workflow.
+- Both applications use the same config file, but you can (and have to) use 
+[`packit_instances` configuration key](/docs/configuration/#packit_instances) to 
+specify (globally or per job) which instance handles your jobs -- you can use `prod`, `stg` or both.
+- Staging application has fewer resources and can be a bit slower in responses.
+- Picking just one instance is required only for `koji_build` and `bodhi_update` jobs since both instances work with 
+the production instances of Fedora systems.
+- You will have twice the number of commit statuses for your PRs if you configure both instances.
+- Please, let us know when something looks weird or does not work with the staging app.
+- You are helping us be sure that we don't break your use-case.
+
+Technicalities:
+- Staging application uses the code from `main` branches of [packit-service](https://github.com/packit/packit-service), 
+[packit](https://github.com/packit/packit) and [ogr](https://github.com/packit/ogr).
+  - The rebuild is done for each push to `main` branch in `packit-service` and re-deployment is done automatically after few minutes.
+- Production application uses `stable` branches of `packit-service` and `packit`.
+  - It is rebuilt on Monday and deployed on Tuesday morning.
+
+
+Now, if you want to enjoy the freshest features and help us with the development,
+install the app [here](https://github.com/apps/packit-as-a-service-stg). Thank you in advance!
+
 
 ![Packit GitHub application: Staging instance](img/guide/guide_github_app_stg.png)
 

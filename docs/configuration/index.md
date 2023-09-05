@@ -464,15 +464,7 @@ It uses `["prod"]` as the default, but you can set both (`["prod", "stg"]`) or j
 You can also have a different setup for each job -- see [how the overriding works](#overriding-global-parameters)
 in the config file.
 
-Just be aware that:
-* You still need to install [the staging GitHub application](https://github.com/apps/packit-as-a-service-stg).
-* Staging application has fewer resources and can be a bit slower in responses.
-* If you use both instances, you will have twice the number of commit statuses.
-* Picking just one instance might be better for downstream jobs since
-  both instances will work with the production instances of Fedora systems.
-
-Please, let us know when something looks weird or does not work with the staging app.
-By doing that, you are helping us to be sure that we don't break your use-case.
+For the details on how to enable staging instance, please see [the onboarding guide](/docs/guide/#staging-instance).
 
 #### upstream_tag_include
 (*string*) This field requires a Python regex pattern. It's used with `re.match` to:
