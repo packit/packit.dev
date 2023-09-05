@@ -38,7 +38,7 @@ Here's how you can enable one of the jobs on the staging instance:
 ```
 
 - `propose-downstream`:
-  For this job, you first need to [enable our staging Github app](https://github.com/packit/packit/discussions/1530)
+  For this job, you first need to [enable our staging Github app](/docs/guide/#staging-instance)
   (you should be already automatically approved if you had been previously approved for production instance).
   After that, similarly to `pull-from-upstream`, you only need to duplicate the job in your Packit config using `packit_instances`. Example:
 
