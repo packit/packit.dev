@@ -146,6 +146,8 @@ You can verify that the option is processed correctly using a [YAML parser](http
   named `testing-farm:fedora-rawhide-x86_64:e2e-tests`.
 * **manual_trigger** - Whether to trigger Testing Farm jobs only manually (via pull request comment `/packit test`  (`/packit-stg test` for staging instance) or rerunning the check in the GitHub UI) or not (defaults to false). 
 * **labels** - List of labels that group several jobs together. Users then use them when manually triggering the jobs like `/packit test --labels regression,upgrade`.
+* **use_internal_tf** - Whether to use the internal Testing Farm infrastructure (defaults to false). 
+This requires additional approval from our side (please, [contact us](#contact) in case you want to use it). 
 
 There are also environment variables set by Packit:
 * `PACKIT_FULL_REPO_NAME`
