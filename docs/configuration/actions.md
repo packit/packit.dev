@@ -181,29 +181,28 @@ actions:
 
 Additionally, packit sets several environment variables for the actions:
 
-`PACKIT_UPSTREAM_PROJECT_NAME` — set to the `upstream_package_name` value, if any  
-`PACKIT_DOWNSTREAM_PROJECT_NAME` — set to the `downstream_package_name` value, if any  
-`PACKIT_CONFIG_PACKAGE_NAME` — set to the package name key for the `packages` dictionary in a monorepo project,
+* `PACKIT_UPSTREAM_PROJECT_NAME` — set to the `upstream_package_name` value, if any
+* `PACKIT_DOWNSTREAM_PROJECT_NAME` — set to the `downstream_package_name` value, if any
+* `PACKIT_CONFIG_PACKAGE_NAME` — set to the package name key for the `packages` dictionary in a monorepo project,
 falls back to the `downstream_package_name` or, if not set, to `upstream_package_name`
 
+There are also action-specific environment variables, which you can see below.
 
-There are also action-specific environment variables:
+### `fix-spec-file`
 
-**fix-spec-file**
+* `PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)
+* `PACKIT_PROJECT_COMMIT` — commit hash of the top commit
+* `PACKIT_PROJECT_ARCHIVE` — expected name of the archive
+* `PACKIT_RPMSPEC_RELEASE` — value for spec file's `%release` field which packit would set
 
-`PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)  
-`PACKIT_PROJECT_COMMIT` — commit hash of the top commit  
-`PACKIT_PROJECT_ARCHIVE` — expected name of the archive  
-`PACKIT_RPMSPEC_RELEASE` — value for spec file's `%release` field which packit would set  
+### `create-archive`
 
-**create-archive**
+* `PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)
+* `PACKIT_PROJECT_NAME_VERSION` — current name and version of the project (coming from `git describe`)
 
-`PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)
-`PACKIT_PROJECT_NAME_VERSION` — current name and version of the project (coming from `git describe`)
+### `changelog-entry`
 
-**changelog-entry**
-
-`PACKIT_PROJECT_VERSION` — version to be set in the specfile, set when relevant 
+* `PACKIT_PROJECT_VERSION` — version to be set in the specfile, set when relevant 
 (e.g. when syncing upstream release downstream)
 
 ### `commit-message`
@@ -214,15 +213,21 @@ There are also action-specific environment variables:
 * `PACKIT_DEBUG_DIVIDER` ­— divider that can be used to separate debug output
   from the actual commit message to be used
 
-**release synchronization actions** (`propose-downstream` and `pull-from-upstream`)  
-*post-upstream-clone*
-*pre-sync*
-*prepare-files*
-*create-patches*
-*commit-message*
+### Release-synchronization actions
 
-`PACKIT_UPSTREAM_REPO` — absolute path to cloned upstream git repo  
-`PACKIT_DOWNSTREAM_REPO` — absolute path to cloned downstream git repo
+Related to the `propose-downstream` and `pull-from-upstream` jobs.
+
+* `PACKIT_UPSTREAM_REPO` — absolute path to cloned upstream git repo
+* `PACKIT_DOWNSTREAM_REPO` — absolute path to cloned downstream git repo
+
+List of actions that are provided the environment variables:
+* `post-upstream-clone`
+* `pre-sync`
+* `prepare-files`
+* `create-patches`
+* `commit-message`
+
+---
 
 If you want to see the content of those variables, you can print using `echo`
 in the specific action:
