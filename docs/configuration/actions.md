@@ -46,6 +46,7 @@ These apply to `propose-downstream` command/job and `pull-from-upstream` job.
 |        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                        | replace patching                        |
 |        | `get-current-version` | upstream git repo | when the current version needs to be found                            | expect version as a stdout parameter    |
 |        | `changelog-entry`     | upstream git repo | when adding a new changelog entry to the specfile                     | stdout is used as a changelog entry     |
+|        | `commit-message`      | upstream git repo | after running pre-sync hook and checking out the tags/branches        | used to override default commit message |
 
 
 ### Creating SRPM
@@ -123,6 +124,59 @@ actions:
   - bash -c "sed -i -r \"s/Release:(\s*)\S+/Release:\1${PACKIT_RPMSPEC_RELEASE}%{?dist}/\" my_specfile_path"
 ```
 
+### `commit-message`
+
+Our internal API differentiates between the commit title and description, so we
+have an additional requirement on separating the commit title by an empty line.
+You can, of course, provide *just* the commit title.
+
+#### Debugging
+
+For your own debugging purposes we allow arbitrary output before outputting the
+actual commit message. In such case, your commit message **needs** to be
+separated by the following separator (on a separate line):
+
+    ---%<--- snip ---%<--- here ---%<---
+
+:::tip
+
+This separator is exposed as an environment variable `PACKIT_DEBUG_DIVIDER`.
+
+:::
+
+#### Examples
+
+<details>
+<summary>Example of correct output</summary>
+
+    debug output
+    ---%<--- snip ---%<--- here ---%<---
+    Rebase to new upstream release 0.42.69
+
+    - Resolves rhbz#1234
+
+This output can be produced by the following config:
+```yaml
+actions:
+  commit-message:
+    - echo 'debug output'
+    - bash -c 'echo ${PACKIT_DEBUG_DIVIDER}'
+    - bash -c 'echo -e "Rebase to new upstream release ${PACKIT_PROJECT_VERSION}\n"'
+    - echo '- Resolves rhbz#1234'
+```
+
+</details>
+
+<details>
+<summary>Example of incorrect output</summary>
+
+    ---%<--- snip ---%<--- here ---%<---
+
+
+    missing the commit title
+
+</details>
+
 ## Environment variables set by packit
 
 Additionally, packit sets several environment variables for the actions:
@@ -152,11 +206,20 @@ There are also action-specific environment variables:
 `PACKIT_PROJECT_VERSION` — version to be set in the specfile, set when relevant 
 (e.g. when syncing upstream release downstream)
 
+### `commit-message`
+
+* `PACKIT_PROJECT_VERSION` — version to be set in the specfile
+* `PACKIT_UPSTREAM_TAG` ­​— git tag of the upstream release
+* `PACKIT_UPSTREAM_COMMIT` — commit SHA of the upstream release
+* `PACKIT_DEBUG_DIVIDER` ­— divider that can be used to separate debug output
+  from the actual commit message to be used
+
 **release synchronization actions** (`propose-downstream` and `pull-from-upstream`)  
 *post-upstream-clone*
 *pre-sync*
 *prepare-files*
 *create-patches*
+*commit-message*
 
 `PACKIT_UPSTREAM_REPO` — absolute path to cloned upstream git repo  
 `PACKIT_DOWNSTREAM_REPO` — absolute path to cloned downstream git repo
