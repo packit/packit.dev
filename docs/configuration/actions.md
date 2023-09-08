@@ -46,6 +46,7 @@ These apply to `propose-downstream` command/job and `pull-from-upstream` job.
 |        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                        | replace patching                        |
 |        | `get-current-version` | upstream git repo | when the current version needs to be found                            | expect version as a stdout parameter    |
 |        | `changelog-entry`     | upstream git repo | when adding a new changelog entry to the specfile                     | stdout is used as a changelog entry     |
+|        | `commit-message`      | upstream git repo | after running pre-sync hook and checking out the tags/branches        | used to override default commit message |
 
 
 ### Creating SRPM
@@ -123,43 +124,110 @@ actions:
   - bash -c "sed -i -r \"s/Release:(\s*)\S+/Release:\1${PACKIT_RPMSPEC_RELEASE}%{?dist}/\" my_specfile_path"
 ```
 
+### `commit-message`
+
+Our internal API differentiates between the commit title and description, so we
+have an additional requirement on separating the commit title by an empty line.
+You can, of course, provide *just* the commit title.
+
+#### Debugging
+
+For your own debugging purposes we allow arbitrary output before outputting the
+actual commit message. In such case, your commit message **needs** to be
+separated by the following separator (on a separate line):
+
+    ---%<--- snip ---%<--- here ---%<---
+
+:::tip
+
+This separator is exposed as an environment variable `PACKIT_DEBUG_DIVIDER`.
+
+:::
+
+#### Examples
+
+<details>
+<summary>Example of correct output</summary>
+
+    debug output
+    ---%<--- snip ---%<--- here ---%<---
+    Rebase to new upstream release 0.42.69
+
+    - Resolves rhbz#1234
+
+This output can be produced by the following config:
+```yaml
+actions:
+  commit-message:
+    - echo 'debug output'
+    - bash -c 'echo ${PACKIT_DEBUG_DIVIDER}'
+    - bash -c 'echo -e "Rebase to new upstream release ${PACKIT_PROJECT_VERSION}\n"'
+    - echo '- Resolves rhbz#1234'
+```
+
+</details>
+
+<details>
+<summary>Example of incorrect output</summary>
+
+    ---%<--- snip ---%<--- here ---%<---
+
+
+    missing the commit title
+
+</details>
+
 ## Environment variables set by packit
 
 Additionally, packit sets several environment variables for the actions:
 
-`PACKIT_UPSTREAM_PROJECT_NAME` — set to the `upstream_package_name` value, if any  
-`PACKIT_DOWNSTREAM_PROJECT_NAME` — set to the `downstream_package_name` value, if any  
-`PACKIT_CONFIG_PACKAGE_NAME` — set to the package name key for the `packages` dictionary in a monorepo project,
+* `PACKIT_UPSTREAM_PROJECT_NAME` — set to the `upstream_package_name` value, if any
+* `PACKIT_DOWNSTREAM_PROJECT_NAME` — set to the `downstream_package_name` value, if any
+* `PACKIT_CONFIG_PACKAGE_NAME` — set to the package name key for the `packages` dictionary in a monorepo project,
 falls back to the `downstream_package_name` or, if not set, to `upstream_package_name`
 
+There are also action-specific environment variables, which you can see below.
 
-There are also action-specific environment variables:
+### `fix-spec-file`
 
-**fix-spec-file**
+* `PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)
+* `PACKIT_PROJECT_COMMIT` — commit hash of the top commit
+* `PACKIT_PROJECT_ARCHIVE` — expected name of the archive
+* `PACKIT_RPMSPEC_RELEASE` — value for spec file's `%release` field which packit would set
 
-`PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)  
-`PACKIT_PROJECT_COMMIT` — commit hash of the top commit  
-`PACKIT_PROJECT_ARCHIVE` — expected name of the archive  
-`PACKIT_RPMSPEC_RELEASE` — value for spec file's `%release` field which packit would set  
+### `create-archive`
 
-**create-archive**
+* `PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)
+* `PACKIT_PROJECT_NAME_VERSION` — current name and version of the project (coming from `git describe`)
 
-`PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)
-`PACKIT_PROJECT_NAME_VERSION` — current name and version of the project (coming from `git describe`)
+### `changelog-entry`
 
-**changelog-entry**
-
-`PACKIT_PROJECT_VERSION` — version to be set in the specfile, set when relevant 
+* `PACKIT_PROJECT_VERSION` — version to be set in the specfile, set when relevant 
 (e.g. when syncing upstream release downstream)
 
-**release synchronization actions** (`propose-downstream` and `pull-from-upstream`)  
-*post-upstream-clone*
-*pre-sync*
-*prepare-files*
-*create-patches*
+### `commit-message`
 
-`PACKIT_UPSTREAM_REPO` — absolute path to cloned upstream git repo  
-`PACKIT_DOWNSTREAM_REPO` — absolute path to cloned downstream git repo
+* `PACKIT_PROJECT_VERSION` — version to be set in the specfile
+* `PACKIT_UPSTREAM_TAG` ­​— git tag of the upstream release
+* `PACKIT_UPSTREAM_COMMIT` — commit SHA of the upstream release
+* `PACKIT_DEBUG_DIVIDER` ­— divider that can be used to separate debug output
+  from the actual commit message to be used
+
+### Release-synchronization actions
+
+Related to the `propose-downstream` and `pull-from-upstream` jobs.
+
+* `PACKIT_UPSTREAM_REPO` — absolute path to cloned upstream git repo
+* `PACKIT_DOWNSTREAM_REPO` — absolute path to cloned downstream git repo
+
+List of actions that are provided the environment variables:
+* `post-upstream-clone`
+* `pre-sync`
+* `prepare-files`
+* `create-patches`
+* `commit-message`
+
+---
 
 If you want to see the content of those variables, you can print using `echo`
 in the specific action:
