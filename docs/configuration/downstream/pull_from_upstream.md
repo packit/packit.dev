@@ -22,21 +22,7 @@ possible failures during the update process.
 * Upstream release monitoring is active for the package. [The monitoring
   status](https://docs.fedoraproject.org/en-US/package-maintainers/Upstream_Release_Monitoring/)
   in dist-git should be set to `Monitoring`).
-* [`upstream_project_url`](/docs/configuration#upstream_project_url) is defined in the configuration.
-
-:::info
-
-Upstreams (defined in `upstream_project_url`) hosted in these Git forges are currently supported:
-* https://github.com
-* https://gitlab.com
-* https://gitlab.freedesktop.org
-* https://gitlab.gnome.org
-* https://salsa.debian.org
-
-Support for working with upstreams in all Git forges is planned to be 
-worked on shortly ([see](https://github.com/packit/packit-service/issues/1907)).
-
-:::
+* [`upstream_project_url`](/docs/configuration#upstream_project_url) pointing to a Git repository is defined in the configuration.
 
 ## Supported triggers
 
