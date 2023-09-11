@@ -34,13 +34,23 @@ possible failures during the update process.
   You can also use the [aliases provided by Packit](/docs/configuration#aliases)
   to not need to change the config file when the new system version is released.
 
+
+:::tip 
+
+For more details and customization options, also check 
+[our release guide](/docs/fedora-releases-guide#pull-from-upstream-job).
+
+:::
+
+
 ## Retriggering
 Packagers with write access to the dist-git repository can retrigger the job
 via a comment in any dist-git pull request:
 
     /packit pull-from-upstream
 
-This will take the Packit configuration file from the `rawhide` dist-git branch, same as if the job was triggered by a new release. To use the configuration file from the dist-git pull request you are commenting on, you can add an argument:
+This will take the Packit configuration file from the default branch of the dist-git
+  repository (`rawhide`), same as if the job was triggered by a new release. To use the configuration file from the dist-git pull request you are commenting on, you can add an argument:
 
     /packit pull-from-upstream --with-pr-config
 
@@ -67,4 +77,3 @@ created in the Packit's fork):
     git fetch https://src.fedoraproject.org/forks/packit/rpms/$YOUR_PACKAGE.git refs/heads/*:refs/remotes/packit/*
     git cherry-pick packit/$VERSION-$BRANCH-update-pull_from_upstream
 
-For more details, check [our release guide](/docs/fedora-releases-guide).
