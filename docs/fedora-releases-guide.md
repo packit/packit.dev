@@ -144,7 +144,8 @@ via a comment in any dist-git pull request:
 
     /packit pull-from-upstream
 
-This will take the Packit configuration file from the `rawhide` dist-git branch, same as if the job was triggered by a new release. To use the configuration file from the dist-git pull request you are commenting on, you can add an argument:
+This will take the Packit configuration file from the default branch of the dist-git
+  repository (`rawhide`), same as if the job was triggered by a new release. To use the configuration file from the dist-git pull request you are commenting on, you can add an argument:
 
     /packit pull-from-upstream --with-pr-config
 

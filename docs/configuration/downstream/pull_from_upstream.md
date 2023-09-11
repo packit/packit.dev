@@ -22,21 +22,7 @@ possible failures during the update process.
 * Upstream release monitoring is active for the package. [The monitoring
   status](https://docs.fedoraproject.org/en-US/package-maintainers/Upstream_Release_Monitoring/)
   in dist-git should be set to `Monitoring`).
-* [`upstream_project_url`](/docs/configuration#upstream_project_url) is defined in the configuration.
-
-:::info
-
-Upstreams (defined in `upstream_project_url`) hosted in these Git forges are currently supported:
-* https://github.com
-* https://gitlab.com
-* https://gitlab.freedesktop.org
-* https://gitlab.gnome.org
-* https://salsa.debian.org
-
-Support for working with upstreams in all Git forges is planned to be 
-worked on shortly ([see](https://github.com/packit/packit-service/issues/1907)).
-
-:::
+* [`upstream_project_url`](/docs/configuration#upstream_project_url) pointing to a Git repository is defined in the configuration.
 
 ## Supported triggers
 
@@ -48,13 +34,23 @@ worked on shortly ([see](https://github.com/packit/packit-service/issues/1907)).
   You can also use the [aliases provided by Packit](/docs/configuration#aliases)
   to not need to change the config file when the new system version is released.
 
+
+:::tip 
+
+For more details and customization options, also check 
+[our release guide](/docs/fedora-releases-guide#pull-from-upstream-job).
+
+:::
+
+
 ## Retriggering
 Packagers with write access to the dist-git repository can retrigger the job
 via a comment in any dist-git pull request:
 
     /packit pull-from-upstream
 
-This will take the Packit configuration file from the `rawhide` dist-git branch, same as if the job was triggered by a new release. To use the configuration file from the dist-git pull request you are commenting on, you can add an argument:
+This will take the Packit configuration file from the default branch of the dist-git
+  repository (`rawhide`), same as if the job was triggered by a new release. To use the configuration file from the dist-git pull request you are commenting on, you can add an argument:
 
     /packit pull-from-upstream --with-pr-config
 
@@ -81,4 +77,3 @@ created in the Packit's fork):
     git fetch https://src.fedoraproject.org/forks/packit/rpms/$YOUR_PACKAGE.git refs/heads/*:refs/remotes/packit/*
     git cherry-pick packit/$VERSION-$BRANCH-update-pull_from_upstream
 
-For more details, check [our release guide](/docs/fedora-releases-guide).
