@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2023/week-36",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-36-september-5th--september-11th\">Week 36 (September 5th – September 11th)<a href=\"#week-36-september-5th--september-11th\" class=\"hash-link\" aria-label=\"Direct link to Week 36 (September 5th – September 11th)\" title=\"Direct link to Week 36 (September 5th – September 11th)\">​</a></h2><ul><li>Packit now supports <code>commit-message</code> action that can be used to override the default commit message produced by Packit during <code>propose-downstream</code> or <code>pull-from-upstream</code>. Please pay attention to <a href=\"https://packit.dev/docs/configuration/actions#commit-message\" target=\"_blank\" rel=\"noopener noreferrer\">our documentation</a> with regards to the usage of this action. (<a href=\"https://github.com/packit/packit/pull/2070\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2070</a>)</li><li>Packit CLI now supports testing the <code>pull-from-upstream</code> workflow.\nUse the <code>packit pull-from-upstream</code> command from the <code>packit</code> RPM package. (<a href=\"https://github.com/packit/packit/pull/2063\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2063</a>)</li><li>Packit now passes <code>initiator</code> context for tmt to the Testing Farm. You can use <a href=\"https://tmt.readthedocs.io/en/latest/spec/context.html#initiator\" target=\"_blank\" rel=\"noopener noreferrer\">this option</a> to run or skip certain tests when they're run by Packit. (<a href=\"https://github.com/packit/packit-service/pull/2176\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2176</a>)</li><li>Testing Farm started additionally exposing regexes on top of the exact compose names in the /composes/ endpoints, and we now support this as well when checking the validity of compose. (<a href=\"https://github.com/packit/packit-service/pull/2168\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2168</a>)</li><li>We have disabled the jitter for retrying Bodhi update tasks to prevent race conditions causing not created updates. (<a href=\"https://github.com/packit/packit-service/pull/2170\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2170</a>)</li><li>We have fixed a bug in <code>get_fork</code> method for Pagure about checking the usernames for a match when going through existing forks. (<a href=\"https://github.com/packit/ogr/pull/800\" target=\"_blank\" rel=\"noopener noreferrer\">ogr#800</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2023/week-36",
+            "title": "Week 36 in Packit",
+            "summary": "Week 36 (September 5th – September 11th)",
+            "date_modified": "2023-09-11T00:00:00.000Z",
+            "author": {
+                "name": "František Lachman",
+                "url": "https://github.com/lachmanfrantisek"
+            },
+            "tags": [
+                "2023-September",
+                "2023",
+                "September"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2023/week-35",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-35-august-29th--september-4th\">Week 35 (August 29th – September 4th)<a href=\"#week-35-august-29th--september-4th\" class=\"hash-link\" aria-label=\"Direct link to Week 35 (August 29th – September 4th)\" title=\"Direct link to Week 35 (August 29th – September 4th)\">​</a></h2><ul><li>Now Packit exposes <code>PACKIT_PACKAGE_NAME</code>, <code>PACKIT_UPSTREAM_PACKAGE_NAME</code> and <code>PACKIT_DOWNSTREAM_PACKAGE_NAME</code> env variables to all the actions. (<a href=\"https://github.com/packit/packit/pull/2061\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2061</a>)</li><li>Packit now sets <code>PACKIT_UPSTREAM_REPO</code> and <code>PACKIT_DOWNSTREAM_REPO</code> environment variables for release syncing actions. The variables represent paths where the respective git repositories are cloned (<a href=\"https://github.com/packit/packit-service/pull/2166\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2166</a>)</li><li>We have fixed a bug causing issues with displaying some <code>Project</code> views on our dashboard. (<a href=\"https://github.com/packit/packit-service/pull/2165\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2165</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2023/week-35",

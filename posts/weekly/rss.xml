@@ -4,10 +4,23 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 04 Sep 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 11 Sep 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 36 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2023/week-36</link>
+            <guid>https://packit.dev/posts/weekly/2023/week-36</guid>
+            <pubDate>Mon, 11 Sep 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 36 (September 5th – September 11th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-36-september-5th--september-11th">Week 36 (September 5th – September 11th)<a href="#week-36-september-5th--september-11th" class="hash-link" aria-label="Direct link to Week 36 (September 5th – September 11th)" title="Direct link to Week 36 (September 5th – September 11th)">​</a></h2><ul><li>Packit now supports <code>commit-message</code> action that can be used to override the default commit message produced by Packit during <code>propose-downstream</code> or <code>pull-from-upstream</code>. Please pay attention to <a href="https://packit.dev/docs/configuration/actions#commit-message" target="_blank" rel="noopener noreferrer">our documentation</a> with regards to the usage of this action. (<a href="https://github.com/packit/packit/pull/2070" target="_blank" rel="noopener noreferrer">packit#2070</a>)</li><li>Packit CLI now supports testing the <code>pull-from-upstream</code> workflow.
+Use the <code>packit pull-from-upstream</code> command from the <code>packit</code> RPM package. (<a href="https://github.com/packit/packit/pull/2063" target="_blank" rel="noopener noreferrer">packit#2063</a>)</li><li>Packit now passes <code>initiator</code> context for tmt to the Testing Farm. You can use <a href="https://tmt.readthedocs.io/en/latest/spec/context.html#initiator" target="_blank" rel="noopener noreferrer">this option</a> to run or skip certain tests when they're run by Packit. (<a href="https://github.com/packit/packit-service/pull/2176" target="_blank" rel="noopener noreferrer">packit-service#2176</a>)</li><li>Testing Farm started additionally exposing regexes on top of the exact compose names in the /composes/ endpoints, and we now support this as well when checking the validity of compose. (<a href="https://github.com/packit/packit-service/pull/2168" target="_blank" rel="noopener noreferrer">packit-service#2168</a>)</li><li>We have disabled the jitter for retrying Bodhi update tasks to prevent race conditions causing not created updates. (<a href="https://github.com/packit/packit-service/pull/2170" target="_blank" rel="noopener noreferrer">packit-service#2170</a>)</li><li>We have fixed a bug in <code>get_fork</code> method for Pagure about checking the usernames for a match when going through existing forks. (<a href="https://github.com/packit/ogr/pull/800" target="_blank" rel="noopener noreferrer">ogr#800</a>)</li></ul>]]></content:encoded>
+            <author>flachman@redhat.com (František Lachman)</author>
+            <category>2023-September</category>
+            <category>2023</category>
+            <category>September</category>
+        </item>
         <item>
             <title><![CDATA[Week 35 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2023/week-35</link>
