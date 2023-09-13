@@ -138,6 +138,27 @@ configuration key.
 
 ![Dashboard view for pull_from_upstream](img/fedora-releases-guide/pull-from-upstream-dashboard.png)
 
+#### Trying it out
+If you are interested in this functionality and want to try it out, you can trigger the job from a pull request.
+
+If there is a new release pending for your package (bugzilla has been opened by [release-monitoring.org](https://release-monitoring.org/) but no rebase done in dist-git yet), do the following:
+
+- create a `rawhide`-based pull request with Packit configuration defining the [`pull_from_upstream` job](/docs/configuration/downstream/pull_from_upstream)
+- comment `/packit pull-from-upstream --with-pr-config` on the pull request
+- check the [dashboard](https://dashboard.packit.dev/jobs/pull-from-upstreams)
+- if everything went well, review the pull request(s) in your dist-git repository created by Packit
+- if you are happy with the results, merge your pull request
+
+If there is no pending release and your package has been rebased at least once in the past, you can still try the job using a new testing branch:
+
+- create a branch pointing to a commit before the last rebase, name it e.g. `packit-test` and push it (directly to dist-git, not to your fork)
+- create a `rawhide`-based pull request with Packit configuration defining the [`pull_from_upstream` job](/docs/configuration/downstream/pull_from_upstream)
+- in the configuration, set the `dist_git_branches` option of the `pull_from_upstream` job to the name of the testing branch
+- comment `/packit pull-from-upstream --with-pr-config` on the pull request
+- check the [dashboard](https://dashboard.packit.dev/jobs/pull-from-upstreams)
+- if everything went well, review the pull request in your dist-git repository created by Packit
+- if you are happy with the results, you can change the `dist-git-branches` attribute to whatever you want, merge your pull request and wait for the next upstream release
+
 #### Retriggering
 Packagers with write access to the dist-git repository can retrigger the job
 via a comment in any dist-git pull request:
