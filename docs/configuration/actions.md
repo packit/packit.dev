@@ -181,8 +181,8 @@ actions:
 
 Additionally, packit sets several environment variables for the actions:
 
-* `PACKIT_UPSTREAM_PROJECT_NAME` — set to the `upstream_package_name` value, if any
-* `PACKIT_DOWNSTREAM_PROJECT_NAME` — set to the `downstream_package_name` value, if any
+* `PACKIT_UPSTREAM_PACKAGE_NAME` — set to the `upstream_package_name` value, if any
+* `PACKIT_DOWNSTREAM_PACKAGE_NAME` — set to the `downstream_package_name` value, if any
 * `PACKIT_CONFIG_PACKAGE_NAME` — set to the package name key for the `packages` dictionary in a monorepo project,
 falls back to the `downstream_package_name` or, if not set, to `upstream_package_name`
 
