@@ -18,6 +18,90 @@ Doing Fedora releases with Packit means utilising these jobs:
 
 Every job takes care of a different part of the release process.
 
+## Propose downstream or pull from upstream
+
+There are two jobs that can help you to get your new release to Fedora.
+They differ in the way they are triggered and configured but share the implementation.
+
+The push workflow is configured and started in the upstream repository,
+unlike the pull workflow that is configured in dist-git.
+
+Here are the key differences between the two:
+
+<table>
+<tr>
+<th></th>
+<th>propose-downstream</th>
+<th>pull-from-upstream</th>
+</tr>
+
+<tr>
+<th>Packit Service</th>
+<td><p>Have a <code>.packit.yaml</code> in <b>upstream</b> repo:</p>
+<pre class="language-yaml">jobs:
+  propose-downstream:
+  ...</pre>
+  <p>Triggered by a new release in <b>upstream project</b>.</p>
+  <p>It creates <i>dist-git</i> pull requests with the content of the release.</p>
+</td>
+<td><p>Have a <code>.packit.yaml</code> in <b>dist-git</b> repo (main or rawhide branch):</p>
+<pre class="language-yaml">jobs:
+  pull-from-upstream:
+  ...</pre>
+  <p>Triggered by a new release in <b>upstream project</b>.</p>
+  <p>It creates <i>dist-git</i> pull requests with the content of the release and the packit config taken from dist-git main/rawhide branch.</p>
+</td>
+</tr>
+
+<tr>
+<th>Packit CLI</th>
+<td><p>Have a <code>.packit.yaml</code> in <b>upstream</b> repo, clone repo and run:</p>
+  <pre class="language-yaml">packit propose-downstream</pre>
+  <p>It creates <i>dist-git</i> pull requests with the content of the release and the packit config taken from local clone.</p>
+</td>
+<td><p>Have a <code>.packit.yaml</code> in <b>dist-git</b> repo, clone repo and run:</p>
+  <pre class="language-yaml">packit pull-from-upstream</pre>
+  <p>It creates <i>dist-git</i> pull requests with the content of the release and the packit config taken from local clone.</p>
+</td>
+</tr>
+
+</table>
+
+### Resolving specfile and version
+
+<table>
+<tr>
+<th></th>
+<th>propose-downstream</th>
+<th>pull-from-upstream</th>
+</tr>
+
+<tr>
+<th>Packit Service</th>
+<td>
+  <p>Version is retrieved from <b>upstream project release event</b>.</p>
+  <p>Specfile is retrieved from <b>upstream repo</b>.</p>
+</td>
+<td>
+  <p>Version is retrieved from <b>https://release-monitoring.org event</b>.</p>
+  <p>Specfile is retrieved from <b>dist-git repo</b>.</p>
+</td>
+</tr>
+
+<tr>
+<th>Packit CLI</th>
+<td>
+  <p>Version is retrieved from the <b>latest upstream project release tag</b> if not <b>specified</b>.</p>
+  <p>Specfile is retrieved from the <b>upstream repo</b> unless the <code>--local-project</code> option is used.</p>
+</td>
+<td>
+  <p>Version is retrieved from the <b>latest upstream project release tag</b> if not <b>specified</b>.</p>
+  <p>Specfile is retrieved from the <b>local dist-git repo clone</b>.</p>
+</td>
+</tr>
+
+</table>
+
 ## Propose downstream job
 For enabling the propose downstream job, you need to have
 [Packit Service installed](/docs/guide/#1-set-up-packit-integration)
