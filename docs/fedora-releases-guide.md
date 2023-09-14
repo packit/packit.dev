@@ -340,3 +340,39 @@ posts this comment needs to be a packager and have write access to the dist-git 
 
 If Packit created an issue in the configured `issue_repository`, you can place the same comment in that
 issue to retrigger the updates (see [`issue_repository`](/docs/configuration#issue_repository) for details).
+
+## Full example
+
+Let's take a look how the configuration file can look like when you define all three steps.
+It's quite simple, isn't it?
+
+```yaml
+specfile_path: my_downstream_package_name.spec
+files_to_sync:
+    - my_downstream_package_name.spec
+    - .packit.yaml
+
+upstream_package_name: my_upstream_package_name
+upstream_project_url: https://github.com/upstream/package
+downstream_package_name: my_downstream_package_name
+
+jobs:
+
+- job: pull_from_upstream
+  trigger: release
+  dist_git_branches:
+   - fedora-rawhide
+  actions:
+    changelog-entry:
+    - bash -c "echo '- New release' ${PACKIT_PROJECT_VERSION}"
+
+- job: koji_build
+  trigger: commit
+  dist_git_branches:
+    - fedora-rawhide
+
+- job: bodhi_update
+  trigger: commit
+  dist_git_branches:
+    - fedora-branched # rawhide updates are created automatically
+```
