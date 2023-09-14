@@ -39,22 +39,23 @@ Here are the key differences between the two:
 <th>Packit Service</th>
 <td><p>Have a <code>.packit.yaml</code> in <b>upstream</b> repo:</p>
 
-<p>
-<code>jobs:</code><br/>
-<code>&nbsp;&nbsp;propose-downstream:</code><br/>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;...</code><br/>
-</p>
+
+```yaml
+jobs:
+- job: propose-downstream:
+    ...
+```
 
   <p>Triggered by a new release in <b>upstream project</b>.</p>
   <p>It creates <i>dist-git</i> pull requests with the content of the release.</p>
 </td>
 <td><p>Have a <code>.packit.yaml</code> in <b>dist-git</b> repo (main or rawhide branch):</p>
 
-<p>
-<code>jobs:</code><br/>
-<code>&nbsp;&nbsp;pull-from-upstream:</code><br/>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;...</code><br/>
-</p>
+```yaml
+jobs:
+- job: pull-from-upstream:
+    ...
+```
 
   <p>Triggered by a new release in <b>upstream project</b>.</p>
   <p>It creates <i>dist-git</i> pull requests with the content of the release and the packit config taken from dist-git main/rawhide branch.</p>
@@ -65,18 +66,21 @@ Here are the key differences between the two:
 <th>Packit CLI</th>
 <td><p>Have a <code>.packit.yaml</code> in <b>upstream</b> repo, clone repo and run:</p>
 
-  <pre>packit propose-downstream</pre>
+  ```
+  packit propose-downstream
+  ```
 
   <p>It creates <i>dist-git</i> pull requests with the content of the release and the packit config taken from local clone.</p>
 </td>
 <td><p>Have a <code>.packit.yaml</code> in <b>dist-git</b> repo, clone repo and run:</p>
 
-  <pre>packit pull-from-upstream</pre>
+  ```
+  packit pull-from-upstream
+  ```
 
   <p>It creates <i>dist-git</i> pull requests with the content of the release and the packit config taken from local clone.</p>
 </td>
 </tr>
-
 </table>
 
 ### Resolving specfile and version
@@ -111,7 +115,6 @@ Here are the key differences between the two:
   <p>Specfile is retrieved from the <b>local dist-git repo clone</b>.</p>
 </td>
 </tr>
-
 </table>
 
 ## Propose downstream job
