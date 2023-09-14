@@ -263,5 +263,8 @@ actions:
   - "make archive"
   - bash -c "ls -1 ./package-*.tar.gz"
   changelog-entry:
-  - bash -c "echo - New release ${PACKIT_PROJECT_VERSION}"
+  - bash -c "echo '- New release' ${PACKIT_PROJECT_VERSION}"
 ```
+
+Please note that `%changelog` expects dashes in a changelog entry, but the dash
+would be interpreted by `echo` as an option so we need to quote it.
