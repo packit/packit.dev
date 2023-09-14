@@ -38,16 +38,24 @@ Here are the key differences between the two:
 <tr>
 <th>Packit Service</th>
 <td><p>Have a <code>.packit.yaml</code> in <b>upstream</b> repo:</p>
-<pre class="language-yaml">jobs:
-  propose-downstream:
-  ...</pre>
+
+<p>
+<code>jobs:</code><br/>
+<code>&nbsp;&nbsp;propose-downstream:</code><br/>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;...</code><br/>
+</p>
+
   <p>Triggered by a new release in <b>upstream project</b>.</p>
   <p>It creates <i>dist-git</i> pull requests with the content of the release.</p>
 </td>
 <td><p>Have a <code>.packit.yaml</code> in <b>dist-git</b> repo (main or rawhide branch):</p>
-<pre class="language-yaml">jobs:
-  pull-from-upstream:
-  ...</pre>
+
+<p>
+<code>jobs:</code><br/>
+<code>&nbsp;&nbsp;pull-from-upstream:</code><br/>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;...</code><br/>
+</p>
+
   <p>Triggered by a new release in <b>upstream project</b>.</p>
   <p>It creates <i>dist-git</i> pull requests with the content of the release and the packit config taken from dist-git main/rawhide branch.</p>
 </td>
@@ -56,11 +64,15 @@ Here are the key differences between the two:
 <tr>
 <th>Packit CLI</th>
 <td><p>Have a <code>.packit.yaml</code> in <b>upstream</b> repo, clone repo and run:</p>
-  <pre class="language-yaml">packit propose-downstream</pre>
+
+  <pre>packit propose-downstream</pre>
+
   <p>It creates <i>dist-git</i> pull requests with the content of the release and the packit config taken from local clone.</p>
 </td>
 <td><p>Have a <code>.packit.yaml</code> in <b>dist-git</b> repo, clone repo and run:</p>
-  <pre class="language-yaml">packit pull-from-upstream</pre>
+
+  <pre>packit pull-from-upstream</pre>
+
   <p>It creates <i>dist-git</i> pull requests with the content of the release and the packit config taken from local clone.</p>
 </td>
 </tr>
