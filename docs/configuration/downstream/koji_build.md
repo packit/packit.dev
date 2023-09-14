@@ -50,7 +50,7 @@ For Koji builds from upstream, see [`upstream_koji_build`](/docs/configuration/u
 * **allowed_pr_authors** - a list of FAS accounts of PR authors whose merged pull requests will trigger koji builds
   (defaults to `['packit']`).
 * **allowed_committers** - a list of FAS accounts of committers whose direct pushes to dist-git will trigger koji builds
-  (defaults to an empty list). You do not need to specify this parameter if you want to have builds from PRs.
+  (defaults to an empty list). You do not need to configure this option if you want to have koji builds triggered only by merged pull requests.
 
 ### Example
 
