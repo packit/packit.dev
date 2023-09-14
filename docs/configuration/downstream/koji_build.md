@@ -49,8 +49,8 @@ For Koji builds from upstream, see [`upstream_koji_build`](/docs/configuration/u
   instead of the real production builds
 * **allowed_pr_authors** - a list of FAS accounts of PR authors whose merged pull requests will trigger koji builds
   (defaults to `['packit']`).
-* **allowed_committers** - a list of FAS accounts of committers whose pushes to dist-git will trigger koji builds
-  (defaults to an empty list).
+* **allowed_committers** - a list of FAS accounts of committers whose direct pushes to dist-git will trigger koji builds
+  (defaults to an empty list). You do not need to specify this parameter if you want to have builds from PRs.
 
 ### Example
 
@@ -58,6 +58,7 @@ For Koji builds from upstream, see [`upstream_koji_build`](/docs/configuration/u
 jobs:
 - job: koji_build
   trigger: commit
+  allowed_committers: ["jsmith"]
   dist_git_branches:
     - fedora-all
     - epel-8
