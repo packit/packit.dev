@@ -47,6 +47,6 @@ jobs:
 - job: bodhi_update
   trigger: commit
   dist_git_branches:
-    - fedora-stable # rawhide updates are created automatically
+    - fedora-branched # rawhide updates are created automatically
     - epel-8
 ```
