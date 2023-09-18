@@ -152,14 +152,14 @@ and [`pull_from_upstream`](#pull_from_upstream) jobs.
 
 #### upload_sources
 
-(*bool*) . By setting this option to `false`, Packit does not upload archive to lookaside cache when
+(*bool*) . By setting this option to `false`, Packit does not upload the archive to lookaside cache when
 synchronising the release (either via
 [`propose_downstream`](/docs/configuration/upstream/propose_downstream)
-or [`pull_from_upstream`](https://packit.dev/docs/configuration/downstream/pull_from_upstream)
-jobs) before creating a pull-request.
+or [`pull_from_upstream`](/docs/configuration/downstream/pull_from_upstream)
+jobs) before creating a pull request.
 Disable this if you are not sure if the archive can be stored
-in the lookaside cache because of the licensing or other reasons.
-Just don't forget to upload archive manually.
+in the lookaside cache because of licensing or other reasons.
+Just don't forget to upload the archive manually.
 When disabled, the CI in dist-git might fail because
 of the missing archive in the lookaside cache.
 
