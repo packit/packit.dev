@@ -155,7 +155,11 @@ For Python packages, you can use a
 that automatically builds and uploads the archive to PyPI 
 on each new release. Then during propose downstream, Packit tries to download the archive from the provided URL.
 If the download fails because the upstream archive is not available at the time of running the job, 
-the job is scheduled to be retried later. 
+the job is scheduled to be retried later.
+
+If you don't want Packit to upload sources to lookaside cache before the pull request is opened,
+set `upload_sources` to `false`. By disabling the upload, you need to take care of this yourself
+and the builds triggered by dist-git CI will fail because of the missing archive in the lookaside cache.
 
 #### Update dist-git content
 After saving the archive in the lookaside cache,
