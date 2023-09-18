@@ -150,6 +150,19 @@ creating a SRPM. If you don't want this, you can prevent it with
 This option only applies to SRPM creation and doesn't affect [`propose_downstream`](#propose_downstream)
 and [`pull_from_upstream`](#pull_from_upstream) jobs.
 
+#### upload_sources
+
+(*bool*) . By setting this option to `false`, Packit does not upload archive to lookaside cache when
+synchronising the release (either via
+[`propose_downstream`](/docs/configuration/upstream/propose_downstream)
+or [`pull_from_upstream`](https://packit.dev/docs/configuration/downstream/pull_from_upstream)
+jobs) before creating a pull-request.
+Disable this if you are not sure if the archive can be stored
+in the lookaside cache because of the licensing or other reasons.
+Just don't forget to upload archive manually.
+When disabled, the CI in dist-git might fail because
+of the missing archive in the lookaside cache.
+
 #### release_suffix
 
 (*templated string*) String that can be used to override the default release suffix
