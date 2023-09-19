@@ -268,3 +268,24 @@ actions:
 
 Please note that `%changelog` expects dashes in a changelog entry, but the dash
 would be interpreted by `echo` as an option so we need to quote it.
+
+-----
+Be aware, that commands do not share the working directory.
+So, if you want to change the working directory of a command or multiple commands,
+don't run `cd` as a separate command as shown in the following example.
+This won't work as expected:
+
+```yaml
+actions:
+  post-upstream-clone:
+    - cd /tmp
+    - touch test_file
+```
+
+Instead, spawn a shell and change the directory as the first command:
+
+```yaml
+actions:
+  post-upstream-clone:
+    - bash -c "cd ${PACKIT_DOWNSTREAM_REPO}; touch new_file_for_dist_git.tmp"
+```
