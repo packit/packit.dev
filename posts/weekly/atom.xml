@@ -2,11 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2023-09-11T00:00:00.000Z</updated>
+    <updated>2023-09-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 37 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2023/week-37</id>
+        <link href="https://packit.dev/posts/weekly/2023/week-37"/>
+        <updated>2023-09-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 37 (September 12th – September 18th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-37-september-12th--september-18th">Week 37 (September 12th – September 18th)<a href="#week-37-september-12th--september-18th" class="hash-link" aria-label="Direct link to Week 37 (September 12th – September 18th)" title="Direct link to Week 37 (September 12th – September 18th)">​</a></h2><ul><li>If you have concerns about Packit uploading new archives to lookaside cache before creating a pull request, you can newly set <code>upload_sources</code> to False to disable this. (<a href="https://github.com/packit/packit/pull/2086" target="_blank" rel="noopener noreferrer">packit#2086</a>)</li><li>We have introduced a new configuration option <code>notifications.failure_comment.message</code> that enables notifying users on failure via a comment using the configured message. (<a href="https://github.com/packit/packit-service/pull/2182" target="_blank" rel="noopener noreferrer">packit-service#2182</a>)</li></ul>]]></content>
+        <category label="2023-September" term="2023-September"/>
+        <category label="2023" term="2023"/>
+        <category label="September" term="September"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 36 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2023/week-36</id>
