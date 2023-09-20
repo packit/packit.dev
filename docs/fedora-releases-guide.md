@@ -178,6 +178,13 @@ the changelog entry will use the GitHub/GitLab release description field.
 E.g. use `-` instead of `*` for lists to not create multiple changelog entries.)
 There is also [`sync_changelog`](/docs/configuration/#sync_changelog) configuration option to enable syncing 
 the whole changelog.
+You can also utilize a [custom `changelog-entry` action](/docs/configuration/actions#syncing-the-release).
+
+        actions:
+          changelog-entry:
+            - bash -c 'echo "- New release ${PACKIT_PROJECT_VERSION}"'
+
+
 
 Be aware that Packit does not sign-off its commits so it can't open pull requests
 if the ` Enforce signed-off commits in pull-request` option is set in the dist-git project settings.
@@ -230,7 +237,7 @@ for overriding the Packit default behaviour, for example:
   - for the changelog entry generation, if you do not want the default `git log` output, you can use your own command(s):
   
         changelog-entry:
-          - bash -c "echo '- New release' ${PACKIT_PROJECT_VERSION}"
+          - bash -c 'echo "- New release ${PACKIT_PROJECT_VERSION}"'
 
 
 You can check all the job runs with details and logs in [this view](https://dashboard.packit.dev/jobs/pull-from-upstreams).
@@ -368,7 +375,7 @@ jobs:
    - fedora-rawhide
   actions:
     changelog-entry:
-    - bash -c "echo '- New release' ${PACKIT_PROJECT_VERSION}"
+    - bash -c 'echo "- New release ${PACKIT_PROJECT_VERSION}"'
 
 - job: koji_build
   trigger: commit
