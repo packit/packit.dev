@@ -387,21 +387,50 @@ repository.  Defaults to 4, that is, patches will look like `PatchNNNN:
 minimum width".
 
 #### notifications
+##### pull_request
+###### successful_build
+(*bool*)
+Enable comment with instructions how to install a package with the change implemented in the pull request. 
+This comment will be posted by Packit after a successful build of a pull request is done. 
 
-There is only one notification configuration you can set up right now: enable
-the "Congratulations!" comment which will packit send after a successful build of a
-pull request is done.
-
-The default behaviour is not to send the comment with instructions how to install a
-package with the change implemented in the pull request:
+The default behaviour is not to send the comment. To enable the comment, this should be the configuration:
 
 ```yaml
 notifications:
   pull_request:
-    successful_build: false
+    successful_build: true
 ```
 
-You can enable the commenting by setting `successful_build` to `true`.
+##### failure_comment
+###### message
+(*string*)
+A message that will be posted as a comment in case of a job failure. 
+Same as for other keys, you can define this option at the top-level, applying it to all jobs, or configure it 
+on a job level, enabling you to have specific messages for each job or opt not to have a message for certain 
+jobs. By default, no message is posted on job failure.
+
+To prevent duplication,  Packit posts a comment only when its content differs from the previous comment in the specific 
+pull request or commit.
+To include dynamic content, you can use the `{commit_sha}` placeholder, which will be automatically replaced with 
+the actual commit SHA provided by Packit (consider using this in relation to the duplication of comments). 
+You can use this also e.g. to tag a user/namespace that should be notified about the failure.
+
+Example:
+```yaml
+jobs:
+  - job: copr_build
+    trigger: pull_request
+    targets:
+      - fedora-all
+
+  - job: tests
+    trigger: pull_request
+    targets:
+      - fedora-all
+    notifications:
+      failure_comment:
+        message: "One of the tests failed for {commit_sha}, @admin, check the test failures on this PR."
+```
 
 #### issue_repository
 
