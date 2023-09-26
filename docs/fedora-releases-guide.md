@@ -237,7 +237,12 @@ for overriding the Packit default behaviour, for example:
   - for the changelog entry generation, if you do not want the default `git log` output, you can use your own command(s):
   
         changelog-entry:
-          - bash -c 'echo "- New release ${PACKIT_PROJECT_VERSION}"'
+          - bash -c 'echo "- New release ${PACKIT_PROJECT_VERSION} (${PACKIT_RESOLVED_BUGS})"'
+  - for a custom commit message for commit created by Packit:
+
+        commit-message:
+          - bash -c 'echo -e "Rebase to new upstream release ${PACKIT_PROJECT_VERSION}\n"'
+          - bash -c 'echo -e "Resolves ${PACKIT_RESOLVED_BUGS}\n"'
 
 
 You can check all the job runs with details and logs in [this view](https://dashboard.packit.dev/jobs/pull-from-upstreams).
