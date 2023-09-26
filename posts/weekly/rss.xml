@@ -4,10 +4,27 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 18 Sep 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 25 Sep 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 38 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2023/week-38</link>
+            <guid>https://packit.dev/posts/weekly/2023/week-38</guid>
+            <pubDate>Mon, 25 Sep 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 38 (September 19th – September 25th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-38-september-19th--september-25th">Week 38 (September 19th – September 25th)<a href="#week-38-september-19th--september-25th" class="hash-link" aria-label="Direct link to Week 38 (September 19th – September 25th)" title="Direct link to Week 38 (September 19th – September 25th)">​</a></h2><ul><li>As part of the effort of implementing release syncing for CentOS Stream,
+Packit now supports the <code>pkg_tool</code> option in the config
+(at the top-level or with specific packages when using the monorepo syntax).
+This option can be used for switching between <code>fedpkg</code> or <code>centpkg</code>.
+(<a href="https://github.com/packit/packit/pull/2085" target="_blank" rel="noopener noreferrer">packit#2085</a>)</li><li>When updating the <code>Version</code> tag during <code>propose_downstream</code> or <code>pull_from_upstream</code>,
+Packit now tries to update referenced macros (if any) rather than overwriting the references.
+(<a href="https://github.com/packit/packit/pull/2087" target="_blank" rel="noopener noreferrer">packit#2087</a>)</li></ul>]]></content:encoded>
+            <category>2023-September</category>
+            <category>2023</category>
+            <category>September</category>
+        </item>
         <item>
             <title><![CDATA[Week 37 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2023/week-37</link>
