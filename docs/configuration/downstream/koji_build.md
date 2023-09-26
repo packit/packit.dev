@@ -10,7 +10,9 @@ Trigger the build in
 as a reaction to a new dist-git commit.
 A Packit config file needs to be in the dist-git repository
 to allow this job to be triggered.
-Packit loads the config from the newly pushed commit.
+Packit loads the config from the newly pushed commit
+(therefore, the Packit configuration needs to be in each branch
+Packit should act upon).
 
 The build is triggered only for commits with a spec-file change.
 
