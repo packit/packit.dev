@@ -432,6 +432,9 @@ jobs:
         message: "One of the tests failed for {commit_sha}, @admin, check the test failures on this PR."
 ```
 
+For jobs related to the release automation (`propose_downstream`, `pull_from_upstream`, `koji_build` and `bodhi_update`),
+this message is used as an extension of the comment added by default by Packit. For these, the `commit_sha` is not provided.
+
 #### issue_repository
 
 Use this key to be notified about errors of the downstream jobs (Koji build, Bodhi update, pull from upstream).
