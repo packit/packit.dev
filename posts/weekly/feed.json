@@ -5,6 +5,19 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2023/week-39",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-39-september-26th--october-2nd\">Week 39 (September 26th – October 2nd)<a href=\"#week-39-september-26th--october-2nd\" class=\"hash-link\" aria-label=\"Direct link to Week 39 (September 26th – October 2nd)\" title=\"Direct link to Week 39 (September 26th – October 2nd)\">​</a></h2><ul><li>When using packit CLI you can now specify bugs resolved by an update by <code>-b</code> or <code>--resolve-bug</code> option for <code>propose-downstream</code> and <code>pull-from-upstream</code> commands. The values will be added by default to the changelog and commit message and provided in <code>commit-message</code> and <code>changelog-entry</code> actions as <code>PACKIT_RESOLVED_BUGS</code> env variable. (<a href=\"https://github.com/packit/packit/pull/2094\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2094</a>)</li><li>Packit-service now automatically adds bugzilla created by Upstream Release Monitoring as <code>- Resolves {bugzilla} </code> to the changelog (or commit if autochangelog is used) and provides the value in <code>commit-message</code> and <code>changelog-entry</code> actions as <code>PACKIT_RESOLVED_BUGS</code> env variable. When retriggering the <code>pull-from-upstream</code> from comment, one can also specify the bug(s) as <code>/packit pull-from-upstream --resolved-bugs rhbz#123,rhbz#125</code> and Packit will do the same. (<a href=\"https://github.com/packit/packit-service/pull/2193\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2193</a>)</li><li>You can now configure <code>notifications.failure_comment.message</code> also for downstream jobs, where the configured message will be used as an extension of the comment added by default by Packit. (<a href=\"https://github.com/packit/packit-service/pull/2199\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2199</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2023/week-39",
+            "title": "Week 39 in Packit",
+            "summary": "Week 39 (September 26th – October 2nd)",
+            "date_modified": "2023-10-02T00:00:00.000Z",
+            "tags": [
+                "2023-September",
+                "2023",
+                "September"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2023/week-38",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-38-september-19th--september-25th\">Week 38 (September 19th – September 25th)<a href=\"#week-38-september-19th--september-25th\" class=\"hash-link\" aria-label=\"Direct link to Week 38 (September 19th – September 25th)\" title=\"Direct link to Week 38 (September 19th – September 25th)\">​</a></h2><ul><li>As part of the effort of implementing release syncing for CentOS Stream,\nPackit now supports the <code>pkg_tool</code> option in the config\n(at the top-level or with specific packages when using the monorepo syntax).\nThis option can be used for switching between <code>fedpkg</code> or <code>centpkg</code>.\n(<a href=\"https://github.com/packit/packit/pull/2085\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2085</a>)</li><li>When updating the <code>Version</code> tag during <code>propose_downstream</code> or <code>pull_from_upstream</code>,\nPackit now tries to update referenced macros (if any) rather than overwriting the references.\n(<a href=\"https://github.com/packit/packit/pull/2087\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2087</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2023/week-38",

@@ -2,11 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2023-09-25T00:00:00.000Z</updated>
+    <updated>2023-10-02T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 39 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2023/week-39</id>
+        <link href="https://packit.dev/posts/weekly/2023/week-39"/>
+        <updated>2023-10-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 39 (September 26th – October 2nd)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-39-september-26th--october-2nd">Week 39 (September 26th – October 2nd)<a href="#week-39-september-26th--october-2nd" class="hash-link" aria-label="Direct link to Week 39 (September 26th – October 2nd)" title="Direct link to Week 39 (September 26th – October 2nd)">​</a></h2><ul><li>When using packit CLI you can now specify bugs resolved by an update by <code>-b</code> or <code>--resolve-bug</code> option for <code>propose-downstream</code> and <code>pull-from-upstream</code> commands. The values will be added by default to the changelog and commit message and provided in <code>commit-message</code> and <code>changelog-entry</code> actions as <code>PACKIT_RESOLVED_BUGS</code> env variable. (<a href="https://github.com/packit/packit/pull/2094" target="_blank" rel="noopener noreferrer">packit#2094</a>)</li><li>Packit-service now automatically adds bugzilla created by Upstream Release Monitoring as <code>- Resolves {bugzilla} </code> to the changelog (or commit if autochangelog is used) and provides the value in <code>commit-message</code> and <code>changelog-entry</code> actions as <code>PACKIT_RESOLVED_BUGS</code> env variable. When retriggering the <code>pull-from-upstream</code> from comment, one can also specify the bug(s) as <code>/packit pull-from-upstream --resolved-bugs rhbz#123,rhbz#125</code> and Packit will do the same. (<a href="https://github.com/packit/packit-service/pull/2193" target="_blank" rel="noopener noreferrer">packit-service#2193</a>)</li><li>You can now configure <code>notifications.failure_comment.message</code> also for downstream jobs, where the configured message will be used as an extension of the comment added by default by Packit. (<a href="https://github.com/packit/packit-service/pull/2199" target="_blank" rel="noopener noreferrer">packit-service#2199</a>)</li></ul>]]></content>
+        <category label="2023-September" term="2023-September"/>
+        <category label="2023" term="2023"/>
+        <category label="September" term="September"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 38 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2023/week-38</id>
