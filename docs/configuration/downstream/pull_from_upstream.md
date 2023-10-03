@@ -7,7 +7,10 @@ sidebar_position: 1
 
 A dist-git only job that opens a new dist-git pull request in
 src.fedoraproject.org when a new upstream release happens using a notification
-from [release-monitoring.org](https://release-monitoring.org/).
+from [release-monitoring.org](https://release-monitoring.org/). Upstream Release Monitoring creates a Bugzilla
+for the new upstream release and this Bugzilla is by default referenced in the dist-git changelog as
+`- Resolves rhbz#xz` and `Resolves rhbz#xz` in the commit message. This behaviour can be customized
+using [actions](/docs/configuration/actions#syncing-the-release).
 
 This job utilizes the same logic as `propose_downstream` with the only
 exception that it is defined and executed in dist-git.
@@ -53,6 +56,19 @@ This will take the Packit configuration file from the default branch of the dist
   repository (`rawhide`), same as if the job was triggered by a new release. To use the configuration file from the dist-git pull request you are commenting on, you can add an argument:
 
     /packit pull-from-upstream --with-pr-config
+
+
+`pull-from-upstream` triggered by the Upstream Release Monitoring automatically handles the Bugzilla created by Upstream
+Release Monitoring (by default adds `Resolves` to changelog/commit and exposes `PACKIT_RESOLVED_BUGS` to the `changelog-entry` and `commit-message`
+actions). In case of retriggering, you need to specify the bugs like this:
+
+    /packit pull-from-upstream --resolved-bugs rhbz#123,rhbz#124
+
+You can find the bugzilla by listing all the bugzillas created by Upstream Release Monitoring:
+
+https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&columnlist=product%2Ccomponent%2Cassigned_to%2Cstatus%2Csummary%2Clast_change_time%2Cseverity%2Cpriority&email1=%22upstream-release-monitoring%40fedoraproject.org%22&emailreporter1=1&emailtype1=substring&order=id%20DESC%2C%20&query_format=advanced
+
+You can also append `&component={your-package-name}` to the query above to constraint the result to your package only.
 
 ## Example
 

@@ -153,7 +153,7 @@ This separator is exposed as an environment variable `PACKIT_DEBUG_DIVIDER`.
     ---%<--- snip ---%<--- here ---%<---
     Rebase to new upstream release 0.42.69
 
-    - Resolves rhbz#1234
+    Resolves rhbz#124
 
 This output can be produced by the following config:
 ```yaml
@@ -162,7 +162,7 @@ actions:
     - echo 'debug output'
     - bash -c 'echo ${PACKIT_DEBUG_DIVIDER}'
     - bash -c 'echo -e "Rebase to new upstream release ${PACKIT_PROJECT_VERSION}\n"'
-    - echo '- Resolves rhbz#1234'
+    - bash -c 'echo -e "Resolves ${PACKIT_RESOLVED_BUGS}\n"'
 ```
 
 </details>
@@ -204,6 +204,8 @@ There are also action-specific environment variables, which you can see below.
 
 * `PACKIT_PROJECT_VERSION` — version to be set in the specfile, set when relevant 
 (e.g. when syncing upstream release downstream)
+* `PACKIT_RESOLVED_BUGS` - bugs resolved by the release separated by space, set 
+when syncing upstream release downstream, e.g. `rhbz#123 rhbz#124`
 
 ### `commit-message`
 
@@ -212,6 +214,8 @@ There are also action-specific environment variables, which you can see below.
 * `PACKIT_UPSTREAM_COMMIT` — commit SHA of the upstream release
 * `PACKIT_DEBUG_DIVIDER` ­— divider that can be used to separate debug output
   from the actual commit message to be used
+* `PACKIT_RESOLVED_BUGS` - bugs resolved by the release separated by space, 
+  e.g. `rhbz#123 rhbz#124`
 
 ### Release-synchronization actions
 
@@ -220,7 +224,7 @@ Related to the `propose-downstream` and `pull-from-upstream` jobs.
 * `PACKIT_UPSTREAM_REPO` — absolute path to cloned upstream git repo
 * `PACKIT_DOWNSTREAM_REPO` — absolute path to cloned downstream git repo
 
-List of actions that are provided the environment variables:
+List of actions that provide these environment variables:
 * `post-upstream-clone`
 * `pre-sync`
 * `prepare-files`
