@@ -70,6 +70,13 @@ If you want to trigger tests via pull request comment and not by every new commi
     manual_trigger: true
 ```
 
+:::info
+
+If you have both build and follow-up test jobs with `manual_trigger: true`, you will need to post 
+2 comments: first `/packit build` comment command and after the builds are successful `/packit test` comment command.
+
+:::
+
 Another useful config is `labels` option:
 ```yaml
   jobs:
