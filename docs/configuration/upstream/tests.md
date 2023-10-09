@@ -115,7 +115,9 @@ to not need to change the config file when the new system version is released.
 Each target is then mapped to a [(tmt) distro](https://tmt.readthedocs.io/en/latest/spec/context.html#dimension)
 and to a [Testing farm's compose](https://api.dev.testing-farm.io/v0.1/composes)
 when submitting a test. You can override the default (target to distro) mapping by
-specifying `targets` as a dictionary instead of as a list.
+specifying `targets` as a dictionary instead of as a list (make sure to include the architecture
+of the target, e.g. not `epel-8` but `epel-8-x86_64`).
+
 In the following example, the `epel-8-x86_64` build will be tested on `centos-8`
 distro (otherwise the default would be `centos-stream-8`) and for
 `epel-7-x86_64` build the default mapping (to `centos-7` distro) will be used:
