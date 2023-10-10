@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 02 Oct 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 09 Oct 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 40 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2023/week-40</link>
+            <guid>https://packit.dev/posts/weekly/2023/week-40</guid>
+            <pubDate>Mon, 09 Oct 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 40 (October 3rd – October 9th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-40-october-3rd--october-9th">Week 40 (October 3rd – October 9th)<a href="#week-40-october-3rd--october-9th" class="hash-link" aria-label="Direct link to Week 40 (October 3rd – October 9th)" title="Direct link to Week 40 (October 3rd – October 9th)">​</a></h2><ul><li>We have fixed an issue that you could encounter when running the Packit from the CLI that caused misinterpretation of the repository to be an upstream repo instead of a downstream. (<a href="https://github.com/packit/packit/pull/2117" target="_blank" rel="noopener noreferrer">packit#2117</a>)</li><li>Packit now also detects resolved bugs in the default update notes (created from changelog diff) and assigns these when submitting the Bodhi updates. (<a href="https://github.com/packit/packit/pull/2111" target="_blank" rel="noopener noreferrer">packit#2111</a>)</li><li>We have fixed an issue that prevented automated allowlisting in the Packit Service. (<a href="https://github.com/packit/packit/pull/2113" target="_blank" rel="noopener noreferrer">packit#2113</a>)</li><li>Packit now exports <code>PACKIT_UPSTREAM_PACKAGE_NAME</code>, <code>PACKIT_DOWNSTREAM_PACKAGE_NAME</code> and <code>PACKIT_CONFIG_PACKAGE_NAME</code> also in the <code>changelog_entry</code> action. (<a href="https://github.com/packit/packit/pull/2103" target="_blank" rel="noopener noreferrer">packit#2103</a>)</li><li>Packit now posts a comment with a link to the Packit dashboard to the pull requests created in Fedora dist-git when syncing the release. (<a href="https://github.com/packit/packit-service/pull/2215" target="_blank" rel="noopener noreferrer">packit-service#2215</a>)</li></ul>]]></content:encoded>
+            <author>mfocko@redhat.com (Matej Focko)</author>
+            <category>2023-October</category>
+            <category>2023</category>
+            <category>October</category>
+        </item>
         <item>
             <title><![CDATA[Week 39 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2023/week-39</link>

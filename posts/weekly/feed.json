@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2023/week-40",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-40-october-3rd--october-9th\">Week 40 (October 3rd – October 9th)<a href=\"#week-40-october-3rd--october-9th\" class=\"hash-link\" aria-label=\"Direct link to Week 40 (October 3rd – October 9th)\" title=\"Direct link to Week 40 (October 3rd – October 9th)\">​</a></h2><ul><li>We have fixed an issue that you could encounter when running the Packit from the CLI that caused misinterpretation of the repository to be an upstream repo instead of a downstream. (<a href=\"https://github.com/packit/packit/pull/2117\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2117</a>)</li><li>Packit now also detects resolved bugs in the default update notes (created from changelog diff) and assigns these when submitting the Bodhi updates. (<a href=\"https://github.com/packit/packit/pull/2111\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2111</a>)</li><li>We have fixed an issue that prevented automated allowlisting in the Packit Service. (<a href=\"https://github.com/packit/packit/pull/2113\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2113</a>)</li><li>Packit now exports <code>PACKIT_UPSTREAM_PACKAGE_NAME</code>, <code>PACKIT_DOWNSTREAM_PACKAGE_NAME</code> and <code>PACKIT_CONFIG_PACKAGE_NAME</code> also in the <code>changelog_entry</code> action. (<a href=\"https://github.com/packit/packit/pull/2103\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2103</a>)</li><li>Packit now posts a comment with a link to the Packit dashboard to the pull requests created in Fedora dist-git when syncing the release. (<a href=\"https://github.com/packit/packit-service/pull/2215\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2215</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2023/week-40",
+            "title": "Week 40 in Packit",
+            "summary": "Week 40 (October 3rd – October 9th)",
+            "date_modified": "2023-10-09T00:00:00.000Z",
+            "author": {
+                "name": "Matej Focko",
+                "url": "https://github.com/mfocko"
+            },
+            "tags": [
+                "2023-October",
+                "2023",
+                "October"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2023/week-39",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-39-september-26th--october-2nd\">Week 39 (September 26th – October 2nd)<a href=\"#week-39-september-26th--october-2nd\" class=\"hash-link\" aria-label=\"Direct link to Week 39 (September 26th – October 2nd)\" title=\"Direct link to Week 39 (September 26th – October 2nd)\">​</a></h2><ul><li>When using packit CLI you can now specify bugs resolved by an update by <code>-b</code> or <code>--resolve-bug</code> option for <code>propose-downstream</code> and <code>pull-from-upstream</code> commands. The values will be added by default to the changelog and commit message and provided in <code>commit-message</code> and <code>changelog-entry</code> actions as <code>PACKIT_RESOLVED_BUGS</code> env variable. (<a href=\"https://github.com/packit/packit/pull/2094\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2094</a>)</li><li>Packit-service now automatically adds bugzilla created by Upstream Release Monitoring as <code>- Resolves {bugzilla} </code> to the changelog (or commit if autochangelog is used) and provides the value in <code>commit-message</code> and <code>changelog-entry</code> actions as <code>PACKIT_RESOLVED_BUGS</code> env variable. When retriggering the <code>pull-from-upstream</code> from comment, one can also specify the bug(s) as <code>/packit pull-from-upstream --resolved-bugs rhbz#123,rhbz#125</code> and Packit will do the same. (<a href=\"https://github.com/packit/packit-service/pull/2193\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2193</a>)</li><li>You can now configure <code>notifications.failure_comment.message</code> also for downstream jobs, where the configured message will be used as an extension of the comment added by default by Packit. (<a href=\"https://github.com/packit/packit-service/pull/2199\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2199</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2023/week-39",
