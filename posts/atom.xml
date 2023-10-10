@@ -2,11 +2,92 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts</id>
     <title>Packit Blog</title>
-    <updated>2023-09-05T12:46:18.000Z</updated>
+    <updated>2023-10-10T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts"/>
     <subtitle>Blog posts by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Experiences using Packit for a Rust executable Project]]></title>
+        <id>https://packit.dev/posts/experiences_with_rust</id>
+        <link href="https://packit.dev/posts/experiences_with_rust"/>
+        <updated>2023-10-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA["How absurdly simple!" I cried.]]></summary>
+        <content type="html"><![CDATA[<p>"How absurdly simple!" I cried.</p><p>"Quite so!" said he, a little nettled. "Every problem becomes very childish when once it is explained to you."</p><ul><li>Arthur Conan Doyle, "The Adventure of the Dancing Men"</li></ul><p>We have planned for a while to use Packit to generate packages on Copr
+on demand for our somewhat complicated Rust executable, stratisd. It
+looked like this was going to be challenging, and in a sense it was,
+but once the task was completed, it turned out to have been pretty
+straightforward.</p><p>The two primary parts of our Stratis project are stratisd, a big,
+fairly complicated Rust project which generates multiple distinct Rust
+executables and also installs scripts and configuration files and so
+forth, and stratis-cli, a relatively simple Python project which
+communicates with stratisd over the D-Bus. Our main purpose in getting
+on-demand packages of both these projects was not to test the
+packaging, although that is a nice thing to do, but to have a
+convenient way to do functional testing of the project, frequently
+generating a stratisd package from one stratisd pull request and a
+stratis-cli package from a matching stratis-cli pull request.</p><p>The Packit team had already obliged us by preparing a Packit
+configuration file for our stratis-cli repo, we thus merely had to
+figure out how to do the same for stratisd. We already had some
+scripts which we could run by hand to make the SRPMs for both projects
+so that we could manually send them to Copr so, as it turned out, all
+we really needed to do was figure out how to write a Packit
+configuration file for stratisd so that Packit would do these tasks
+for us. There follows a quick summary of the decisions we made to
+solve this problem. Note that our whole and only task was to figure
+out how to create the source artifacts and edit the spec file and
+to provide these in such a way that Packit could take over from there,
+build the SRPM, and carry on to request the Copr builds which provide
+the binary packages for testing.</p><p>A Packit configuration is used to set certain configuration <em>options</em>,
+to override certain <em>actions</em>, or to define certain <em>hooks</em>. The
+available actions and hooks are specific to a given job or set of jobs.
+If an action is not
+overridden in a project's Packit configuration, Packit will execute
+its own default action. For example, Packit's default for the
+create-archive action is just git-archive. Any action can be overridden by
+specifying a sequence of commands. For the stratisd Packit
+configuration, we found that we had to override the majority of the
+actions.</p><p>Note that the <a href="https://github.com/stratis-storage/stratisd/blob/master/.packit.yaml" target="_blank" rel="noopener noreferrer">stratisd Packit configuration file</a> is quite
+simple as most of the action is in the <code>create_archive.py</code> script. Some
+things to make note of are the following:</p><ol><li><p><code>merge_pr_in_ci</code> is set to false. This prevents Packit from
+automatically merging our pull request into its target branch. It has
+always been our custom to build from the unmerged branch when testing
+PRs and we preferred to do the same in our Packit configuration.</p></li><li><p><code>fix-spec-file</code> contains a dummy echo action. This is how we override
+Packit's default spec file editing action. Instead of specifying an
+override for this action, we use <a href="https://github.com/stratis-storage/ci/blob/master/release_management/create_artifacts.py" target="_blank" rel="noopener noreferrer">our own script</a>, <code>create_artifacts.py</code>, to
+edit the spec file as well as to generate the three source artifacts that we
+use in this package in the <code>create-archive</code> action.</p></li><li><p><code>create_artifacts.py</code> uses the Packit team's <a href="https://github.com/packit/specfile" target="_blank" rel="noopener noreferrer">specfile package</a> to
+edit the stratisd specfile. We needed just two modifications: 1. To overwrite the Version field with our preferred version string. 2. To overwrite the Source entries with the names and paths of the
+source artifacts.
+This requires just one <a href="https://github.com/stratis-storage/ci/blob/master/release_management/_utils.py#L80" target="_blank" rel="noopener noreferrer">very simple function</a> using specfile.</p></li><li><p>In the Packit configuration, the <code>update_release</code> field is set to
+false. We prefer to update the Version field in the spec file using
+our <code>create_archive.py</code> script, so that the updated version is
+recognized as a pre-release version of our current version by
+<code>rpmdev-vercmp</code>.</p></li><li><p>We modified our <a href="https://github.com/stratis-storage/stratis-cli/blob/master/.packit.yaml" target="_blank" rel="noopener noreferrer">stratis-cli Packit configuration file</a> to work the
+same way as our stratisd one.</p></li></ol><p>In summary, we got the ability to take advantage of the Packit
+infrastructure for Copr builds by figuring out how to satisfy its
+requirements for the source artifacts and the specfile. Note that our
+decisions about how to do this were made based on the scripts we had
+already written to generate the SRPMs and the particular requirements
+of our project. For example, our release scripts are written in
+Python, and we stuck with that choice. That turned out to be handy,
+because that allowed us to use the specfile project in our scripts to
+edit the spec file. But it would have been possible to write the
+artifact creation script in Rust using the cargo xtask pattern just as
+well, and to solve the spec file rewriting problem using, e.g., sed.
+We overwrote the Version field in the spec file, rather than allowing
+Packit to autobump our release number, because our development process
+requires us to bump the version in the Cargo.toml (for Rust) and
+setup.cfg (for Python) files to the version we will release as soon as
+we begin development. These choices and their implementations could be
+made differently to support a project with different constraints and
+different existing infrastructure.</p>]]></content>
+        <author>
+            <name>mulhern</name>
+            <email>amulhern@redhat.com</email>
+            <uri>https://github.com/mulkieran</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Call for volunteers: help to test us the release syncing using staging instance]]></title>
         <id>https://packit.dev/posts/verify-sync-release-volunteers</id>
