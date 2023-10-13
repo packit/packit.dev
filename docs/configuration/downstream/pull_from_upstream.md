@@ -9,7 +9,7 @@ A dist-git only job that opens a new dist-git pull request in
 src.fedoraproject.org when a new upstream release happens using a notification
 from [release-monitoring.org](https://release-monitoring.org/). Upstream Release Monitoring creates a Bugzilla
 for the new upstream release and this Bugzilla is by default referenced in the dist-git changelog as
-`- Resolves rhbz#xz` and `Resolves rhbz#xz` in the commit message. This behaviour can be customized
+`- Resolves rhbz#xz` and `- Resolves rhbz#xz` in the commit message. This behaviour can be customized
 using [actions](/docs/configuration/actions#syncing-the-release).
 
 This job utilizes the same logic as `propose_downstream` with the only
