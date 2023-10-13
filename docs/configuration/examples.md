@@ -219,6 +219,23 @@ jobs:
 
 </details>
 
+<details>
+  <summary>Utilising custom failure message</summary>
+
+```yaml
+- job: copr_build
+  trigger: pull_request
+  targets:
+    - fedora-all
+  notifications:
+    failure_comment:
+      message: >
+        Some builds failed for commit {commit_sha}.
+        @admin, please check."
+```
+
+</details>
+
 ### Tests
 
 <details>
@@ -345,7 +362,7 @@ we have to enable it for you.
 </details>
 
 <details>
-  <summary>Running more types of tests</summary>
+  <summary>Running more types of tests with different settings</summary>
 
 ```yaml
 jobs:
@@ -356,16 +373,34 @@ jobs:
     
 - job: tests
   trigger: pull_request
+  identifier: "postgres-12-pgoutput"
   targets:
     - fedora-all
+  tf_extra_params:
+    test:
+      tmt:
+        name: postgres
+    environments:
+      - variables:
+          POSTGRESQL_VERSION: 12
+          DECODER_PLUGIN: pgoutput
+
 
 - job: tests
   trigger: pull_request
-  identifier: "internal-tests"
+  identifier: "postgres-15-decoderbufs"
   targets:
     - fedora-all
-  use_internal_tf: True
-  ```
+  tf_extra_params:
+    test:
+      tmt:
+        name: postgres
+    environments:
+      - variables:
+          POSTGRESQL_VERSION: 15
+          DECODER_PLUGIN: decoderbufs
+
+```
 
 </details>
 
@@ -439,6 +474,30 @@ do not change it.
           - type: repository
             id: https://my.repo/repository
   ```
+
+</details>
+
+<details>
+  <summary>Utilising custom failure message</summary>
+
+```yaml
+- job: copr_build
+  trigger: pull_request
+  targets:
+    - fedora-all
+     
+- job: tests
+  identifier: revdeps
+  trigger: pull_request
+  targets:
+    - fedora-all
+  notifications:
+    failure_comment:
+      message: >
+        Reverse dep tests failed for commit {commit_sha}.
+        @admin, please check."
+
+```
 
 </details>
 
