@@ -219,6 +219,23 @@ jobs:
 
 </details>
 
+<details>
+  <summary>Utilising custom failure message</summary>
+
+```yaml
+- job: copr_build
+  trigger: pull_request
+  targets:
+    - fedora-all
+  notifications:
+    failure_comment:
+      message: >
+        Some builds failed for commit {commit_sha}.
+        @admin, please check."
+```
+
+</details>
+
 ### Tests
 
 <details>
@@ -439,6 +456,30 @@ do not change it.
           - type: repository
             id: https://my.repo/repository
   ```
+
+</details>
+
+<details>
+  <summary>Utilising custom failure message</summary>
+
+```yaml
+- job: copr_build
+  trigger: pull_request
+  targets:
+    - fedora-all
+     
+- job: tests
+  identifier: revdeps
+  trigger: pull_request
+  targets:
+    - fedora-all
+  notifications:
+    failure_comment:
+      message: >
+        Reverse dep tests failed for commit {commit_sha}.
+        @admin, please check."
+
+```
 
 </details>
 
