@@ -4,10 +4,30 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 09 Oct 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 16 Oct 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 41 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2023/week-41</link>
+            <guid>https://packit.dev/posts/weekly/2023/week-41</guid>
+            <pubDate>Mon, 16 Oct 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 41 (October 10th – October 16th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-41-october-10th--october-16th">Week 41 (October 10th – October 16th)<a href="#week-41-october-10th--october-16th" class="hash-link" aria-label="Direct link to Week 41 (October 10th – October 16th)" title="Direct link to Week 41 (October 10th – October 16th)">​</a></h2><ul><li>(<em>breaking</em>) Packit no longer accepts <code>packit.json</code> or <code>.packit.json</code> as a configuration file name.
+(<a href="https://github.com/packit/packit/pull/2123" target="_blank" rel="noopener noreferrer">packit#2123</a>)</li><li>We have implemented several improvements in syncing the release downstream:<ul><li>Packit now updates ACL of its own dist-git forks to allow users and groups with commit rights to the original
+dist-git repo to push directly to a fork. (<a href="https://github.com/packit/packit/pull/2112" target="_blank" rel="noopener noreferrer">packit#2112</a>)</li><li>Packit now also properly cleans up the branch after syncing the release which should prevent unwanted files
+(e.g. tarballs) being committed to dist-git. (<a href="https://github.com/packit/packit/pull/2125" target="_blank" rel="noopener noreferrer">packit#2125</a>)</li><li>We have adjusted the way how Packit includes the resolved bugzillas in the commit messages created when syncing the release
+downstream so that the resolved bugzillas are included in changelog when using <code>%autochangelog</code>.
+(<a href="https://github.com/packit/packit/pull/2126" target="_blank" rel="noopener noreferrer">packit#2126</a>)</li></ul></li><li>Packit now reacts to retriggering comments for downstream jobs by commenting on the same issue/PR and
+providing information about the jobs. (<a href="https://github.com/packit/packit-service/pull/2222" target="_blank" rel="noopener noreferrer">packit-service#2222</a>)</li><li>We have fixed an issue that prevented you from running the jobs on the GitLab.com due to failing resolution
+of the upstream/downstream relationship for the cloned project. (<a href="https://github.com/packit/packit/pull/2120" target="_blank" rel="noopener noreferrer">packit#2120</a>)</li><li>Packit now triggers the build for the <code>/packit test</code> comment command if the last build was not successful.
+(<a href="https://github.com/packit/packit-service/pull/2228" target="_blank" rel="noopener noreferrer">packit-service#2228</a>)</li></ul><p>And special thanks to <a href="https://github.com/SpyTec" target="_blank" rel="noopener noreferrer">@SpyTec</a>
+for multiple wonderful <a href="https://github.com/packit/dashboard/pulls?q=is%3Apr+author%3ASpyTec+merged%3A2023-10-10..2023-10-16" target="_blank" rel="noopener noreferrer">dashboard improvements</a>!</p>]]></content:encoded>
+            <category>2023-October</category>
+            <category>2023</category>
+            <category>October</category>
+        </item>
         <item>
             <title><![CDATA[Week 40 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2023/week-40</link>
