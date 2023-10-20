@@ -31,6 +31,31 @@ Actions have a default behaviour which you can override, hooks don't have any -
 hooks are a way for you to perform operations following a certain packit event,
 e.g. cloning an upstream repo.
 
+
+:::caution
+
+Like other keys, the `actions` can be defined on the top, package or job level.
+Be aware that when overriding, the whole `action` mapping is replaced
+instead of merging.
+
+If you want to reduce duplications, you can use the following YAML syntax to do this:
+
+```
+actions: &common_actions
+  action_1:
+    - echo hello
+
+packages:
+  package_1:
+    actions:
+      <<: *common_actions
+      action_2:
+        - echo world
+```
+
+:::
+
+
 Currently, these are the actions you can use:
 
 ## Command matrix
