@@ -34,7 +34,7 @@ e.g. cloning an upstream repo.
 
 :::caution
 
-As other keys, the `actions`can be defined on the top, package or job level.
+As other keys, the `actions` can be defined on the top, package or job level.
 Just be aware that when overriding, the whole `action` mapping is replaced
 instead of merging.
 
