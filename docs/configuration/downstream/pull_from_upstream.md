@@ -9,14 +9,11 @@ A dist-git only job that opens a new dist-git pull request in
 src.fedoraproject.org when a new upstream release happens using a notification
 from [release-monitoring.org](https://release-monitoring.org/). Upstream Release Monitoring creates a Bugzilla
 for the new upstream release and this Bugzilla is by default referenced in the dist-git changelog as
-`- Resolves rhbz#xz` and `Resolves rhbz#xz` in the commit message. This behaviour can be customized
+`- Resolves rhbz#xz` and `- Resolves rhbz#xz` in the commit message. This behaviour can be customized
 using [actions](/docs/configuration/actions#syncing-the-release).
 
 This job utilizes the same logic as `propose_downstream` with the only
 exception that it is defined and executed in dist-git.
-
-Use [`issue_repository`](/docs/configuration#issue_repository) option to get information about
-possible failures during the update process.
 
 ## Requirements
 
@@ -27,16 +24,26 @@ possible failures during the update process.
   in dist-git should be set to `Monitoring`).
 * [`upstream_project_url`](/docs/configuration#upstream_project_url) pointing to a Git repository is defined in the configuration.
 
+## First setup
+When setting up this job for the first time, please follow the recommended actions from 
+[our release guide](/docs/fedora-releases-guide#first-setup).
+
+:::caution
+Please, use the [`issue_repository`](/docs/configuration#issue_repository) option to get information about
+possible failures during the update process (otherwise, you will not be notified about the job failures).
+:::caution
+
+
 ## Supported triggers
 
 * **release**
+
 
 ## Optional parameters
 
 * **dist_git_branches** - a (list of) branch(es) in dist-git where packit should work (defaults to `main`).
   You can also use the [aliases provided by Packit](/docs/configuration#aliases)
   to not need to change the config file when the new system version is released.
-
 
 :::tip 
 

@@ -31,6 +31,31 @@ Actions have a default behaviour which you can override, hooks don't have any -
 hooks are a way for you to perform operations following a certain packit event,
 e.g. cloning an upstream repo.
 
+
+:::caution
+
+Like other keys, the `actions` can be defined on the top, package or job level.
+Be aware that when overriding, the whole `action` mapping is replaced
+instead of merging.
+
+If you want to reduce duplications, you can use the following YAML syntax to do this:
+
+```
+actions: &common_actions
+  action_1:
+    - echo hello
+
+packages:
+  package_1:
+    actions:
+      <<: *common_actions
+      action_2:
+        - echo world
+```
+
+:::
+
+
 Currently, these are the actions you can use:
 
 ## Command matrix
@@ -153,7 +178,7 @@ This separator is exposed as an environment variable `PACKIT_DEBUG_DIVIDER`.
     ---%<--- snip ---%<--- here ---%<---
     Rebase to new upstream release 0.42.69
 
-    Resolves rhbz#124
+    - Resolves rhbz#124
 
 This output can be produced by the following config:
 ```yaml
@@ -162,7 +187,7 @@ actions:
     - echo 'debug output'
     - bash -c 'echo ${PACKIT_DEBUG_DIVIDER}'
     - bash -c 'echo -e "Rebase to new upstream release ${PACKIT_PROJECT_VERSION}\n"'
-    - bash -c 'echo -e "Resolves ${PACKIT_RESOLVED_BUGS}\n"'
+    - bash -c '[ -z "$PACKIT_RESOLVED_BUGS" ] || echo ${PACKIT_RESOLVED_BUGS} | tr " " "\n" | sed "s/^/- Resolves /"'
 ```
 
 </details>

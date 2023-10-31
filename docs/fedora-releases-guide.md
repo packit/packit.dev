@@ -200,7 +200,7 @@ After Packit successfully creates the dist-git pull requests,
 it's on downstream CI systems and maintainer(s) to check the changes and merge
 the pull requests.
 
-#### Retriggering
+### Retriggering
 Users with write or admin permissions to the repository can retrigger an
 update via a comment in any open issue in the upstream repository:
 
@@ -237,12 +237,14 @@ for overriding the Packit default behaviour, for example:
   - for the changelog entry generation, if you do not want the default `git log` output, you can use your own command(s):
   
         changelog-entry:
-          - bash -c 'echo "- New release ${PACKIT_PROJECT_VERSION} (${PACKIT_RESOLVED_BUGS})"'
+          - bash -c 'echo "- New release ${PACKIT_PROJECT_VERSION}"'
+          - bash -c '[ -z "$PACKIT_RESOLVED_BUGS" ] || echo ${PACKIT_RESOLVED_BUGS} | tr " " "\n" | sed "s/^/- Resolves /"'
+  
   - for a custom commit message for commit created by Packit:
 
         commit-message:
           - bash -c 'echo -e "Rebase to new upstream release ${PACKIT_PROJECT_VERSION}\n"'
-          - bash -c 'echo -e "Resolves ${PACKIT_RESOLVED_BUGS}\n"'
+          - bash -c '[ -z "$PACKIT_RESOLVED_BUGS" ] || echo ${PACKIT_RESOLVED_BUGS} | tr " " "\n" | sed "s/^/- Resolves /"'
 
 
 You can check all the job runs with details and logs in [this view](https://dashboard.packit.dev/jobs/pull-from-upstreams).
@@ -253,9 +255,11 @@ configuration key.
 
 ![Dashboard view for pull_from_upstream](img/fedora-releases-guide/pull-from-upstream-dashboard.png)
 
-#### Trying it out
-If you are interested in this functionality and want to try it out, you can trigger the job from a pull request.
+### First setup
+If you are interested in this functionality and want to try it out, we recommend triggering the job 
+first time from a pull request to make sure Packit is correctly configured.
 
+#### If there is a pending release
 If there is a new release pending for your package (bugzilla has been opened by [release-monitoring.org](https://release-monitoring.org/) but no rebase done in dist-git yet), do the following:
 
 - create a `rawhide`-based pull request with Packit configuration defining the [`pull_from_upstream` job](/docs/configuration/downstream/pull_from_upstream)
@@ -264,6 +268,7 @@ If there is a new release pending for your package (bugzilla has been opened by 
 - if everything went well, review the pull request(s) in your dist-git repository created by Packit
 - if you are happy with the results, merge your pull request
 
+#### If there is no pending release
 If there is no pending release and your package has been rebased at least once in the past, you can still try the job using a new testing branch:
 
 - create a branch pointing to a commit before the last rebase, name it e.g. `packit-test` and push it (directly to dist-git, not to your fork)
@@ -272,9 +277,10 @@ If there is no pending release and your package has been rebased at least once i
 - comment `/packit pull-from-upstream --with-pr-config` on the pull request
 - check the [dashboard](https://dashboard.packit.dev/jobs/pull-from-upstreams)
 - if everything went well, review the pull request in your dist-git repository created by Packit
-- if you are happy with the results, you can change the `dist-git-branches` attribute to whatever you want, merge your pull request and wait for the next upstream release
+- if you are happy with the results, you can change the `dist_git_branches` option to whatever you want, merge your pull request and wait for the next upstream release
 
-#### Retriggering
+
+### Retriggering
 Packagers with write access to the dist-git repository can retrigger the job
 via a comment in any dist-git pull request:
 
@@ -316,7 +322,7 @@ The koji build behaves as it was created manually, and you can utilise
 to be informed about the builds. Also, you can configure a repository where should we
 open issues in case of errors during the job via [`issue_repository`](/docs/configuration#issue_repository) configuration key.
 
-#### Retriggering
+### Retriggering
 You can retrigger a build by a comment in a dist-git pull request:
 
     /packit koji-build
@@ -349,7 +355,7 @@ jobs:
 The packit config is loaded from the commit the build is triggered from.
 The `issue_repository` configuration key mentioned in the Koji build job applies here as well.
 
-#### Retriggering
+### Retriggering
 You can retrigger an update by a comment in a dist-git pull request:
 
     /packit create-update
