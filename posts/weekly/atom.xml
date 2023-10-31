@@ -2,11 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2023-10-16T00:00:00.000Z</updated>
+    <updated>2023-10-30T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 43 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2023/week-43</id>
+        <link href="https://packit.dev/posts/weekly/2023/week-43"/>
+        <updated>2023-10-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 43 (October 24th – October 30th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-43-october-24th--october-30th">Week 43 (October 24th – October 30th)<a href="#week-43-october-24th--october-30th" class="hash-link" aria-label="Direct link to Week 43 (October 24th – October 30th)" title="Direct link to Week 43 (October 24th – October 30th)">​</a></h2><ul><li>Packit no longer downloads sources excluded using spec file conditions. (<a href="https://github.com/packit/packit/pull/2132" target="_blank" rel="noopener noreferrer">packit#2132</a>)</li></ul>]]></content>
+        <category label="2023-October" term="2023-October"/>
+        <category label="2023" term="2023"/>
+        <category label="October" term="October"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 41 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2023/week-41</id>
