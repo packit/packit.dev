@@ -263,10 +263,13 @@ first time from a pull request to make sure Packit is correctly configured.
 If there is a new release pending for your package (bugzilla has been opened by [release-monitoring.org](https://release-monitoring.org/) but no rebase done in dist-git yet), do the following:
 
 - create a `rawhide`-based pull request with Packit configuration defining the [`pull_from_upstream` job](/docs/configuration/downstream/pull_from_upstream)
+  - we recommend firstly setting the `dist_git_branches` for the job to one branch only (e.g. `fedora-rawhide`)
 - comment `/packit pull-from-upstream --with-pr-config` on the pull request
 - check the [dashboard](https://dashboard.packit.dev/jobs/pull-from-upstreams)
 - if everything went well, review the pull request(s) in your dist-git repository created by Packit
-- if you are happy with the results, merge your pull request
+- if you are happy with the results 
+  - you can update the `dist_git_branches` to include the list of desired branches and trigger the syncing for all branches (using the same comment `/packit pull-from-upstream --with-pr-config`) 
+  - merge the pull request 
 
 #### If there is no pending release
 If there is no pending release and your package has been rebased at least once in the past, you can still try the job using a new testing branch:
