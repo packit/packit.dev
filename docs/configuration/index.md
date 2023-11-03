@@ -411,25 +411,35 @@ jobs. By default, no message is posted on job failure.
 
 To prevent duplication,  Packit posts a comment only when its content differs from the previous comment in the specific 
 pull request or commit.
-To include dynamic content, you can use the `{commit_sha}` placeholder, which will be automatically replaced with 
-the actual commit SHA provided by Packit (consider using this in relation to the duplication of comments). 
+To include dynamic content, you can use multiple placeholders which will be automatically replaced (consider using this in relation to the duplication of comments):
+
+  - `{commit_sha}`: replaced with the actual commit SHA provided by Packit
+  - `{logs_url}`: replaced with the url to the service's logs, the service can be Copr, Koji or Testing Farm depending on the Packit job
+  - `{packit_dashboard_url}`: replaced with the Packit dashboard url for the job
+  - `{external_dashboard_url}`: url to the service dashboard, the service can be Copr or Koji depending on the Packit job
+
 You can use this also e.g. to tag a user/namespace that should be notified about the failure.
 
-Example:
+Configuration example:
 ```yaml
 jobs:
   - job: copr_build
     trigger: pull_request
     targets:
-      - fedora-all
+      - fedora-rawhide
+    notifications:
+      failure_comment:
+        message: "One of the tests failed for {commit_sha}. @admin check logs {logs_url}, packit dashboard {packit_dashboard_url} and external service dashboard {external_dashboard_url}"
 
   - job: tests
     trigger: pull_request
     targets:
-      - fedora-all
-    notifications:
-      failure_comment:
-        message: "One of the tests failed for {commit_sha}, @admin, check the test failures on this PR."
+      - fedora-rawhide
+```
+
+Notified failure comment example using the above configuration:
+```
+One of the tests failed for e6baab8. @admin check logs https://download.copr.fedorainfracloud.org/results/packit-stg/majamassarini-teamcity-messages-7/fedora-rawhide-x86_64/06606596-python-teamcity-messages/builder-live.log, packit dashboard https://dashboard.stg.packit.dev/results/copr-builds/40742 and external service dashboard https://copr.fedorainfracloud.org/coprs/build/6606596/
 ```
 
 For jobs related to the release automation (`propose_downstream`, `pull_from_upstream`, `koji_build` and `bodhi_update`),
