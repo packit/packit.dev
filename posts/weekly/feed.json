@@ -5,6 +5,19 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2023/week-44",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-44-october-31st--november-6th\">Week 44 (October 31st – November 6th)<a href=\"#week-44-october-31st--november-6th\" class=\"hash-link\" aria-label=\"Direct link to Week 44 (October 31st – November 6th)\" title=\"Direct link to Week 44 (October 31st – November 6th)\">​</a></h2><ul><li>Dist tag (<code>%{?dist}</code>) is now enforced when updating release during SRPM creation. (<a href=\"https://github.com/packit/packit/pull/2106\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2106</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2023/week-44",
+            "title": "Week 44 in Packit",
+            "summary": "Week 44 (October 31st – November 6th)",
+            "date_modified": "2023-11-06T00:00:00.000Z",
+            "tags": [
+                "2023-October",
+                "2023",
+                "October"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2023/week-43",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-43-october-24th--october-30th\">Week 43 (October 24th – October 30th)<a href=\"#week-43-october-24th--october-30th\" class=\"hash-link\" aria-label=\"Direct link to Week 43 (October 24th – October 30th)\" title=\"Direct link to Week 43 (October 24th – October 30th)\">​</a></h2><ul><li>Packit no longer downloads sources excluded using spec file conditions. (<a href=\"https://github.com/packit/packit/pull/2132\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2132</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2023/week-43",

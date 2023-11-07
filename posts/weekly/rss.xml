@@ -4,10 +4,21 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 30 Oct 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 06 Nov 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 44 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2023/week-44</link>
+            <guid>https://packit.dev/posts/weekly/2023/week-44</guid>
+            <pubDate>Mon, 06 Nov 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 44 (October 31st – November 6th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-44-october-31st--november-6th">Week 44 (October 31st – November 6th)<a href="#week-44-october-31st--november-6th" class="hash-link" aria-label="Direct link to Week 44 (October 31st – November 6th)" title="Direct link to Week 44 (October 31st – November 6th)">​</a></h2><ul><li>Dist tag (<code>%{?dist}</code>) is now enforced when updating release during SRPM creation. (<a href="https://github.com/packit/packit/pull/2106" target="_blank" rel="noopener noreferrer">packit#2106</a>)</li></ul>]]></content:encoded>
+            <category>2023-October</category>
+            <category>2023</category>
+            <category>October</category>
+        </item>
         <item>
             <title><![CDATA[Week 43 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2023/week-43</link>
