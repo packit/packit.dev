@@ -555,6 +555,18 @@ this macro will be uncommented, otherwise it will be commented out. See [pre-rel
 for more details.
 
 
+#### version_update_mask
+(*string*) This field can be used to filter upstream versions when syncing the releases e.g. to avoid main version bump on the stable Fedora version.
+This check **does not run for the rawhide branch**, if you want to skip releases in rawhide use *upstream_tag_exclude*.
+The value requires a Python regex pattern and is used with `re.match` function.
+ The old version contained in the *dist-git target branch specfile* and the *newly released version in upstream* 
+ have both to match this reg exp and the matching value has to be the same otherwise Packit will not sync the 
+ release downstream.
+ Take as an example a `version_update_mask` set to `\d+\.\d+\.`, 
+ *3.8.0* as specfile *version*  and  *3.9.0* as a new upstream *release tag*, the versions are matching but the 
+ matched values are not the same, thus Packit will not create a *3.9.0*  pull request release on dist-git target 
+ branch. If there is an *3.8.1* release, the matched values (=`3.8`) are the same and pull request is created.
+
 ## Aliases
 
 To not need to change the config file when the new system version is released,

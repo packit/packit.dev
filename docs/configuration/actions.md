@@ -65,8 +65,8 @@ These apply to `propose-downstream` command/job and `pull-from-upstream` job.
 
 |        | name                  | working directory | when run                                                              | description                             |
 |--------|-----------------------|-------------------|-----------------------------------------------------------------------|-----------------------------------------|
-| [hook] | `post-upstream-clone` | upstream git repo | after cloning of the upstream repo (main) and before other operations |                                         |
-| [hook] | `pre-sync`            | upstream git repo | after cloning and checkout to the correct (release) branch            |                                         |
+| [hook] | `post-upstream-clone` | upstream git repo | after cloning the upstream repo (main) and dist-git repo (target branch) and before gpg keys verification and version compatibility check |                               |
+| [hook] | `pre-sync`            | upstream git repo | after cloning the upstream repo (main) and dist-git repo (target branch) and after gpg keys verification and version compatibility check |                               |
 |        | `prepare-files`       | upstream git repo | after cloning, checking out of both upstream and dist-git repos       | replace patching and archive generation |
 |        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                        | replace patching                        |
 |        | `get-current-version` | upstream git repo | when the current version needs to be found                            | expect version as a stdout parameter    |
@@ -246,8 +246,8 @@ when syncing upstream release downstream, e.g. `rhbz#123 rhbz#124`
 
 Related to the `propose-downstream` and `pull-from-upstream` jobs.
 
-* `PACKIT_UPSTREAM_REPO` — absolute path to cloned upstream git repo
-* `PACKIT_DOWNSTREAM_REPO` — absolute path to cloned downstream git repo
+* `PACKIT_UPSTREAM_REPO` — absolute path to cloned upstream git repo (main branch) 
+* `PACKIT_DOWNSTREAM_REPO` — absolute path to cloned downstream git repo (target branch)
 
 List of actions that provide these environment variables:
 * `post-upstream-clone`
