@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 06 Nov 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 13 Nov 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 45 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2023/week-45</link>
+            <guid>https://packit.dev/posts/weekly/2023/week-45</guid>
+            <pubDate>Mon, 13 Nov 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 45 (November 7th – November 13th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-45-november-7th--november-13th">Week 45 (November 7th – November 13th)<a href="#week-45-november-7th--november-13th" class="hash-link" aria-label="Direct link to Week 45 (November 7th – November 13th)" title="Direct link to Week 45 (November 7th – November 13th)">​</a></h2><ul><li>Now Packit allows <code>~^+</code> (special characters) in a tag (used for building the version string). (<a href="https://github.com/packit/packit/pull/2154" target="_blank" rel="noopener noreferrer">packit#2154</a>)</li><li>Downstream Koji builds are now shown in a separate table in <code>/jobs/downstream-koji-builds</code> on dashboard and are also accessible via <code>/api/koji-builds</code> API endpoint. (<a href="https://github.com/packit/packit-service/pull/2244" target="_blank" rel="noopener noreferrer">packit-service#2244</a>, <a href="https://github.com/packit/packit-service/pull/2249" target="_blank" rel="noopener noreferrer">packit-service#2249</a>, <a href="https://github.com/packit/dashboard/pull/354" target="_blank" rel="noopener noreferrer">dashboard#354</a>)</li></ul>]]></content:encoded>
+            <author>mfocko@redhat.com (Matej Focko)</author>
+            <category>2023-November</category>
+            <category>2023</category>
+            <category>November</category>
+        </item>
         <item>
             <title><![CDATA[Week 44 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2023/week-44</link>
