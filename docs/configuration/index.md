@@ -628,8 +628,9 @@ authentication:
 
 The GitHub token is needed when packit interacts with GitHub API,
 get it at https://github.com/settings/tokens (getting full read & write repo scope should be enough).
-The Pagure token needed to access REST API,
+The Pagure token is needed to access REST API,
 get it at https://src.fedoraproject.org/settings#nav-api-tab
+(you need at least `fork_project`, `modify_project`, `pull_request_comment` and `pull_request_create` ACLs).
 
 Specifying tokens as direct keys `github_token` and `pagure_user_token`
 has been deprecated and will be removed in future versions.
