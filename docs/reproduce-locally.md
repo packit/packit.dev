@@ -1,7 +1,7 @@
 ---
 title: Reproduce CI environment locally
 date: 2022-03-01
-sidebar_position: 10
+sidebar_position: 12
 ---
 
 # Reproduce CI environment locally

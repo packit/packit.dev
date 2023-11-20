@@ -1,7 +1,7 @@
 ---
 title: Service Level Objectives
 date: 2022-03-31
-sidebar_position: 10
+sidebar_position: 12
 ---
 
 # Service Level Objectives
