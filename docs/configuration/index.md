@@ -533,6 +533,27 @@ should trigger a reaction.
 - in Packit Service: In `propose_downstream` and `pull_from_upstream` jobs, it determines whether a specific release 
 should trigger a reaction.
 
+#### prerelease_suffix_pattern
+(*string*) This field requires a partial Python regex pattern. It is used to match recognized pre-release suffixes.
+The first capturing group must capture the delimiter between a base version and a pre-release suffix and can be empty
+in case there is no delimiter. It defaults to `([.\-_~^]?)(alpha|beta|rc|pre(view)?)([.\-_]?\d+)?`.
+This is a safe default that shouldn't produce any false positives and you may need to adjust it if your project uses
+a different versioning scheme.
+
+For example, you can use the following regex to conform to [PEP440](https://peps.python.org/pep-0440/):
+
+    prerelease_suffix_pattern: "([.\\-_]?)(a(lpha)?|b(eta)?|r?c|pre(view)?)([.\\-_]?\\d+)?"
+
+Or you can undefine the option to opt-out from pre-release processing:
+
+    prerelease_suffix_pattern: null
+
+#### prerelease_suffix_macro
+(*string*) Name of a macro that controls whether spec file version is a pre-release and contains the pre-release suffix.
+If Packit detects, based on [`prerelease_suffix_pattern`](#prerelease_suffix_pattern), a pre-release version,
+this macro will be uncommented, otherwise it will be commented out. See [pre-releases with Packit](/docs/pre-releases)
+for more details.
+
 
 ## Aliases
 

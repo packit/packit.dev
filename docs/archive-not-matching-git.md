@@ -1,6 +1,6 @@
 ---
 title: Generated code in upstream archives
-sidebar_position: 10
+sidebar_position: 11
 ---
 
 # When the release archive does not match the upstream git tag checkout

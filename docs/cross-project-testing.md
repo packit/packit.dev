@@ -1,6 +1,6 @@
 ---
 title: Setting up cross-project testing
-sidebar_position: 9
+sidebar_position: 10
 ---
 # Setting up cross-project testing
 Cross-project testing enables you to ensure the compatibility and reliability of interconnected repositories.
