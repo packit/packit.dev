@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2023/week-46",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-46-november-14th--november-20th\">Week 46 (November 14th – November 20th)<a href=\"#week-46-november-14th--november-20th\" class=\"hash-link\" aria-label=\"Direct link to Week 46 (November 14th – November 20th)\" title=\"Direct link to Week 46 (November 14th – November 20th)\">​</a></h2><ul><li>Packit now supports pre-release version in <code>propose_downstream</code> and <code>pull_from_upstream</code>.\nA spec file update might be required, see <a href=\"/docs/pre-releases\">the documentation</a> for more details.\n(<a href=\"https://github.com/packit/packit/pull/2149\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2149</a>)<ul><li>In relation to that, specfile library has a new method, <code>Specfile.update_version()</code>, that allows updating spec file\nversion even if it is a pre-release. (<a href=\"https://github.com/packit/specfile/pull/317\" target=\"_blank\" rel=\"noopener noreferrer\">specfile#317</a>)</li></ul></li><li>Packit can now check, using the new <code>update_version_mask</code> configuration option, that the proposed version of new release\nand the current version of the dist-git branch are compatible and sync the dist-git branch only in that case.\n(<a href=\"https://github.com/packit/packit/pull/2156\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2156</a>)</li><li>Packit is now able to get the version from spec file even if the <code>Version</code> tag is not present in the specfile directly,\nbut e.g. imported from another file. (<a href=\"https://github.com/packit/packit/pull/2157\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2157</a>)</li><li><code>PACKIT_COPR_PROJECT</code> env var that is exposed to Testing Farm now includes the Copr project of the additional build\nspecified in comment, if present. (<a href=\"https://github.com/packit/packit-service/pull/2253\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2253</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2023/week-46",
+            "title": "Week 46 in Packit",
+            "summary": "Week 46 (November 14th – November 20th)",
+            "date_modified": "2023-11-20T00:00:00.000Z",
+            "author": {
+                "name": "Laura Barcziová",
+                "url": "https://github.com/lbarcziova"
+            },
+            "tags": [
+                "2023-November",
+                "2023",
+                "November"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2023/week-45",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-45-november-7th--november-13th\">Week 45 (November 7th – November 13th)<a href=\"#week-45-november-7th--november-13th\" class=\"hash-link\" aria-label=\"Direct link to Week 45 (November 7th – November 13th)\" title=\"Direct link to Week 45 (November 7th – November 13th)\">​</a></h2><ul><li>Now Packit allows <code>~^+</code> (special characters) in a tag (used for building the version string). (<a href=\"https://github.com/packit/packit/pull/2154\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2154</a>)</li><li>Downstream Koji builds are now shown in a separate table in <code>/jobs/downstream-koji-builds</code> on dashboard and are also accessible via <code>/api/koji-builds</code> API endpoint. (<a href=\"https://github.com/packit/packit-service/pull/2244\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2244</a>, <a href=\"https://github.com/packit/packit-service/pull/2249\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2249</a>, <a href=\"https://github.com/packit/dashboard/pull/354\" target=\"_blank\" rel=\"noopener noreferrer\">dashboard#354</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2023/week-45",

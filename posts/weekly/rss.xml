@@ -4,10 +4,29 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 13 Nov 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 20 Nov 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 46 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2023/week-46</link>
+            <guid>https://packit.dev/posts/weekly/2023/week-46</guid>
+            <pubDate>Mon, 20 Nov 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 46 (November 14th – November 20th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-46-november-14th--november-20th">Week 46 (November 14th – November 20th)<a href="#week-46-november-14th--november-20th" class="hash-link" aria-label="Direct link to Week 46 (November 14th – November 20th)" title="Direct link to Week 46 (November 14th – November 20th)">​</a></h2><ul><li>Packit now supports pre-release version in <code>propose_downstream</code> and <code>pull_from_upstream</code>.
+A spec file update might be required, see <a href="/docs/pre-releases">the documentation</a> for more details.
+(<a href="https://github.com/packit/packit/pull/2149" target="_blank" rel="noopener noreferrer">packit#2149</a>)<ul><li>In relation to that, specfile library has a new method, <code>Specfile.update_version()</code>, that allows updating spec file
+version even if it is a pre-release. (<a href="https://github.com/packit/specfile/pull/317" target="_blank" rel="noopener noreferrer">specfile#317</a>)</li></ul></li><li>Packit can now check, using the new <code>update_version_mask</code> configuration option, that the proposed version of new release
+and the current version of the dist-git branch are compatible and sync the dist-git branch only in that case.
+(<a href="https://github.com/packit/packit/pull/2156" target="_blank" rel="noopener noreferrer">packit#2156</a>)</li><li>Packit is now able to get the version from spec file even if the <code>Version</code> tag is not present in the specfile directly,
+but e.g. imported from another file. (<a href="https://github.com/packit/packit/pull/2157" target="_blank" rel="noopener noreferrer">packit#2157</a>)</li><li><code>PACKIT_COPR_PROJECT</code> env var that is exposed to Testing Farm now includes the Copr project of the additional build
+specified in comment, if present. (<a href="https://github.com/packit/packit-service/pull/2253" target="_blank" rel="noopener noreferrer">packit-service#2253</a>)</li></ul>]]></content:encoded>
+            <author>lbarczio@redhat.com (Laura Barcziová)</author>
+            <category>2023-November</category>
+            <category>2023</category>
+            <category>November</category>
+        </item>
         <item>
             <title><![CDATA[Week 45 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2023/week-45</link>
