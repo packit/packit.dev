@@ -448,14 +448,10 @@ this message is used as an extension of the comment added by default by Packit. 
 #### issue_repository
 
 Use this key to be notified about errors of the downstream jobs (Koji build, Bodhi update, pull from upstream).
-The value can be a URL of any GitHub/GitLab/Pagure project including dist-git
-where issues are enabled and Packit has an identity on that git forger instance.
+The value can be a URL of any GitHub/GitLab/Pagure project where issues are enabled and Packit has an identity on that git forge instance.
 Alternatively, you can set up a dedicated project for receiving such notifications.
 (Let us know if you need another instance to be supported.)
-It does not need to be an upstream repository,
-you can also enable an issue tracker for the dist-git repository
-and use this as a place for those notifications.
-Or, you can set up a dedicated project for receiving such notifications.
+It does not need to be an upstream repository (and in case you do not maintain it, it also **should not** be).
 
 By default, no issue will be created so Packit doesn't unintentionally spam any repository.
 (E.g. Since those jobs are defined in downstream, upstream project does not need to be aware of Packit.)
