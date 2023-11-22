@@ -118,6 +118,23 @@ changelog-entry:
 
 </details>
 
+### Creating source archive using 'tito' during release syncing
+<details>
+  <summary>Using pre-sync for running tito</summary>
+
+```yaml
+actions:
+  pre-sync:
+    - tito build -o . --tgz
+
+files_to_sync:
+  - src:
+    - "<my-package>-*.tar.gz"
+    dest: .
+```
+
+</details>
+
 
 ## Examples for jobs
 You can find detailed documentation for jobs [here](/docs/configuration#supported-jobs).
