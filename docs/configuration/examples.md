@@ -537,7 +537,7 @@ do not change it.
 
 ```yaml
 upstream_project_url: https://github.com/packit/packit
-...
+
 jobs:
 - job: pull_from_upstream
   trigger: release
@@ -552,7 +552,7 @@ jobs:
 
 ```yaml
 upstream_project_url: https://github.com/packit/packit
-...
+
 jobs:
 - job: pull_from_upstream
   trigger: release

@@ -83,7 +83,7 @@ You can also append `&component={your-package-name}` to the query above to const
 
 ```yaml
 upstream_project_url: https://github.com/packit/packit
-...
+
 jobs:
 - job: pull_from_upstream
   trigger: release
