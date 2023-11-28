@@ -57,6 +57,8 @@ For Koji builds from upstream, see [`upstream_koji_build`](/docs/configuration/u
 ### Example
 
 ```yaml
+issue_repository: https://github.com/my-username/packit-notifications
+
 jobs:
 - job: koji_build
   trigger: commit

@@ -43,8 +43,9 @@ or any improvement we can implement.
   to not need to change the config file when the new system version is released.
 
 ## Example
-
 ```yaml
+issue_repository: https://github.com/my-username/packit-notifications
+
 jobs:
 - job: bodhi_update
   trigger: commit

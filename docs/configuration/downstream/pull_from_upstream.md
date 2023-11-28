@@ -31,6 +31,7 @@ When setting up this job for the first time, please follow the recommended actio
 :::caution
 Please, use the [`issue_repository`](/docs/configuration#issue_repository) option to get information about
 possible failures during the update process (otherwise, you will not be notified about the job failures).
+Use a repository you maintain as we will create issues about failures here.
 :::caution
 
 
@@ -83,6 +84,7 @@ You can also append `&component={your-package-name}` to the query above to const
 
 ```yaml
 upstream_project_url: https://github.com/packit/packit
+issue_repository: https://github.com/my-username/packit-notifications
 
 jobs:
 - job: pull_from_upstream
