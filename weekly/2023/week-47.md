@@ -1,7 +1,7 @@
 ---
 title: Week 47 in Packit
 date: 2023-11-27
-authors: lachmanfrantisek
+authors: flachman
 tags:
   - 2023-November
   - 2023
