@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2023-11-20T00:00:00.000Z</updated>
+    <updated>2023-11-27T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 47 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2023/week-47</id>
+        <link href="https://packit.dev/posts/weekly/2023/week-47"/>
+        <updated>2023-11-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 47 (November 21st – November 27th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-47-november-21st--november-27th">Week 47 (November 21st – November 27th)<a href="#week-47-november-21st--november-27th" class="hash-link" aria-label="Direct link to Week 47 (November 21st – November 27th)" title="Direct link to Week 47 (November 21st – November 27th)">​</a></h2><ul><li>Packit now correctly sets the specfile content (e.g. changelog entry) even if it syncs the specfile from upstream for the first time. (<a href="https://github.com/packit/packit/pull/2170" target="_blank" rel="noopener noreferrer">packit#2170</a>)</li></ul>]]></content>
+        <author>
+            <name>František Lachman</name>
+            <email>flachman@redhat.com</email>
+            <uri>https://github.com/lachmanfrantisek</uri>
+        </author>
+        <category label="2023-November" term="2023-November"/>
+        <category label="2023" term="2023"/>
+        <category label="November" term="November"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 46 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2023/week-46</id>
