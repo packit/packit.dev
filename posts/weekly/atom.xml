@@ -2,11 +2,33 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2023-11-27T00:00:00.000Z</updated>
+    <updated>2023-12-04T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 48 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2023/week-48</id>
+        <link href="https://packit.dev/posts/weekly/2023/week-48"/>
+        <updated>2023-12-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 48 (November 28th – December 4th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-48-november-28th--december-4th">Week 48 (November 28th – December 4th)<a href="#week-48-november-28th--december-4th" class="hash-link" aria-label="Direct link to Week 48 (November 28th – December 4th)" title="Direct link to Week 48 (November 28th – December 4th)">​</a></h2><ul><li><p>Packit now links the information related to upstream events in PRs opened when syncing a release.
+(<a href="https://github.com/packit/packit/pull/2173" target="_blank" rel="noopener noreferrer">packit#2173</a>)</p></li><li><p>When accessing tags or macro definitions by name, specfile library now takes validity into account
+when looking for the best match. For example if there are two instances of <code>Version</code> tag,
+one in the true and one in the false branch of a condition, <code>Specfile.version</code> will always access
+the one that is in the true branch.
+This also applies to Packit when syncing a release and updating value of <code>Version</code> tag.
+(<a href="https://github.com/packit/specfile/pull/328" target="_blank" rel="noopener noreferrer">specfile#328</a>)</p></li></ul>]]></content>
+        <author>
+            <name>Nikola Forró</name>
+            <email>nforro@redhat.com</email>
+            <uri>https://github.com/nforro</uri>
+        </author>
+        <category label="2023-November" term="2023-November"/>
+        <category label="2023" term="2023"/>
+        <category label="November" term="November"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 47 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2023/week-47</id>

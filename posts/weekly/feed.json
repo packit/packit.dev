@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2023/week-48",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-48-november-28th--december-4th\">Week 48 (November 28th – December 4th)<a href=\"#week-48-november-28th--december-4th\" class=\"hash-link\" aria-label=\"Direct link to Week 48 (November 28th – December 4th)\" title=\"Direct link to Week 48 (November 28th – December 4th)\">​</a></h2><ul><li><p>Packit now links the information related to upstream events in PRs opened when syncing a release.\n(<a href=\"https://github.com/packit/packit/pull/2173\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2173</a>)</p></li><li><p>When accessing tags or macro definitions by name, specfile library now takes validity into account\nwhen looking for the best match. For example if there are two instances of <code>Version</code> tag,\none in the true and one in the false branch of a condition, <code>Specfile.version</code> will always access\nthe one that is in the true branch.\nThis also applies to Packit when syncing a release and updating value of <code>Version</code> tag.\n(<a href=\"https://github.com/packit/specfile/pull/328\" target=\"_blank\" rel=\"noopener noreferrer\">specfile#328</a>)</p></li></ul>",
+            "url": "https://packit.dev/posts/weekly/2023/week-48",
+            "title": "Week 48 in Packit",
+            "summary": "Week 48 (November 28th – December 4th)",
+            "date_modified": "2023-12-04T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2023-November",
+                "2023",
+                "November"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2023/week-47",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-47-november-21st--november-27th\">Week 47 (November 21st – November 27th)<a href=\"#week-47-november-21st--november-27th\" class=\"hash-link\" aria-label=\"Direct link to Week 47 (November 21st – November 27th)\" title=\"Direct link to Week 47 (November 21st – November 27th)\">​</a></h2><ul><li>Packit now correctly sets the specfile content (e.g. changelog entry) even if it syncs the specfile from upstream for the first time. (<a href=\"https://github.com/packit/packit/pull/2170\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2170</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2023/week-47",
