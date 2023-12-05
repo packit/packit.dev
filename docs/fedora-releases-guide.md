@@ -294,6 +294,27 @@ This will take the Packit configuration file from the default branch of the dist
 
     /packit pull-from-upstream --with-pr-config
 
+## Keeping dist-git branches non-divergent
+Packit currently syncs the release in a way that the branches become divergent (you can follow 
+the request to change this behaviour [here](https://github.com/packit/packit/issues/1724)). 
+
+However, if you wish to keep your dist-git branches in sync, you can configure Packit to propose updates exclusively 
+to `rawhide` (by specifying `dist_git_branches: fedora-rawhide`) and you can locally merge it with the stable release branches. 
+The following example demonstrates how to achieve this for a single branch (`f39` in this case):
+```bash
+# Clone the dist-git repository if you haven't done so already
+fedpkg clone $PACKAGE
+# or
+git clone ssh://$YOUR_USER@pkgs.fedoraproject.org/rpms/$PACKAGE.git
+
+# Alternatively, pull the rawhide changes only
+git pull origin rawhide
+
+# Switch to the desired branch and merge it with the updated rawhide branch
+git checkout f39
+git merge rawhide
+git push origin f39
+```
 ## Koji build job
 After having the dist-git content updated, you can easily automate also building in Koji.
 You can simply configure Packit to react to the new commits in your dist-git repository and create

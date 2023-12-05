@@ -18,6 +18,11 @@ happen in Fedora dist-git - no builds. A pull request is created as a result.
   You can also use the [aliases provided by Packit](/docs/configuration#aliases)
   to not need to change the config file when the new system version is released.
 
+:::info
+Current default behaviour of the release syncing results in having divergent dist-git branches. If you want to avoid this,
+please see the details [here](/docs/fedora-releases-guide#keeping-dist-git-branches-non-divergent).
+:::
+
 ## Example
 
 ```yaml
