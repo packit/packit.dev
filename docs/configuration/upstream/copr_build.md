@@ -157,8 +157,9 @@ fedora-32-armhfp
 * You can also use the [aliases provided by Packit](/docs/configuration/#aliases)
   to not need to change the config file when the new system version is released.
 
-  By default, the `x86_64` architecture will be used, but you you can
+  By default, the `x86_64` architecture will be used, but you can
   override the default e.g. `fedora-stable-aarch64`.
+  This applies to bare Copr chroots as well, so for example `epel-8` is equivalent to `epel-8-x86_64`.
 
 * If you are using custom Copr repository for your Copr builds, you don't have
   to define the targets at all and they will be deduced from your custom Copr
