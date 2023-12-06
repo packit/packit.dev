@@ -12,7 +12,7 @@ for the new upstream release and this Bugzilla is by default referenced in the d
 `- Resolves rhbz#xz` and `- Resolves rhbz#xz` in the commit message. This behaviour can be customized
 using [actions](/docs/configuration/actions#syncing-the-release).
 
-This job utilizes the same logic as `propose_downstream` with the only
+This job utilizes the same logic as [`propose_downstream`](/docs/configuration/upstream/propose_downstream) with the only
 exception that it is defined and executed in dist-git.
 
 ## Requirements
@@ -53,6 +53,11 @@ For more details and customization options, also check
 
 :::
 
+
+:::info
+Current default behaviour of the release syncing results in having divergent dist-git branches. If you want to avoid this,
+please see the details [here](/docs/fedora-releases-guide#keeping-dist-git-branches-non-divergent).
+:::
 
 ## Retriggering
 Packagers with write access to the dist-git repository can retrigger the job
@@ -96,11 +101,4 @@ jobs:
 
 Once a new upstream release happens, Packit will open a pull request with it in
 all active Fedora releases and EPEL 9.
-
-If you need to do any change in the pull request, you need to locally fetch the source branch 
-of the Packit's pull request and push it (with a fix) to your fork (as it is not possible to push to the branch 
-created in the Packit's fork):
-
-    git fetch https://src.fedoraproject.org/forks/packit/rpms/$YOUR_PACKAGE.git refs/heads/*:refs/remotes/packit/*
-    git cherry-pick packit/$VERSION-$BRANCH-update-pull_from_upstream
 
