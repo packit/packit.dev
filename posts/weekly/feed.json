@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2023/packit-workshop",
+            "content_html": "<p>We, the packit team, are happy to invite you to our upcoming workshop about pulling upstream releases to Fedora using Packit.</p><p><strong>When: Wed, Jan 10, 9:30 AM - Wed, Jan 10, 12:30 PM (GMT+1)</strong></p><p><strong>Where: Online!</strong></p><p><strong>Who should attend:</strong> Anyone who maintains a package in Fedora or EPEL and would like to automate syncing the upstream releases for it. The automation is most suitable for simple packages with straightforward update processes (e.g. without patches, or need to build in side-tags). It works without access to the upstream repository.</p><p><strong>No package?</strong> It’s not an issue. The workshop can help you understand the Fedora release process and the services involved. During the workshop, you can help someone else automate their package or ask someone around if you can help with the maintenance (that’s usually very welcome!). You can also bring an orphaned package back to life!</p><p><strong>Can’t make it this time?</strong> You can also follow our <a href=\"https://packit.dev/docs/fedora-releases-guide\" target=\"_blank\" rel=\"noopener noreferrer\">documentation</a> and ask for help in case of any issue: #packit:fedora.im (Matrix).</p><p><strong>If you want to join us please fill <a href=\"https://forms.gle/WnEN3KXnhRS2cf1E7\" target=\"_blank\" rel=\"noopener noreferrer\">this form</a> or contact us on Matrix, and we will send you further details!</strong></p><p><strong>Looking forward to seeing you!</strong></p>",
+            "url": "https://packit.dev/posts/weekly/2023/packit-workshop",
+            "title": "Packit workshop - Fedora Community Edition",
+            "summary": "We, the packit team, are happy to invite you to our upcoming workshop about pulling upstream releases to Fedora using Packit.",
+            "date_modified": "2023-12-05T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2023-December",
+                "2023",
+                "December"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2023/week-48",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-48-november-28th--december-4th\">Week 48 (November 28th – December 4th)<a href=\"#week-48-november-28th--december-4th\" class=\"hash-link\" aria-label=\"Direct link to Week 48 (November 28th – December 4th)\" title=\"Direct link to Week 48 (November 28th – December 4th)\">​</a></h2><ul><li><p>Packit now links the information related to upstream events in PRs opened when syncing a release.\n(<a href=\"https://github.com/packit/packit/pull/2173\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2173</a>)</p></li><li><p>When accessing tags or macro definitions by name, specfile library now takes validity into account\nwhen looking for the best match. For example if there are two instances of <code>Version</code> tag,\none in the true and one in the false branch of a condition, <code>Specfile.version</code> will always access\nthe one that is in the true branch.\nThis also applies to Packit when syncing a release and updating value of <code>Version</code> tag.\n(<a href=\"https://github.com/packit/specfile/pull/328\" target=\"_blank\" rel=\"noopener noreferrer\">specfile#328</a>)</p></li></ul>",
             "url": "https://packit.dev/posts/weekly/2023/week-48",
