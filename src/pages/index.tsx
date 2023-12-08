@@ -181,9 +181,6 @@ function Contacts() {
             (Element / Matrix)
           </li>
           <li>
-            <Link to="https://libera.chat/">#packit:libera.chat</Link> (IRC)
-          </li>
-          <li>
             <Link to="mailto:hello@packit.dev">hello@packit.dev</Link>
           </li>
           <li>

@@ -272,13 +272,6 @@ const config = {
               },
               {
                 html: `
-                  <a href="https://libera.chat/">
-                    #packit:libera.chat
-                  </a> (IRC)
-                `,
-              },
-              {
-                html: `
                   <a href="mailto:hello@packit.dev">hello@packit.dev</a>
                 `,
               },
