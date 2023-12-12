@@ -209,12 +209,16 @@ Please reach out back to us for help or with your suggestions.
 ## Running tests with a specific identifier
 It is possible to run a specific job via `/packit test` command. 
 The user just needs to specify the argument `--identifier <job_identifier>` and Packit will trigger only the job with this identifier.
-The whole command should look like this: `/packit test --identifier my-job-id`
+The whole command should look like this: `/packit test --identifier my-job-id`.
+You can also configure [`test_command.default_identifier`](/docs/configuration#default_identifier) to allow commonly used jobs
+to be triggered without the need for manual specification.
 
 ## Running a group of tests with the same label
 Users can trigger a specific group of jobs that has a specific value in the list of `labels` option.
 The command to pick up these jobs is `/packit test --labels regression,upgrade` where either `regression` or `upgrade` must be present in `labels` option for the job.
 The labels should be in the format of comma-separated string.
+You can also configure [`test_command.default_labels`](/docs/configuration#default_labels) to allow commonly used job combinations
+to be triggered without the need for manual specification.
 
 ## Creating Tests
 

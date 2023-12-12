@@ -563,6 +563,39 @@ The value requires a Python regex pattern and is used with `re.match` function.
  matched values are not the same, thus Packit will not create a *3.9.0*  pull request release on dist-git target 
  branch. If there is an *3.8.1* release, the matched values (=`3.8`) are the same and pull request is created.
 
+
+#### test_command
+##### default_identifier
+The identifier (refer to [`identifier`](./configuration/upstream/tests#optional-parameters)) utilised by default when
+the `/packit test` comment command is invoked without arguments 
+(see [related docs](./configuration/upstream/tests#running-tests-with-a-specific-identifier)).
+This allows commonly used job to be triggered without the need for manual specification. 
+For instance, rather than specifying frequently used job via `--identifier` each time, such as `/packit test --identfier my-id`, 
+you can configure the following:
+
+```yaml
+default_identifier: my-id
+```
+As a result, invoking `/packit test` will be automatically interpreted as `/packit test --identfier my-id`.
+
+##### default_labels
+A list of labels (refer to [`labels`](./configuration/upstream/tests#optional-parameters)) utilised by default when
+the `/packit test` comment command is invoked without arguments 
+(see [related docs](./configuration/upstream/tests#running-a-group-of-tests-with-the-same-label)).
+This allows commonly used job combinations to be triggered without the need for manual specification. 
+For instance, rather than specifying frequently used jobs via `--labels` each time, such as `/packit test --labels regression,upgrade`, 
+you can configure the following:
+```yaml
+default_labels:
+  - regression
+  - upgrade
+```
+As a result, invoking `/packit test` will be automatically interpreted as `/packit test --labels regression,upgrade`.
+
+:::info
+`default_identifier` and `default_labels` are not supposed to be used simultaneously. You should configure
+only one of these options.
+:::
 ## Aliases
 
 To not need to change the config file when the new system version is released,
