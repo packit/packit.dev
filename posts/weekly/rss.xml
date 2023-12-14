@@ -4,10 +4,21 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Tue, 05 Dec 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 11 Dec 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 49 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2023/week-49</link>
+            <guid>https://packit.dev/posts/weekly/2023/week-49</guid>
+            <pubDate>Mon, 11 Dec 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 49 (December 5th – December 11th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-49-december-5th--december-11th">Week 49 (December 5th – December 11th)<a href="#week-49-december-5th--december-11th" class="hash-link" aria-label="Direct link to Week 49 (December 5th – December 11th)" title="Direct link to Week 49 (December 5th – December 11th)">​</a></h2><ul><li><p>We have introduced new configuration options <code>test_command.default_labels</code> and <code>test_command.default_identifier</code> that are used by default when running <code>/packit test</code> comment command without any arguments (instead of specifying them via <code>--labels</code>/<code>--identifier</code>). (<a href="https://github.com/packit/packit-service/pull/2270" target="_blank" rel="noopener noreferrer">packit-service#2270</a>)</p></li><li><p>We have fixed a bug that GithubRelease.url returned an API URL. (<a href="https://github.com/packit/ogr/pull/824" target="_blank" rel="noopener noreferrer">ogr#824</a>)</p></li></ul>]]></content:encoded>
+            <category>2023-December</category>
+            <category>2023</category>
+            <category>December</category>
+        </item>
         <item>
             <title><![CDATA[Packit workshop - Fedora Community Edition]]></title>
             <link>https://packit.dev/posts/weekly/2023/packit-workshop</link>
