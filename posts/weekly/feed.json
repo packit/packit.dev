@@ -5,6 +5,22 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2023/week-50",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-50-december-12th--december-18th\">Week 50 (December 12th – December 18th)<a href=\"#week-50-december-12th--december-18th\" class=\"hash-link\" aria-label=\"Direct link to Week 50 (December 12th – December 18th)\" title=\"Direct link to Week 50 (December 12th – December 18th)\">​</a></h2><ul><li>We have fixed a bug preventing a release from being synced downstream if the changelog to be set is empty.\n(<a href=\"https://github.com/packit/packit/pull/2183\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2183</a>)</li><li>We have fixed a bug of not running Koji builds for Packit dist-git PRs with multiple commits if the last commit\nof the PR did not contain a spec file change.\n(<a href=\"https://github.com/packit/packit-service/pull/2275\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2275</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2023/week-50",
+            "title": "Week 50 in Packit",
+            "summary": "Week 50 (December 12th – December 18th)",
+            "date_modified": "2023-12-18T00:00:00.000Z",
+            "author": {
+                "name": "nforro"
+            },
+            "tags": [
+                "2023-December",
+                "2023",
+                "December"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2023/week-49",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-49-december-5th--december-11th\">Week 49 (December 5th – December 11th)<a href=\"#week-49-december-5th--december-11th\" class=\"hash-link\" aria-label=\"Direct link to Week 49 (December 5th – December 11th)\" title=\"Direct link to Week 49 (December 5th – December 11th)\">​</a></h2><ul><li><p>We have introduced new configuration options <code>test_command.default_labels</code> and <code>test_command.default_identifier</code> that are used by default when running <code>/packit test</code> comment command without any arguments (instead of specifying them via <code>--labels</code>/<code>--identifier</code>). (<a href=\"https://github.com/packit/packit-service/pull/2270\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2270</a>)</p></li><li><p>We have fixed a bug that GithubRelease.url returned an API URL. (<a href=\"https://github.com/packit/ogr/pull/824\" target=\"_blank\" rel=\"noopener noreferrer\">ogr#824</a>)</p></li></ul>",
             "url": "https://packit.dev/posts/weekly/2023/week-49",

@@ -4,10 +4,24 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 11 Dec 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 18 Dec 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 50 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2023/week-50</link>
+            <guid>https://packit.dev/posts/weekly/2023/week-50</guid>
+            <pubDate>Mon, 18 Dec 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 50 (December 12th – December 18th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-50-december-12th--december-18th">Week 50 (December 12th – December 18th)<a href="#week-50-december-12th--december-18th" class="hash-link" aria-label="Direct link to Week 50 (December 12th – December 18th)" title="Direct link to Week 50 (December 12th – December 18th)">​</a></h2><ul><li>We have fixed a bug preventing a release from being synced downstream if the changelog to be set is empty.
+(<a href="https://github.com/packit/packit/pull/2183" target="_blank" rel="noopener noreferrer">packit#2183</a>)</li><li>We have fixed a bug of not running Koji builds for Packit dist-git PRs with multiple commits if the last commit
+of the PR did not contain a spec file change.
+(<a href="https://github.com/packit/packit-service/pull/2275" target="_blank" rel="noopener noreferrer">packit-service#2275</a>)</li></ul>]]></content:encoded>
+            <category>2023-December</category>
+            <category>2023</category>
+            <category>December</category>
+        </item>
         <item>
             <title><![CDATA[Week 49 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2023/week-49</link>
