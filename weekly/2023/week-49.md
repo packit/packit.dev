@@ -1,6 +1,7 @@
 ---
 title: Week 49 in Packit
 date: 2023-12-11
+authors: mmassari
 tags:
   - 2023-December
   - 2023
