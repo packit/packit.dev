@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2023/week-52",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"end-of-the-year-in-packit\">End of the year in Packit<a href=\"#end-of-the-year-in-packit\" class=\"hash-link\" aria-label=\"Direct link to End of the year in Packit\" title=\"Direct link to End of the year in Packit\">​</a></h2><ul><li>We have hit some issues with the firewall rules on the new cluster hosting our production. We are waiting for the required fix that is done outside of our team which should be deployed around January 11th. We will keep you informed about the current status. At the moment we are aware of the issues related to the:<ul><li><code>pull-from-upstream</code> jobs that have sources hosted at infradead.org, sourceforge.net and gitlab.gnome.org</li><li>jobs running on the gitlab.gnome.org in general</li></ul></li><li>We have also fixed an issue that caused some Cockpit releases to fail, others might've been affected too, though there are no reports.</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2023/week-52",
+            "title": "End of the year in Packit",
+            "summary": "End of the year in Packit",
+            "date_modified": "2024-01-02T00:00:00.000Z",
+            "author": {
+                "name": "Matej Focko",
+                "url": "https://github.com/mfocko"
+            },
+            "tags": [
+                "2023-December",
+                "2023",
+                "December"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2023/week-50",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-50-december-12th--december-18th\">Week 50 (December 12th – December 18th)<a href=\"#week-50-december-12th--december-18th\" class=\"hash-link\" aria-label=\"Direct link to Week 50 (December 12th – December 18th)\" title=\"Direct link to Week 50 (December 12th – December 18th)\">​</a></h2><ul><li>We have fixed a bug preventing a release from being synced downstream if the changelog to be set is empty.\n(<a href=\"https://github.com/packit/packit/pull/2183\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2183</a>)</li><li>We have fixed a bug of not running Koji builds for Packit dist-git PRs with multiple commits if the last commit\nof the PR did not contain a spec file change.\n(<a href=\"https://github.com/packit/packit-service/pull/2275\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2275</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2023/week-50",

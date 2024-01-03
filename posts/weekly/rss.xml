@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 18 Dec 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 02 Jan 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[End of the year in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2023/week-52</link>
+            <guid>https://packit.dev/posts/weekly/2023/week-52</guid>
+            <pubDate>Tue, 02 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[End of the year in Packit]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="end-of-the-year-in-packit">End of the year in Packit<a href="#end-of-the-year-in-packit" class="hash-link" aria-label="Direct link to End of the year in Packit" title="Direct link to End of the year in Packit">​</a></h2><ul><li>We have hit some issues with the firewall rules on the new cluster hosting our production. We are waiting for the required fix that is done outside of our team which should be deployed around January 11th. We will keep you informed about the current status. At the moment we are aware of the issues related to the:<ul><li><code>pull-from-upstream</code> jobs that have sources hosted at infradead.org, sourceforge.net and gitlab.gnome.org</li><li>jobs running on the gitlab.gnome.org in general</li></ul></li><li>We have also fixed an issue that caused some Cockpit releases to fail, others might've been affected too, though there are no reports.</li></ul>]]></content:encoded>
+            <author>mfocko@redhat.com (Matej Focko)</author>
+            <category>2023-December</category>
+            <category>2023</category>
+            <category>December</category>
+        </item>
         <item>
             <title><![CDATA[Week 50 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2023/week-50</link>
