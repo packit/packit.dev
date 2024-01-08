@@ -4,10 +4,24 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Tue, 02 Jan 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 08 Jan 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 1 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-1</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-1</guid>
+            <pubDate>Mon, 08 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 1 (January 2nd – January 8th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-1-january-2nd--january-8th">Week 1 (January 2nd – January 8th)<a href="#week-1-january-2nd--january-8th" class="hash-link" aria-label="Direct link to Week 1 (January 2nd – January 8th)" title="Direct link to Week 1 (January 2nd – January 8th)">​</a></h2><ul><li>We have changed the behaviour of loading Packit configuration for <code>koji_build</code> and <code>bodhi_update</code> jobs.
+For both of them, the behaviour is the same as for <code>pull_from_upstream</code> - the configuration is taken
+from the default branch of the dist-git repository (usually <code>rawhide</code>) and other branches are ignored.
+(<a href="https://github.com/packit/packit-service/pull/2295" target="_blank" rel="noopener noreferrer">packit-service#2295</a>)</li></ul>]]></content:encoded>
+            <category>2024-January</category>
+            <category>2024</category>
+            <category>January</category>
+        </item>
         <item>
             <title><![CDATA[End of the year in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2023/week-52</link>
