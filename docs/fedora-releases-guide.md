@@ -320,8 +320,7 @@ After having the dist-git content updated, you can easily automate also building
 You can simply configure Packit to react to the new commits in your dist-git repository and create
 Koji builds by having
 a Packit configuration (when using `propose_downstream` job, you can configure Packit to sync the file) in your 
-dist-git repository that includes a `koji_build` job (the Packit configuration needs to be in each branch
-Packit should act upon).
+default branch (usually `rawhide`) of the dist-git repository that includes a `koji_build` job.
 Then, if Packit is informed (via fedora-messaging bus) about a new commit in the configured dist-git branch, it submits a new build in Koji
 like maintainers usually do. (The commits without any spec file change are skipped.)
 
@@ -360,9 +359,8 @@ issue to retrigger the builds (see [`issue_repository`](/docs/configuration#issu
 
 ## Bodhi update job
 Lastly, you can again similarly to Koji builds, configure Packit to react to successful Koji builds and create
-Bodhi updates by having a Packit configuration in your dist-git repository that includes a `bodhi_update` job
-(the Packit configuration needs to be in each branch
-Packit should act upon).
+Bodhi updates by having a Packit configuration in your 
+default branch (usually `rawhide`) of the dist-git repository that includes a `bodhi_update` job.
 Once Packit is informed (via fedora-messaging bus) about the successful Koji build for the configured branch,
 it creates a new update for that branch in Bodhi for you.
 
