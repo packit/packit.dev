@@ -117,6 +117,17 @@ Previously known as `upstream_project_name`, which has been deprecated since Pac
 (*string*) URL of the upstream git project (e.g.
 `https://github.com/packit/packit`).
 
+:::info
+
+Do not confuse this with the URL of upstream tarball. In case of
+[`propose_downstream`](/docs/configuration/upstream/propose_downstream),
+[`pull_from_upstream`](/docs/configuration/downstream/pull_from_upstream),
+[`koji_build`](configuration/downstream/koji_build) and
+[`bodhi_update`](configuration/downstream/bodhi_update) jobs,
+upstream tarball URL is taken from spec file or from [sources](#sources).
+
+:::
+
 #### create_pr (only in CLI)
 
 (*bool*) When doing a new update in Fedora dist-git, should packit create a
