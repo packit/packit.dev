@@ -225,6 +225,7 @@ get dist-git pull requests with it automatically. If you want to restrict what r
 you can utilise the configuration options [`upstream_tag_include`](/docs/configuration/#upstream_tag_include) and
 [`upstream_tag_exclude`](/docs/configuration/#upstream_tag_exclude).
 
+It is necessary to set the [`upstream_project_url`](/docs/configuration/#upstream_project_url) (upstream project Git repository URL) configuration option. However, upstream tarball URL is taken from the spec file or from [`sources`](/docs/configuration/#sources) (see below).
 For customization of the job, you may need to define additional configuration options, most commonly:
 - If the version from release monitoring and Git tag differ, 
 you should specify the [`upstream_tag_template`](/docs/configuration/#upstream_tag_template).
