@@ -10,9 +10,7 @@ Create a new update in
 Koji build.
 A Packit config file needs to be in the dist-git repository
 to allow this job to be triggered.
-Packit loads the config from the commit the build is triggered from
-(therefore, the Packit configuration needs to be in each branch
-Packit should act upon).
+Packit loads the config from the default dist-git branch (usually `rawhide`). Packit configs on other branches are ignored.
 
 For now, the Bodhi update is created only for builds submitted by the Packit FAS user.
 (See [`koji_build`](/docs/configuration/downstream/koji_build) job for more details on how to set this up.)

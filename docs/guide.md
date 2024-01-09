@@ -204,11 +204,12 @@ As a format, it uses YAML and here are all the valid names:
 
 And where do you need to place this config file?
 Whenever you need to use Packit -- the concept is easy:
-Packit loads the config file from the repository and commit related to the event it reacts to.
+For upstream jobs, Packit loads the config file from the repository and commit related to the event it reacts to.
 E.g. if Packit reacts to a pull request, it takes config from the HEAD commit of the pull request,
-if Packit works with releases, the release commit is used
-and if Packit works with downstream Koji build,
-the respective dist-git commit is used.
+if Packit works with releases, the release commit is used.
+
+For downstream jobs, Packit always loads the config from the default branch of the dist-git repository
+(usually `rawhide`).
 
 You know how to call this file, where to put it, but what should you fill inside?
 
