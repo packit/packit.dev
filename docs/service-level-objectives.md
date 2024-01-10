@@ -43,7 +43,7 @@ system so we reduced the number here.
 ![SLO 3](img/slo/slo3.png)
 
 If you are interested, here's the accompanying research:
-[github.com/packit/research/../error-budgets](https://github.com/packit/research/tree/main/error-budgets)
+[github.com/packit/research/../error-budgets](https://github.com/packit/research/tree/main/research/monitoring/error-budgets)
 
 Unfortunately, we cannot share our Grafana instance with you since it's hidden
 behind a firewall.
