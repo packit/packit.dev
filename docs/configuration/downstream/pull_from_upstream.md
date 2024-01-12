@@ -9,8 +9,17 @@ A dist-git only job that opens a new dist-git pull request in
 src.fedoraproject.org when a new upstream release happens using a notification
 from [release-monitoring.org](https://release-monitoring.org/). Upstream Release Monitoring creates a Bugzilla
 for the new upstream release and this Bugzilla is by default referenced in the dist-git changelog as
-`- Resolves rhbz#xz` and `- Resolves rhbz#xz` in the commit message. This behaviour can be customized
-using [actions](/docs/configuration/actions#syncing-the-release).
+`- Resolves rhbz#xz` and `- Resolves rhbz#xz` in the commit message. 
+
+
+Bodhi updates created by the `bodhi_update` job as well as [automatic Bodhi updates](https://fedora-infra.github.io/bodhi/6.0/user/automatic_updates.html) will have this Bugzilla assigned and it will be closed when they reach stable.
+There is also an env variable with the list of bugs to be closed
+`PACKIT_RESOLVED_BUGS` that you can use in the case you want to customize the changelog creation but still have
+the bugs automatically closed.
+
+This job behaviour can be customized
+using [actions](/docs/configuration/actions#syncing-the-release). The `PACKIT_RESOLVED_BUGS` env variable is 
+available both for the `commit-message` and `changelog-entry` actions.
 
 This job utilizes the same logic as [`propose_downstream`](/docs/configuration/upstream/propose_downstream) with the only
 exception that it is defined and executed in dist-git.
