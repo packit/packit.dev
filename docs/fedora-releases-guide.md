@@ -221,7 +221,16 @@ functionality. This means that Packit doesn't need to be set up in the
 upstream project: everything is configured in Fedora dist-git. So when a new
 upstream release happens and
 [release-monitoring.org](https://release-monitoring.org/) detects it, you'll
-get dist-git pull requests with it automatically. If you want to restrict what releases with corresponding tags Packit should react on, 
+get dist-git pull requests with it automatically. 
+
+Bodhi updates created by the [`bodhi_update` job](/docs/configuration/downstream/pull_from_upstream) as well as [automatic Bodhi updates](https://fedora-infra.github.io/bodhi/6.0/user/automatic_updates.html) will close the Bugzilla opened by 
+the Upstream Release Monitoring automatically when they reach stable.
+Packit adds the Bugzillas numbers to the commit message and the changelog in this form `- Resolves rhbz#xz`.
+There is also an env variable with the list of bugs to be closed
+`PACKIT_RESOLVED_BUGS` that you can use in the case you want to customize the changelog creation through an action
+as shown below.
+
+If you want to restrict what releases with corresponding tags Packit should react on, 
 you can utilise the configuration options [`upstream_tag_include`](/docs/configuration/#upstream_tag_include) and
 [`upstream_tag_exclude`](/docs/configuration/#upstream_tag_exclude).
 
