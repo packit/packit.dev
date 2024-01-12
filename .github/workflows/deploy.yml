@@ -8,6 +8,7 @@ on:
     types:
       - deployment-docs-updated
       - research-docs-updated
+      - specfile-docs-updated
 
 jobs:
   deploy:
