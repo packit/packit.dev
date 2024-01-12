@@ -16,8 +16,8 @@
 <link rel="alternate" type="application/rss+xml" href="/posts/weekly/rss.xml" title="Packit Weekly RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/posts/weekly/atom.xml" title="Packit Weekly Atom Feed">
 <link rel="alternate" type="application/json" href="/posts/weekly/feed.json" title="Packit Weekly JSON Feed"><link rel="stylesheet" href="/assets/css/styles.3595ad89.css">
-<link rel="preload" href="/assets/js/runtime~main.460ebeb6.js" as="script">
-<link rel="preload" href="/assets/js/main.591941c3.js" as="script">
+<link rel="preload" href="/assets/js/runtime~main.a27bc28d.js" as="script">
+<link rel="preload" href="/assets/js/main.021351a5.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}return t}()||function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -71,7 +71,12 @@ functionality. This means that Packit doesn&#x27;t need to be set up in the
 upstream project: everything is configured in Fedora dist-git. So when a new
 upstream release happens and
 <a href="https://release-monitoring.org/" target="_blank" rel="noopener noreferrer">release-monitoring.org</a> detects it, you&#x27;ll
-get dist-git pull requests with it automatically. If you want to restrict what releases with corresponding tags Packit should react on,
+get dist-git pull requests with it automatically. </p><p>Bodhi updates created by the <a href="/docs/configuration/downstream/pull_from_upstream"><code>bodhi_update</code> job</a> as well as <a href="https://fedora-infra.github.io/bodhi/6.0/user/automatic_updates.html" target="_blank" rel="noopener noreferrer">automatic Bodhi updates</a> will close the Bugzilla opened by
+the Upstream Release Monitoring automatically when they reach stable.
+Packit adds the Bugzillas numbers to the commit message and the changelog in this form <code>- Resolves rhbz#xz</code>.
+There is also an env variable with the list of bugs to be closed
+<code>PACKIT_RESOLVED_BUGS</code> that you can use in the case you want to customize the changelog creation through an action
+as shown below.</p><p>If you want to restrict what releases with corresponding tags Packit should react on,
 you can utilise the configuration options <a href="/docs/configuration#upstream_tag_include"><code>upstream_tag_include</code></a> and
 <a href="/docs/configuration#upstream_tag_exclude"><code>upstream_tag_exclude</code></a>.</p><p>It is necessary to set the <a href="/docs/configuration#upstream_project_url"><code>upstream_project_url</code></a> (upstream project Git repository URL) configuration option. However, upstream tarball URL is taken from the spec file or from <a href="/docs/configuration#sources"><code>sources</code></a> (see below).
 For customization of the job, you may need to define additional configuration options, most commonly:</p><ul><li><p>If the version from release monitoring and Git tag differ,
@@ -121,7 +126,7 @@ It&#x27;s quite simple, isn&#x27;t it?</p><div class="language-yaml codeBlockCon
                     @packit@fosstodon.org
                   </a> (Mastodon)
                 </li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/usage">Usage Charts</a></li><li class="footer__item"><a class="footer__link-item" href="/posts">Blog Posts</a></li><li class="footer__item"><a href="https://github.com/packit" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 Packit is a Red Hat sponsored free software project. Built with Docusaurus.</div></div></div></footer></div>
-<script src="/assets/js/runtime~main.460ebeb6.js"></script>
-<script src="/assets/js/main.591941c3.js"></script>
+<script src="/assets/js/runtime~main.a27bc28d.js"></script>
+<script src="/assets/js/main.021351a5.js"></script>
 </body>
 </html>
