@@ -19,4 +19,11 @@ import:
 	git clone https://github.com/packit/research.git .research-docs
 	mv .research-docs/research research
 
+	# specfile
+	([[ -d .specfile-docs ]] && rm -rf .specfile-docs specfile) || true
+	git clone https://github.com/packit/specfile.git .specfile-docs
+	pip3 install pydoc-markdown
+	$(MAKE) -C .specfile-docs generate-api-docs
+	mv .specfile-docs/docs specfile
+
 .PHONY: run-dev import
