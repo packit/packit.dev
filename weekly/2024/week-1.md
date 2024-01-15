@@ -1,7 +1,7 @@
 ---
 title: Week 1 in Packit
 date: 2024-01-08
-author: nforro
+authors: nforro
 tags:
   - 2024-January
   - 2024
