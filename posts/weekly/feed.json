@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-2",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-2-january-9th--january-15th\">Week 2 (January 9th – January 15th)<a href=\"#week-2-january-9th--january-15th\" class=\"hash-link\" aria-label=\"Direct link to Week 2 (January 9th – January 15th)\" title=\"Direct link to Week 2 (January 9th – January 15th)\">​</a></h2><ul><li>We have fixed the behaviour of identifying the most recent git tag. This has previously caused issues\nwhen building SRPMs for projects with different version tags in different branches.\n(<a href=\"https://github.com/packit/packit-service/pull/2302\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2302</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-2",
+            "title": "Week 2 in Packit",
+            "summary": "Week 2 (January 9th – January 15th)",
+            "date_modified": "2024-01-15T00:00:00.000Z",
+            "author": {
+                "name": "Laura Barcziová",
+                "url": "https://github.com/lbarcziova"
+            },
+            "tags": [
+                "2024-January",
+                "2024",
+                "January"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-1",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-1-january-2nd--january-8th\">Week 1 (January 2nd – January 8th)<a href=\"#week-1-january-2nd--january-8th\" class=\"hash-link\" aria-label=\"Direct link to Week 1 (January 2nd – January 8th)\" title=\"Direct link to Week 1 (January 2nd – January 8th)\">​</a></h2><ul><li>We have changed the behaviour of loading Packit configuration for <code>koji_build</code> and <code>bodhi_update</code> jobs.\nFor both of them, the behaviour is the same as for <code>pull_from_upstream</code> - the configuration is taken\nfrom the default branch of the dist-git repository (usually <code>rawhide</code>) and other branches are ignored.\n(<a href=\"https://github.com/packit/packit-service/pull/2295\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2295</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-1",
@@ -12,7 +29,8 @@
             "summary": "Week 1 (January 2nd – January 8th)",
             "date_modified": "2024-01-08T00:00:00.000Z",
             "author": {
-                "name": "nforro"
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
             },
             "tags": [
                 "2024-January",
