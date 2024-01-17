@@ -403,6 +403,14 @@ issue to retrigger the updates (see [`issue_repository`](/docs/configuration#iss
 Let's take a look how the configuration file can look like when you define all three steps.
 It's quite simple, isn't it?
 
+:::tip 
+
+For validation of the configuration, you can utilise
+Packit CLI command [`validate-config`](/docs/cli/validate-config) or our 
+[pre-commit hooks](/posts/pre-commit-hooks#validate-config).
+
+:::
+
 ```yaml
 specfile_path: my_downstream_package_name.spec
 files_to_sync:

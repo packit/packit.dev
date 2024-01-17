@@ -211,6 +211,14 @@ if Packit works with releases, the release commit is used.
 For downstream jobs, Packit always loads the config from the default branch of the dist-git repository
 (usually `rawhide`).
 
+:::tip 
+
+For validation of the configuration, you can utilise
+Packit CLI command [`validate-config`](/docs/cli/validate-config) or our 
+[pre-commit hooks](/posts/pre-commit-hooks#validate-config).
+
+:::
+
 You know how to call this file, where to put it, but what should you fill inside?
 
 In the following parts, we will cover some basic concepts used in the Packit config file.
