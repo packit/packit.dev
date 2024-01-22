@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-3",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-3-january-16th--january-22nd\">Week 3 (January 16th – January 22nd)<a href=\"#week-3-january-16th--january-22nd\" class=\"hash-link\" aria-label=\"Direct link to Week 3 (January 16th – January 22nd)\" title=\"Direct link to Week 3 (January 16th – January 22nd)\">​</a></h2><ul><li>Packit now properly handles exceptions when syncing ACLs during release syncing. (<a href=\"https://github.com/packit/packit/pull/2213\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2213</a>)</li><li>We have fixed a bug in handling chroot-specific configuration once the chroots themselves are updated. (<a href=\"https://github.com/packit/packit/pull/2194\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2194</a>)</li><li>We have increased the number of retries of Fedora release syncing for situations where the tarball is uploaded some time after the release happens. (<a href=\"https://github.com/packit/packit-service/pull/2307\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2307</a>)</li><li>There is a new API endpoint <code>/bodhi-updates</code> for getting information about Bodhi updates submitted by Packit. (<a href=\"https://github.com/packit/packit-service/pull/2310\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2310</a>)</li><li>For <code>/packit test</code> command, you can now also use <code>-i</code> and <code>--id</code> aliases for <code>--identifier</code> option. (<a href=\"https://github.com/packit/packit-service/pull/2309\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2309</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-3",
+            "title": "Week 3 in Packit",
+            "summary": "Week 3 (January 16th – January 22nd)",
+            "date_modified": "2024-01-22T00:00:00.000Z",
+            "author": {
+                "name": "František Lachman",
+                "url": "https://github.com/lachmanfrantisek"
+            },
+            "tags": [
+                "2024-January",
+                "2024",
+                "January"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-2",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-2-january-9th--january-15th\">Week 2 (January 9th – January 15th)<a href=\"#week-2-january-9th--january-15th\" class=\"hash-link\" aria-label=\"Direct link to Week 2 (January 9th – January 15th)\" title=\"Direct link to Week 2 (January 9th – January 15th)\">​</a></h2><ul><li>We have fixed the behaviour of identifying the most recent git tag. This has previously caused issues\nwhen building SRPMs for projects with different version tags in different branches.\n(<a href=\"https://github.com/packit/packit-service/pull/2302\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2302</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-2",

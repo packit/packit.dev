@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 15 Jan 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 22 Jan 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 3 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-3</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-3</guid>
+            <pubDate>Mon, 22 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 3 (January 16th – January 22nd)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-3-january-16th--january-22nd">Week 3 (January 16th – January 22nd)<a href="#week-3-january-16th--january-22nd" class="hash-link" aria-label="Direct link to Week 3 (January 16th – January 22nd)" title="Direct link to Week 3 (January 16th – January 22nd)">​</a></h2><ul><li>Packit now properly handles exceptions when syncing ACLs during release syncing. (<a href="https://github.com/packit/packit/pull/2213" target="_blank" rel="noopener noreferrer">packit#2213</a>)</li><li>We have fixed a bug in handling chroot-specific configuration once the chroots themselves are updated. (<a href="https://github.com/packit/packit/pull/2194" target="_blank" rel="noopener noreferrer">packit#2194</a>)</li><li>We have increased the number of retries of Fedora release syncing for situations where the tarball is uploaded some time after the release happens. (<a href="https://github.com/packit/packit-service/pull/2307" target="_blank" rel="noopener noreferrer">packit-service#2307</a>)</li><li>There is a new API endpoint <code>/bodhi-updates</code> for getting information about Bodhi updates submitted by Packit. (<a href="https://github.com/packit/packit-service/pull/2310" target="_blank" rel="noopener noreferrer">packit-service#2310</a>)</li><li>For <code>/packit test</code> command, you can now also use <code>-i</code> and <code>--id</code> aliases for <code>--identifier</code> option. (<a href="https://github.com/packit/packit-service/pull/2309" target="_blank" rel="noopener noreferrer">packit-service#2309</a>)</li></ul>]]></content:encoded>
+            <author>flachman@redhat.com (František Lachman)</author>
+            <category>2024-January</category>
+            <category>2024</category>
+            <category>January</category>
+        </item>
         <item>
             <title><![CDATA[Week 2 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-2</link>
