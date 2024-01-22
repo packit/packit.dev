@@ -128,6 +128,21 @@ upstream tarball URL is taken from spec file or from [sources](#sources).
 
 :::
 
+This URL is used for cloning the upstream git repository. Furthermore during
+`sync-release` runs it can be used to generate changelog for the proposed update
+from the git log of the upstream repository or release description (specific to
+GitHub and GitLab).
+
+:::tip
+
+Using the upstream repository during `sync-release` runs doesn't imply that the
+sources from hostings such as PyPI are being ignored.
+
+:::
+
+This setting also allows you to use Packit CLI from the dist-git repository as
+Packit clones the upstream, if needed.
+
 #### create_pr (only in CLI)
 
 (*bool*) When doing a new update in Fedora dist-git, should packit create a
