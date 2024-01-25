@@ -47,11 +47,20 @@ For Koji builds from upstream, see [`upstream_koji_build`](/docs/configuration/u
 
 * **scratch** - defaults to `false`, use to create scratch (test) builds
   instead of the real production builds
-* **allowed_pr_authors** - a list of FAS accounts of PR authors whose merged pull requests will trigger koji builds
-  (defaults to `['packit']`).
-* **allowed_committers** - a list of FAS accounts of committers whose direct pushes to dist-git will trigger koji builds
-  (defaults to an empty list). You do not need to configure this option if you want to have koji builds triggered only by merged pull requests.
-
+* **allowed_pr_authors** - a list of PR authors whose merged pull requests will trigger Koji builds
+  (defaults to `['packit']`). As each item of the list you can specify:
+   - name of a FAS account, e.g. `my-fas`
+   - name of a group - starting with `@`, e.g. `@my-sig`
+   - `all_admins` alias - allowing all users with admin access to the dist-git repo
+   - `all_committers` alias - allowing all users with commit access to the dist-git repo
+* **allowed_committers** - a list of committers whose direct pushes to dist-git will trigger Koji builds
+  (defaults to an empty list). It is enough to configure the `allowed_pr_authors` option if you want to have Koji builds 
+  triggered only by merged pull requests.
+  Similarly to the previous option, as each item of the list you can specify:
+   - name of a FAS account, e.g. `my-fas`
+   - name of a group - starting with `@`, e.g. `@my-sig`
+   - `all_admins` alias - allowing all users with admin access to the dist-git repo
+   - `all_committers` alias - allowing all users with commit access to the dist-git repo
 ### Example
 
 ```yaml
