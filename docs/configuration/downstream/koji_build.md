@@ -33,6 +33,13 @@ For retriggering the job, see [our release guide](/docs/fedora-releases-guide).
 
 For Koji builds from upstream, see [`upstream_koji_build`](/docs/configuration/upstream/upstream_koji_build).
 
+:::tip Downstream configuration template
+
+You can use our [downstream configuration template](/docs/configuration/downstream_configuration_template) 
+for creating your Packit configuration in dist-git repository.
+
+:::
+
 ## Supported triggers
 
 * **commit** - reacts to new commits to the specified branch (in dist-git)
@@ -61,6 +68,7 @@ For Koji builds from upstream, see [`upstream_koji_build`](/docs/configuration/u
    - name of a group - starting with `@`, e.g. `@my-sig`
    - `all_admins` alias - allowing all users with admin access to the dist-git repo
    - `all_committers` alias - allowing all users with commit access to the dist-git repo
+
 ### Example
 
 ```yaml

@@ -403,7 +403,14 @@ issue to retrigger the updates (see [`issue_repository`](/docs/configuration#iss
 Let's take a look how the configuration file can look like when you define all three steps.
 It's quite simple, isn't it?
 
-:::tip 
+:::tip Downstream configuration template
+
+You can use our [downstream configuration template](/docs/configuration/downstream_configuration_template) 
+for creating your Packit configuration in dist-git repository.
+
+:::
+
+:::tip Configuration validation
 
 For validation of the configuration, you can utilise
 Packit CLI command [`validate-config`](/docs/cli/validate-config) or our 

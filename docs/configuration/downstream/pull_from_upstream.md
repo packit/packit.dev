@@ -24,6 +24,13 @@ available both for the `commit-message` and `changelog-entry` actions.
 This job utilizes the same logic as [`propose_downstream`](/docs/configuration/upstream/propose_downstream) with the only
 exception that it is defined and executed in dist-git.
 
+:::tip Downstream configuration template
+
+You can use our [downstream configuration template](/docs/configuration/downstream_configuration_template) 
+for creating your Packit configuration in dist-git repository.
+
+:::
+
 ## Requirements
 
 * The job is defined in a Packit config in the default branch of the dist-git

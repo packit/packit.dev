@@ -26,8 +26,12 @@ to tweak the notifications settings.
 
 For retriggering the job, see [our release guide](/docs/fedora-releases-guide).
 
-Note that this job is really new and not mature yet — let us know if you find anything problematic
-or any improvement we can implement.
+:::tip Downstream configuration template
+
+You can use our [downstream configuration template](/docs/configuration/downstream_configuration_template) 
+for creating your Packit configuration in dist-git repository.
+
+:::
 
 ## Supported triggers
 
@@ -39,6 +43,7 @@ or any improvement we can implement.
 * **dist_git_branches** - the name of the dist-git branch(es) the build we want to use is coming from.
   You can also use the [aliases provided by Packit](/docs/configuration#aliases)
   to not need to change the config file when the new system version is released.
+
 
 ## Example
 ```yaml
