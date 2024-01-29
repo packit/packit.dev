@@ -7,7 +7,7 @@ sidebar_position: 7
 # `packit propose-downstream`
 
 This is a detailed documentation for the update functionality of packit. The
-command creates a new pull request in Fedora using a selected or latest
+command creates a new pull request in Fedora (or CentOS Stream) using a selected or latest
 upstream release.
 
 
@@ -19,10 +19,16 @@ upstream release.
 * Packit config file placed in the upstream repository.
 * Spec file present in the upstream repository and is correct in a given
   release.
-* Pagure API tokens for Fedora Dist-git.
+* Pagure API tokens for Fedora (or CentOS Stream) Dist-git.
 * GitHub API token.
-* Valid Fedora Kerberos ticket.
+* Valid Fedora (or CentOS Stream) Kerberos ticket.
 
+:::tip CentOS Stream support
+
+We newly support `propose-downstream` also for CentOS Stream, see the configuration specifics 
+[here](/docs/configuration/upstream/propose_downstream#syncing-the-release-to-centos-stream).
+
+:::
 
 ## Tutorial
 
@@ -32,10 +38,10 @@ upstream release.
 
 * Place a spec file into your upstream project (and make sure that
   `specfile_path` in the config has a correct value).
-   * This spec file will be then used to perform the update in Fedora.
+   * This spec file will be then used to perform the update in Fedora (or CentOS Stream).
    * When you create a new upstream release, you should also update the spec file.
    * Once your upstream release is out (and the spec file is really up to
-     date), you can use packit to release it into Fedora.
+     date), you can use Packit to release it into Fedora (or CentOS Stream).
 
 * Create a new upstream release. The spec file needs to be included in the ref
   for upstream release, because packit checks out the tag for the upstream
@@ -64,7 +70,6 @@ upstream release.
   required by the Fedora Packaging
   Guidelines](https://fedoraproject.org/wiki/Packaging:SourceURL#Referencing_Source).
 Then it copies the files listed in `files_to_sync` (which by default includes the spec file) from the upstream repo to downstream and creates the downstream PR.
-
 
 ## Help
 
