@@ -565,6 +565,28 @@ jobs:
 </details>
 
 <details>
+  <summary>Creating dist-git pull requests on upstream releases with different configs for branches defined in the dist-git repository</summary>
+
+```yaml
+upstream_project_url: https://github.com/packit/packit
+
+jobs:
+- job: pull_from_upstream
+  trigger: release
+  dist_git_branches: 
+    - fedora-38
+  upstream_tag_include: "^2\\..+"
+  upstream_tag_exclude: "^.+\\.1\\..+"
+  
+- job: pull_from_upstream
+  trigger: release
+  dist_git_branches: 
+    - fedora-rawhide
+```
+
+</details>
+
+<details>
   <summary>Running Koji builds when the Packit pull requests in dist-git are merged</summary>
 
 ```yaml
