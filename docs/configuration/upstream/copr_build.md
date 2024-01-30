@@ -53,6 +53,15 @@ Create an SRPM and submit an RPM build to [Fedora Copr](https://copr.fedorainfra
   the Copr. This setting is useful if you're releasing to the Copr.
   Defaults to `False`.
 
+###  Top level keys affecting a Copr build
+Beside the job specific keys above you can specify a set of top level keys 
+(or package level keys in a monorepo configuration) 
+that can change the behaviour of your Copr builds:
+
+* [**merge_pr_in_ci**](https://packit.dev/docs/configuration#merge_pr_in_ci)
+* [**update_release**](https://packit.dev/docs/configuration#update_release)
+* [**release_suffix**](https://packit.dev/docs/configuration#release_suffix)
+* [**srpm_build_deps**](https://packit.dev/docs/configuration#srpm_build_deps)
 
 ## Using a custom Copr project
 When using a custom Copr project (by specifying `project` and `owner`), the GitHub repo has to be listed in the
