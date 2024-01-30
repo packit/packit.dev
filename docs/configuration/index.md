@@ -160,6 +160,12 @@ repository branch to be sure the changes are up to date. You can disable this
 behaviour by setting this field to `false` which will make Packit to work with
 your pull request git ref as it is.
 
+When your pull request can not be fast-forward-merged into the target
+branch, setting this key to `false` can be especially useful not to generate 
+RPM packages with an NVR referencing an unknown hash (the one created by the 
+Packit merge commit).
+
+
 #### sync_changelog
 
 (*bool*) When doing a new update in Fedora dist-git, the specfile changelog
