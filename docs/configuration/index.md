@@ -628,6 +628,30 @@ As a result, invoking `/packit test` will be automatically interpreted as `/pack
 `default_identifier` and `default_labels` are not supposed to be used simultaneously. You should configure
 only one of these options.
 :::
+
+#### parse_time_macros
+
+(*dict*) Macros to be explicitly defined or undefined at spec file parse time.
+To undefine a macro, set its value to `null`.
+This can be useful for instance when the spec file is OS-specific and Packit runs on a different OS.
+
+For example, `%cargo_prep` macro used in Rust packages accepts `-V` option on EL but not on Fedora.
+To make sure Packit is able to parse a spec file that uses `%cargo_prep -V` on both OSes,
+you can undefine the macro at parse time:
+
+```yaml
+specfile_path: some-rust-package.spec
+parse_time_macros:
+  cargo_prep: null
+```
+
+:::info
+
+This has no effect at build time, any macros overriden or undefined using this option
+will have their usual values during SRPM and RPM build.
+
+:::
+
 ## Aliases
 
 To not need to change the config file when the new system version is released,
