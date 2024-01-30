@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 22 Jan 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Jan 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 4 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-4</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-4</guid>
+            <pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 4 (January 23rd – January 29th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-4-january-23rd--january-29th">Week 4 (January 23rd – January 29th)<a href="#week-4-january-23rd--january-29th" class="hash-link" aria-label="Direct link to Week 4 (January 23rd – January 29th)" title="Direct link to Week 4 (January 23rd – January 29th)">​</a></h2><ul><li><code>pull-from-upstream</code> and <code>propose-downstream</code> commands now have the <code>--sync-acls</code> option that enables syncing the ACLs between dits-git repo and fork. The default behaviour was, however, <strong>changed to not sync</strong> the ACLs. (<a href="https://github.com/packit/packit/pull/2214" target="_blank" rel="noopener noreferrer">packit#2214</a>)</li><li>Packit now properly handles exceptions when syncing ACLs during release syncing. (<a href="https://github.com/packit/packit/pull/2213" target="_blank" rel="noopener noreferrer">packit#2213</a>)</li><li><code>allowed_pr_authors</code> and <code>allowed_committers</code> now allow specifying groups and also aliases <code>all_admins</code> and <code>all_committers</code> (corresponding to the access to the repository). (<a href="https://github.com/packit/packit-service/pull/2320" target="_blank" rel="noopener noreferrer">packit-service#2320</a>)</li><li>ogr now supports 2 new methods for Pagure: one for getting users with specified access rights and one for getting members of a group. (<a href="https://github.com/packit/ogr/pull/834" target="_blank" rel="noopener noreferrer">ogr#834</a>)</li></ul>]]></content:encoded>
+            <author>mfocko@redhat.com (Matej Focko)</author>
+            <category>2024-January</category>
+            <category>2024</category>
+            <category>January</category>
+        </item>
         <item>
             <title><![CDATA[Week 3 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-3</link>
