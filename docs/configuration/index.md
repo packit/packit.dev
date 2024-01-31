@@ -122,8 +122,8 @@ Previously known as `upstream_project_name`, which has been deprecated since Pac
 Do not confuse this with the URL of upstream tarball. In case of
 [`propose_downstream`](/docs/configuration/upstream/propose_downstream),
 [`pull_from_upstream`](/docs/configuration/downstream/pull_from_upstream),
-[`koji_build`](configuration/downstream/koji_build) and
-[`bodhi_update`](configuration/downstream/bodhi_update) jobs,
+[`koji_build`](/docs/configuration/downstream/koji_build) and
+[`bodhi_update`](/docs/configuration/downstream/bodhi_update) jobs,
 upstream tarball URL is taken from spec file or from [sources](#sources).
 
 :::
@@ -356,16 +356,16 @@ GitHub repository. In case of using the `packages` key, the defaults are the key
 
 #### ~~create_tarball_command~~ (deprecated)
 
-Please use [`create-archive` action](configuration/actions/)
+Please use [`create-archive` action](/docs/configuration/actions/)
 
 #### ~~current_version_command~~ (deprecated)
 
-Please use [`get-current-version` action](configuration/actions/)
+Please use [`get-current-version` action](/docs/configuration/actions/)
 
 #### actions
 
 (*string*) Custom actions/hooks overwriting the default behavior of packit
-(more in [Actions](configuration/actions/)).
+(more in [Actions](/docs/configuration/actions/)).
 
 #### allowed_gpg_keys
 
@@ -598,9 +598,9 @@ The value requires a Python regex pattern and is used with `re.match` function.
 
 #### test_command
 ##### default_identifier
-The identifier (refer to [`identifier`](./configuration/upstream/tests#optional-parameters)) utilised by default when
+The identifier (refer to [`identifier`](/docs/configuration/upstream/tests#optional-parameters)) utilised by default when
 the `/packit test` comment command is invoked without arguments 
-(see [related docs](./configuration/upstream/tests#running-tests-with-a-specific-identifier)).
+(see [related docs](/docs/configuration/upstream/tests#running-tests-with-a-specific-identifier)).
 This allows commonly used job to be triggered without the need for manual specification. 
 For instance, rather than specifying frequently used job via `--identifier` each time, such as `/packit test --identfier my-id`, 
 you can configure the following:
@@ -611,9 +611,9 @@ default_identifier: my-id
 As a result, invoking `/packit test` will be automatically interpreted as `/packit test --identfier my-id`.
 
 ##### default_labels
-A list of labels (refer to [`labels`](./configuration/upstream/tests#optional-parameters)) utilised by default when
+A list of labels (refer to [`labels`](/docs/configuration/upstream/tests#optional-parameters)) utilised by default when
 the `/packit test` comment command is invoked without arguments 
-(see [related docs](./configuration/upstream/tests#running-a-group-of-tests-with-the-same-label)).
+(see [related docs](/docs/configuration/upstream/tests#running-a-group-of-tests-with-the-same-label)).
 This allows commonly used job combinations to be triggered without the need for manual specification. 
 For instance, rather than specifying frequently used jobs via `--labels` each time, such as `/packit test --labels regression,upgrade`, 
 you can configure the following:
@@ -675,11 +675,11 @@ Rawhide (e.g. `fedora-34`, `fedora-35`, `fedora-36`).
 versions (e.g. `epel-7`, `epel-8`, `epel-9`)
 
 The aliases above can be used both to specify targets when [building in
-Copr](configuration/upstream/copr_build) or [running tests](configuration/upstream/tests),
+Copr](/docs/configuration/upstream/copr_build) or [running tests](/docs/configuration/upstream/tests),
 and to reference dist-git branches of different system versions
-(e.g. for [`propose_downstream` job](configuration/upstream/propose_downstream)
-or downstream jobs like [`koji_build`](configuration/downstream/koji_build)
-or [`bodhi_update`](configuration/downstream/bodhi_update)).
+(e.g. for [`propose_downstream` job](/docs/configuration/upstream/propose_downstream)
+or downstream jobs like [`koji_build`](/docs/configuration/downstream/koji_build)
+or [`bodhi_update`](/docs/configuration/downstream/bodhi_update)).
 
 :::info
 
