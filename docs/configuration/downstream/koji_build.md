@@ -40,6 +40,13 @@ for creating your Packit configuration in dist-git repository.
 
 :::
 
+:::tip Automate the setup
+
+You can also use [packit dist-git init](/docs/cli/dist-git/init.md) CLI command to create your
+Packit dist-git configuration.
+
+:::
+
 ## Supported triggers
 
 * **commit** - reacts to new commits to the specified branch (in dist-git)

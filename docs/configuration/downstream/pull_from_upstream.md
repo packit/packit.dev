@@ -31,6 +31,13 @@ for creating your Packit configuration in dist-git repository.
 
 :::
 
+:::tip Automate the setup
+
+You can also use [packit dist-git init](/docs/cli/dist-git/init.md) CLI command to create your
+Packit dist-git configuration.
+
+:::
+
 ## Requirements
 
 * The job is defined in a Packit config in the default branch of the dist-git

@@ -410,6 +410,13 @@ for creating your Packit configuration in dist-git repository.
 
 :::
 
+:::tip Automate the setup
+
+You can also use [packit dist-git init](/docs/cli/dist-git/init.md) CLI command to create your
+Packit dist-git configuration.
+
+:::
+
 :::tip Configuration validation
 
 For validation of the configuration, you can utilise
