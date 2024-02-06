@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-5",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-5-january-30th--february-5th\">Week 5 (January 30th – February 5th)<a href=\"#week-5-january-30th--february-5th\" class=\"hash-link\" aria-label=\"Direct link to Week 5 (January 30th – February 5th)\" title=\"Direct link to Week 5 (January 30th – February 5th)\">​</a></h2><ul><li><code>packit validate-config</code> now checks whether the Upstream Release Monitoring for the package is correctly configured if <code>pull_from_upstream</code> job is present in the configuration. (<a href=\"https://github.com/packit/packit/pull/2226\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2226</a>)</li><li>There is a new global configuration option <code>parse_time_macros</code> that allows to configure macros to be explicitly defined or undefined at spec file parse time. (<a href=\"https://github.com/packit/packit/pull/2222\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2222</a>)</li><li>We have added additional retries and improvements for task processing. (<a href=\"https://github.com/packit/packit-service/pull/2326\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2326</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-5",
+            "title": "Week 5 in Packit",
+            "summary": "Week 5 (January 30th – February 5th)",
+            "date_modified": "2024-02-05T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2024-February",
+                "2024",
+                "February"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-4",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-4-january-23rd--january-29th\">Week 4 (January 23rd – January 29th)<a href=\"#week-4-january-23rd--january-29th\" class=\"hash-link\" aria-label=\"Direct link to Week 4 (January 23rd – January 29th)\" title=\"Direct link to Week 4 (January 23rd – January 29th)\">​</a></h2><ul><li><code>pull-from-upstream</code> and <code>propose-downstream</code> commands now have the <code>--sync-acls</code> option that enables syncing the ACLs between dits-git repo and fork. The default behaviour was, however, <strong>changed to not sync</strong> the ACLs. (<a href=\"https://github.com/packit/packit/pull/2214\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2214</a>)</li><li>Packit now properly handles exceptions when syncing ACLs during release syncing. (<a href=\"https://github.com/packit/packit/pull/2213\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2213</a>)</li><li><code>allowed_pr_authors</code> and <code>allowed_committers</code> now allow specifying groups and also aliases <code>all_admins</code> and <code>all_committers</code> (corresponding to the access to the repository). (<a href=\"https://github.com/packit/packit-service/pull/2320\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2320</a>)</li><li>ogr now supports 2 new methods for Pagure: one for getting users with specified access rights and one for getting members of a group. (<a href=\"https://github.com/packit/ogr/pull/834\" target=\"_blank\" rel=\"noopener noreferrer\">ogr#834</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-4",

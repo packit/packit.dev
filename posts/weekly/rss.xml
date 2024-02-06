@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 29 Jan 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 05 Feb 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 5 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-5</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-5</guid>
+            <pubDate>Mon, 05 Feb 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 5 (January 30th – February 5th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-5-january-30th--february-5th">Week 5 (January 30th – February 5th)<a href="#week-5-january-30th--february-5th" class="hash-link" aria-label="Direct link to Week 5 (January 30th – February 5th)" title="Direct link to Week 5 (January 30th – February 5th)">​</a></h2><ul><li><code>packit validate-config</code> now checks whether the Upstream Release Monitoring for the package is correctly configured if <code>pull_from_upstream</code> job is present in the configuration. (<a href="https://github.com/packit/packit/pull/2226" target="_blank" rel="noopener noreferrer">packit#2226</a>)</li><li>There is a new global configuration option <code>parse_time_macros</code> that allows to configure macros to be explicitly defined or undefined at spec file parse time. (<a href="https://github.com/packit/packit/pull/2222" target="_blank" rel="noopener noreferrer">packit#2222</a>)</li><li>We have added additional retries and improvements for task processing. (<a href="https://github.com/packit/packit-service/pull/2326" target="_blank" rel="noopener noreferrer">packit-service#2326</a>)</li></ul>]]></content:encoded>
+            <author>mmassari@redhat.com (Maja Massarini)</author>
+            <category>2024-February</category>
+            <category>2024</category>
+            <category>February</category>
+        </item>
         <item>
             <title><![CDATA[Week 4 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-4</link>
