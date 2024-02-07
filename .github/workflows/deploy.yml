@@ -9,6 +9,7 @@ on:
       - deployment-docs-updated
       - research-docs-updated
       - specfile-docs-updated
+      - agile-docs-updated
 
 jobs:
   deploy:
