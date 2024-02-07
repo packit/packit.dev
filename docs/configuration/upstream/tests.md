@@ -490,4 +490,4 @@ If you have found an issue or have an RFE, you can file an [issue in nucleus pro
 [systemd-tests]: https://github.com/systemd-rhel/tests
 [testing-farm-api]: https://testing-farm.gitlab.io/api
 [issues]: https://gitlab.com/testing-farm/general/-/issues
-[tf]: https://docs.testing-farm.io/general/0.1/index.html
+[tf]: https://docs.testing-farm.io/Testing%20Farm/0.1/index.html
