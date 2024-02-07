@@ -25,5 +25,10 @@ import:
 	pip3 install pydoc-markdown
 	$(MAKE) -C .specfile-docs generate-api-docs
 	mv .specfile-docs/docs specfile
+	
+	# agile
+	([[ -d .agile-docs ]] && rm -rf .agile-docs agile) || true
+	git clone https://github.com/packit/agile.git .agile-docs
+	mv .agile-docs/docs agile
 
 .PHONY: run-dev import

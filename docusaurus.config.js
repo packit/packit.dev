@@ -68,6 +68,11 @@ const developmentSections = [
     "https://github.com/packit/research/tree/main",
   ),
   new Section(
+    "agile",
+    "Agile",
+    "https://github.com/packit/agile/tree/main/docs",
+  ),
+  new Section(
     "specfile",
     "specfile library",
     "https://github.com/packit/specfile/tree/main/docs",
