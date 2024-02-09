@@ -653,6 +653,35 @@ will have their usual values during SRPM and RPM build.
 
 :::
 
+#### require
+##### label
+In this section, you can specify the label requirements for a pull request. 
+It is used to define conditions for jobs that should be triggered based on the presence or absence of specific labels.
+You can specify 2 nested options:
+
+###### present
+
+(*list*)  Labels that must be present (at least one of them) on the PR for the specified job to be triggered.
+
+###### absent
+
+(*list*)  Labels that must be absent (none of these can be present) on the PR for the 
+specified job to be triggered.
+
+Example for the `require` section configuration:
+
+```yaml
+require:
+  label:
+    present:
+      - bug
+      - enhancement
+    absent:
+      - WIP
+      - on-hold
+
+```
+
 ## Aliases
 
 To not need to change the config file when the new system version is released,
