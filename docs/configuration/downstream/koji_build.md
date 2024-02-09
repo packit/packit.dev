@@ -76,6 +76,56 @@ Packit dist-git configuration.
    - `all_admins` alias - allowing all users with admin access to the dist-git repo
    - `all_committers` alias - allowing all users with commit access to the dist-git repo
 
+:::info Processing of dist-git events from Pagure
+
+```mermaid
+flowchart TD;
+  S[Event is registered]
+  F{Specfile changed}
+  A{Type of event}
+  B{"Is build configured
+  for the branch?"}
+  C{"Has commit been
+  pushed by Pagure?"}
+  D{"Has the commit
+  been pushed
+  by someone in
+  <code>allowed_committers</code>?"}
+  E{"Is it a PR merge?"}
+  G{"Is the PR author in
+  <code>allowed_pr_authors</code>?"}
+  H{"Is the actor
+  a packager?"}
+
+  OK(((Run build)))
+  NOK((Skip build))
+
+  S --> F
+  F -. No   .-> NOK
+  F -. Yes  .-> A
+
+  A -- Comment --> H
+  H -. No      .-> NOK
+  H -- Yes     --> OK
+
+  A -- Push --> B
+  B -. No   .-> NOK
+  B -- Yes  --> C
+  C -- Yes  --> E
+  C -. No   .-> D
+  D -. No   .-> NOK
+  D -- Yes  --> OK
+  E -. No   .-> NOK
+  E -- Yes  --> G
+  G -. No   .-> NOK
+  G -- Yes  --> OK
+```
+
+Because of the potential issues with rendering:
+- dotted lines represent _no_
+- continous lines represent _yes_
+:::
+
 ### Example
 
 ```yaml
