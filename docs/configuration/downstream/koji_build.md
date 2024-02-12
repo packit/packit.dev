@@ -75,6 +75,8 @@ Packit dist-git configuration.
    - name of a group - starting with `@`, e.g. `@my-sig`
    - `all_admins` alias - allowing all users with admin access to the dist-git repo
    - `all_committers` alias - allowing all users with commit access to the dist-git repo
+* **require.label** - you can specify labels that have to be present/absent on a pull request
+in order to trigger the build when it is merged. See configuration details [here](/docs/configuration#require).
 
 :::info Processing of dist-git events from Pagure
 
@@ -96,6 +98,11 @@ flowchart TD;
   <code>allowed_pr_authors</code>?"}
   H{"Is the actor
   a packager?"}
+  I{"If it is a PR merge, 
+  are there configured labels
+   (present/absent) in the configuration?"}
+  J{"Do the configured labels 
+  match the labels on PR?"}
 
   OK(((Run build)))
   NOK((Skip build))
@@ -108,7 +115,12 @@ flowchart TD;
   H -. No      .-> NOK
   H -- Yes     --> OK
 
-  A -- Push --> B
+  A -- Push --> I
+  I -- Yes --> J
+  I -- No --> B
+  J -- Yes --> B
+  J -- No --> NOK
+  
   B -. No   .-> NOK
   B -- Yes  --> C
   C -- Yes  --> E
