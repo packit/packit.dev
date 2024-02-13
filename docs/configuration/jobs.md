@@ -51,17 +51,17 @@ jobs:
 - job: copr_build
   trigger: pull_request
   targets:
-  - centos-stream-8-x86_64
-  - centos-stream-9-x86_64
-  - fedora-all
+    - centos-stream-8-x86_64
+    - centos-stream-9-x86_64
+    - fedora-all
 
 - job: copr_build
   trigger: commit
   branch: main
   targets:
-  - centos-stream-8-x86_64
-  - centos-stream-9-x86_64
-  - fedora-all
+    - centos-stream-8-x86_64
+    - centos-stream-9-x86_64
+    - fedora-all
 
 # after
 jobs:
@@ -69,13 +69,47 @@ jobs:
   job: copr_build
   trigger: pull_request
   targets:
-  - centos-stream-8-x86_64
-  - centos-stream-9-x86_64
-  - fedora-all
+    - centos-stream-8-x86_64
+    - centos-stream-9-x86_64
+    - fedora-all
 
 - <<: *copr
   trigger: commit
   branch: main
+```
+
+Note that in case of more complex scenarios, it can be useful to create also
+a template job, that should not be triggered in Packit at all.
+This is typically useful when creating a number of tests which needs various
+parameters, but many parameters stay same. In such a case set the 
+`trigger` to `ignore` in the template job and use the expected trigger in real jobs.
+
+Please see the example:
+```yaml
+jobs:
+- &template-basic-test
+  job: tests
+  trigger: ignore
+  targets:
+    - centos-stream-8-x86_64
+    - centos-stream-9-x86_64
+    - fedora-all
+
+- <<: *template-basic-test
+  identifier: kernel-rt-sanity
+  trigger: pull_request
+  labels:
+    - kernel-rt
+  env:
+    RPM_NAME=kernel-rt
+
+- <<: *template-basic-test
+  identifier: kernel-sanity
+  trigger: pull_request
+  labels:
+    - kernel
+  env:
+    RPM_NAME=kernel
 ```
 
 ## Configuration keys
@@ -84,6 +118,8 @@ jobs:
 
 #### trigger
 (*str*) what is the trigger for the job? Every job only supports a specific set of triggers.
+You can also use the special value `ignore` that indicates not to execute the job at all 
+(used for templates or temporarily disabled jobs).
 
 #### packages
 (*list*) Optional, list of package object names (when using monorepositories). If a job object has no such key, 

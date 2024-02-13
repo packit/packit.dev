@@ -279,7 +279,7 @@ To let user decide what and when should run, Packit uses concept of so-called `j
 Each job represents a feature of Packit. All the jobs are defined under the `jobs` key.
 For each job you need to specify the following information:
 * `job`: the type of the job, the feature you want Packit to do.
-* `trigger`: when the job is run (`pull_request`, `commit` or `release`).
+* `trigger`: when the job is run (`pull_request`, `commit`, `release`, or `ignore`).
 * additional information needed for the job (like what targets to build, for what branch to run the job,...)
 
 (Note that for each job, not all the triggers are supported.)
