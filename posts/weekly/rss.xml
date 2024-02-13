@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 05 Feb 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 12 Feb 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 6 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-6</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-6</guid>
+            <pubDate>Mon, 12 Feb 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 6 (February 6th – February 12th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-6-february-6th--february-12th">Week 6 (February 6th – February 12th)<a href="#week-6-february-6th--february-12th" class="hash-link" aria-label="Direct link to Week 6 (February 6th – February 12th)" title="Direct link to Week 6 (February 6th – February 12th)">​</a></h2><ul><li>Packit now searches for bugzilla about new release created by Upstream Release Monitoring to reference each time it syncs the release downstream. (<a href="https://github.com/packit/packit/pull/2229" target="_blank" rel="noopener noreferrer">packit#2229</a>)</li><li>We have introduced new CLI command <code>packit dist-git init</code> that initializes Packit configuration for release automation in dist-git repository. (<a href="https://github.com/packit/packit/pull/2225" target="_blank" rel="noopener noreferrer">packit#2225</a>)</li><li>We have introduced new configuration options <code>require.label.present</code> and <code>require.label.absent</code>. By configuring these you can specify labels that need to be present or absent on a pull request for Packit to react on such PR. (<a href="https://github.com/packit/packit-service/pull/2333" target="_blank" rel="noopener noreferrer">packit-service#2333</a>)</li><li>Interface for labels was unified and <code>labels</code> property for PullRequest and Issue now return list of PRLabel and IssueLabel respectively. (<a href="https://github.com/packit/ogr/pull/839" target="_blank" rel="noopener noreferrer">ogr#839</a>)</li></ul>]]></content:encoded>
+            <author>mmassari@redhat.com (Maja Massarini)</author>
+            <category>2024-February</category>
+            <category>2024</category>
+            <category>February</category>
+        </item>
         <item>
             <title><![CDATA[Week 5 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-5</link>

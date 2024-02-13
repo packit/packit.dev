@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-6",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-6-february-6th--february-12th\">Week 6 (February 6th – February 12th)<a href=\"#week-6-february-6th--february-12th\" class=\"hash-link\" aria-label=\"Direct link to Week 6 (February 6th – February 12th)\" title=\"Direct link to Week 6 (February 6th – February 12th)\">​</a></h2><ul><li>Packit now searches for bugzilla about new release created by Upstream Release Monitoring to reference each time it syncs the release downstream. (<a href=\"https://github.com/packit/packit/pull/2229\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2229</a>)</li><li>We have introduced new CLI command <code>packit dist-git init</code> that initializes Packit configuration for release automation in dist-git repository. (<a href=\"https://github.com/packit/packit/pull/2225\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2225</a>)</li><li>We have introduced new configuration options <code>require.label.present</code> and <code>require.label.absent</code>. By configuring these you can specify labels that need to be present or absent on a pull request for Packit to react on such PR. (<a href=\"https://github.com/packit/packit-service/pull/2333\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2333</a>)</li><li>Interface for labels was unified and <code>labels</code> property for PullRequest and Issue now return list of PRLabel and IssueLabel respectively. (<a href=\"https://github.com/packit/ogr/pull/839\" target=\"_blank\" rel=\"noopener noreferrer\">ogr#839</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-6",
+            "title": "Week 6 in Packit",
+            "summary": "Week 6 (February 6th – February 12th)",
+            "date_modified": "2024-02-12T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2024-February",
+                "2024",
+                "February"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-5",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-5-january-30th--february-5th\">Week 5 (January 30th – February 5th)<a href=\"#week-5-january-30th--february-5th\" class=\"hash-link\" aria-label=\"Direct link to Week 5 (January 30th – February 5th)\" title=\"Direct link to Week 5 (January 30th – February 5th)\">​</a></h2><ul><li><code>packit validate-config</code> now checks whether the Upstream Release Monitoring for the package is correctly configured if <code>pull_from_upstream</code> job is present in the configuration. (<a href=\"https://github.com/packit/packit/pull/2226\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2226</a>)</li><li>There is a new global configuration option <code>parse_time_macros</code> that allows to configure macros to be explicitly defined or undefined at spec file parse time. (<a href=\"https://github.com/packit/packit/pull/2222\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2222</a>)</li><li>We have added additional retries and improvements for task processing. (<a href=\"https://github.com/packit/packit-service/pull/2326\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2326</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-5",
