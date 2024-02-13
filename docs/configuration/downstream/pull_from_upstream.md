@@ -96,17 +96,11 @@ To use the configuration file from the dist-git pull request you are commenting 
     /packit pull-from-upstream --with-pr-config
 
 
-`pull-from-upstream` triggered by the Upstream Release Monitoring automatically handles the Bugzilla created by Upstream
+`pull-from-upstream` automatically handles the Bugzilla created by Upstream
 Release Monitoring (by default adds `Resolves` to changelog/commit and exposes `PACKIT_RESOLVED_BUGS` to the `changelog-entry` and `commit-message`
-actions). In case of retriggering, you need to specify the bugs like this:
+actions). If you want to override the referenced resolved bug set by Packit, you can retrigger `pull_from_upstream` like this:
 
     /packit pull-from-upstream --resolved-bugs rhbz#123,rhbz#124
-
-You can find the bugzilla by listing all the bugzillas created by Upstream Release Monitoring:
-
-https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&columnlist=product%2Ccomponent%2Cassigned_to%2Cstatus%2Csummary%2Clast_change_time%2Cseverity%2Cpriority&email1=%22upstream-release-monitoring%40fedoraproject.org%22&emailreporter1=1&emailtype1=substring&order=id%20DESC%2C%20&query_format=advanced
-
-You can also append `&component={your-package-name}` to the query above to constraint the result to your package only.
 
 ## Example
 
