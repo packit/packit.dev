@@ -36,7 +36,7 @@ upstream_project_url: https://github.com/<upstream-repository>
 jobs:
 # https://packit.dev/docs/configuration/downstream/pull_from_upstream
 # TODO make sure there is Fedora mapping for the upstream project in https://release-monitoring.org/projects/
-# TODO make sure Monitoring status on the left side at https://src.fedoraproject.org/rpms/<your-package> is set to Monitoring (or Monitoring and scratch builds)
+# TODO make sure Monitoring status on the left side at https://src.fedoraproject.org/rpms/<your-package> is set to Monitoring
 - job: pull_from_upstream
   trigger: release
   dist_git_branches:
