@@ -25,6 +25,14 @@ the more explicit `upstream_koji_build`.)
 
 ## Optional parameters
 
+* **scratch** - (boolean) used to create a scratch (test) build instead of the real production build
+
+  :::warning
+
+  Needs to be set to `true` for upstream Koji builds.
+
+  :::
+
 * **targets** - (a list of) targets we want to build for,
   list of supported targets can be listed using with `koji list-targets`.
   You can also use the [aliases provided by Packit](/docs/configuration#aliases)
