@@ -2,11 +2,29 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2024-02-12T00:00:00.000Z</updated>
+    <updated>2024-02-19T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 7 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2024/week-7</id>
+        <link href="https://packit.dev/posts/weekly/2024/week-7"/>
+        <updated>2024-02-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 7 (February 13th – February 19th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-7-february-13th--february-19th">Week 7 (February 13th – February 19th)<a href="#week-7-february-13th--february-19th" class="hash-link" aria-label="Direct link to Week 7 (February 13th – February 19th)" title="Direct link to Week 7 (February 13th – February 19th)">​</a></h2><ul><li>Packit now supports special value <code>ignore</code> for <code>trigger</code> in jobs configuration that indicates not to execute the job at all.
+This can be useful for templates or temporarily disabled jobs. (<a href="https://github.com/packit/packit/pull/2234" target="_blank" rel="noopener noreferrer">packit#2234</a>)</li><li>We have fixed the caching of data for the usage API endpoint. (<a href="https://github.com/packit/packit-service/pull/2350" target="_blank" rel="noopener noreferrer">packit-service#2350</a>)</li><li>We have fixed an issue that caused loading the same data multiple times on the dashboard within the project views. (<a href="https://github.com/packit/packit-service/pull/2349" target="_blank" rel="noopener noreferrer">packit-service#2349</a>)</li><li>We have also fixed crashing of dashboard's <code>Usage</code> page in case of unsuccessful queries. (<a href="https://github.com/packit/dashboard/pull/378" target="_blank" rel="noopener noreferrer">dashboard#378</a>)</li><li>We have fixed parsing of resolved Bugzillas in comments with multiple arguments specified,
+e.g. <code>/packit pull-from-upstream --with-pr-config --resolved-bugs rhbz#123</code>. (<a href="https://github.com/packit/packit-service/pull/2346" target="_blank" rel="noopener noreferrer">packit-service#2346</a>)</li></ul>]]></content>
+        <author>
+            <name>Laura Barcziová</name>
+            <email>lbarczio@redhat.com</email>
+            <uri>https://github.com/lbarcziova</uri>
+        </author>
+        <category label="2024-February" term="2024-February"/>
+        <category label="2024" term="2024"/>
+        <category label="February" term="February"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 6 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2024/week-6</id>

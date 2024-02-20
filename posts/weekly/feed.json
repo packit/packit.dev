@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-7",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-7-february-13th--february-19th\">Week 7 (February 13th – February 19th)<a href=\"#week-7-february-13th--february-19th\" class=\"hash-link\" aria-label=\"Direct link to Week 7 (February 13th – February 19th)\" title=\"Direct link to Week 7 (February 13th – February 19th)\">​</a></h2><ul><li>Packit now supports special value <code>ignore</code> for <code>trigger</code> in jobs configuration that indicates not to execute the job at all.\nThis can be useful for templates or temporarily disabled jobs. (<a href=\"https://github.com/packit/packit/pull/2234\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2234</a>)</li><li>We have fixed the caching of data for the usage API endpoint. (<a href=\"https://github.com/packit/packit-service/pull/2350\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2350</a>)</li><li>We have fixed an issue that caused loading the same data multiple times on the dashboard within the project views. (<a href=\"https://github.com/packit/packit-service/pull/2349\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2349</a>)</li><li>We have also fixed crashing of dashboard's <code>Usage</code> page in case of unsuccessful queries. (<a href=\"https://github.com/packit/dashboard/pull/378\" target=\"_blank\" rel=\"noopener noreferrer\">dashboard#378</a>)</li><li>We have fixed parsing of resolved Bugzillas in comments with multiple arguments specified,\ne.g. <code>/packit pull-from-upstream --with-pr-config --resolved-bugs rhbz#123</code>. (<a href=\"https://github.com/packit/packit-service/pull/2346\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2346</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-7",
+            "title": "Week 7 in Packit",
+            "summary": "Week 7 (February 13th – February 19th)",
+            "date_modified": "2024-02-19T00:00:00.000Z",
+            "author": {
+                "name": "Laura Barcziová",
+                "url": "https://github.com/lbarcziova"
+            },
+            "tags": [
+                "2024-February",
+                "2024",
+                "February"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-6",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-6-february-6th--february-12th\">Week 6 (February 6th – February 12th)<a href=\"#week-6-february-6th--february-12th\" class=\"hash-link\" aria-label=\"Direct link to Week 6 (February 6th – February 12th)\" title=\"Direct link to Week 6 (February 6th – February 12th)\">​</a></h2><ul><li>Packit now searches for bugzilla about new release created by Upstream Release Monitoring to reference each time it syncs the release downstream. (<a href=\"https://github.com/packit/packit/pull/2229\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2229</a>)</li><li>We have introduced new CLI command <code>packit dist-git init</code> that initializes Packit configuration for release automation in dist-git repository. (<a href=\"https://github.com/packit/packit/pull/2225\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2225</a>)</li><li>We have introduced new configuration options <code>require.label.present</code> and <code>require.label.absent</code>. By configuring these you can specify labels that need to be present or absent on a pull request for Packit to react on such PR. (<a href=\"https://github.com/packit/packit-service/pull/2333\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2333</a>)</li><li>Interface for labels was unified and <code>labels</code> property for PullRequest and Issue now return list of PRLabel and IssueLabel respectively. (<a href=\"https://github.com/packit/ogr/pull/839\" target=\"_blank\" rel=\"noopener noreferrer\">ogr#839</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-6",
