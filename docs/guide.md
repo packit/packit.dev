@@ -421,11 +421,13 @@ An example of Packit's checks in a pull request:
 
 ![Packit pull request](img/guide/guide_pr_status.png)
 
-## How to re-trigger Packit actions in your pull request?
+## Retriggering 
+### Comments for upstream jobs
 
 In general, you can put a `/packit <job-you-want-to-trigger>` comment
 to trigger the Packit job manually.
 
+#### copr_build
 So for [Copr builds](/docs/configuration/upstream/copr_build), Packit is able to trigger new builds based on a pull request comment:
 
     /packit copr-build
@@ -437,33 +439,72 @@ or the shorter version
 So whenever you run into a flake or feel like you want to retrigger, just type
 that comment into the PR and enjoy some fine, fresh builds.
 
-For [`propose_downstream`](/docs/configuration/upstream/propose_downstream), you need to place that comment to any issue.
+It is also possible to re-trigger only the failed builds using a pull request comment
+
+    /packit rebuild-failed
+
+#### propose_downstream
+For [`propose_downstream`](/docs/configuration/upstream/propose_downstream), you need to place this comment to any issue: 
+
+    /packit propose-downstream
+
+
+#### tests
+
+For retriggering the [`tests`](/docs/configuration/upstream/tests) jobs, you can use a pull-request comment:
+
+    /packit test
+    
+
+And to re-trigger only the failed tests, you can use
+
+    /packit retest-failed
+
+For testing, there is possible to specify also other arguments for more advanced use-cases, see 
+the details [here](/docs/configuration/upstream/tests#running-tests-with-builds-from-another-pull-request).
+
+#### upstream_koji_build
+
+For retriggering the [`upstream_koji_build`](/docs/configuration/upstream/upstream_koji_build) jobs, you can 
+again use a pull-request comment:
+
+    /packit upstream-koji-build
+
+#### vm_image_build
+
+[VM Image builds](/docs/configuration/upstream/vm_image_build) are not triggered automatically at all.
+To trigger them, you need to post a pull-request comment:
+
+    /packit vm-image-build
+
+every time.
+
+
+:::caution
 
 The requirements stated [above](#approval) apply, so if you see this message
 
     Only users with write or admin permissions to the repository can trigger
     Packit-as-a-Service
 
-it means the author of the pull request does not have write access to the
+it means the author of the comment does not have write access to the
 repository so the build cannot be scheduled. This is a perfect case for
 maintainers of the repository to post `/packit build` in the PR to get a build.
 
+:::
+
+###  GitHub Checks UI
 In GitHub Checks interface, it is also possible to re-trigger a specific task just by clicking on `Re-run`
 for the particular check:
 
 ![Re-run GitHub check](img/github/github-check-rerun.png)
 
-Or it is possible to re-trigger every failed task using a pull request comment
+The button is available only for users with write permissions to the repository.
 
-    /packit rebuild-failed
+### Comments for downstream jobs
+See [Retriggering](./fedora-releases-guide/dist-git-onboarding#retriggering) in Dist-git repository onboarding.
 
-which builds only failed builds and similar for testing farm
-
-    /packit retest-failed
-
-to re-trigger every failed test.
-
-#### Packit handles Fedora updates for you.
+## Packit handles Fedora updates for you.
 
 So you already have a `jobs` section in your config. Let's extend it with another
 jobs that will handle the Fedora updates: `propose_downstream`/`pull_from_upstream`, `koji_build` and `bodhi_udpate`.
