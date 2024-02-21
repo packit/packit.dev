@@ -8,6 +8,33 @@ sidebar_position: 5
 Land a new upstream release in Fedora (or CentOS Stream). This job only makes sure the changes
 happen in dist-git - no builds. A pull request is created as a result.
 
+Packit gets the information about the newly created release (not a git tag) from GitHub/GitLab,
+loads the config from the release commit and if there is a `propose_downstream` job
+defined, the workflow begins. 
+
+For enabling the propose downstream job, you need to have
+[Packit Service installed](/docs/guide/#1-set-up-packit-integration)
+and have a `propose_downstream` job in the configuration file for the given upstream repository
+(this job is also run by default if there is no `jobs` section
+in the configuration, see [jobs configuration](/docs/configuration/#packit-service-jobs)).
+The [propose_downstream job](/docs/configuration/upstream/propose_downstream) should be then configured like this:
+
+```yaml
+jobs:
+- job: propose_downstream
+  trigger: release
+  dist_git_branches:
+    - main
+```
+You can adjust the `dist_git_branches` field to include the
+dist-git branches you want to update and also utilise [aliases](/docs/configuration/#aliases) 
+instead of using hardcoded versions.
+
+During proposing a new update, you will get updates of the job status via commit statuses/checks
+on the release commit. These will provide links to our dashboard where you can find all the information about 
+the job including the logs. You can also check all propose downstream runs in 
+[this view](https://dashboard.packit.dev/jobs/propose-downstreams).
+
 :::tip CentOS Stream support
 
 We newly support `propose-downstream` also for CentOS Stream. The workflow is the same as for Fedora, but there are few
@@ -44,6 +71,11 @@ jobs:
 
 This config would update Fedora Rawhide and Fedora 39 dist-git branches.
 
+## Retriggering
+Users with write or admin permissions to the repository can retrigger an
+update via a comment in any open issue in the upstream repository:
+
+    /packit propose-downstream
 
 
 ## Syncing the release to CentOS Stream

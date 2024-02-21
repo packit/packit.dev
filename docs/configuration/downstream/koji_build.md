@@ -29,7 +29,7 @@ The koji build behaves as it was created manually, and you can utilise
 to be informed about the builds. Also, you can configure a repository where should we
 open issues in case of errors during the job via [`issue_repository`](/docs/configuration#issue_repository) configuration key.
 
-For retriggering the job, see [our release guide](/docs/fedora-releases-guide).
+For retriggering the job, see [our release guide](/docs/fedora-releases-guide/dist-git-onboarding#retriggering).
 
 For Koji builds from upstream, see [`upstream_koji_build`](/docs/configuration/upstream/upstream_koji_build).
 
