@@ -17,7 +17,6 @@ initialize a [source-git repo](/source-git).
 
 ## Help
 
-    $ packit init --help
     Usage: packit init [OPTIONS] [PATH_OR_URL]
 
       Create the initial Packit configuration in a repository

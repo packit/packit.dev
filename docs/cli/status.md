@@ -28,6 +28,4 @@ pull requests, upstream releases, builds in Koji and Copr and updates in Bodhi.
                           monorepo configuration. Use it multiple times to select
                           multiple packages.Defaults to all the packages listed
                           inside the config.
-      -h, --help  Show this message and exit.
-
-
+      -h, --help          Show this message and exit.

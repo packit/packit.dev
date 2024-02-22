@@ -1,0 +1,40 @@
+name: Regenerate help messages of CLI commands
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 2"
+
+jobs:
+  update-help-messages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install packitos
+
+      - name: Regenerate help messages
+        run: python3 files/generate_cli_messages.py
+
+      - name: Check for changes
+        id: check_changes
+        run: git diff --exit-code
+
+      - name: Create pull request
+        if: steps.check_changes.outputs.exit_code != '0'
+        uses: peter-evans/create-pull-request@v4
+        with:
+          TOKEN: ${{ secrets.RELEASEBOT_GITHUB_TOKEN }}
+          commit-message: "Update help messages of CLI commands"
+          title: "Update help messages of CLI commands"
+          body: "Automatically regenerated help messages for CLI command docs."
+          delete-branch: true

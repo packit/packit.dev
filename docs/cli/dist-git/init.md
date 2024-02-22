@@ -7,49 +7,47 @@ sidebar_position: 1
 
 Create a Packit's dist-git configuration for release syncing to Fedora.
 
-
 ## Help
-    
-    $ packit dist-git init
+
     Usage: packit dist-git init [OPTIONS] [PATH_OR_URL]
-    
+
       Create the initial Packit dist-git configuration for Fedora release syncing
       based on the input parameters.
-    
+
       This command adds `.packit.yaml` file to the dist-git repository either:
-    
-      1. specified by path (defaults to current working directory)
-    
-      2. specified by URL (`https://src.fedoraproject.org/rpms/<package>`) -
+
+       1. specified by path (defaults to current working directory)
+
+       2. specified by URL (`https://src.fedoraproject.org/rpms/<package>`) -
       clones the repository and adds the config in there. Ideally use this with
       --clone-path option, otherwise the repository is cloned to a temporary
       directory that is then removed.
-    
+
       By default, all 3 jobs (`pull_from_upstream`, `koji_build`, `bodhi_update`)
       for release syncing are configured. You can use --no-pull, --no-koji-build
       or --no-bodhi-update  options to not add some of the jobs (at the moment,
       Bodhi updates are created only for  Koji builds built by Packit, therefore
       --no-koji-build implies also no Bodhi update job).
-    
+
       You can either create the Packit config file only locally (default), or
       create a pull request (using --create-pr option) or push directly to the
       dist-git's default branch (--push-to-distgit).
-    
+
       See 'packit init', if you want to initialize a repository as an upstream
       repo.
-    
+
       Examples
-    
+
       Local generation for dist-git repo in current working directory:
-    
+
           $ packit dist-git init --upstream-git-url https://github.com/packit/packit .
-    
+
       Local generation for dist-git repo specified by URL that will be cloned to
       `<my-package>` dir:
-    
+
           $ packit dist-git init --upstream-git-url https://github.com/packit/packit --clone-path
           `<my-package>` https://src.fedoraproject.org/rpms/packit
-    
+
     Options:
       --upstream-git-url TEXT       URL to the upstream GIT repository  [required]
       --upstream-tag-template TEXT  Template applied for upstream tags if they
@@ -87,4 +85,3 @@ Create a Packit's dist-git configuration for release syncing to Fedora.
                                     Default: 'Add Packit configuration for
                                     automating release syncing'
       -h, --help                    Show this message and exit.
-    

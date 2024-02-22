@@ -17,7 +17,6 @@ packaging work is going to happen there.
 
 ## Help
 
-    $ packit source-git update-source-git --help
     Usage: packit source-git update-source-git [OPTIONS] DIST_GIT SOURCE_GIT
                                                [REVISION_RANGE]
 

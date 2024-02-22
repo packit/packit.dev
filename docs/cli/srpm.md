@@ -69,12 +69,12 @@ actions:
 ## Help
 
     Usage: packit srpm [OPTIONS] [PATH_OR_URL]
-    
+
       Create new SRPM (.src.rpm file) using content of the upstream repository.
-    
+
       PATH_OR_URL argument is a local path or a URL to the upstream git
       repository, it defaults to the current working directory
-    
+
     Options:
       --output FILE                   Write the SRPM to FILE instead of current
                                       dir.
@@ -100,34 +100,3 @@ actions:
                                       packages.Defaults to all the packages listed
                                       inside the config.
       -h, --help                      Show this message and exit.
-
-
-As you can see, it is possible to create SRPM for [source-git](/source-git/) repositories as well.
-Just add an `--upstream-ref` option to the packit command.
-
-If you have a git tag `0.1.0` specifying the upstream code,
-just run `packit srpm --upstream-ref 0.1.0` to create an SRPM file.
-It will create an archive from the given upstream reference (`0.1.0`)
-and following commits will be added as downstream patches.
-
-Just make sure, that you apply all the patches in the specfile.
-(Packit only adds the patches after the sources.)
-You can use a following setup:
-
-- Define the macro on top of the specfile:
-    ```
-    %global num_patches %{lua: c=0; for i,p in ipairs(patches) do c=c+1; end; print(c);}
-    ```
-
-- Apply the patches in the `%prep` part:
-    ```
-    %if %{num_patches}
-    git init
-    git config user.email "noreply@example.com"
-    git config user.name "John Foo"
-    git add .
-    git commit -a -q -m "%{version} baseline."
-    # Apply all the patches.
-    git am %{patches}
-    %endif
-    ```
