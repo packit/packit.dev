@@ -78,6 +78,9 @@ Packit dist-git configuration.
 * **require.label** - you can specify labels that have to be present/absent on a pull request
 in order to trigger the build when it is merged. See configuration details [here](/docs/configuration#require).
 
+
+## Processing of dist-git events from Pagure
+
 :::info Processing of dist-git events from Pagure
 
 ```mermaid

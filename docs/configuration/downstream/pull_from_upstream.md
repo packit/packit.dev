@@ -44,7 +44,7 @@ Packit dist-git configuration.
   repository (`rawhide`). Packit configs on other branches are ignored.
 * Upstream release monitoring is active for the package. [The monitoring
   status](https://docs.fedoraproject.org/en-US/package-maintainers/Upstream_Release_Monitoring/)
-  in dist-git should be set to `Monitoring`).
+  in dist-git should be set to `Monitoring`.
 * [`upstream_project_url`](/docs/configuration#upstream_project_url) pointing to a Git repository is defined in the configuration.
 
 ## First setup

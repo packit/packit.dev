@@ -1,6 +1,6 @@
 ---
 title: How to do Fedora releases with Packit
-sidebar_position: 8
+sidebar_position: 5
 ---
 # How to do Fedora releases with Packit
 
@@ -21,8 +21,8 @@ Every job takes care of a different part of the release process.
 :::tip
 In this page, you can find all the details of the release process automation covered by Packit.
 
-If you are a downstream package maintainer and would like to see the information
-on how to onboard to using Packit in dist-git, see [dist-git onboarding](./dist-git-onboarding.md) directly.
+If you are a **downstream package maintainer** and would like to see the information on how to onboard to using 
+Packit in dist-git, see [dist-git onboarding guide](dist-git-onboarding.md) directly.
 
 :::
 
