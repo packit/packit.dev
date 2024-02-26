@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-8",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-8-february-20th--february-26th\">Week 8 (February 20th – February 26th)<a href=\"#week-8-february-20th--february-26th\" class=\"hash-link\" aria-label=\"Direct link to Week 8 (February 20th – February 26th)\" title=\"Direct link to Week 8 (February 20th – February 26th)\">​</a></h2><ul><li>Packit now checks the version to propose against the version in specfile and doesn't create downgrade PRs. (<a href=\"https://github.com/packit/packit/pull/2239\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2239</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-8",
+            "title": "Week 8 in Packit",
+            "summary": "Week 8 (February 20th – February 26th)",
+            "date_modified": "2024-02-26T00:00:00.000Z",
+            "author": {
+                "name": "František Lachman",
+                "url": "https://github.com/lachmanfrantisek"
+            },
+            "tags": [
+                "2024-February",
+                "2024",
+                "February"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-7",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-7-february-13th--february-19th\">Week 7 (February 13th – February 19th)<a href=\"#week-7-february-13th--february-19th\" class=\"hash-link\" aria-label=\"Direct link to Week 7 (February 13th – February 19th)\" title=\"Direct link to Week 7 (February 13th – February 19th)\">​</a></h2><ul><li>Packit now supports special value <code>ignore</code> for <code>trigger</code> in jobs configuration that indicates not to execute the job at all.\nThis can be useful for templates or temporarily disabled jobs. (<a href=\"https://github.com/packit/packit/pull/2234\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2234</a>)</li><li>We have fixed the caching of data for the usage API endpoint. (<a href=\"https://github.com/packit/packit-service/pull/2350\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2350</a>)</li><li>We have fixed an issue that caused loading the same data multiple times on the dashboard within the project views. (<a href=\"https://github.com/packit/packit-service/pull/2349\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2349</a>)</li><li>We have also fixed crashing of dashboard's <code>Usage</code> page in case of unsuccessful queries. (<a href=\"https://github.com/packit/dashboard/pull/378\" target=\"_blank\" rel=\"noopener noreferrer\">dashboard#378</a>)</li><li>We have fixed parsing of resolved Bugzillas in comments with multiple arguments specified,\ne.g. <code>/packit pull-from-upstream --with-pr-config --resolved-bugs rhbz#123</code>. (<a href=\"https://github.com/packit/packit-service/pull/2346\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2346</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-7",
