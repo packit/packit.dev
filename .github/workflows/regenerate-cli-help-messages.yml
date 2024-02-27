@@ -13,27 +13,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Install missing distro dependencies
+        run: sudo apt update && sudo apt-get install libkrb5-dev
+
       - name: Setup Python
         uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-          cache: "pip"
 
       - name: Install dependencies
-        run: pip install packitos
+        run: pip3 install packitos
 
       - name: Regenerate help messages
-        run: python3 files/generate_cli_messages.py
+        run: python3 files/generate_cli_help_messages.py
 
-      - name: Check for changes
-        id: check_changes
-        run: git diff --exit-code
-
-      - name: Create pull request
-        if: steps.check_changes.outputs.exit_code != '0'
+      - name: Create pull request if there are changes
         uses: peter-evans/create-pull-request@v4
         with:
-          TOKEN: ${{ secrets.RELEASEBOT_GITHUB_TOKEN }}
           commit-message: "Update help messages of CLI commands"
           title: "Update help messages of CLI commands"
           body: "Automatically regenerated help messages for CLI command docs."
