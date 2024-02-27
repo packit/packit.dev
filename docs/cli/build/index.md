@@ -12,10 +12,10 @@ Subcommand that groups all RPM build related commands together.
 
 ## Possible ways to build an RPM
 
-* [`locally`](/docs/cli/build/local)
-* [`in-mock`](/docs/cli/build/mock)
-* [`in-copr`](/docs/cli/build/copr)
-* [`in-koji`](/docs/cli/build/koji)
+* [`locally`](/docs/cli/build/locally)
+* [`in-mock`](/docs/cli/build/in-mock)
+* [`in-copr`](/docs/cli/build/in-copr)
+* [`in-koji`](/docs/cli/build/in-koji)
 * [`in-image-builder`](/docs/cli/build/in-image-builder)
 
 ## Help

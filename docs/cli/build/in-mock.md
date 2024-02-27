@@ -11,12 +11,12 @@ Create RPMs in mock using content of the upstream repository.
 ## Help
 
     Usage: packit build in-mock [OPTIONS] [PATH_OR_URL]
-    
+
       Build RPMs in mock using content of the upstream repository.
-    
+
       PATH_OR_URL argument is a local path or a URL to the upstream git
       repository, it defaults to the current working directory.
-    
+
     Options:
       --upstream-ref TEXT       Git ref of the last upstream commit in the current
                                 branch from which packit should generate patches

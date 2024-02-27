@@ -20,17 +20,17 @@ prepared sources are moved to the `result-dir`.
 ## Help
 
     Usage: packit prepare-sources [OPTIONS] [PATH_OR_URL]
-    
+
       Prepare sources for a new SRPM build using content of the upstream
       repository. Determine version, create an archive or download upstream and
       create patches for sourcegit, fix/update the specfile to use the right
       archive, download the remote sources. Behaviour can be customized by
       specifying actions (post-upstream-clone, get-current-version, create-
       archive, create-patches, fix-spec-file) in the configuration.
-    
+
       PATH_OR_URL argument is a local path or a URL to the upstream git
       repository, it defaults to the current working directory
-    
+
     Options:
       --result-dir DIR                Copy the sources into DIR. By default,
                                       `prepare_sources_result` directory in the
@@ -39,6 +39,8 @@ prepared sources are moved to the `result-dir`.
                                       current branch from which packit should
                                       generate patches (this option implies the
                                       repository is source-git).
+      --merged-ref TEXT               Git ref used to identify correct most recent
+                                      tag.
       --update-release / --no-update-release
                                       Specifies whether to update Release.
                                       Defaults to value set in configuration,
@@ -70,6 +72,3 @@ prepared sources are moved to the `result-dir`.
                                       packages.Defaults to all the packages listed
                                       inside the config.
       -h, --help                      Show this message and exit.
-
-
-

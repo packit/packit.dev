@@ -24,7 +24,7 @@ like a manually created Bodhi update, and you can utilise
 [Fedora Notifications](https://apps.fedoraproject.org/notifications/about)
 to tweak the notifications settings.
 
-For retriggering the job, see [our release guide](/docs/fedora-releases-guide).
+For retriggering the job, see [our release guide](/docs/fedora-releases-guide/dist-git-onboarding#retriggering).
 
 :::tip Downstream configuration template
 

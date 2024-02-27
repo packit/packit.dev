@@ -11,7 +11,6 @@ update the corresponding dist-git repository.
 
 ## Help
 
-    $ packit source-git update-dist-git --help
     Usage: packit source-git update-dist-git [OPTIONS] SOURCE_GIT DIST_GIT
 
       Update a dist-git repository using content from a source-git repository
@@ -51,14 +50,16 @@ update the corresponding dist-git repository.
                            option implies the repository is source-git).
       --pkg-tool TEXT      Name or path of the packaging tool used to work with
                            sources in the dist-git repo. A variant of 'rpkg'.
-                           
+                       
                            Skip retrieving and uploading source archives to the
                            lookaside cache if not specified.
       -m, --message <msg>  Commit the changes in the dist-git repository and use
                            <msg> as the commit message.
-                           
+                       
                            Mutually exclusive with -F.
       -F, --file <file>    Commit the changes in the dist-git repository and take
                            the commit message from <file>. Use - to read from the
                            standard input.
+      -f, --force          Don't check the synchronization status of the source-
+                           git and dist-git repos prior to performing the update.
       -h, --help           Show this message and exit.

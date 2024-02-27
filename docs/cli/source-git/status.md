@@ -16,18 +16,17 @@ how to sync the repositories.
 
 ## Help
 
-    $ packit source-git status --help   
     Usage: packit source-git status [OPTIONS] SOURCE_GIT DIST_GIT
-    
+
       Tell the synchronization status of a source-git and a dist-git repo.
-    
+
       This command checks the commit history in the provided source-git and dist-
       git repos and informs about the range of commits to be synchronized from
       dist-git to source-git or the other way around, or informs that the
       repositories are in sync.
-    
+
       If possible, the status command also provides instructions on how to
       synchronize the repositories.
-    
+
     Options:
       -h, --help  Show this message and exit.

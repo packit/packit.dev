@@ -1,20 +1,44 @@
 ---
-title: Packit Onboarding Guide
+title: Packit Upstream Onboarding Guide
 sidebar_position: 2
 ---
 
-# Packit Onboarding Guide
+# Packit Upstream Onboarding Guide 
 
-Let's take a look on how to start using Packit and how to get the most out of it.
+Let's take a look on how to start using Packit if you are an upstream maintainer
+and how to get the most out of it.
+
+:::tip Dist-git onboarding guide
+
+If you are a **downstream package maintainer** and would like to see the information on how to onboard to using 
+Packit in dist-git, see [dist-git onboarding guide](./fedora-releases-guide/dist-git-onboarding.md) directly.
+
+:::
+
+:::tip CLI tool
 
 This guide is focused on the service use-case, but Packit is also available as a [CLI tool](https://github.com/packit/packit/blob/main/README.md),
 so you can always [try things locally](/docs/cli/) on your own.
 Note that running tests in Testing farm infrastructure is not currently supported with the CLI tool.
 Unlike the service, CLI uses your own identities when connecting to other service like [Copr](https://copr.fedorainfracloud.org/)
 or [Fedora dist-git](https://src.fedoraproject.org/).
-Packit CLI is **NOT** a client of the Packit GitHub app,
-`packit` command  directly interacts with the services.
+Packit CLI is **NOT** a client of the Packit GitHub app, `packit` command  directly interacts with the services.
 
+:::
+
+## Table of contents
+- [Setup](#setup)
+  - [1. Set up Packit integration](#1-set-up-packit-integration)
+    - [GitHub](#github)
+    - [GitLab](#gitlab)
+    - [Pagure](#pagure)
+  - [2. Approval](#2-approval)
+  - [3. Configuration](#3-configuration)
+  - [How to try that for real](#how-to-try-that-for-real)
+- [Check that Packit works](#check-that-packit-works)
+- [Retriggering](#retriggering)
+
+## Setup
 To start using Packit, you need to do three things:
 
 1. set up integration (so Packit is notified about your activities and can provide feedback)
@@ -22,7 +46,8 @@ To start using Packit, you need to do three things:
 3. configure the wanted features
 
 
-## 1. Set up Packit integration
+
+### 1. Set up Packit integration
 
 The integration is dependent on the service the upstream project is hosted on.
 In case you want to use Packit on your downstream repository for downstream jobs
@@ -32,14 +57,14 @@ Just place your config file into the dist-git repository.
 
 Here are the supported git-forges:
 
-### GitHub
+#### GitHub
 
 The majority of Packit users host their projects on GitHub, therefore we focus mainly on supporting the GitHub App.
 All of our workflows are supported and tested on GitHub.
 We utilize the majority of new GitHub features that can be used in GitHub Apps.
 
 
-#### How to set up Packit on GitHub
+##### How to set up Packit on GitHub
 
 1. Navigate to the ["Packit-as-a-Service" GitHub
    application](https://github.com/marketplace/packit-as-a-service).
@@ -57,7 +82,7 @@ project settings. In the left sidebar, click "Integration & services" and you
 will see the application displayed there.
 
 
-#### Staging instance
+##### Staging instance
 
 [Packit-as-a-Service-stg](https://github.com/apps/packit-as-a-service-stg) GitHub App
 runs the latest code. It can be used to verify the latest changes until they get
@@ -90,7 +115,7 @@ install the app [here](https://github.com/apps/packit-as-a-service-stg). Thank y
 ![Packit GitHub application: Staging instance](img/guide/guide_github_app_stg.png)
 
 
-### GitLab
+#### GitLab
 
 GitLab support is mainly experimental and is influenced by the presence of CentOS Stream source-git workflow.
 **We do not verify** the functionality of the GitLab support on a day-to-day basis as we do with the GitHub App.
@@ -103,7 +128,7 @@ You can use Packit on any GitLab instance, if:
   but let us know if you need any other instance to be supported.)
 
 
-#### How to set up Packit on GitLab
+##### How to set up Packit on GitLab
 
 GitLab doesn't have an app functionality, and we don't use the
 [Integrations](https://docs.gitlab.com/ee/user/project/integrations/overview.html)
@@ -150,7 +175,7 @@ srpm_build:
     expire_in: 1 week
 ```
 
-### Pagure
+#### Pagure
 
 We have rudimentary support for the Pagure instances since they are used in the downstream workflow.
 Packit cannot be set up as a CI (in the same sense as on GitHub or GitLab) on Pagure instances,
@@ -159,7 +184,7 @@ The differences between GitHub/GitLab and Pagure APIs would result in many worka
 You can track the progress in the [related issue](https://github.com/packit/packit-service/issues/556) on GitHub.
 
 
-## 2. Approval
+### 2. Approval
 
 As a next step, you need to have a valid [Fedora Account System](https://fedoraproject.org/wiki/Account_System)
 account to be able to start using Packit Service in an upstream project.
@@ -200,7 +225,7 @@ Besides that:
   you need to have write access to the repository.
 
 
-## 3. Configuration
+### 3. Configuration
 
 Packit uses a configuration file to let Packit know what to do, when to do it and how.
 As a format, it uses YAML and here are all the valid names:
@@ -232,7 +257,7 @@ In the following parts, we will cover some basic concepts used in the Packit con
 More details can be found on a dedicated [configuration page](/docs/configuration/).
 
 
-### Basic configuration
+#### Basic configuration
 
 You need to provide some basic information to let Packit understand your project and package.
 You can use `packit init` command (when [running Packit locally](/docs/cli/)) to get a basic structure.
@@ -260,7 +285,7 @@ We know that every project is a bit different and Packit can't guess everything
 so you can (re)define various other options.
 The full list can be found [here](/docs/configuration/#top-level-keys).
 
-#### Version handling
+##### Version handling
 
 There are a few version-related config options you might need to set:
 * [`upstream_tag_template`](/docs/configuration/#upstream_tag_template):
@@ -272,7 +297,7 @@ There are a few version-related config options you might need to set:
 * [`update_release`](/docs/configuration/#update_release):
   Whether to modify release when creating SRPM.
 
-### Jobs
+#### Jobs
 
 Packit's feature set is really wide and does not need to be used as a whole pipeline.
 To let user decide what and when should run, Packit uses concept of so-called `jobs`.
@@ -309,7 +334,7 @@ Another useful feature are [aliases](/docs/configuration/#aliases) used to avoid
 hardcoded values that changes when there is a new distribution release.
 
 
-### Available jobs
+#### Available jobs
 
 * [`copr_build`](/docs/configuration/upstream/copr_build): An RPM build triggered for pull-requests, new branch commits or releases.
   (Can be used to verify that package is buildable,
@@ -327,7 +352,7 @@ hardcoded values that changes when there is a new distribution release.
 More about the jobs and how to tweak them can be found on a [configuration page](/docs/configuration#jobs).
 
 
-### Actions
+#### Actions
 
 Actions are a way how to redefine or tweak the Packit's workflows.
 These are user-defined commands that can replace a part of Packit's job (e.g. to get version, or to create a tarball)
@@ -336,7 +361,7 @@ or are run in a particular step as a hook (with no action run by default).
 Take a look at the tables [here](/docs/configuration/actions/) to know what actions are available for each job.
 
 
-### Users
+#### Users
 
 Packit checks if the user has sufficient permissions to complete a job (this depends on the job type).
 For this reason the profile of a Packit user has to be accessible.
@@ -421,11 +446,13 @@ An example of Packit's checks in a pull request:
 
 ![Packit pull request](img/guide/guide_pr_status.png)
 
-## How to re-trigger Packit actions in your pull request?
+## Retriggering 
+### Comments for upstream jobs
 
 In general, you can put a `/packit <job-you-want-to-trigger>` comment
 to trigger the Packit job manually.
 
+#### copr_build
 So for [Copr builds](/docs/configuration/upstream/copr_build), Packit is able to trigger new builds based on a pull request comment:
 
     /packit copr-build
@@ -437,37 +464,71 @@ or the shorter version
 So whenever you run into a flake or feel like you want to retrigger, just type
 that comment into the PR and enjoy some fine, fresh builds.
 
-For [`propose_downstream`](/docs/configuration/upstream/propose_downstream), you need to place that comment to any issue.
+It is also possible to re-trigger only the failed builds using a pull request comment
+
+    /packit rebuild-failed
+
+#### propose_downstream
+For [`propose_downstream`](/docs/configuration/upstream/propose_downstream), you need to place this comment to any issue: 
+
+    /packit propose-downstream
+
+
+#### tests
+
+For retriggering the [`tests`](/docs/configuration/upstream/tests) jobs, you can use a pull-request comment:
+
+    /packit test
+    
+
+And to re-trigger only the failed tests, you can use
+
+    /packit retest-failed
+
+For testing, there is possible to specify also other arguments for more advanced use-cases, see 
+the details [here](/docs/configuration/upstream/tests#running-tests-with-builds-from-another-pull-request).
+
+#### upstream_koji_build
+
+For retriggering the [`upstream_koji_build`](/docs/configuration/upstream/upstream_koji_build) jobs, you can 
+again use a pull-request comment:
+
+    /packit upstream-koji-build
+
+#### vm_image_build
+
+[VM Image builds](/docs/configuration/upstream/vm_image_build) are not triggered automatically at all.
+To trigger them, you need to post a pull-request comment:
+
+    /packit vm-image-build
+
+every time.
+
+
+:::caution
 
 The requirements stated [above](#approval) apply, so if you see this message
 
     Only users with write or admin permissions to the repository can trigger
     Packit-as-a-Service
 
-it means the author of the pull request does not have write access to the
+it means the author of the comment does not have write access to the
 repository so the build cannot be scheduled. This is a perfect case for
 maintainers of the repository to post `/packit build` in the PR to get a build.
 
+:::
+
+###  GitHub Checks UI
 In GitHub Checks interface, it is also possible to re-trigger a specific task just by clicking on `Re-run`
 for the particular check:
 
 ![Re-run GitHub check](img/github/github-check-rerun.png)
 
-Or it is possible to re-trigger every failed task using a pull request comment
+The button is available only for users with write permissions to the repository.
 
-    /packit rebuild-failed
+### Comments for downstream jobs
+See [Retriggering](./fedora-releases-guide/dist-git-onboarding#retriggering) in Dist-git repository onboarding.
 
-which builds only failed builds and similar for testing farm
-
-    /packit retest-failed
-
-to re-trigger every failed test.
-
-#### Packit handles Fedora updates for you.
-
-So you already have a `jobs` section in your config. Let's extend it with another
-jobs that will handle the Fedora updates: `propose_downstream`/`pull_from_upstream`, `koji_build` and `bodhi_udpate`.
-These are explained in detail in our [release guide](/docs/fedora-releases-guide).
 
 And that's about it. Now you should be able to use the core features of the Packit.
 If you have any questions, feel free to [reach out to us](/#contact).

@@ -44,12 +44,12 @@ Packit dist-git configuration.
   repository (`rawhide`). Packit configs on other branches are ignored.
 * Upstream release monitoring is active for the package. [The monitoring
   status](https://docs.fedoraproject.org/en-US/package-maintainers/Upstream_Release_Monitoring/)
-  in dist-git should be set to `Monitoring`).
+  in dist-git should be set to `Monitoring`.
 * [`upstream_project_url`](/docs/configuration#upstream_project_url) pointing to a Git repository is defined in the configuration.
 
 ## First setup
 When setting up this job for the first time, please follow the recommended actions from 
-[our release guide](/docs/fedora-releases-guide#first-setup).
+[our release guide](/docs/fedora-releases-guide/dist-git-onboarding#first-setup).
 
 :::caution
 Please, use the [`issue_repository`](/docs/configuration#issue_repository) option to get information about
@@ -72,7 +72,7 @@ Use a repository you maintain as we will create issues about failures here.
 :::tip 
 
 For more details and customization options, also check 
-[our release guide](/docs/fedora-releases-guide#pull-from-upstream-job).
+[our release guide](/docs/fedora-releases-guide/dist-git-onboarding#pull-from-upstream-job).
 
 :::
 

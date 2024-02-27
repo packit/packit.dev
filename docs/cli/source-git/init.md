@@ -72,7 +72,6 @@ It will be the base of your source-git repository.
 
 ## Help
 
-    $ packit source-git init --help
     Usage: packit source-git init [OPTIONS] UPSTREAM_REF SOURCE_GIT DIST_GIT
 
       Initialize SOURCE_GIT as a source-git repo by applying downstream patches
@@ -104,18 +103,17 @@ It will be the base of your source-git repository.
           $ packit source-git init --pkg-tool centpkg v2.3.1 src/acl rpms/acl
 
     Options:
-      --upstream-url TEXT         Git URL of the upstream repository. It is saved
-                                  in the source-git configuration if it is
-                                  specified.
-      --upstream-remote TEXT      Name of the remote pointing to the upstream
-                                  repository. If --upstream-url is not specified,
-                                  the fetch URL of this remote is saved in the
-                                  source-git configuration as the Git URL of the
-                                  upstream project. Defaults to 'origin'.
-      --pkg-tool TEXT             Name or path of the packaging tool used to work
-                                  with sources in the dist-git repo. A variant of
-                                  'rpkg'. Defaults to 'fedpkg' or the tool
-                                  configured in the Packit configuration.
-      --pkg-name TEXT             The name of the package in the distro. Defaults
-                                  to the directory name of DIST_GIT.
-      -h, --help                  Show this message and exit.
+      --upstream-url TEXT     Git URL of the upstream repository. It is saved in
+                              the source-git configuration if it is specified.
+      --upstream-remote TEXT  Name of the remote pointing to the upstream
+                              repository. If --upstream-url is not specified, the
+                              fetch URL of this remote is saved in the source-git
+                              configuration as the Git URL of the upstream
+                              project. Defaults to 'origin'.
+      --pkg-tool TEXT         Name or path of the packaging tool used to work with
+                              sources in the dist-git repo. A variant of 'rpkg'.
+                              Defaults to 'fedpkg' or the tool configured in the
+                              Packit configuration.
+      --pkg-name TEXT         The name of the package in the distro. Defaults to
+                              the directory name of DIST_GIT.
+      -h, --help              Show this message and exit.
