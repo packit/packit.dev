@@ -217,7 +217,7 @@ configuration key. See the details in the link.
 
 ## Retriggering
 ### pull_from_upstream
-Packagers with write access to the dist-git repository can retrigger the job
+Packagers can retrigger the job
 via a comment in any dist-git pull request:
 
     /packit pull-from-upstream
