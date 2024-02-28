@@ -83,7 +83,7 @@ please see the details [here](/docs/fedora-releases-guide#keeping-dist-git-branc
 :::
 
 ## Retriggering
-Packagers with write access to the dist-git repository can retrigger the job
+Packagers can retrigger the job
 via a comment in any dist-git pull request:
 
     /packit pull-from-upstream
