@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 26 Feb 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 04 Mar 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 9 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-9</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-9</guid>
+            <pubDate>Mon, 04 Mar 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 9 (February 27th – March 4th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-9-february-27th--march-4th">Week 9 (February 27th – March 4th)<a href="#week-9-february-27th--march-4th" class="hash-link" aria-label="Direct link to Week 9 (February 27th – March 4th)" title="Direct link to Week 9 (February 27th – March 4th)">​</a></h2><ul><li>We have fixed the bug about Packit overwriting the final state of the build in case the build start is being processed later than the end of the build. (<a href="https://github.com/packit/packit-service/pull/2358" target="_blank" rel="noopener noreferrer">packit-service#2358</a>)</li><li>We have improved the reporting of configuration errors in GitLab. (<a href="https://github.com/packit/packit-service/pull/2357" target="_blank" rel="noopener noreferrer">packit-service#2357</a>)</li><li><code>GitLabProject.get_file_content()</code> can now correctly handle file paths starting with <code>./</code>. (<a href="https://github.com/packit/ogr/pull/844" target="_blank" rel="noopener noreferrer">ogr#844</a>)</li></ul>]]></content:encoded>
+            <author>mfocko@redhat.com (Matej Focko)</author>
+            <category>2024-February</category>
+            <category>2024</category>
+            <category>February</category>
+        </item>
         <item>
             <title><![CDATA[Week 8 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-8</link>

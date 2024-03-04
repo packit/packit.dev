@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-9",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-9-february-27th--march-4th\">Week 9 (February 27th – March 4th)<a href=\"#week-9-february-27th--march-4th\" class=\"hash-link\" aria-label=\"Direct link to Week 9 (February 27th – March 4th)\" title=\"Direct link to Week 9 (February 27th – March 4th)\">​</a></h2><ul><li>We have fixed the bug about Packit overwriting the final state of the build in case the build start is being processed later than the end of the build. (<a href=\"https://github.com/packit/packit-service/pull/2358\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2358</a>)</li><li>We have improved the reporting of configuration errors in GitLab. (<a href=\"https://github.com/packit/packit-service/pull/2357\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2357</a>)</li><li><code>GitLabProject.get_file_content()</code> can now correctly handle file paths starting with <code>./</code>. (<a href=\"https://github.com/packit/ogr/pull/844\" target=\"_blank\" rel=\"noopener noreferrer\">ogr#844</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-9",
+            "title": "Week 9 in Packit",
+            "summary": "Week 9 (February 27th – March 4th)",
+            "date_modified": "2024-03-04T00:00:00.000Z",
+            "author": {
+                "name": "Matej Focko",
+                "url": "https://github.com/mfocko"
+            },
+            "tags": [
+                "2024-February",
+                "2024",
+                "February"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-8",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-8-february-20th--february-26th\">Week 8 (February 20th – February 26th)<a href=\"#week-8-february-20th--february-26th\" class=\"hash-link\" aria-label=\"Direct link to Week 8 (February 20th – February 26th)\" title=\"Direct link to Week 8 (February 20th – February 26th)\">​</a></h2><ul><li>Packit now checks the version to propose against the version in specfile and doesn't create downgrade PRs. (<a href=\"https://github.com/packit/packit/pull/2239\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2239</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-8",
