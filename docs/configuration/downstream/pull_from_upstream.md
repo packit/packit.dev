@@ -49,7 +49,7 @@ Packit dist-git configuration.
 
 ## First setup
 When setting up this job for the first time, please follow the recommended actions from 
-[our release guide](/docs/fedora-releases-guide/dist-git-onboarding#first-setup).
+[our release guide](/docs/fedora-releases-guide/dist-git-onboarding#release-syncing).
 
 :::caution
 Please, use the [`issue_repository`](/docs/configuration#issue_repository) option to get information about

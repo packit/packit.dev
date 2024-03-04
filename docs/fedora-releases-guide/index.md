@@ -12,7 +12,7 @@ Let's split the release process into single steps:
 5. [Bodhi updates](#bodhi-update-job)
 
 Doing Fedora releases with Packit means utilising these jobs:
-1. [`propose_downstream`](#propose-downstream-job) or [`pull_from_upstream`](#pull-from-upstream-job)
+1. [`propose_downstream` or `pull_from_upstream`](#propose-downstream-or-pull-from-upstream)
 2. [`koji_build`](#koji-build-job)
 3. [`bodhi_update`](#bodhi-update-job)
 
