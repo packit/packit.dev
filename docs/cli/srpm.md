@@ -68,35 +68,4 @@ actions:
 
 ## Help
 
-    Usage: packit srpm [OPTIONS] [PATH_OR_URL]
 
-      Create new SRPM (.src.rpm file) using content of the upstream repository.
-
-      PATH_OR_URL argument is a local path or a URL to the upstream git
-      repository, it defaults to the current working directory
-
-    Options:
-      --output FILE                   Write the SRPM to FILE instead of current
-                                      dir.
-      --upstream-ref TEXT             Git ref of the last upstream commit in the
-                                      current branch from which packit should
-                                      generate patches (this option implies the
-                                      repository is source-git).
-      --update-release / --no-update-release
-                                      Specifies whether to update Release.
-                                      Defaults to value set in configuration,
-                                      which defaults to yes.
-      --bump / --no-bump              Deprecated. Use --[no-]update-release
-                                      instead.
-      --release-suffix TEXT           Specifies release suffix. Allows to override
-                                      default generated:{current_time}.{sanitized_
-                                      current_branch}{git_desc_suffix}
-      --default-release-suffix        Allows to use default, packit-generated,
-                                      release suffix when some release_suffix is
-                                      specified in the configuration.
-      -p, --package TEXT              Package to source build, if more than one
-                                      available, like in a monorepo configuration.
-                                      Use it multiple times to select multiple
-                                      packages.Defaults to all the packages listed
-                                      inside the config.
-      -h, --help                      Show this message and exit.
