@@ -116,6 +116,10 @@ Bodhi updates by including a `bodhi_update` job in the configuration.
 Once Packit is informed (via fedora-messaging bus) about the successful Koji build for the configured branch,
 it creates a new update for that branch in Bodhi for you.
 
+By default, only successful Koji builds created by Packit are being acted upon, but 
+you can override this behaviour by specifying
+`allowed_builders` in the [job configuration](/docs/configuration/downstream/bodhi_update).
+
 The [bodhi_update job](/docs/configuration/downstream/bodhi_update) can be configured like this:
 
 ```yaml

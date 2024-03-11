@@ -82,6 +82,9 @@ jobs:
 # https://packit.dev/docs/configuration/downstream/bodhi_update
 - job: bodhi_update
   trigger: commit
+  # TODO uncomment and adjust if you want to allow Bodhi updates to be triggered by successful Koji builds of other users than just Packit
+  # https://packit.dev/docs/configuration/downstream/bodhi_update#optional-parameters
+  #allowed_builders: ['packit', 'all_admins']
   # TODO adjust the list of branches for which the updates should be created
   dist_git_branches:
     - fedora-branched

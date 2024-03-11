@@ -51,7 +51,16 @@ Packit dist-git configuration.
   You can also use the [aliases provided by Packit](/docs/configuration#aliases)
   to not need to change the config file when the new system version is released.
 
+## Optional parameters
 
+* **allowed_builders** - a list of accounts whose successful Koji builds will trigger Bodhi updates
+  (defaults to `['packit']`). As each item of the list you can specify:
+   - name of a FAS account, e.g. `my-fas`
+   - name of a group - starting with `@`, e.g. `@my-sig`
+   - `all_admins` alias - allowing all users with admin access to the dist-git repo
+   - `all_committers` alias - allowing all users with commit access to the dist-git repo
+
+ 
 ## Example
 ```yaml
 issue_repository: https://github.com/my-username/packit-notifications
