@@ -12,15 +12,10 @@ A Packit config file needs to be in the dist-git repository
 to allow this job to be triggered.
 Packit loads the config from the default dist-git branch (usually `rawhide`). Packit configs on other branches are ignored.
 
-For now, the Bodhi update is created only for builds submitted by the Packit FAS user.
-(See [`koji_build`](/docs/configuration/downstream/koji_build) job for more details on how to set this up.)
-This is just for the early stage of this job, and
-we can easily turn off that filter.
-Let us know if you need this condition to be removed.
 
-There is no UI provided by Packit for the job,
-but it is visible across Fedora systems
-like a manually created Bodhi update, and you can utilise
+Packit provides an overview of its own updates [here](https://dashboard.packit.dev/jobs/bodhi-updates).
+
+You can also utilise
 [Fedora Notifications](https://apps.fedoraproject.org/notifications/about)
 to tweak the notifications settings.
 
