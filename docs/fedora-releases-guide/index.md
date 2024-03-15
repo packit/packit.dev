@@ -257,11 +257,14 @@ For a configuration example and retriggering, see [dist-git onboarding](./dist-g
 
 # Permission overview
 
-The downstream automation is a chain of jobs: propose downstream/pull from upstream -> koji build -> bodhi update.
+The downstream automation is a pipeline of jobs:
+propose_downstream/pull_from_upstream -> Packit PR merge -> koji_build -> bodhi_update
+or:
+dist-git push/non-Packit PR merge -> koji_build -> bodhi_update
 
 This chain can break (resulting in no followup job) if the permissions are not configured correctly in the Packit configuration.
 
-### Propose downstream/Pull from upstream -> Koji build
+### packit PR merge/dist-git push -> Koji build
 
 A Koji build can be triggered by a merged pull request, a direct push or a PR comment.
 
