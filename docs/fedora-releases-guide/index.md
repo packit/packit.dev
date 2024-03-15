@@ -271,6 +271,12 @@ On the other hand, if you want to break the chain because, for example, you want
 * If you push Packit commits directly to dist-git (not merging Packit pull request) but you still want Packit to react and trigger a Koji build then you need to add yourself to the [`allowed_committers`](https://packit.dev/docs/configuration/downstream/koji_build#optional-parameters) list; Packit is commit *author* but you are the *committer*.
 * If you want to trigger a Koji build by a PR comment you need be in the `packager` dist-git group.
 
+:::caution
+We are solving a bug https://github.com/packit/packit-service/issues/2359
+This bug can cause an inconsistent behaviour (you may end up with triggered or not triggered Koji builds, even if your configuration is ok)
+when you try to reuse Packit commits in new pull requests or direct pushes.
+:::
+
 ### Koji build -> Bodhi update
 
 A Bodhi update is triggered by a finished Koji build or a PR comment.
