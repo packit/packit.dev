@@ -253,3 +253,37 @@ you can override this behaviour by specifying
 `allowed_builders` in the [job configuration](/docs/configuration/downstream/bodhi_update).
 
 For a configuration example and retriggering, see [dist-git onboarding](./dist-git-onboarding.md#bodhi-update-job).
+
+
+# Permission overview
+
+The downstream automation is a pipeline of jobs:
+propose_downstream/pull_from_upstream -> Packit PR merge -> koji_build -> bodhi_update
+or:
+dist-git push/non-Packit PR merge -> koji_build -> bodhi_update
+
+This chain can break (resulting in no followup job) if the permissions are not configured correctly in the Packit configuration.
+
+### packit PR merge/dist-git push -> Koji build
+
+A Koji build can be triggered by a merged pull request, a direct push or a PR comment.
+
+* If you only merge Packit created pull requests, you don't need to specify other settings.
+* If you open your own pull request and you want Packit to automatically trigger a Koji build when you merge it you need to be in the [`allowed_pr_authors`](https://packit.dev/docs/configuration/downstream/koji_build#optional-parameters) list, even in case the PR contains commits created by Packit.
+On the other hand, if you want to break the chain because, for example, you want to build the package by yourself in a side-tag then you can create a new pull request containing Packit commits and you have to make sure you are not in the [`allowed_pr_authors`](https://packit.dev/docs/configuration/downstream/koji_build#optional-parameters) list.
+* If you push Packit commits directly to dist-git (not merging Packit pull request) but you still want Packit to react and trigger a Koji build then you need to add yourself to the [`allowed_committers`](https://packit.dev/docs/configuration/downstream/koji_build#optional-parameters) list; Packit is commit *author* but you are the *committer*.
+* If you want to trigger a Koji build by a PR comment you need be in the `packager` dist-git group.
+
+:::caution
+We are solving a bug https://github.com/packit/packit-service/issues/2359
+This bug can cause an inconsistent behaviour (you may end up with triggered or not triggered Koji builds, even if your configuration is ok)
+when you try to reuse Packit commits in new pull requests or direct pushes.
+:::
+
+### Koji build -> Bodhi update
+
+A Bodhi update is triggered by a finished Koji build or a PR comment.
+
+* If the Koji builds are always submitted by Packit you don't need to specify other settings.
+* If you submit the Koji builds on your own, Packit can still automatically create the Bodhi updates but you need to be specified in the [`allowed_builders`](https://packit.dev/docs/configuration/downstream/bodhi_update#optional-parameters) list.
+* If you want to trigger a Bodhi update by a PR comment you need to have *write permissions* on the project and be in the `packager` dist-git group.
