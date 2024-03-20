@@ -45,7 +45,7 @@ jobs:
   
   # TODO customization of changelog entry of the new release and Packit's commit message
   # default behaviour:
-  # - changelog entry contains `git log` output and references the bugzilla about new release
+  # - changelog entry contains '- Update to version <version>' and references the bugzilla about new release
   # - commit message contains info about the upstream release and references the bugzilla about new release  
   # you can choose one of the following options below to customize the behaviour:
   
@@ -59,7 +59,7 @@ jobs:
   #  - bash -c 'echo "- Upstream tag - ${PACKIT_UPSTREAM_TAG}"'
   #  - bash -c 'echo "- Upstream commit - ${PACKIT_UPSTREAM_COMMIT}"'
   #  changelog-entry:
-  #  - bash -c 'echo "- Update to ${PACKIT_PROJECT_VERSION}"'
+  #  - bash -c 'git log --no-merges --pretty="format:- %s (%an)" $(git describe --tags --abbrev=0 ${PACKIT_PROJECT_UPSTREAM_TAG}^)..${PACKIT_PROJECT_UPSTREAM_TAG} --'
   #  - bash -c '[ -z "$PACKIT_RESOLVED_BUGS" ] || echo ${PACKIT_RESOLVED_BUGS} | tr " " "\n" | sed "s/^/- Resolves /"'
 
   # option 2: enable copy_upstream_release_description flag so that upstream release description is set as 
