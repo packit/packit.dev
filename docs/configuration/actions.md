@@ -229,8 +229,10 @@ There are also action-specific environment variables, which you can see below.
 
 * `PACKIT_PROJECT_VERSION` — version to be set in the specfile, set when relevant 
 (e.g. when syncing upstream release downstream)
+* `PACKIT_PROJECT_UPSTREAM_TAG` - upstream tag corresponding to the version to be set in the specfile
 * `PACKIT_RESOLVED_BUGS` - bugs resolved by the release separated by space, set 
 when syncing upstream release downstream, e.g. `rhbz#123 rhbz#124`
+* `PACKIT_PROJECT_PREVIOUS_VERSION` - version from the specfile that is about to be changed
 
 ### `commit-message`
 
