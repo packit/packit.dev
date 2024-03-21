@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-11",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-11-march-12th--march-18th\">Week 11 (March 12th – March 18th)<a href=\"#week-11-march-12th--march-18th\" class=\"hash-link\" aria-label=\"Direct link to Week 11 (March 12th – March 18th)\" title=\"Direct link to Week 11 (March 12th – March 18th)\">​</a></h2><ul><li>Don't have time to set up Packit? Or, do you want to see what it would look like on your package?\nStarting now, you can <a href=\"https://github.com/packit/packit-service/issues/new?assignees=&amp;labels=onboarding&amp;projects=&amp;template=onboarding.yml&amp;title=Onboard+%5Bmy+package%5D\" target=\"_blank\" rel=\"noopener noreferrer\">ask the Packit team</a> to prepare a config file for you. (<a href=\"https://github.com/packit/packit-service/pull/2369\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2369</a>)</li><li>A trailing newline is no longer added to spec files without one upon saving. (<a href=\"https://github.com/packit/specfile/pull/353\" target=\"_blank\" rel=\"noopener noreferrer\">specfile#353</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-11",
+            "title": "Week 11 in Packit",
+            "summary": "Week 11 (March 12th – March 18th)",
+            "date_modified": "2024-03-18T00:00:00.000Z",
+            "author": {
+                "name": "Matej Focko",
+                "url": "https://github.com/mfocko"
+            },
+            "tags": [
+                "2024-March",
+                "2024",
+                "March"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-9",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-9-february-27th--march-4th\">Week 9 (February 27th – March 4th)<a href=\"#week-9-february-27th--march-4th\" class=\"hash-link\" aria-label=\"Direct link to Week 9 (February 27th – March 4th)\" title=\"Direct link to Week 9 (February 27th – March 4th)\">​</a></h2><ul><li>We have fixed the bug about Packit overwriting the final state of the build in case the build start is being processed later than the end of the build. (<a href=\"https://github.com/packit/packit-service/pull/2358\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2358</a>)</li><li>We have improved the reporting of configuration errors in GitLab. (<a href=\"https://github.com/packit/packit-service/pull/2357\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2357</a>)</li><li><code>GitLabProject.get_file_content()</code> can now correctly handle file paths starting with <code>./</code>. (<a href=\"https://github.com/packit/ogr/pull/844\" target=\"_blank\" rel=\"noopener noreferrer\">ogr#844</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-9",

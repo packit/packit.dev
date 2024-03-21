@@ -4,10 +4,23 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 04 Mar 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 18 Mar 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 11 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-11</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-11</guid>
+            <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 11 (March 12th – March 18th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-11-march-12th--march-18th">Week 11 (March 12th – March 18th)<a href="#week-11-march-12th--march-18th" class="hash-link" aria-label="Direct link to Week 11 (March 12th – March 18th)" title="Direct link to Week 11 (March 12th – March 18th)">​</a></h2><ul><li>Don't have time to set up Packit? Or, do you want to see what it would look like on your package?
+Starting now, you can <a href="https://github.com/packit/packit-service/issues/new?assignees=&amp;labels=onboarding&amp;projects=&amp;template=onboarding.yml&amp;title=Onboard+%5Bmy+package%5D" target="_blank" rel="noopener noreferrer">ask the Packit team</a> to prepare a config file for you. (<a href="https://github.com/packit/packit-service/pull/2369" target="_blank" rel="noopener noreferrer">packit-service#2369</a>)</li><li>A trailing newline is no longer added to spec files without one upon saving. (<a href="https://github.com/packit/specfile/pull/353" target="_blank" rel="noopener noreferrer">specfile#353</a>)</li></ul>]]></content:encoded>
+            <author>mfocko@redhat.com (Matej Focko)</author>
+            <category>2024-March</category>
+            <category>2024</category>
+            <category>March</category>
+        </item>
         <item>
             <title><![CDATA[Week 9 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-9</link>

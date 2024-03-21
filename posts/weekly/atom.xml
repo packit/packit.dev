@@ -2,11 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2024-03-04T00:00:00.000Z</updated>
+    <updated>2024-03-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 11 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2024/week-11</id>
+        <link href="https://packit.dev/posts/weekly/2024/week-11"/>
+        <updated>2024-03-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 11 (March 12th – March 18th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-11-march-12th--march-18th">Week 11 (March 12th – March 18th)<a href="#week-11-march-12th--march-18th" class="hash-link" aria-label="Direct link to Week 11 (March 12th – March 18th)" title="Direct link to Week 11 (March 12th – March 18th)">​</a></h2><ul><li>Don't have time to set up Packit? Or, do you want to see what it would look like on your package?
+Starting now, you can <a href="https://github.com/packit/packit-service/issues/new?assignees=&amp;labels=onboarding&amp;projects=&amp;template=onboarding.yml&amp;title=Onboard+%5Bmy+package%5D" target="_blank" rel="noopener noreferrer">ask the Packit team</a> to prepare a config file for you. (<a href="https://github.com/packit/packit-service/pull/2369" target="_blank" rel="noopener noreferrer">packit-service#2369</a>)</li><li>A trailing newline is no longer added to spec files without one upon saving. (<a href="https://github.com/packit/specfile/pull/353" target="_blank" rel="noopener noreferrer">specfile#353</a>)</li></ul>]]></content>
+        <author>
+            <name>Matej Focko</name>
+            <email>mfocko@redhat.com</email>
+            <uri>https://github.com/mfocko</uri>
+        </author>
+        <category label="2024-March" term="2024-March"/>
+        <category label="2024" term="2024"/>
+        <category label="March" term="March"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 9 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2024/week-9</id>
