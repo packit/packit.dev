@@ -22,6 +22,19 @@ Create an SRPM and submit an RPM build to [Fedora Copr](https://copr.fedorainfra
   more info [see below](#available-copr-build-targets). Does not need to be
   defined if using a custom Copr project (we fetch targets from the Copr settings).
 
+### Example
+
+```yaml
+jobs:
+- job: copr_build
+  trigger: pull_request
+  targets:
+    - fedora-stable
+    - centos-stream-8-x86_64
+```
+
+With this configuration, you'll get builds in all stable fedora releases
+(excluding rawhide) and the CentOS Stream.
 
 ## Optional parameters
 
@@ -64,10 +77,11 @@ that can change the behaviour of your Copr builds:
 * [**srpm_build_deps**](https://packit.dev/docs/configuration#srpm_build_deps)
 
 ## Using a custom Copr project
-When using a custom Copr project (by specifying `project` and `owner`), the GitHub repo has to be listed in the
-**Packit allowed forge projects** field in the **Copr project settings** so that the Copr builds can be actually run.
-As an example the string *github.com/osbuild/osbuild* has to be inserted
-into https://copr.fedorainfracloud.org/coprs/g/osbuild/osbuild/edit/#packit_forge_projects_allowed.
+When using a custom Copr project (by specifying `project` and `owner`) you need to:
+  - allow Packit to build in your custom Copr project,
+  - allow builds from your forge project.
+
+### Allow Packit to build in your custom project
 
 When using a custom `owner`, Packit Service asks for `builder` permission the
 first time it tries to build in the project. In case the configuration of the
@@ -83,23 +97,16 @@ by running:
 
     $ copr-cli edit-permissions --builder packit [--admin packit] <project>
 
+Boolean values (`list_on_homepage`, `preserve_project` and `follow_fedora_branching`) are not updated when you use custom `owner`.
 
-Boolean values (`list_on_homepage`, `preserve_project` and `follow_fedora_branching`) are not updated when
-you use custom `owner`.
+### Allow builds from forges
 
-### Example
+When using a custom `project`, the GitHub or Gitlab repo has to be listed in the
+**Packit allowed forge projects** field in the **Copr project settings** so that the Copr builds can be actually run.
+As an example the string *github.com/osbuild/osbuild* has to be inserted
+into https://copr.fedorainfracloud.org/coprs/g/osbuild/osbuild/edit/#packit_forge_projects_allowed.
 
-```yaml
-jobs:
-- job: copr_build
-  trigger: pull_request
-  targets:
-    - fedora-stable
-    - centos-stream-8-x86_64
-```
-
-With this configuration, you'll get builds in all stable fedora releases
-(excluding rawhide) and the CentOS Stream.
+![Copr allowed forge projects example](../../img/copr_allowed_forges.png)
 
 
 ## Target-specific configuration
