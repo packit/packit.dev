@@ -2,11 +2,31 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2024-03-18T00:00:00.000Z</updated>
+    <updated>2024-03-25T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 12 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2024/week-12</id>
+        <link href="https://packit.dev/posts/weekly/2024/week-12"/>
+        <updated>2024-03-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 12 (March 19th – March 25th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-12-march-19th--march-25th">Week 12 (March 19th – March 25th)<a href="#week-12-march-19th--march-25th" class="hash-link" aria-label="Direct link to Week 12 (March 19th – March 25th)" title="Direct link to Week 12 (March 19th – March 25th)">​</a></h2><ul><li>Packit no longer shows status checks for not yet triggered manual tests.
+(<a href="https://github.com/packit/packit-service/pull/2375" target="_blank" rel="noopener noreferrer">packit-service#2375</a>)</li><li><code>packit validate-config</code> now checks whether <code>upstream_project_url</code> is set if <code>pull_from_upstream</code> job is configured.
+(<a href="https://github.com/packit/packit/pull/2254" target="_blank" rel="noopener noreferrer">packit#2254</a>)</li><li>We have fixed an issue in <code>%prep</code> section processing. For instance, if the <code>%patches</code> macro appeared there,
+it would have been converted to <code>%patch es</code>, causing failure when executing <code>%prep</code> later.
+(<a href="https://github.com/packit/specfile/pull/356" target="_blank" rel="noopener noreferrer">specfile#356</a>)</li></ul>]]></content>
+        <author>
+            <name>Laura Barcziová</name>
+            <email>lbarczio@redhat.com</email>
+            <uri>https://github.com/lbarcziova</uri>
+        </author>
+        <category label="2024-March" term="2024-March"/>
+        <category label="2024" term="2024"/>
+        <category label="March" term="March"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 11 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2024/week-11</id>

@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-12",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-12-march-19th--march-25th\">Week 12 (March 19th – March 25th)<a href=\"#week-12-march-19th--march-25th\" class=\"hash-link\" aria-label=\"Direct link to Week 12 (March 19th – March 25th)\" title=\"Direct link to Week 12 (March 19th – March 25th)\">​</a></h2><ul><li>Packit no longer shows status checks for not yet triggered manual tests.\n(<a href=\"https://github.com/packit/packit-service/pull/2375\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2375</a>)</li><li><code>packit validate-config</code> now checks whether <code>upstream_project_url</code> is set if <code>pull_from_upstream</code> job is configured.\n(<a href=\"https://github.com/packit/packit/pull/2254\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2254</a>)</li><li>We have fixed an issue in <code>%prep</code> section processing. For instance, if the <code>%patches</code> macro appeared there,\nit would have been converted to <code>%patch es</code>, causing failure when executing <code>%prep</code> later.\n(<a href=\"https://github.com/packit/specfile/pull/356\" target=\"_blank\" rel=\"noopener noreferrer\">specfile#356</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-12",
+            "title": "Week 12 in Packit",
+            "summary": "Week 12 (March 19th – March 25th)",
+            "date_modified": "2024-03-25T00:00:00.000Z",
+            "author": {
+                "name": "Laura Barcziová",
+                "url": "https://github.com/lbarcziova"
+            },
+            "tags": [
+                "2024-March",
+                "2024",
+                "March"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-11",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-11-march-12th--march-18th\">Week 11 (March 12th – March 18th)<a href=\"#week-11-march-12th--march-18th\" class=\"hash-link\" aria-label=\"Direct link to Week 11 (March 12th – March 18th)\" title=\"Direct link to Week 11 (March 12th – March 18th)\">​</a></h2><ul><li>Don't have time to set up Packit? Or, do you want to see what it would look like on your package?\nStarting now, you can <a href=\"https://github.com/packit/packit-service/issues/new?assignees=&amp;labels=onboarding&amp;projects=&amp;template=onboarding.yml&amp;title=Onboard+%5Bmy+package%5D\" target=\"_blank\" rel=\"noopener noreferrer\">ask the Packit team</a> to prepare a config file for you. (<a href=\"https://github.com/packit/packit-service/pull/2369\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2369</a>)</li><li>A trailing newline is no longer added to spec files without one upon saving. (<a href=\"https://github.com/packit/specfile/pull/353\" target=\"_blank\" rel=\"noopener noreferrer\">specfile#353</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-11",
