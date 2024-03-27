@@ -118,6 +118,16 @@ changelog-entry:
 
 </details>
 
+<details>
+  <summary>Using `git log` output as a changelog entry </summary>
+
+```yaml
+changelog-entry:
+  - bash -c 'git log --no-merges --pretty="format:- %s (%an)" $(git describe --tags --abbrev=0 ${PACKIT_PROJECT_UPSTREAM_TAG}^)..${PACKIT_PROJECT_UPSTREAM_TAG} --'
+```
+
+</details>
+
 ### Creating source archive using 'tito' during release syncing
 <details>
   <summary>Using pre-sync for running tito</summary>
