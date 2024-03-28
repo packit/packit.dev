@@ -606,7 +606,8 @@ For instance, rather than specifying frequently used job via `--identifier` each
 you can configure the following:
 
 ```yaml
-default_identifier: my-id
+test_command:
+  default_identifier: my-id
 ```
 As a result, invoking `/packit test` will be automatically interpreted as `/packit test --identfier my-id`.
 
@@ -618,9 +619,10 @@ This allows commonly used job combinations to be triggered without the need for 
 For instance, rather than specifying frequently used jobs via `--labels` each time, such as `/packit test --labels regression,upgrade`, 
 you can configure the following:
 ```yaml
-default_labels:
-  - regression
-  - upgrade
+test_command:
+  default_labels:
+    - regression
+    - upgrade
 ```
 As a result, invoking `/packit test` will be automatically interpreted as `/packit test --labels regression,upgrade`.
 
