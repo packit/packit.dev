@@ -275,9 +275,9 @@ const config = {
             items: [
               {
                 html: `
-                  <a href="https://chat.fedoraproject.org/#/room/#packit:fedora.im">
+                  <a href="https://matrix.to/#/%23packit:fedora.im">
                     #packit:fedora.im
-                  </a> (Element / Matrix)
+                  </a> (Matrix)
                 `,
               },
               {

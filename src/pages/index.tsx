@@ -175,10 +175,10 @@ function Contacts() {
         <h2 id="contact">Contact</h2>
         <ul>
           <li>
-            <Link to="https://chat.fedoraproject.org/#/room/#packit:fedora.im">
+            <Link to="https://matrix.to/#/%23packit:fedora.im">
               #packit:fedora.im
             </Link>{" "}
-            (Element / Matrix)
+            (Matrix)
           </li>
           <li>
             <Link to="mailto:hello@packit.dev">hello@packit.dev</Link>
