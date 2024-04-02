@@ -268,13 +268,6 @@ jobs:
   trigger: release
   dist_git_branches:
    - fedora-rawhide
-  actions:
-    commit-message:
-      - bash -c 'echo "Update to ${PACKIT_PROJECT_VERSION}"'
-      - bash -c '[ -z "$PACKIT_RESOLVED_BUGS" ] || echo ${PACKIT_RESOLVED_BUGS} | tr " " "\n" | sed "s/^/- Resolves /"'
-    changelog-entry:
-      - bash -c 'echo "- Update to ${PACKIT_PROJECT_VERSION}"'
-      - bash -c '[ -z "$PACKIT_RESOLVED_BUGS" ] || echo ${PACKIT_RESOLVED_BUGS} | tr " " "\n" | sed "s/^/- Resolves /"'
 
 - job: koji_build
   trigger: commit
