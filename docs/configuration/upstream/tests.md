@@ -139,7 +139,7 @@ distro (otherwise the default would be `centos-stream-8`) and for
   expression.
 * **tf_post_install_script** - Bash script as a string to run during the guest provisioning. 
 * **tf_extra_params** - A free-form dictionary that allows specifying extra parameters to the Testing Farm.
-  For a complete list of parameters, refer to the [Testing Farm documentation](ttps://api.testing-farm.io/redoc#operation/request_a_new_test_v0_1_requests_post).
+  For a complete list of parameters, refer to the [Testing Farm documentation](https://api.testing-farm.io/redoc#operation/request_a_new_test_v0_1_requests_post).
   The dictionary must follow the structure of the Testing Farm request. Options specified in the dictionary have the
   highest precedence, i.e. can override Packit's defaults. They are being merged with the Packit's values, the only exception
   is the `artifacts` list, which is combined with the artifact passed by Packit. Also, beware of indentation-sensitivity of the YAML format.
