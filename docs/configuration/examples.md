@@ -432,6 +432,30 @@ jobs:
 </details>
 
 <details>
+  <summary>Extending timeout of pipeline for 24 hours (default is 12 hours)</summary>
+
+```yaml
+- job: tests
+  trigger: pull_request
+  identifier: "performance"
+  targets:
+    - centos-stream-9-x86_64
+  skip_build: true
+  manual_trigger: true
+  labels:
+    - performance
+  tf_extra_params:
+    settings:
+      pipeline:
+        timeout: 1440
+    test:
+      tmt:
+        name: performance
+```
+
+</details>
+
+<details>
   <summary>Providing custom tmt context</summary>
 
 ```yaml
