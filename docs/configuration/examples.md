@@ -432,7 +432,7 @@ jobs:
 </details>
 
 <details>
-  <summary>Extending timeout of pipeline for 24 hours (default is 12 hours)</summary>
+  <summary>Extending timeout of a test pipeline for 24 hours (default is 12 hours)</summary>
 
 ```yaml
 - job: tests
