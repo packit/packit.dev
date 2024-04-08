@@ -263,7 +263,7 @@ you can override this behaviour by specifying
 For a configuration example and retriggering, see [dist-git onboarding](./dist-git-onboarding.md#bodhi-update-job).
 
 
-# Permission overview
+## Permission overview
 
 The downstream automation is a pipeline of jobs:
 propose_downstream/pull_from_upstream -> Packit PR merge -> koji_build -> bodhi_update
