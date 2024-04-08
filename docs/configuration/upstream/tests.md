@@ -8,6 +8,12 @@ sidebar_position: 2
 [Testing Farm][tf] is Packit's testing system.
 Test execution is managed by [tmt][tmt] tool.
 
+## Supported triggers
+
+* **pull_request** - check out content of the pull request
+* **commit** - reacts to new commits to the specified branch
+* **release** - check out content of the tag associated with the release
+
 ## Enable Testing
 
 In order to enable test execution simply include `tests` and required `copr_build` jobs in the `.packit.yaml` configuration:
