@@ -521,8 +521,7 @@ You can find more info in the documentation.
 ```
 %changelog
 * Thu Oct 15 2020 Packit Service <user-cont-team+packit-service@redhat.com> - 0.18.0-1
-- Use inner archive directory in %setup macro
-- Use archive_root_dir_template
+- Update to version 0.18.0
 ```
 
 #### sources
