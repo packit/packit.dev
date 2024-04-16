@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2024-04-08T00:00:00.000Z</updated>
+    <updated>2024-04-15T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 15 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2024/week-15</id>
+        <link href="https://packit.dev/posts/weekly/2024/week-15"/>
+        <updated>2024-04-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 15 (April 9th – April 15th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-15-april-9th--april-15th">Week 15 (April 9th – April 15th)<a href="#week-15-april-9th--april-15th" class="hash-link" aria-label="Direct link to Week 15 (April 9th – April 15th)" title="Direct link to Week 15 (April 9th – April 15th)">​</a></h2><ul><li>We have planned the work for the next quarter, curious about what will come next? You can find it <a href="https://github.com/orgs/packit/projects/7/views/29" target="_blank" rel="noopener noreferrer">here</a>.</li></ul>]]></content>
+        <author>
+            <name>Maja Massarini</name>
+            <email>mmassari@redhat.com</email>
+            <uri>https://github.com/majamassarini</uri>
+        </author>
+        <category label="2024-April" term="2024-April"/>
+        <category label="2024" term="2024"/>
+        <category label="April" term="April"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 14 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2024/week-14</id>

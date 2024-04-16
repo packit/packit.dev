@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-15",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-15-april-9th--april-15th\">Week 15 (April 9th – April 15th)<a href=\"#week-15-april-9th--april-15th\" class=\"hash-link\" aria-label=\"Direct link to Week 15 (April 9th – April 15th)\" title=\"Direct link to Week 15 (April 9th – April 15th)\">​</a></h2><ul><li>We have planned the work for the next quarter, curious about what will come next? You can find it <a href=\"https://github.com/orgs/packit/projects/7/views/29\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>.</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-15",
+            "title": "Week 15 in Packit",
+            "summary": "Week 15 (April 9th – April 15th)",
+            "date_modified": "2024-04-15T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2024-April",
+                "2024",
+                "April"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-14",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-14-april-2nd--april-8th\">Week 14 (April 2nd – April 8th)<a href=\"#week-14-april-2nd--april-8th\" class=\"hash-link\" aria-label=\"Direct link to Week 14 (April 2nd – April 8th)\" title=\"Direct link to Week 14 (April 2nd – April 8th)\">​</a></h2><ul><li>We have fixed a race condition that could occur when multiple <code>copr_build</code> jobs sharing a Copr project but having different targets were running at the same time. (<a href=\"https://github.com/packit/packit/pull/2274\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2274</a>)</li><li>We have fixed reporting of tests with <code>manual_trigger: True</code>. (<a href=\"https://github.com/packit/packit-service/pull/2389\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2389</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-14",
