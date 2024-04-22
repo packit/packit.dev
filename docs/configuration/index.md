@@ -721,7 +721,7 @@ By default, the `x86_64` architecture is used.
 
 :::
 
-The information about releases is retrieved from Bodhi and because of the
+The information about releases [is retrieved from Bodhi](https://bodhi.fedoraproject.org/releases/) and because of the
 cache and required availability on Copr, it might take a while to get the
 newest state.
 
