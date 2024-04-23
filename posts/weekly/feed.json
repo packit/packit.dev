@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-16",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-16-april-16th--april-22nd\">Week 16 (April 16th – April 22nd)<a href=\"#week-16-april-16th--april-22nd\" class=\"hash-link\" aria-label=\"Direct link to Week 16 (April 16th – April 22nd)\" title=\"Direct link to Week 16 (April 16th – April 22nd)\">​</a></h2><ul><li><code>packit dist-git init</code> now allows specifying <code>--version-update-mask</code> option and also any arbitrary top-level configuration options. (<a href=\"https://github.com/packit/packit/pull/2288\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2288</a>)</li><li>We have fixed Packit auto-referencing Upstream Release Monitoring bug for release syncing to CentOS Stream. (<a href=\"https://github.com/packit/packit/pull/2284\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2284</a>)</li><li>We have changed the behaviour of <code>/packit test</code> comment command: in case there is a missing build for some target, the build will not be triggered anymore, it will just be reported to the user. We needed to make this change as with the increased complexity of the configuration (multiple test jobs), the previous implementation was prone to race conditions leading to wasting of resources of Copr and Testing Farm. (<a href=\"https://github.com/packit/packit-service/pull/2399\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2399</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-16",
+            "title": "Week 16 in Packit",
+            "summary": "Week 16 (April 16th – April 22nd)",
+            "date_modified": "2024-04-22T00:00:00.000Z",
+            "author": {
+                "name": "Matej Focko",
+                "url": "https://github.com/mfocko"
+            },
+            "tags": [
+                "2024-April",
+                "2024",
+                "April"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-15",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-15-april-9th--april-15th\">Week 15 (April 9th – April 15th)<a href=\"#week-15-april-9th--april-15th\" class=\"hash-link\" aria-label=\"Direct link to Week 15 (April 9th – April 15th)\" title=\"Direct link to Week 15 (April 9th – April 15th)\">​</a></h2><ul><li>We have planned the work for the next quarter, curious about what will come next? You can find it <a href=\"https://github.com/orgs/packit/projects/7/views/29\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>.</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-15",
