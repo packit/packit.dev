@@ -9,7 +9,7 @@ Create a Packit's dist-git configuration for release syncing to Fedora.
 
 ## Help
 
-    Usage: packit dist-git init [OPTIONS] [PATH_OR_URL]
+    Usage: packit dist-git init [OPTIONS] [OTHER_ARGS]... [PATH_OR_URL]
 
       Create the initial Packit dist-git configuration for Fedora release syncing
       based on the input parameters.
@@ -48,6 +48,12 @@ Create a Packit's dist-git configuration for release syncing to Fedora.
           $ packit dist-git init --upstream-git-url https://github.com/packit/packit --clone-path
           `<my-package>` https://src.fedoraproject.org/rpms/packit
 
+      Using arbitrary configuration options that are not provided as the command
+      options (the working dir needs to be specified in this case):
+
+          $ packit dist-git init --upstream-git-url https://github.com/packit/packit
+          --my-option option-value .
+
     Options:
       --upstream-git-url TEXT       URL to the upstream GIT repository  [required]
       --upstream-tag-template TEXT  Template applied for upstream tags if they
@@ -56,6 +62,8 @@ Create a Packit's dist-git configuration for release syncing to Fedora.
                                     to include.
       --upstream-tag-exclude TEXT   Python regex used for filtering upstream tags
                                     to exclude.
+      --version-update-mask TEXT    Python regex used for comparison of the old
+                                    and the new version.
       --issue-repository TEXT       URL of a git repository that can be used for
                                     reporting errors in form of issues.
       --no-pull                     Do not include the pull from upstream job in
