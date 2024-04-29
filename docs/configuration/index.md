@@ -686,6 +686,16 @@ require:
 
 #### status_name_template
 
+:::warning
+
+This setting allows you to **fully** customize the status name for the Packit
+jobs. You need to guarantee that each job expands to a unique status name.
+
+If this requirement isn't satisfied, it is possible for concurrent jobs sharing
+the same status name to override each other's statuses.
+
+:::
+
 (*string*)  Template that can be used to modify the (commit) status name that
 Packit uses by default. It is used in the following manner:
 
