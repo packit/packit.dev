@@ -4,10 +4,27 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 22 Apr 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Apr 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 17 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-17</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-17</guid>
+            <pubDate>Mon, 29 Apr 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 17 (April 23rd – April 29th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-17-april-23rd--april-29th">Week 17 (April 23rd – April 29th)<a href="#week-17-april-23rd--april-29th" class="hash-link" aria-label="Direct link to Week 17 (April 23rd – April 29th)" title="Direct link to Week 17 (April 23rd – April 29th)">​</a></h2><ul><li>We have fixed the syncing of ACLs during CentOS Stream release syncing.
+(<a href="https://github.com/packit/packit/pull/2298" target="_blank" rel="noopener noreferrer">packit#2298</a>)</li><li><code>koji_build</code> job has a new <code>sidetag_group</code> option that allows to perform a downstream Koji build in a sidetag.
+A new sidetag will be created for each configured <code>dist_git_branch</code> if it doesn't already exist.
+This represents the first step towards multi-package Bodhi updates. Stay tuned for further advancements!
+(<a href="https://github.com/packit/packit-service/pull/2409" target="_blank" rel="noopener noreferrer">packit-service#2409</a>)</li><li>We have fixed an issue when <code>copr_build</code> job status checks were sometimes wrongly updated with a misleading
+message after a SRPM build failure. (<a href="https://github.com/packit/packit-service/pull/2406" target="_blank" rel="noopener noreferrer">packit-service#2406</a>)</li></ul>]]></content:encoded>
+            <author>lbarczio@redhat.com (Laura Barcziová)</author>
+            <category>2024-April</category>
+            <category>2024</category>
+            <category>April</category>
+        </item>
         <item>
             <title><![CDATA[Week 16 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-16</link>
