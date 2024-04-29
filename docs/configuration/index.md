@@ -687,11 +687,13 @@ require:
 #### status_name_template
 
 (*string*)  Template that can be used to modify the (commit) status name that
-Packit uses by default. It used in the following manner:
+Packit uses by default. It is used in the following manner:
 
 ```py
 status_name_template.format(…)
 ```
+
+The template follows the [Format String Syntax](https://docs.python.org/3/library/string.html#formatstrings).
 
 This allows for automation with GitHub merge queues, or any other tools that
 depend on the consistent status naming.
