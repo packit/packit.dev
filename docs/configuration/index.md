@@ -686,6 +686,13 @@ require:
 
 #### status_name_template
 
+:::caution
+
+This is an experimental feature, right now it's not possible to retrigger Packit
+jobs using custom status name via GitHub Checks re-run.
+
+:::
+
 :::warning
 
 This setting allows you to **fully** customize the status name for the Packit
