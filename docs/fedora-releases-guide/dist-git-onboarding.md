@@ -130,12 +130,13 @@ jobs:
     - fedora-branched # rawhide updates are created automatically
 ```
 
-#### Actions
+#### Actions - use your own commands/scripts
 Actions are a way how to redefine or tweak the Packit's workflows.
 These are user-defined commands that can replace a part of Packit's job (e.g. to get version, or to create a tarball)
 or are run in a particular step as a hook (with no action run by default).
 
 Take a look at the tables [here](/docs/configuration/actions/) to know what actions are available for each job.
+You can also see some examples [here](./index.md#customization)
 
 ### 2. Monitoring of the package
 Besides the configuration file, if you use the [`pull_from_upstream` job](#pull-from-upstream-job), you also need 
