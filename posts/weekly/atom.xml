@@ -2,11 +2,35 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2024-04-29T00:00:00.000Z</updated>
+    <updated>2024-05-06T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 18 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2024/week-18</id>
+        <link href="https://packit.dev/posts/weekly/2024/week-18"/>
+        <updated>2024-05-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 18 (April 30th – May 6th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-18-april-30th--may-6th">Week 18 (April 30th – May 6th)<a href="#week-18-april-30th--may-6th" class="hash-link" aria-label="Direct link to Week 18 (April 30th – May 6th)" title="Direct link to Week 18 (April 30th – May 6th)">​</a></h2><ul><li>Packit will now upload to lookaside cache sources that are not specified by URLs
+and are present in the dist-git repo during release sync. Additionally, all the actions
+ran during syncing release will provide the <code>PACKIT_PROJECT_VERSION</code> environment variable.
+(<a href="https://github.com/packit/packit/pull/2297" target="_blank" rel="noopener noreferrer">packit#2297</a>)</li><li>We have introduced a new <code>status_name_template</code> option that allows you to configure
+status name for a Packit job. For further details have a look at our
+<a href="https://packit.dev/docs/configuration#status_name_template" target="_blank" rel="noopener noreferrer">docs</a>.
+This feature is still experimental and at the moment it is not possible
+to retry such jobs via GitHub Checks' re-run.
+(<a href="https://github.com/packit/packit-service/pull/2402" target="_blank" rel="noopener noreferrer">packit-service#2402</a>)</li></ul>]]></content>
+        <author>
+            <name>Nikola Forró</name>
+            <email>nforro@redhat.com</email>
+            <uri>https://github.com/nforro</uri>
+        </author>
+        <category label="2024-April" term="2024-April"/>
+        <category label="2024" term="2024"/>
+        <category label="April" term="April"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 17 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2024/week-17</id>

@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-18",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-18-april-30th--may-6th\">Week 18 (April 30th – May 6th)<a href=\"#week-18-april-30th--may-6th\" class=\"hash-link\" aria-label=\"Direct link to Week 18 (April 30th – May 6th)\" title=\"Direct link to Week 18 (April 30th – May 6th)\">​</a></h2><ul><li>Packit will now upload to lookaside cache sources that are not specified by URLs\nand are present in the dist-git repo during release sync. Additionally, all the actions\nran during syncing release will provide the <code>PACKIT_PROJECT_VERSION</code> environment variable.\n(<a href=\"https://github.com/packit/packit/pull/2297\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2297</a>)</li><li>We have introduced a new <code>status_name_template</code> option that allows you to configure\nstatus name for a Packit job. For further details have a look at our\n<a href=\"https://packit.dev/docs/configuration#status_name_template\" target=\"_blank\" rel=\"noopener noreferrer\">docs</a>.\nThis feature is still experimental and at the moment it is not possible\nto retry such jobs via GitHub Checks' re-run.\n(<a href=\"https://github.com/packit/packit-service/pull/2402\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2402</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-18",
+            "title": "Week 18 in Packit",
+            "summary": "Week 18 (April 30th – May 6th)",
+            "date_modified": "2024-05-06T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2024-April",
+                "2024",
+                "April"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-17",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-17-april-23rd--april-29th\">Week 17 (April 23rd – April 29th)<a href=\"#week-17-april-23rd--april-29th\" class=\"hash-link\" aria-label=\"Direct link to Week 17 (April 23rd – April 29th)\" title=\"Direct link to Week 17 (April 23rd – April 29th)\">​</a></h2><ul><li>We have fixed the syncing of ACLs during CentOS Stream release syncing.\n(<a href=\"https://github.com/packit/packit/pull/2298\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2298</a>)</li><li><code>koji_build</code> job has a new <code>sidetag_group</code> option that allows to perform a downstream Koji build in a sidetag.\nA new sidetag will be created for each configured <code>dist_git_branch</code> if it doesn't already exist.\nThis represents the first step towards multi-package Bodhi updates. Stay tuned for further advancements!\n(<a href=\"https://github.com/packit/packit-service/pull/2409\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2409</a>)</li><li>We have fixed an issue when <code>copr_build</code> job status checks were sometimes wrongly updated with a misleading\nmessage after a SRPM build failure. (<a href=\"https://github.com/packit/packit-service/pull/2406\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2406</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-17",
