@@ -52,6 +52,7 @@ Packit dist-git configuration.
   (defaults to `['packit']`). As each item of the list you can specify:
    - name of a FAS account, e.g. `my-fas`
    - name of a group - starting with `@`, e.g. `@my-sig`
+     (don't forget to put the group name in quotes - a token in YAML is not allowed to start with `@`)
    - `all_admins` alias - allowing all users with admin access to the dist-git repo
    - `all_committers` alias - allowing all users with commit access to the dist-git repo
 
