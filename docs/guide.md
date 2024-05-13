@@ -217,7 +217,7 @@ Besides that:
   your software needs to comply with [Copr guidelines](https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr)
   since we use [Fedora Copr](https://copr.fedorainfracloud.org) for the builds.
   Therefore, please, make sure you read them before configuring the [Packit build job](/docs/configuration/upstream/copr_build).
-* If you are interested in using [internal instance of the Testing Farm](https://docs.testing-farm.io/general/0.1/services.html#_red_hat_ranch)
+* If you are interested in using [internal instance of the Testing Farm](https://docs.testing-farm.io/Testing%20Farm/0.1/services.html#_red_hat_ranch)
   to run your tests in, please, [reach out to us](/#contact), since for this job, an additional approval on our side is needed.
 * For retrying the [build](/docs/configuration/upstream/copr_build) and [test](/docs/configuration/upstream/tests) jobs via `/packit build` and `/packit test` pull request comments,
   you need to have write access to the repository or be the author of the pull request.
@@ -340,7 +340,7 @@ hardcoded values that changes when there is a new distribution release.
   (Can be used to verify that package is buildable,
   to easily install package including the proposed change
   or to provide long-term Copr repositories.)
-* [`tests`](/docs/configuration/upstream/tests): Test suit using TMT/FMF definition run in the [Testing Farm](https://docs.testing-farm.io/general/0.1/index.html)
+* [`tests`](/docs/configuration/upstream/tests): Test suit using TMT/FMF definition run in the [Testing Farm](https://docs.testing-farm.io/Testing%20Farm/0.1/index.html)
   (Can be used as a next step to Copr build or without build at all.)
 * [`upstream_koji_build`](/docs/configuration/upstream/upstream_koji_build): A scratch Koji build triggered for the upstream state of project.
 * [`propose_downstream`](/docs/configuration/upstream/propose_downstream): For upstream release, Packit prepares a Fedora release.
