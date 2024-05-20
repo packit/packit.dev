@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-19",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-19-may-7th--may-13th\">Week 19 (May 7th – May 13th)<a href=\"#week-19-may-7th--may-13th\" class=\"hash-link\" aria-label=\"Direct link to Week 19 (May 7th – May 13th)\" title=\"Direct link to Week 19 (May 7th – May 13th)\">​</a></h2><ul><li>Added a <code>scan-in-osh</code> subcommand in the CLI to perform a scan through OpenScanHub. By default it performs a full scan of the packages and a differential scan can be performed through <code>--base-srpm</code> option. (<a href=\"https://github.com/packit/packit/pull/2301\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2301</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-19",
+            "title": "Week 19 in Packit",
+            "summary": "Week 19 (May 7th – May 13th)",
+            "date_modified": "2024-05-13T00:00:00.000Z",
+            "author": {
+                "name": "František Lachman",
+                "url": "https://github.com/lachmanfrantisek"
+            },
+            "tags": [
+                "2024-May",
+                "2024",
+                "May"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-18",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-18-april-30th--may-6th\">Week 18 (April 30th – May 6th)<a href=\"#week-18-april-30th--may-6th\" class=\"hash-link\" aria-label=\"Direct link to Week 18 (April 30th – May 6th)\" title=\"Direct link to Week 18 (April 30th – May 6th)\">​</a></h2><ul><li>Packit will now upload to lookaside cache sources that are not specified by URLs\nand are present in the dist-git repo during release sync. Additionally, all the actions\nran during syncing release will provide the <code>PACKIT_PROJECT_VERSION</code> environment variable.\n(<a href=\"https://github.com/packit/packit/pull/2297\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2297</a>)</li><li>We have introduced a new <code>status_name_template</code> option that allows you to configure\nstatus name for a Packit job. For further details have a look at our\n<a href=\"https://packit.dev/docs/configuration#status_name_template\" target=\"_blank\" rel=\"noopener noreferrer\">docs</a>.\nThis feature is still experimental and at the moment it is not possible\nto retry such jobs via GitHub Checks' re-run.\n(<a href=\"https://github.com/packit/packit-service/pull/2402\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2402</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-18",

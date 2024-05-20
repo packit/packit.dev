@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 06 May 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 13 May 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 19 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-19</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-19</guid>
+            <pubDate>Mon, 13 May 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 19 (May 7th – May 13th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-19-may-7th--may-13th">Week 19 (May 7th – May 13th)<a href="#week-19-may-7th--may-13th" class="hash-link" aria-label="Direct link to Week 19 (May 7th – May 13th)" title="Direct link to Week 19 (May 7th – May 13th)">​</a></h2><ul><li>Added a <code>scan-in-osh</code> subcommand in the CLI to perform a scan through OpenScanHub. By default it performs a full scan of the packages and a differential scan can be performed through <code>--base-srpm</code> option. (<a href="https://github.com/packit/packit/pull/2301" target="_blank" rel="noopener noreferrer">packit#2301</a>)</li></ul>]]></content:encoded>
+            <author>flachman@redhat.com (František Lachman)</author>
+            <category>2024-May</category>
+            <category>2024</category>
+            <category>May</category>
+        </item>
         <item>
             <title><![CDATA[Week 18 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-18</link>

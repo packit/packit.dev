@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2024-05-06T00:00:00.000Z</updated>
+    <updated>2024-05-13T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 19 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2024/week-19</id>
+        <link href="https://packit.dev/posts/weekly/2024/week-19"/>
+        <updated>2024-05-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 19 (May 7th – May 13th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-19-may-7th--may-13th">Week 19 (May 7th – May 13th)<a href="#week-19-may-7th--may-13th" class="hash-link" aria-label="Direct link to Week 19 (May 7th – May 13th)" title="Direct link to Week 19 (May 7th – May 13th)">​</a></h2><ul><li>Added a <code>scan-in-osh</code> subcommand in the CLI to perform a scan through OpenScanHub. By default it performs a full scan of the packages and a differential scan can be performed through <code>--base-srpm</code> option. (<a href="https://github.com/packit/packit/pull/2301" target="_blank" rel="noopener noreferrer">packit#2301</a>)</li></ul>]]></content>
+        <author>
+            <name>František Lachman</name>
+            <email>flachman@redhat.com</email>
+            <uri>https://github.com/lachmanfrantisek</uri>
+        </author>
+        <category label="2024-May" term="2024-May"/>
+        <category label="2024" term="2024"/>
+        <category label="May" term="May"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 18 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2024/week-18</id>
