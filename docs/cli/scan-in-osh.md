@@ -7,7 +7,7 @@ sidebar_position: 41
 
 # `packit scan-in-osh`
 
-Builds an SRPM file and performs a scan in [OpenScanHub])(https://openscanhub.fedoraproject.org/).
+Builds a SRPM file and performs a scan in [OpenScanHub](https://openscanhub.fedoraproject.org/).
 
 ## Help
 
