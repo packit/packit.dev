@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-20",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-20-may-14th--may-20th\">Week 20 (May 14th – May 20th)<a href=\"#week-20-may-14th--may-20th\" class=\"hash-link\" aria-label=\"Direct link to Week 20 (May 14th – May 20th)\" title=\"Direct link to Week 20 (May 14th – May 20th)\">​</a></h2><ul><li>When running <code>dist-git init</code> command from CLI, you can pass a command to specify the git URL of the project. (<a href=\"https://github.com/packit/packit/pull/2308\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2308</a>)</li><li>We have fixed the incorrect displaying of the time it took for the jobs to run on dashboard. (<a href=\"https://github.com/packit/dashboard/pull/408\" target=\"_blank\" rel=\"noopener noreferrer\">dashboard#408</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-20",
+            "title": "Week 20 in Packit",
+            "summary": "Week 20 (May 14th – May 20th)",
+            "date_modified": "2024-05-20T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2024-May",
+                "2024",
+                "May"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-19",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-19-may-7th--may-13th\">Week 19 (May 7th – May 13th)<a href=\"#week-19-may-7th--may-13th\" class=\"hash-link\" aria-label=\"Direct link to Week 19 (May 7th – May 13th)\" title=\"Direct link to Week 19 (May 7th – May 13th)\">​</a></h2><ul><li>Added a <code>scan-in-osh</code> subcommand in the CLI to perform a scan through OpenScanHub. By default it performs a full scan of the packages and a differential scan can be performed through <code>--base-srpm</code> option. (<a href=\"https://github.com/packit/packit/pull/2301\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2301</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-19",

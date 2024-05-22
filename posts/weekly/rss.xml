@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 13 May 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 20 May 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 20 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-20</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-20</guid>
+            <pubDate>Mon, 20 May 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 20 (May 14th – May 20th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-20-may-14th--may-20th">Week 20 (May 14th – May 20th)<a href="#week-20-may-14th--may-20th" class="hash-link" aria-label="Direct link to Week 20 (May 14th – May 20th)" title="Direct link to Week 20 (May 14th – May 20th)">​</a></h2><ul><li>When running <code>dist-git init</code> command from CLI, you can pass a command to specify the git URL of the project. (<a href="https://github.com/packit/packit/pull/2308" target="_blank" rel="noopener noreferrer">packit#2308</a>)</li><li>We have fixed the incorrect displaying of the time it took for the jobs to run on dashboard. (<a href="https://github.com/packit/dashboard/pull/408" target="_blank" rel="noopener noreferrer">dashboard#408</a>)</li></ul>]]></content:encoded>
+            <author>mmassari@redhat.com (Maja Massarini)</author>
+            <category>2024-May</category>
+            <category>2024</category>
+            <category>May</category>
+        </item>
         <item>
             <title><![CDATA[Week 19 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-19</link>
