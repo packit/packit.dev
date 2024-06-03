@@ -14,7 +14,7 @@ $ make install-dependencies
 This makefile target imports `deployment` and `research` docs and also installs
 `yarn` and the JS dependencies for the webpage.
 
-> **Note**
+> [!NOTE]
 > This needs to be done only once. Importing of the “nested” docs is done on
 > each run of the makefile target
 
@@ -26,7 +26,7 @@ $ yarn
 
 ### Local Development
 
-> **Note**
+> [!NOTE]
 > It's faster to use `yarn start` or `make run-dev` that are described here than
 > rebuilding the site over and over.
 
@@ -40,7 +40,7 @@ $ make run-dev
 This command starts a local development server and opens up a browser window.
 Most changes are reflected live without having to restart the server.
 
-> **Note**
+> [!NOTE]
 > If you do not wish to automatically open the browser, since it's annoying. You
 > can pass `--no-open` switch.
 
@@ -61,7 +61,9 @@ also JS dependencies stored in the `node_modules`.
 >
 >     distrobox-enter js -- make run-dev
 
-> **Note** > _Full_ containerization of this setup would require similar approach as with
+> [!NOTE]
+>
+> _Full_ containerization of this setup would require similar approach as with
 > dashboard (installing JS dependencies and **building** whole webpage), which
 > would take more time here.
 
@@ -80,7 +82,7 @@ There's also “imported” documentation:
 - [deployment](https://github.com/packit/deployment/tree/main/docs/deployment)
 - [research](https://github.com/packit/research/tree/main/research)
 
-> **Warning**
+> [!WARNING]
 > For the imported documentation, update the documentation in the linked
 > repository in the linked directory.
 
@@ -162,7 +164,7 @@ into subdirectories.
 For blog posts it's ideal to create a directory »per« blog post and in each of
 them nested `img` directory containing the pictures used in the blog post.
 
-> **Warning**
+> [!WARNING]
 > There's only one picture used in the weekly, so there are just markdown files
 > and one shared `img` directory.
 
