@@ -4,10 +4,24 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 27 May 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 03 Jun 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 22 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-22</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-22</guid>
+            <pubDate>Mon, 03 Jun 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 22 (May 28th – June 3rd)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-22-may-28th--june-3rd">Week 22 (May 28th – June 3rd)<a href="#week-22-may-28th--june-3rd" class="hash-link" aria-label="Direct link to Week 22 (May 28th – June 3rd)" title="Direct link to Week 22 (May 28th – June 3rd)">​</a></h2><ul><li>Issue with pushing to CentOS Stream dist-git on GitLab is now resolved.
+(<a href="https://github.com/packit/packit-service/pull/2433" target="_blank" rel="noopener noreferrer">packit-service#2433</a>)</li><li>Check for <code>allowed_pr_authors</code>/<code>allowed_committers</code> configuration before running Koji production builds is now more reliable.
+(<a href="https://github.com/packit/packit-service/pull/2435" target="_blank" rel="noopener noreferrer">packit/packit-service#2435</a>)</li></ul>]]></content:encoded>
+            <author>lbarczio@redhat.com (Laura Barcziová)</author>
+            <category>2024-May</category>
+            <category>2024</category>
+            <category>May</category>
+        </item>
         <item>
             <title><![CDATA[Week 21 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-21</link>

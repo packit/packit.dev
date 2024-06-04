@@ -2,11 +2,29 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2024-05-27T00:00:00.000Z</updated>
+    <updated>2024-06-03T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 22 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2024/week-22</id>
+        <link href="https://packit.dev/posts/weekly/2024/week-22"/>
+        <updated>2024-06-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 22 (May 28th – June 3rd)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-22-may-28th--june-3rd">Week 22 (May 28th – June 3rd)<a href="#week-22-may-28th--june-3rd" class="hash-link" aria-label="Direct link to Week 22 (May 28th – June 3rd)" title="Direct link to Week 22 (May 28th – June 3rd)">​</a></h2><ul><li>Issue with pushing to CentOS Stream dist-git on GitLab is now resolved.
+(<a href="https://github.com/packit/packit-service/pull/2433" target="_blank" rel="noopener noreferrer">packit-service#2433</a>)</li><li>Check for <code>allowed_pr_authors</code>/<code>allowed_committers</code> configuration before running Koji production builds is now more reliable.
+(<a href="https://github.com/packit/packit-service/pull/2435" target="_blank" rel="noopener noreferrer">packit/packit-service#2435</a>)</li></ul>]]></content>
+        <author>
+            <name>Laura Barcziová</name>
+            <email>lbarczio@redhat.com</email>
+            <uri>https://github.com/lbarcziova</uri>
+        </author>
+        <category label="2024-May" term="2024-May"/>
+        <category label="2024" term="2024"/>
+        <category label="May" term="May"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 21 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2024/week-21</id>

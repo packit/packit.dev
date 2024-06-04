@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-22",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-22-may-28th--june-3rd\">Week 22 (May 28th – June 3rd)<a href=\"#week-22-may-28th--june-3rd\" class=\"hash-link\" aria-label=\"Direct link to Week 22 (May 28th – June 3rd)\" title=\"Direct link to Week 22 (May 28th – June 3rd)\">​</a></h2><ul><li>Issue with pushing to CentOS Stream dist-git on GitLab is now resolved.\n(<a href=\"https://github.com/packit/packit-service/pull/2433\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2433</a>)</li><li>Check for <code>allowed_pr_authors</code>/<code>allowed_committers</code> configuration before running Koji production builds is now more reliable.\n(<a href=\"https://github.com/packit/packit-service/pull/2435\" target=\"_blank\" rel=\"noopener noreferrer\">packit/packit-service#2435</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-22",
+            "title": "Week 22 in Packit",
+            "summary": "Week 22 (May 28th – June 3rd)",
+            "date_modified": "2024-06-03T00:00:00.000Z",
+            "author": {
+                "name": "Laura Barcziová",
+                "url": "https://github.com/lbarcziova"
+            },
+            "tags": [
+                "2024-May",
+                "2024",
+                "May"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-21",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-21-may-21st--may-27th\">Week 21 (May 21st – May 27th)<a href=\"#week-21-may-21st--may-27th\" class=\"hash-link\" aria-label=\"Direct link to Week 21 (May 21st – May 27th)\" title=\"Direct link to Week 21 (May 21st – May 27th)\">​</a></h2><ul><li>We have fixed the syncing of ACLs for <code>propose-downtream</code> for CentOS Stream. (<a href=\"https://github.com/packit/packit/pull/2318\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2318</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-21",
