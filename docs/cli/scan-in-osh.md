@@ -13,7 +13,7 @@ Builds a SRPM file and performs a scan in [OpenScanHub](https://openscanhub.fedo
 
     Usage: packit scan-in-osh [OPTIONS] [PATH_OR_URL]
 
-      Perform a scan through OpenScanHub. You need a valid kerberos ticket and set
+      Perform a scan through OpenScanHub. You need a valid Kerberos ticket and set
       `dns_canonicalize_hostname=false` in Kerberos configurations. Documentation
       can be found at https://fedoraproject.org/wiki/OpenScanHub.
 
@@ -24,6 +24,6 @@ Builds a SRPM file and performs a scan in [OpenScanHub](https://openscanhub.fedo
                           inside the config.
       --target TEXT       Chroot to build in. (defaults to 'fedora-
                           rawhide-x86_64')
-      --base-srpm TEXT    Base SRPM to perform a differential build
+      --base-srpm TEXT    Base SRPM to perform a differential build against
       --comment TEXT      Comment for the build
       -h, --help          Show this message and exit.
