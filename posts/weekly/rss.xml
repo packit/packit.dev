@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 03 Jun 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 18 Jun 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 24 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-24</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-24</guid>
+            <pubDate>Tue, 18 Jun 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 24 (June 11th – June 17th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-24-june-11th--june-17th">Week 24 (June 11th – June 17th)<a href="#week-24-june-11th--june-17th" class="hash-link" aria-label="Direct link to Week 24 (June 11th – June 17th)" title="Direct link to Week 24 (June 11th – June 17th)">​</a></h2><ul><li>We have fixed a bug that caused inconsistency between the promised environment variables (from the docs) and the environment that has been actually provided. Now you should have access to <code>PACKIT_UPSTREAM_REPO</code> and <code>PACKIT_DOWNSTREAM_REPO</code> (in case of <code>propose_downstream</code> and <code>pull_from_upstream</code> jobs), in the <code>post-upstream-clone</code> action. (<a href="https://github.com/packit/packit/pull/2327" target="_blank" rel="noopener noreferrer">packit#2327</a>)</li></ul>]]></content:encoded>
+            <author>flachman@redhat.com (František Lachman)</author>
+            <category>2024-June</category>
+            <category>2024</category>
+            <category>June</category>
+        </item>
         <item>
             <title><![CDATA[Week 22 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-22</link>

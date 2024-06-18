@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-24",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-24-june-11th--june-17th\">Week 24 (June 11th – June 17th)<a href=\"#week-24-june-11th--june-17th\" class=\"hash-link\" aria-label=\"Direct link to Week 24 (June 11th – June 17th)\" title=\"Direct link to Week 24 (June 11th – June 17th)\">​</a></h2><ul><li>We have fixed a bug that caused inconsistency between the promised environment variables (from the docs) and the environment that has been actually provided. Now you should have access to <code>PACKIT_UPSTREAM_REPO</code> and <code>PACKIT_DOWNSTREAM_REPO</code> (in case of <code>propose_downstream</code> and <code>pull_from_upstream</code> jobs), in the <code>post-upstream-clone</code> action. (<a href=\"https://github.com/packit/packit/pull/2327\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2327</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-24",
+            "title": "Week 24 in Packit",
+            "summary": "Week 24 (June 11th – June 17th)",
+            "date_modified": "2024-06-18T00:00:00.000Z",
+            "author": {
+                "name": "František Lachman",
+                "url": "https://github.com/lachmanfrantisek"
+            },
+            "tags": [
+                "2024-June",
+                "2024",
+                "June"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-22",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-22-may-28th--june-3rd\">Week 22 (May 28th – June 3rd)<a href=\"#week-22-may-28th--june-3rd\" class=\"hash-link\" aria-label=\"Direct link to Week 22 (May 28th – June 3rd)\" title=\"Direct link to Week 22 (May 28th – June 3rd)\">​</a></h2><ul><li>Issue with pushing to CentOS Stream dist-git on GitLab is now resolved.\n(<a href=\"https://github.com/packit/packit-service/pull/2433\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2433</a>)</li><li>Check for <code>allowed_pr_authors</code>/<code>allowed_committers</code> configuration before running Koji production builds is now more reliable.\n(<a href=\"https://github.com/packit/packit-service/pull/2435\" target=\"_blank\" rel=\"noopener noreferrer\">packit/packit-service#2435</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-22",
