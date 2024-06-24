@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-25",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-25-june-18th--june-24th\">Week 25 (June 18th – June 24th)<a href=\"#week-25-june-18th--june-24th\" class=\"hash-link\" aria-label=\"Direct link to Week 25 (June 18th – June 24th)\" title=\"Direct link to Week 25 (June 18th – June 24th)\">​</a></h2><ul><li>We have fixed an issue that has been introduced by another bug fix.\nThis issue has caused an outage of upstream Koji builds.\n(<a href=\"https://github.com/packit/packit/pull/2329\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2329</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-25",
+            "title": "Week 25 in Packit",
+            "summary": "Week 25 (June 18th – June 24th)",
+            "date_modified": "2024-06-24T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2024-June",
+                "2024",
+                "June"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-24",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-24-june-11th--june-17th\">Week 24 (June 11th – June 17th)<a href=\"#week-24-june-11th--june-17th\" class=\"hash-link\" aria-label=\"Direct link to Week 24 (June 11th – June 17th)\" title=\"Direct link to Week 24 (June 11th – June 17th)\">​</a></h2><ul><li>We have fixed a bug that caused inconsistency between the promised environment variables (from the docs) and the environment that has been actually provided. Now you should have access to <code>PACKIT_UPSTREAM_REPO</code> and <code>PACKIT_DOWNSTREAM_REPO</code> (in case of <code>propose_downstream</code> and <code>pull_from_upstream</code> jobs), in the <code>post-upstream-clone</code> action. (<a href=\"https://github.com/packit/packit/pull/2327\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2327</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-24",

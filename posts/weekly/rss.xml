@@ -4,10 +4,24 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Tue, 18 Jun 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 24 Jun 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 25 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-25</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-25</guid>
+            <pubDate>Mon, 24 Jun 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 25 (June 18th – June 24th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-25-june-18th--june-24th">Week 25 (June 18th – June 24th)<a href="#week-25-june-18th--june-24th" class="hash-link" aria-label="Direct link to Week 25 (June 18th – June 24th)" title="Direct link to Week 25 (June 18th – June 24th)">​</a></h2><ul><li>We have fixed an issue that has been introduced by another bug fix.
+This issue has caused an outage of upstream Koji builds.
+(<a href="https://github.com/packit/packit/pull/2329" target="_blank" rel="noopener noreferrer">packit#2329</a>)</li></ul>]]></content:encoded>
+            <author>nforro@redhat.com (Nikola Forró)</author>
+            <category>2024-June</category>
+            <category>2024</category>
+            <category>June</category>
+        </item>
         <item>
             <title><![CDATA[Week 24 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-24</link>
