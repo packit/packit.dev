@@ -44,38 +44,4 @@ have an active Kerberos TGT, you will be automatically authenticated.
 
 ## Help
 
-    Usage: packit create-update [OPTIONS] [PATH_OR_URL]
 
-      Create a bodhi update for the selected upstream project
-
-      If you are not authenticated with the bodhi server, please make sure that
-      you navigate in your browser to the URL provided by the bodhi-client and
-      then paste the `code=XX...` to the terminal when prompted.
-
-      If you set `fas_user` and `kerberos_realm` in your "~/.config/packit.yaml"
-      and have an active Kerberos TGT, you will be automatically authenticated.
-      Otherwise, you need to follow the prompt
-
-      PATH_OR_URL argument is a local path or a URL to the upstream git
-      repository, it defaults to the current working directory
-
-    Options:
-      --dist-git-branch TEXT          Comma separated list of target branches in
-                                      dist-git to create bodhi update in.
-                                      (defaults to repo's default branch)
-      --dist-git-path TEXT            Path to dist-git repo to work in. Otherwise
-                                      clone the repo in a temporary directory.
-      --koji-build TEXT               Koji build (NVR) to add to the bodhi update
-                                      (can be specified multiple times)
-      --update-notes TEXT             Bodhi update notes
-      --update-type [security|bugfix|enhancement|newpackage]
-                                      Type of the bodhi update
-      -b, --resolve-bugzillas BUGZILLA_IDS
-                                      Bugzilla IDs that are resolved with the
-                                      update
-      -p, --package TEXT              Package to update, if more than one
-                                      available, like in a monorepo configuration.
-                                      Use it multiple times to select multiple
-                                      packages.Defaults to all the packages listed
-                                      inside the config.
-      -h, --help                      Show this message and exit.
