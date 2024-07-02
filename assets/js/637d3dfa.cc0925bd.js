@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpackit_dev=self.webpackChunkpackit_dev||[]).push([[59941],{491:i=>{i.exports=JSON.parse('{"title":"dist-git","slug":"/category/dist-git","permalink":"/docs/category/dist-git","navigation":{"previous":{"title":"scan-in-osh","permalink":"/docs/cli/scan-in-osh"},"next":{"title":"init","permalink":"/docs/cli/dist-git/init"}}}')}}]);
