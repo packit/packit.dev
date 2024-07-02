@@ -6,8 +6,8 @@ authors:
   - lbarczio
 ---
 
-The second part of June is usually quite busy for our team. Why? The last couple of years, this has been a time of [DevConf.CZ conference](https://devconf.cz/). (The unpredictable January had been changed into a more pleasant June.)
-Even though the conference is important, it’s used as an opportunity for various people from around the globe to come to Brno and thanks to that, a lot is happening also during the days around.
+The first part of June is usually quite busy for our team. Why? The last couple of years, this has been a time of [DevConf.CZ conference](https://devconf.cz/). (The unpredictable January had been changed into a more pleasant June.)
+Even though the conference itself is important, it’s used as an opportunity for various people from around the globe to come to Brno and thanks to that, a lot is happening also during the days around.
 For the Packit team, it’s a nice opportunity to have the whole team together in one place – we can do some fun teambuilding (like canoeing this year) but also discuss any technical topics or meet our users and realise how are the real people behind all the nicknames. This time we also prepared something for them:
 
 ![Packit team at DevConf.CZ](./img/team_at_devconf.jpg)
