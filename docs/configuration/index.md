@@ -477,6 +477,12 @@ One of the tests failed for e6baab8. @admin check logs https://download.copr.fed
 For jobs related to the release automation (`propose_downstream`, `pull_from_upstream`, `koji_build` and `bodhi_update`),
 this message is used as an extension of the comment added by default by Packit. For these, the `commit_sha` is not provided.
 
+##### failure_issue
+###### create
+(*bool*)
+Whether to create an upstream issue for [`propose_downstream`](/docs/configuration/upstream/propose_downstream) failures. Defaults to
+`true`.
+
 #### issue_repository
 
 Use this key to be notified about errors of the downstream jobs (Koji build, Bodhi update, pull from upstream).
