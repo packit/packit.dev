@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 24 Jun 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 01 Jul 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 26 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-26</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-26</guid>
+            <pubDate>Mon, 01 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 26 (June 25th – July 1st)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-26-june-25th--july-1st">Week 26 (June 25th – July 1st)<a href="#week-26-june-25th--july-1st" class="hash-link" aria-label="Direct link to Week 26 (June 25th – July 1st)" title="Direct link to Week 26 (June 25th – July 1st)">​</a></h2><ul><li>Enabled HTTP/2 for Packit service. (<a href="https://github.com/packit/packit-service/pull/2450" target="_blank" rel="noopener noreferrer">packit-service#2450</a>)</li><li>It is now possible to disable reporting of <code>propose_downstream</code> failures by setting <code>notifications.failure_issue.create</code> in the configuration to <code>false</code>. (<a href="https://github.com/packit/packit-service/pull/2451" target="_blank" rel="noopener noreferrer">packit-service#2451</a>)</li></ul>]]></content:encoded>
+            <author>mfocko@redhat.com (Matej Focko)</author>
+            <category>2024-June</category>
+            <category>2024</category>
+            <category>June</category>
+        </item>
         <item>
             <title><![CDATA[Week 25 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-25</link>

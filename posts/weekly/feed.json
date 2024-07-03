@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-26",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-26-june-25th--july-1st\">Week 26 (June 25th – July 1st)<a href=\"#week-26-june-25th--july-1st\" class=\"hash-link\" aria-label=\"Direct link to Week 26 (June 25th – July 1st)\" title=\"Direct link to Week 26 (June 25th – July 1st)\">​</a></h2><ul><li>Enabled HTTP/2 for Packit service. (<a href=\"https://github.com/packit/packit-service/pull/2450\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2450</a>)</li><li>It is now possible to disable reporting of <code>propose_downstream</code> failures by setting <code>notifications.failure_issue.create</code> in the configuration to <code>false</code>. (<a href=\"https://github.com/packit/packit-service/pull/2451\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2451</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-26",
+            "title": "Week 26 in Packit",
+            "summary": "Week 26 (June 25th – July 1st)",
+            "date_modified": "2024-07-01T00:00:00.000Z",
+            "author": {
+                "name": "Matej Focko",
+                "url": "https://github.com/mfocko"
+            },
+            "tags": [
+                "2024-June",
+                "2024",
+                "June"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-25",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-25-june-18th--june-24th\">Week 25 (June 18th – June 24th)<a href=\"#week-25-june-18th--june-24th\" class=\"hash-link\" aria-label=\"Direct link to Week 25 (June 18th – June 24th)\" title=\"Direct link to Week 25 (June 18th – June 24th)\">​</a></h2><ul><li>We have fixed an issue that has been introduced by another bug fix.\nThis issue has caused an outage of upstream Koji builds.\n(<a href=\"https://github.com/packit/packit/pull/2329\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2329</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-25",
