@@ -55,10 +55,13 @@ With this configuration, you'll get builds in all stable fedora releases
   (`True` is `-1` and `False` is `60`).
 * **enable_net** - Specifies whether created Copr build should have access to network during its build.
   Defaults to `False` (Copr default, switched to `False` in June 2022).
-* **identifier** - Suffix added to the name of a GitHub check run. This is
-  useful when you have multiple `copr_build` jobs with different configuration.
+* **identifier** - Suffix added to the name of a GitHub check run. 
   For example if you [set this to "mock"](https://github.com/rpm-software-management/mock/pull/902/checks?check_run_id=6530714905), then a check run for Rawhide would be
   named "rpm-build:fedora-rawhide-x86\_64:mock".
+:::caution
+Make sure to configure this option if you are having multiple `copr_build` jobs in the configuration,
+otherwise the reporting may be incorrect.
+:::
 * **module_hotfixes** - The project will have `module_hotfixes=1` in the Copr generated repo files.
   This is useful when you build packages that need to be installed in a modular context.
   Defaults to `False`.

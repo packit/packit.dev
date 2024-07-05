@@ -477,6 +477,12 @@ One of the tests failed for e6baab8. @admin check logs https://download.copr.fed
 For jobs related to the release automation (`propose_downstream`, `pull_from_upstream`, `koji_build` and `bodhi_update`),
 this message is used as an extension of the comment added by default by Packit. For these, the `commit_sha` is not provided.
 
+##### failure_issue
+###### create
+(*bool*)
+Whether to create an upstream issue for [`propose_downstream`](/docs/configuration/upstream/propose_downstream) failures. Defaults to
+`true`.
+
 #### issue_repository
 
 Use this key to be notified about errors of the downstream jobs (Koji build, Bodhi update, pull from upstream).
@@ -521,8 +527,7 @@ You can find more info in the documentation.
 ```
 %changelog
 * Thu Oct 15 2020 Packit Service <user-cont-team+packit-service@redhat.com> - 0.18.0-1
-- Use inner archive directory in %setup macro
-- Use archive_root_dir_template
+- Update to version 0.18.0
 ```
 
 #### sources
@@ -685,6 +690,44 @@ require:
 
 ```
 
+#### status_name_template
+
+:::caution
+
+This is an experimental feature, right now it's not possible to retrigger Packit
+jobs using custom status name via GitHub Checks re-run.
+
+:::
+
+:::warning
+
+This setting allows you to **fully** customize the status name for the Packit
+jobs. You need to guarantee that each job expands to a unique status name.
+
+If this requirement isn't satisfied, it is possible for concurrent jobs sharing
+the same status name to override each other's statuses.
+
+:::
+
+(*string*)  Template that can be used to modify the (commit) status name that
+Packit uses by default. It is used in the following manner:
+
+```py
+status_name_template.format(…)
+```
+
+The template follows the [Format String Syntax](https://docs.python.org/3/library/string.html#formatstrings).
+
+This allows for automation with GitHub merge queues, or any other tools that
+depend on the consistent status naming.
+
+We provide the following variables:
+- `job_name`, e.g., `rpm-build`, `testing-farm`
+- `chroot`, e.g., `fedora-rawhide-ppc64le` (Copr), `RHEL-8.10.0-Nightly-x86_64` (internal TF)
+- `event`, e.g., `‹branch name›`
+- `identifier`
+- `package` - useful for monorepo setups, otherwise defaults to the generated package name from backward-compatibility layer
+
 ## Aliases
 
 To not need to change the config file when the new system version is released,
@@ -722,7 +765,7 @@ By default, the `x86_64` architecture is used.
 
 :::
 
-The information about releases is retrieved from Bodhi and because of the
+The information about releases [is retrieved from Bodhi](https://bodhi.fedoraproject.org/releases/) and because of the
 cache and required availability on Copr, it might take a while to get the
 newest state.
 

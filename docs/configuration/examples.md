@@ -71,7 +71,7 @@ fix-spec-file:
 
 </details>
 
-### Custom archive creation
+### Custom archive creation for SRPM
 <details>
   <summary>Creating archive with custom make target</summary>
 
@@ -107,9 +107,33 @@ create-archive:
 
 </details>
 
+### Custom archive creation for release syncing
+
+If you need to generate local archive(s) during release syncing, you can utilise e.g. `pre-sync` action
+to place the commands necessary for the creation. You also have to include the archive(s) in the list of files to
+be moved to the dist-git repo so that it is then handled by Packit from there.
+
+
+<details>
+  <summary>Creating an archive using tito and syncing it to dist-git repo</summary>
+
+```yaml
+actions:
+  pre-sync:
+    - tito build -o . --tgz
+
+files_to_sync:
+  - src:
+    - "<my-package>-*.tar.gz"
+    dest: .
+```
+
+</details>
+
+
 ### Custom changelog generation
 <details>
-  <summary>Using changelog entry from a file</summary>
+  <summary>Using file content as a changelog entry</summary>
 
 ```yaml
 changelog-entry:
@@ -124,23 +148,6 @@ changelog-entry:
 ```yaml
 changelog-entry:
   - bash -c 'git log --no-merges --pretty="format:- %s (%an)" $(git describe --tags --abbrev=0 ${PACKIT_PROJECT_UPSTREAM_TAG}^)..${PACKIT_PROJECT_UPSTREAM_TAG} --'
-```
-
-</details>
-
-### Creating source archive using 'tito' during release syncing
-<details>
-  <summary>Using pre-sync for running tito</summary>
-
-```yaml
-actions:
-  pre-sync:
-    - tito build -o . --tgz
-
-files_to_sync:
-  - src:
-    - "<my-package>-*.tar.gz"
-    dest: .
 ```
 
 </details>

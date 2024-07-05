@@ -250,6 +250,7 @@ Related to the `propose-downstream` and `pull-from-upstream` jobs.
 
 * `PACKIT_UPSTREAM_REPO` — absolute path to cloned upstream git repo (main branch) 
 * `PACKIT_DOWNSTREAM_REPO` — absolute path to cloned downstream git repo (target branch)
+* `PACKIT_PROJECT_VERSION` - version that is being proposed
 
 List of actions that provide these environment variables:
 * `post-upstream-clone`

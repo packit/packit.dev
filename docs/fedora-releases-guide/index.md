@@ -196,9 +196,11 @@ you should specify the [`upstream_tag_template`](/docs/configuration/#upstream_t
 via [`files_to_sync`](/docs/configuration/#files_to_sync) configuration key.
 - By default, Packit downloads sources defined in the spec file that contain URLs.
 You can override these URLs via [`sources`](/docs/configuration#sources) configuration key.
+
+##### Actions - use your own commands/scripts
 - You may utilise some of the [actions](/docs/configuration/actions/#syncing-the-release)
 for overriding the Packit default behaviour, for example:
-  - for the changelog entry generation, if you do not want the default `Update to version <version>`, you can use your own command(s)
+  - for the **changelog entry generation**, if you do not want the default `Update to version <version>`, you can use your own command(s)
     (here, the first one gets the git log between the corresponding tag and the tag before that one and the second
     command links the bugzilla(s)):
   
@@ -206,12 +208,13 @@ for overriding the Packit default behaviour, for example:
           - bash -c 'git log --no-merges --pretty="format:- %s (%an)" $(git describe --tags --abbrev=0 ${PACKIT_PROJECT_UPSTREAM_TAG}^)..${PACKIT_PROJECT_UPSTREAM_TAG} --'
           - bash -c '[ -z "$PACKIT_RESOLVED_BUGS" ] || echo ${PACKIT_RESOLVED_BUGS} | tr " " "\n" | sed "s/^/- Resolves /"'
   
-  - for a custom commit message for commit created by Packit:
+  - for a **custom commit message** for commit created by Packit:
 
         commit-message:
           - bash -c 'echo -e "Rebase to new upstream release ${PACKIT_PROJECT_VERSION}\n"'
           - bash -c '[ -z "$PACKIT_RESOLVED_BUGS" ] || echo ${PACKIT_RESOLVED_BUGS} | tr " " "\n" | sed "s/^/- Resolves /"'
-
+  - for **source archive(s) generation**, you can utilise e.g. `pre-sync` action, see 
+  [this example](/docs/configuration/examples#custom-archive-creation-for-release-syncing)
 
 #### Keeping dist-git branches non-divergent
 Packit currently syncs the release in a way that the branches become divergent (you can follow 
@@ -263,7 +266,7 @@ you can override this behaviour by specifying
 For a configuration example and retriggering, see [dist-git onboarding](./dist-git-onboarding.md#bodhi-update-job).
 
 
-# Permission overview
+## Permission overview
 
 The downstream automation is a pipeline of jobs:
 propose_downstream/pull_from_upstream -> Packit PR merge -> koji_build -> bodhi_update

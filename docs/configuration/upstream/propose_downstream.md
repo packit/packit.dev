@@ -52,6 +52,8 @@ configuration specifics, see [the subsection below](#syncing-the-release-to-cent
   You can also use the [aliases provided by Packit](/docs/configuration#aliases)
   to not need to change the config file when the new system version is released.
 
+* [**notifications.failure_issue.create**](/docs/configuration#failure_issue) - whether to create an upstream issue about failure. Defaults to `true`.
+
 :::info
 Current default behaviour of the release syncing results in having divergent dist-git branches. If you want to avoid this,
 please see the details [here](/docs/fedora-releases-guide#keeping-dist-git-branches-non-divergent).
@@ -93,9 +95,18 @@ We value general feedback as well, so don't hesitate to [reach out](/#contact)!
 
 :::
 
+
+:::caution
+
+At the moment, the upload to lookaside cache is being bypassed in the Packit service.
+If you prefer having this step handled by the automation, you can  
+use [Packit CLI](/docs/cli/propose-downstream) instead.
+
+:::
+
 To sync the release to CentOS Stream, you currently need to specify the following parameters:
 - `pkg_tool: centpkg` (the default is `fedpkg`)
-- `dist_git_branches`:  `c8s` and/or `c9s`. 
+- `dist_git_branches`:  a list of dist-git branches, e.g. `c8s`, `c9s`
 
 Besides that, you need to:
 1. specify the [`packages`](/docs/configuration#packages) with distinct items for Fedora and CentOS Stream. 

@@ -27,7 +27,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Packit runs your tests in{" "}
-        <Link to="https://docs.testing-farm.io/general/0.1/index.html">
+        <Link to="https://docs.testing-farm.io/Testing%20Farm/0.1/index.html">
           Testing Farm
         </Link>{" "}
         and can test either the RPM package built in Copr or trigger tests
