@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-27",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-27-july-2nd--july-8th\">Week 27 (July 2nd – July 8th)<a href=\"#week-27-july-2nd--july-8th\" class=\"hash-link\" aria-label=\"Direct link to Week 27 (July 2nd – July 8th)\" title=\"Direct link to Week 27 (July 2nd – July 8th)\">​</a></h2><ul><li>Packit now updates its own, not yet merged, pull requests instead of creating new ones when syncing new releases downstream. (<a href=\"https://github.com/packit/packit/pull/2204\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2204</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-27",
+            "title": "Week 27 in Packit",
+            "summary": "Week 27 (July 2nd – July 8th)",
+            "date_modified": "2024-07-08T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2024-July",
+                "2024",
+                "July"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-26",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-26-june-25th--july-1st\">Week 26 (June 25th – July 1st)<a href=\"#week-26-june-25th--july-1st\" class=\"hash-link\" aria-label=\"Direct link to Week 26 (June 25th – July 1st)\" title=\"Direct link to Week 26 (June 25th – July 1st)\">​</a></h2><ul><li>Enabled HTTP/2 for Packit service. (<a href=\"https://github.com/packit/packit-service/pull/2450\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2450</a>)</li><li>It is now possible to disable reporting of <code>propose_downstream</code> failures by setting <code>notifications.failure_issue.create</code> in the configuration to <code>false</code>. (<a href=\"https://github.com/packit/packit-service/pull/2451\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2451</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-26",
