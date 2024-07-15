@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-28",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-28-july-9th--july-15th\">Week 28 (July 9th – July 15th)<a href=\"#week-28-july-9th--july-15th\" class=\"hash-link\" aria-label=\"Direct link to Week 28 (July 9th – July 15th)\" title=\"Direct link to Week 28 (July 9th – July 15th)\">​</a></h2><ul><li>We have improved the babysitting of Testing Farm runs to better handle API outages.\n(<a href=\"https://github.com/packit/packit-service/pull/2464\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2464</a>)</li><li>We have adjusted commenting behaviour regarding Packit logs on release syncing PRs.\n(<a href=\"https://github.com/packit/packit-service/pull/2373\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2373</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-28",
+            "title": "Week 28 in Packit",
+            "summary": "Week 28 (July 9th – July 15th)",
+            "date_modified": "2024-07-15T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2024-July",
+                "2024",
+                "July"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-27",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-27-july-2nd--july-8th\">Week 27 (July 2nd – July 8th)<a href=\"#week-27-july-2nd--july-8th\" class=\"hash-link\" aria-label=\"Direct link to Week 27 (July 2nd – July 8th)\" title=\"Direct link to Week 27 (July 2nd – July 8th)\">​</a></h2><ul><li>Packit now updates its own, not yet merged, pull requests instead of creating new ones when syncing new releases downstream. (<a href=\"https://github.com/packit/packit/pull/2204\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2204</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-27",
