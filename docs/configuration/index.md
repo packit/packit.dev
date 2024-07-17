@@ -728,6 +728,11 @@ We provide the following variables:
 - `identifier`
 - `package` - useful for monorepo setups, otherwise defaults to the generated package name from backward-compatibility layer
 
+#### sig
+
+(*string*)  Specifies the SIG (special interest group). This option is used
+during cloning of the dist-git repos that are maintained in the SIG namespaces.
+
 ## Aliases
 
 To not need to change the config file when the new system version is released,
