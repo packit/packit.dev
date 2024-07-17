@@ -774,6 +774,13 @@ The information about releases [is retrieved from Bodhi](https://bodhi.fedorapro
 cache and required availability on Copr, it might take a while to get the
 newest state.
 
+#### sync_test_job_statuses_with_builds
+
+(*bool*) When set to `true` (the default), test job statuses are updated together with their corresponding
+build job statuses. When set to `false`, while test jobs are waiting for their corresponding build jobs
+to finish, their statuses remain in pending state and only build job statuses are updated, for example with
+`SRPM build is in progress...` or `Starting RPM build...`.
+
 ## User configuration file
 
 :::danger

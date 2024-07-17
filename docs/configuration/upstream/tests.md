@@ -226,6 +226,14 @@ The labels should be in the format of comma-separated string.
 You can also configure [`test_command.default_labels`](/docs/configuration#default_labels) to allow commonly used job combinations
 to be triggered without the need for manual specification.
 
+## Test job statuses
+By default, while test jobs are waiting for their corresponding build jobs to finish,
+their statuses share updates with the build jobs, for example `SRPM build is in progress...`
+or `Starting RPM build...`. This can be disabled by setting
+[`sync_test_job_statuses_with_builds`](/docs/configuration#sync_test_job_statuses_with_builds)
+to `false`. If disabled, test job statuses remain in pending state until their corresponding
+build jobs are finished.
+
 ## Creating Tests
 
 The easiest way to get started with defining tests is to use the [tmt][tmt] tool
