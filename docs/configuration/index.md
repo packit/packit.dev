@@ -749,6 +749,13 @@ We provide the following variables:
 (*string*)  Specifies the SIG (special interest group). This option is used
 during cloning of the dist-git repos that are maintained in the SIG namespaces.
 
+#### sync_test_job_statuses_with_builds
+
+(*bool*) When set to `true` (the default), test job statuses are updated together with their corresponding
+build job statuses. When set to `false`, while test jobs are waiting for their corresponding build jobs
+to finish, their statuses remain in pending state and only build job statuses are updated, for example with
+`SRPM build is in progress...` or `Starting RPM build...`.
+
 #### osh_diff_scan_after_copr_build
 
 (*bool*) Whether to run a differential scan in [OpenScanHub](https://openscanhub.fedoraproject.org/) 
@@ -806,13 +813,6 @@ By default, the `x86_64` architecture is used.
 The information about releases [is retrieved from Bodhi](https://bodhi.fedoraproject.org/releases/) and because of the
 cache and required availability on Copr, it might take a while to get the
 newest state.
-
-#### sync_test_job_statuses_with_builds
-
-(*bool*) When set to `true` (the default), test job statuses are updated together with their corresponding
-build job statuses. When set to `false`, while test jobs are waiting for their corresponding build jobs
-to finish, their statuses remain in pending state and only build job statuses are updated, for example with
-`SRPM build is in progress...` or `Starting RPM build...`.
 
 ## User configuration file
 
