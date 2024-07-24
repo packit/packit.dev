@@ -68,6 +68,8 @@ otherwise the reporting may be incorrect.
 * **follow_fedora_branching** - The project will get branched automatically by
   the Copr. This setting is useful if you're releasing to the Copr.
   Defaults to `False`.
+* **osh_diff_scan_after_copr_build** - Whether to run a differential scan in [OpenScanHub](https://openscanhub.fedoraproject.org/) 
+after the Copr build successfully completes. See more details [here](/docs/configuration#osh_diff_scan_after_copr_build).
 
 ###  Top level keys affecting a Copr build
 Beside the job specific keys above you can specify a set of top level keys 

@@ -749,6 +749,23 @@ We provide the following variables:
 (*string*)  Specifies the SIG (special interest group). This option is used
 during cloning of the dist-git repos that are maintained in the SIG namespaces.
 
+#### osh_diff_scan_after_copr_build
+
+(*bool*) Whether to run a differential scan in [OpenScanHub](https://openscanhub.fedoraproject.org/) 
+after the Copr build successfully completes.
+This is an experimental feature and for now runs only for `fedora-rawhide-x86_64`. Defaults to `true`.
+The scan is run only for Copr builds triggered by pull requests, and only if there is 
+also a Copr build job with `trigger: commit` present in the configuration.
+Additionally, the target branch of the pull request must match the branch specified in 
+the configuration for that job. For more details on setting up such a job, refer to
+[this documentation](/docs/configuration/upstream/copr_build.md).
+
+:::info
+This functionality is an initial prototype and both configuration and functionality
+will likely change in the future.
+We will be happy for any feedback regarding it, [please contact us](/#contact)!
+:::
+
 ## Aliases
 
 To not need to change the config file when the new system version is released,
