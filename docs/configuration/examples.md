@@ -111,7 +111,8 @@ create-archive:
 
 If you need to generate local archive(s) during release syncing, you can utilise e.g. `pre-sync` action
 to place the commands necessary for the creation. You also have to include the archive(s) in the list of files to
-be moved to the dist-git repo so that it is then handled by Packit from there.
+be moved to the dist-git repo so that it is then handled by Packit from there. **Note:** Beware of how Packit uploads
+files to lookaside cache or adds them to dist-git (see [this note][files_to_sync_info] for more details).
 
 
 <details>
@@ -130,6 +131,7 @@ files_to_sync:
 
 </details>
 
+[files_to_sync_info]: ./index.md#files_to_sync
 
 ### Custom changelog generation
 <details>
