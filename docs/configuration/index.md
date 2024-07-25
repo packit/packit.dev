@@ -235,6 +235,21 @@ and [`pull_from_upstream`](#pull_from_upstream) jobs.
 (*list of strings or dicts*) A list of relative paths to files in the upstream
 repo which are meant to be copied to dist-git during an update.
 
+:::info
+
+All files in the dist-git repo are committed using `git add -A`. Make sure all
+artifacts are ignored either directly using glob patterns in `.gitignore` or
+indirectly, e.g. when Packit runs `fedpkg new-sources`, if you do not want to
+include the files in the commit.
+
+Files to be uploaded to lookaside cache also use this interface, where all files
+mentioned in the spec file's `Source` are uploaded to the lookaside cache, *unless*
+the file is already being tracked in dist-git. **Note:** this implies that new
+`Source` files are [always added][packit#2365] as lookaside cache as part of an
+update even if they should be tracked in dist-git instead. 
+
+:::
+
 Spec file path and config file path are always included by `packit init`
 but can be manually removed from the list.
 
@@ -251,6 +266,7 @@ The fields for a dictionary item in the list are the following:
   to the source and/or destination path (e.g. a `protect` filter applies relative to `dest` path)
 
 [rsync filter rules]: https://www.man7.org/linux/man-pages/man1/rsync.1.html#FILTER_RULES
+[packit#2365]: https://github.com/packit/packit/issues/2365
 
 ##### Examples:
 
