@@ -28,6 +28,8 @@ Overall, the workshop was a success and we are happy for our great users for com
 
 Of all the various proposals prepared by our team (and there as a lot!), 3 were accepted and we were able to show some interesting topics to the audience.
 
+![Laura and Franta presenting](./img/laura_franta_presenting.jpg)
+
 The first session was an interactive on hold by Laura and František about changelogs – we used a Mentimer platform to be able to interact with the audience. We could not only collect information what people are interested to see in changelogs or what tooling do they use, but also showed charts from the research Laura made as part of here diploma thesis the last year. As part of the session, we were able to show the changelog automation we use in Packit. There is also [a blog post](https://packit.dev/posts/changelogs) covering the talk and all the interesting findings.
 
 For the next session, František took a bunch of happy (of course..) Packit users and organised a user showcase. In just half an hour 8 people went to stage and provided an introduction to Packit, tmt, Testing Farm and showed 4 interesting usecases. Recording can be found [here](https://www.youtube.com/watch?v=7n8pypmrQh4). Interestingly, the two of the usecases overlayed – Cockpit has introduced their tests-cases into their dependencies to realise issues soon and one of such dependencies is Podman. Both Podman and Cockpit was presented on the stage.
@@ -48,3 +50,5 @@ Additionally, Siteshwar Vashisht presented about OpenScanHub, a service for stat
 ---
 
 So, that was it. A DevConf week we enjoy being part of same as enjoying it being over.
+
+![Team at a photo booth](./img/team_booth.jpg)
