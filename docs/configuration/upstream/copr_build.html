@@ -17,8 +17,8 @@
 <link rel="alternate" type="application/rss+xml" href="/posts/weekly/rss.xml" title="Packit Weekly RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/posts/weekly/atom.xml" title="Packit Weekly Atom Feed">
 <link rel="alternate" type="application/json" href="/posts/weekly/feed.json" title="Packit Weekly JSON Feed"><link rel="stylesheet" href="/assets/css/styles.3595ad89.css">
-<link rel="preload" href="/assets/js/runtime~main.0a752aa8.js" as="script">
-<link rel="preload" href="/assets/js/main.14522767.js" as="script">
+<link rel="preload" href="/assets/js/runtime~main.ea18d98b.js" as="script">
+<link rel="preload" href="/assets/js/main.0b0a8281.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}return t}()||function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -42,7 +42,8 @@ otherwise the reporting may be incorrect.</p></div></div></li><li><strong>module
 This is useful when you build packages that need to be installed in a modular context.
 Defaults to <code>False</code>.</li><li><strong>follow_fedora_branching</strong> - The project will get branched automatically by
 the Copr. This setting is useful if you&#x27;re releasing to the Copr.
-Defaults to <code>False</code>.</li></ul><h3 class="anchor anchorWithStickyNavbar_LWe7" id="top-level-keys-affecting-a-copr-build">Top level keys affecting a Copr build<a href="#top-level-keys-affecting-a-copr-build" class="hash-link" aria-label="Direct link to Top level keys affecting a Copr build" title="Direct link to Top level keys affecting a Copr build">​</a></h3><p>Beside the job specific keys above you can specify a set of top level keys
+Defaults to <code>False</code>.</li><li><strong>osh_diff_scan_after_copr_build</strong> - Whether to run a differential scan in <a href="https://openscanhub.fedoraproject.org/" target="_blank" rel="noopener noreferrer">OpenScanHub</a>
+after the Copr build successfully completes. See more details <a href="/docs/configuration#osh_diff_scan_after_copr_build">here</a>.</li></ul><h3 class="anchor anchorWithStickyNavbar_LWe7" id="top-level-keys-affecting-a-copr-build">Top level keys affecting a Copr build<a href="#top-level-keys-affecting-a-copr-build" class="hash-link" aria-label="Direct link to Top level keys affecting a Copr build" title="Direct link to Top level keys affecting a Copr build">​</a></h3><p>Beside the job specific keys above you can specify a set of top level keys
 (or package level keys in a monorepo configuration)
 that can change the behaviour of your Copr builds:</p><ul><li><a href="https://packit.dev/docs/configuration#merge_pr_in_ci" target="_blank" rel="noopener noreferrer"><strong>merge_pr_in_ci</strong></a></li><li><a href="https://packit.dev/docs/configuration#update_release" target="_blank" rel="noopener noreferrer"><strong>update_release</strong></a></li><li><a href="https://packit.dev/docs/configuration#release_suffix" target="_blank" rel="noopener noreferrer"><strong>release_suffix</strong></a></li><li><a href="https://packit.dev/docs/configuration#srpm_build_deps" target="_blank" rel="noopener noreferrer"><strong>srpm_build_deps</strong></a></li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="using-a-custom-copr-project">Using a custom Copr project<a href="#using-a-custom-copr-project" class="hash-link" aria-label="Direct link to Using a custom Copr project" title="Direct link to Using a custom Copr project">​</a></h2><p>When using a custom Copr project (by specifying <code>project</code> and <code>owner</code>) you need to:</p><ul><li>allow Packit to build in your custom Copr project,</li><li>allow builds from your forge project.</li></ul><h3 class="anchor anchorWithStickyNavbar_LWe7" id="allow-packit-to-build-in-your-custom-project">Allow Packit to build in your custom project<a href="#allow-packit-to-build-in-your-custom-project" class="hash-link" aria-label="Direct link to Allow Packit to build in your custom project" title="Direct link to Allow Packit to build in your custom project">​</a></h3><p>When using a custom <code>owner</code>, Packit Service asks for <code>builder</code> permission the
 first time it tries to build in the project. In case the configuration of the
@@ -77,7 +78,7 @@ project.</p></li></ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><d
                     @packit@fosstodon.org
                   </a> (Mastodon)
                 </li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/usage">Usage Charts</a></li><li class="footer__item"><a class="footer__link-item" href="/posts">Blog Posts</a></li><li class="footer__item"><a href="https://github.com/packit" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 Packit is a Red Hat sponsored free software project. Built with Docusaurus.</div></div></div></footer></div>
-<script src="/assets/js/runtime~main.0a752aa8.js"></script>
-<script src="/assets/js/main.14522767.js"></script>
+<script src="/assets/js/runtime~main.ea18d98b.js"></script>
+<script src="/assets/js/main.0b0a8281.js"></script>
 </body>
 </html>
