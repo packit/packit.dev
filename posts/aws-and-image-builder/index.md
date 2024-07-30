@@ -14,6 +14,8 @@ RPM package with your pull request changes and asks the Image Builder to install
 inside a brand new cloud image.
 Let's have a look at the prerequisites for this.
 
+<!--truncate-->
+
 # Join the Red Hat Developer Program
 
 If you don't already have a business account you can create a
