@@ -4,10 +4,23 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 22 Jul 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Jul 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 30 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-30</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-30</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 30 (July 23rd – July 29th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-30-july-23rd--july-29th">Week 30 (July 23rd – July 29th)<a href="#week-30-july-23rd--july-29th" class="hash-link" aria-label="Direct link to Week 30 (July 23rd – July 29th)" title="Direct link to Week 30 (July 23rd – July 29th)">​</a></h2><ul><li><code>packit pull-from-upstream</code> now allows omitting <code>upstream_project_url</code> in the configuration in which case the interaction with the upstream repository is skipped during release syncing. (<a href="https://github.com/packit/packit/pull/2354" target="_blank" rel="noopener noreferrer">packit#2354</a>)</li><li>We have added the initial version of functionality for running scans in OpenScanHub. You can read more about this functionality
+<a href="https://packit.dev/docs/configuration#osh_diff_scan_after_copr_build" target="_blank" rel="noopener noreferrer">here</a>. (<a href="https://github.com/packit/packit-service/pull/2472" target="_blank" rel="noopener noreferrer">packit-service#2472</a>)</li><li>Added a new configuration option <code>sync_test_job_statuses_with_builds</code> that controls whether test job statuses are updated together with their corresponding build job statuses. When set to <code>false</code>, while tests jobs are waiting for their corresponding build jobs to finish, their statuses remain in pending state and only build job statuses are updated. (<a href="https://github.com/packit/packit-service/pull/2470" target="_blank" rel="noopener noreferrer">packit-service#2470</a>)</li></ul>]]></content:encoded>
+            <author>mfocko@redhat.com (Matej Focko)</author>
+            <category>2024-July</category>
+            <category>2024</category>
+            <category>July</category>
+        </item>
         <item>
             <title><![CDATA[Week 29 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-29</link>
