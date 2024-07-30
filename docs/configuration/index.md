@@ -770,7 +770,7 @@ the configuration for that job. For more details on setting up such a job, refer
 :::info
 This functionality is an initial prototype and both configuration and functionality
 will likely change in the future.
-We will be happy for any feedback regarding it, [please contact us](/#contact)!
+We will be happy for any feedback regarding it, [please contact us](https://github.com/packit/packit/discussions/2371)!
 :::
 
 ## Aliases
