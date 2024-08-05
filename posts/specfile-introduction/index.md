@@ -13,6 +13,8 @@ has been created for that very purpose. It is a pure Python library that allows 
 edit different parts of a spec file while doing its best to keep the resulting changeset minimal
 (no unnecessary whitespace changes etc.).
 
+<!--truncate-->
+
 ## Installation
 
 The library is packaged for Fedora, EPEL 9 and EPEL 8 and you can simply install it with dnf:

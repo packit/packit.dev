@@ -19,6 +19,8 @@ To smoothen this transition, we kindly encourage you to enable one of these jobs
 This recommendation is particularly important if you belong to one of the groups affected by the two previous points.
 This proactive step will help us identify and address any issues promptly.
 
+<!--truncate-->
+
 Both instances can be run at the same time and the behaviour can be configured via the `packit_instances` configuration key,
 which is by default set to `["prod"]`. Picking just one instance is required only for `koji_build` and `bodhi_update` jobs since
 both instances work with the production instances of Fedora systems. To avoid too much noise in your dist-git PRs, you

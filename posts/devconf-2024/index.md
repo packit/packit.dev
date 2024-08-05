@@ -12,6 +12,8 @@ For the Packit team, it’s a nice opportunity to have the whole team together i
 
 ![Packit team at DevConf.CZ](./img/team_at_devconf.jpg)
 
+<!--truncate-->
+
 ## Packit workshop
 
 Before DevConf, we recognized a unique opportunity: numerous users and potential users of Packit would be visiting Brno for the conference. Therefore, we decided to organise an in-person workshop with a main focus on our release automation. We had previously organised multiple online runs, for which you can find the materials [here](https://packit.dev/docs/workshops-materials), so we were mostly prepared. This initiative brought both Red Hatters and non-Red Hatters, resulting in a rich exchange of ideas and great feedback. In the end, the workshop served not only for learning about our release automation but also about the CI capabilities of Packit in upstream.

@@ -6,9 +6,12 @@ authors:
   - lbarczio
 ---
 
-Last month, we had the pleasure of engaging with a dynamic audience during our interactive talk on changelogs at the i[DevConf](https://www.devconf.info/cz/) in Brno, Czech Republic. In case you missed it, you can watch the recording [here](https://youtu.be/TSifrKWNQT0?si=kRlu7PcQZwSwpy0R). Throughout the session, we explored various aspects of changelog usage, including their content, format, and the potential for automation. By asking a series of questions to the attendees, we gathered insights and opinions that highlighted both common practices and divergent viewpoints within the community. In this follow-up article, we aim to summarise the key findings from our discussion, analyse the trends and preferences that emerged, and offer our reflections on the role of changelogs in software development.
+Last month, we had the pleasure of engaging with a dynamic audience during our interactive talk on changelogs at the [DevConf](https://www.devconf.info/cz/) in Brno, Czech Republic. In case you missed it, you can watch the recording [here](https://youtu.be/TSifrKWNQT0?si=kRlu7PcQZwSwpy0R). Throughout the session, we explored various aspects of changelog usage, including their content, format, and the potential for automation. By asking a series of questions to the attendees, we gathered insights and opinions that highlighted both common practices and divergent viewpoints within the community. In this follow-up article, we aim to summarise the key findings from our discussion, analyse the trends and preferences that emerged, and offer our reflections on the role of changelogs in software development.
 
 ![foto from the conference 1](./img/devconf_changelogs1.jpg)
+
+<!--truncate-->
+
 ![foto from the conference 2](./img/devconf_changelogs2.jpg)
 
 ## Content
