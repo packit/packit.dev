@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpackit_dev=self.webpackChunkpackit_dev||[]).push([[39145],{69989:s=>{s.exports=JSON.parse('{"label":"shift left","permalink":"/posts/tags/shift-left","allTagsPath":"/posts/tags","count":1}')}}]);
