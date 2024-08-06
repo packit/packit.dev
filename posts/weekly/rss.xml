@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 29 Jul 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 05 Aug 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 31 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-31</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-31</guid>
+            <pubDate>Mon, 05 Aug 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 31 (July 30th – August 5th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-31-july-30th--august-5th">Week 31 (July 30th – August 5th)<a href="#week-31-july-30th--august-5th" class="hash-link" aria-label="Direct link to Week 31 (July 30th – August 5th)" title="Direct link to Week 31 (July 30th – August 5th)">​</a></h2><ul><li>It is now possible to run tests for releases. (<a href="https://github.com/packit/packit-service/pull/2490" target="_blank" rel="noopener noreferrer">packit/packit-service#2490</a>)</li></ul>]]></content:encoded>
+            <author>lbarczio@redhat.com (Laura Barcziová)</author>
+            <category>2024-August</category>
+            <category>2024</category>
+            <category>August</category>
+        </item>
         <item>
             <title><![CDATA[Week 30 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-30</link>
