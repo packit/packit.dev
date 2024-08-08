@@ -100,7 +100,7 @@ To use the configuration file from the dist-git pull request you are commenting 
 Release Monitoring (by default adds `Resolves` to changelog/commit and exposes `PACKIT_RESOLVED_BUGS` to the `changelog-entry` and `commit-message`
 actions). If you want to override the referenced resolved bug set by Packit, you can retrigger `pull_from_upstream` like this:
 
-    /packit pull-from-upstream --resolved-bugs rhbz#123,rhbz#124
+    /packit pull-from-upstream --resolve-bug rhbz#123,rhbz#124
 
 ## Example
 
