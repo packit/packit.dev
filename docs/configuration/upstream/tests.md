@@ -175,6 +175,7 @@ There are also environment variables set by Packit:
 * `PACKIT_BUILD_LOG_URL`
 * `PACKIT_SRPM_URL`
 * `PACKIT_COMMIT_SHA`
+* `PACKIT_TAG_NAME`, tag name from release event, not set if the test job doesn't have **release** trigger
 * `PACKIT_COPR_PROJECT`, e.g. `packit/packit-releases`
 * `PACKIT_COPR_RPMS`, space-separated list of RPMs that were built in Copr
 
