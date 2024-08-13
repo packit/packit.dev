@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-32",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-32-august-6th--august-12th\">Week 32 (August 6th – August 12th)<a href=\"#week-32-august-6th--august-12th\" class=\"hash-link\" aria-label=\"Direct link to Week 32 (August 6th – August 12th)\" title=\"Direct link to Week 32 (August 6th – August 12th)\">​</a></h2><ul><li>Packit now passes <code>PACKIT_TAG_NAME</code> to the Testing Farm run when it's triggered by a release event.\nThanks <a href=\"https://github.com/Frawless\" target=\"_blank\" rel=\"noopener noreferrer\">@Frawless</a>.\n(<a href=\"https://github.com/packit/packit-service/pull/2494\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2494</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-32",
+            "title": "Week 32 in Packit",
+            "summary": "Week 32 (August 6th – August 12th)",
+            "date_modified": "2024-08-12T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2024-August",
+                "2024",
+                "August"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-31",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-31-july-30th--august-5th\">Week 31 (July 30th – August 5th)<a href=\"#week-31-july-30th--august-5th\" class=\"hash-link\" aria-label=\"Direct link to Week 31 (July 30th – August 5th)\" title=\"Direct link to Week 31 (July 30th – August 5th)\">​</a></h2><ul><li>It is now possible to run tests for releases. (<a href=\"https://github.com/packit/packit-service/pull/2490\" target=\"_blank\" rel=\"noopener noreferrer\">packit/packit-service#2490</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-31",

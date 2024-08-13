@@ -4,10 +4,24 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 05 Aug 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 12 Aug 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 32 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-32</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-32</guid>
+            <pubDate>Mon, 12 Aug 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 32 (August 6th – August 12th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-32-august-6th--august-12th">Week 32 (August 6th – August 12th)<a href="#week-32-august-6th--august-12th" class="hash-link" aria-label="Direct link to Week 32 (August 6th – August 12th)" title="Direct link to Week 32 (August 6th – August 12th)">​</a></h2><ul><li>Packit now passes <code>PACKIT_TAG_NAME</code> to the Testing Farm run when it's triggered by a release event.
+Thanks <a href="https://github.com/Frawless" target="_blank" rel="noopener noreferrer">@Frawless</a>.
+(<a href="https://github.com/packit/packit-service/pull/2494" target="_blank" rel="noopener noreferrer">packit-service#2494</a>)</li></ul>]]></content:encoded>
+            <author>nforro@redhat.com (Nikola Forró)</author>
+            <category>2024-August</category>
+            <category>2024</category>
+            <category>August</category>
+        </item>
         <item>
             <title><![CDATA[Week 31 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-31</link>

@@ -2,11 +2,29 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2024-08-05T00:00:00.000Z</updated>
+    <updated>2024-08-12T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 32 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2024/week-32</id>
+        <link href="https://packit.dev/posts/weekly/2024/week-32"/>
+        <updated>2024-08-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 32 (August 6th – August 12th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-32-august-6th--august-12th">Week 32 (August 6th – August 12th)<a href="#week-32-august-6th--august-12th" class="hash-link" aria-label="Direct link to Week 32 (August 6th – August 12th)" title="Direct link to Week 32 (August 6th – August 12th)">​</a></h2><ul><li>Packit now passes <code>PACKIT_TAG_NAME</code> to the Testing Farm run when it's triggered by a release event.
+Thanks <a href="https://github.com/Frawless" target="_blank" rel="noopener noreferrer">@Frawless</a>.
+(<a href="https://github.com/packit/packit-service/pull/2494" target="_blank" rel="noopener noreferrer">packit-service#2494</a>)</li></ul>]]></content>
+        <author>
+            <name>Nikola Forró</name>
+            <email>nforro@redhat.com</email>
+            <uri>https://github.com/nforro</uri>
+        </author>
+        <category label="2024-August" term="2024-August"/>
+        <category label="2024" term="2024"/>
+        <category label="August" term="August"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 31 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2024/week-31</id>
