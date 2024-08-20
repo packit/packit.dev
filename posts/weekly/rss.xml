@@ -4,10 +4,23 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 12 Aug 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 19 Aug 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 33 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-33</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-33</guid>
+            <pubDate>Mon, 19 Aug 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 33 (August 13th – August 19th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-33-august-13th--august-19th">Week 33 (August 13th – August 19th)<a href="#week-33-august-13th--august-19th" class="hash-link" aria-label="Direct link to Week 33 (August 13th – August 19th)" title="Direct link to Week 33 (August 13th – August 19th)">​</a></h2><ul><li>Several internal, but also performance improvements were done on our dashboard, thanks to
+<a href="https://github.com/Venefilyn" target="_blank" rel="noopener noreferrer">Freya Gustavsson</a> (<a href="https://github.com/packit/dashboard/pull/435" target="_blank" rel="noopener noreferrer">packit/dashboard#435</a>)!</li></ul>]]></content:encoded>
+            <author>lbarczio@redhat.com (Laura Barcziová)</author>
+            <category>2024-August</category>
+            <category>2024</category>
+            <category>August</category>
+        </item>
         <item>
             <title><![CDATA[Week 32 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-32</link>

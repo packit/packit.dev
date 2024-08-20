@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-33",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-33-august-13th--august-19th\">Week 33 (August 13th – August 19th)<a href=\"#week-33-august-13th--august-19th\" class=\"hash-link\" aria-label=\"Direct link to Week 33 (August 13th – August 19th)\" title=\"Direct link to Week 33 (August 13th – August 19th)\">​</a></h2><ul><li>Several internal, but also performance improvements were done on our dashboard, thanks to\n<a href=\"https://github.com/Venefilyn\" target=\"_blank\" rel=\"noopener noreferrer\">Freya Gustavsson</a> (<a href=\"https://github.com/packit/dashboard/pull/435\" target=\"_blank\" rel=\"noopener noreferrer\">packit/dashboard#435</a>)!</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-33",
+            "title": "Week 33 in Packit",
+            "summary": "Week 33 (August 13th – August 19th)",
+            "date_modified": "2024-08-19T00:00:00.000Z",
+            "author": {
+                "name": "Laura Barcziová",
+                "url": "https://github.com/lbarcziova"
+            },
+            "tags": [
+                "2024-August",
+                "2024",
+                "August"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-32",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-32-august-6th--august-12th\">Week 32 (August 6th – August 12th)<a href=\"#week-32-august-6th--august-12th\" class=\"hash-link\" aria-label=\"Direct link to Week 32 (August 6th – August 12th)\" title=\"Direct link to Week 32 (August 6th – August 12th)\">​</a></h2><ul><li>Packit now passes <code>PACKIT_TAG_NAME</code> to the Testing Farm run when it's triggered by a release event.\nThanks <a href=\"https://github.com/Frawless\" target=\"_blank\" rel=\"noopener noreferrer\">@Frawless</a>.\n(<a href=\"https://github.com/packit/packit-service/pull/2494\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2494</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-32",
