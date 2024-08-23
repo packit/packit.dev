@@ -575,13 +575,15 @@ For the details on how to enable staging instance, please see [the onboarding gu
 (*string*) This field requires a Python regex pattern. It's used with `re.match` to:
 - include tags: When identifying the latest upstream tag, this pattern filters in specific tags.
 - in Packit Service: In `propose_downstream` and `pull_from_upstream` jobs, it determines whether a specific release 
-should trigger a reaction.
+should trigger a reaction. However, for `pull_from_upstream`, it is applied only when the 
+`upstream_project_url` is configured.
 
 #### upstream_tag_exclude
 (*string*) This field requires a Python regex pattern. It's used with `re.match` to:
 - exclude tags: When identifying the latest upstream tag, this pattern omits certain tags.
 - in Packit Service: In `propose_downstream` and `pull_from_upstream` jobs, it determines whether a specific release 
-should trigger a reaction.
+should trigger a reaction. However, for `pull_from_upstream`, it is applied only when the 
+`upstream_project_url` is configured.
 
 #### prerelease_suffix_pattern
 (*string*) This field requires a partial Python regex pattern. It is used to match recognized pre-release suffixes.

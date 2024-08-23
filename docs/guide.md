@@ -390,8 +390,7 @@ in [the document](/docs/cli/srpm) dedicated to the `srpm` command.
 
 When you are not allowed or do not want to run packit command from the upstream
 git repository, you can run commands from the cloned dist-git repository in the
-same way as you do from upstream.  Make sure, that you specify the
-`upstream_project_url` in your configuration.
+same way as you do from upstream.  
 
 Is your `packit srpm` finally passing? If not, feel free to [reach out to us](/#contact).
 If yes, let's proceed to the next level.

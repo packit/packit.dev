@@ -74,11 +74,14 @@ as shown below.
 
 If you want to restrict what releases with corresponding tags Packit should react on, 
 you can utilise the configuration options [`upstream_tag_include`](/docs/configuration/#upstream_tag_include) and
-[`upstream_tag_exclude`](/docs/configuration/#upstream_tag_exclude).
+[`upstream_tag_exclude`](/docs/configuration/#upstream_tag_exclude). However, these are currently taken into consideration only when the 
+`upstream_project_url` is configured. In case of omitting it in configuration, you can adjust the releases filtering
+using the `release-monitoring.org` project settings.
 
 :::caution
 
-It is necessary to set the [`upstream_project_url`](/docs/configuration/#upstream_project_url) (upstream project Git repository URL) configuration option. However, upstream tarball URL is taken from the spec file or from [`sources`](/docs/configuration/#sources) (see below).
+Upstream tarball URL is taken from the spec file or from [`sources`](/docs/configuration/#sources) (see below) 
+and not from `upstream_project_url`.
 
 :::
 
@@ -262,7 +265,6 @@ It's quite simple, isn't it?
 
 
 ```yaml
-upstream_project_url: https://github.com/upstream/package
 jobs:
 
 - job: pull_from_upstream

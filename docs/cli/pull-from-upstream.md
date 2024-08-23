@@ -12,13 +12,13 @@ upstream release. This command is meant to be called from **dist-git repository*
 
 
 ## Requirements
-
-* Upstream git repository on GitHub/GitLab.
-* Upstream release (git tag) where version in spec file is equivalent to
-  the name of the git tag (or `upstream_tag_template` is configured).
 * Packit config file placed in the dist-git repository.
 * Pagure API tokens for Fedora (or CentOS Stream) Dist-git.
 * Valid Fedora (or CentOS Stream) Kerberos ticket.
+* If `upstream_project_url` is configured in Packit config:
+  * Upstream project is expected to be a git repository on GitHub/GitLab.
+  * Upstream release (git tag) where version in spec file is equivalent to
+    the name of the git tag (or `upstream_tag_template` is configured).
 
 
 ## Help
