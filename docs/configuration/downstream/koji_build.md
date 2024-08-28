@@ -50,10 +50,22 @@ Packit dist-git configuration.
 ## Supported triggers
 
 * **commit** - reacts to new commits to the specified branch (in dist-git)
+* **koji_build** - reacts to tagging of a Koji build into the configured sidetag group
+  More info about releasing multiple packages together using sidetags can be found
+  [here](/docs/fedora-releases-guide/releasing-multiple-packages.md).
+
+:::tip You can use both triggers simultaneously
+
+```yaml
+- job: koji_build
+  trigger: commit | koji_build
+```
+
+:::
 
 ## Required parameters
 
-* **dist_git_branches** - the name of the dist-git branch we want to build for when using **commit** trigger.
+* **dist_git_branches** - the name of the dist-git branch we want to build for.
   You can also use the [aliases provided by Packit](/docs/configuration#aliases)
   to not need to change the config file when the new system version is released.
 
@@ -77,8 +89,21 @@ Packit dist-git configuration.
      (don't forget to put the group name in quotes - a token in YAML is not allowed to start with `@`)
    - `all_admins` alias - allowing all users with admin access to the dist-git repo
    - `all_committers` alias - allowing all users with commit access to the dist-git repo
+* **sidetag_group** - name of a sidetag group this Koji build should be tagged into.
+  The name has to be unique across all projects that use Packit, so don't hesitate to be descriptive.
+  A good convention is to use `${package1}-${package2}...${packageN}-updates`.
+  If specified, after a build finishes it is tagged into a sidetag (that is created if it doesn't already exist)
+  corresponding to the dist-git branch of the build.
+* **dependencies** - list of downstream package names that are required to be tagged
+  into the configured sidetag group for this job to be triggered. For example, if you want to ensure
+  that a `koji_build` job with the same sidetag group configured in package `foo` is run first,
+  you need to list `foo` here.
+* **dependents** - list of downstream package names that should react to tagging of this build
+  into the configured sidetag group. For example, if a `koji_build` job with the same sidetag group
+  configured in package `bar` is supposed to be triggered after this build finishes, you need to
+  list `bar` here.
 * **require.label** - you can specify labels that have to be present/absent on a pull request
-in order to trigger the build when it is merged. See configuration details [here](/docs/configuration#require).
+  in order to trigger the build when it is merged. See configuration details [here](/docs/configuration#require).
 
 
 ## Processing of dist-git events from Pagure
