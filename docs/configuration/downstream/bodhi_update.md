@@ -39,6 +39,9 @@ Packit dist-git configuration.
 
 * **commit** - Packit uses the original action as a config trigger, so you need to use `commit` as a trigger.
   The real trigger is a successful Koji build (that was triggered from a commit).
+* **koji_build** - reacts to tagging of a Koji build into the configured sidetag group
+  More info about releasing multiple packages together using sidetags can be found
+  [here](/docs/fedora-releases-guide/releasing-multiple-packages.md).
 
 ## Required parameters
 
@@ -55,6 +58,13 @@ Packit dist-git configuration.
      (don't forget to put the group name in quotes - a token in YAML is not allowed to start with `@`)
    - `all_admins` alias - allowing all users with admin access to the dist-git repo
    - `all_committers` alias - allowing all users with commit access to the dist-git repo
+* **sidetag_group** - name of a sidetag group this Bodhi update should be created from.
+  The name has to be unique across all projects that use Packit, so don't hesitate to be descriptive.
+  A good convention is to use `${package1}-${package2}...${packageN}-updates`.
+* **dependencies** - list of downstream package names that are required to be tagged
+  into the configured sidetag group for this job to be triggered. For example, if you want to include
+  a `koji_build` job with the same sidetag group configured in package `foo` in this update,
+  you need to list `foo` here.
 
  
 ## Example
