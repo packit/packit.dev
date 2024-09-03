@@ -131,7 +131,8 @@ jobs:
 The process of releasing a new version starts in the upstream repository by creating a 
 new upstream release. If you want to restrict what releases with corresponding tags Packit should react on, 
 you can utilise the configuration options [`upstream_tag_include`](/docs/configuration/#upstream_tag_include) and
-[`upstream_tag_exclude`](/docs/configuration/#upstream_tag_exclude).
+[`upstream_tag_exclude`](/docs/configuration/#upstream_tag_exclude). However, these are currently taken into consideration only when the 
+`upstream_project_url` is configured with `pull_from_upstream` job or for `propose_downstream` job.
 
 ### Upload archive to lookaside cache
 The upstream archive needs to be downloaded by Packit first and then uploaded to the lookaside cache.

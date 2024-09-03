@@ -55,10 +55,11 @@ there is much less delayed).
 ### Packit configuration
 
 To automatically pull the upstream release as a reaction to the bug in Bugzilla, `pull_from_upstream` job
-together with the `upstream_project_url` configuration option, needs to be defined in the default branch
+needs to be defined in the default branch
 (`rawhide`) of the dist-git repository in the Packit configuration file (see
-[our documentation](/docs/configuration/downstream/pull_from_upstream)). The [`upstream_project_url`](/docs/configuration/#upstream_project_url) needs to be a URL
-pointing to a Git repository so that we can do `git` commands on it.
+[our documentation](/docs/configuration/downstream/pull_from_upstream)). The [`upstream_project_url`](/docs/configuration/#upstream_project_url)
+needs to be a URL pointing to a Git repository so that we can do `git` commands on it.
+If not specified, upstream repository is not being cloned.
 
 ## `pull_from_upstream` in action
 

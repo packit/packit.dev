@@ -45,7 +45,11 @@ Packit dist-git configuration.
 * Upstream release monitoring is active for the package. [The monitoring
   status](https://docs.fedoraproject.org/en-US/package-maintainers/Upstream_Release_Monitoring/)
   in dist-git should be set to `Monitoring`.
-* [`upstream_project_url`](/docs/configuration#upstream_project_url) pointing to a Git repository is defined in the configuration.
+
+### Optional
+* [`upstream_project_url`](/docs/configuration#upstream_project_url) pointing to a Git repository.
+If this is not configured, no repository will be cloned (no interaction with it will occur), 
+and the [actions](/docs/configuration/actions) will be executed in an arbitrary directory.
 
 ## First setup
 When setting up this job for the first time, please follow the recommended actions from 

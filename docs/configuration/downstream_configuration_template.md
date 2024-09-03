@@ -17,17 +17,20 @@ and paste the content
 # See the documentation for more information:
 # https://packit.dev/docs/configuration/
 
-# TODO fill in the URL to the upstream Git repo (one that can be passed to anonymous `git clone`)
-upstream_project_url: https://github.com/<upstream-repository>
+# TODO optionally fill in the URL to the upstream Git repo (one that can be passed to anonymous `git clone`)
+# this can be omitted, but in that case there will be no interaction with the upstream repo (no cloning)
+#upstream_project_url: https://github.com/<upstream-repository>
 
 # TODO optionally uncomment and fill in the URL of repository where you want to be notified via issues about errors
 #issue_repository: https://github.com/<my-repo-for-issues>
 
-# TODO unless upstream tags match the version strings, you need to uncomment this and adjust the template to match the upstream tag format
+# TODO uncomment and adjust the template if the upstream tags do not match the version strings.
+# (Only relevant if your upstream project is a git repository (= `upstream_project_url` is set).
 # https://packit.dev/docs/configuration#upstream_tag_template
 #upstream_tag_template: v{version}
 
 # TODO uncomment and adjust if you want Packit to filter upstream tags that should be reacted upon
+# applies only when `upstream_project_url` is configured
 # https://packit.dev/docs/configuration#upstream_tag_include
 # https://packit.dev/docs/configuration#upstream_tag_exclude
 #upstream_tag_include: <python-regex>
