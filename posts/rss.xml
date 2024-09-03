@@ -401,10 +401,11 @@ Also, be aware that there can be a delay in retrieving the new version,
 so the update to Fedora is usually not created instantly (e.g. for Python projects,
 it is better to configure PyPI backend rather than GitHub since the monitoring
 there is much less delayed).</p></div></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="packit-configuration">Packit configuration<a href="#packit-configuration" class="hash-link" aria-label="Direct link to Packit configuration" title="Direct link to Packit configuration">​</a></h3><p>To automatically pull the upstream release as a reaction to the bug in Bugzilla, <code>pull_from_upstream</code> job
-together with the <code>upstream_project_url</code> configuration option, needs to be defined in the default branch
+needs to be defined in the default branch
 (<code>rawhide</code>) of the dist-git repository in the Packit configuration file (see
-<a href="/docs/configuration/downstream/pull_from_upstream">our documentation</a>). The <a href="/docs/configuration#upstream_project_url"><code>upstream_project_url</code></a> needs to be a URL
-pointing to a Git repository so that we can do <code>git</code> commands on it.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="pull_from_upstream-in-action"><code>pull_from_upstream</code> in action<a href="#pull_from_upstream-in-action" class="hash-link" aria-label="Direct link to pull_from_upstream-in-action" title="Direct link to pull_from_upstream-in-action">​</a></h2><p>Let's showcase the new job in action for the latest release of
+<a href="/docs/configuration/downstream/pull_from_upstream">our documentation</a>). The <a href="/docs/configuration#upstream_project_url"><code>upstream_project_url</code></a>
+needs to be a URL pointing to a Git repository so that we can do <code>git</code> commands on it.
+If not specified, upstream repository is not being cloned.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="pull_from_upstream-in-action"><code>pull_from_upstream</code> in action<a href="#pull_from_upstream-in-action" class="hash-link" aria-label="Direct link to pull_from_upstream-in-action" title="Direct link to pull_from_upstream-in-action">​</a></h2><p>Let's showcase the new job in action for the latest release of
 <a href="https://pypi.org/project/packitos/" target="_blank" rel="noopener noreferrer">Packit itself</a>.</p><p>As you can see in the <code>Setup</code> section above, the Upstream Release Monitoring is configured:
 there is a PyPI project <code>packitos</code> in Anitya
 with configured mapping to the Fedora package <code>packit</code> and the monitoring in the
