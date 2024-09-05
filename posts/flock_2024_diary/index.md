@@ -17,7 +17,7 @@ It’s been a month since two Packit members ([Laura](https://fosstodon.org/@lba
 
 We prepared two talks for the Flock attendees. If you missed it, the recordings are available. But here’s what we presented:
 
-## Packit release automation journey ([recording](https://www.youtube.com/watch?v=x-o91dkv1Cg))
+## Packit release automation journey
 
 This one mainly targeted the Fedora maintainers and described how you can use Packit for your packages. The basic workflow has been here for some time but we’ve presented a couple of interesting news about what we are currently working on:
 
@@ -37,13 +37,17 @@ But we were not speaking just about the features but also how we work and how we
 
 After the talk, there was an interesting discussion. One of the suggestions was to onboard new packages to Packit automatically – we thought about it within a team and [will work](https://github.com/packit/packit-service/issues/2506) on opening a pull request with the configuration and most importantly, a description of Packit.
 
-## Packit \+ Testing Farm and Fedora: still happily testing upstream projects ([recording](https://www.youtube.com/watch?v=F7C82Fwdvis))
+![](https://www.youtube.com/watch?v=x-o91dkv1Cg)
+
+## Packit \+ Testing Farm and Fedora: still happily testing upstream projects
 
 For the second talk, we were joined by [Jan Havlín](https://matrix.to/#/@jhavlin:fedora.im?web-instance[element.io]=chat.fedoraproject.org) from the Testing Farm team and the main aim of the talk was to show various new and old ways how to use Packit for your project. Rather than showing documentation, we presented the features on real projects and how they configure this so you can easily do the same. You might have seen this style of presentation from us, but don’t be fooled just by the structure, there were a couple of new features presented as well.
 
 One big achievement is a collaboration with [Siteshwar Vashisht](https://twitter.com/SiteshwarV) on integrating OpenScanHub to run static analysis for your projects. The setup is very simple, just set up Packit to run builds both for the pull requests and your `main` branch and Packit will trigger a differential scan on pull requests for you. We have a separate blog post (/posts/openscanhub-prototype) about this. There is also [one](https://situ.im/posts/openscanhub-fedora-and-packit) written by Situ.
 
 Also, Jan showed how you can newly generate your own Testing Farm tokens using your Fedora account – but when using Packit, this is not needed and Packit will take care of this for you. But maybe you want to use this to play with the Testing Farm environment locally – you can newly reserve a machine thanks to this token.
+
+![](https://www.youtube.com/watch?v=F7C82Fwdvis)
 
 # Other talks and activities
 
