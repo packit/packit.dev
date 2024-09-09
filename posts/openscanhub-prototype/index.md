@@ -82,3 +82,9 @@ As this is an initial prototype, the configuration and functionality may evolve 
 We invite you to try out this feature and [share your thoughts](https://github.com/packit/packit/discussions/2371) with us
 (e.g. if you would benefit from other `osh-cli` options to be included).
 For more information on setting up this feature, see the [info above](#setup).
+
+:::tip
+
+A small update. Default configurations for the static analyzers like `cppcheck` can now be tweaked through [`--csmock-args` CLI option](/docs/cli/scan-in-osh) or [a `csmock_args` option](/docs/configuration#csmock_args) in the Packit's config file. For instance, you can specify arguments like `--cppcheck-add-flag=--enable=style` to check styling issues as seen in [this example run](https://openscanhub.fedoraproject.org/task/10066/) triggered from [this](https://github.com/avahi/avahi/pull/641) testing pull-request on Avahi.
+
+:::
