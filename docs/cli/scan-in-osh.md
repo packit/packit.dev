@@ -26,4 +26,5 @@ Builds a SRPM file and performs a scan in [OpenScanHub](https://openscanhub.fedo
                           rawhide-x86_64')
       --base-srpm TEXT    Base SRPM to perform a differential build against
       --comment TEXT      Comment for the build
+      --csmock-args TEXT  Pass additional arguments to csmock
       -h, --help          Show this message and exit.
