@@ -69,8 +69,19 @@ Use a repository you maintain as we will create issues about failures here.
 
 ## Optional parameters
 
-* **dist_git_branches** - a (list of) branch(es) in dist-git where packit should work (defaults to `main`).
-  You can also use the [aliases provided by Packit](/docs/configuration#aliases)
+* **dist_git_branches** 
+  - a (list of) branch(es) in dist-git where packit should work (defaults to `main`).
+  - or a dict whose *keys* are the names of the dist-git branches where packit synchronizes release changes 
+  and the *values* are in the form of an empty dict `{}` or as 
+  `{fast_forward_merge_into: [other branches names]}`. In the second example, packit tries to fast forward
+  the changes created for the *key branch* in the *other branches* opening a pull request for them.
+
+:::info
+For how to keep dist-git branches non divergent 
+please see the details [here](/docs/fedora-releases-guide#keeping-dist-git-branches-non-divergent).
+:::
+
+  As branch names you can use the [aliases provided by Packit](/docs/configuration#aliases)
   to not need to change the config file when the new system version is released.
 
 :::tip 
@@ -78,12 +89,6 @@ Use a repository you maintain as we will create issues about failures here.
 For more details and customization options, also check 
 [our release guide](/docs/fedora-releases-guide/dist-git-onboarding#pull-from-upstream-job).
 
-:::
-
-
-:::info
-Current default behaviour of the release syncing results in having divergent dist-git branches. If you want to avoid this,
-please see the details [here](/docs/fedora-releases-guide#keeping-dist-git-branches-non-divergent).
 :::
 
 ## Retriggering
