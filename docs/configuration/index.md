@@ -775,6 +775,11 @@ will likely change in the future.
 We will be happy for any feedback regarding it, [please contact us](https://github.com/packit/packit/discussions/2371)!
 :::
 
+#### csmock_args
+
+(*string*) An option to set arguments of `csmock` (the tool used inside [OpenScanHub](https://openscanhub.fedoraproject.org/)). For instance, you can specify arguments like `--cppcheck-add-flag=--enable=style` to check styling issues as seen in [this example run](https://openscanhub.fedoraproject.org/task/10066/) triggered from [this](https://github.com/avahi/avahi/pull/641) testing pull-request on Avahi.
+
+
 ## Aliases
 
 To not need to change the config file when the new system version is released,
