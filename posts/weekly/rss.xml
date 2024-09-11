@@ -22,6 +22,18 @@ Use the new syntax for <code>dist_git_branches</code> as in this example to util
             <category>September</category>
         </item>
         <item>
+            <title><![CDATA[Week 34 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-34</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-34</guid>
+            <pubDate>Tue, 27 Aug 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 34 (August 20st – August 27th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-34-august-20st--august-27th">Week 34 (August 20st – August 27th)<a href="#week-34-august-20st--august-27th" class="hash-link" aria-label="Direct link to Week 34 (August 20st – August 27th)" title="Direct link to Week 34 (August 20st – August 27th)">​</a></h2><ul><li><code>pull-from-upstream</code> is now supported also without specifying <code>upstream_project_url</code> in the configuration. For such cases, the upstream repository will not be detected and cloned during release syncing. (<a href="https://github.com/packit/packit/pull/2398" target="_blank" rel="noopener noreferrer">packit#2398</a>)</li><li><code>dist-git init</code> command now allows <code>upstream-git-url</code> not to be specified. (<a href="https://github.com/packit/packit/pull/2387" target="_blank" rel="noopener noreferrer">packit#2387</a>)</li><li>You can newly tag builds of a package into a sidetag group by using <code>/packit koji-tag</code> comment command. (<a href="https://github.com/packit/packit-service/pull/2507" target="_blank" rel="noopener noreferrer">packit-service#2507</a>)</li><li>Thanks to <a href="https://github.com/LecrisUT" target="_blank" rel="noopener noreferrer">Cristian Le</a>, <code>epel-10</code> is now correctly mapped to a <code>centos-stream-10</code> when running tests. (<a href="https://github.com/packit/packit-service/pull/2508" target="_blank" rel="noopener noreferrer">packit-service#2508</a>)</li></ul>]]></content:encoded>
+            <author>flachman@redhat.com (František Lachman)</author>
+            <category>2024-August</category>
+            <category>2024</category>
+            <category>August</category>
+        </item>
+        <item>
             <title><![CDATA[Week 33 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-33</link>
             <guid>https://packit.dev/posts/weekly/2024/week-33</guid>

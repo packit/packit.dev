@@ -22,6 +22,23 @@
             ]
         },
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-34",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-34-august-20st--august-27th\">Week 34 (August 20st – August 27th)<a href=\"#week-34-august-20st--august-27th\" class=\"hash-link\" aria-label=\"Direct link to Week 34 (August 20st – August 27th)\" title=\"Direct link to Week 34 (August 20st – August 27th)\">​</a></h2><ul><li><code>pull-from-upstream</code> is now supported also without specifying <code>upstream_project_url</code> in the configuration. For such cases, the upstream repository will not be detected and cloned during release syncing. (<a href=\"https://github.com/packit/packit/pull/2398\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2398</a>)</li><li><code>dist-git init</code> command now allows <code>upstream-git-url</code> not to be specified. (<a href=\"https://github.com/packit/packit/pull/2387\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2387</a>)</li><li>You can newly tag builds of a package into a sidetag group by using <code>/packit koji-tag</code> comment command. (<a href=\"https://github.com/packit/packit-service/pull/2507\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2507</a>)</li><li>Thanks to <a href=\"https://github.com/LecrisUT\" target=\"_blank\" rel=\"noopener noreferrer\">Cristian Le</a>, <code>epel-10</code> is now correctly mapped to a <code>centos-stream-10</code> when running tests. (<a href=\"https://github.com/packit/packit-service/pull/2508\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2508</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-34",
+            "title": "Week 34 in Packit",
+            "summary": "Week 34 (August 20st – August 27th)",
+            "date_modified": "2024-08-27T00:00:00.000Z",
+            "author": {
+                "name": "František Lachman",
+                "url": "https://github.com/lachmanfrantisek"
+            },
+            "tags": [
+                "2024-August",
+                "2024",
+                "August"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-33",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-33-august-13th--august-19th\">Week 33 (August 13th – August 19th)<a href=\"#week-33-august-13th--august-19th\" class=\"hash-link\" aria-label=\"Direct link to Week 33 (August 13th – August 19th)\" title=\"Direct link to Week 33 (August 13th – August 19th)\">​</a></h2><ul><li>Several internal, but also performance improvements were done on our dashboard, thanks to\n<a href=\"https://github.com/Venefilyn\" target=\"_blank\" rel=\"noopener noreferrer\">Freya Gustavsson</a> (<a href=\"https://github.com/packit/dashboard/pull/435\" target=\"_blank\" rel=\"noopener noreferrer\">packit/dashboard#435</a>)!</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-33",
