@@ -217,26 +217,56 @@ for overriding the Packit default behaviour, for example:
   - for **source archive(s) generation**, you can utilise e.g. `pre-sync` action, see 
   [this example](/docs/configuration/examples#custom-archive-creation-for-release-syncing)
 
-#### Keeping dist-git branches non-divergent
-Packit currently syncs the release in a way that the branches become divergent (you can follow 
-the request to change this behaviour [here](https://github.com/packit/packit/issues/1724)). 
+#### Keep dist-git branches non-divergent
 
-However, if you wish to keep your dist-git branches in sync, you can configure Packit to propose updates exclusively 
-to `rawhide` (by specifying `dist_git_branches: fedora-rawhide`) and you can locally merge it with the stable release branches. 
-The following example demonstrates how to achieve this for a single branch (`f39` in this case):
-```bash
-# Clone the dist-git repository if you haven't done so already
-fedpkg clone $PACKAGE
-# or
-git clone ssh://$YOUR_USER@pkgs.fedoraproject.org/rpms/$PACKAGE.git
+If you want to keep your dist-git branches from diverging,
+you can use the new `dist_git_branches` syntax:
+  
+```yaml
+  dist_git_branches:
+    rawhide:
+      fast_forward_merge_into: [fedora-branched]
+    epel-9: {}    
+      
+```
 
-# Alternatively, pull the rawhide changes only
-git pull origin rawhide
+In this example, Packit runs the downstream synchronization process for the
+`rawhide` and `epel-9` branches as usual. But Packit also opens a new pull request reusing the commit from `rawhide` for every
+`fedora-branched` branch so it can be fast-forwarded when merging.
 
-# Switch to the desired branch and merge it with the updated rawhide branch
-git checkout f39
-git merge rawhide
-git push origin f39
+:::warning How to reconcile divergent branches
+
+If you are already using Packit then your branches can have diverged.
+You need to reconcile them before using the new dist_git_branches 
+syntax.
+For the configuration example above and for the state of the branched
+Fedora releases as today, you need to do:
+
+```
+git checkout rawhide
+git merge f39
+git merge f40
+git merge f41
+```
+
+You shouldn't have any conflict.
+But, if you have a conflict in the `.gitignore` file it is safe to 
+keep changes both from rawhide and the incoming branch.
+If you have a conflict in the changelog section of the specfile,
+then you must pay attention to **merge all the missing changelogs** 
+in rawhide and to list them **in the right order** 
+(newest changelogs come first). 
+Once rawhide is ready you can do
+
+```
+git checkout f39; git merge --ff-only rawhide
+git checkout f40; git merge --ff-only rawhide
+git checkout f41; git merge --ff-only rawhide
+```
+
+:::
+
+
 ```
 ## Koji build job
 After having the dist-git content updated, you can easily automate also building in Koji.

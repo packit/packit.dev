@@ -48,16 +48,23 @@ configuration specifics, see [the subsection below](#syncing-the-release-to-cent
 
 ## Optional parameters
 
-* **dist_git_branches** - a (list of) branches in dist-git where packit should work (defaults to `main` which represents _Fedora Rawhide_).
-  You can also use the [aliases provided by Packit](/docs/configuration#aliases)
+* **dist_git_branches** 
+  - a (list of) branches in dist-git where packit should work (defaults to `main` which represents _Fedora Rawhide_).
+  - or a dict whose *keys* are the names of the dist-git branches where packit synchronizes release changes 
+  and the *values* are in the form of an empty dict `{}` or as 
+  `{fast_forward_merge_into: [other branches names]}`. In the second example, packit tries to fast forward
+  the changes created for the *key branch* in the *other branches* opening a pull request for them.
+
+:::info
+For how to keep dist-git branches non-divergent 
+please see the details [here](/docs/fedora-releases-guide#keeping-dist-git-branches-non-divergent).
+:::
+  
+  As branch names you can also use the [aliases provided by Packit](/docs/configuration#aliases)
   to not need to change the config file when the new system version is released.
 
 * [**notifications.failure_issue.create**](/docs/configuration#failure_issue) - whether to create an upstream issue about failure. Defaults to `true`.
 
-:::info
-Current default behaviour of the release syncing results in having divergent dist-git branches. If you want to avoid this,
-please see the details [here](/docs/fedora-releases-guide#keeping-dist-git-branches-non-divergent).
-:::
 
 ## Example
 
