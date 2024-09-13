@@ -267,7 +267,6 @@ git checkout f41; git merge --ff-only rawhide
 :::
 
 
-```
 ## Koji build job
 After having the dist-git content updated, you can easily automate also building in Koji.
 You can simply configure Packit to react to the new commits in your dist-git repository and create
