@@ -4,10 +4,23 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 09 Sep 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 16 Sep 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 37 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-37</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-37</guid>
+            <pubDate>Mon, 16 Sep 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 37 (September 10th – September 16th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-37-september-10th--september-16th">Week 37 (September 10th – September 16th)<a href="#week-37-september-10th--september-16th" class="hash-link" aria-label="Direct link to Week 37 (September 10th – September 16th)" title="Direct link to Week 37 (September 10th – September 16th)">​</a></h2><ul><li>We have fixed showing of Bodhi updates that are triggered by non-Packit Koji builds on our dashboard.
+(<a href="https://github.com/packit/packit-service/pull/2528" target="_blank" rel="noopener noreferrer">packit-service#2528</a>)</li></ul>]]></content:encoded>
+            <author>nforro@redhat.com (Nikola Forró)</author>
+            <category>2024-September</category>
+            <category>2024</category>
+            <category>September</category>
+        </item>
         <item>
             <title><![CDATA[Week 36 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-36</link>

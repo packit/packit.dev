@@ -2,11 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2024-09-09T00:00:00.000Z</updated>
+    <updated>2024-09-16T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 37 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2024/week-37</id>
+        <link href="https://packit.dev/posts/weekly/2024/week-37"/>
+        <updated>2024-09-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 37 (September 10th – September 16th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-37-september-10th--september-16th">Week 37 (September 10th – September 16th)<a href="#week-37-september-10th--september-16th" class="hash-link" aria-label="Direct link to Week 37 (September 10th – September 16th)" title="Direct link to Week 37 (September 10th – September 16th)">​</a></h2><ul><li>We have fixed showing of Bodhi updates that are triggered by non-Packit Koji builds on our dashboard.
+(<a href="https://github.com/packit/packit-service/pull/2528" target="_blank" rel="noopener noreferrer">packit-service#2528</a>)</li></ul>]]></content>
+        <author>
+            <name>Nikola Forró</name>
+            <email>nforro@redhat.com</email>
+            <uri>https://github.com/nforro</uri>
+        </author>
+        <category label="2024-September" term="2024-September"/>
+        <category label="2024" term="2024"/>
+        <category label="September" term="September"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 36 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2024/week-36</id>
