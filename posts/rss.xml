@@ -4,10 +4,32 @@
         <title>Packit Blog</title>
         <link>https://packit.dev/posts</link>
         <description>Blog posts by Packit</description>
-        <lastBuildDate>Thu, 05 Sep 2024 13:16:18 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 18 Sep 2024 08:46:18 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Non-git upstreams support and simplified configuration for easier onboarding!]]></title>
+            <link>https://packit.dev/posts/non-git-upstreams-support</link>
+            <guid>https://packit.dev/posts/non-git-upstreams-support</guid>
+            <pubDate>Wed, 18 Sep 2024 08:46:18 GMT</pubDate>
+            <description><![CDATA[We are happy to announce that support for non-git upstreams in the pullfromupstream job is here!]]></description>
+            <content:encoded><![CDATA[<p>We are happy to announce that support for non-git upstreams in the <a href="/docs/configuration/downstream/pull_from_upstream"><code>pull_from_upstream</code> job</a> is here!
+This enhancement simplifies configuration by removing the need to define <a href="/docs/configuration#upstream_project_url"><code>upstream_project_url</code></a>,
+opening the door for more use cases, while also simplifying the onboarding in general.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-changed">What changed<a href="#what-changed" class="hash-link" aria-label="Direct link to What changed" title="Direct link to What changed">​</a></h2><p>Previously, the <code>upstream_project_url</code> configuration option was required to point to a git repository for the <code>pull_from_upstream</code> job to work.
+Now, with this update, it’s no longer necessary, allowing the job to sync the releases also for packages with non-git upstreams.
+Even for packages having git-based upstreams, this change allows to skip configuration of this option
+when the repository interaction is unnecessary.</p><p>Without <code>upstream_project_url</code> configured, no repository will be cloned, and no git interaction will occur.
+The configured <a href="/docs/configuration/actions">actions</a> will be executed in an arbitrary directory.
+Additionally, related configuration options such as <a href="/docs/configuration#upstream_tag_template"><code>upstream_tag_template</code></a>, <a href="/docs/configuration#upstream_tag_include"><code>upstream_tag_include</code></a>, and <a href="/docs/configuration#upstream_tag_exclude"><code>upstream_tag_exclude</code></a> will be ignored.
+If you need to filter releases, this can still be done on the <a href="https://release-monitoring.org/" target="_blank" rel="noopener noreferrer"><code>release-monitoring</code></a> project settings side.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="configuration-generation-automation">Configuration generation automation<a href="#configuration-generation-automation" class="hash-link" aria-label="Direct link to Configuration generation automation" title="Direct link to Configuration generation automation">​</a></h2><p>This update also makes automation easier. You can use the <a href="/docs/cli/dist-git/init"><code>packit dist-git init</code> command</a> to generate your configuration
+file without specifying <code>--upstream-git-url</code>, enabling easier scripting for mass onboarding of your packages.
+For more advanced use cases, additional arguments can still be added to adjust the configuration as needed.</p>]]></content:encoded>
+            <author>lbarczio@redhat.com (Laura Barcziová)</author>
+            <category>pull-from-upstream</category>
+            <category>downstream</category>
+            <category>configuration</category>
+        </item>
         <item>
             <title><![CDATA[Packit Flock 2024 Diary]]></title>
             <link>https://packit.dev/posts/flock_2024_diary</link>
