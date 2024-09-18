@@ -11,7 +11,7 @@ tags:
 
 # Flock Packit Diary Blog post
 
-It’s been a month since two Packit members ([Laura](https://fosstodon.org/@lbarcziova) and [František](https://mastodonczech.cz/@lachmanfrantisek) attended Flock, the annual Fedora conference, in Rochester. Let’s see some highlights from our journey There and Back Again. Sadly the travel there wasn’t as expected at all, but luckily the tornadoes did not stop us and we both made it to Rochester.
+It’s been a month since two Packit members ([Laura](https://fosstodon.org/@lbarcziova) and [František](https://mastodonczech.cz/@lachmanfrantisek)) attended Flock, the annual Fedora conference, in Rochester. Let’s see some highlights from our journey There and Back Again. Sadly the travel there wasn’t as expected at all, but luckily the tornadoes did not stop us and we both made it to Rochester.
 
 <!--truncate-->
 
