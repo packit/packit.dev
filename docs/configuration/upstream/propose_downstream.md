@@ -57,7 +57,7 @@ configuration specifics, see [the subsection below](#syncing-the-release-to-cent
 
 :::info
 For how to keep dist-git branches non-divergent 
-please see the details [here](/docs/fedora-releases-guide#keeping-dist-git-branches-non-divergent).
+please see the details [here](/docs/fedora-releases-guide#keep-dist-git-branches-non-divergent).
 :::
   
   As branch names you can also use the [aliases provided by Packit](/docs/configuration#aliases)
