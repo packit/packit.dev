@@ -22,6 +22,14 @@ here](https://github.com/packit/packit-service/issues/1490). You can override th
 be specified in the  `allowed_committers` and for merged pull requests the author of the PR needs to be
 specified in the `allowed_pr_authors`.
 
+:::warning
+
+Due to a [bug](https://github.com/packit/packit-service/issues/2537), if you merge a PR containing more than one
+commit or push more than one commit directly, the job may not be triggered even though all conditions are met.
+In such case please [trigger it manually](/docs/fedora-releases-guide/dist-git-onboarding#retriggering).
+
+:::
+
 Packit provides an overview of its own builds [here](https://dashboard.packit.dev/jobs/downstream-koji-builds).
 
 The koji build behaves as it was created manually, and you can utilise
