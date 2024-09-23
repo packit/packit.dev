@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-38",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-38-september-17th--september-23rd\">Week 38 (September 17th – September 23rd)<a href=\"#week-38-september-17th--september-23rd\" class=\"hash-link\" aria-label=\"Direct link to Week 38 (September 17th – September 23rd)\" title=\"Direct link to Week 38 (September 17th – September 23rd)\">​</a></h2><ul><li>Packit now allows to configure mock bootstrap feature setup of Copr projects with a new <code>bootstrap</code> configuration option. (<a href=\"https://github.com/packit/packit/pull/2411\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2411</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-38",
+            "title": "Week 38 in Packit",
+            "summary": "Week 38 (September 17th – September 23rd)",
+            "date_modified": "2024-09-23T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2024-September",
+                "2024",
+                "September"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-37",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-37-september-10th--september-16th\">Week 37 (September 10th – September 16th)<a href=\"#week-37-september-10th--september-16th\" class=\"hash-link\" aria-label=\"Direct link to Week 37 (September 10th – September 16th)\" title=\"Direct link to Week 37 (September 10th – September 16th)\">​</a></h2><ul><li>We have fixed showing of Bodhi updates that are triggered by non-Packit Koji builds on our dashboard.\n(<a href=\"https://github.com/packit/packit-service/pull/2528\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2528</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-37",

@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 16 Sep 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 23 Sep 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 38 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-38</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-38</guid>
+            <pubDate>Mon, 23 Sep 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 38 (September 17th – September 23rd)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-38-september-17th--september-23rd">Week 38 (September 17th – September 23rd)<a href="#week-38-september-17th--september-23rd" class="hash-link" aria-label="Direct link to Week 38 (September 17th – September 23rd)" title="Direct link to Week 38 (September 17th – September 23rd)">​</a></h2><ul><li>Packit now allows to configure mock bootstrap feature setup of Copr projects with a new <code>bootstrap</code> configuration option. (<a href="https://github.com/packit/packit/pull/2411" target="_blank" rel="noopener noreferrer">packit#2411</a>)</li></ul>]]></content:encoded>
+            <author>mmassari@redhat.com (Maja Massarini)</author>
+            <category>2024-September</category>
+            <category>2024</category>
+            <category>September</category>
+        </item>
         <item>
             <title><![CDATA[Week 37 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-37</link>

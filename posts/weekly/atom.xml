@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2024-09-16T00:00:00.000Z</updated>
+    <updated>2024-09-23T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 38 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2024/week-38</id>
+        <link href="https://packit.dev/posts/weekly/2024/week-38"/>
+        <updated>2024-09-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 38 (September 17th – September 23rd)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-38-september-17th--september-23rd">Week 38 (September 17th – September 23rd)<a href="#week-38-september-17th--september-23rd" class="hash-link" aria-label="Direct link to Week 38 (September 17th – September 23rd)" title="Direct link to Week 38 (September 17th – September 23rd)">​</a></h2><ul><li>Packit now allows to configure mock bootstrap feature setup of Copr projects with a new <code>bootstrap</code> configuration option. (<a href="https://github.com/packit/packit/pull/2411" target="_blank" rel="noopener noreferrer">packit#2411</a>)</li></ul>]]></content>
+        <author>
+            <name>Maja Massarini</name>
+            <email>mmassari@redhat.com</email>
+            <uri>https://github.com/majamassarini</uri>
+        </author>
+        <category label="2024-September" term="2024-September"/>
+        <category label="2024" term="2024"/>
+        <category label="September" term="September"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 37 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2024/week-37</id>
