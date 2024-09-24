@@ -78,7 +78,7 @@ Use a repository you maintain as we will create issues about failures here.
 
 :::info
 For how to keep dist-git branches non divergent 
-please see the details [here](/docs/fedora-releases-guide#keeping-dist-git-branches-non-divergent).
+please see the details [here](/docs/fedora-releases-guide#keep-dist-git-branches-non-divergent).
 :::
 
   As branch names you can use the [aliases provided by Packit](/docs/configuration#aliases)

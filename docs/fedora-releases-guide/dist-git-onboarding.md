@@ -89,7 +89,7 @@ You can check the other customization options [here](./index.md#customization).
 
 :::info Divergent dist-git branches
 Current default behaviour of the release syncing results in having divergent dist-git branches. If you want to avoid this,
-please see the details [here](/docs/fedora-releases-guide#keeping-dist-git-branches-non-divergent).
+please see the details [here](/docs/fedora-releases-guide#keep-dist-git-branches-non-divergent).
 :::
 
 
