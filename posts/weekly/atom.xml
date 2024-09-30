@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2024-09-23T00:00:00.000Z</updated>
+    <updated>2024-09-30T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 39 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2024/week-39</id>
+        <link href="https://packit.dev/posts/weekly/2024/week-39"/>
+        <updated>2024-09-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 39 (September 24th – September 30th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-39-september-24th--september-30th">Week 39 (September 24th – September 30th)<a href="#week-39-september-24th--september-30th" class="hash-link" aria-label="Direct link to Week 39 (September 24th – September 30th)" title="Direct link to Week 39 (September 24th – September 30th)">​</a></h2><ul><li>Check for <code>upstream_project_url</code> presence in the configuration when <code>pull_from_upstream</code> job is configured was removed from <code>validate-config</code>, as this is no longer required. (<a href="https://github.com/packit/packit/pull/2423" target="_blank" rel="noopener noreferrer">packit#2423</a>)</li><li>We have added a note about retriggering <code>pull_from_upstream</code> job from dist-git pull requests. (<a href="https://github.com/packit/packit-service/pull/2542" target="_blank" rel="noopener noreferrer">packit-service#2542</a>)</li></ul>]]></content>
+        <author>
+            <name>František Lachman</name>
+            <email>flachman@redhat.com</email>
+            <uri>https://github.com/lachmanfrantisek</uri>
+        </author>
+        <category label="2024-September" term="2024-September"/>
+        <category label="2024" term="2024"/>
+        <category label="September" term="September"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 38 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2024/week-38</id>

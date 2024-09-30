@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 23 Sep 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 30 Sep 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 39 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-39</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-39</guid>
+            <pubDate>Mon, 30 Sep 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 39 (September 24th – September 30th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-39-september-24th--september-30th">Week 39 (September 24th – September 30th)<a href="#week-39-september-24th--september-30th" class="hash-link" aria-label="Direct link to Week 39 (September 24th – September 30th)" title="Direct link to Week 39 (September 24th – September 30th)">​</a></h2><ul><li>Check for <code>upstream_project_url</code> presence in the configuration when <code>pull_from_upstream</code> job is configured was removed from <code>validate-config</code>, as this is no longer required. (<a href="https://github.com/packit/packit/pull/2423" target="_blank" rel="noopener noreferrer">packit#2423</a>)</li><li>We have added a note about retriggering <code>pull_from_upstream</code> job from dist-git pull requests. (<a href="https://github.com/packit/packit-service/pull/2542" target="_blank" rel="noopener noreferrer">packit-service#2542</a>)</li></ul>]]></content:encoded>
+            <author>flachman@redhat.com (František Lachman)</author>
+            <category>2024-September</category>
+            <category>2024</category>
+            <category>September</category>
+        </item>
         <item>
             <title><![CDATA[Week 38 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-38</link>
