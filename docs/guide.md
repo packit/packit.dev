@@ -378,6 +378,13 @@ passing for you, it should work inside packit service as well.
 
 #### RPM builds pass on your laptop
 
+:::tip
+
+If you are new to usage of the RPM you should visit
+[this documentation](https://rpm-packaging-guide.github.io/#packaging-software).
+
+:::
+
 Packit needs an RPM spec file to build your package. The spec file does not
 need to be included in the upstream repo and can be generated on the fly or
 downloaded (e.g. from Fedora dist-git).
