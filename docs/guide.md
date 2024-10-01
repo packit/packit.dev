@@ -380,8 +380,8 @@ passing for you, it should work inside packit service as well.
 
 :::tip
 
-If you are new to usage of the RPM you should visit
-[this documentation](https://rpm-packaging-guide.github.io/#packaging-software).
+If you are new to RPM packaging you should visit
+[this guide](https://rpm-packaging-guide.github.io/#packaging-software).
 
 :::
 
