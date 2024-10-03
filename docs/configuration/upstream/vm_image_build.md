@@ -11,8 +11,6 @@ sidebar_position: 4
 
 ## Required parameters
 
-* **copr_chroot** - name of the chroot to use for installing packages in the image
-
 Image Parameters (Packit does not sanitize these and just passes them to Image Builder;
 check [Image Builder's API
 documentation](https://console.redhat.com/docs/api/image-builder) for details).
@@ -25,6 +23,7 @@ documentation](https://console.redhat.com/docs/api/image-builder) for details).
 
 * **owner** - Copr project owner
 * **project** - Copr project name
+* **copr_chroot** - name of the chroot to use for installing packages in the image
 
 Image builds are only triggered after a collaborator places a comment `/packit
 vm-image-build` in a pull request. The image builds are **NOT** submitted
