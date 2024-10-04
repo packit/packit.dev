@@ -157,3 +157,14 @@ You can read more about this transition [here](/posts/copr-srpms).
 ## A command failed in packit-service: how do I reproduce it locally?
 
 Please read [this document on how to reproduce locally](reproduce-locally).
+
+## Why you should use Packit instead of external devices directly?
+
+- Packit uses various services Testing Farm, Copr, Koji, Bodhi…
+- These services can be used without Packit, but Packit integrates them in a
+  more user-friendly way reducing the manual labor that would be required from
+  the contributor or maintainer. For example:
+  - the build in Copr is created automatically when a new version is released
+  - RPMs built by Copr are specifically passed to the Testing Farm for testing
+  - RPM builds are verified against multiple releases (and also different OSs)
+- The user does not have to wait and look for the results but just interprets them.
