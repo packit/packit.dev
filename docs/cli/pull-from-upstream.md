@@ -34,23 +34,24 @@ upstream release. This command is meant to be called from **dist-git repository*
       default
 
     Options:
-      --dist-git-branch TEXT  Comma separated list of target branches in dist-git
-                              to release into. (defaults to all branches)
-      --dist-git-path TEXT    Path to dist-git repo to work in. Otherwise clone
-                              the repo in a temporary directory.
-      --force-new-sources     Upload the new sources also when the archive is
-                              already in the lookaside cache.
-      --pr / --no-pr          Create a pull request to downstream repository or
-                              push directly. If not set, defaults to value set in
-                              configuration.
-      -f, --force             Don't discard changes in the git repo by default,
-                              unless this is set.
-      -b, --resolve-bug TEXT  Bug(s) that are resolved with the update, e.g.
-                              rhbz#123 (multiple can be specified)
-      --sync-acls             Sync ACLs between dist-git repo and the fork, is
-                              considered only with --pr option.
-      -p, --package TEXT      Package to sync downstream, if more than one
-                              available, like in a monorepo configuration. Use it
-                              multiple times to select multiple packages.Defaults
-                              to all the packages listed inside the config.
-      -h, --help              Show this message and exit.
+      --dist-git-branch TEXT     Comma separated list of target branches in dist-
+                                 git to release into. (defaults to all branches)
+      --dist-git-path TEXT       Path to dist-git repo to work in. Otherwise clone
+                                 the repo in a temporary directory.
+      --force-new-sources        Upload the new sources also when the archive is
+                                 already in the lookaside cache.
+      --pr / --no-pr             Create a pull request to downstream repository or
+                                 push directly. If not set, defaults to value set
+                                 in configuration.
+      -f, --force                Don't discard changes in the git repo by default,
+                                 unless this is set.
+      -b, --resolve-bug INTEGER  Bug(s) that are resolved with the update, e.g.
+                                 rhbz#123 (multiple can be specified)
+      --sync-acls                Sync ACLs between dist-git repo and the fork, is
+                                 considered only with --pr option.
+      -p, --package TEXT         Package to sync downstream, if more than one
+                                 available, like in a monorepo configuration. Use
+                                 it multiple times to select multiple
+                                 packages.Defaults to all the packages listed
+                                 inside the config.
+      -h, --help                 Show this message and exit.
