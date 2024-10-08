@@ -2,11 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2024-09-30T00:00:00.000Z</updated>
+    <updated>2024-10-07T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 40 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2024/week-40</id>
+        <link href="https://packit.dev/posts/weekly/2024/week-40"/>
+        <updated>2024-10-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 40 (October 1st – October 7th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-40-october-1st--october-7th">Week 40 (October 1st – October 7th)<a href="#week-40-october-1st--october-7th" class="hash-link" aria-label="Direct link to Week 40 (October 1st – October 7th)" title="Direct link to Week 40 (October 1st – October 7th)">​</a></h2><ul><li><code>packit validate-config</code> now checks for the existence of the downstream package. (<a href="https://github.com/packit/packit/pull/2436" target="_blank" rel="noopener noreferrer">packit#2436</a>)</li><li>Packit now allows building VM images via CLI without any Copr repository specified. (<a href="https://github.com/packit/packit/pull/2434" target="_blank" rel="noopener noreferrer">packit#2434</a>)</li><li>We have unified interface of passing resolved bugs (e.g., Bugzillas as of now) to Packit CLI and via comments. Both CLI and comments now use <code>--resolve-bug</code> switch (comments accept comma-separated list of bugs, CLI accepts the switch multiple times (also <code>-b</code>)).
+(<a href="https://github.com/packit/packit/pull/2428" target="_blank" rel="noopener noreferrer">packit#2428</a> and <a href="https://github.com/packit/packit-service/pull/2560" target="_blank" rel="noopener noreferrer">packit-service#2560</a>)</li><li><code>packit init</code> now adds working directories that are used in <code>packit prepare-sources</code> into the <code>.gitignore</code> file in the same directory where Packit config resides. (<a href="https://github.com/packit/packit/pull/2431" target="_blank" rel="noopener noreferrer">packit#2431</a>)</li><li>Before triggering the non-scratch Koji builds, we now check whether there is not already a build in progress or completed for the same NVR. (<a href="https://github.com/packit/packit-service/pull/2559" target="_blank" rel="noopener noreferrer">packit-service#2559</a>)</li><li>We have improved the error reporting for failed downstream jobs. (<a href="https://github.com/packit/packit-service/pull/2544" target="_blank" rel="noopener noreferrer">packit-service#2544</a>)</li><li>We have fixed an issue that caused inconsistencies with the expected behaviour stated by the documentation when adding duplicitous reactions to GitLab comments. (<a href="https://github.com/packit/ogr/pull/861" target="_blank" rel="noopener noreferrer">ogr#861</a>)</li></ul>]]></content>
+        <author>
+            <name>Matej Focko</name>
+            <email>mfocko@redhat.com</email>
+            <uri>https://github.com/mfocko</uri>
+        </author>
+        <category label="2024-October" term="2024-October"/>
+        <category label="2024" term="2024"/>
+        <category label="October" term="October"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 39 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2024/week-39</id>
