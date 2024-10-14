@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2024-10-07T00:00:00.000Z</updated>
+    <updated>2024-10-14T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 41 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2024/week-41</id>
+        <link href="https://packit.dev/posts/weekly/2024/week-41"/>
+        <updated>2024-10-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 41 (October 8th – October 14th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-41-october-8th--october-14th">Week 41 (October 8th – October 14th)<a href="#week-41-october-8th--october-14th" class="hash-link" aria-label="Direct link to Week 41 (October 8th – October 14th)" title="Direct link to Week 41 (October 8th – October 14th)">​</a></h2><ul><li>We have fixed an issue that was introduced during the unification of the interface for passing resolved Bugzillas / Jira tickets to the <code>sync-release</code> or <code>bodhi_update</code> jobs. (<a href="https://github.com/packit/packit/pull/2442" target="_blank" rel="noopener noreferrer">packit#2442</a>)</li></ul>]]></content>
+        <author>
+            <name>Laura Barcziová</name>
+            <email>lbarczio@redhat.com</email>
+            <uri>https://github.com/lbarcziova</uri>
+        </author>
+        <category label="2024-October" term="2024-October"/>
+        <category label="2024" term="2024"/>
+        <category label="October" term="October"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 40 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2024/week-40</id>
