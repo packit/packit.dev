@@ -395,6 +395,18 @@ Starting now, you can <a href="https://github.com/packit/packit-service/issues/n
             <category>March</category>
         </item>
         <item>
+            <title><![CDATA[Week 10 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-10</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-10</guid>
+            <pubDate>Mon, 11 Mar 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 10 (March 5th – March 11th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-10-march-5th--march-11th">Week 10 (March 5th – March 11th)<a href="#week-10-march-5th--march-11th" class="hash-link" aria-label="Direct link to Week 10 (March 5th – March 11th)" title="Direct link to Week 10 (March 5th – March 11th)">​</a></h2><ul><li>You can now configure a list of Fedora accounts of users whose successful Koji builds will trigger automatic Bodhi updates (by default only <code>packit</code>). (<a href="https://github.com/packit/packit-service/pull/2364" target="_blank" rel="noopener noreferrer">packit-service#2364</a>)</li></ul>]]></content:encoded>
+            <author>mmassari@redhat.com (Maja Massarini)</author>
+            <category>2024-March</category>
+            <category>2024</category>
+            <category>March</category>
+        </item>
+        <item>
             <title><![CDATA[Week 9 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-9</link>
             <guid>https://packit.dev/posts/weekly/2024/week-9</guid>

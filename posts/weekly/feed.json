@@ -498,6 +498,23 @@
             ]
         },
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-10",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-10-march-5th--march-11th\">Week 10 (March 5th – March 11th)<a href=\"#week-10-march-5th--march-11th\" class=\"hash-link\" aria-label=\"Direct link to Week 10 (March 5th – March 11th)\" title=\"Direct link to Week 10 (March 5th – March 11th)\">​</a></h2><ul><li>You can now configure a list of Fedora accounts of users whose successful Koji builds will trigger automatic Bodhi updates (by default only <code>packit</code>). (<a href=\"https://github.com/packit/packit-service/pull/2364\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2364</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-10",
+            "title": "Week 10 in Packit",
+            "summary": "Week 10 (March 5th – March 11th)",
+            "date_modified": "2024-03-11T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2024-March",
+                "2024",
+                "March"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-9",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-9-february-27th--march-4th\">Week 9 (February 27th – March 4th)<a href=\"#week-9-february-27th--march-4th\" class=\"hash-link\" aria-label=\"Direct link to Week 9 (February 27th – March 4th)\" title=\"Direct link to Week 9 (February 27th – March 4th)\">​</a></h2><ul><li>We have fixed the bug about Packit overwriting the final state of the build in case the build start is being processed later than the end of the build. (<a href=\"https://github.com/packit/packit-service/pull/2358\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2358</a>)</li><li>We have improved the reporting of configuration errors in GitLab. (<a href=\"https://github.com/packit/packit-service/pull/2357\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2357</a>)</li><li><code>GitLabProject.get_file_content()</code> can now correctly handle file paths starting with <code>./</code>. (<a href=\"https://github.com/packit/ogr/pull/844\" target=\"_blank\" rel=\"noopener noreferrer\">ogr#844</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-9",
