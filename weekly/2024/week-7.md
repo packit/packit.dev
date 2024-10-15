@@ -16,4 +16,4 @@ tags:
 - We have fixed an issue that caused loading the same data multiple times on the dashboard within the project views. ([packit-service#2349](https://github.com/packit/packit-service/pull/2349))
 - We have also fixed crashing of dashboard's `Usage` page in case of unsuccessful queries. ([dashboard#378](https://github.com/packit/dashboard/pull/378))
 - We have fixed parsing of resolved Bugzillas in comments with multiple arguments specified,
-  e.g. `/packit pull-from-upstream --with-pr-config --resolved-bugs rhbz#123`. ([packit-service#2346](https://github.com/packit/packit-service/pull/2346))
+  e.g. `/packit pull-from-upstream --with-pr-config --resolve-bug rhbz#123`. ([packit-service#2346](https://github.com/packit/packit-service/pull/2346))
