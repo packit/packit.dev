@@ -95,7 +95,7 @@ Then it copies the files listed in `files_to_sync` (which by default includes th
                               configuration.
       -f, --force             Don't discard changes in the git repo by default,
                               unless this is set.
-      -b, --resolve-bug TEXT  Bug(s) that are resolved with the update, e.g.
+      -b, --resolve-bug TEXT  Bug(s) that are resolved with the update, e.g.,
                               rhbz#123 (multiple can be specified)
       --sync-acls             Sync ACLs between dist-git repo and the fork, is
                               considered only with --pr option.
