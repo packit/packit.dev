@@ -70,9 +70,8 @@ have an active Kerberos TGT, you will be automatically authenticated.
       --update-notes TEXT             Bodhi update notes
       --update-type [security|bugfix|enhancement|newpackage]
                                       Type of the bodhi update
-      -b, --resolve-bugzillas BUGZILLA_IDS
-                                      Bugzilla IDs that are resolved with the
-                                      update
+      -b, --resolve-bug TEXT          Bugzilla IDs that are resolved with the
+                                      update, e.g., rhbz#1234
       -p, --package TEXT              Package to update, if more than one
                                       available, like in a monorepo configuration.
                                       Use it multiple times to select multiple
