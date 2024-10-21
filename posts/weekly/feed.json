@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-42",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-42-october-15th--october-21st\">Week 42 (October 15th – October 21st)<a href=\"#week-42-october-15th--october-21st\" class=\"hash-link\" aria-label=\"Direct link to Week 42 (October 15th – October 21st)\" title=\"Direct link to Week 42 (October 15th – October 21st)\">​</a></h2><ul><li>Manual test trigger command (<code>/packit test</code>) now accepts <code>--env</code> option(s)\nto override environment variables passed to Testing Farm.\n(<a href=\"https://github.com/packit/packit-service/pull/2583\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2583</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-42",
+            "title": "Week 42 in Packit",
+            "summary": "Week 42 (October 15th – October 21st)",
+            "date_modified": "2024-10-21T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2024-October",
+                "2024",
+                "October"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-41",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-41-october-8th--october-14th\">Week 41 (October 8th – October 14th)<a href=\"#week-41-october-8th--october-14th\" class=\"hash-link\" aria-label=\"Direct link to Week 41 (October 8th – October 14th)\" title=\"Direct link to Week 41 (October 8th – October 14th)\">​</a></h2><ul><li>We have fixed an issue that was introduced during the unification of the interface for passing resolved Bugzillas / Jira tickets to the <code>sync-release</code> or <code>bodhi_update</code> jobs. (<a href=\"https://github.com/packit/packit/pull/2442\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2442</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-41",
