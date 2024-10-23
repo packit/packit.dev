@@ -229,7 +229,7 @@ to be triggered without the need for manual specification.
 
 ## Running tests with specific environment variables
 From time to time, you may need to pass specific environment variables to your jobs. 
-To achieve this, you can use the `--env` option, which passes environment variables to Testing Farm.
+To achieve this, you can use the `--env` option in the comment command `/packit test`, which passes environment variables to Testing Farm.
 You can set as many environment variables as you want; you just need to pass `--env `for each one. 
 For example, you can use the following command `/packit test --env MY_ENV=test --env MY_ENV_2=test_2`.
 This command allows you to use `MY_ENV` and `MY_ENV_2` in Testing Farm jobs.
