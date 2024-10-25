@@ -29,13 +29,13 @@ Photo by [Malene Thyssen](https://commons.wikimedia.org/wiki/User:Malene) - Own 
 Before I explain what Project Mycorrhiza is and what it's about, lets talk about
 the Packit dashboard and why it's been getting so much love from me the past year.
 
-It's to no surprise that Packit is used within a lot of different projects around
+It's no surprise that Packit is used within a lot of different projects around
 Fedora, which includes [Convert2RHEL](https://github.com/oamg/convert2rhel) that I'm
 a developer of. But I've always felt like Packit's dashboard has missed the mark on
 being the go-to for getting an overview for the pipeline, results, or even the
 project itself.
 
-Since I like making websites better for my own benefit, I've spending a huge amount of my own
+Since I like making websites better for my own benefit, I've been spending a huge amount of my own
 time the past year to gradually improve the Packit dashboard to prepare it for something
 bigger. Which is where Project Mycorrhiza comes in.
 
@@ -44,7 +44,7 @@ bigger. Which is where Project Mycorrhiza comes in.
 :::note
 
 This is heavily simplified for the purpose of getting a quick overview. I encourage you
-to read more about [mycorrhiza on the wikipedia article about it](https://en.wikipedia.org/wiki/Mycorrhiza)
+to read more about [mycorrhiza on the Wikipedia article about it](https://en.wikipedia.org/wiki/Mycorrhiza)
 and any related articles!
 
 :::
@@ -61,11 +61,11 @@ sort of do as well!
 A mycorrhizal network is a symbiosis between fungi and flowers and trees.
 You have already seen one too as the photo above is a bunch of Beech trees that
 are "[ectomyccorhizal](https://en.wikipedia.org/wiki/Ectomycorrhiza)"!
-What it means is that nutriets are shared between the two, the fungi spreads out mycelia in the soil
+What it means is that nutrients are shared between the two, the fungi spreads out mycelia in the soil
 and transfers nutrients to the tree, and the tree provides sugar and fat back to the fungi.
 
 Since my project relates to integrating more services and getting a better
-packaging ecosystem, I chose the name Project Mycorrhiza to put emphasis on symbiosis between
+packaging ecosystem, I chose the name Project Mycorrhiza to put emphasis on the symbiosis between
 the different tools.
 
 ## Project Mycorrhiza
@@ -78,8 +78,9 @@ we will likely drop or change it.
 
 ### Fedora packaging ecosystem
 
-There is a lot of packages out there that ships in Fedora, be it through Copr repositories or
-official Fedora repositories. But what they most have in common is a continuous integration
+There is a lot of packages out there that ships in Fedora, be it through [Copr](https://copr.fedorainfracloud.org/) repositories or
+official Fedora repositories. For products that ship downstream there is also a downstream
+release automation! But what they most have in common is a continuous integration
 workflow to ensure that they can release whenever they want. Although Packit helps with this
 tremendously, it's only an orchestrator to make the process easier and more automated.
 
@@ -93,7 +94,7 @@ to do development builds to test on. Packit can ensure that new commits
 Packit can do a whole bunch more than just this and even go into finer granularity, making it
 a very powerful service to use when it comes to packaging. However, when it comes to
 debugging or seeing results of tests. Packit in the current state rarely does anything more than
-providing links to the results in Copr, Koji, Testing Farm, and so on.
+providing links to the results in Copr, [Koji](https://koji.fedoraproject.org/koji/), Testing Farm, and so on.
 
 ### Next-generation dashboard
 
@@ -130,7 +131,7 @@ provide results to their own Testing Farm results page.
 
 Having all of these logs in one section and in particular a unified style would be super
 beneficial to avoid having to re-parse things.
-
+[Log Detective](https://log-detective.com), a project to help parse logs and provide information on why builds failed, can
 Log Detective, a project to help parse logs and provide information on why builds failed, can
 also be integrated to help their project get more logs to train with (opt-in of course).
 
@@ -162,14 +163,15 @@ but just a free-form field basically.
 ## Research and interviews
 
 So what's next? There is a lot of great information out there already, such as interviews
-by the Red Hat UXD team. We will be going through data reported for the general lacking features
-developers want or are frustrated with, as well as following-up with Packit users with a more
-Packit-scoped interview to see how on the goal our research is. Depending on this research, which
-we hope to be done beginning of 2025 in a worst-case scenario, we will start to plan out
-what needs to be done to make Packit service and Packit dashboard be the best it could be.
+by the [Red Hat UXD team](https://www.uxd-hub.com/). We will be going through
+data reported for the general lacking features developers want or are frustrated with,
+as well as following-up with Packit users with a more Packit-scoped interview to
+see how on the goal our research is. Depending on this research, which we hope to be done
+beginning of 2025 in a worst-case scenario, we will start to plan out the work
+to make the Packit service and Packit dashboard be the best it could be.
 
 We will of course continue to improve everything until then, Packit dashboard will get gradual
-improvements throughout rest of the year and Packit will continue to work on the goals they've
+improvements throughout the rest of the year and Packit will continue to work on the goals they've
 announced for the quarter.
 
 ## TL;DR
@@ -181,7 +183,8 @@ will likely improve Packit service as well. 'Mycorrhiza' means a symbiotic netwo
 and fungi to share nutrients, fats, and sugars between each other to grow.
 
 We are working on and will within the quarter consolidate existing research and begin to interview
-more teams to gather data on what developers are missing the most.
+more teams to gather data on what developers are missing the most. My optimistic goal is to be done
+with research by December.
 
 ## Links
 
