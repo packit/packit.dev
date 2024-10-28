@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2024-10-21T00:00:00.000Z</updated>
+    <updated>2024-10-28T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 43 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2024/week-43</id>
+        <link href="https://packit.dev/posts/weekly/2024/week-43"/>
+        <updated>2024-10-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 43 (October 22nd – October 28th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-43-october-22nd--october-28th">Week 43 (October 22nd – October 28th)<a href="#week-43-october-22nd--october-28th" class="hash-link" aria-label="Direct link to Week 43 (October 22nd – October 28th)" title="Direct link to Week 43 (October 22nd – October 28th)">​</a></h2><ul><li><p>We have added support for retriggering jobs that are configured for <code>commit</code> and <code>release</code> trigger. Retriggering can be done via commit comments on the relevant commit, using the usual comments, such as <code>/packit build</code> or <code>/packit test</code>, but the branch or tag need to be specified like this (without the arguments, we will default to <code>commit</code> trigger for the default branch of the repository):</p><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">/packit build --commit &lt;branch-name&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>or</p><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">/packit build --release &lt;tag-name&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>(<a href="https://github.com/packit/packit-service/pull/2589" target="_blank" rel="noopener noreferrer">packit-service#2589</a>)</p></li><li><p>There is a new method for getting a single commit comment, supporting also retrieval and adding reactions in GitHub. (<a href="https://github.com/packit/ogr/pull/865" target="_blank" rel="noopener noreferrer">ogr#865</a>)</p></li></ul>]]></content>
+        <author>
+            <name>Maja Massarini</name>
+            <email>mmassari@redhat.com</email>
+            <uri>https://github.com/majamassarini</uri>
+        </author>
+        <category label="2024-October" term="2024-October"/>
+        <category label="2024" term="2024"/>
+        <category label="October" term="October"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 42 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2024/week-42</id>
