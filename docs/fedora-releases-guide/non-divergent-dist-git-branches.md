@@ -1,9 +1,9 @@
 ---
-title: non-divergent dist-git branches
+title: Non-divergent dist-git branches
 sidebar_position: 7
 ---
 
-# non-divergent dist-git branches
+# Non-divergent dist-git branches
 
 To prevent your dist-git branches from diverging, you can use the following `dist_git_branches` syntax:
 
@@ -32,6 +32,7 @@ git merge f41
 You shouldn't encounter any conflicts. However, if you have a conflict in the `.gitignore` file, it is safe to keep changes from both `rawhide` and the incoming branch. If you have a conflict in the changelog section of the specfile, ensure you **merge all the missing changelogs** into `rawhide` and list them **in the correct order** (newest changelogs first). Once `rawhide` is ready, you can proceed with:
 
 ```
+# [TODO] Adjust the releases, if needed.
 git checkout f39; git merge --ff-only rawhide
 git checkout f40; git merge --ff-only rawhide
 git checkout f41; git merge --ff-only rawhide

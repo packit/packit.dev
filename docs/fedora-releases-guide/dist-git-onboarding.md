@@ -88,7 +88,7 @@ and not from `upstream_project_url`.
 You can check the other customization options [here](./index.md#customization).
 
 :::info Divergent dist-git branches
-By default, release syncing can result in divergent dist-git branches. To prevent this, refer to the details [here](/docs/fedora-releases-guide/non-divergent-dist-git-branches.md).
+By default, release syncing can result in divergent dist-git branches. To prevent this, refer to the configuration details [here](/docs/fedora-releases-guide/non-divergent-dist-git-branches.md).
 :::
 
 

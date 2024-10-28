@@ -197,7 +197,7 @@ you should specify the [`upstream_tag_template`](/docs/configuration/#upstream_t
 via [`files_to_sync`](/docs/configuration/#files_to_sync) configuration key.
 - By default, Packit downloads sources defined in the spec file that contain URLs.
 You can override these URLs via [`sources`](/docs/configuration#sources) configuration key.
-- By default, release syncing can result in divergent dist-git branches. To prevent this, refer to the details [here](/docs/fedora-releases-guide/non-divergent-dist-git-branches.md).
+- By default, release syncing can result in divergent dist-git branches. To prevent this, refer to the configuration details [here](/docs/fedora-releases-guide/non-divergent-dist-git-branches.md).
 
 
 ##### Actions - use your own commands/scripts
