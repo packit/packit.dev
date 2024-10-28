@@ -474,6 +474,19 @@ It is also possible to re-trigger only the failed builds using a pull request co
 
     /packit rebuild-failed
 
+The same comments can be used to retrigger jobs configured with either `commit` or `release` 
+trigger by specifying the respective arguments:
+
+    /packit build --commit <branch-name>
+
+or
+
+    /packit build --release <tag-name>
+
+If no additional arguments are provided, Packit defaults to the commit trigger on the repository's 
+default branch. The job will execute only if a corresponding job configuration exists for the 
+specified branch or release and if the commit is included on the specified branch or tag.
+
 #### propose_downstream
 For [`propose_downstream`](/docs/configuration/upstream/propose_downstream), you need to place this comment to any issue: 
 
@@ -493,6 +506,19 @@ And to re-trigger only the failed tests, you can use
 
 For testing, there is possible to specify also other arguments for more advanced use-cases, see 
 the details [here](/docs/configuration/upstream/tests#running-tests-with-builds-from-another-pull-request).
+
+The same comments can be used to retrigger jobs configured with either `commit` or `release` 
+trigger by specifying the respective arguments:
+
+    /packit test --commit <branch-name>
+
+or
+
+    /packit test --release <tag-name>
+
+If no additional arguments are provided, Packit defaults to the commit trigger on the repository's 
+default branch. The job will execute only if a corresponding job configuration exists for the 
+specified branch or release and if the commit is included on the specified branch or tag.
 
 #### upstream_koji_build
 
