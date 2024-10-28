@@ -474,8 +474,8 @@ It is also possible to re-trigger only the failed builds using a pull request co
 
     /packit rebuild-failed
 
-The same comments can be used to retrigger jobs configured with either `commit` or `release` 
-trigger by specifying the respective arguments:
+The same can be used to retrigger jobs configured with either `commit` or `release` 
+trigger by specifying the respective arguments, using commit comments:
 
     /packit build --commit <branch-name>
 
@@ -507,8 +507,8 @@ And to re-trigger only the failed tests, you can use
 For testing, there is possible to specify also other arguments for more advanced use-cases, see 
 the details [here](/docs/configuration/upstream/tests#running-tests-with-builds-from-another-pull-request).
 
-The same comments can be used to retrigger jobs configured with either `commit` or `release` 
-trigger by specifying the respective arguments:
+The same can be used to retrigger jobs configured with either `commit` or `release` 
+trigger by specifying the respective arguments, using commit comments:
 
     /packit test --commit <branch-name>
 
