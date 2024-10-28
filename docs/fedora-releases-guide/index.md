@@ -197,6 +197,8 @@ you should specify the [`upstream_tag_template`](/docs/configuration/#upstream_t
 via [`files_to_sync`](/docs/configuration/#files_to_sync) configuration key.
 - By default, Packit downloads sources defined in the spec file that contain URLs.
 You can override these URLs via [`sources`](/docs/configuration#sources) configuration key.
+- By default, release syncing can result in divergent dist-git branches. To prevent this, refer to the details [here](/docs/fedora-releases-guide/non-divergent-dist-git-branches.md).
+
 
 ##### Actions - use your own commands/scripts
 - You may utilise some of the [actions](/docs/configuration/actions/#syncing-the-release)
@@ -216,55 +218,6 @@ for overriding the Packit default behaviour, for example:
           - bash -c '[ -z "$PACKIT_RESOLVED_BUGS" ] || echo ${PACKIT_RESOLVED_BUGS} | tr " " "\n" | sed "s/^/- Resolves /"'
   - for **source archive(s) generation**, you can utilise e.g. `pre-sync` action, see 
   [this example](/docs/configuration/examples#custom-archive-creation-for-release-syncing)
-
-#### Keep dist-git branches non-divergent
-
-If you want to keep your dist-git branches from diverging,
-you can use the new `dist_git_branches` syntax:
-  
-```yaml
-  dist_git_branches:
-    rawhide:
-      fast_forward_merge_into: [fedora-branched]
-    epel-9: {}    
-      
-```
-
-In this example, Packit runs the downstream synchronization process for the
-`rawhide` and `epel-9` branches as usual. But Packit also opens a new pull request reusing the commit from `rawhide` for every
-`fedora-branched` branch so it can be fast-forwarded when merging.
-
-:::warning How to reconcile divergent branches
-
-If you are already using Packit then your branches can have diverged.
-You need to reconcile them before using the new dist_git_branches 
-syntax.
-For the configuration example above and for the state of the branched
-Fedora releases as today, you need to do:
-
-```
-git checkout rawhide
-git merge f39
-git merge f40
-git merge f41
-```
-
-You shouldn't have any conflict.
-But, if you have a conflict in the `.gitignore` file it is safe to 
-keep changes both from rawhide and the incoming branch.
-If you have a conflict in the changelog section of the specfile,
-then you must pay attention to **merge all the missing changelogs** 
-in rawhide and to list them **in the right order** 
-(newest changelogs come first). 
-Once rawhide is ready you can do
-
-```
-git checkout f39; git merge --ff-only rawhide
-git checkout f40; git merge --ff-only rawhide
-git checkout f41; git merge --ff-only rawhide
-```
-
-:::
 
 
 ## Koji build job
