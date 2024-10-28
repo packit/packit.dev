@@ -2,11 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts</id>
     <title>Packit Blog</title>
-    <updated>2024-09-18T08:46:18.000Z</updated>
+    <updated>2024-10-28T10:46:18.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts"/>
     <subtitle>Blog posts by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[No more divergent dist-git branches with Packit!]]></title>
+        <id>https://packit.dev/posts/non-divergent-dist-git-branches</id>
+        <link href="https://packit.dev/posts/non-divergent-dist-git-branches"/>
+        <updated>2024-10-28T10:46:18.000Z</updated>
+        <summary type="html"><![CDATA[Were you annoyed by Packit creating divergent branches in your package's dist-git repository? You'll be happy to know that Packit now supports a new distgitbranches syntax that enables fast-forwarding commits between branches.]]></summary>
+        <content type="html"><![CDATA[<p>Were you annoyed by Packit creating divergent branches in your package's dist-git repository? You'll be happy to know that Packit now supports a new <code>dist_git_branches</code> syntax that enables fast-forwarding commits between branches.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="whats-new">What's New<a href="#whats-new" class="hash-link" aria-label="Direct link to What's New" title="Direct link to What's New">​</a></h2><p>When defining a <code>propose-downstream</code> or <code>pull-from-upstream</code> job, you can use the new <code>dist_git_branches</code> syntax.</p><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">  dist_git_branches:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    rawhide:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      fast_forward_merge_into: [fedora-branched]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    epel-9: {}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>In this example, Packit runs the downstream synchronization process for the <code>rawhide</code> and <code>epel-9</code> branches as usual. Additionally, Packit opens a new pull request, reusing the commit from <code>rawhide</code>, for every <code>fedora-branched</code> branch, allowing it to be fast-forwarded when merging.</p><p>Do you want to know more? Look at the <a href="/docs/fedora-releases-guide/non-divergent-dist-git-branches">non-divergent dist-git branches guide</a></p>]]></content>
+        <author>
+            <name>Maja Massarini</name>
+            <email>mmassari@redhat.com</email>
+            <uri>https://github.com/majamassarini</uri>
+        </author>
+        <category label="propose-downstream" term="propose-downstream"/>
+        <category label="pull-from-upstream" term="pull-from-upstream"/>
+        <category label="downstream" term="downstream"/>
+        <category label="configuration" term="configuration"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Non-git upstreams support and simplified configuration for easier onboarding!]]></title>
         <id>https://packit.dev/posts/non-git-upstreams-support</id>
