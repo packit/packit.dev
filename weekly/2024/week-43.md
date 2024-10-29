@@ -25,3 +25,6 @@ tags:
   ([packit-service#2589](https://github.com/packit/packit-service/pull/2589))
 
 - There is a new method for getting a single commit comment, supporting also retrieval and adding reactions in GitHub. ([ogr#865](https://github.com/packit/ogr/pull/865))
+
+- We have improved the feedback for the Open Scan Hub job. You can now see if the scan is in a `pending`, `running`, `canceled`, `failed`, or `successful` state.
+  A `failed` or `canceled` scan is shown as neutral and does not cause your pull request validation to fail. ([packit-service#2543](https://github.com/packit/packit-service/issues/2543))
