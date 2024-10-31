@@ -14,7 +14,7 @@ tags:
 ---
 
 This term has been thrown around a bit in issues here and there relating to the dashboard and
-people usually get confused, and rightfully so! Lets dive in and see what Project Myccorhiza
+people usually get confused, and rightfully so! Lets dive in and see what Project Mycorrhiza
 is and why we chose this name.
 
 ![Photo of beech trees in a forest](./img/forest.jpg "New beech leaves, Gribskov Forest in the northern part of Sealand, Denmark.")
@@ -24,7 +24,20 @@ Photo by [Malene Thyssen](https://commons.wikimedia.org/wiki/User:Malene) - Own 
 
 ---
 
-[TL;DR at the bottom!](#tldr)
+## TL;DR
+
+Project Mycorrhiza is a temporary name to encompass the work relating to what the next generation
+Packit dashboard could look like by seeing how developer time can be saved, minimizing
+complexity, reducing context switching, and providing results faster. Research going into this
+will likely improve Packit overall and even be useful for other related teams. 'Mycorrhiza' means
+a symbiotic network between plants and fungi to share nutrients, fats, and sugars between each other to grow.
+
+We will consolidate existing research and begin to interview more teams on what developers are
+missing the most. Our plan is for this to be done before 2024, likely by December.
+
+---
+
+## Abstract
 
 Before I explain what Project Mycorrhiza is and what it's about, lets talk about
 the Packit dashboard and why it's been getting so much love from me the past year.
@@ -74,7 +87,7 @@ Now with the name explanation out of the way. First and foremost, this should be
 of idea or kind of a temporary working group to see about the future goals of Packit and
 how the Packit dashboard fits into the Fedora service ecosystem. The Mycorrhiza name itself
 will only stick around for the duration of this investigation and alignment. Once it is done
-we will likely drop or change it.
+we will likely drop or change it. 2. Kicks off integration tests through [Testing Farm](https://testing-farm.io/).
 
 ### Fedora packaging ecosystem
 
@@ -88,7 +101,7 @@ For those that already ship to Fedora, you likely use Copr to do either general 
 to do development builds to test on. Packit can ensure that new commits
 
 1. Start a Copr build for the commit with a good name.
-2. Kicks of integration tests through [Testing Farm](https://testing-farm.io/).
+2. Kicks off integration tests through [Testing Farm](https://testing-farm.io/).
 3. Show the results in GitHub or GitLab workflows.
 
 Packit can do a whole bunch more than just this and even go into finer granularity, making it
@@ -167,24 +180,12 @@ by the [Red Hat UXD team](https://www.uxd-hub.com/). We will be going through
 data reported for the general lacking features developers want or are frustrated with,
 as well as following-up with Packit users with a more Packit-scoped interview to
 see how on the goal our research is. Depending on this research, which we hope to be done
-beginning of 2025 in a worst-case scenario, we will start to plan out the work
+beginning of 2025 in the worst-case scenario, we will start to plan out the work
 to make the Packit service and Packit dashboard be the best it could be.
 
 We will of course continue to improve everything until then, Packit dashboard will get gradual
 improvements throughout the rest of the year and Packit will continue to work on the goals they've
 announced for the quarter.
-
-## TL;DR
-
-Project Mycorrhiza is a temporary name to encompass the work relating to what the next generation
-Packit dashboard could look like by seeing how developer time can be saved, minimizing
-complexity, reducing context switching, and providing results faster. Research going into this
-will likely improve Packit service as well. 'Mycorrhiza' means a symbiotic network between plants
-and fungi to share nutrients, fats, and sugars between each other to grow.
-
-We are working on and will within the quarter consolidate existing research and begin to interview
-more teams to gather data on what developers are missing the most. My optimistic goal is to be done
-with research by December.
 
 ## Links
 
