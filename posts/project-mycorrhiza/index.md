@@ -1,6 +1,6 @@
 ---
 title: "Packit dashboard and Project Mycorrhiza"
-date: 2024-10-25T10:00:00
+date: 2024-11-01T10:00:00
 authors:
   - venefilyn
   - flachman
