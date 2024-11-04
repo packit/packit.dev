@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpackit_dev=self.webpackChunkpackit_dev||[]).push([[90589],{14128:e=>{e.exports=JSON.parse('{"permalink":"/posts/tags/copr","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
