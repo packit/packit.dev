@@ -141,19 +141,24 @@ jobs:
       additional_repos:
        - http://koji.katello.org/releases/yum/foreman-nightly/el8/x86_64/
       additional_modules: "foreman:el8,ruby:2.7,nodejs:12,postgresql:12"
+      without_opts:
+       - check
     fedora-rawhide: {}
     fedora-37: {}
 ```
 
 In this case, both Fedora targets don't have anything specific and would use
 packages and modules from the base distro, while CentOS Stream 8 will use a
-custom yum repo and 4 specific modules.
+custom yum repo, 4 specific modules and it will have `--without check` passed
+to rpmbuild.
 
 You can define these three options:
 * `additional_packages` (list) – install additional packages before the build
 * `additional_repos` (list) – enable these yum repositories before installing any packages
 * `additional_modules` (str) – enable these modules before installing packages,
   specified as comma-separated string: `MODULE:STREAM,MODULE2:STREAM2,...`
+* `with_opts` (list) – build with these rpmbuild `--with` options
+* `without_opts` (list) – build with these rpmbuild `--without` options
 
 
 ## Available Copr build targets
