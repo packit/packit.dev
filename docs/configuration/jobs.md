@@ -78,9 +78,9 @@ jobs:
   branch: main
 ```
 
-Do not forget that you can also use the top-level keys to store common keys like
-`targets` and `actions` and only override them as needed in the `jobs` or
-`packages` section.
+Do not forget that you can also define common Packit config options at the
+top level (such as `targets` or `actions`) and only override them when
+needed in the `jobs` or `packages` section.
 
 For more complex structures it can be useful to have yaml-anchors that are ignored,
 in which case you can use the top-level `_` key, for example:
