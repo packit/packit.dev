@@ -16,6 +16,13 @@ You should place the file in the root of your upstream repo. Packit accepts thes
 
 Both Packit Service and Packit CLI use this configuration file.
 
+:::tip Writing complex configurations
+
+See the [Packit Service jobs configuration](/docs/configuration/jobs.md) section for some tips on how to configure
+complex config files.
+
+:::
+
 ## Top-level keys
 
 Here you can see a list of options that can be defined at the top-level and

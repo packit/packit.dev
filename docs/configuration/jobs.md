@@ -78,13 +78,43 @@ jobs:
   branch: main
 ```
 
-Note that in case of more complex scenarios, it can be useful to create also
-a template job, that should not be triggered in Packit at all.
-This is typically useful when creating a number of tests which needs various
-parameters, but many parameters stay same. In such a case set the 
-`trigger` to `ignore` in the template job and use the expected trigger in real jobs.
+Do not forget that you can also define common Packit config options at the
+top level (such as `targets` or `actions`) and only override them when
+needed in the `jobs` or `packages` section.
 
-Please see the example:
+For more complex structures it can be useful to have yaml-anchors that are ignored,
+in which case you can use the top-level `_` key, for example:
+```yaml
+_:
+  basic-test: &template-basic-test
+    job: tests
+    trigger: pull_request
+    targets:
+      - centos-stream-8-x86_64
+      - centos-stream-9-x86_64
+      - fedora-all
+
+jobs:
+
+- <<: *template-basic-test
+  identifier: kernel-rt-sanity
+  labels:
+    - kernel-rt
+  env:
+    RPM_NAME=kernel-rt
+
+- <<: *template-basic-test
+  identifier: kernel-sanity
+  labels:
+    - kernel
+  env:
+    RPM_NAME=kernel
+```
+
+This is typically useful when creating a number of tests which needs various
+parameters, but many parameters stay same. For compatibility reasons, you can
+also define a job that is not executed by setting `trigger` to `ignore`. The
+above example can be rewritten as:
 ```yaml
 jobs:
 - &template-basic-test
@@ -111,6 +141,7 @@ jobs:
   env:
     RPM_NAME=kernel
 ```
+However, using the `_` placeholder key is preferred as it provides more flexibility.
 
 ## Configuration keys
 #### job
