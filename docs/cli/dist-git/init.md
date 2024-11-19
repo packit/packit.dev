@@ -84,6 +84,15 @@ Create a Packit's dist-git configuration for release syncing to Fedora.
       --dist-git-branches TEXT        Comma separated list of target branches in
                                       dist-git to release into. (defaults to
                                       rawhide)
+      --dist-git-branches-mapping TEXT
+                                          JSON dictionary of target branches in
+                                          dist-git to release into for which
+                                          `fast_forward_merge_into` syntax will be
+                                          used, e.g. '{"fedora-rawhide": ["f39",
+                                          "f40"]}'. If not provided and --dist-
+                                          git-branches is not provided as well,
+                                          defaults to '{"fedora-rawhide":
+                                          ["fedora-branched"]}').
       -p, --push-to-distgit           Push the generated Packit config to the
                                       dist-git repository's rawhide
       -c, --create-pr                 Create a PR with generated Packit config
