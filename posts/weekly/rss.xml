@@ -4,10 +4,25 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 18 Nov 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 25 Nov 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 47 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-47</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-47</guid>
+            <pubDate>Mon, 25 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 47 (November 19th – November 25th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-47-november-19th--november-25th">Week 47 (November 19th – November 25th)<a href="#week-47-november-19th--november-25th" class="hash-link" aria-label="Direct link to Week 47 (November 19th – November 25th)" title="Direct link to Week 47 (November 19th – November 25th)">​</a></h2><ul><li>Packit now uses the <code>fedora-distro-aliases</code> library to expand Fedora aliases.
+This is Packit's original code being improved and properly maintained by the Copr team.
+For further suggestions about aliases, use github.com/rpm-software-management/fedora-distro-aliases.
+(<a href="https://github.com/packit/packit/pull/2470" target="_blank" rel="noopener noreferrer">packit#2470</a>)</li></ul>]]></content:encoded>
+            <author>nforro@redhat.com (Nikola Forró)</author>
+            <category>2024-November</category>
+            <category>2024</category>
+            <category>November</category>
+        </item>
         <item>
             <title><![CDATA[Week 46 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-46</link>
