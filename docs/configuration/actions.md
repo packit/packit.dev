@@ -69,6 +69,7 @@ These apply to `propose-downstream` command/job and `pull-from-upstream` job.
 | [hook] | `pre-sync`            | upstream git repo | after cloning the upstream repo (main) and dist-git repo (target branch) and after gpg keys verification and version compatibility check |                               |
 |        | `prepare-files`       | upstream git repo | after cloning, checking out of both upstream and dist-git repos       | replace patching and archive generation |
 |        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                        | replace patching                        |
+| [hook] | `post-modifications`  | upstream git repo | after all modifications to the spec file and downloading remote sources and before uploading to lookaside cache |                               |
 |        | `get-current-version` | upstream git repo | when the current version needs to be found                            | expect version as a stdout parameter    |
 |        | `changelog-entry`     | upstream git repo | when adding a new changelog entry to the specfile                     | stdout is used as a changelog entry     |
 |        | `commit-message`      | upstream git repo | after running pre-sync hook and checking out the tags/branches        | used to override default commit message |
@@ -84,7 +85,8 @@ These apply to the `srpm` command and building in COPR.
 |        | `get-current-version` | upstream git repo | when the current version needs to be found                            | expect version as a stdout                           |
 |        | `create-archive`      | upstream git repo | when the archive needs to be created                                  | replace the code for creating an archive             |
 |        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                        | replace patching                                     |
-|        | `fix-spec-file`       | upstream git repo | after creation of a tarball and before running rpmbuild command       | this action changes spec file to use the new tarball |
+|        | `fix-spec-file`       | upstream git repo | after creation of a tarball                                           | this action changes spec file to use the new tarball |
+| [hook] | `post-modifications`  | upstream git repo | after all modifications to the spec file and before running rpmbuild command |                                                      |
 |        | `changelog-entry`     | upstream git repo | when adding a new changelog entry to the specfile                     | stdout is used as a changelog entry                  |
 
 ## Actions details
@@ -259,6 +261,7 @@ List of actions that provide these environment variables:
 * `pre-sync`
 * `prepare-files`
 * `create-patches`
+* `post-modifications`
 * `commit-message`
 
 ---
