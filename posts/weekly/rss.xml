@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 25 Nov 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 02 Dec 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 48 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-48</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-48</guid>
+            <pubDate>Mon, 02 Dec 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 48 (November 26th – December 2nd)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-48-november-26th--december-2nd">Week 48 (November 26th – December 2nd)<a href="#week-48-november-26th--december-2nd" class="hash-link" aria-label="Direct link to Week 48 (November 26th – December 2nd)" title="Direct link to Week 48 (November 26th – December 2nd)">​</a></h2><ul><li>There is a new action/hook, <code>post-modifications</code>, that is executed after all modifications to the spec file are done and in case of syncing release after all remote sources are downloaded and before uploading to lookaside cache. You can use it for example to construct an additional source that depends on the primary source (that may not yet be available in other actions). (<a href="https://github.com/packit/packit/pull/2474" target="_blank" rel="noopener noreferrer">packit#2474</a>)</li><li>We have fixed <code>/packit retest-failed</code> which was retriggering also non failed tests. (<a href="https://github.com/packit/packit-service/pull/2665" target="_blank" rel="noopener noreferrer">packit-service#2665</a>)</li><li>Packit now includes dashboard links when reporting errors for Koji builds and Bodhi updates. (<a href="https://github.com/packit/packit-service/pull/2663" target="_blank" rel="noopener noreferrer">packit-service#2663</a>)</li><li>We have improved Koji builds and Bodhi updates errors displaying. (<a href="https://github.com/packit/dashboard/pull/497" target="_blank" rel="noopener noreferrer">dashboard#497</a>)</li></ul>]]></content:encoded>
+            <author>mmassari@redhat.com (Maja Massarini)</author>
+            <category>2024-November</category>
+            <category>2024</category>
+            <category>November</category>
+        </item>
         <item>
             <title><![CDATA[Week 47 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-47</link>

@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2024/week-48",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-48-november-26th--december-2nd\">Week 48 (November 26th – December 2nd)<a href=\"#week-48-november-26th--december-2nd\" class=\"hash-link\" aria-label=\"Direct link to Week 48 (November 26th – December 2nd)\" title=\"Direct link to Week 48 (November 26th – December 2nd)\">​</a></h2><ul><li>There is a new action/hook, <code>post-modifications</code>, that is executed after all modifications to the spec file are done and in case of syncing release after all remote sources are downloaded and before uploading to lookaside cache. You can use it for example to construct an additional source that depends on the primary source (that may not yet be available in other actions). (<a href=\"https://github.com/packit/packit/pull/2474\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2474</a>)</li><li>We have fixed <code>/packit retest-failed</code> which was retriggering also non failed tests. (<a href=\"https://github.com/packit/packit-service/pull/2665\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2665</a>)</li><li>Packit now includes dashboard links when reporting errors for Koji builds and Bodhi updates. (<a href=\"https://github.com/packit/packit-service/pull/2663\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2663</a>)</li><li>We have improved Koji builds and Bodhi updates errors displaying. (<a href=\"https://github.com/packit/dashboard/pull/497\" target=\"_blank\" rel=\"noopener noreferrer\">dashboard#497</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2024/week-48",
+            "title": "Week 48 in Packit",
+            "summary": "Week 48 (November 26th – December 2nd)",
+            "date_modified": "2024-12-02T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2024-November",
+                "2024",
+                "November"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2024/week-47",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-47-november-19th--november-25th\">Week 47 (November 19th – November 25th)<a href=\"#week-47-november-19th--november-25th\" class=\"hash-link\" aria-label=\"Direct link to Week 47 (November 19th – November 25th)\" title=\"Direct link to Week 47 (November 19th – November 25th)\">​</a></h2><ul><li>Packit now uses the <code>fedora-distro-aliases</code> library to expand Fedora aliases.\nThis is Packit's original code being improved and properly maintained by the Copr team.\nFor further suggestions about aliases, use github.com/rpm-software-management/fedora-distro-aliases.\n(<a href=\"https://github.com/packit/packit/pull/2470\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2470</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2024/week-47",
