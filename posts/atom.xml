@@ -2,11 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts</id>
     <title>Packit Blog</title>
-    <updated>2024-11-01T10:00:00.000Z</updated>
+    <updated>2024-12-09T12:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts"/>
     <subtitle>Blog posts by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Packit 1.0.0 countdown - action may be required]]></title>
+        <id>https://packit.dev/posts/packit_1_0_0_action_required</id>
+        <link href="https://packit.dev/posts/packit_1_0_0_action_required"/>
+        <updated>2024-12-09T12:00:00.000Z</updated>
+        <summary type="html"><![CDATA[After 105 minor releases we are almost ready to announce our first major release, Packit 1.0.0!]]></summary>
+        <content type="html"><![CDATA[<p>After 105 minor releases we are almost ready to announce our first major release, Packit 1.0.0!</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="whats-new">What's New<a href="#whats-new" class="hash-link" aria-label="Direct link to What's New" title="Direct link to What's New">​</a></h2><p>We will <strong>remove all long-deprecated keys from the configuration file</strong>.</p><p><code>packit-service</code> jobs are tied with <code>packit CLI</code>. The <em>packit configuration code</em> is defined in the <code>packit</code> package and used by the <code>packit-service</code>.
+So be aware that for those projects still using the deprecated keys in their <code>packit.yaml</code> configuration file we have created a migration pull request.</p><p>Please, <strong>check if you have any new PR for your project created by the packit-service bot account, review and merge it</strong>. Otherwise, you might experience issues with the <code>packit-service</code> jobs once the new packit version is released.</p><p>We plan to release Packit 1.0.0 in <strong>January 2025</strong>.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="list-of-removed-keys">List of removed keys<a href="#list-of-removed-keys" class="hash-link" aria-label="Direct link to List of removed keys" title="Direct link to List of removed keys">​</a></h3><ul><li>Job type <code>build</code> has been changed to <a href="https://packit.dev/docs/configuration/upstream/copr_build" target="_blank" rel="noopener noreferrer"><code>copr_build</code></a>.</li><li>Job type <code>production_build</code> has been changed to <a href="https://packit.dev/docs/configuration/upstream/upstream_koji_build" target="_blank" rel="noopener noreferrer"><code>upstream_koji_build</code></a>.</li><li>Key <code>upstream_project_name</code> has been changed to <a href="https://packit.dev/docs/configuration#upstream_package_name" target="_blank" rel="noopener noreferrer"><code>upstream_package_name</code></a>.</li><li>Key <code>synced_files</code> has been changed to <a href="https://packit.dev/docs/configuration#files_to_sync" target="_blank" rel="noopener noreferrer"><code>files_to_sync</code></a>.</li></ul><p>The job types were renamed for clarity when we introduced more job types.
+The <code>upstream_project_name</code> was renamed to <code>upstream_package_name</code> to be more specific.
+The <code>files_to_sync</code> key has a more explicit behavior than the old <code>synced_files</code> key.</p>]]></content>
+        <author>
+            <name>Maja Massarini</name>
+            <email>mmassari@redhat.com</email>
+            <uri>https://github.com/majamassarini</uri>
+        </author>
+        <category label="configuration" term="configuration"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Packit dashboard and Project Mycorrhiza]]></title>
         <id>https://packit.dev/posts/project-mycorrhiza</id>
