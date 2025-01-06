@@ -194,12 +194,8 @@ const config = {
             to: "/posts/weekly/2022",
           },
           {
-            from: ["/posts/weekly/2023/08/07"],
-            to: "/posts/weekly/2023/week-31",
-          },
-          {
-            from: ["/posts/weekly/2023/08/14"],
-            to: "/posts/weekly/2023/week-32",
+            from: ["/posts/weekly/2023/08/07", "/posts/weekly/2023/08/14"],
+            to: "/posts/weekly/2023",
           },
         ],
       },
