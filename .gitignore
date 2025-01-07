@@ -26,9 +26,13 @@ yarn-error.log*
 # Imported docs
 .deployment-docs
 .research-docs
+.specfile-docs
+.agile-docs
 
 deployment
 research
+agile
+specfile
 
 # Generated usage graphs
 static/img/usage/*.svg
