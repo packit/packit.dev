@@ -164,6 +164,8 @@ distro (otherwise the default would be `centos-stream-8`) and for
 * **use_internal_tf** - Whether to use the internal Testing Farm infrastructure (defaults to false). 
 This requires additional approval from our side (please, [contact us](#contact) in case you want to use it). 
 
+## Environment variables
+
 There are also environment variables set by Packit:
 * `PACKIT_FULL_REPO_NAME`
 * `PACKIT_UPSTREAM_NAME`
