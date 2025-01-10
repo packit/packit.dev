@@ -245,6 +245,20 @@ within a spec file in the same manner, trying to preserve macro substitutions an
 macro definitions (or even tag values in case of e.g. `%{version}`) if possible. It is up to you
 to replace the original string with the result (that can but doesn't have to be exactly the same).
 
+::: info
+
+The algorithm first tokenizes the string to be updated. Then it determines which macro substitutions
+within the string can be affected by modifying bodies of preceding macro definitions or values
+of preceding tags. Then it identifies substrings that are deemed modifiable (that could be for example
+a sequence of numbers between two dots) and constructs a regular expression in which the modifiable
+macro substitutions and the modifiable substrings are capturing groups.
+If the requested new string is a not match to this regular expression, nothing happens and the requested
+new string is returned unchanged. If it is a match though, the captured groups corresponding to modifiable
+macro substitutions are processed, recursively, starting with tokenization once again. The requested
+new string is then updated with corresponding macro substitutions from the original string and returned.
+
+:::
+
 ## More info and links
 
 Are you interested in more details, trying the library out or even contributing?
