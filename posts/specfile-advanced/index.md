@@ -19,7 +19,7 @@ you can take a look at [Introduction to specfile library](posts/specfile-introdu
 
 Imagine you want to make changes to a spec file that requires some sources
 to be present at the time of parsing such as sources referenced from shell
-expansions (`%(date +%F -r %{SOURCE0})`), includes some external files
+expansions (e.g. `%(date +%F -r %{SOURCE0})`), includes some external files
 using the `%include` directive, or loads external macrofiles with the `%load` macro,
 but all you have is the spec file itself.
 
@@ -245,7 +245,7 @@ within a spec file in the same manner, trying to preserve macro substitutions an
 macro definitions (or even tag values in case of e.g. `%{version}`) if possible. It is up to you
 to replace the original string with the result (that can but doesn't have to be exactly the same).
 
-::: info
+:::info
 
 The algorithm first tokenizes the string to be updated. Then it determines which macro substitutions
 within the string can be affected by modifying bodies of preceding macro definitions or values
