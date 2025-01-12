@@ -18,7 +18,7 @@ Then welcome to a collection of some slightly more advanced topics that you coul
 If you're not that familiar and would like to start with something easier,
 you can take a look at <a href="/posts/posts/specfile-introduction">Introduction to specfile library</a>.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="forced-parsing">Forced parsing<a href="#forced-parsing" class="hash-link" aria-label="Direct link to Forced parsing" title="Direct link to Forced parsing">​</a></h2><p>Imagine you want to make changes to a spec file that requires some sources
 to be present at the time of parsing such as sources referenced from shell
-expansions (<code>%(date +%F -r %{SOURCE0})</code>), includes some external files
+expansions (e.g. <code>%(date +%F -r %{SOURCE0})</code>), includes some external files
 using the <code>%include</code> directive, or loads external macrofiles with the <code>%load</code> macro,
 but all you have is the spec file itself.</p><p>In such case you may want to instantiate <code>Specfile</code> with the <code>force_parse</code> argument
 set to <code>True</code> in order to attempt to parse the spec file with missing external files.
@@ -49,7 +49,7 @@ some macro definitions it is guaranteed that <code>expanded_value</code> of a ta
 will be equal to the given value.</p><p>There is also a more general method <code>Specfile.update_value()</code> that allows you to update any string
 within a spec file in the same manner, trying to preserve macro substitutions and update relevant
 macro definitions (or even tag values in case of e.g. <code>%{version}</code>) if possible. It is up to you
-to replace the original string with the result (that can but doesn't have to be exactly the same).</p><p>::: info</p><p>The algorithm first tokenizes the string to be updated. Then it determines which macro substitutions
+to replace the original string with the result (that can but doesn't have to be exactly the same).</p><div class="theme-admonition theme-admonition-info alert alert--info admonition_LlT9"><div class="admonitionHeading_tbUL"><span class="admonitionIcon_kALy"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_S0QG"><p>The algorithm first tokenizes the string to be updated. Then it determines which macro substitutions
 within the string can be affected by modifying bodies of preceding macro definitions or values
 of preceding tags. Then it identifies substrings that are deemed modifiable (that could be for example
 a sequence of numbers between two dots) and constructs a regular expression in which the modifiable
@@ -57,7 +57,7 @@ macro substitutions and the modifiable substrings are capturing groups.
 If the requested new string is a not match to this regular expression, nothing happens and the requested
 new string is returned unchanged. If it is a match though, the captured groups corresponding to modifiable
 macro substitutions are processed, recursively, starting with tokenization once again. The requested
-new string is then updated with corresponding macro substitutions from the original string and returned.</p><p>:::</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="more-info-and-links">More info and links<a href="#more-info-and-links" class="hash-link" aria-label="Direct link to More info and links" title="Direct link to More info and links">​</a></h2><p>Are you interested in more details, trying the library out or even contributing?
+new string is then updated with corresponding macro substitutions from the original string and returned.</p></div></div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="more-info-and-links">More info and links<a href="#more-info-and-links" class="hash-link" aria-label="Direct link to More info and links" title="Direct link to More info and links">​</a></h2><p>Are you interested in more details, trying the library out or even contributing?
 You can find <em>specfile</em> source code on <a href="https://github.com/packit/specfile" target="_blank" rel="noopener noreferrer">GitHub</a>.
 See the <a href="https://github.com/packit/specfile/blob/main/README.md" target="_blank" rel="noopener noreferrer">README</a> for more tips and usage examples.
 You can also check out the <a href="https://packit.dev/specfile/api/specfile" target="_blank" rel="noopener noreferrer">API reference</a>.</p>]]></content>
