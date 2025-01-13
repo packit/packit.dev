@@ -10,4 +10,4 @@ tags:
 
 ## Week 2 (January 7th – January 13th)
 
-- Fix EVR regex to not match email addresses with `-` in them. (contributed by [Dan Čermák](https://github.com/dcermak), [specfile#445](https://github.com/packit/specfile/pull/445))
+- Fixed EVR regex used when parsing changelog entries in the _specfile_ library to not match email addresses with `-` in them. (contributed by [Dan Čermák](https://github.com/dcermak), [specfile#445](https://github.com/packit/specfile/pull/445))
