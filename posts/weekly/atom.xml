@@ -51,6 +51,24 @@ for alternative architectures.
         <category label="December" term="December"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Week 49 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2024/week-49</id>
+        <link href="https://packit.dev/posts/weekly/2024/week-49"/>
+        <updated>2024-12-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 49 (December 3rd – December 9th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-49-december-3rd--december-9th">Week 49 (December 3rd – December 9th)<a href="#week-49-december-3rd--december-9th" class="hash-link" aria-label="Direct link to Week 49 (December 3rd – December 9th)" title="Direct link to Week 49 (December 3rd – December 9th)">​</a></h2><ul><li>It's finally here! The team is planning to release Packit 1.0.0! We want to take this opportunity to clean up long-time deprecated config options and a related code.
+To not let you alone in this, you can expect a pull request with required changes in case you are affected.
+More information about this change can be found on <a href="https://packit.dev/posts/packit_1_0_0_action_required" target="_blank" rel="noopener noreferrer">a separate page</a>.</li></ul>]]></content>
+        <author>
+            <name>František Lachman</name>
+            <email>flachman@redhat.com</email>
+            <uri>https://github.com/lachmanfrantisek</uri>
+        </author>
+        <category label="2024-December" term="2024-December"/>
+        <category label="2024" term="2024"/>
+        <category label="December" term="December"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Week 48 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2024/week-48</id>
         <link href="https://packit.dev/posts/weekly/2024/week-48"/>

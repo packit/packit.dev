@@ -44,6 +44,20 @@ for alternative architectures.
             <category>December</category>
         </item>
         <item>
+            <title><![CDATA[Week 49 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2024/week-49</link>
+            <guid>https://packit.dev/posts/weekly/2024/week-49</guid>
+            <pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 49 (December 3rd – December 9th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-49-december-3rd--december-9th">Week 49 (December 3rd – December 9th)<a href="#week-49-december-3rd--december-9th" class="hash-link" aria-label="Direct link to Week 49 (December 3rd – December 9th)" title="Direct link to Week 49 (December 3rd – December 9th)">​</a></h2><ul><li>It's finally here! The team is planning to release Packit 1.0.0! We want to take this opportunity to clean up long-time deprecated config options and a related code.
+To not let you alone in this, you can expect a pull request with required changes in case you are affected.
+More information about this change can be found on <a href="https://packit.dev/posts/packit_1_0_0_action_required" target="_blank" rel="noopener noreferrer">a separate page</a>.</li></ul>]]></content:encoded>
+            <author>flachman@redhat.com (František Lachman)</author>
+            <category>2024-December</category>
+            <category>2024</category>
+            <category>December</category>
+        </item>
+        <item>
             <title><![CDATA[Week 48 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2024/week-48</link>
             <guid>https://packit.dev/posts/weekly/2024/week-48</guid>
