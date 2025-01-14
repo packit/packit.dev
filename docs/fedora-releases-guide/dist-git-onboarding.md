@@ -215,7 +215,9 @@ You can check all the job runs with details and logs in [Packit dashboard](https
 - [koji_build](https://dashboard.packit.dev/jobs/downstream-koji-builds)
 - [bodhi_update](https://dashboard.packit.dev/jobs/bodhi-updates)
 
-You can utilise [Fedora Notifications](https://notifications.fedoraproject.org/) as well.
+We also recommend utilising [Fedora Notifications](https://notifications.fedoraproject.org/)
+since Fedora services do not notify package maintainers about activities triggered by others (i.e. Packit).
+Learn more about setting it up [here](fedora-notifications.md).
 
 ### Notifications about errors
 Since it is not possible to create issues in dist-git repositories, you can configure a repository where we should
