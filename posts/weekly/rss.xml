@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 06 Jan 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 13 Jan 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 2 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2025/week-2</link>
+            <guid>https://packit.dev/posts/weekly/2025/week-2</guid>
+            <pubDate>Mon, 13 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 2 (January 7th – January 13th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-2-january-7th--january-13th">Week 2 (January 7th – January 13th)<a href="#week-2-january-7th--january-13th" class="hash-link" aria-label="Direct link to Week 2 (January 7th – January 13th)" title="Direct link to Week 2 (January 7th – January 13th)">​</a></h2><ul><li>Fixed EVR regex used when parsing changelog entries in the <em>specfile</em> library to not match email addresses with <code>-</code> in them. (contributed by <a href="https://github.com/dcermak" target="_blank" rel="noopener noreferrer">Dan Čermák</a>, <a href="https://github.com/packit/specfile/pull/445" target="_blank" rel="noopener noreferrer">specfile#445</a>)</li></ul>]]></content:encoded>
+            <author>flachman@redhat.com (František Lachman)</author>
+            <category>2025-January</category>
+            <category>2025</category>
+            <category>January</category>
+        </item>
         <item>
             <title><![CDATA[Week 1 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2025/week-1</link>

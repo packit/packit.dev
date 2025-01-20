@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-2",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-2-january-7th--january-13th\">Week 2 (January 7th – January 13th)<a href=\"#week-2-january-7th--january-13th\" class=\"hash-link\" aria-label=\"Direct link to Week 2 (January 7th – January 13th)\" title=\"Direct link to Week 2 (January 7th – January 13th)\">​</a></h2><ul><li>Fixed EVR regex used when parsing changelog entries in the <em>specfile</em> library to not match email addresses with <code>-</code> in them. (contributed by <a href=\"https://github.com/dcermak\" target=\"_blank\" rel=\"noopener noreferrer\">Dan Čermák</a>, <a href=\"https://github.com/packit/specfile/pull/445\" target=\"_blank\" rel=\"noopener noreferrer\">specfile#445</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-2",
+            "title": "Week 2 in Packit",
+            "summary": "Week 2 (January 7th – January 13th)",
+            "date_modified": "2025-01-13T00:00:00.000Z",
+            "author": {
+                "name": "František Lachman",
+                "url": "https://github.com/lachmanfrantisek"
+            },
+            "tags": [
+                "2025-January",
+                "2025",
+                "January"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-1",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-1-january-2nd--january-6th\">Week 1 (January 2nd – January 6th)<a href=\"#week-1-january-2nd--january-6th\" class=\"hash-link\" aria-label=\"Direct link to Week 1 (January 2nd – January 6th)\" title=\"Direct link to Week 1 (January 2nd – January 6th)\">​</a></h2><ul><li>We have improved fallback commit status reporting via comments in GitLab. (<a href=\"https://github.com/packit/packit-service/pull/2686\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2686</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-1",
