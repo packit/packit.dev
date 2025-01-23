@@ -12,6 +12,8 @@ tags:
 
 We are reaching the end of the year and it’s a good time to look back at the Packit highlights of this year. And it was a year!
 
+<!--truncate-->
+
 We didn’t take a winter sleep, and at the very start of the year, we [announced](https://packit.dev/posts/specfile-introduction) the [Python library for parsing specfiles](https://github.com/packit/specfile). (Mainly written by [Nikola](https://github.com/nforro).) We had been successfully using it for some time and it was time to give the benefit to others. Thanks to that, there is now a [language Server for RPM spec files](https://github.com/dcermak/rpm-spec-language-server).
 
 A lot usually happens in Brussels at the turn of January and February. And this time, we were present as well for the first time. [František](https://mastodonczech.cz/@lachmanfrantisek) (joined by [Evgeny](https://github.com/ukulekek)) presented on [CentOS Connect how Packit and Testing Farm can be beneficial to the CentOS community](https://www.youtube.com/watch?v=Eqb6IqG7Jek). Also, at this conference, there was a meetup of the [CentOS Integration SIG](https://sigs.centos.org/integration/) which [Matej](https://fosstodon.org/@m4tt_314) and [František](https://mastodonczech.cz/@lachmanfrantisek) joined. The main event in Brussels is the [FOSDEM conference](https://fosdem.org/2024/), a big conference consisting of multiple so-called rooms. [František](https://mastodonczech.cz/@lachmanfrantisek) took [an interactive session](https://fosdem.org/2024/schedule/event/fosdem-2024-2881-upstream-and-downstream-best-friends-forever-/) in the Distribution room about the relationship between upstream and downstream.
