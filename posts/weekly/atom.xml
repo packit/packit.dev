@@ -2,11 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2025-01-13T00:00:00.000Z</updated>
+    <updated>2025-01-28T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Weeks 3–4 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2025/week-3-4</id>
+        <link href="https://packit.dev/posts/weekly/2025/week-3-4"/>
+        <updated>2025-01-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Weeks 3–4 (January 14th – January 27th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="weeks-34-january-14th--january-27th">Weeks 3–4 (January 14th – January 27th)<a href="#weeks-34-january-14th--january-27th" class="hash-link" aria-label="Direct link to Weeks 3–4 (January 14th – January 27th)" title="Direct link to Weeks 3–4 (January 14th – January 27th)">​</a></h2><div class="theme-admonition theme-admonition-warning alert alert--danger admonition_LlT9"><div class="admonitionHeading_tbUL"><span class="admonitionIcon_kALy"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg></span>danger</div><div class="admonitionContent_S0QG"><p>This is also a breaking release that includes changes from the Packit 1.0.0, we
+have opened PRs that should help you with migration if you are affected.</p><p>For more details please see the following <a href="https://packit.dev/posts/packit_1_0_0_action_required" target="_blank" rel="noopener noreferrer">blog post</a>.</p></div></div><ul><li>Added support for detached (open)SUSE style changelogs (<a href="https://github.com/packit/specfile/pull/444" target="_blank" rel="noopener noreferrer">specfile#444</a>, contributed by Dan Čermák)</li></ul>]]></content>
+        <author>
+            <name>Matej Focko</name>
+            <email>mfocko@redhat.com</email>
+            <uri>https://github.com/mfocko</uri>
+        </author>
+        <category label="2025-January" term="2025-January"/>
+        <category label="2025" term="2025"/>
+        <category label="January" term="January"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 2 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2025/week-2</id>
