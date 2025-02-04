@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-5",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-5-january-28th--february-3rd\">Week 5 (January 28th – February 3rd)<a href=\"#week-5-january-28th--february-3rd\" class=\"hash-link\" aria-label=\"Direct link to Week 5 (January 28th – February 3rd)\" title=\"Direct link to Week 5 (January 28th – February 3rd)\">​</a></h2><ul><li>Packit CLI now supports building packages in the <a href=\"https://openbuildservice.org\" target=\"_blank\" rel=\"noopener noreferrer\">Open Build Service</a> (<a href=\"https://github.com/packit/packit/pull/2067\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2067</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-5",
+            "title": "Week 5 in Packit",
+            "summary": "Week 5 (January 28th – February 3rd)",
+            "date_modified": "2025-02-03T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2025-January",
+                "2025",
+                "January"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-3-4",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"weeks-34-january-14th--january-27th\">Weeks 3–4 (January 14th – January 27th)<a href=\"#weeks-34-january-14th--january-27th\" class=\"hash-link\" aria-label=\"Direct link to Weeks 3–4 (January 14th – January 27th)\" title=\"Direct link to Weeks 3–4 (January 14th – January 27th)\">​</a></h2><div class=\"theme-admonition theme-admonition-warning alert alert--danger admonition_LlT9\"><div class=\"admonitionHeading_tbUL\"><span class=\"admonitionIcon_kALy\"><svg viewBox=\"0 0 12 16\"><path fill-rule=\"evenodd\" d=\"M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z\"></path></svg></span>danger</div><div class=\"admonitionContent_S0QG\"><p>This is also a breaking release that includes changes from the Packit 1.0.0, we\nhave opened PRs that should help you with migration if you are affected.</p><p>For more details please see the following <a href=\"https://packit.dev/posts/packit_1_0_0_action_required\" target=\"_blank\" rel=\"noopener noreferrer\">blog post</a>.</p></div></div><ul><li>Added support for detached (open)SUSE style changelogs (<a href=\"https://github.com/packit/specfile/pull/444\" target=\"_blank\" rel=\"noopener noreferrer\">specfile#444</a>, contributed by Dan Čermák)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-3-4",
