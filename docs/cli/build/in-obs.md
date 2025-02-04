@@ -29,13 +29,13 @@ Submit a build of the present content in the upstream or local repository to [OB
 ## Help
 
     Usage: packit build in-obs [OPTIONS] [PATH_OR_URL]
-    
+
       Build selected project in OBS
-      
+
       Before Running this command, your opensuse user account and password needs
       to be configured in osc configuration file ~/.config/osc/oscrc. This can be
       done by running `osc`.
-  
+
     Options:
       --owner TEXT         OBS user, owner of the project. (defaults to the
                            username from the oscrc)
