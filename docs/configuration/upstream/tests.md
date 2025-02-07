@@ -33,6 +33,14 @@ jobs:
 The test job by default requires Copr build to be built before running tests, and then
 it is installed into the testing environment.
 
+:::note
+
+If no test (`fmf`) metadata is defined in your repository or configuration (see below), 
+the default [installability test](https://gitlab.com/testing-farm/tests/-/blob/main/packit/installation.fmf) will be executed.
+This test verifies that all built packages can be installed successfully.
+
+:::
+
 If you want to run tests without a Copr build, the test job needs to include `skip_build` (described below) option in the job configuration:
 ```yaml
   jobs:
@@ -135,7 +143,7 @@ distro (otherwise the default would be `centos-stream-8`) and for
 ```
 
 ## Optional parameters
-* **fmf_url** - Git repository containing the metadata (FMF) tree.
+* **fmf_url** - Git repository containing the metadata (`fmf`) tree.
   Use any format acceptable by the git clone command.
 * **fmf_ref** - Branch, tag or commit specifying the desired git revision.
   Defaults to "master" when **fmf_url** is specified and **fmf_ref** is not.
