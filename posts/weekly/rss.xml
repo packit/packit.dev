@@ -4,10 +4,26 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 03 Feb 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 10 Feb 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 6 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2025/week-6</link>
+            <guid>https://packit.dev/posts/weekly/2025/week-6</guid>
+            <pubDate>Mon, 10 Feb 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 6 (February 4th – February 10th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-6-february-4th--february-10th">Week 6 (February 4th – February 10th)<a href="#week-6-february-4th--february-10th" class="hash-link" aria-label="Direct link to Week 6 (February 4th – February 10th)" title="Direct link to Week 6 (February 4th – February 10th)">​</a></h2><ul><li>Packit doesn't attempt to upload git-tracked remote sources (for example
+a <a href="https://docs.fedoraproject.org/en-US/packaging-guidelines/#_verifying_signatures" target="_blank" rel="noopener noreferrer">GPG keyring</a>)
+to lookaside cache anymore when syncing release.
+(<a href="https://github.com/packit/packit/pull/2518" target="_blank" rel="noopener noreferrer">packit#2518</a>)</li><li>Dashboard pagination has been changed from infinite loading to page-based.
+(<a href="https://github.com/packit/dashboard/pull/500" target="_blank" rel="noopener noreferrer">dashboard#500</a>)</li></ul>]]></content:encoded>
+            <author>nforro@redhat.com (Nikola Forró)</author>
+            <category>2025-February</category>
+            <category>2025</category>
+            <category>February</category>
+        </item>
         <item>
             <title><![CDATA[Week 5 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2025/week-5</link>

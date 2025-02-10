@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-6",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-6-february-4th--february-10th\">Week 6 (February 4th – February 10th)<a href=\"#week-6-february-4th--february-10th\" class=\"hash-link\" aria-label=\"Direct link to Week 6 (February 4th – February 10th)\" title=\"Direct link to Week 6 (February 4th – February 10th)\">​</a></h2><ul><li>Packit doesn't attempt to upload git-tracked remote sources (for example\na <a href=\"https://docs.fedoraproject.org/en-US/packaging-guidelines/#_verifying_signatures\" target=\"_blank\" rel=\"noopener noreferrer\">GPG keyring</a>)\nto lookaside cache anymore when syncing release.\n(<a href=\"https://github.com/packit/packit/pull/2518\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2518</a>)</li><li>Dashboard pagination has been changed from infinite loading to page-based.\n(<a href=\"https://github.com/packit/dashboard/pull/500\" target=\"_blank\" rel=\"noopener noreferrer\">dashboard#500</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-6",
+            "title": "Week 6 in Packit",
+            "summary": "Week 6 (February 4th – February 10th)",
+            "date_modified": "2025-02-10T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2025-February",
+                "2025",
+                "February"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-5",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-5-january-28th--february-3rd\">Week 5 (January 28th – February 3rd)<a href=\"#week-5-january-28th--february-3rd\" class=\"hash-link\" aria-label=\"Direct link to Week 5 (January 28th – February 3rd)\" title=\"Direct link to Week 5 (January 28th – February 3rd)\">​</a></h2><ul><li>Packit CLI now supports building packages in the <a href=\"https://openbuildservice.org\" target=\"_blank\" rel=\"noopener noreferrer\">Open Build Service</a> (<a href=\"https://github.com/packit/packit/pull/2067\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2067</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-5",
