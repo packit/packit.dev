@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-7",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-7-february-11th--february-17th\">Week 7 (February 11th – February 17th)<a href=\"#week-7-february-11th--february-17th\" class=\"hash-link\" aria-label=\"Direct link to Week 7 (February 11th – February 17th)\" title=\"Direct link to Week 7 (February 11th – February 17th)\">​</a></h2><ul><li>Packit now reloads spec files after all <code>actions</code> that might modify them during release syncing.\nThis adds support for use cases like regenerating the spec file, see <a href=\"https://packit.dev/docs/configuration/examples#fedora-release-automation\" target=\"_blank\" rel=\"noopener noreferrer\">rust2rpm example</a>.\n(<a href=\"https://github.com/packit/packit/pull/2521\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2521</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-7",
+            "title": "Week 7 in Packit",
+            "summary": "Week 7 (February 11th – February 17th)",
+            "date_modified": "2025-02-17T00:00:00.000Z",
+            "author": {
+                "name": "Laura Barcziová",
+                "url": "https://github.com/lbarcziova"
+            },
+            "tags": [
+                "2025-February",
+                "2025",
+                "February"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-6",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-6-february-4th--february-10th\">Week 6 (February 4th – February 10th)<a href=\"#week-6-february-4th--february-10th\" class=\"hash-link\" aria-label=\"Direct link to Week 6 (February 4th – February 10th)\" title=\"Direct link to Week 6 (February 4th – February 10th)\">​</a></h2><ul><li>Packit doesn't attempt to upload git-tracked remote sources (for example\na <a href=\"https://docs.fedoraproject.org/en-US/packaging-guidelines/#_verifying_signatures\" target=\"_blank\" rel=\"noopener noreferrer\">GPG keyring</a>)\nto lookaside cache anymore when syncing release.\n(<a href=\"https://github.com/packit/packit/pull/2518\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2518</a>)</li><li>Dashboard pagination has been changed from infinite loading to page-based.\n(<a href=\"https://github.com/packit/dashboard/pull/500\" target=\"_blank\" rel=\"noopener noreferrer\">dashboard#500</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-6",

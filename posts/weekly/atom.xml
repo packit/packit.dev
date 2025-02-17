@@ -2,11 +2,29 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2025-02-10T00:00:00.000Z</updated>
+    <updated>2025-02-17T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 7 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2025/week-7</id>
+        <link href="https://packit.dev/posts/weekly/2025/week-7"/>
+        <updated>2025-02-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 7 (February 11th – February 17th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-7-february-11th--february-17th">Week 7 (February 11th – February 17th)<a href="#week-7-february-11th--february-17th" class="hash-link" aria-label="Direct link to Week 7 (February 11th – February 17th)" title="Direct link to Week 7 (February 11th – February 17th)">​</a></h2><ul><li>Packit now reloads spec files after all <code>actions</code> that might modify them during release syncing.
+This adds support for use cases like regenerating the spec file, see <a href="https://packit.dev/docs/configuration/examples#fedora-release-automation" target="_blank" rel="noopener noreferrer">rust2rpm example</a>.
+(<a href="https://github.com/packit/packit/pull/2521" target="_blank" rel="noopener noreferrer">packit#2521</a>)</li></ul>]]></content>
+        <author>
+            <name>Laura Barcziová</name>
+            <email>lbarczio@redhat.com</email>
+            <uri>https://github.com/lbarcziova</uri>
+        </author>
+        <category label="2025-February" term="2025-February"/>
+        <category label="2025" term="2025"/>
+        <category label="February" term="February"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 6 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2025/week-6</id>
