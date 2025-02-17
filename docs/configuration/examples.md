@@ -630,6 +630,24 @@ jobs:
 </details>
 
 <details>
+  <summary>Creating dist-git pull requests on upstream releases with custom spec file manipulation (e.g. rust2rpm)</summary>
+
+```yaml
+actions:
+  prepare-files:
+    # override Packit default spec file manipulation and update the spec file with rust2rpm
+    - bash -c 'cd $PACKIT_DOWNSTREAM_REPO && rust2rpm --no-existence-check --store-crate @$PACKIT_PROJECT_VERSION'
+
+jobs:
+- job: pull_from_upstream
+  trigger: release
+  dist_git_branches: 
+    - fedora-rawhide
+```
+
+</details>
+
+<details>
   <summary>Running Koji builds when the Packit pull requests in dist-git are merged</summary>
 
 ```yaml
