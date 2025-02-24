@@ -146,6 +146,17 @@ to have your package monitored by Upstream Release Monitoring:
 1. make sure there is Fedora mapping for the upstream project in https://release-monitoring.org/projects/
 2. make sure `Monitoring status` on the left side at https://src.fedoraproject.org/rpms/your-package is set to `Monitoring`
 
+:::caution
+
+There can be a delay between the time a new release is detected by `release-monitoring.org` and the time when the configured tarball URL becomes available.
+
+Depending on the spec file's `Source` and if the upstream project does not make a release for each tag, you may want to turn on `Check releases instead of tags` option in release-monitoring.
+
+When a download error is detected, the job is automatically retried 6 times over the span of 1 an hour and only if the final retry fails the job is marked as failed.
+
+You can retrigger the failed job commenting any dist-git pull request with `/packit pull-from-upstream`.
+
+:::
 
 You can check an example of a configuration file [in the section below](#full-example-of-a-dist-git-only-configuration).
 
