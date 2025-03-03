@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-9",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-9-february-25th--march-3rd\">Week 9 (February 25th – March 3rd)<a href=\"#week-9-february-25th--march-3rd\" class=\"hash-link\" aria-label=\"Direct link to Week 9 (February 25th – March 3rd)\" title=\"Direct link to Week 9 (February 25th – March 3rd)\">​</a></h2><ul><li>(Fedora dist-git CI beta) You can now trigger scratch Koji builds from the dist-git PRs even when the PR is created from the branch on the same repository. (<a href=\"https://github.com/packit/packit-service/pull/2732\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2732</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-9",
+            "title": "Week 9 in Packit",
+            "summary": "Week 9 (February 25th – March 3rd)",
+            "date_modified": "2025-03-03T00:00:00.000Z",
+            "author": {
+                "name": "Matej Focko",
+                "url": "https://github.com/mfocko"
+            },
+            "tags": [
+                "2025-February",
+                "2025",
+                "February"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-7",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-7-february-11th--february-17th\">Week 7 (February 11th – February 17th)<a href=\"#week-7-february-11th--february-17th\" class=\"hash-link\" aria-label=\"Direct link to Week 7 (February 11th – February 17th)\" title=\"Direct link to Week 7 (February 11th – February 17th)\">​</a></h2><ul><li>Packit now reloads spec files after all <code>actions</code> that might modify them during release syncing.\nThis adds support for use cases like regenerating the spec file, see <a href=\"https://packit.dev/docs/configuration/examples#fedora-release-automation\" target=\"_blank\" rel=\"noopener noreferrer\">rust2rpm example</a>.\n(<a href=\"https://github.com/packit/packit/pull/2521\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2521</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-7",
