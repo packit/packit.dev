@@ -171,6 +171,10 @@ distro (otherwise the default would be `centos-stream-8`) and for
 * **labels** - List of labels that group several jobs together. Users then use them when manually triggering the jobs like `/packit test --labels regression,upgrade`.
 * **use_internal_tf** - Whether to use the internal Testing Farm infrastructure (defaults to false). 
 This requires additional approval from our side (please, [contact us](#contact) in case you want to use it). 
+* **use_target_repo_for_fmf_url** - Whether to use the target (upstream) repository for the `test.fmf.url`
+field in a Testing Farm request, instead of the forked repository for pull requests from forks (defaults to false). 
+This also impacts [secrets handling](#public-ids-of-packit-tokens-for-using-secrets).
+
 
 ## Environment variables
 
