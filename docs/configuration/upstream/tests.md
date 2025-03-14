@@ -511,13 +511,7 @@ execute:
 
 Packit Service communicates with Testing Farm via its [API][testing-farm-api].
 
-### Public IDs of Packit tokens
-
-:::caution
-
-This feature has not been tested and verified by Packit Team yet.
-
-:::
+### Public IDs of Packit tokens (for using secrets)
 
 For the encryption of secrets to be used by Packit-triggered tests, you need to
 encrypt the secrets with our public token ID and the git repo from which tests
