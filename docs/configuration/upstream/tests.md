@@ -511,6 +511,36 @@ execute:
 
 Packit Service communicates with Testing Farm via its [API][testing-farm-api].
 
+### Public IDs of Packit tokens (for using secrets)
+
+For the encryption of secrets to be used by Packit-triggered tests, you need to
+encrypt the secrets with our public token ID and the git repo from which tests
+are going to be triggered. Below is an enumeration of our public IDs:
+
+- Public ranch: `0cfc00a8-94d7-4408-babc-4d0bc43821ea`
+- RH-internal ranch
+  - Packit Production: `ea2a89aa-6a78-40e0-906e-140f623c45b0`
+  - Packit Stage: `c91ea8cc-d8f6-4b83-a80c-fefd45ff25e4`
+
+:::tip
+
+In case of any discrepancies, you should still be able to see the public ID and
+the git repo passed by Packit by triggering the TF run via Packit, and opening
+the original API request by Packit from the TF artifacts page.
+
+:::
+
+For the details on how to configure the secrets, please see the Testing Farm
+[documentation](https://docs.testing-farm.io/Testing%20Farm/0.1/test-request.html#secrets-in-repo-config).
+
+:::warning
+
+If you wish to utilize secrets in tests when submitting pull requests from
+forks, you need to encrypt the secrets for each of the forks that will trigger
+the tests.
+
+:::
+
 ## Issues & RFEs
 
 If you have found an issue or have an RFE, you can file an [issue in nucleus project][issues].
