@@ -828,6 +828,46 @@ The information about releases [is retrieved from Bodhi](https://bodhi.fedorapro
 cache and required availability on Copr, it might take a while to get the
 newest state.
 
+### EPEL minor version aliases
+
+Starting with EPEL 10, there are [different dist-git branches](https://docs.fedoraproject.org/en-US/epel/branches/#_epel_10)
+and Koji targets for currently active minor versions:
+
+* The main/default branch/target called `epelX` (e.g. `epel10`) that represents
+  the latest (leading) minor release and corresponds to CentOS Stream X.
+* The `epelX.Y` (e.g. `epel10.0`) branch/target that represents
+  the previous (trailing) minor release and corresponds to RHEL X.Y.
+
+:::info
+
+See the [EPEL 10 proposal](https://discussion.fedoraproject.org/t/epel-10-proposal)
+for more information, FAQ and discussion about this change and don't hesitate to provide
+your feedback through proper channels, for instance
+the [epel-devel](https://lists.fedoraproject.org/archives/list/epel-devel@lists.fedoraproject.org/)
+mailing list.
+
+:::
+
+To give you flexibility in what distributions you want to target with your EPEL builds,
+Packit provides these aliases:
+
+* `epel-X` — the current/leading minor release (e.g. `epel10`)
+* `epel-X-branched` — the branched/trailing minor release (e.g. `epel10.0`)
+* `epel-X-all` — both minor releases (e.g. `epel10`, `epel10.0`)
+
+::: note
+
+The `epel-all` alias includes all active minor versions of all active major EPEL releases.
+
+:::
+
+::: info
+
+For Copr builds all EPEL 10 minor version aliases are currently mapped to the `epel-10` target.
+This is subject to change.
+
+:::
+
 ## User configuration file
 
 :::danger
