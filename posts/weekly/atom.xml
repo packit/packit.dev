@@ -2,11 +2,34 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2025-03-03T00:00:00.000Z</updated>
+    <updated>2025-03-17T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 11 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2025/week-11</id>
+        <link href="https://packit.dev/posts/weekly/2025/week-11"/>
+        <updated>2025-03-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 11 (March 11th – March 17th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-11-march-11th--march-17th">Week 11 (March 11th – March 17th)<a href="#week-11-march-11th--march-17th" class="hash-link" aria-label="Direct link to Week 11 (March 11th – March 17th)" title="Direct link to Week 11 (March 11th – March 17th)">​</a></h2><ul><li>It is now possible to set <code>use_target_repo_for_fmf_url</code> configuration flag to bypass
+the default passing of fork URLs for test requests.
+(<a href="https://github.com/packit/packit-service/pull/2752" target="_blank" rel="noopener noreferrer">packit-service#2752</a>)</li><li>Packit as Fedora CI no longer overwrites Koji scratch build statuses on a PR
+when the same commit is shared between different target branches.
+(<a href="https://github.com/packit/packit-service/pull/2747" target="_blank" rel="noopener noreferrer">packit-service#2747</a>)</li><li>New aliases for minor versions of EPEL have been added, see the
+<a href="/docs/configuration#epel-minor-version-aliases">documentation</a>
+for more details.
+(<a href="https://github.com/rpm-software-management/fedora-distro-aliases/pull/27" target="_blank" rel="noopener noreferrer">fedora-distro-aliases#27</a>)</li></ul>]]></content>
+        <author>
+            <name>Nikola Forró</name>
+            <email>nforro@redhat.com</email>
+            <uri>https://github.com/nforro</uri>
+        </author>
+        <category label="2025-March" term="2025-March"/>
+        <category label="2025" term="2025"/>
+        <category label="March" term="March"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 9 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2025/week-9</id>

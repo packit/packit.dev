@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-11",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-11-march-11th--march-17th\">Week 11 (March 11th – March 17th)<a href=\"#week-11-march-11th--march-17th\" class=\"hash-link\" aria-label=\"Direct link to Week 11 (March 11th – March 17th)\" title=\"Direct link to Week 11 (March 11th – March 17th)\">​</a></h2><ul><li>It is now possible to set <code>use_target_repo_for_fmf_url</code> configuration flag to bypass\nthe default passing of fork URLs for test requests.\n(<a href=\"https://github.com/packit/packit-service/pull/2752\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2752</a>)</li><li>Packit as Fedora CI no longer overwrites Koji scratch build statuses on a PR\nwhen the same commit is shared between different target branches.\n(<a href=\"https://github.com/packit/packit-service/pull/2747\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2747</a>)</li><li>New aliases for minor versions of EPEL have been added, see the\n<a href=\"/docs/configuration#epel-minor-version-aliases\">documentation</a>\nfor more details.\n(<a href=\"https://github.com/rpm-software-management/fedora-distro-aliases/pull/27\" target=\"_blank\" rel=\"noopener noreferrer\">fedora-distro-aliases#27</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-11",
+            "title": "Week 11 in Packit",
+            "summary": "Week 11 (March 11th – March 17th)",
+            "date_modified": "2025-03-17T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2025-March",
+                "2025",
+                "March"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-9",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-9-february-25th--march-3rd\">Week 9 (February 25th – March 3rd)<a href=\"#week-9-february-25th--march-3rd\" class=\"hash-link\" aria-label=\"Direct link to Week 9 (February 25th – March 3rd)\" title=\"Direct link to Week 9 (February 25th – March 3rd)\">​</a></h2><ul><li>(Fedora dist-git CI beta) You can now trigger scratch Koji builds from the dist-git PRs even when the PR is created from the branch on the same repository. (<a href=\"https://github.com/packit/packit-service/pull/2732\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2732</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-9",
