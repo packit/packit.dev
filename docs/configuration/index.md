@@ -855,13 +855,13 @@ Packit provides these aliases:
 * `epel-X-branched` — the branched/trailing minor release (e.g. `epel10.0`)
 * `epel-X-all` — both minor releases (e.g. `epel10`, `epel10.0`)
 
-::: note
+:::note
 
 The `epel-all` alias includes all active minor versions of all active major EPEL releases.
 
 :::
 
-::: info
+:::info
 
 For Copr builds all EPEL 10 minor version aliases are currently mapped to the `epel-10` target.
 This is subject to change.
