@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpackit_dev=self.webpackChunkpackit_dev||[]).push([[69631],{78095:s=>{s.exports=JSON.parse('{"label":"pull-from-upstream","permalink":"/posts/tags/pull-from-upstream","allTagsPath":"/posts/tags","count":3}')}}]);

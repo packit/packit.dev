@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpackit_dev=self.webpackChunkpackit_dev||[]).push([[12086],{68204:s=>{s.exports=JSON.parse('{"label":"monorepos","permalink":"/posts/tags/monorepos","allTagsPath":"/posts/tags","count":1}')}}]);

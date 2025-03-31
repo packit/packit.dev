@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpackit_dev=self.webpackChunkpackit_dev||[]).push([[23216],{55014:e=>{e.exports=JSON.parse('{"label":"yearly-features","permalink":"/posts/tags/yearly-features","allTagsPath":"/posts/tags","count":3}')}}]);

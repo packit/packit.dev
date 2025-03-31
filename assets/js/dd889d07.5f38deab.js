@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpackit_dev=self.webpackChunkpackit_dev||[]).push([[12023],{25962:s=>{s.exports=JSON.parse('{"label":"openscanhub","permalink":"/posts/tags/openscanhub","allTagsPath":"/posts/tags","count":1}')}}]);

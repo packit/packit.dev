@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpackit_dev=self.webpackChunkpackit_dev||[]).push([[573],{22884:s=>{s.exports=JSON.parse('{"label":"flock","permalink":"/posts/tags/flock","allTagsPath":"/posts/tags","count":1}')}}]);
