@@ -11,7 +11,7 @@ tags:
 Are you already familiar with the basic concepts of the _specfile_ library?
 Then welcome to a collection of some slightly more advanced topics that you could find useful.
 If you're not that familiar and would like to start with something easier,
-you can take a look at [Introduction to specfile library](posts/specfile-introduction).
+you can take a look at [Introduction to specfile library](/posts/specfile-introduction).
 
 <!--truncate-->
 
