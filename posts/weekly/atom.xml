@@ -2,11 +2,33 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2025-03-17T00:00:00.000Z</updated>
+    <updated>2025-03-31T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 13 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2025/week-13</id>
+        <link href="https://packit.dev/posts/weekly/2025/week-13"/>
+        <updated>2025-03-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 13 (March 25th – March 31st)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-13-march-25th--march-31st">Week 13 (March 25th – March 31st)<a href="#week-13-march-25th--march-31st" class="hash-link" aria-label="Direct link to Week 13 (March 25th – March 31st)" title="Direct link to Week 13 (March 25th – March 31st)">​</a></h2><ul><li>We have fixed an issue that could cause subsequent runs
+of <code>propose_downstream</code>/<code>pull_from_upstream</code> to fail if upstream git repo
+contains submodules that are manipulated with in actions.
+(<a href="https://github.com/packit/packit-service/pull/2768" target="_blank" rel="noopener noreferrer">packit-service#2768</a>)</li><li>Packit now supports <code>--base-nvr</code> option when submitting scans to OpenScanHub.
+The base NVR is pulled in from Koji to perform a differential scan.
+(<a href="https://github.com/packit/packit/pull/2569" target="_blank" rel="noopener noreferrer">packit#2569</a>)</li><li>Packit CLI now submits Koji builds in parallel.
+(<a href="https://github.com/packit/packit/pull/2568" target="_blank" rel="noopener noreferrer">packit#2568</a>)</li></ul>]]></content>
+        <author>
+            <name>Nikola Forró</name>
+            <email>nforro@redhat.com</email>
+            <uri>https://github.com/nforro</uri>
+        </author>
+        <category label="2025-March" term="2025-March"/>
+        <category label="2025" term="2025"/>
+        <category label="March" term="March"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 11 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2025/week-11</id>

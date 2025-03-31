@@ -4,10 +4,28 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 17 Mar 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 31 Mar 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 13 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2025/week-13</link>
+            <guid>https://packit.dev/posts/weekly/2025/week-13</guid>
+            <pubDate>Mon, 31 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 13 (March 25th – March 31st)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-13-march-25th--march-31st">Week 13 (March 25th – March 31st)<a href="#week-13-march-25th--march-31st" class="hash-link" aria-label="Direct link to Week 13 (March 25th – March 31st)" title="Direct link to Week 13 (March 25th – March 31st)">​</a></h2><ul><li>We have fixed an issue that could cause subsequent runs
+of <code>propose_downstream</code>/<code>pull_from_upstream</code> to fail if upstream git repo
+contains submodules that are manipulated with in actions.
+(<a href="https://github.com/packit/packit-service/pull/2768" target="_blank" rel="noopener noreferrer">packit-service#2768</a>)</li><li>Packit now supports <code>--base-nvr</code> option when submitting scans to OpenScanHub.
+The base NVR is pulled in from Koji to perform a differential scan.
+(<a href="https://github.com/packit/packit/pull/2569" target="_blank" rel="noopener noreferrer">packit#2569</a>)</li><li>Packit CLI now submits Koji builds in parallel.
+(<a href="https://github.com/packit/packit/pull/2568" target="_blank" rel="noopener noreferrer">packit#2568</a>)</li></ul>]]></content:encoded>
+            <author>nforro@redhat.com (Nikola Forró)</author>
+            <category>2025-March</category>
+            <category>2025</category>
+            <category>March</category>
+        </item>
         <item>
             <title><![CDATA[Week 11 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2025/week-11</link>
