@@ -16,7 +16,7 @@
         <content type="html"><![CDATA[<p>Are you already familiar with the basic concepts of the <em>specfile</em> library?
 Then welcome to a collection of some slightly more advanced topics that you could find useful.
 If you're not that familiar and would like to start with something easier,
-you can take a look at <a href="/posts/posts/specfile-introduction">Introduction to specfile library</a>.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="forced-parsing">Forced parsing<a href="#forced-parsing" class="hash-link" aria-label="Direct link to Forced parsing" title="Direct link to Forced parsing">​</a></h2><p>Imagine you want to make changes to a spec file that requires some sources
+you can take a look at <a href="/posts/specfile-introduction">Introduction to specfile library</a>.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="forced-parsing">Forced parsing<a href="#forced-parsing" class="hash-link" aria-label="Direct link to Forced parsing" title="Direct link to Forced parsing">​</a></h2><p>Imagine you want to make changes to a spec file that requires some sources
 to be present at the time of parsing such as sources referenced from shell
 expansions (e.g. <code>%(date +%F -r %{SOURCE0})</code>), includes some external files
 using the <code>%include</code> directive, or loads external macrofiles with the <code>%load</code> macro,
