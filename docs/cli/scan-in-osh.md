@@ -25,6 +25,7 @@ Builds a SRPM file and performs a scan in [OpenScanHub](https://openscanhub.fedo
       --target TEXT       Chroot to build in. (defaults to 'fedora-
                           rawhide-x86_64')
       --base-srpm TEXT    Base SRPM to perform a differential build against
+      --base-nvr TEXT     Base NVR in Koji to perform a differential build against
       --comment TEXT      Comment for the build
       --csmock-args TEXT  Pass additional arguments to csmock
       -h, --help          Show this message and exit.
