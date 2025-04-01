@@ -36,3 +36,4 @@ jobs:
           title: "Update help messages of CLI commands"
           body: "Automatically regenerated help messages for CLI command docs."
           delete-branch: true
+          token: ${{ secrets.RELEASEBOT_GITHUB_TOKEN }}
