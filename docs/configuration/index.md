@@ -344,7 +344,7 @@ files_to_sync:
 
 :::info
 
-This option is a successor to `synced_files` that has been already deprecated.
+This option is a successor to `synced_files` that has been deprecated and removed.
 
 :::
 
