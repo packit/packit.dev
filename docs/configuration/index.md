@@ -667,7 +667,7 @@ only one of these options.
 (*dict*) Macros to be explicitly defined or undefined at spec file parse time.
 To undefine a macro, set its value to `null`.
 This can be useful for instance when the spec file is OS-specific and Packit runs on a different OS
-(Packit Service currently runs on CentOS Stream 9).
+(Packit Service currently runs on Fedora 41).
 
 For example, `%cargo_prep` macro used in Rust packages accepts `-V` option on EL but not on Fedora.
 To make sure Packit is able to parse a spec file that uses `%cargo_prep -V` on both OSes,
