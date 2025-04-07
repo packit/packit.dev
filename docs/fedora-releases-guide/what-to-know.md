@@ -68,7 +68,7 @@ During service outages, maintain workflow using Packit CLI:
 2. [Configure required tokens](https://packit.dev/docs/configuration#user-configuration-file)
 3. Verify setup (if not already working in service):
    - Follow [dist-git onboarding guide](https://packit.dev/docs/fedora-releases-guide/dist-git-onboarding)
-   - Validate config with `packit validate-config`
+   - Validate config with `packit config validate`
 
 #### Troubleshooting Issues
 

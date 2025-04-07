@@ -99,7 +99,7 @@ configuration files, like in the following examples:
 * [srpm](/docs/cli/srpm/)
 * [status](/docs/cli/status)
 * [sync-from-downstream](/docs/cli/sync-from-downstream/)
-* [validate-config](/docs/cli/validate-config)
+* [config validate](/docs/cli/config/validate)
 * [source-git init](/docs/cli/source-git/init)
 * [source-git update-dist-git](/docs/cli/source-git/update-dist-git)
 * [source-git update-source-git](/docs/cli/source-git/update-source-git)

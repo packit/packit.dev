@@ -10,7 +10,7 @@ This is a template for configuration of Packit's Fedora release automation (dist
 2. create a `packit.yaml`/`.packit.yaml` file in root directory of your dist-git repository in your `rawhide` branch
 and paste the content
 3. resolve the TODOs
-4. (optionally) run [`packit validate-config`](/docs/cli/validate-config) to make sure the configuration is valid
+4. (optionally) run [`packit config validate`](/docs/cli/config/validate) to make sure the configuration is valid
 
 ## Template
 ```yaml
