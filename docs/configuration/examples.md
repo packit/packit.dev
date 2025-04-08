@@ -22,7 +22,7 @@ or with a command from `rpm-build` package that will honor the macros:
 
 ```yaml
 get-current-version:
-  - rpmspec -q --queryformat "%{VERSION}\n" *spec |head -n1
+  - rpmspec -q --queryformat "%{VERSION}\n" --srpm *spec
 ```
 
 </details>
