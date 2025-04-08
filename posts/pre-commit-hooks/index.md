@@ -46,7 +46,7 @@ To try, add this to your `.pre-commit-config.yaml`
 
 Packit uses a [YAML configuration file](https://packit.dev/docs/configuration)
 in an upstream repository.
-We have a [packit validate-config](https://packit.dev/docs/cli/validate-config) command
+We have a [packit config validate](https://packit.dev/docs/cli/config/validate) command
 to check it, but it's easy to forget (to run it) and notice a typo after you
 committed and pushed the changes and waited for some time for Packit to tell you
 that in a PR.
@@ -57,7 +57,7 @@ It's much faster to catch the problem before committing and/or pushing the chang
 
 This hook runs (only if there's been a change in the `.packit.yaml`)
 `packit` in a container (from [our image](https://quay.io/repository/packit/packit)),
-mounts your sources inside and runs the `packit validate-config`.
+mounts your sources inside and runs the `packit config validate`.
 
 ```yaml
 - repo: https://github.com/packit/pre-commit-hooks
