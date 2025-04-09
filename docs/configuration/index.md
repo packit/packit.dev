@@ -786,6 +786,36 @@ We will be happy for any feedback regarding it, [please contact us](https://gith
 
 (*string*) An option to set arguments of `csmock` (the tool used inside [OpenScanHub](https://openscanhub.fedoraproject.org/)). For instance, you can specify arguments like `--cppcheck-add-flag=--enable=style` to check styling issues as seen in [this example run](https://openscanhub.fedoraproject.org/task/10066/) triggered from [this](https://github.com/avahi/avahi/pull/641) testing pull-request on Avahi.
 
+#### osh_options
+
+A set of additional options passed to `osh-cli` for additional customizations of the functionality.
+
+##### analyzer
+
+(*string*) List of analyzers to be passed to `osh-cli`. Use comma as a separator, e.g. `gcc,clang,cppcheck`.
+
+```yaml
+osh_options:
+  analyzer: "gcc, shellcheck"
+```
+
+##### config
+
+(*string*) Used to specify mock config name to be passed to `osh-cli`. If value is not set in the config, default value `"fedora-rawhide-x86_64"` is used.
+
+```yaml
+osh_options:
+  config: "fedora-rawhide-x86_64"
+```
+
+##### profile
+
+(*string*) Used to specify predefined scanning profile to be passed to `osh-cli`.
+
+```yaml
+osh_options:
+  profile: "dev"
+```
 
 ## Aliases
 
