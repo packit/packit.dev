@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-14",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-14-april-1st--april-7th\">Week 14 (April 1st – April 7th)<a href=\"#week-14-april-1st--april-7th\" class=\"hash-link\" aria-label=\"Direct link to Week 14 (April 1st – April 7th)\" title=\"Direct link to Week 14 (April 1st – April 7th)\">​</a></h2><ul><li>When using <code>fast_forward_merge_into</code>, <code>version_update_mask</code> is now correctly being taken into consideration. (<a href=\"https://github.com/packit/packit/pull/2551\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2551</a>)</li><li>We have introduced a new <code>config</code> command group for configuration-related commands and moved the <code>validate-config</code> command under it, resulting in the new command being <code>packit config validate</code>. (<a href=\"https://github.com/packit/packit/pull/2559\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2559</a>)</li><li>It is now possible to retrigger dist-git CI scratch builds with <code>/packit scratch-build</code>. (<a href=\"https://github.com/packit/packit-service/pull/2770\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2770</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-14",
+            "title": "Week 14 in Packit",
+            "summary": "Week 14 (April 1st – April 7th)",
+            "date_modified": "2025-04-07T00:00:00.000Z",
+            "author": {
+                "name": "František Lachman",
+                "url": "https://github.com/lachmanfrantisek"
+            },
+            "tags": [
+                "2025-April",
+                "2025",
+                "April"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-13",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-13-march-25th--march-31st\">Week 13 (March 25th – March 31st)<a href=\"#week-13-march-25th--march-31st\" class=\"hash-link\" aria-label=\"Direct link to Week 13 (March 25th – March 31st)\" title=\"Direct link to Week 13 (March 25th – March 31st)\">​</a></h2><ul><li>We have fixed an issue that could cause subsequent runs\nof <code>propose_downstream</code>/<code>pull_from_upstream</code> to fail if upstream git repo\ncontains submodules that are manipulated with in actions.\n(<a href=\"https://github.com/packit/packit-service/pull/2768\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2768</a>)</li><li>Packit now supports <code>--base-nvr</code> option when submitting scans to OpenScanHub.\nThe base NVR is pulled in from Koji to perform a differential scan.\n(<a href=\"https://github.com/packit/packit/pull/2569\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2569</a>)</li><li>Packit CLI now submits Koji builds in parallel.\n(<a href=\"https://github.com/packit/packit/pull/2568\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2568</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-13",
