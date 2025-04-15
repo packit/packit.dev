@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 07 Apr 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 14 Apr 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 15 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2025/week-15</link>
+            <guid>https://packit.dev/posts/weekly/2025/week-15</guid>
+            <pubDate>Mon, 14 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 15 (April 8th – April 14th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-15-april-8th--april-14th">Week 15 (April 8th – April 14th)<a href="#week-15-april-8th--april-14th" class="hash-link" aria-label="Direct link to Week 15 (April 8th – April 14th)" title="Direct link to Week 15 (April 8th – April 14th)">​</a></h2><ul><li>There is a new <code>osh_options</code> <a href="https://packit.dev/docs/configuration#osh_options" target="_blank" rel="noopener noreferrer">config option</a> that allows you to customize OpenScanHub scans. (<a href="https://github.com/packit/packit/pull/2570" target="_blank" rel="noopener noreferrer">packit#2570</a>)</li></ul>]]></content:encoded>
+            <author>mmassari@redhat.com (Maja Massarini)</author>
+            <category>2025-April</category>
+            <category>2025</category>
+            <category>April</category>
+        </item>
         <item>
             <title><![CDATA[Week 14 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2025/week-14</link>

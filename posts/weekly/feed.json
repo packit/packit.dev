@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-15",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-15-april-8th--april-14th\">Week 15 (April 8th – April 14th)<a href=\"#week-15-april-8th--april-14th\" class=\"hash-link\" aria-label=\"Direct link to Week 15 (April 8th – April 14th)\" title=\"Direct link to Week 15 (April 8th – April 14th)\">​</a></h2><ul><li>There is a new <code>osh_options</code> <a href=\"https://packit.dev/docs/configuration#osh_options\" target=\"_blank\" rel=\"noopener noreferrer\">config option</a> that allows you to customize OpenScanHub scans. (<a href=\"https://github.com/packit/packit/pull/2570\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2570</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-15",
+            "title": "Week 15 in Packit",
+            "summary": "Week 15 (April 8th – April 14th)",
+            "date_modified": "2025-04-14T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2025-April",
+                "2025",
+                "April"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-14",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-14-april-1st--april-7th\">Week 14 (April 1st – April 7th)<a href=\"#week-14-april-1st--april-7th\" class=\"hash-link\" aria-label=\"Direct link to Week 14 (April 1st – April 7th)\" title=\"Direct link to Week 14 (April 1st – April 7th)\">​</a></h2><ul><li>When using <code>fast_forward_merge_into</code>, <code>version_update_mask</code> is now correctly being taken into consideration. (<a href=\"https://github.com/packit/packit/pull/2551\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2551</a>)</li><li>We have introduced a new <code>config</code> command group for configuration-related commands and moved the <code>validate-config</code> command under it, resulting in the new command being <code>packit config validate</code>. (<a href=\"https://github.com/packit/packit/pull/2559\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2559</a>)</li><li>It is now possible to retrigger dist-git CI scratch builds with <code>/packit scratch-build</code>. (<a href=\"https://github.com/packit/packit-service/pull/2770\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2770</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-14",
