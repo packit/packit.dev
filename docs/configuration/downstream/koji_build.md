@@ -37,8 +37,6 @@ The koji build behaves as it was created manually, and you can utilise
 to be informed about the builds. Also, you can configure a repository where should we
 open issues in case of errors during the job via [`issue_repository`](/docs/configuration#issue_repository) configuration key.
 
-For retriggering the job, see [retriggering docs](/docs/retriggering#koji_build).
-
 For Koji builds from upstream, see [`upstream_koji_build`](/docs/configuration/upstream/upstream_koji_build).
 
 :::tip Downstream configuration template
@@ -113,6 +111,9 @@ Packit dist-git configuration.
 * **require.label** - you can specify labels that have to be present/absent on a pull request
   in order to trigger the build when it is merged. See configuration details [here](/docs/configuration#require).
 
+## Retriggering
+
+For retriggering the job, see [retriggering docs](/docs/retriggering#koji_build).
 
 ## Processing of dist-git events from Pagure
 
@@ -175,6 +176,7 @@ Because of the potential issues with rendering:
 - dotted lines represent _no_
 - continous lines represent _yes_
 :::
+
 
 ### Example
 

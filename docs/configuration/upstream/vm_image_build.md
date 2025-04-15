@@ -30,6 +30,10 @@ Image builds are only triggered after a collaborator places a comment `/packit
 vm-image-build` in a pull request. The image builds are **NOT** submitted
 automatically. This is a subject to change as we improve the integration in future.
 
+## Retriggering
+
+For retriggering the job, see [retriggering docs](/docs/retriggering#vm_image_build).
+
 
 ## Example
 

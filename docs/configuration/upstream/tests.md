@@ -200,54 +200,10 @@ And there are also pairs of variables for pull-request jobs:
 
 Note that some variables do not need to be set if the value is unknown, irrelevant or not-configured.
 
-## Restart Testing
+## Retriggering
 
-The testing will automatically start after an update to the pull request
-(and successful Copr build if `skip_build` is false).
-To trigger retesting manually (can come handy in case of infrastructure
-issues for example), you can use the following comment in the pull request:
+For retriggering the job, see [retriggering docs](/docs/retriggering#tests).
 
-    /packit test
-
-Or if you want to re-trigger only failed tests, you can use the following comment
-in the pull request:
-
-    /packit retest-failed
-
-## Running tests with builds from another pull request
-It is also possible to run the tests with Copr builds built by Packit in another pull request 
-(in a different repository). This can be useful when you are working on a change that spans 
-multiple projects and needs to be tested together.
-These tests are possible to trigger only via a comment containing the argument specifying the pull request as:
-
-    /packit test <namespace>/<repo>#<pr_id>
-
-The requirement is that in the specified PR, there were recent successful builds created by Packit
-for the targets configured in the repository with the "main" pull request.
-This is a new feature, so the behaviour may be adjusted in the future. 
-Please reach out back to us for help or with your suggestions.
-
-## Running tests with a specific identifier
-It is possible to run a specific job via `/packit test` command. 
-The user just needs to specify the argument `--identifier <job_identifier>` and Packit will trigger only the job with this identifier.
-The whole command should look like this: `/packit test --identifier my-job-id`.
-You can also configure [`test_command.default_identifier`](/docs/configuration#default_identifier) to allow commonly used jobs
-to be triggered without the need for manual specification.
-
-## Running a group of tests with the same label
-Users can trigger a specific group of jobs that has a specific value in the list of `labels` option.
-The command to pick up these jobs is `/packit test --labels regression,upgrade` where either `regression` or `upgrade` must be present in `labels` option for the job.
-The labels should be in the format of comma-separated string.
-You can also configure [`test_command.default_labels`](/docs/configuration#default_labels) to allow commonly used job combinations
-to be triggered without the need for manual specification.
-
-## Running tests with specific environment variables
-From time to time, you may need to pass specific environment variables to your jobs. 
-To achieve this, you can use the `--env` option in the comment command `/packit test`, which passes environment variables to Testing Farm.
-You can set as many environment variables as you want; you just need to pass `--env `for each one. 
-For example, you can use the following command `/packit test --env MY_ENV=test --env MY_ENV_2=test_2`.
-This command allows you to use `MY_ENV` and `MY_ENV_2` in Testing Farm jobs.
-You can also unset an environment variable by not setting its value like `/packit test --env MY_ENV=`.
 
 ## Test job statuses
 By default, while test jobs are waiting for their corresponding build jobs to finish,

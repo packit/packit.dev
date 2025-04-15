@@ -92,24 +92,8 @@ For more details and customization options, also check
 :::
 
 ## Retriggering
-Packagers can retrigger the job
-via a comment in any dist-git pull request:
 
-    /packit pull-from-upstream
-
-This will take the Packit configuration file from the default branch of the dist-git
-  repository (`rawhide`), same as if the job was triggered by a new release. 
-You can monitor the job in [Packit Dashboard](https://dashboard.packit.dev/jobs/pull-from-upstreams).
-To use the configuration file from the dist-git pull request you are commenting on, you can add an argument:
-
-    /packit pull-from-upstream --with-pr-config
-
-
-`pull-from-upstream` automatically handles the Bugzilla created by Upstream
-Release Monitoring (by default adds `Resolves` to changelog/commit and exposes `PACKIT_RESOLVED_BUGS` to the `changelog-entry` and `commit-message`
-actions). If you want to override the referenced resolved bug set by Packit, you can retrigger `pull_from_upstream` like this:
-
-    /packit pull-from-upstream --resolve-bug rhbz#123,rhbz#124
+For retriggering the job, see [retriggering docs](/docs/retriggering#pull_from_upstream).
 
 ## Example
 

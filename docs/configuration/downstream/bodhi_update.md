@@ -19,8 +19,6 @@ You can also utilise
 [Fedora Notifications](https://apps.fedoraproject.org/notifications/about)
 to tweak the notifications settings.
 
-For retriggering the job, see [retriggering docs](/docs/retriggering#bodhi_update).
-
 :::tip Downstream configuration template
 
 You can use our [downstream configuration template](/docs/configuration/downstream_configuration_template) 
@@ -66,7 +64,10 @@ Packit dist-git configuration.
   a `koji_build` job with the same sidetag group configured in package `foo` in this update,
   you need to list `foo` here.
 
- 
+## Retriggering
+
+For retriggering the job, see [retriggering docs](/docs/retriggering#bodhi_update).
+
 ## Example
 ```yaml
 issue_repository: https://github.com/my-username/packit-notifications
