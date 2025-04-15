@@ -81,6 +81,7 @@ const developmentSections = [
 
 const sections = [
   new Section("docs", "Documentation"),
+  new Section("fedora-ci", "Fedora CI"),
   new Section("source-git", "Source-git"),
   new Section("development", "Development", undefined, developmentSections),
 ];

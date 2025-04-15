@@ -49,11 +49,22 @@ const FeatureList: FeatureItem[] = [
       </>
     ),
   },
+  {
+    title: "Running as Fedora dist-git CI",
+    description: (
+      <>
+        After successfuly validating upstream projects, Packit is now becoming a
+        CI solution also for{" "}
+        <Link to="https://src.fedoraproject.org/">Fedora dist-git</Link>.{" "}
+        <Link to="/fedora-ci">Learn more.</Link>
+      </>
+    ),
+  },
 ];
 
 function Feature({ title, description }: FeatureItem) {
   return (
-    <div className={clsx("col col--4")}>
+    <div className={clsx("col col--3")}>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
         <p>{description}</p>
