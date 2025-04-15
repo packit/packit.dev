@@ -42,6 +42,9 @@ for more details). Alternatively you can use copr API token available [here](htt
       PATH_OR_URL argument is a local path or a URL to the upstream git
       repository, it defaults to the current working directory.
 
+      Copr configuration needs to be set before usage.
+      https://docs.pagure.org/copr.copr/user_documentation.html#quick-start
+
     Options:
       --wait / --no-wait              Wait for the build to finish
       --owner TEXT                    Copr user, owner of the project. (defaults
