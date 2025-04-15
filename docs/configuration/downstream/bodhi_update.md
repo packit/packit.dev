@@ -19,7 +19,7 @@ You can also utilise
 [Fedora Notifications](https://apps.fedoraproject.org/notifications/about)
 to tweak the notifications settings.
 
-For retriggering the job, see [our release guide](/docs/fedora-releases-guide/dist-git-onboarding#retriggering).
+For retriggering the job, see [retriggering docs](/docs/retriggering#bodhi_update).
 
 :::tip Downstream configuration template
 
