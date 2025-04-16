@@ -40,3 +40,7 @@ the more explicit `upstream_koji_build`.)
 * **branch** - the name of the branch we want to build for when using **commit** trigger
 (defaults to the repository's default branch) or target branch when using **pull_request** trigger
 (default behaviour is reacting to all pull requests in the repository).
+
+## Retriggering
+
+For retriggering the job, see [retriggering docs](/docs/retriggering#upstream_koji_build).

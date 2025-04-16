@@ -236,39 +236,7 @@ open issues in case of errors during the downstream jobs via [`issue_repository`
 configuration key. See the details in the link.
 
 ## Retriggering
-### pull_from_upstream
-Packagers can retrigger the job
-via a comment in any dist-git pull request:
-
-    /packit pull-from-upstream
-
-This will take the Packit configuration file from the default branch of the dist-git
-  repository (`rawhide`), same as if the job was triggered by a new release. To use the configuration file from the dist-git pull request you are commenting on, you can add an argument:
-
-    /packit pull-from-upstream --with-pr-config
-
-### koji_build
-
-Packagers can retrigger a build by a comment in a dist-git pull request:
-
-    /packit koji-build
-
-The build will be triggered for the target branch of the pull request using the most recent commit on the target branch
-(NOT the HEAD commit of the pull request). 
-
-If Packit created an issue in the configured `issue_repository`, you can place the same comment in that
-issue to retrigger the builds (see [`issue_repository`](/docs/configuration#issue_repository) for details).
-
-### bodhi_update
-Packagers with write access to the dist-git repository can retrigger an update by a comment in a dist-git pull request:
-
-    /packit create-update
-
-The update will be triggered for the target branch of the pull request. 
-
-If Packit created an issue in the configured `issue_repository`, you can place the same comment in that
-issue to retrigger the updates (see [`issue_repository`](/docs/configuration#issue_repository) for details).
-
+You can find all the information on retriggering [here](../retriggering.md).
 
 ## Full example of a dist-git only configuration
 

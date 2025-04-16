@@ -26,7 +26,7 @@ specified in the `allowed_pr_authors`.
 
 Due to a [bug](https://github.com/packit/packit-service/issues/2537), if you merge a PR containing more than one
 commit or push more than one commit directly, the job may not be triggered even though all conditions are met.
-In such case please [trigger it manually](/docs/fedora-releases-guide/dist-git-onboarding#retriggering).
+In such case please [trigger it manually](/docs/retriggering#koji_build).
 
 :::
 
@@ -36,8 +36,6 @@ The koji build behaves as it was created manually, and you can utilise
 [Fedora Notifications](https://apps.fedoraproject.org/notifications/about)
 to be informed about the builds. Also, you can configure a repository where should we
 open issues in case of errors during the job via [`issue_repository`](/docs/configuration#issue_repository) configuration key.
-
-For retriggering the job, see [our release guide](/docs/fedora-releases-guide/dist-git-onboarding#retriggering).
 
 For Koji builds from upstream, see [`upstream_koji_build`](/docs/configuration/upstream/upstream_koji_build).
 
@@ -113,6 +111,9 @@ Packit dist-git configuration.
 * **require.label** - you can specify labels that have to be present/absent on a pull request
   in order to trigger the build when it is merged. See configuration details [here](/docs/configuration#require).
 
+## Retriggering
+
+For retriggering the job, see [retriggering docs](/docs/retriggering#koji_build).
 
 ## Processing of dist-git events from Pagure
 
@@ -175,6 +176,7 @@ Because of the potential issues with rendering:
 - dotted lines represent _no_
 - continous lines represent _yes_
 :::
+
 
 ### Example
 

@@ -86,6 +86,10 @@ that can change the behaviour of your Copr builds:
 * [**release_suffix**](https://packit.dev/docs/configuration#release_suffix)
 * [**srpm_build_deps**](https://packit.dev/docs/configuration#srpm_build_deps)
 
+## Retriggering
+
+For retriggering the job, see [retriggering docs](/docs/retriggering#copr_build).
+
 ## Using a custom Copr project
 When using a custom Copr project (by specifying `project` and `owner`) you need to:
   - allow Packit to build in your custom Copr project,

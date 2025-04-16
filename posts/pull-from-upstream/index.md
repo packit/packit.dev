@@ -115,7 +115,7 @@ also notified about errors:
 :::tip Update July 2023
 
 It is now also possible to retrigger the job, see
-[the details](/docs/configuration/downstream/pull_from_upstream#retriggering).
+[the details](/docs/retriggering).
 
 :::
 

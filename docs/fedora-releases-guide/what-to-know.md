@@ -58,7 +58,7 @@ There is an [open issue](https://github.com/packit/packit-service/issues/2404) f
 
 ### Service-based retriggering
 
-Each job configured in `packit.yml` can be retriggered via dist-git pull request comments. See the [complete list of commands](https://packit.dev/docs/fedora-releases-guide/dist-git-onboarding#retriggering).
+Each job configured in `packit.yml` can be retriggered via dist-git pull request comments. See the [complete list of commands](https://packit.dev/docs/retriggering).
 
 ### Manual CLI Operations
 

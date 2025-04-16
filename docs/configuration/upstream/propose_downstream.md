@@ -81,10 +81,8 @@ jobs:
 This config would update Fedora Rawhide and Fedora 39 dist-git branches.
 
 ## Retriggering
-Users with write or admin permissions to the repository can retrigger an
-update via a comment in any open issue in the upstream repository:
 
-    /packit propose-downstream
+For retriggering the job, see [retriggering docs](/docs/retriggering#propose_downstream).
 
 
 ## Syncing the release to CentOS Stream
