@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-16",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-16-april-16th--april-22nd\">Week 16 (April 16th – April 22nd)<a href=\"#week-16-april-16th--april-22nd\" class=\"hash-link\" aria-label=\"Direct link to Week 16 (April 16th – April 22nd)\" title=\"Direct link to Week 16 (April 16th – April 22nd)\">​</a></h2><ul><li>The <code>--resultdir</code> argument in <code>build_in_mock</code> now defaults to the current directory (<code>\".\"</code>), preventing loss of build artifacts when not explicitly set. (<a href=\"https://github.com/packit/packit/pull/2567\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2567</a>)</li><li><code>tf_extra_params</code> should now be included when submitting the automatic upstream installability check to the Testing Farm. (<a href=\"https://github.com/packit/packit-service/pull/2779\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2779</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-16",
+            "title": "Week 16 in Packit",
+            "summary": "Week 16 (April 16th – April 22nd)",
+            "date_modified": "2025-04-22T00:00:00.000Z",
+            "author": {
+                "name": "František Lachman",
+                "url": "https://github.com/lachmanfrantisek"
+            },
+            "tags": [
+                "2025-April",
+                "2025",
+                "April"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-15",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-15-april-8th--april-14th\">Week 15 (April 8th – April 14th)<a href=\"#week-15-april-8th--april-14th\" class=\"hash-link\" aria-label=\"Direct link to Week 15 (April 8th – April 14th)\" title=\"Direct link to Week 15 (April 8th – April 14th)\">​</a></h2><ul><li>There is a new <code>osh_options</code> <a href=\"https://packit.dev/docs/configuration#osh_options\" target=\"_blank\" rel=\"noopener noreferrer\">config option</a> that allows you to customize OpenScanHub scans. (<a href=\"https://github.com/packit/packit/pull/2570\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2570</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-15",
