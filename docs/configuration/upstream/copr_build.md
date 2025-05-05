@@ -156,7 +156,7 @@ packages and modules from the base distro, while CentOS Stream 8 will use a
 custom yum repo, 4 specific modules and it will have `--without check` passed
 to rpmbuild.
 
-You can define these three options:
+You can define these options:
 * `additional_packages` (list) – install additional packages before the build
 * `additional_repos` (list) – enable these yum repositories before installing any packages
 * `additional_modules` (str) – enable these modules before installing packages,

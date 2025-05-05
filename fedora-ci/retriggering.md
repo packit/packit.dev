@@ -14,3 +14,22 @@ To retrigger a scratch build, add the following comment to the pull request:
 ```
 
 Only packagers can retrigger scratch builds.
+
+## Tests
+
+To retrigger all tests, add the following comment to the pull request:
+
+```
+/packit-ci test
+```
+
+To retrigger a specific test, you can add the test identifier to the command:
+
+```
+/packit-ci test installability
+```
+
+`installability` is the only supported identifier so far and it represents
+the [Installability](fedora-ci/jobs#installability) test.
+
+Only packagers can retrigger tests.
