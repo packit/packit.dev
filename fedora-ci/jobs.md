@@ -11,7 +11,8 @@ Scratch builds in [Koji](https://koji.fedoraproject.org/koji/) built from SCM.
 
 ### Installability
 
-TBD (The work is in progress.)
+[Installability test](https://github.com/fedora-ci/installability-pipeline)
+in [Testing Farm](https://testing-farm.io) run with a successfull scratch build.
 
 ### Custom test plans
 
