@@ -39,35 +39,4 @@ Builder, for more details see the `vm_image_build` job description.
 
 ## Help
 
-    Usage: packit build in-image-builder [OPTIONS] IMAGE_NAME [PATH_OR_URL]
 
-      Create a VM image in Image Builder.
-
-      ### EXPERIMENTAL ###
-
-      This command is experimental and the integration with Image Builder will be
-      changed in a backwards incompatible way in the future.
-
-      Packit loads image build configuration from your packit.yaml file.
-
-      When `--job-config-index` is not specified, the job configuration is loaded
-      from your .packit.yaml and the first matching vm_image_build job is used.
-
-      IMAGE_NAME is the name of the image to be created. Please pick something
-      unique so it's easy to identify for you in the Image Builder interface and
-      can be well associated with the image content.
-
-      [PATH_OR_URL] argument is a local path or a URL to the upstream git
-      repository, it defaults to the current working directory
-
-    Options:
-      --job-config-index INTEGER  Use N-th job definition to load configuration
-                                  for the image build. The type needs to be
-                                  vm_image_build.
-      --wait / --no-wait          Wait for the build to finish
-      -p, --package TEXT          Package to build, if more than one available,
-                                  like in a monorepo configuration. Use it
-                                  multiple times to select multiple
-                                  packages.Defaults to all the packages listed
-                                  inside the config.
-      -h, --help                  Show this message and exit.

@@ -17,13 +17,4 @@ initialize a [source-git repo](/source-git).
 
 ## Help
 
-    Usage: packit init [OPTIONS] [PATH_OR_URL]
 
-      Create the initial Packit configuration in a repository
-
-      See 'packit source-git init', if you want to initialize a repository as a
-      source-git repo.
-
-    Options:
-      -f, --force  Reset config to default if already exists.
-      -h, --help   Show this message and exit.
