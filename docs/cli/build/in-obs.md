@@ -28,28 +28,4 @@ Submit a build of the present content in the upstream or local repository to [OB
     ```
 ## Help
 
-    Usage: packit build in-obs [OPTIONS] [PATH_OR_URL]
 
-      Build selected project in OBS
-
-      Before Running this command, your opensuse user account and password needs
-      to be configured in osc configuration file ~/.config/osc/oscrc. This can be
-      done by running `osc`.
-
-    Options:
-      --owner TEXT         OBS user, owner of the project. (defaults to the
-                           username from the oscrc)
-      --project TEXT       Project name to build in. It will be created if does
-                           not exist. It defaults to home:$owner:packit:$pkg
-      --targets TEXT       Comma separated list of chroots to build in. (defaults
-                           to 'fedora-rawhide-x86_64')
-      --description TEXT   Description of the project to build in.
-      --upstream-ref TEXT  Git ref of the last upstream commit in the current
-                           branch from which packit should generate patches (this
-                           option implies the repository is source-git).
-      --wait / --no-wait   Wait for the build to finish
-      -p, --package TEXT   Package to build, if more than one available, like in a
-                           monorepo configuration. Use it multiple times to select
-                           multiple packages.Defaults to all the packages listed
-                           inside the config.
-      -h, --help           Show this message and exit.
