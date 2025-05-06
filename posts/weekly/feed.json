@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-18",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-18-april-29th--may-5th\">Week 18 (April 29th – May 5th)<a href=\"#week-18-april-29th--may-5th\" class=\"hash-link\" aria-label=\"Direct link to Week 18 (April 29th – May 5th)\" title=\"Direct link to Week 18 (April 29th – May 5th)\">​</a></h2><ul><li><p>Installability check is now being run as part of CI on dist-git pull requests. For more information, please refer to our <a href=\"https://packit.dev/fedora-ci/jobs#installability\" target=\"_blank\" rel=\"noopener noreferrer\">documentation</a>. (<a href=\"https://github.com/packit/packit-service/pull/2782\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2782</a>)</p></li><li><p>Support for Forgejo pull requests has been added. (<a href=\"https://github.com/packit/ogr/pull/925\" target=\"_blank\" rel=\"noopener noreferrer\">ogr#925</a>)</p></li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-18",
+            "title": "Week 18 in Packit",
+            "summary": "Week 18 (April 29th – May 5th)",
+            "date_modified": "2025-05-05T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2025-April",
+                "2025",
+                "April"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-16",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-16-april-16th--april-22nd\">Week 16 (April 16th – April 22nd)<a href=\"#week-16-april-16th--april-22nd\" class=\"hash-link\" aria-label=\"Direct link to Week 16 (April 16th – April 22nd)\" title=\"Direct link to Week 16 (April 16th – April 22nd)\">​</a></h2><ul><li>The <code>--resultdir</code> argument in <code>build_in_mock</code> now defaults to the current directory (<code>\".\"</code>), preventing loss of build artifacts when not explicitly set. (<a href=\"https://github.com/packit/packit/pull/2567\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2567</a>)</li><li><code>tf_extra_params</code> should now be included when submitting the automatic upstream installability check to the Testing Farm. (<a href=\"https://github.com/packit/packit-service/pull/2779\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2779</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-16",
