@@ -40,6 +40,7 @@ packit build in-mock --root=fedora-40-x86_64
       -r, --root TEXT           Uses specified chroot configuration. If ends with
                                 '.cfg', then it is treated as full path to the
                                 mock configuration.
+      --default-resultdir       Use the default result directory from mock
       --resultdir DIRECTORY     Specifies the resultdir option for ‹mock› command,
                                 for details see mock(1)
       -p, --package TEXT        Package to build, if more than one available, like

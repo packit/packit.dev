@@ -19,8 +19,11 @@ Validate the Packit configuration file.
       - checks whether monitoring is enabled if 'pull_from_upstream` is used
 
       PATH_OR_URL argument is a local path or a URL to a git repository with
-      packit configuration file
+      packit configuration file config: Optional path to a specific Packit
+      configuration file.
 
     Options:
-      --offline   Do not make remote API calls requiring network access.
-      -h, --help  Show this message and exit.
+      --offline               Do not make remote API calls requiring network
+                              access.
+      -c, --config-path PATH  Path to a specific Packit configuration file.
+      -h, --help              Show this message and exit.
