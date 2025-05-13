@@ -12,8 +12,11 @@ Scratch builds in [Koji](https://koji.fedoraproject.org/koji/) built from SCM.
 ### Installability
 
 [Installability test](https://github.com/fedora-ci/installability-pipeline)
-in [Testing Farm](https://testing-farm.io) run with a successfull scratch build.
+in [Testing Farm](https://testing-farm.io) run with a successful scratch build.
 
 ### Custom test plans
 
-TBD (The work is planned.)
+Custom [TMT](https://tmt.readthedocs.io/) test plans in [Testing Farm](https://testing-farm.io)
+run with a successful scratch build. This requires TMT metadata (`.fmf/version` presence used as an indicator)
+in the dist-git repository and at least one [test plan](https://tmt.readthedocs.io/en/stable/spec/plans.html)
+in `plans`.

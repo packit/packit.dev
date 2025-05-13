@@ -29,7 +29,9 @@ To retrigger a specific test, you can add the test identifier to the command:
 /packit-ci test installability
 ```
 
-`installability` is the only supported identifier so far and it represents
-the [Installability](fedora-ci/jobs#installability) test.
+Currently supported identifiers are:
+
+- `installability` - represents the [Installability](/fedora-ci/jobs#installability) test
+- `custom` - represents [Custom TMT test plans](/fedora-ci/jobs#custom-test-plans)
 
 Only packagers can retrigger tests.
