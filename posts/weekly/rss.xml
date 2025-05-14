@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 05 May 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 13 May 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 19 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2025/week-19</link>
+            <guid>https://packit.dev/posts/weekly/2025/week-19</guid>
+            <pubDate>Tue, 13 May 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 19 (May 5th – May 13th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-19-may-5th--may-13th">Week 19 (May 5th – May 13th)<a href="#week-19-may-5th--may-13th" class="hash-link" aria-label="Direct link to Week 19 (May 5th – May 13th)" title="Direct link to Week 19 (May 5th – May 13th)">​</a></h2><ul><li>You can now validate a Packit config passed to the Packit CLI via a path, e.g., <code>packit config validate -c /tmp/my-custom-packit-config.yml</code>. (<a href="https://github.com/packit/packit/pull/2556" target="_blank" rel="noopener noreferrer">packit#2556</a>)</li><li>Packit now runs custom TMT tests as part of CI on dist-git pull requests (<a href="https://packit.dev/fedora-ci/jobs#custom-test-plans" target="_blank" rel="noopener noreferrer">documentation</a>). (<a href="https://github.com/packit/packit-service/pull/2792" target="_blank" rel="noopener noreferrer">packit-service#2792</a>)</li><li>We have fixed posting duplicated comments about invalid configurations. (<a href="https://github.com/packit/packit-service/pull/2788" target="_blank" rel="noopener noreferrer">packit-service#2788</a>)</li></ul>]]></content:encoded>
+            <author>flachman@redhat.com (František Lachman)</author>
+            <category>2025-May</category>
+            <category>2025</category>
+            <category>May</category>
+        </item>
         <item>
             <title><![CDATA[Week 18 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2025/week-18</link>
