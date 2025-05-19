@@ -265,6 +265,17 @@ prepare:
         - setup/packages.yml
 ```
 
+### Skip installation of artifacts
+In certain scenarios, you may want to skip the installation of artifacts. 
+To do this, include the following in your `prepare` step:
+
+```yaml
+prepare:
+  - how: install
+    exclude:
+      - ".*"
+```
+
 ### Apache Test
 
 Here is an example of a simple integration test for the web server `httpd` and `curl` utility:

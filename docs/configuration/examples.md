@@ -561,6 +561,13 @@ do not change it.
 
 </details>
 
+<details>
+  <summary>Skipping artifacts installation</summary>
+
+Done via `tmt` setup, see [here](/docs/configuration/upstream/tests#skip-installation-of-artifacts).
+
+</details>
+
 ### Fedora release automation
 
 <details>
