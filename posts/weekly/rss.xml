@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Tue, 13 May 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 19 May 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 20 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2025/week-20</link>
+            <guid>https://packit.dev/posts/weekly/2025/week-20</guid>
+            <pubDate>Mon, 19 May 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 20 (May 13th – May 19th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-20-may-13th--may-19th">Week 20 (May 13th – May 19th)<a href="#week-20-may-13th--may-19th" class="hash-link" aria-label="Direct link to Week 20 (May 13th – May 19th)" title="Direct link to Week 20 (May 13th – May 19th)">​</a></h2><ul><li>We have added a support for passing <code>upstream_package_name</code> to the <code>upstream_tag_template</code> option. (<a href="https://github.com/packit/packit/pull/2604" target="_blank" rel="noopener noreferrer">packit#2604</a>)</li></ul>]]></content:encoded>
+            <author>mmassari@redhat.com (Maja Massarini)</author>
+            <category>2025-May</category>
+            <category>2025</category>
+            <category>May</category>
+        </item>
         <item>
             <title><![CDATA[Week 19 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2025/week-19</link>

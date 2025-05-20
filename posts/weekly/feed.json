@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-20",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-20-may-13th--may-19th\">Week 20 (May 13th – May 19th)<a href=\"#week-20-may-13th--may-19th\" class=\"hash-link\" aria-label=\"Direct link to Week 20 (May 13th – May 19th)\" title=\"Direct link to Week 20 (May 13th – May 19th)\">​</a></h2><ul><li>We have added a support for passing <code>upstream_package_name</code> to the <code>upstream_tag_template</code> option. (<a href=\"https://github.com/packit/packit/pull/2604\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2604</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-20",
+            "title": "Week 20 in Packit",
+            "summary": "Week 20 (May 13th – May 19th)",
+            "date_modified": "2025-05-19T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2025-May",
+                "2025",
+                "May"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-19",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-19-may-5th--may-13th\">Week 19 (May 5th – May 13th)<a href=\"#week-19-may-5th--may-13th\" class=\"hash-link\" aria-label=\"Direct link to Week 19 (May 5th – May 13th)\" title=\"Direct link to Week 19 (May 5th – May 13th)\">​</a></h2><ul><li>You can now validate a Packit config passed to the Packit CLI via a path, e.g., <code>packit config validate -c /tmp/my-custom-packit-config.yml</code>. (<a href=\"https://github.com/packit/packit/pull/2556\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2556</a>)</li><li>Packit now runs custom TMT tests as part of CI on dist-git pull requests (<a href=\"https://packit.dev/fedora-ci/jobs#custom-test-plans\" target=\"_blank\" rel=\"noopener noreferrer\">documentation</a>). (<a href=\"https://github.com/packit/packit-service/pull/2792\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2792</a>)</li><li>We have fixed posting duplicated comments about invalid configurations. (<a href=\"https://github.com/packit/packit-service/pull/2788\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2788</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-19",
