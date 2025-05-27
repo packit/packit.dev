@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-21",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-21-may-20th--may-26th\">Week 21 (May 20th – May 26th)<a href=\"#week-21-may-20th--may-26th\" class=\"hash-link\" aria-label=\"Direct link to Week 21 (May 20th – May 26th)\" title=\"Direct link to Week 21 (May 20th – May 26th)\">​</a></h2><ul><li>We have fixed a bug that caused specfile to traceback when section names with conditional macro expansions containing spaces were present in the spec file. (<a href=\"https://github.com/packit/specfile/pull/476\" target=\"_blank\" rel=\"noopener noreferrer\">specfile#476</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-21",
+            "title": "Week 21 in Packit",
+            "summary": "Week 21 (May 20th – May 26th)",
+            "date_modified": "2025-05-26T00:00:00.000Z",
+            "author": {
+                "name": "František Lachman",
+                "url": "https://github.com/lachmanfrantisek"
+            },
+            "tags": [
+                "2025-May",
+                "2025",
+                "May"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-20",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-20-may-13th--may-19th\">Week 20 (May 13th – May 19th)<a href=\"#week-20-may-13th--may-19th\" class=\"hash-link\" aria-label=\"Direct link to Week 20 (May 13th – May 19th)\" title=\"Direct link to Week 20 (May 13th – May 19th)\">​</a></h2><ul><li>We have added a support for passing <code>upstream_package_name</code> to the <code>upstream_tag_template</code> option. (<a href=\"https://github.com/packit/packit/pull/2604\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2604</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-20",
