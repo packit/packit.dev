@@ -895,6 +895,36 @@ The `epel-all` alias includes all active minor versions of all active major EPEL
 
 :::
 
+:::info
+
+Unlike `epel-10`, which is mapped to `CentOS-Stream-10` Testing Farm compose by default,
+there is no default mapping for the `rhel+epel-10` Copr chroot. You have to specify
+a compose explicitly, e.g.:
+
+```
+  targets:
+    rhel+epel-10-x86_64:
+      distros: [CentOS-Stream-10]
+```
+
+or:
+
+```
+  use_internal_tf: true
+  targets:
+    rhel+epel-10-x86_64:
+      distros: [RHEL-10.0-Nightly]
+```
+
+:::
+
+:::warning
+
+Be aware that there is currently a Testing Farm [issue](https://gitlab.com/testing-farm/general/-/issues/74)
+that prevents installing Copr builds from chroots with `+` in their name, including `rhel+epel-10`.
+
+:::
+
 ## User configuration file
 
 :::danger
