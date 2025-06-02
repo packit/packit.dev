@@ -881,20 +881,17 @@ mailing list.
 To give you flexibility in what distributions you want to target with your EPEL builds,
 Packit provides these aliases:
 
-* `epel-X` — the current/leading minor release (e.g. `epel10`)
-* `epel-X-branched` — the branched/trailing minor release (e.g. `epel10.0`)
-* `epel-X-all` — both minor releases (e.g. `epel10`, `epel10.0`)
+* `epel-X` — the current/leading minor release, e.g.:
+  - `epel10` in dist-git and Koji
+  - `epel-10` in mock and Copr
+* `epel-X-branched` — the branched/trailing minor release, e.g.:
+  - `epel10.0` in dist-git and Koji
+  - `rhel+epel-10` in mock and Copr
+* `epel-X-all` — both minor releases
 
 :::note
 
 The `epel-all` alias includes all active minor versions of all active major EPEL releases.
-
-:::
-
-:::info
-
-For Copr builds all EPEL 10 minor version aliases are currently mapped to the `epel-10` target.
-This is subject to change.
 
 :::
 
