@@ -17,6 +17,6 @@ tags:
 - We got a contribution for a typo in the error message when our Packit CLI
   tracebacks. Thanks a lot for the contribution, @mulkieran. ([`packit#2612`](https://github.com/packit/packit/pull/2612))
 
-- We have improved validation of the job trigger. ([`packit#2616`](https://github.com/packit/packit/pull/2616))
+- We have fixed a bug in validation of the job trigger. ([`packit#2616`](https://github.com/packit/packit/pull/2616))
 
-- We have fixed an issue realted to the handling of minor EPEL releases. ([`packit#2619`](https://github.com/packit/packit/pull/2619))
+- We have added support for handling of minor EPEL releases for Copr builds. ([`packit#2619`](https://github.com/packit/packit/pull/2619))
