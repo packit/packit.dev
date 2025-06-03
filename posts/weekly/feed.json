@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-22",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-22-may-26th--june-1st\">Week 22 (May 26th – June 1st)<a href=\"#week-22-may-26th--june-1st\" class=\"hash-link\" aria-label=\"Direct link to Week 22 (May 26th – June 1st)\" title=\"Direct link to Week 22 (May 26th – June 1st)\">​</a></h2><ul><li><p>We have added a new <code>run-condition</code> action that can be used to conditionally\ndisable downstream jobs during the execution and aims to solve the following\n<a href=\"https://github.com/packit/packit-service/issues/2777\" target=\"_blank\" rel=\"noopener noreferrer\">issue</a>. (<a href=\"https://github.com/packit/packit/pull/2608\" target=\"_blank\" rel=\"noopener noreferrer\"><code>packit#2608</code></a>, <a href=\"https://github.com/packit/packit-service/pull/2810\" target=\"_blank\" rel=\"noopener noreferrer\"><code>packit-service#2810</code></a>)</p></li><li><p>We got a contribution for a typo in the error message when our Packit CLI\ntracebacks. Thanks a lot for the contribution, @mulkieran. (<a href=\"https://github.com/packit/packit/pull/2612\" target=\"_blank\" rel=\"noopener noreferrer\"><code>packit#2612</code></a>)</p></li><li><p>We have fixed a bug in validation of the job trigger. (<a href=\"https://github.com/packit/packit/pull/2616\" target=\"_blank\" rel=\"noopener noreferrer\"><code>packit#2616</code></a>)</p></li><li><p>We have added support for handling of minor EPEL releases for Copr builds. (<a href=\"https://github.com/packit/packit/pull/2619\" target=\"_blank\" rel=\"noopener noreferrer\"><code>packit#2619</code></a>)</p></li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-22",
+            "title": "Week 22 in Packit",
+            "summary": "Week 22 (May 26th – June 1st)",
+            "date_modified": "2025-06-02T00:00:00.000Z",
+            "author": {
+                "name": "Matej Focko",
+                "url": "https://github.com/mfocko"
+            },
+            "tags": [
+                "2025-May",
+                "2025",
+                "May"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-21",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-21-may-20th--may-26th\">Week 21 (May 20th – May 26th)<a href=\"#week-21-may-20th--may-26th\" class=\"hash-link\" aria-label=\"Direct link to Week 21 (May 20th – May 26th)\" title=\"Direct link to Week 21 (May 20th – May 26th)\">​</a></h2><ul><li>We have fixed a bug that caused specfile to traceback when section names with conditional macro expansions containing spaces were present in the spec file. (<a href=\"https://github.com/packit/specfile/pull/476\" target=\"_blank\" rel=\"noopener noreferrer\">specfile#476</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-21",

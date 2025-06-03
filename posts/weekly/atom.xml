@@ -2,11 +2,30 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2025-05-26T00:00:00.000Z</updated>
+    <updated>2025-06-02T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 22 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2025/week-22</id>
+        <link href="https://packit.dev/posts/weekly/2025/week-22"/>
+        <updated>2025-06-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 22 (May 26th – June 1st)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-22-may-26th--june-1st">Week 22 (May 26th – June 1st)<a href="#week-22-may-26th--june-1st" class="hash-link" aria-label="Direct link to Week 22 (May 26th – June 1st)" title="Direct link to Week 22 (May 26th – June 1st)">​</a></h2><ul><li><p>We have added a new <code>run-condition</code> action that can be used to conditionally
+disable downstream jobs during the execution and aims to solve the following
+<a href="https://github.com/packit/packit-service/issues/2777" target="_blank" rel="noopener noreferrer">issue</a>. (<a href="https://github.com/packit/packit/pull/2608" target="_blank" rel="noopener noreferrer"><code>packit#2608</code></a>, <a href="https://github.com/packit/packit-service/pull/2810" target="_blank" rel="noopener noreferrer"><code>packit-service#2810</code></a>)</p></li><li><p>We got a contribution for a typo in the error message when our Packit CLI
+tracebacks. Thanks a lot for the contribution, @mulkieran. (<a href="https://github.com/packit/packit/pull/2612" target="_blank" rel="noopener noreferrer"><code>packit#2612</code></a>)</p></li><li><p>We have fixed a bug in validation of the job trigger. (<a href="https://github.com/packit/packit/pull/2616" target="_blank" rel="noopener noreferrer"><code>packit#2616</code></a>)</p></li><li><p>We have added support for handling of minor EPEL releases for Copr builds. (<a href="https://github.com/packit/packit/pull/2619" target="_blank" rel="noopener noreferrer"><code>packit#2619</code></a>)</p></li></ul>]]></content>
+        <author>
+            <name>Matej Focko</name>
+            <email>mfocko@redhat.com</email>
+            <uri>https://github.com/mfocko</uri>
+        </author>
+        <category label="2025-May" term="2025-May"/>
+        <category label="2025" term="2025"/>
+        <category label="May" term="May"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 21 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2025/week-21</id>
