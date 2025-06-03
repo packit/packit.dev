@@ -765,6 +765,12 @@ build job statuses. When set to `false`, while test jobs are waiting for their c
 to finish, their statuses remain in pending state and only build job statuses are updated, for example with
 `SRPM build is in progress...` or `Starting RPM build...`.
 
+#### clone_repos_before_run_condition
+
+(*bool*) When set to `true`, upstream and/or downstream (depending on context) git repos will be cloned
+before any configured `run-condition` action is run. The option has no effect if there is no `run-condition`
+action configured. Defaults to `false`.
+
 #### osh_diff_scan_after_copr_build
 
 (*bool*) Whether to run a differential scan in [OpenScanHub](https://openscanhub.fedoraproject.org/) 
