@@ -881,9 +881,13 @@ mailing list.
 To give you flexibility in what distributions you want to target with your EPEL builds,
 Packit provides these aliases:
 
-* `epel-X` — the current/leading minor release (e.g. `epel10`)
-* `epel-X-branched` — the branched/trailing minor release (e.g. `epel10.0`)
-* `epel-X-all` — both minor releases (e.g. `epel10`, `epel10.0`)
+* `epel-X` — the current/leading minor release, e.g.:
+  - `epel10` in dist-git and Koji
+  - `epel-10` in mock and Copr
+* `epel-X-branched` — the branched/trailing minor release, e.g.:
+  - `epel10.0` in dist-git and Koji
+  - `rhel+epel-10` in mock and Copr
+* `epel-X-all` — both minor releases
 
 :::note
 
@@ -893,8 +897,31 @@ The `epel-all` alias includes all active minor versions of all active major EPEL
 
 :::info
 
-For Copr builds all EPEL 10 minor version aliases are currently mapped to the `epel-10` target.
-This is subject to change.
+Unlike `epel-10`, which is mapped to `CentOS-Stream-10` Testing Farm compose by default,
+there is no default mapping for the `rhel+epel-10` Copr chroot. You have to specify
+a compose explicitly, e.g.:
+
+```
+  targets:
+    rhel+epel-10-x86_64:
+      distros: [CentOS-Stream-10]
+```
+
+or:
+
+```
+  use_internal_tf: true
+  targets:
+    rhel+epel-10-x86_64:
+      distros: [RHEL-10.0-Nightly]
+```
+
+:::
+
+:::warning
+
+Be aware that there is currently a Testing Farm [issue](https://gitlab.com/testing-farm/general/-/issues/74)
+that prevents installing Copr builds from chroots with `+` in their name, including `rhel+epel-10`.
 
 :::
 
