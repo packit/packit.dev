@@ -16,26 +16,26 @@ By the end of this session, you should have a working configuration that automat
 
 ### Prerequisites
 
-- Ensure you have a **Fedora package** you maintain/co-maintain. Ideally, pick one that has a **pending upstream release**, as this allows trying things out easily.
+Ensure you have a **Fedora package** you maintain/co-maintain. Ideally, pick one that has a **pending upstream release**, as this allows trying things out easily.
 
 ### Setup
 
-For detailed setup instructions, you can follow [the documentation](https://packit.dev/docs/fedora-releases-guide/dist-git-onboarding#setup). You can find a brief summary below:
+For detailed setup instructions, you can follow [the documentation](https://packit.dev/docs/fedora-releases-guide/dist-git-onboarding#setup). You can find a brief summary below.
 
 #### Create a working branch
 
 Before creating the configuration file, review [this section on how you'll be trying out the setup](https://packit.dev/docs/fedora-releases-guide/dist-git-onboarding#release-syncing).
-Based on that, create a new branch in your dist-git repository for your Packit configuration
+Based on that, create a new branch in your dist-git repository (it's also recommended to do this in fork) for your Packit configuration
 (e.g., `packit-setup`).
 
 #### Create the Packit configuration file
 
 Packit uses a YAML configuration file, named `(.)packit.yaml`, to define its behavior. This file needs to be placed in your **dist-git repository**,
-in general in the `rawhide` branch, but for experimentation during the workshop in a new branch, trying things out in a pull request.
+in general in the `rawhide` branch, but for experimentation during the workshop in a new branch, to be able to try running the jobs from an open pull request.
 
 Then, the simplest ways of creating the config:
 
-- Use `packit dist-git init` (requires `packit` installed locally, e.g. `dnf install packit`)
+- Use `packit dist-git init` (requires `packit` installed locally, e.g., `dnf install packit`)
 
   1.  In your cloned dist-git repository, switch to the target branch.
   2.  Run the command:
