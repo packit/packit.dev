@@ -18,8 +18,8 @@
 <link rel="alternate" type="application/rss+xml" href="/posts/weekly/rss.xml" title="Packit Weekly RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/posts/weekly/atom.xml" title="Packit Weekly Atom Feed">
 <link rel="alternate" type="application/json" href="/posts/weekly/feed.json" title="Packit Weekly JSON Feed"><link rel="stylesheet" href="/assets/css/styles.4a3b9af6.css">
-<link rel="preload" href="/assets/js/runtime~main.926603da.js" as="script">
-<link rel="preload" href="/assets/js/main.9563c341.js" as="script">
+<link rel="preload" href="/assets/js/runtime~main.b0416dc0.js" as="script">
+<link rel="preload" href="/assets/js/main.4e5c6db1.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}return t}()||function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -221,7 +221,9 @@ depend on the consistent status naming.</p><p>We provide the following variables
 during cloning of the dist-git repos that are maintained in the SIG namespaces.</p><h4 class="anchor anchorWithStickyNavbar_LWe7" id="sync_test_job_statuses_with_builds">sync_test_job_statuses_with_builds<a href="#sync_test_job_statuses_with_builds" class="hash-link" aria-label="Direct link to sync_test_job_statuses_with_builds" title="Direct link to sync_test_job_statuses_with_builds">​</a></h4><p>(<em>bool</em>) When set to <code>true</code> (the default), test job statuses are updated together with their corresponding
 build job statuses. When set to <code>false</code>, while test jobs are waiting for their corresponding build jobs
 to finish, their statuses remain in pending state and only build job statuses are updated, for example with
-<code>SRPM build is in progress...</code> or <code>Starting RPM build...</code>.</p><h4 class="anchor anchorWithStickyNavbar_LWe7" id="osh_diff_scan_after_copr_build">osh_diff_scan_after_copr_build<a href="#osh_diff_scan_after_copr_build" class="hash-link" aria-label="Direct link to osh_diff_scan_after_copr_build" title="Direct link to osh_diff_scan_after_copr_build">​</a></h4><p>(<em>bool</em>) Whether to run a differential scan in <a href="https://openscanhub.fedoraproject.org/" target="_blank" rel="noopener noreferrer">OpenScanHub</a>
+<code>SRPM build is in progress...</code> or <code>Starting RPM build...</code>.</p><h4 class="anchor anchorWithStickyNavbar_LWe7" id="clone_repos_before_run_condition">clone_repos_before_run_condition<a href="#clone_repos_before_run_condition" class="hash-link" aria-label="Direct link to clone_repos_before_run_condition" title="Direct link to clone_repos_before_run_condition">​</a></h4><p>(<em>bool</em>) When set to <code>true</code>, upstream and/or downstream (depending on context) git repos will be cloned
+before any configured <code>run-condition</code> action is run. The option has no effect if there is no <code>run-condition</code>
+action configured. Defaults to <code>false</code>.</p><h4 class="anchor anchorWithStickyNavbar_LWe7" id="osh_diff_scan_after_copr_build">osh_diff_scan_after_copr_build<a href="#osh_diff_scan_after_copr_build" class="hash-link" aria-label="Direct link to osh_diff_scan_after_copr_build" title="Direct link to osh_diff_scan_after_copr_build">​</a></h4><p>(<em>bool</em>) Whether to run a differential scan in <a href="https://openscanhub.fedoraproject.org/" target="_blank" rel="noopener noreferrer">OpenScanHub</a>
 after the Copr build successfully completes.
 This is an experimental feature and for now runs only for <code>fedora-rawhide-x86_64</code>. Defaults to <code>true</code>.
 The scan is run only for Copr builds triggered by pull requests, and only if there is
@@ -283,7 +285,7 @@ has been deprecated and will be removed in future versions.</p></div><footer cla
                     @packit@fosstodon.org
                   </a> (Mastodon)
                 </li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/usage">Usage Charts</a></li><li class="footer__item"><a class="footer__link-item" href="/posts">Blog Posts</a></li><li class="footer__item"><a href="https://github.com/packit" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Packit is a Red Hat sponsored free software project. Built with Docusaurus.</div></div></div></footer></div>
-<script src="/assets/js/runtime~main.926603da.js"></script>
-<script src="/assets/js/main.9563c341.js"></script>
+<script src="/assets/js/runtime~main.b0416dc0.js"></script>
+<script src="/assets/js/main.4e5c6db1.js"></script>
 </body>
 </html>
