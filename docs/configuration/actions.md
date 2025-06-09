@@ -89,6 +89,13 @@ These apply to the `srpm` command and building in COPR.
 | [hook] | `post-modifications`  | upstream git repo | after all modifications to the spec file and before running rpmbuild command |                                                      |
 |        | `changelog-entry`     | upstream git repo | when adding a new changelog entry to the specfile                     | stdout is used as a changelog entry                  |
 
+
+### Job-level actions
+
+|        | name                  | working directory | when run                                                              | description                                          |
+|--------|-----------------------|-------------------|-----------------------------------------------------------------------|------------------------------------------------------|
+| [hook] | `run-condition`       | upstream git repo | before a job would run                                                | exit code of this action determines if the job will run |
+
 ## Actions details
 
 All actions are executed in a locked-down OpenShift pod. Your commands are
@@ -156,6 +163,34 @@ actions:
 Our internal API differentiates between the commit title and description, so we
 have an additional requirement on separating the commit title by an empty line.
 You can, of course, provide *just* the commit title.
+
+### `run-condition`
+
+:::note
+
+The action is currently enabled only for downstream jobs.
+
+:::
+
+This action makes sense only at a job level and the exit code of the last executed command
+determines whether the job will run. If the exit code is non-zero, i.e., failure, the job will be skipped.
+If [`clone_repos_before_run_condition`](/docs/configuration/#clone_repos_before_run_condition)
+is `true`, upstream and/or downstream git repos (depending on the job in question and its trigger)
+will be cloned before the action is run.
+
+For example:
+
+```yaml
+jobs:
+  - job: koji_build
+    trigger: commit
+    dist-git-branches:
+        - fedora-all
+    actions:
+      run-condition:
+        # run only if version is not a pre-release
+        - bash -c 'echo $PACKIT_PROJECT_VERSION | grep -Pvq -- "-(alpha|beta|rc)\d*$"'
+```
 
 #### Debugging
 
@@ -245,6 +280,12 @@ when syncing upstream release downstream, e.g. `rhbz#123 rhbz#124`
   from the actual commit message to be used
 * `PACKIT_RESOLVED_BUGS` - bugs resolved by the release separated by space, 
   e.g. `rhbz#123 rhbz#124`
+
+### `run-condition`
+
+* `PACKIT_PROJECT_VERSION` — current version of the project
+* `PACKIT_UPSTREAM_REPO` — absolute path to cloned upstream git repo, presence depends on context
+* `PACKIT_DOWNSTREAM_REPO` — absolute path to cloned downstream git repo, presence depends on context
 
 ### Release-synchronization actions
 
