@@ -2,11 +2,29 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2025-06-02T00:00:00.000Z</updated>
+    <updated>2025-06-16T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 23 and 24 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2025/week-23-24</id>
+        <link href="https://packit.dev/posts/weekly/2025/week-23-24"/>
+        <updated>2025-06-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 23-24 (June 3rd – June 16th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-23-24-june-3rd--june-16th">Week 23-24 (June 3rd – June 16th)<a href="#week-23-24-june-3rd--june-16th" class="hash-link" aria-label="Direct link to Week 23-24 (June 3rd – June 16th)" title="Direct link to Week 23-24 (June 3rd – June 16th)">​</a></h2><ul><li>Team was attending and presenting at <a href="https://fedoraproject.org/flock/2025/" target="_blank" rel="noopener noreferrer">Flock to Fedora</a> and
+<a href="https://www.devconf.info/cz/" target="_blank" rel="noopener noreferrer">Devconf.cz</a> conferences. The highlight for us was connecting with so many Packit users in person!
+We want to thank everyone who attended our sessions and shared their feedback. If you are curious, here is the list of sessions we held:<ul><li><a href="https://cfp.fedoraproject.org/flock-to-fedora-2025/talk/VZETQA/" target="_blank" rel="noopener noreferrer">Even more release automation talk</a></li><li><a href="https://cfp.fedoraproject.org/flock-to-fedora-2025/talk/TNVBXQ/" target="_blank" rel="noopener noreferrer">What about a better dist-git CI?</a></li><li><a href="https://cfp.fedoraproject.org/flock-to-fedora-2025/talk/CLDGTL/" target="_blank" rel="noopener noreferrer">specfile library + norpm</a></li><li><a href="https://cfp.fedoraproject.org/flock-to-fedora-2025/talk/JBYMTX/" target="_blank" rel="noopener noreferrer">Smarter package maintenance with Packit (workshop)</a></li><li><a href="https://pretalx.devconf.info/devconf-cz-2025/talk/TLPB3M/" target="_blank" rel="noopener noreferrer">Kanban, our way</a></li><li><a href="https://pretalx.devconf.info/devconf-cz-2025/talk/UTGBCF/" target="_blank" rel="noopener noreferrer">Breaking Changes Without Breaking Users: Lessons from Packit 1.0</a></li><li><a href="https://pretalx.devconf.info/devconf-cz-2025/talk/7DESJP/" target="_blank" rel="noopener noreferrer">Breaking Barriers: Cross-Distro CI/CD with Packit and OBS</a></li></ul></li><li>Packit now exposes <code>specfile_path</code> from configuration (or its default value) as the environment variable <code>PACKIT_SPECFILE_PATH</code> for all Packit actions. (<a href="https://github.com/packit/packit/pull/2589" target="_blank" rel="noopener noreferrer"><code>packit#2589</code></a>)</li></ul>]]></content>
+        <author>
+            <name>Laura Barcziová</name>
+            <email>lbarczio@redhat.com</email>
+            <uri>https://github.com/lbarcziova</uri>
+        </author>
+        <category label="2025-June" term="2025-June"/>
+        <category label="2025" term="2025"/>
+        <category label="June" term="June"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 22 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2025/week-22</id>
