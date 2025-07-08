@@ -2,11 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2025-06-16T00:00:00.000Z</updated>
+    <updated>2025-06-23T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 25 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2025/week-25</id>
+        <link href="https://packit.dev/posts/weekly/2025/week-25"/>
+        <updated>2025-06-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 25 (June 17th – June 23rd)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-25-june-17th--june-23rd">Week 25 (June 17th – June 23rd)<a href="#week-25-june-17th--june-23rd" class="hash-link" aria-label="Direct link to Week 25 (June 17th – June 23rd)" title="Direct link to Week 25 (June 17th – June 23rd)">​</a></h2><ul><li>We have added support for the <code>eln</code> dist-git branch and the <code>Fedora-eln</code> Testing Farm compose in Packit as Fedora CI.
+(<a href="https://github.com/packit/packit/pull/2630" target="_blank" rel="noopener noreferrer">packit#2630</a>)</li></ul>]]></content>
+        <author>
+            <name>Nikola Forró</name>
+            <email>nforro@redhat.com</email>
+            <uri>https://github.com/nforro</uri>
+        </author>
+        <category label="2025-June" term="2025-June"/>
+        <category label="2025" term="2025"/>
+        <category label="June" term="June"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 23 and 24 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2025/week-23-24</id>

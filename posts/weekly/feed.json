@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-25",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-25-june-17th--june-23rd\">Week 25 (June 17th – June 23rd)<a href=\"#week-25-june-17th--june-23rd\" class=\"hash-link\" aria-label=\"Direct link to Week 25 (June 17th – June 23rd)\" title=\"Direct link to Week 25 (June 17th – June 23rd)\">​</a></h2><ul><li>We have added support for the <code>eln</code> dist-git branch and the <code>Fedora-eln</code> Testing Farm compose in Packit as Fedora CI.\n(<a href=\"https://github.com/packit/packit/pull/2630\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2630</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-25",
+            "title": "Week 25 in Packit",
+            "summary": "Week 25 (June 17th – June 23rd)",
+            "date_modified": "2025-06-23T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2025-June",
+                "2025",
+                "June"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-23-24",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-23-24-june-3rd--june-16th\">Week 23-24 (June 3rd – June 16th)<a href=\"#week-23-24-june-3rd--june-16th\" class=\"hash-link\" aria-label=\"Direct link to Week 23-24 (June 3rd – June 16th)\" title=\"Direct link to Week 23-24 (June 3rd – June 16th)\">​</a></h2><ul><li>Team was attending and presenting at <a href=\"https://fedoraproject.org/flock/2025/\" target=\"_blank\" rel=\"noopener noreferrer\">Flock to Fedora</a> and\n<a href=\"https://www.devconf.info/cz/\" target=\"_blank\" rel=\"noopener noreferrer\">Devconf.cz</a> conferences. The highlight for us was connecting with so many Packit users in person!\nWe want to thank everyone who attended our sessions and shared their feedback. If you are curious, here is the list of sessions we held:<ul><li><a href=\"https://cfp.fedoraproject.org/flock-to-fedora-2025/talk/VZETQA/\" target=\"_blank\" rel=\"noopener noreferrer\">Even more release automation talk</a></li><li><a href=\"https://cfp.fedoraproject.org/flock-to-fedora-2025/talk/TNVBXQ/\" target=\"_blank\" rel=\"noopener noreferrer\">What about a better dist-git CI?</a></li><li><a href=\"https://cfp.fedoraproject.org/flock-to-fedora-2025/talk/CLDGTL/\" target=\"_blank\" rel=\"noopener noreferrer\">specfile library + norpm</a></li><li><a href=\"https://cfp.fedoraproject.org/flock-to-fedora-2025/talk/JBYMTX/\" target=\"_blank\" rel=\"noopener noreferrer\">Smarter package maintenance with Packit (workshop)</a></li><li><a href=\"https://pretalx.devconf.info/devconf-cz-2025/talk/TLPB3M/\" target=\"_blank\" rel=\"noopener noreferrer\">Kanban, our way</a></li><li><a href=\"https://pretalx.devconf.info/devconf-cz-2025/talk/UTGBCF/\" target=\"_blank\" rel=\"noopener noreferrer\">Breaking Changes Without Breaking Users: Lessons from Packit 1.0</a></li><li><a href=\"https://pretalx.devconf.info/devconf-cz-2025/talk/7DESJP/\" target=\"_blank\" rel=\"noopener noreferrer\">Breaking Barriers: Cross-Distro CI/CD with Packit and OBS</a></li></ul></li><li>Packit now exposes <code>specfile_path</code> from configuration (or its default value) as the environment variable <code>PACKIT_SPECFILE_PATH</code> for all Packit actions. (<a href=\"https://github.com/packit/packit/pull/2589\" target=\"_blank\" rel=\"noopener noreferrer\"><code>packit#2589</code></a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-23-24",
