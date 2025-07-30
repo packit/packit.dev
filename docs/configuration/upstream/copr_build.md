@@ -5,6 +5,8 @@ sidebar_position: 1
 
 # `job: copr_build`
 
+![Copr build](../../img/configuration/copr-overview.png)
+
 Create an SRPM and submit an RPM build to [Fedora Copr](https://copr.fedorainfracloud.org/) build system.
 
 

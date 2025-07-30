@@ -7,6 +7,8 @@ sidebar_position: 7
 In general, you can put a `/packit <job-you-want-to-trigger>` comment
 to trigger the Packit job manually.
 
+![Re-run GitHub check](img/retriggering/comment.png)
+
 ### copr_build
 For retriggering the [`copr_build`](/docs/configuration/upstream/copr_build) jobs, Packit is able to trigger new builds based on a pull request comment:
 
