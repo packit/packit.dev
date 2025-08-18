@@ -36,7 +36,6 @@ in general in the `rawhide` branch, but for experimentation during the workshop 
 Then, the simplest ways of creating the config:
 
 - Use `packit dist-git init` (requires `packit` installed locally, e.g., `dnf install packit`)
-
   1.  In your cloned dist-git repository, switch to the target branch.
   2.  Run the command:
       ```bash
@@ -44,7 +43,6 @@ Then, the simplest ways of creating the config:
       ```
 
 - Use our template
-
   1.  Manually create a `.packit.yaml` file in your target branch.
   2.  Copy the content from the [Downstream configuration template](https://packit.dev/docs/configuration/downstream_configuration_template#template) and adjust it to your needs.
 

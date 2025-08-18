@@ -7,7 +7,7 @@ repos:
     rev: v4.0.0-alpha.8
     hooks:
       - id: prettier
-        exclude: archetypes|docs|data|layouts|resources|source-git|static|themes/
+        exclude: archetypes|docs|data|layouts|resources|source-git|static|themes/|posts/aws-and-image-builder/index.md
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
@@ -20,3 +20,6 @@ repos:
         args:
           - https://github.com/packit/packit.dev.git
         stages: [manual, pre-push]
+
+ci:
+  autofix_prs: false
