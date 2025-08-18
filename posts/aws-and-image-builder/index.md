@@ -49,7 +49,6 @@ automated solution. Below you can find a summary of all the needed manual steps;
 I am quite sure after reading them, you will want to automate them with Packit!
 
 - Build an RPM package with your pull request changes through **COPR**, go to https://copr.fedorainfracloud.org
-
   1. Install `copr-cli`.
   2. Create your account and service token.
   3. Add your token to `~/.config/copr.
@@ -58,14 +57,12 @@ I am quite sure after reading them, you will want to automate them with Packit!
   6. **WAIT for the build to finish**.
 
 - Create a new cloud image through the **Image Builder console**, go to https://console.redhat.com/insights/image-builder
-
   7. Login with your _Red Hat developer_ account.
   8. Click on the `Create Image` button, choose _AWS image_ type and follow the wizard.
   9. **WAIT for the build to finish**.
   10. Open the `Launch` link for the builded image.
 
 - Launch and access the AWS image through the **AWS management console**, go to https://aws.amazon.com/console/
-
   11. The previous link will open an AWS console tab with the
       _Launch an Instance_ wizard preset to use the builded image.
       You need to login into the _AWS management console_ using an _AWS Account ID_
