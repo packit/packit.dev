@@ -2,11 +2,29 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2025-06-23T00:00:00.000Z</updated>
+    <updated>2025-08-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 33 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2025/week-33</id>
+        <link href="https://packit.dev/posts/weekly/2025/week-33"/>
+        <updated>2025-08-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 33 (August 12th – August 18th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-33-august-12th--august-18th">Week 33 (August 12th – August 18th)<a href="#week-33-august-12th--august-18th" class="hash-link" aria-label="Direct link to Week 33 (August 12th – August 18th)" title="Direct link to Week 33 (August 12th – August 18th)">​</a></h2><ul><li>In test jobs, it is now explicitly required to include the targets needed for running build jobs;
+they will no longer be automatically deduced to prevent inconsistencies in creating build and test jobs.
+(<a href="https://github.com/packit/packit-service/pull/2785" target="_blank" rel="noopener noreferrer">packit-service#2785</a>)</li></ul>]]></content>
+        <author>
+            <name>Nikola Forró</name>
+            <email>nforro@redhat.com</email>
+            <uri>https://github.com/nforro</uri>
+        </author>
+        <category label="2025-August" term="2025-August"/>
+        <category label="2025" term="2025"/>
+        <category label="August" term="August"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 25 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2025/week-25</id>

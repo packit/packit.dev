@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-33",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-33-august-12th--august-18th\">Week 33 (August 12th – August 18th)<a href=\"#week-33-august-12th--august-18th\" class=\"hash-link\" aria-label=\"Direct link to Week 33 (August 12th – August 18th)\" title=\"Direct link to Week 33 (August 12th – August 18th)\">​</a></h2><ul><li>In test jobs, it is now explicitly required to include the targets needed for running build jobs;\nthey will no longer be automatically deduced to prevent inconsistencies in creating build and test jobs.\n(<a href=\"https://github.com/packit/packit-service/pull/2785\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2785</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-33",
+            "title": "Week 33 in Packit",
+            "summary": "Week 33 (August 12th – August 18th)",
+            "date_modified": "2025-08-18T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2025-August",
+                "2025",
+                "August"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-25",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-25-june-17th--june-23rd\">Week 25 (June 17th – June 23rd)<a href=\"#week-25-june-17th--june-23rd\" class=\"hash-link\" aria-label=\"Direct link to Week 25 (June 17th – June 23rd)\" title=\"Direct link to Week 25 (June 17th – June 23rd)\">​</a></h2><ul><li>We have added support for the <code>eln</code> dist-git branch and the <code>Fedora-eln</code> Testing Farm compose in Packit as Fedora CI.\n(<a href=\"https://github.com/packit/packit/pull/2630\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2630</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-25",

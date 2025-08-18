@@ -4,10 +4,24 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 23 Jun 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 18 Aug 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 33 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2025/week-33</link>
+            <guid>https://packit.dev/posts/weekly/2025/week-33</guid>
+            <pubDate>Mon, 18 Aug 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 33 (August 12th – August 18th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-33-august-12th--august-18th">Week 33 (August 12th – August 18th)<a href="#week-33-august-12th--august-18th" class="hash-link" aria-label="Direct link to Week 33 (August 12th – August 18th)" title="Direct link to Week 33 (August 12th – August 18th)">​</a></h2><ul><li>In test jobs, it is now explicitly required to include the targets needed for running build jobs;
+they will no longer be automatically deduced to prevent inconsistencies in creating build and test jobs.
+(<a href="https://github.com/packit/packit-service/pull/2785" target="_blank" rel="noopener noreferrer">packit-service#2785</a>)</li></ul>]]></content:encoded>
+            <author>nforro@redhat.com (Nikola Forró)</author>
+            <category>2025-August</category>
+            <category>2025</category>
+            <category>August</category>
+        </item>
         <item>
             <title><![CDATA[Week 25 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2025/week-25</link>

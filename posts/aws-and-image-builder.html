@@ -18,8 +18,8 @@
 <link rel="alternate" type="application/rss+xml" href="/posts/weekly/rss.xml" title="Packit Weekly RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/posts/weekly/atom.xml" title="Packit Weekly Atom Feed">
 <link rel="alternate" type="application/json" href="/posts/weekly/feed.json" title="Packit Weekly JSON Feed"><link rel="stylesheet" href="/assets/css/styles.4a3b9af6.css">
-<link rel="preload" href="/assets/js/runtime~main.327c3d26.js" as="script">
-<link rel="preload" href="/assets/js/main.30359528.js" as="script">
+<link rel="preload" href="/assets/js/runtime~main.c19eaa5d.js" as="script">
+<link rel="preload" href="/assets/js/main.db602770.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}return t}()||function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -34,11 +34,22 @@ and launch the builded images in the <a href="https://aws.amazon.com/console/" t
 to satisfy the above prerequisites.</p><h1>The manual steps</h1><p>Are you wondering what are the manual steps for bringing your pull request changes
 in a cloud image and why you should automate them?</p><p>There could be many ways to achieve this goal but let&#x27;s see together the closest to our
 automated solution. Below you can find a summary of all the needed manual steps;
-I am quite sure after reading them, you will want to automate them with Packit!</p><ul><li><p>Build an RPM package with your pull request changes through <strong>COPR</strong>, go to <a href="https://copr.fedorainfracloud.org" target="_blank" rel="noopener noreferrer">https://copr.fedorainfracloud.org</a></p><ol><li>Install <code>copr-cli</code>.</li><li>Create your account and service token.</li><li>Add your token to `~/.config/copr.</li><li>Create a new COPR project.</li><li>Start a build with your local pull request changes using <code>copr-cli</code>.</li><li><strong>WAIT for the build to finish</strong>.</li></ol></li><li><p>Create a new cloud image through the <strong>Image Builder console</strong>, go to <a href="https://console.redhat.com/insights/image-builder" target="_blank" rel="noopener noreferrer">https://console.redhat.com/insights/image-builder</a></p><ol start="7"><li>Login with your <em>Red Hat developer</em> account.</li><li>Click on the <code>Create Image</code> button, choose <em>AWS image</em> type and follow the wizard.</li><li><strong>WAIT for the build to finish</strong>.</li><li>Open the <code>Launch</code> link for the builded image.</li></ol></li><li><p>Launch and access the AWS image through the <strong>AWS management console</strong>, go to <a href="https://aws.amazon.com/console/" target="_blank" rel="noopener noreferrer">https://aws.amazon.com/console/</a></p><ol start="11"><li>The previous link will open an AWS console tab with the
+I am quite sure after reading them, you will want to automate them with Packit!</p><ul><li><p>Build an RPM package with your pull request changes through <strong>COPR</strong>, go to <a href="https://copr.fedorainfracloud.org" target="_blank" rel="noopener noreferrer">https://copr.fedorainfracloud.org</a></p><ol><li>Install <code>copr-cli</code>.</li><li>Create your account and service token.</li><li>Add your token to `~/.config/copr.</li><li>Create a new COPR project.</li><li>Start a build with your local pull request changes using <code>copr-cli</code>.</li><li><strong>WAIT for the build to finish</strong>.</li></ol></li><li><p>Create a new cloud image through the <strong>Image Builder console</strong>, go to <a href="https://console.redhat.com/insights/image-builder" target="_blank" rel="noopener noreferrer">https://console.redhat.com/insights/image-builder</a>
+7. Login with your <em>Red Hat developer</em> account.
+8. Click on the <code>Create Image</code> button, choose <em>AWS image</em> type and follow the wizard.
+9. <strong>WAIT for the build to finish</strong>.
+10. Open the <code>Launch</code> link for the builded image.</p></li><li><p>Launch and access the AWS image through the <strong>AWS management console</strong>, go to <a href="https://aws.amazon.com/console/" target="_blank" rel="noopener noreferrer">https://aws.amazon.com/console/</a>
+11. The previous link will open an AWS console tab with the
 <em>Launch an Instance</em> wizard preset to use the builded image.
 You need to login into the <em>AWS management console</em> using an <em>AWS Account ID</em>
-allowed to access the <em>AMI Image</em> you just created.</li><li>Select a <strong>Key pair</strong>, or create one if you don&#x27;t have it already,
-to be able to ssh the image later.</li><li>Click on <code>Launch Instance</code></li><li>Connect to instance using an ssh client</li><li>Add the previously created COPR repo to the list of available dnf repositories.</li><li>Install the package you have created at step number 4.</li><li>Now you are ready to test your code in a real cloud image.</li></ol></li></ul><p>For every new pull request you want to test directly in a cloud image you have to repeat
+allowed to access the <em>AMI Image</em> you just created.
+12. Select a <strong>Key pair</strong>, or create one if you don&#x27;t have it already,
+to be able to ssh the image later.
+13. Click on <code>Launch Instance</code>
+14. Connect to instance using an ssh client
+15. Add the previously created COPR repo to the list of available dnf repositories.
+16. Install the package you have created at step number 4.
+17. Now you are ready to test your code in a real cloud image.</p></li></ul><p>For every new pull request you want to test directly in a cloud image you have to repeat
 steps 4-16 or automate them through Packit!</p><h1>Automate the steps</h1><h2 class="anchor anchorWithStickyNavbar_LWe7" id="install-packit">Install Packit<a href="#install-packit" class="hash-link" aria-label="Direct link to Install Packit" title="Direct link to Install Packit">​</a></h2><p>Installing Packit is pretty straightforward.</p><ol><li>Create a valid <a href="https://fedoraproject.org/wiki/Account_System" target="_blank" rel="noopener noreferrer">Fedora Account System (FAS)</a>
 account (if you don&#x27;t already have one).
 Why do you need it? After these few steps you will start building (and potentially shipping)
@@ -69,7 +80,7 @@ see the details of your image ready to be launched.</p><p><img loading="lazy" al
                     @packit@fosstodon.org
                   </a> (Mastodon)
                 </li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/usage">Usage Charts</a></li><li class="footer__item"><a class="footer__link-item" href="/posts">Blog Posts</a></li><li class="footer__item"><a href="https://github.com/packit" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Packit is a Red Hat sponsored free software project. Built with Docusaurus.</div></div></div></footer></div>
-<script src="/assets/js/runtime~main.327c3d26.js"></script>
-<script src="/assets/js/main.30359528.js"></script>
+<script src="/assets/js/runtime~main.c19eaa5d.js"></script>
+<script src="/assets/js/main.db602770.js"></script>
 </body>
 </html>
