@@ -5,6 +5,8 @@ sidebar_position: 7
 
 # Non-divergent dist-git branches
 
+![Branches](../img/fedora-releases-guide/non-divergent-branches.png)
+
 To prevent your dist-git branches from diverging, you can use the following `dist_git_branches` syntax:
 
 ```yaml

@@ -5,6 +5,8 @@ sidebar_position: 2
 
 # `job: koji_build`
 
+![Koji build](../../img/configuration/koji-info.png)
+
 Trigger the build in
 [Fedora Koji](https://koji.fedoraproject.org/koji/) build system
 as a reaction to a new dist-git commit.

@@ -5,6 +5,8 @@ sidebar_position: 3
 
 # `job: bodhi_update`
 
+![Bodhi updates](../../img/configuration/bodhi-updates.png)
+
 Create a new update in
 [Fedora Bodhi](https://bodhi.fedoraproject.org) for successful
 Koji build.

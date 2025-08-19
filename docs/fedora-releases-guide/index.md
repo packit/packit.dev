@@ -11,12 +11,16 @@ Let's split the release process into single steps:
 4. [Koji builds](#koji-build-job)
 5. [Bodhi updates](#bodhi-update-job)
 
+![Release steps](../img/fedora-releases-guide/release-steps.png)
+
 Doing Fedora releases with Packit means utilising these jobs:
 1. [`propose_downstream` or `pull_from_upstream`](#propose-downstream-or-pull-from-upstream)
 2. [`koji_build`](#koji-build-job)
 3. [`bodhi_update`](#bodhi-update-job)
 
 Every job takes care of a different part of the release process.
+
+![Packit flow chart](../img/fedora-releases-guide/process-diagram.png)
 
 :::tip
 In this page, you can find all the details of the release process automation covered by Packit.
@@ -233,6 +237,8 @@ By default, only merged pull requests created by Packit are being acted upon, bu
 you can override this behaviour by specifying
 `allowed_pr_authors` and/or `allowed_committers` in the [job configuration](/docs/configuration/downstream/koji_build).
 
+![Koji build](../img/fedora-releases-guide/koji-build.png)
+
 For a configuration example and retriggering, see [dist-git onboarding](./dist-git-onboarding.md#koji-build-job).
 
 ## Bodhi update job
@@ -245,6 +251,8 @@ it creates a new update for that branch in Bodhi for you.
 By default, only successful Koji builds created by Packit are being acted upon, but 
 you can override this behaviour by specifying
 `allowed_builders` in the [job configuration](/docs/configuration/downstream/bodhi_update).
+
+![Bodhi updates](../img/fedora-releases-guide/bodhi-updates.png)
 
 For a configuration example and retriggering, see [dist-git onboarding](./dist-git-onboarding.md#bodhi-update-job).
 
