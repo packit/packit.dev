@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-34",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-34-august-19th--august-25th\">Week 34 (August 19th – August 25th)<a href=\"#week-34-august-19th--august-25th\" class=\"hash-link\" aria-label=\"Direct link to Week 34 (August 19th – August 25th)\" title=\"Direct link to Week 34 (August 19th – August 25th)\">​</a></h2><ul><li>Packit now automatically invokes an RPM build in <code>mock</code> when no RPMs are provided when running <code>packit test</code> in the CLI. (<a href=\"https://github.com/packit/packit/pull/2636\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2636</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-34",
+            "title": "Week 34 in Packit",
+            "summary": "Week 34 (August 19th – August 25th)",
+            "date_modified": "2025-08-25T00:00:00.000Z",
+            "author": {
+                "name": "Alžběta Kučerová",
+                "url": "https://github.com/betulependule"
+            },
+            "tags": [
+                "2025-August",
+                "2025",
+                "August"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-33",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-33-august-12th--august-18th\">Week 33 (August 12th – August 18th)<a href=\"#week-33-august-12th--august-18th\" class=\"hash-link\" aria-label=\"Direct link to Week 33 (August 12th – August 18th)\" title=\"Direct link to Week 33 (August 12th – August 18th)\">​</a></h2><ul><li>In test jobs, it is now explicitly required to include the targets needed for running build jobs;\nthey will no longer be automatically deduced to prevent inconsistencies in creating build and test jobs.\n(<a href=\"https://github.com/packit/packit-service/pull/2785\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2785</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-33",
