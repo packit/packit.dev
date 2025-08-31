@@ -897,6 +897,18 @@ Packit provides these aliases:
 
 :::note
 
+For a certain period of time the `epel-X-branched` alias resolves to two minor releases.
+This period starts after EPEL minor release branching and should be over once the corresponding
+RHEL minor version is released. Note that both of these two minor releases are still mapped
+to the same `rhel+epel-X` mock/Copr chroot.
+
+For instance, as of September 2025, the `epel-10` alias resolves to `epel-10.2`,
+while the `epel-10-branched` alias resolves to both `epel-10.0` and `epel-10.1`.
+
+:::
+
+:::note
+
 The `epel-all` alias includes all active minor versions of all active major EPEL releases.
 
 :::
