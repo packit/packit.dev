@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-35",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-35-august-26th--september-1st\">Week 35 (August 26th – September 1st)<a href=\"#week-35-august-26th--september-1st\" class=\"hash-link\" aria-label=\"Direct link to Week 35 (August 26th – September 1st)\" title=\"Direct link to Week 35 (August 26th – September 1st)\">​</a></h2><ul><li>We have fixed a bug that caused issues when triggering tests for Fedora ELN. (<a href=\"https://github.com/packit/packit-service/pull/2844\" target=\"_blank\" rel=\"noopener noreferrer\">packit/packit-service#2844</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-35",
+            "title": "Week 35 in Packit",
+            "summary": "Week 35 (August 26th – September 1st)",
+            "date_modified": "2025-09-01T00:00:00.000Z",
+            "author": {
+                "name": "Matej Focko",
+                "url": "https://github.com/mfocko"
+            },
+            "tags": [
+                "2025-August",
+                "2025",
+                "August"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-34",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-34-august-19th--august-25th\">Week 34 (August 19th – August 25th)<a href=\"#week-34-august-19th--august-25th\" class=\"hash-link\" aria-label=\"Direct link to Week 34 (August 19th – August 25th)\" title=\"Direct link to Week 34 (August 19th – August 25th)\">​</a></h2><ul><li>Packit now automatically invokes an RPM build in <code>mock</code> when no RPMs are provided when running <code>packit test</code> in the CLI. (<a href=\"https://github.com/packit/packit/pull/2636\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2636</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-34",

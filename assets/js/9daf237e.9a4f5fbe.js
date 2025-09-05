@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpackit_dev=self.webpackChunkpackit_dev||[]).push([[94164],{75384:s=>{s.exports=JSON.parse('{"label":"2025-August","permalink":"/posts/weekly/tags/2025-august","allTagsPath":"/posts/weekly/tags","count":3}')}}]);
