@@ -1,16 +1,16 @@
 ---
-title: validate-config
+title: validate
 date: 2021-03-18T08:48:36+01:00
 sidebar_position: 30
 ---
-# `packit validate-config`
+# `packit config validate`
 
 Validate the Packit configuration file.
 
 
 ## Help
 
-    Usage: packit validate-config [OPTIONS] [PATH_OR_URL]
+    Usage: packit config validate [OPTIONS] [PATH_OR_URL]
 
       Validate PackageConfig.
 

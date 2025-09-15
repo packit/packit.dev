@@ -344,7 +344,7 @@ files_to_sync:
 
 :::info
 
-This option is a successor to `synced_files` that has been already deprecated.
+This option is a successor to `synced_files` that has been deprecated and removed.
 
 :::
 
@@ -667,7 +667,7 @@ only one of these options.
 (*dict*) Macros to be explicitly defined or undefined at spec file parse time.
 To undefine a macro, set its value to `null`.
 This can be useful for instance when the spec file is OS-specific and Packit runs on a different OS
-(Packit Service currently runs on CentOS Stream 9).
+(Packit Service currently runs on Fedora 41).
 
 For example, `%cargo_prep` macro used in Rust packages accepts `-V` option on EL but not on Fedora.
 To make sure Packit is able to parse a spec file that uses `%cargo_prep -V` on both OSes,
@@ -787,10 +787,12 @@ We will be happy for any feedback regarding it, [please contact us](https://gith
 (*string*) An option to set arguments of `csmock` (the tool used inside [OpenScanHub](https://openscanhub.fedoraproject.org/)). For instance, you can specify arguments like `--cppcheck-add-flag=--enable=style` to check styling issues as seen in [this example run](https://openscanhub.fedoraproject.org/task/10066/) triggered from [this](https://github.com/avahi/avahi/pull/641) testing pull-request on Avahi.
 
 #### osh_options
-A set of additional options passed into osh-cli for additional functionality
+
+A set of additional options passed to `osh-cli` for additional customizations of the functionality.
+
 ##### analyzer
-(*string*) 
-list of analyzers to be passed to osh-cli use comma as a separator: e.g. "analyzer:gcc,clang,cppcheck"
+
+(*string*) List of analyzers to be passed to `osh-cli`. Use comma as a separator, e.g. `gcc,clang,cppcheck`.
 
 ```yaml
 osh_options:
@@ -798,8 +800,8 @@ osh_options:
 ```
 
 ##### config
-(*string*) 
-Used to specify mock config name to be passed to osh-cli. If value is not set in yaml file, default value "fedora-rawhide-x86_64" is used.
+
+(*string*) Used to specify mock config name to be passed to `osh-cli`. If value is not set in the config, default value `"fedora-rawhide-x86_64"` is used.
 
 ```yaml
 osh_options:
@@ -807,8 +809,8 @@ osh_options:
 ```
 
 ##### profile
-(*string*) 
-Used to specify predefined scanning profile to be passed to osh cli.
+
+(*string*) Used to specify predefined scanning profile to be passed to `osh-cli`.
 
 ```yaml
 osh_options:

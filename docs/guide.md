@@ -246,7 +246,7 @@ For downstream jobs, Packit always loads the config from the default branch of t
 :::tip 
 
 For validation of the configuration, you can utilise
-Packit CLI command [`validate-config`](/docs/cli/validate-config) or our 
+Packit CLI command [`config validate`](/docs/cli/config/validate) or our 
 [pre-commit hooks](/posts/pre-commit-hooks#validate-config).
 
 :::
