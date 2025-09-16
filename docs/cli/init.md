@@ -31,7 +31,5 @@ initialize a [source-git repo](/source-git).
       source-git repo.
 
     Options:
-      --force-precommit    Automatically create an empty pre-commit configuration file if missing.
-      --without-precommit  Skip adding pre-commit hook to pre-commit configuration file.
-      -f, --force          Reset config to default if already exists.
-      -h, --help           Show this message and exit.
+      -f, --force  Reset config to default if already exists.
+      -h, --help   Show this message and exit.
