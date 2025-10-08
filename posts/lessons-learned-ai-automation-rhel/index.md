@@ -24,7 +24,7 @@ When we started this project, the number of AI frameworks available was both exc
 - **[LlamaStack](https://llamastack.github.io/latest/)** - It wasn't mature enough
 - **Custom MCP (Model Context Protocol)** integrations - For connecting to services like Jira and GitLab
 
-The reality? Every framework has trade-offs, and the "best" choice depends heavily on your specific use case. Goose was great for rapid prototyping and was an excellent starting point choice, but we quickly discovered we needed something more robust for production. With so many options available, we went with something we were able to easily start with and still achieve good results. BeeAI's structured approach with conditional requirements and many more possibilities of restrictions and control over agents proved more suitable for our complex, multi-step workflows.
+The reality? Every framework has trade-offs, and the “best” choice depends heavily on your specific use case. Goose was great for rapid prototyping and was an excellent starting point choice, but we quickly discovered we needed something more robust for production. With so many options available, we went with something we were able to easily start with and still achieve good results. BeeAI's structured approach with conditional requirements and many more possibilities of restrictions and control over agents proved more suitable for our complex, multi-step workflows.
 
 Since security is very important for the production-level system, and it's also easy to create your own MCP server, we've opted for that option so the code is 100% controlled by us. This way, we can define exactly which Jira fields can be touched, what values are allowed, and under what conditions. Agents get an exact list of functions they can use, and none of them have any credentials in their environment: everything that needs authentication goes through MCP.
 
@@ -54,7 +54,7 @@ You must decide between one of 5 actions. Follow these guidelines:
 """
 ```
 
-What looks like a simple "analyse this issue" task actually requires:
+What looks like a simple “analyse this issue” task actually requires:
 
 - Complex decision trees with multiple fallback paths
 - Comprehensive error handling for edge cases
@@ -97,8 +97,8 @@ This specialisation journey is still ongoing, and we can absolutely see opportun
 
 We've experimented with multiple models, providers and settings:
 
-- [Google's Gemini](https://ai.google.dev/gemini-api) (currently gemini-2.5-pro)
-- [Anthropic's Claude](https://claude.ai/) (claude-sonnet-4)
+- [Google's Gemini](https://ai.google.dev/gemini-api) (currently `gemini-2.5-pro`)
+- [Anthropic's Claude](https://claude.ai/) (`claude-sonnet-4`)
 - Custom temperature and parameter tuning
 
 Yes, newer models often perform better, and it's worth trying them. But here's what matters more:
@@ -108,7 +108,7 @@ Yes, newer models often perform better, and it's worth trying them. But here's w
 3. **Validation and error handling:** Every step has validation, and failures are handled gracefully with retry logic.
 4. **Explicit system prompt:** LLMs can be very creative in their solutions, make sure to precisely guide them via system prompts.
 
-For example, our backport agent doesn't just "apply a patch" - it has a sophisticated workflow and tools:
+For example, our backport agent doesn't just “apply a patch” - it has a sophisticated workflow and tools:
 
 ```python
 # Specialized tools for reliable patch handling
@@ -140,18 +140,18 @@ This might be the most important lesson: AI agents will never be 100% determinis
 - File system operations
 - Complex deterministic logic, like mapping RHEL versions to branches
 
-**Lesson learned:** Design your system to be "AI-assisted" rather than "AI-controlled." Use AI for the creative, analytical work, but rely on deterministic code for the critical operations.
+**Lesson learned:** Design your system to be “AI-assisted” rather than “AI-controlled”. Use AI for the creative, analytical work, but rely on deterministic code for the critical operations.
 
 ## From code to service
 
-Once you move from building a prototype to building a production system, you also need to think about the infrastructure and other components, not just agents and code around them. Here are just a few examples of what we plumbed that keeps AI agents running reliably:
+Once you move from building a prototype to building a production system, you also need to think about the infrastructure and other components, not just agents and code around them. Here are just a few examples of what we architected that keeps AI agents running reliably:
 
 - **Queue-based architecture:** We use valkey queues to orchestrate work between agents, a reliable pattern we already knew worked. Issues flow through different queues with automatic retry logic.
 - **Observability:** Every agent action flows through [Phoenix tracing](https://phoenix.arize.ai/), giving us complete visibility into what agents are thinking and doing. When something goes wrong, we can trace exactly which decisions led to the failure. This isn't just logging - it's understanding why your AI system made specific choices.
 - **Container deployment:** The entire system runs on OpenShift and each agent type has its own deployment with resource limits. This also makes the whole system easily scalable.
-- **Dry-run capabilities:** Every operation has dry-run support built in. This helps us to better test and debug the agent's behaviour. When an agent makes an unexpected decision, we can replay the scenario safely.
+- **Dry-run capabilities:** Every operation has a dry-run support built in. This helps us to better test and debug the agent's behaviour. When an agent makes an unexpected decision, we can replay the scenario safely.
 
-**Lesson learned:** Start thinking about operational capabilities on day one. Dry-run modes, proper logging, and failure recovery aren't "nice to haves" - they're what make AI systems actually usable. And since LLMs produce a ton of output, you'll need an efficient way to find out why the agents made such an odd decision.
+**Lesson learned:** Start thinking about operational capabilities on day one. Dry-run modes, proper logging, and failure recovery aren't “nice to haves” - they are what makes AI systems actually usable. And since LLMs produce a ton of output, you'll need an efficient way to find out why the agents made such an odd decision.
 
 ## Takeaways
 
