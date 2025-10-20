@@ -32,7 +32,14 @@ const FeatureList: FeatureItem[] = [
         </Link>{" "}
         and can test either the RPM package built in Copr or trigger tests
         directly on different platforms.{" "}
-        <Link to="/docs/configuration/upstream/tests">Learn more.</Link>
+        <Link to="/docs/configuration/upstream/tests">Learn more.</Link> It can
+        also perform Static Application Security Testing through{" "}
+        <Link to="https://openscanhub.dev/">OpenScanHub</Link> by running
+        differential scans on{" "}
+        <Link to="https://packit.dev/posts/openscanhub-prototype#setup">
+          pull requests
+        </Link>
+        .
       </>
     ),
   },
