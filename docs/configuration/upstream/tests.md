@@ -191,6 +191,7 @@ There are also environment variables set by Packit:
 * `PACKIT_COMMIT_SHA`
 * `PACKIT_TAG_NAME`, tag name from release event, not set if the test job doesn't have **release** trigger
 * `PACKIT_COPR_PROJECT`, e.g. `packit/packit-releases`
+* `PACKIT_COPR_BUILD_ID`
 * `PACKIT_COPR_RPMS`, space-separated list of RPMs that were built in Copr
 
 And there are also pairs of variables for pull-request jobs:
