@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-43",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-43-october-22nd--october-29st\">Week 43 (October 22nd – October 29st)<a href=\"#week-43-october-22nd--october-29st\" class=\"hash-link\" aria-label=\"Direct link to Week 43 (October 22nd – October 29st)\" title=\"Direct link to Week 43 (October 22nd – October 29st)\">​</a></h2><ul><li>Resolve an issue with <code>pyforgejo</code> import that was introduced with a new upstream release. (<a href=\"https://github.com/packit/ogr/pull/949\" target=\"_blank\" rel=\"noopener noreferrer\">packit/ogr#949</a>)</li><li>The Copr build ID is now exposed as <code>PACKIT_COPR_BUILD_ID</code> in the Testing Farm tests. (<a href=\"https://github.com/packit/packit-service/pull/2857\" target=\"_blank\" rel=\"noopener noreferrer\">packit/packit-service#2857</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-43",
+            "title": "Week 43 in Packit",
+            "summary": "Week 43 (October 22nd – October 29st)",
+            "date_modified": "2025-10-29T00:00:00.000Z",
+            "author": {
+                "name": "Tomáš Tomeček",
+                "url": "https://github.com/TomasTomecek"
+            },
+            "tags": [
+                "2025-October",
+                "2025",
+                "October"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-42",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-42-october-15th--october-21st\">Week 42 (October 15th – October 21st)<a href=\"#week-42-october-15th--october-21st\" class=\"hash-link\" aria-label=\"Direct link to Week 42 (October 15th – October 21st)\" title=\"Direct link to Week 42 (October 15th – October 21st)\">​</a></h2><ul><li>Packit as Fedora CI now runs rpminspect tests by default.\n(<a href=\"https://github.com/packit/packit-service/pull/2845\" target=\"_blank\" rel=\"noopener noreferrer\">packit/packit-service#2845</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-42",
