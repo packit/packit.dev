@@ -10,7 +10,7 @@ Run tmt tests locally using content from the upstream repository, mimicking the 
 
 By default, if no RPM paths are passed, packit builds RPMs from the current repository's source code using `mock`, then runs tmt tests in a container environment. This enables local debugging and iteration without requiring commits or CI pipeline triggers.
 
-You can override test behavior and build configuration directly from the command line using various options like `--target`, `--plans`, `--rpm-paths`, and `--clean-before`/`--no-clean-before`.
+You can override test behavior and build configuration directly from the command line using various options like `--target`, `--plan`, `--rpm-paths`, and `--clean-before`/`--no-clean-before`.
 
 The command supports two main workflows:
 
@@ -61,7 +61,7 @@ The command supports two main workflows:
 5. Test specific plans only:
 
     ```
-    $ packit test --plans smoke-tests
+    $ packit test --plan smoke-tests
     Building SRPM...
     Running mock build for target fedora-rawhide-x86_64...
     Generated RPMs: my-package-1.0-1.fc40.x86_64.rpm
