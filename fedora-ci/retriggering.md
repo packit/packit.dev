@@ -32,6 +32,8 @@ To retrigger a specific test, you can add the test identifier to the command:
 Currently supported identifiers are:
 
 - `installability` - represents the [Installability](/fedora-ci/jobs#installability) test
+- `rpmlint` - represents the [rpmlint](/fedora-ci/jobs#rpmlint) test
+- `rpminspect` - represents the [rpminspect](/fedora-ci/jobs#rpminspect) test
 - `custom` - represents [Custom TMT test plans](/fedora-ci/jobs#custom-test-plans)
 
 Only packagers can retrigger tests.

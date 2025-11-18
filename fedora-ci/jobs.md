@@ -14,6 +14,18 @@ Scratch builds in [Koji](https://koji.fedoraproject.org/koji/) built from SCM.
 [Installability test](https://github.com/fedora-ci/installability-pipeline)
 in [Testing Farm](https://testing-farm.io) run with a successful scratch build.
 
+### rpmlint
+
+[rpmlint](https://github.com/rpm-software-management/rpmlint)
+[test](https://github.com/packit/tmt-plans/tree/main/plans/rpmlint)
+in [Testing Farm](https://testing-farm.io) run with a successful scratch build.
+
+### rpminspect
+
+[rpminspect](https://github.com/rpminspect/rpminspect)
+[test](https://github.com/fedora-ci/rpminspect-pipeline)
+in [Testing Farm](https://testing-farm.io) run with a successful scratch build.
+
 ### Custom test plans
 
 Custom [TMT](https://tmt.readthedocs.io/) test plans in [Testing Farm](https://testing-farm.io)
