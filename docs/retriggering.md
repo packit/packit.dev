@@ -9,6 +9,11 @@ to trigger the Packit job manually.
 
 ![Re-run GitHub check](img/retriggering/comment.png)
 
+### help
+Packit is able to provide a help message summarizing all available commands and options:
+
+    /packit help
+
 ### copr_build
 For retriggering the [`copr_build`](/docs/configuration/upstream/copr_build) jobs, Packit is able to trigger new builds based on a pull request comment:
 
