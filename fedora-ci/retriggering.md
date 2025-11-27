@@ -5,6 +5,12 @@ sidebar_position: 2
 
 You can retrigger CI jobs in dist-git pull requests by posting comments that include the appropriate `/packit-ci` commands, as outlined below.
 
+## Help
+
+Packit is able to provide a help message summarizing all available commands and options:
+
+    /packit-ci help
+
 ## Scratch builds
 
 To retrigger a scratch build, add the following comment to the pull request:
