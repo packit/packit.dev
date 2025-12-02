@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpackit_dev=self.webpackChunkpackit_dev||[]).push([[47866],{97527:e=>{e.exports=JSON.parse('{"label":"November","permalink":"/posts/weekly/tags/november","allTagsPath":"/posts/weekly/tags","count":4}')}}]);

@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Wed, 29 Oct 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 01 Dec 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 48 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2025/week-48</link>
+            <guid>https://packit.dev/posts/weekly/2025/week-48</guid>
+            <pubDate>Mon, 01 Dec 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 48 (November 25th – December 1st)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-48-november-25th--december-1st">Week 48 (November 25th – December 1st)<a href="#week-48-november-25th--december-1st" class="hash-link" aria-label="Direct link to Week 48 (November 25th – December 1st)" title="Direct link to Week 48 (November 25th – December 1st)">​</a></h2><ul><li>There were no user-facing changes in packit(-service) this week</li><li>The team is back in full strength and we plan to gradually address any technical debt</li><li>The work on Log Detective integration to Packit has started</li></ul>]]></content:encoded>
+            <author>nforro@redhat.com (Nikola Forró)</author>
+            <category>2025-November</category>
+            <category>2025</category>
+            <category>November</category>
+        </item>
         <item>
             <title><![CDATA[Week 43 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2025/week-43</link>
