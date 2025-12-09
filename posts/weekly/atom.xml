@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2025-12-01T00:00:00.000Z</updated>
+    <updated>2025-12-09T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 49 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2025/week-49</id>
+        <link href="https://packit.dev/posts/weekly/2025/week-49"/>
+        <updated>2025-12-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 49 (December 2nd – December 9th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-49-december-2nd--december-9th">Week 49 (December 2nd – December 9th)<a href="#week-49-december-2nd--december-9th" class="hash-link" aria-label="Direct link to Week 49 (December 2nd – December 9th)" title="Direct link to Week 49 (December 2nd – December 9th)">​</a></h2><ul><li><code>packit init</code> now automatically retrieves the latest version of the pre-commit hook to be added to the user's pre-commit configuration file. (<a href="https://github.com/packit/packit/pull/2651" target="_blank" rel="noopener noreferrer">packit#2651</a>)</li><li>Fixed a bug that could prevent downstream jobs from being triggered in case dist-git spec file depends on other files and is not parseable on its own. (<a href="https://github.com/packit/packit-service/pull/2901" target="_blank" rel="noopener noreferrer">packit-service#2901</a>)</li></ul>]]></content>
+        <author>
+            <name>Marek Blaha</name>
+            <email>mblaha@redhat.com</email>
+            <uri>https://github.com/m-blaha</uri>
+        </author>
+        <category label="2025-December" term="2025-December"/>
+        <category label="2025" term="2025"/>
+        <category label="December" term="December"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 48 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2025/week-48</id>

@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2025/week-49",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-49-december-2nd--december-9th\">Week 49 (December 2nd – December 9th)<a href=\"#week-49-december-2nd--december-9th\" class=\"hash-link\" aria-label=\"Direct link to Week 49 (December 2nd – December 9th)\" title=\"Direct link to Week 49 (December 2nd – December 9th)\">​</a></h2><ul><li><code>packit init</code> now automatically retrieves the latest version of the pre-commit hook to be added to the user's pre-commit configuration file. (<a href=\"https://github.com/packit/packit/pull/2651\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2651</a>)</li><li>Fixed a bug that could prevent downstream jobs from being triggered in case dist-git spec file depends on other files and is not parseable on its own. (<a href=\"https://github.com/packit/packit-service/pull/2901\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2901</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2025/week-49",
+            "title": "Week 49 in Packit",
+            "summary": "Week 49 (December 2nd – December 9th)",
+            "date_modified": "2025-12-09T00:00:00.000Z",
+            "author": {
+                "name": "Marek Blaha",
+                "url": "https://github.com/m-blaha"
+            },
+            "tags": [
+                "2025-December",
+                "2025",
+                "December"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-48",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-48-november-25th--december-1st\">Week 48 (November 25th – December 1st)<a href=\"#week-48-november-25th--december-1st\" class=\"hash-link\" aria-label=\"Direct link to Week 48 (November 25th – December 1st)\" title=\"Direct link to Week 48 (November 25th – December 1st)\">​</a></h2><ul><li>There were no user-facing changes in packit(-service) this week</li><li>The team is back in full strength and we plan to gradually address any technical debt</li><li>The work on Log Detective integration to Packit has started</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-48",
