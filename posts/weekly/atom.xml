@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2025-12-09T00:00:00.000Z</updated>
+    <updated>2025-12-16T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 50 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2025/week-50</id>
+        <link href="https://packit.dev/posts/weekly/2025/week-50"/>
+        <updated>2025-12-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 50 (December 10th – December 16th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-50-december-10th--december-16th">Week 50 (December 10th – December 16th)<a href="#week-50-december-10th--december-16th" class="hash-link" aria-label="Direct link to Week 50 (December 10th – December 16th)" title="Direct link to Week 50 (December 10th – December 16th)">​</a></h2><ul><li>As the next step in Packit integration with Log Detective, Packit Service is now able to handle fedmsg messages from Log Detective (<code>logdetective.analysis</code> topic) containing state of analysis of failed build logs. (<a href="https://github.com/packit/packit-service/pull/2900" target="_blank" rel="noopener noreferrer">packit-service#2900</a>)</li></ul>]]></content>
+        <author>
+            <name>Maja Massarini</name>
+            <email>mmassari@redhat.com</email>
+            <uri>https://github.com/majamassarini</uri>
+        </author>
+        <category label="2025-December" term="2025-December"/>
+        <category label="2025" term="2025"/>
+        <category label="December" term="December"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 49 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2025/week-49</id>
