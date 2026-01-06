@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-1",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-1-january-1st--january-5th\">Week 1 (January 1st – January 5th)<a href=\"#week-1-january-1st--january-5th\" class=\"hash-link\" aria-label=\"Direct link to Week 1 (January 1st – January 5th)\" title=\"Direct link to Week 1 (January 1st – January 5th)\">​</a></h2><ul><li>For retriggering tests with builds from another pull request, Packit now supports\nGithub's automatically converted URL format (<code>https://github.com/namespace/repo/pull/&lt;pr_id&gt;</code>,\ne.g. <code>/packit test https://github.com/namespace/repo/pull/&lt;pr_id&gt;</code>)\n(<a href=\"https://github.com/packit/packit-service/pull/2923\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2923</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-1",
+            "title": "Week 1 in Packit",
+            "summary": "Week 1 (January 1st – January 5th)",
+            "date_modified": "2026-01-05T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2026-January",
+                "2026",
+                "January"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2025/week-50",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-50-december-10th--december-16th\">Week 50 (December 10th – December 16th)<a href=\"#week-50-december-10th--december-16th\" class=\"hash-link\" aria-label=\"Direct link to Week 50 (December 10th – December 16th)\" title=\"Direct link to Week 50 (December 10th – December 16th)\">​</a></h2><ul><li>As the next step in Packit integration with Log Detective, Packit Service is now able to handle fedmsg messages from Log Detective (<code>logdetective.analysis</code> topic) containing state of analysis of failed build logs. (<a href=\"https://github.com/packit/packit-service/pull/2900\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2900</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2025/week-50",
