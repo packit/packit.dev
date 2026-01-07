@@ -167,6 +167,11 @@ distro (otherwise the default would be `centos-stream-8`) and for
   when you have multiple `tests` jobs with different configuration. For
   example if you set this to `e2e-tests`, then a check run for Rawhide would be
   named `testing-farm:fedora-rawhide-x86_64:e2e-tests`.
+:::caution
+The identifier **must NOT contain colons (`:`)**. Colons are used as delimiters in check names
+and will cause check rerun failures. Use alphanumeric characters, hyphens (`-`), and 
+underscores (`_`) for best compatibility. For example, use `provision-virtual` instead of `provision:virtual`.
+:::
 * **manual_trigger** - Whether to trigger Testing Farm jobs only manually (via pull request comment `/packit test`  (`/packit-stg test` for staging instance) or rerunning the check in the GitHub UI) or not (defaults to false). 
 * **labels** - List of labels that group several jobs together. Users then use them when manually triggering the jobs like `/packit test --labels regression,upgrade`.
 * **use_internal_tf** - Whether to use the internal Testing Farm infrastructure (defaults to false). 
