@@ -68,6 +68,9 @@ With this configuration, you'll get builds in all stable fedora releases
 :::caution
 Make sure to configure this option if you are having multiple `copr_build` jobs in the configuration,
 otherwise the reporting may be incorrect.
+The identifier **must NOT contain colons (`:`)**. Colons are used as delimiters in check names
+and will cause check rerun failures. Use alphanumeric characters, hyphens (`-`), and 
+underscores (`_`) for best compatibility.
 :::
 * **module_hotfixes** - The project will have `module_hotfixes=1` in the Copr generated repo files.
   This is useful when you build packages that need to be installed in a modular context.
