@@ -24,8 +24,12 @@ bash -c "my fancy $command | grep success"
 > It's important to quote the content of the `-c` option so shell interprets it
 > correctly as a single option input.
 
-All actions are also executed inside Packit Service. The service
-creates a new sandbox environment where the command is run.
+SRPM creation actions run in Copr while release syncing actions are executed
+in a sandbox environment inside Packit Service. This environment has limited resources.
+Your actions shouldn't consume more than 768MiB of memory and use more than 3GiB of disk space.
+Be aware that cloned upstream and dist-git repos also count towards this limit.
+It is recommended to place any temporary artifacts in a subdirectory of `/tmp`,
+as it serves as a non-quota-restricted space for transient files.
 
 Actions have a default behaviour which you can override, hooks don't have any -
 hooks are a way for you to perform operations following a certain packit event,
@@ -77,7 +81,7 @@ These apply to `propose-downstream` command/job and `pull-from-upstream` job.
 
 ### Creating SRPM
 
-These apply to the `srpm` command and building in COPR.
+These apply to the `srpm` command and building in Copr.
 
 |        | name                  | working directory | when run                                                              | description                                          |
 |--------|-----------------------|-------------------|-----------------------------------------------------------------------|------------------------------------------------------|
