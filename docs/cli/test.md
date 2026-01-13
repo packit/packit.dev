@@ -83,26 +83,29 @@ The command supports two main workflows:
 
 ## Help
 
-    Usage: packit test [OPTIONS]
+    Usage: packit test [OPTIONS] [PATH_OR_URL]
 
-        Run tmt tests locally using content from the upstream repository.
-        
-        This command builds RPMs from the current repository state and runs
-        tests in containerized environments, mimicking Packit's testing service
-        behavior for local debugging and development.
+      Run tmt tests locally using content from the upstream repository.
+
+      This command builds RPMs from the current repository state and runs tests in
+      containerized environments, mimicking Packit's testing service behavior for
+      local debugging and development.
 
     Options:
-        --rpm-paths PATH                Path to RPM file(s) to test. Can be used
-                                        multiple times. If not provided, RPMs will
-                                        be built automatically from source.
-        --target TEXT                   Container image for testing environment
-                                        (e.g., 'fedora:39', 'centos:stream9').
-                                        Defaults to 'fedora:rawhide'.
-        --plans TEXT                    tmt plan name(s) to execute. Can be used
-                                        multiple times to run specific plans only.
-                                        If not specified, all plans are executed.
-        --clean-before / --no-clean-before
-                                        Run 'tmt clean --all' before starting the
-                                        test. Defaults to disabled for clean test
-                                        environments.
-        -h, --help                      Show this message and exit.
+      -p, --package TEXT              Package to source build, if more than one
+                                      available, like in a monorepo configuration.
+                                      Use it multiple times to select multiple
+                                      packages.Defaults to all the packages listed
+                                      inside the config.
+      --rpm_paths TEXT                Path to RPM file(s) to test. Can be used
+                                      multiple times.If not provided, RPMs will be
+                                      built automatically from source.
+      --target TEXT                   Container image for the testing environment,
+                                      e.g., `fedora:39`, `centos:stream9`.
+      --plan TEXT                     List of specific tmt plans to run. Can be
+                                      used multiple times. If not specified, all
+                                      plans are executed.
+      --clean-before / --no-clean-before
+                                      Run 'tmt clean --all' before starting the
+                                      test (default: disabled).
+      -h, --help                      Show this message and exit.

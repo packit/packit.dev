@@ -25,13 +25,15 @@ initialize a [source-git repo](/source-git).
 
     Usage: packit init [OPTIONS] [PATH_OR_URL]
 
-      Create the initial Packit configuration in a repository
+      Create the initial Packit configuration in a repository and add a pre-commit
+      hook to validate Packit configuration file
 
       See 'packit source-git init', if you want to initialize a repository as a
       source-git repo.
 
     Options:
-      --force-precommit    Automatically create an empty pre-commit configuration file if missing.
-      --without-precommit  Skip adding pre-commit hook to pre-commit configuration file.
       -f, --force          Reset config to default if already exists.
+      --without-precommit  Skip adding packit-specific pre-commit configuration
+                           hook.
+      --force-precommit    Create pre-commit configuration file if missing.
       -h, --help           Show this message and exit.

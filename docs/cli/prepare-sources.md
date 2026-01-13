@@ -45,6 +45,9 @@ prepared sources are moved to the `result-dir`.
                                       Specifies whether to update Release.
                                       Defaults to value set in configuration,
                                       which defaults to yes.
+      --preserve-spec                 Do not update spec file during SRPM creation
+                                      (implies --no-update-release). By default,
+                                      spec file is updated.
       --bump / --no-bump              Deprecated. Use --[no-]update-release
                                       instead.
       --release-suffix TEXT           Specifies release suffix. Allows to override
