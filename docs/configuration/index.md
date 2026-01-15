@@ -178,6 +178,8 @@ Packit merge commit).
 (*bool*) When doing a new update in Fedora dist-git, the specfile changelog
 is synchronized when set to `true`. By default (`false`), everything but the changelog
 part is synchronized. Use this only when your changelogs are in sync since this overwrites the changelog in the downstream.
+Keep in mind that if you enable this option Packit will not update Version and Release fields 
+as they are expected to be in sync with the changelog.
 
 #### update_release
 
