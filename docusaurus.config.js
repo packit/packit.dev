@@ -309,7 +309,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Packit is a Red Hat sponsored free software project. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Packit is a Red Hat sponsored free software project. Built with Docusaurus. <a href="https://github.com/packit/packit.dev">Source of this page</a>.`,
       },
       prism: {
         theme: lightCodeTheme,
