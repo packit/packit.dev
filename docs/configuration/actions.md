@@ -257,9 +257,13 @@ There are also action-specific environment variables, which you can see below.
 ### `fix-spec-file`
 
 * `PACKIT_PROJECT_VERSION` — current version of the project (coming from `git describe`)
+* `PACKIT_RPMSPEC_VERSION` — version that will be set in the specfile
+* `PACKIT_RPMSPEC_RELEASE` — value for spec file's `%release` field which packit would set
 * `PACKIT_PROJECT_COMMIT` — commit hash of the top commit
 * `PACKIT_PROJECT_ARCHIVE` — expected name of the archive
-* `PACKIT_RPMSPEC_RELEASE` — value for spec file's `%release` field which packit would set
+* `PACKIT_PROJECT_BRANCH` — branch from which the SRPM is built
+* `PACKIT_PROJECT_SNAPSHOTID` — snapshot identifier in format  
+`{current_time}.{sanitized_current_branch}{git_desc_suffix}`
 
 ### `create-archive`
 
