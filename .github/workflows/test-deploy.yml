@@ -19,11 +19,6 @@ jobs:
       - name: Import the nested docs
         run: make import
 
-      - name: Generate newer usage graphs
-        run: |
-          pip3 install click requests pygal
-          python3 files/generate_usage.py
-
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Test build website

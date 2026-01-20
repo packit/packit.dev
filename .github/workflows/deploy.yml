@@ -28,6 +28,7 @@ jobs:
         run: make import
 
       - name: Generate newer usage graphs
+        continue-on-error: true
         run: |
           pip3 install click requests pygal
           python3 files/generate_usage.py
