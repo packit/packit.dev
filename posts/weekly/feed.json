@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-3",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-3-january-14th--january-20th\">Week 3 (January 14th – January 20th)<a href=\"#week-3-january-14th--january-20th\" class=\"hash-link\" aria-label=\"Direct link to Week 3 (January 14th – January 20th)\" title=\"Direct link to Week 3 (January 14th – January 20th)\">​</a></h2><ul><li>For Fedora CI, we are now providing direct links to Koji/Testing Farm instead of our dashboard, when possible. (<a href=\"https://github.com/packit/packit-service/pull/2943\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2943</a>)</li><li>Packit as Fedora CI now triggers ELN builds and test jobs on <code>rawhide</code> pull requests of onboarded ELN packages that don't have designated <code>eln</code> branch. (<a href=\"https://github.com/packit/packit-service/pull/2950\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2950</a>)</li><li>We have fixed a race condition that was preventing completed Testing Farm tests from being reported by the Packit service on the dashboard and in pull requests. (<a href=\"https://github.com/packit/packit-service/pull/2952\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2952</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-3",
+            "title": "Week 3 in Packit",
+            "summary": "Week 3 (January 14th – January 20th)",
+            "date_modified": "2026-01-20T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2026-January",
+                "2026",
+                "January"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-2",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-2-january-6th--january-12th\">Week 2 (January 6th – January 12th)<a href=\"#week-2-january-6th--january-12th\" class=\"hash-link\" aria-label=\"Direct link to Week 2 (January 6th – January 12th)\" title=\"Direct link to Week 2 (January 6th – January 12th)\">​</a></h2><ul><li>Previously, statuses were updated after a related build status update, even for PR-triggered test jobs whose label requirements didn't match the PR. This has been changed to help avoid Github API rate limiting. (<a href=\"https://github.com/packit/packit-service/pull/2928\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2928</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-2",
