@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-4",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-4-january-20th--january-26th\">Week 4 (January 20th – January 26th)<a href=\"#week-4-january-20th--january-26th\" class=\"hash-link\" aria-label=\"Direct link to Week 4 (January 20th – January 26th)\" title=\"Direct link to Week 4 (January 20th – January 26th)\">​</a></h2><ul><li>Testing jobs running against dist-git PRs now have the <code>dist-git-branch</code> context pointing to the target branch of the PR. (<a href=\"https://github.com/packit/packit-service/pull/2935\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2935</a>). On <code>epel10.y</code> dist-git PRs they now use the <code>CentOS Stream 10</code> Testing Farm compose, same as <code>epel10</code>. (<a href=\"https://github.com/packit/packit-service/pull/2953\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2953</a>)</li><li>Packit now supports the <code>--package</code> parameter, which can be used when retriggering jobs in monorepositories via comments. The parameter is intended to specify the package, for which to run specified jobs. (<a href=\"https://github.com/packit/packit-service/pull/2850\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2850</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-4",
+            "title": "Week 4 in Packit",
+            "summary": "Week 4 (January 20th – January 26th)",
+            "date_modified": "2026-01-26T00:00:00.000Z",
+            "author": {
+                "name": "Laura Barcziová",
+                "url": "https://github.com/lbarcziova"
+            },
+            "tags": [
+                "2026-January",
+                "2026",
+                "January"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-3",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-3-january-14th--january-20th\">Week 3 (January 14th – January 20th)<a href=\"#week-3-january-14th--january-20th\" class=\"hash-link\" aria-label=\"Direct link to Week 3 (January 14th – January 20th)\" title=\"Direct link to Week 3 (January 14th – January 20th)\">​</a></h2><ul><li>For Fedora CI, we are now providing direct links to Koji/Testing Farm instead of our dashboard, when possible. (<a href=\"https://github.com/packit/packit-service/pull/2943\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2943</a>)</li><li>Packit as Fedora CI now triggers ELN builds and test jobs on <code>rawhide</code> pull requests of onboarded ELN packages that don't have designated <code>eln</code> branch. (<a href=\"https://github.com/packit/packit-service/pull/2950\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2950</a>)</li><li>We have fixed a race condition that was preventing completed Testing Farm tests from being reported by the Packit service on the dashboard and in pull requests. (<a href=\"https://github.com/packit/packit-service/pull/2952\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2952</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-3",

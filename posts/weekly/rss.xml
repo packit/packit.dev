@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Tue, 20 Jan 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 26 Jan 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 4 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-4</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-4</guid>
+            <pubDate>Mon, 26 Jan 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 4 (January 20th – January 26th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-4-january-20th--january-26th">Week 4 (January 20th – January 26th)<a href="#week-4-january-20th--january-26th" class="hash-link" aria-label="Direct link to Week 4 (January 20th – January 26th)" title="Direct link to Week 4 (January 20th – January 26th)">​</a></h2><ul><li>Testing jobs running against dist-git PRs now have the <code>dist-git-branch</code> context pointing to the target branch of the PR. (<a href="https://github.com/packit/packit-service/pull/2935" target="_blank" rel="noopener noreferrer">packit-service#2935</a>). On <code>epel10.y</code> dist-git PRs they now use the <code>CentOS Stream 10</code> Testing Farm compose, same as <code>epel10</code>. (<a href="https://github.com/packit/packit-service/pull/2953" target="_blank" rel="noopener noreferrer">packit-service#2953</a>)</li><li>Packit now supports the <code>--package</code> parameter, which can be used when retriggering jobs in monorepositories via comments. The parameter is intended to specify the package, for which to run specified jobs. (<a href="https://github.com/packit/packit-service/pull/2850" target="_blank" rel="noopener noreferrer">packit-service#2850</a>)</li></ul>]]></content:encoded>
+            <author>lbarczio@redhat.com (Laura Barcziová)</author>
+            <category>2026-January</category>
+            <category>2026</category>
+            <category>January</category>
+        </item>
         <item>
             <title><![CDATA[Week 3 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-3</link>
