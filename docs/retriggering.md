@@ -9,6 +9,12 @@ to trigger the Packit job manually.
 
 ![Re-run GitHub check](img/retriggering/comment.png)
 
+In case your project is a monorepository containing multiple packages, it is possible to specify which package to run jobs for. Use the `--package` argument for this purpose. Using this argument is useful for saving resources when you don't need to retrigger jobs for all packages. Use it as follows:
+
+    /packit --package <package-to-run-jobs-for> <job-you-want-to-trigger>
+
+Do not use the `--package` argument in a project that is not a monorepository as that will result in no jobs being triggered. Also make sure not to switch the order of arguments as the `--package` argument has to be specified first in order to work.
+
 ### copr_build
 For retriggering the [`copr_build`](/docs/configuration/upstream/copr_build) jobs, Packit is able to trigger new builds based on a pull request comment:
 
