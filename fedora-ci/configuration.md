@@ -8,7 +8,7 @@ and submitting a [pull request](https://github.com/packit/deployment/pulls).
 
 You can use [scripts/enroll-users.py](https://github.com/packit/deployment/blob/main/scripts/enroll-users.py)
 to enroll all packages maintained by you or your group (similar to the now obsolete [zuul-config-generator](https://github.com/befeleme/zuul-config-generator)).
-Simply create a new branch, run the script and commit the changes.
+Simply create a new branch, run the script as `./scripts/enroll-useres.py <fas-username>` and commit the changes.
 
 In later phases, CI will run by default on all packages. The exact details of test plan configuration are still
 being finalized, but the plan is to have a global default configuration that works well for most repositories.
