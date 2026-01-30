@@ -17,3 +17,4 @@ For more info continue with:
 - [Retriggering](fedora-ci/retriggering.md)
 - [Configuration](fedora-ci/configuration.md)
 - [Development](fedora-ci/development.md)
+- [TMT Integration](fedora-ci/tmt-integration.md)
