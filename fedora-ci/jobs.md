@@ -32,3 +32,6 @@ Custom [TMT](https://tmt.readthedocs.io/) test plans in [Testing Farm](https://t
 run with a successful scratch build. This requires TMT metadata (`.fmf/version` presence used as an indicator)
 in the dist-git repository and at least one [test plan](https://tmt.readthedocs.io/en/stable/spec/plans.html)
 in `plans`.
+
+For information about available TMT contexts and environment variables you can use
+in your test plans, see [TMT Integration](/fedora-ci/tmt-integration).
