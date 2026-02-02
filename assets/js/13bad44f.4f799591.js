@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpackit_dev=self.webpackChunkpackit_dev||[]).push([[38398],{66049:e=>{e.exports=JSON.parse('{"permalink":"/posts/weekly/tags/january","page":1,"postsPerPage":10,"totalPages":2,"totalCount":13,"nextPage":"/posts/weekly/tags/january/page/2","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

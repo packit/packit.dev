@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2026-01-26T00:00:00.000Z</updated>
+    <updated>2026-02-02T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 5 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2026/week-5</id>
+        <link href="https://packit.dev/posts/weekly/2026/week-5"/>
+        <updated>2026-02-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 5 (January 27th – February 2nd)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-5-january-27th--february-2nd">Week 5 (January 27th – February 2nd)<a href="#week-5-january-27th--february-2nd" class="hash-link" aria-label="Direct link to Week 5 (January 27th – February 2nd)" title="Direct link to Week 5 (January 27th – February 2nd)">​</a></h2><ul><li>The <code>version_suffix</code> configuration option is now supported in Packit. This option is meant for appending information to the Version field in RPM spec files. This is useful for post-release snapshots following RPM versioning conventions. The <code>version_suffix</code> behaves similarly to the already existing <code>release_suffix</code> and also supports expansion of environment variables. (<a href="https://github.com/packit/packit/pull/2664" target="_blank" rel="noopener noreferrer">packit#2664</a>)</li><li>When approaching the Github API rate limit threshold, Packit-service now moves tasks to the newly implemented rate-limited queue intended for awaiting the reset of the rate limit. This should lead to a better UX for repositories that have been experiencing issues related to rate limits. (<a href="https://github.com/packit/packit-service/pull/2941" target="_blank" rel="noopener noreferrer">packit-service#2941</a>)</li><li>Pull requests against the <code>main</code> branch are now supported in Fedora CI. (<a href="https://github.com/packit/packit-service/pull/2968" target="_blank" rel="noopener noreferrer">packit-service#2968</a>)</li><li>Ogr now supports Forgejo issues, comments and comment reactions. (<a href="https://github.com/packit/ogr/pull/959" target="_blank" rel="noopener noreferrer">ogr#959</a>)</li></ul>]]></content>
+        <author>
+            <name>Alžběta Kučerová</name>
+            <email>akucerov@redhat.com</email>
+            <uri>https://github.com/betulependule</uri>
+        </author>
+        <category label="2026-January" term="2026-January"/>
+        <category label="2026" term="2026"/>
+        <category label="January" term="January"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 4 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2026/week-4</id>

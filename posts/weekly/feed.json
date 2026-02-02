@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-5",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-5-january-27th--february-2nd\">Week 5 (January 27th – February 2nd)<a href=\"#week-5-january-27th--february-2nd\" class=\"hash-link\" aria-label=\"Direct link to Week 5 (January 27th – February 2nd)\" title=\"Direct link to Week 5 (January 27th – February 2nd)\">​</a></h2><ul><li>The <code>version_suffix</code> configuration option is now supported in Packit. This option is meant for appending information to the Version field in RPM spec files. This is useful for post-release snapshots following RPM versioning conventions. The <code>version_suffix</code> behaves similarly to the already existing <code>release_suffix</code> and also supports expansion of environment variables. (<a href=\"https://github.com/packit/packit/pull/2664\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2664</a>)</li><li>When approaching the Github API rate limit threshold, Packit-service now moves tasks to the newly implemented rate-limited queue intended for awaiting the reset of the rate limit. This should lead to a better UX for repositories that have been experiencing issues related to rate limits. (<a href=\"https://github.com/packit/packit-service/pull/2941\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2941</a>)</li><li>Pull requests against the <code>main</code> branch are now supported in Fedora CI. (<a href=\"https://github.com/packit/packit-service/pull/2968\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2968</a>)</li><li>Ogr now supports Forgejo issues, comments and comment reactions. (<a href=\"https://github.com/packit/ogr/pull/959\" target=\"_blank\" rel=\"noopener noreferrer\">ogr#959</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-5",
+            "title": "Week 5 in Packit",
+            "summary": "Week 5 (January 27th – February 2nd)",
+            "date_modified": "2026-02-02T00:00:00.000Z",
+            "author": {
+                "name": "Alžběta Kučerová",
+                "url": "https://github.com/betulependule"
+            },
+            "tags": [
+                "2026-January",
+                "2026",
+                "January"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-4",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-4-january-20th--january-26th\">Week 4 (January 20th – January 26th)<a href=\"#week-4-january-20th--january-26th\" class=\"hash-link\" aria-label=\"Direct link to Week 4 (January 20th – January 26th)\" title=\"Direct link to Week 4 (January 20th – January 26th)\">​</a></h2><ul><li>Testing jobs running against dist-git PRs now have the <code>dist-git-branch</code> context pointing to the target branch of the PR. (<a href=\"https://github.com/packit/packit-service/pull/2935\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2935</a>). On <code>epel10.y</code> dist-git PRs they now use the <code>CentOS Stream 10</code> Testing Farm compose, same as <code>epel10</code>. (<a href=\"https://github.com/packit/packit-service/pull/2953\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2953</a>)</li><li>Packit now supports the <code>--package</code> parameter, which can be used when retriggering jobs in monorepositories via comments. The parameter is intended to specify the package, for which to run specified jobs. (<a href=\"https://github.com/packit/packit-service/pull/2850\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2850</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-4",
