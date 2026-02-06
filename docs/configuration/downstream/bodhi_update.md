@@ -65,6 +65,17 @@ Packit dist-git configuration.
   into the configured sidetag group for this job to be triggered. For example, if you want to include
   a `koji_build` job with the same sidetag group configured in package `foo` in this update,
   you need to list `foo` here.
+* **bodhi_extra_params** - A free-form dictionary that allows specifying extra parameters for creating Bodhi updates.
+  For a complete list of parameters, refer to the [Bodhi API documentation](https://bodhi.readthedocs.io/).
+  Options are merged with Packit's values.
+
+  Common parameters include:
+  - `suggest`: Suggestion for user action after update (`logout`, `reboot`).
+  - `stable_days`: Number of days before the update can be pushed to stable (e.g., `7`).
+  - `stable_karma`: Stable karma threshold (e.g., `3`).
+  - `unstable_karma`: Unstable karma threshold (e.g., `-3`).
+  - `autokarma`: Whether to automatically push to stable based on karma (boolean).
+  - `close_bugs`: Whether to close bugs when pushed to stable (boolean).
 
 ## Retriggering
 
