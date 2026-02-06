@@ -75,6 +75,15 @@ i.e. the same you'd get by pip installing from GitHub.
     $ packit
     Usage: packit [OPTIONS] COMMAND [ARGS]...
 
+:::tip
+
+If you get an error such as `Error: SELinux relabeling of /some/dir is not allowed`, make sure
+your working directory is a directory your user has full access to. The relabeling is requested
+by the `:z` suffix in order to ensure the directory is writable from both inside and outside
+the container.
+
+:::
+
 Depending on the command you want to perform you need to mount secrets and
 configuration files, like in the following examples:
 
