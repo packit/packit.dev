@@ -696,6 +696,23 @@ jobs:
 
 </details>
 
+<details>
+  <summary>Customizing Bodhi update parameters (e.g., requiring reboot, setting karma thresholds)</summary>
+
+```yaml
+- job: bodhi_update
+  trigger: commit
+  dist_git_branches:
+    - fedora-branched
+  bodhi_extra_params:
+    suggest: reboot
+    stable_karma: 5
+    unstable_karma: -3
+    stable_days: 7
+```
+
+</details>
+
 ## Get inspired
 You can also look directly into configuration files of some other projects using Packit:
 - [Systemd](https://github.com/systemd/systemd/blob/main/.packit.yml)

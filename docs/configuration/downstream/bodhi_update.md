@@ -68,6 +68,7 @@ Packit dist-git configuration.
 * **bodhi_extra_params** - A free-form dictionary that allows specifying extra parameters for creating Bodhi updates.
   For a complete list of parameters, refer to the [Bodhi API documentation](https://bodhi.readthedocs.io/).
   Options are merged with Packit's values.
+  Refer to the [configuration examples](/docs/configuration/examples/#fedora-release-automation) for more information.
 
   Common parameters include:
   - `suggest`: Suggestion for user action after update (`logout`, `reboot`).
