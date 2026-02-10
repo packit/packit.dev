@@ -4,10 +4,25 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 02 Feb 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 09 Feb 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 6 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-6</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-6</guid>
+            <pubDate>Mon, 09 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 6 (February 3rd – February 9th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-6-february-3rd--february-9th">Week 6 (February 3rd – February 9th)<a href="#week-6-february-3rd--february-9th" class="hash-link" aria-label="Direct link to Week 6 (February 3rd – February 9th)" title="Direct link to Week 6 (February 3rd – February 9th)">​</a></h2><ul><li>We have fixed a race condition causing improper reporting of dist-git CI test statuses.
+(<a href="https://github.com/packit/packit-service/pull/2981" target="_blank" rel="noopener noreferrer">packit-service#2981</a>)</li><li>Packit now supports <code>bodhi_extra_params</code> configuration option to customize creating Bodhi updates.
+(<a href="https://github.com/packit/packit/pull/2682" target="_blank" rel="noopener noreferrer">packit#2682</a>)</li><li>Packit can now trigger Log Detective when it detects a failed downstream Koji task.
+(<a href="https://github.com/packit/packit-service/pull/2971" target="_blank" rel="noopener noreferrer">packit-service#2971</a>)</li></ul>]]></content:encoded>
+            <author>nforro@redhat.com (Nikola Forró)</author>
+            <category>2026-February</category>
+            <category>2026</category>
+            <category>February</category>
+        </item>
         <item>
             <title><![CDATA[Week 5 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-5</link>

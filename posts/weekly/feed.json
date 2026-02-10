@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-6",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-6-february-3rd--february-9th\">Week 6 (February 3rd – February 9th)<a href=\"#week-6-february-3rd--february-9th\" class=\"hash-link\" aria-label=\"Direct link to Week 6 (February 3rd – February 9th)\" title=\"Direct link to Week 6 (February 3rd – February 9th)\">​</a></h2><ul><li>We have fixed a race condition causing improper reporting of dist-git CI test statuses.\n(<a href=\"https://github.com/packit/packit-service/pull/2981\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2981</a>)</li><li>Packit now supports <code>bodhi_extra_params</code> configuration option to customize creating Bodhi updates.\n(<a href=\"https://github.com/packit/packit/pull/2682\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2682</a>)</li><li>Packit can now trigger Log Detective when it detects a failed downstream Koji task.\n(<a href=\"https://github.com/packit/packit-service/pull/2971\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2971</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-6",
+            "title": "Week 6 in Packit",
+            "summary": "Week 6 (February 3rd – February 9th)",
+            "date_modified": "2026-02-09T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2026-February",
+                "2026",
+                "February"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-5",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-5-january-27th--february-2nd\">Week 5 (January 27th – February 2nd)<a href=\"#week-5-january-27th--february-2nd\" class=\"hash-link\" aria-label=\"Direct link to Week 5 (January 27th – February 2nd)\" title=\"Direct link to Week 5 (January 27th – February 2nd)\">​</a></h2><ul><li>The <code>version_suffix</code> configuration option is now supported in Packit. This option is meant for appending information to the Version field in RPM spec files. This is useful for post-release snapshots following RPM versioning conventions. The <code>version_suffix</code> behaves similarly to the already existing <code>release_suffix</code> and also supports expansion of environment variables. (<a href=\"https://github.com/packit/packit/pull/2664\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2664</a>)</li><li>When approaching the Github API rate limit threshold, Packit-service now moves tasks to the newly implemented rate-limited queue intended for awaiting the reset of the rate limit. This should lead to a better UX for repositories that have been experiencing issues related to rate limits. (<a href=\"https://github.com/packit/packit-service/pull/2941\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2941</a>)</li><li>Pull requests against the <code>main</code> branch are now supported in Fedora CI. (<a href=\"https://github.com/packit/packit-service/pull/2968\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2968</a>)</li><li>Ogr now supports Forgejo issues, comments and comment reactions. (<a href=\"https://github.com/packit/ogr/pull/959\" target=\"_blank\" rel=\"noopener noreferrer\">ogr#959</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-5",
