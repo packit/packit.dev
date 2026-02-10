@@ -2,11 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts</id>
     <title>Packit Blog</title>
-    <updated>2025-10-05T23:00:00.000Z</updated>
+    <updated>2026-02-10T13:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts"/>
     <subtitle>Blog posts by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Forgejo is now supported in ogr]]></title>
+        <id>https://packit.dev/posts/forgejo-in-ogr</id>
+        <link href="https://packit.dev/posts/forgejo-in-ogr"/>
+        <updated>2026-02-10T13:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We are happy to announce that the ogr library now supports yet another open-source git forge — Forgejo. This brings the total number of supported forges to four. Thank you to all external contributors and especially mynk8 who helped to turn this part of the project into reality!]]></summary>
+        <content type="html"><![CDATA[<p>We are happy to announce that the ogr library now supports yet another open-source git forge — <a href="https://forgejo.org/" target="_blank" rel="noopener noreferrer">Forgejo</a>. This brings the total number of supported forges to four. Thank you to all external contributors and especially <a href="https://github.com/mynk8" target="_blank" rel="noopener noreferrer">mynk8</a> who helped to turn this part of the project into reality!</p><h1>What is ogr?</h1><p><a href="https://github.com/packit/ogr" target="_blank" rel="noopener noreferrer">Ogr</a> stands for <strong>One Git library to Rule</strong>. It is a library offering a unified API for multiple git forges, meaning that it makes it possible to communicate with all supported git forges using the same set of methods. Historically, the list of supported forges consisted of <strong>GitHub</strong>, <strong>GitLab</strong> and <strong>Pagure</strong>. This list has now been expanded to include <strong>Forgejo</strong> as well.</p><p>Here is a short example showcasing how to create a new issue in a repository using ogr:</p><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">from ogr import ForgejoService</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">service = ForgejoService(instance_url="https://codeberg.org", token="...")</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">project = service.get_project(namespace="owner", repo="repo")</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">project.create_issue(title="Issue title", body="Issue description")</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>For more information see our <a href="https://packit.github.io/ogr/" target="_blank" rel="noopener noreferrer">documentation</a> and <a href="https://github.com/packit/ogr/tree/main/examples" target="_blank" rel="noopener noreferrer">Jupyter notebook examples</a>.</p><h1>What this means for Packit</h1><p>With the added support of Forgejo in ogr, it is now possible for us to work on support of Forgejo as dist-git in Packit. If interested, you can track our progress on the upcoming addition in <a href="https://github.com/packit/packit-service/issues/2861" target="_blank" rel="noopener noreferrer">this epic</a>.</p>]]></content>
+        <author>
+            <name>Alžběta Kučerová</name>
+            <email>akucerov@redhat.com</email>
+            <uri>https://github.com/betulependule</uri>
+        </author>
+        <category label="Forgejo" term="Forgejo"/>
+        <category label="ogr" term="ogr"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Lessons learned: Building production AI automation for RHEL package maintenance]]></title>
         <id>https://packit.dev/posts/lessons-learned-ai-automation-rhel</id>

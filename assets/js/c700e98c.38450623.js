@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpackit_dev=self.webpackChunkpackit_dev||[]).push([[14892],{86620:s=>{s.exports=JSON.parse('{"label":"Forgejo","permalink":"/posts/tags/forgejo","allTagsPath":"/posts/tags","count":1}')}}]);
