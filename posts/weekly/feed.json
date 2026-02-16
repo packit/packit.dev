@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-7",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-7-february-10th--february-16th\">Week 7 (February 10th – February 16th)<a href=\"#week-7-february-10th--february-16th\" class=\"hash-link\" aria-label=\"Direct link to Week 7 (February 10th – February 16th)\" title=\"Direct link to Week 7 (February 10th – February 16th)\">​</a></h2><ul><li>We have fixed a race condition that occasionally prevented Copr builds from being reported as completed. (<a href=\"https://github.com/packit/packit-service/pull/2982\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2982</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-7",
+            "title": "Week 7 in Packit",
+            "summary": "Week 7 (February 10th – February 16th)",
+            "date_modified": "2026-02-16T00:00:00.000Z",
+            "author": {
+                "name": "Marek Blaha",
+                "url": "https://github.com/m-blaha"
+            },
+            "tags": [
+                "2026-February",
+                "2026",
+                "February"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-6",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-6-february-3rd--february-9th\">Week 6 (February 3rd – February 9th)<a href=\"#week-6-february-3rd--february-9th\" class=\"hash-link\" aria-label=\"Direct link to Week 6 (February 3rd – February 9th)\" title=\"Direct link to Week 6 (February 3rd – February 9th)\">​</a></h2><ul><li>We have fixed a race condition causing improper reporting of dist-git CI test statuses.\n(<a href=\"https://github.com/packit/packit-service/pull/2981\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2981</a>)</li><li>Packit now supports <code>bodhi_extra_params</code> configuration option to customize creating Bodhi updates.\n(<a href=\"https://github.com/packit/packit/pull/2682\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2682</a>)</li><li>Packit can now trigger Log Detective when it detects a failed downstream Koji task.\n(<a href=\"https://github.com/packit/packit-service/pull/2971\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2971</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-6",
