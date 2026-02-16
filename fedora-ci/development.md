@@ -23,4 +23,4 @@ sidebar_position: 4
 - [x] Phase 1: Introduce scratch builds for Fedora dist-git PRs (opt-in).
 - [x] Phase 2: Implement installability checks (opt-in).
 - [x] Phase 3: Implement support for user-defined TMT tests (opt-in).
-- [ ] Final Phase: Transition to the new Packit-based CI as the default mechanism, replacing Fedora CI.
+- [x] Final Phase: Transition to the new Packit-based CI as the default mechanism, replacing Fedora CI.
