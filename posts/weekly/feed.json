@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-8",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-8-february-17th--february-23rd\">Week 8 (February 17th – February 23rd)<a href=\"#week-8-february-17th--february-23rd\" class=\"hash-link\" aria-label=\"Direct link to Week 8 (February 17th – February 23rd)\" title=\"Direct link to Week 8 (February 17th – February 23rd)\">​</a></h2><ul><li>We are happy to announce that <a href=\"https://fedoraproject.org/wiki/Changes/PackitDistgitCI\" target=\"_blank\" rel=\"noopener noreferrer\">Packit Fedora CI</a>, for all Fedora packages, has been live for a week now!\nYou can find documentation at <a href=\"https://packit.dev/fedora-ci\" target=\"_blank\" rel=\"noopener noreferrer\">https://packit.dev/fedora-ci</a>.</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-8",
+            "title": "Week 8 in Packit",
+            "summary": "Week 8 (February 17th – February 23rd)",
+            "date_modified": "2026-02-23T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2026-February",
+                "2026",
+                "February"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-7",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-7-february-10th--february-16th\">Week 7 (February 10th – February 16th)<a href=\"#week-7-february-10th--february-16th\" class=\"hash-link\" aria-label=\"Direct link to Week 7 (February 10th – February 16th)\" title=\"Direct link to Week 7 (February 10th – February 16th)\">​</a></h2><ul><li>We have fixed a race condition that occasionally prevented Copr builds from being reported as completed. (<a href=\"https://github.com/packit/packit-service/pull/2982\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2982</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-7",

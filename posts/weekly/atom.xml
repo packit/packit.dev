@@ -2,11 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2026-02-16T00:00:00.000Z</updated>
+    <updated>2026-02-23T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 8 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2026/week-8</id>
+        <link href="https://packit.dev/posts/weekly/2026/week-8"/>
+        <updated>2026-02-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 8 (February 17th – February 23rd)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-8-february-17th--february-23rd">Week 8 (February 17th – February 23rd)<a href="#week-8-february-17th--february-23rd" class="hash-link" aria-label="Direct link to Week 8 (February 17th – February 23rd)" title="Direct link to Week 8 (February 17th – February 23rd)">​</a></h2><ul><li>We are happy to announce that <a href="https://fedoraproject.org/wiki/Changes/PackitDistgitCI" target="_blank" rel="noopener noreferrer">Packit Fedora CI</a>, for all Fedora packages, has been live for a week now!
+You can find documentation at <a href="https://packit.dev/fedora-ci" target="_blank" rel="noopener noreferrer">https://packit.dev/fedora-ci</a>.</li></ul>]]></content>
+        <author>
+            <name>Maja Massarini</name>
+            <email>mmassari@redhat.com</email>
+            <uri>https://github.com/majamassarini</uri>
+        </author>
+        <category label="2026-February" term="2026-February"/>
+        <category label="2026" term="2026"/>
+        <category label="February" term="February"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 7 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2026/week-7</id>

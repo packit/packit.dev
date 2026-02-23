@@ -4,10 +4,23 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 16 Feb 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 23 Feb 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 8 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-8</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-8</guid>
+            <pubDate>Mon, 23 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 8 (February 17th – February 23rd)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-8-february-17th--february-23rd">Week 8 (February 17th – February 23rd)<a href="#week-8-february-17th--february-23rd" class="hash-link" aria-label="Direct link to Week 8 (February 17th – February 23rd)" title="Direct link to Week 8 (February 17th – February 23rd)">​</a></h2><ul><li>We are happy to announce that <a href="https://fedoraproject.org/wiki/Changes/PackitDistgitCI" target="_blank" rel="noopener noreferrer">Packit Fedora CI</a>, for all Fedora packages, has been live for a week now!
+You can find documentation at <a href="https://packit.dev/fedora-ci" target="_blank" rel="noopener noreferrer">https://packit.dev/fedora-ci</a>.</li></ul>]]></content:encoded>
+            <author>mmassari@redhat.com (Maja Massarini)</author>
+            <category>2026-February</category>
+            <category>2026</category>
+            <category>February</category>
+        </item>
         <item>
             <title><![CDATA[Week 7 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-7</link>
