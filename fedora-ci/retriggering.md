@@ -37,3 +37,13 @@ Currently supported identifiers are:
 - `custom` - represents [Custom TMT test plans](/fedora-ci/jobs#custom-test-plans)
 
 Only packagers can retrigger tests.
+
+## Check target
+
+By default, when (re)triggering jobs in `rawhide` PRs of ELN packages, jobs are run for both the `eln` and `rawhide` targets when no dedicated `eln` branch exists. It is possible to specify which jobs to retrigger with an additional keyword argument `--target` like so:
+
+```
+/packit-ci test --target eln
+/packit-ci test rpminspect --target rawhide
+/packit-ci scratch-build --target eln
+```
