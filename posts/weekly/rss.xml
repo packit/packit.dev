@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 23 Feb 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 02 Mar 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 9 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-9</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-9</guid>
+            <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 9 (February 24th – March 2nd)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-9-february-24th--march-2nd">Week 9 (February 24th – March 2nd)<a href="#week-9-february-24th--march-2nd" class="hash-link" aria-label="Direct link to Week 9 (February 24th – March 2nd)" title="Direct link to Week 9 (February 24th – March 2nd)">​</a></h2><ul><li>Packit now cancels obsoleted Koji builds before starting new ones. (<a href="https://github.com/packit/packit-service/pull/3000" target="_blank" rel="noopener noreferrer">packit-service#3000</a>)</li><li>Packit now runs tests also for <code>src.fedoraproject.org/tests/*</code> namespace. (<a href="https://github.com/packit/packit-service/pull/3022" target="_blank" rel="noopener noreferrer">packit-service#3022</a>)</li></ul>]]></content:encoded>
+            <author>lbarczio@redhat.com (Laura Barcziová)</author>
+            <category>2026-February</category>
+            <category>2026</category>
+            <category>February</category>
+        </item>
         <item>
             <title><![CDATA[Week 8 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-8</link>

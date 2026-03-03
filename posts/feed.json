@@ -10,7 +10,7 @@
             "url": "https://packit.dev/posts/code-review",
             "title": "Our experience with AI-based code review",
             "summary": "One amazing benefit that modern LLMs come with is using them as a linter, or a pair programmer. You can easily get feedback on your code: just share it with the AI tool and ask a question. If the feedback is solid, your code is improved. If the feedback is poor, you can just disregard it. But overall with very little effort you can gain a lot.",
-            "date_modified": "2026-02-24T13:49:55.000Z",
+            "date_modified": "2026-03-03T09:37:52.000Z",
             "author": {
                 "name": "Tomáš Tomeček",
                 "url": "https://github.com/TomasTomecek"
