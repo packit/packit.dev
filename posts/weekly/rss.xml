@@ -4,10 +4,27 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 02 Mar 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 11 Mar 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 10 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-10</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-10</guid>
+            <pubDate>Wed, 11 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 10 (March 3rd – March 11th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-10-march-3rd--march-11th">Week 10 (March 3rd – March 11th)<a href="#week-10-march-3rd--march-11th" class="hash-link" aria-label="Direct link to Week 10 (March 3rd – March 11th)" title="Direct link to Week 10 (March 3rd – March 11th)">​</a></h2><ul><li>Packit now retries on build submission failure for Fedora CI Koji scratch builds.
+(<a href="https://github.com/packit/packit-service/pull/3040" target="_blank" rel="noopener noreferrer">packit-service#3040</a>)</li><li>We have introduced sanitization of spec files to harden our security practices.
+If this introduced a regression for you, please reach out to us.
+(<a href="https://github.com/packit/packit-service/pull/3047" target="_blank" rel="noopener noreferrer">packit-service#3047</a>,
+<a href="https://github.com/packit/packit/pull/2698" target="_blank" rel="noopener noreferrer">packit#2698</a>,
+<a href="https://github.com/packit/specfile/pull/519" target="_blank" rel="noopener noreferrer">specfile#519</a>)</li></ul>]]></content:encoded>
+            <author>nforro@redhat.com (Nikola Forró)</author>
+            <category>2026-March</category>
+            <category>2026</category>
+            <category>March</category>
+        </item>
         <item>
             <title><![CDATA[Week 9 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-9</link>

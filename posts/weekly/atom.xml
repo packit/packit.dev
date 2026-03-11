@@ -2,11 +2,32 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2026-03-02T00:00:00.000Z</updated>
+    <updated>2026-03-11T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 10 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2026/week-10</id>
+        <link href="https://packit.dev/posts/weekly/2026/week-10"/>
+        <updated>2026-03-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 10 (March 3rd – March 11th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-10-march-3rd--march-11th">Week 10 (March 3rd – March 11th)<a href="#week-10-march-3rd--march-11th" class="hash-link" aria-label="Direct link to Week 10 (March 3rd – March 11th)" title="Direct link to Week 10 (March 3rd – March 11th)">​</a></h2><ul><li>Packit now retries on build submission failure for Fedora CI Koji scratch builds.
+(<a href="https://github.com/packit/packit-service/pull/3040" target="_blank" rel="noopener noreferrer">packit-service#3040</a>)</li><li>We have introduced sanitization of spec files to harden our security practices.
+If this introduced a regression for you, please reach out to us.
+(<a href="https://github.com/packit/packit-service/pull/3047" target="_blank" rel="noopener noreferrer">packit-service#3047</a>,
+<a href="https://github.com/packit/packit/pull/2698" target="_blank" rel="noopener noreferrer">packit#2698</a>,
+<a href="https://github.com/packit/specfile/pull/519" target="_blank" rel="noopener noreferrer">specfile#519</a>)</li></ul>]]></content>
+        <author>
+            <name>Nikola Forró</name>
+            <email>nforro@redhat.com</email>
+            <uri>https://github.com/nforro</uri>
+        </author>
+        <category label="2026-March" term="2026-March"/>
+        <category label="2026" term="2026"/>
+        <category label="March" term="March"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 9 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2026/week-9</id>
