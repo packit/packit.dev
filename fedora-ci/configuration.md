@@ -6,5 +6,21 @@ sidebar_position: 3
 Fedora CI is now enabled by default for all Fedora dist-git repositories with a global default configuration.
 
 If you need to opt out, you can request your repository to be added to the
-[`disabled_projects_for_fedora_ci`](https://github.com/packit/deployment/blob/main/secrets/packit/prod/packit-service.yaml.j2)
-list by submitting a [pull request](https://github.com/packit/deployment/pulls).
+`fedora_ci.disabled_projects` list in the
+[deployment configuration](https://github.com/packit/deployment/blob/main/secrets/packit/prod/packit-service.yaml.j2)
+by submitting a [pull request](https://github.com/packit/deployment/pulls).
+
+## Opting out of ELN
+
+Packages with high PR traffic and long build times may want to skip ELN scratch builds and tests.
+To opt out, open a [pull request](https://github.com/packit/deployment/pulls) adding your project URL
+to `fedora_ci.disabled_projects_for_eln` in the
+[deployment configuration](https://github.com/packit/deployment/blob/main/secrets/packit/prod/packit-service.yaml.j2):
+
+```yaml
+fedora_ci:
+  disabled_projects_for_eln:
+    - https://src.fedoraproject.org/rpms/your-package
+```
+
+The project will still run regular Fedora CI scratch builds and tests, only ELN will be skipped.
