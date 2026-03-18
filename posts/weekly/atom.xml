@@ -2,11 +2,35 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2026-03-11T00:00:00.000Z</updated>
+    <updated>2026-03-17T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 11 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2026/week-11</id>
+        <link href="https://packit.dev/posts/weekly/2026/week-11"/>
+        <updated>2026-03-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 11 (March 11th – March 17th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-11-march-11th--march-17th">Week 11 (March 11th – March 17th)<a href="#week-11-march-11th--march-17th" class="hash-link" aria-label="Direct link to Week 11 (March 11th – March 17th)" title="Direct link to Week 11 (March 11th – March 17th)">​</a></h2><ul><li>Packit now supports <code>help</code> command in PR and issue comments.
+(<a href="https://github.com/packit/packit-service/pull/2853" target="_blank" rel="noopener noreferrer">packit-service#2853</a>)</li><li>Packit now responds to unrecognized commands in PR and issue comments.
+(<a href="https://github.com/packit/packit-service/pull/3057" target="_blank" rel="noopener noreferrer">packit-service#3057</a>)</li><li>In Fedora CI, it is now possible to retrigger builds and tests in <code>rawhide</code> PRs
+of ELN packages without dedicated <code>eln</code> branch independently.
+(<a href="https://github.com/packit/packit-service/pull/3032" target="_blank" rel="noopener noreferrer">packit-service#3032</a>)</li><li>We have fixed a couple of bugs that prevented sidetag Bodhi updates to be created
+when there was no stable build for the particular (freshly branched) target.
+(<a href="https://github.com/packit/packit-service/pull/3059" target="_blank" rel="noopener noreferrer">packit-service#3059</a>,
+<a href="https://github.com/packit/packit/pull/2704" target="_blank" rel="noopener noreferrer">packit#2704</a>)</li><li>Users can now specify a version string when retriggering <code>pull-from-upstream</code> via dist-git PR comment.
+(<a href="https://github.com/packit/packit-service/pull/3058" target="_blank" rel="noopener noreferrer">packit-service#3058</a>)</li></ul>]]></content>
+        <author>
+            <name>Nikola Forró</name>
+            <email>nforro@redhat.com</email>
+            <uri>https://github.com/nforro</uri>
+        </author>
+        <category label="2026-March" term="2026-March"/>
+        <category label="2026" term="2026"/>
+        <category label="March" term="March"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 10 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2026/week-10</id>
