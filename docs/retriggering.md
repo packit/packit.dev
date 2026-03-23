@@ -15,6 +15,11 @@ In case your project is a monorepository containing multiple packages, it is pos
 
 Do not use the `--package` argument in a project that is not a monorepository as that will result in no jobs being triggered. Also make sure not to switch the order of arguments as the `--package` argument has to be specified first in order to work.
 
+### help
+Packit is able to provide a help message summarizing all available commands and options:
+
+    /packit help
+
 ### copr_build
 For retriggering the [`copr_build`](/docs/configuration/upstream/copr_build) jobs, Packit is able to trigger new builds based on a pull request comment:
 
