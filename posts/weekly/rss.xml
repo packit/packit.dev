@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Tue, 17 Mar 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 23 Mar 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 12 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-12</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-12</guid>
+            <pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 12 (March 17th – March 23rd)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-12-march-17th--march-23rd">Week 12 (March 17th – March 23rd)<a href="#week-12-march-17th--march-23rd" class="hash-link" aria-label="Direct link to Week 12 (March 17th – March 23rd)" title="Direct link to Week 12 (March 17th – March 23rd)">​</a></h2><ul><li>Users now can opt out specific packages from ELN builds and tests in Fedora CI (<a href="https://github.com/packit/packit-service/pull/3021" target="_blank" rel="noopener noreferrer">packit-service#3021</a>)</li></ul>]]></content:encoded>
+            <author>mblaha@redhat.com (Marek Blaha)</author>
+            <category>2026-March</category>
+            <category>2026</category>
+            <category>March</category>
+        </item>
         <item>
             <title><![CDATA[Week 11 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-11</link>

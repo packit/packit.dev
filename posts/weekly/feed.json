@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-12",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-12-march-17th--march-23rd\">Week 12 (March 17th – March 23rd)<a href=\"#week-12-march-17th--march-23rd\" class=\"hash-link\" aria-label=\"Direct link to Week 12 (March 17th – March 23rd)\" title=\"Direct link to Week 12 (March 17th – March 23rd)\">​</a></h2><ul><li>Users now can opt out specific packages from ELN builds and tests in Fedora CI (<a href=\"https://github.com/packit/packit-service/pull/3021\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3021</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-12",
+            "title": "Week 12 in Packit",
+            "summary": "Week 12 (March 17th – March 23rd)",
+            "date_modified": "2026-03-23T00:00:00.000Z",
+            "author": {
+                "name": "Marek Blaha",
+                "url": "https://github.com/m-blaha"
+            },
+            "tags": [
+                "2026-March",
+                "2026",
+                "March"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-11",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-11-march-11th--march-17th\">Week 11 (March 11th – March 17th)<a href=\"#week-11-march-11th--march-17th\" class=\"hash-link\" aria-label=\"Direct link to Week 11 (March 11th – March 17th)\" title=\"Direct link to Week 11 (March 11th – March 17th)\">​</a></h2><ul><li>Packit now supports <code>help</code> command in PR and issue comments.\n(<a href=\"https://github.com/packit/packit-service/pull/2853\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2853</a>)</li><li>Packit now responds to unrecognized commands in PR and issue comments.\n(<a href=\"https://github.com/packit/packit-service/pull/3057\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3057</a>)</li><li>In Fedora CI, it is now possible to retrigger builds and tests in <code>rawhide</code> PRs\nof ELN packages without dedicated <code>eln</code> branch independently.\n(<a href=\"https://github.com/packit/packit-service/pull/3032\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3032</a>)</li><li>We have fixed a couple of bugs that prevented sidetag Bodhi updates to be created\nwhen there was no stable build for the particular (freshly branched) target.\n(<a href=\"https://github.com/packit/packit-service/pull/3059\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3059</a>,\n<a href=\"https://github.com/packit/packit/pull/2704\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2704</a>)</li><li>Users can now specify a version string when retriggering <code>pull-from-upstream</code> via dist-git PR comment.\n(<a href=\"https://github.com/packit/packit-service/pull/3058\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3058</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-11",

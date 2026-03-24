@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2026-03-17T00:00:00.000Z</updated>
+    <updated>2026-03-23T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 12 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2026/week-12</id>
+        <link href="https://packit.dev/posts/weekly/2026/week-12"/>
+        <updated>2026-03-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 12 (March 17th – March 23rd)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-12-march-17th--march-23rd">Week 12 (March 17th – March 23rd)<a href="#week-12-march-17th--march-23rd" class="hash-link" aria-label="Direct link to Week 12 (March 17th – March 23rd)" title="Direct link to Week 12 (March 17th – March 23rd)">​</a></h2><ul><li>Users now can opt out specific packages from ELN builds and tests in Fedora CI (<a href="https://github.com/packit/packit-service/pull/3021" target="_blank" rel="noopener noreferrer">packit-service#3021</a>)</li></ul>]]></content>
+        <author>
+            <name>Marek Blaha</name>
+            <email>mblaha@redhat.com</email>
+            <uri>https://github.com/m-blaha</uri>
+        </author>
+        <category label="2026-March" term="2026-March"/>
+        <category label="2026" term="2026"/>
+        <category label="March" term="March"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 11 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2026/week-11</id>
