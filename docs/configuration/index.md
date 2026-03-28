@@ -80,7 +80,11 @@ files_to_sync:
 #### paths
 (*list*) List of relative paths in the upstream repository, which should be considered for the particular package
 (used mainly for monorepositories). Defaults to the root of the repository (`["./"]`).
-This is the only key that can appear only inside [`packages`](#packages) dictionary values.
+
+The first item of the list changes the working directory from which `specfile_path` is calculated and where other
+actions and commands are run from.
+
+Other entries in this field list have no effect currently.
 
 #### specfile_path
 
