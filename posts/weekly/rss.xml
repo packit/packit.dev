@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 23 Mar 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 30 Mar 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 13 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-13</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-13</guid>
+            <pubDate>Mon, 30 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 13 (March 24th – March 30th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-13-march-24th--march-30th">Week 13 (March 24th – March 30th)<a href="#week-13-march-24th--march-30th" class="hash-link" aria-label="Direct link to Week 13 (March 24th – March 30th)" title="Direct link to Week 13 (March 24th – March 30th)">​</a></h2><ul><li>Over the past couple of weeks, we've been working to resolve a potential arbitrary code execution vulnerability related to how Packit processes spec file macros.</li></ul>]]></content:encoded>
+            <author>mmassari@redhat.com (Maja Massarini)</author>
+            <category>2026-March</category>
+            <category>2026</category>
+            <category>March</category>
+        </item>
         <item>
             <title><![CDATA[Week 12 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-12</link>

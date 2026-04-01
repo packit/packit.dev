@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-13",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-13-march-24th--march-30th\">Week 13 (March 24th – March 30th)<a href=\"#week-13-march-24th--march-30th\" class=\"hash-link\" aria-label=\"Direct link to Week 13 (March 24th – March 30th)\" title=\"Direct link to Week 13 (March 24th – March 30th)\">​</a></h2><ul><li>Over the past couple of weeks, we've been working to resolve a potential arbitrary code execution vulnerability related to how Packit processes spec file macros.</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-13",
+            "title": "Week 13 in Packit",
+            "summary": "Week 13 (March 24th – March 30th)",
+            "date_modified": "2026-03-30T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2026-March",
+                "2026",
+                "March"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-12",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-12-march-17th--march-23rd\">Week 12 (March 17th – March 23rd)<a href=\"#week-12-march-17th--march-23rd\" class=\"hash-link\" aria-label=\"Direct link to Week 12 (March 17th – March 23rd)\" title=\"Direct link to Week 12 (March 17th – March 23rd)\">​</a></h2><ul><li>Users now can opt out specific packages from ELN builds and tests in Fedora CI (<a href=\"https://github.com/packit/packit-service/pull/3021\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3021</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-12",
