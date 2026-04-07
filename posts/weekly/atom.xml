@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2026-03-30T00:00:00.000Z</updated>
+    <updated>2026-04-07T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 14 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2026/week-14</id>
+        <link href="https://packit.dev/posts/weekly/2026/week-14"/>
+        <updated>2026-04-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 14 (April 1st – April 7th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-14-april-1st--april-7th">Week 14 (April 1st – April 7th)<a href="#week-14-april-1st--april-7th" class="hash-link" aria-label="Direct link to Week 14 (April 1st – April 7th)" title="Direct link to Week 14 (April 1st – April 7th)">​</a></h2><ul><li>Packit now cancels running jobs even after manual retriggering. (<a href="https://github.com/packit/packit-service/pull/3076" target="_blank" rel="noopener noreferrer">packit-service#3076</a>)</li><li>You can now configure multiple <code>pull-from-upstream</code> jobs with different version/tag filters. In conjunction with the <code>Monitoring all</code> release monitoring option this allows you to consume multiple release streams and freely configure Fedora releases you want to target with each. (<a href="https://github.com/packit/packit-service/pull/3083" target="_blank" rel="noopener noreferrer">packit-service#3083</a>)</li><li>We have increased the retries for transient errors during Bodhi updates submission. (<a href="https://github.com/packit/packit-service/pull/3090" target="_blank" rel="noopener noreferrer">packit-service#3090</a>)</li></ul>]]></content>
+        <author>
+            <name>Laura Barcziová</name>
+            <email>lbarczio@redhat.com</email>
+            <uri>https://github.com/lbarcziova</uri>
+        </author>
+        <category label="2026-April" term="2026-April"/>
+        <category label="2026" term="2026"/>
+        <category label="April" term="April"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 13 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2026/week-13</id>
