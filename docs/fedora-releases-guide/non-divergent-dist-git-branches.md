@@ -41,11 +41,3 @@ git checkout f41; git merge --ff-only rawhide
 ```
 
 :::
-
-:::warning Fast Forwarding multiple commits does not automatically trigger a Koji build (Yet)
-
-Unfortunately, there is a [bug](https://github.com/packit/packit-service/issues/2537) that prevents Packit from triggering the **Koji build** when more than one commit has been forwarded in a branch.
-
-You can work around this bug by manually retriggering the Koji build by commenting on the downstream merged pull request with `/packit koji-build`.
-
-:::
