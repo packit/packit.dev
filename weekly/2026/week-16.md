@@ -11,4 +11,4 @@ tags:
 ## Week 16 (April 14th – April 20th)
 
 - We have finalized support for multiple release streams, you can read more about it
-  in a [dedicated blog post](posts/multiple-release-streams).
+  in a [dedicated blog post](/posts/multiple-release-streams).
