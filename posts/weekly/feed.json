@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-16",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-16-april-14th--april-20th\">Week 16 (April 14th – April 20th)<a href=\"#week-16-april-14th--april-20th\" class=\"hash-link\" aria-label=\"Direct link to Week 16 (April 14th – April 20th)\" title=\"Direct link to Week 16 (April 14th – April 20th)\">​</a></h2><ul><li>We have finalized support for multiple release streams, you can read more about it\nin a <a href=\"/posts/weekly/2026/posts/multiple-release-streams\">dedicated blog post</a>.</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-16",
+            "title": "Week 16 in Packit",
+            "summary": "Week 16 (April 14th – April 20th)",
+            "date_modified": "2026-04-20T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2026-April",
+                "2026",
+                "April"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-15",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-15-april-7th--april-13th\">Week 15 (April 7th – April 13th)<a href=\"#week-15-april-7th--april-13th\" class=\"hash-link\" aria-label=\"Direct link to Week 15 (April 7th – April 13th)\" title=\"Direct link to Week 15 (April 7th – April 13th)\">​</a></h2><ul><li>In addition to <code>version_update_mask</code>, users can now use a new <code>version_update_specifiers</code> configuration option to control the upstream versions allowed to be release-synced. The option accepts <a href=\"https://packaging.pypa.io/en/stable/specifiers.html\" target=\"_blank\" rel=\"noopener noreferrer\">PEP440 version specifier sets</a>, for example <code>version_update_specifiers: &gt;=1.0,~=1.0</code>. (<a href=\"https://github.com/packit/packit/pull/2710\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2710</a>)</li><li>Packit is now able to handle multi-level project namespaces. (<a href=\"https://github.com/packit/packit-service/pull/3092\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3092</a>)</li><li>We have fixed a bug in relation to retriggering of Copr builds sometimes failing due to a failed cancellation of previous builds. (<a href=\"https://github.com/packit/packit-service/pull/3099\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3099</a>)</li><li>We have fixed tag filtering not working when processing multi-release events and when retriggering pull-from-upstream. (<a href=\"https://github.com/packit/packit-service/pull/3098\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3098</a>)</li><li>As part of the process of the integration of Log Detective into Packit, Packit now ignores Log Detective messages in case Log Detective integration is disabled by the user by setting <code>logdetective_enabled</code> to <code>False</code> in the service configuration file. (<a href=\"https://github.com/packit/packit-service/pull/3100\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3100</a>)</li><li>We have fixed a bug that would lead to Testing Farm jobs being cancelled when there were no associated Copr builds. (<a href=\"https://github.com/packit/packit-service/pull/3102\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3102</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-15",
