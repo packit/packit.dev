@@ -656,6 +656,14 @@ The value requires a Python regex pattern and is used with `re.match` function.
  branch. If there is an *3.8.1* release, the matched values (=`3.8`) are the same and pull request is created.
 
 
+#### version_update_specifiers
+(*string*) Similarly to `version_update_mask`, this field can be used to filter upstream versions when syncing releases.
+Unlike `version_update_mask` it runs for all branches and accepts
+[PEP440-style version specifiers](https://peps.python.org/pep-0440/#version-specifiers),
+for example `>=3.11.0, <3.12.0`, or a shorthand version of the same: `~=3.11.0`.
+If the released upstream version doesn't match, Packit will not sync the release downstream.
+
+
 #### test_command
 ##### default_identifier
 The identifier (refer to [`identifier`](/docs/configuration/upstream/tests#optional-parameters)) utilised by default when
