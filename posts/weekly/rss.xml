@@ -4,10 +4,25 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 20 Apr 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 27 Apr 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 17 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-17</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-17</guid>
+            <pubDate>Mon, 27 Apr 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 17 (April 21st – April 27th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-17-april-21st--april-27th">Week 17 (April 21st – April 27th)<a href="#week-17-april-21st--april-27th" class="hash-link" aria-label="Direct link to Week 17 (April 21st – April 27th)" title="Direct link to Week 17 (April 21st – April 27th)">​</a></h2><ul><li>We have fixed several cases of excessive job cancellation, in particular when retriggering
+a job using the Re-run button on GitHub and when using commands such as <code>rebuild-failed</code>,
+<code>retest-failed</code> or <code>test</code> with <code>--identifier</code>.
+(<a href="https://github.com/packit/packit-service/pull/3112" target="_blank" rel="noopener noreferrer">packit-service#3112</a>)</li></ul>]]></content:encoded>
+            <author>nforro@redhat.com (Nikola Forró)</author>
+            <category>2026-April</category>
+            <category>2026</category>
+            <category>April</category>
+        </item>
         <item>
             <title><![CDATA[Week 16 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-16</link>

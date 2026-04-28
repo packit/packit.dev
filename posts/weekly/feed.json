@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-17",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-17-april-21st--april-27th\">Week 17 (April 21st – April 27th)<a href=\"#week-17-april-21st--april-27th\" class=\"hash-link\" aria-label=\"Direct link to Week 17 (April 21st – April 27th)\" title=\"Direct link to Week 17 (April 21st – April 27th)\">​</a></h2><ul><li>We have fixed several cases of excessive job cancellation, in particular when retriggering\na job using the Re-run button on GitHub and when using commands such as <code>rebuild-failed</code>,\n<code>retest-failed</code> or <code>test</code> with <code>--identifier</code>.\n(<a href=\"https://github.com/packit/packit-service/pull/3112\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3112</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-17",
+            "title": "Week 17 in Packit",
+            "summary": "Week 17 (April 21st – April 27th)",
+            "date_modified": "2026-04-27T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2026-April",
+                "2026",
+                "April"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-16",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-16-april-14th--april-20th\">Week 16 (April 14th – April 20th)<a href=\"#week-16-april-14th--april-20th\" class=\"hash-link\" aria-label=\"Direct link to Week 16 (April 14th – April 20th)\" title=\"Direct link to Week 16 (April 14th – April 20th)\">​</a></h2><ul><li>We have finalized support for multiple release streams, you can read more about it\nin a <a href=\"/posts/multiple-release-streams\">dedicated blog post</a>.</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-16",
