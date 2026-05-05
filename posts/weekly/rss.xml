@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 27 Apr 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 05 May 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 18 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-18</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-18</guid>
+            <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 18 (April 29th – May 5th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-18-april-29th--may-5th">Week 18 (April 29th – May 5th)<a href="#week-18-april-29th--may-5th" class="hash-link" aria-label="Direct link to Week 18 (April 29th – May 5th)" title="Direct link to Week 18 (April 29th – May 5th)">​</a></h2><ul><li>The <code>/packit test</code> command now supports testing with builds from multiple pull requests. You can specify multiple PRs using the format <code>/packit test namespace/repo#123 namespace/repo#456</code> or GitHub URLs, allowing you to combine artifacts from several PRs in a single test run. (<a href="https://github.com/packit/packit-service/pull/3118" target="_blank" rel="noopener noreferrer">packit-service#3118</a>)</li></ul>]]></content:encoded>
+            <author>mmassari@redhat.com (Maja Massarini)</author>
+            <category>2026-April</category>
+            <category>2026</category>
+            <category>April</category>
+        </item>
         <item>
             <title><![CDATA[Week 17 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-17</link>

@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-18",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-18-april-29th--may-5th\">Week 18 (April 29th – May 5th)<a href=\"#week-18-april-29th--may-5th\" class=\"hash-link\" aria-label=\"Direct link to Week 18 (April 29th – May 5th)\" title=\"Direct link to Week 18 (April 29th – May 5th)\">​</a></h2><ul><li>The <code>/packit test</code> command now supports testing with builds from multiple pull requests. You can specify multiple PRs using the format <code>/packit test namespace/repo#123 namespace/repo#456</code> or GitHub URLs, allowing you to combine artifacts from several PRs in a single test run. (<a href=\"https://github.com/packit/packit-service/pull/3118\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3118</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-18",
+            "title": "Week 18 in Packit",
+            "summary": "Week 18 (April 29th – May 5th)",
+            "date_modified": "2026-05-05T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2026-April",
+                "2026",
+                "April"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-17",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-17-april-21st--april-27th\">Week 17 (April 21st – April 27th)<a href=\"#week-17-april-21st--april-27th\" class=\"hash-link\" aria-label=\"Direct link to Week 17 (April 21st – April 27th)\" title=\"Direct link to Week 17 (April 21st – April 27th)\">​</a></h2><ul><li>We have fixed several cases of excessive job cancellation, in particular when retriggering\na job using the Re-run button on GitHub and when using commands such as <code>rebuild-failed</code>,\n<code>retest-failed</code> or <code>test</code> with <code>--identifier</code>.\n(<a href=\"https://github.com/packit/packit-service/pull/3112\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3112</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-17",

@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2026-04-27T00:00:00.000Z</updated>
+    <updated>2026-05-05T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 18 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2026/week-18</id>
+        <link href="https://packit.dev/posts/weekly/2026/week-18"/>
+        <updated>2026-05-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 18 (April 29th – May 5th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-18-april-29th--may-5th">Week 18 (April 29th – May 5th)<a href="#week-18-april-29th--may-5th" class="hash-link" aria-label="Direct link to Week 18 (April 29th – May 5th)" title="Direct link to Week 18 (April 29th – May 5th)">​</a></h2><ul><li>The <code>/packit test</code> command now supports testing with builds from multiple pull requests. You can specify multiple PRs using the format <code>/packit test namespace/repo#123 namespace/repo#456</code> or GitHub URLs, allowing you to combine artifacts from several PRs in a single test run. (<a href="https://github.com/packit/packit-service/pull/3118" target="_blank" rel="noopener noreferrer">packit-service#3118</a>)</li></ul>]]></content>
+        <author>
+            <name>Maja Massarini</name>
+            <email>mmassari@redhat.com</email>
+            <uri>https://github.com/majamassarini</uri>
+        </author>
+        <category label="2026-April" term="2026-April"/>
+        <category label="2026" term="2026"/>
+        <category label="April" term="April"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 17 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2026/week-17</id>
