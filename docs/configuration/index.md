@@ -866,20 +866,20 @@ To not need to change the config file when the new system version is released,
 Packit provides multiple aliases to reference a subset of the active
 releases:
 * `fedora-all` - all active releases, which includes released and branched
-  versions and Rawhide (e.g. `fedora-34`, `fedora-35`, `fedora-36`,
+  versions and Rawhide (e.g. `fedora-42`, `fedora-43`, `fedora-44`,
   `fedora-rawhide`).
 * `fedora-stable` — the current (two or three) released and supported
-  versions (e.g. `fedora-34`, `fedora-35`).
+  versions (e.g. `fedora-42`, `fedora-43`).
 * `fedora-development` — development versions of Fedora; the branched
-  version is used only when available (e.g. `fedora-36`, `fedora-rawhide`)
+  version is used only when available (e.g. `fedora-44`, `fedora-rawhide`)
 * `fedora-latest` — the last versioned Fedora (not a Rawhide), regardless if
   it's released or still under development.
 * `fedora-latest-stable` — the latest released Fedora version (e.g.
-  `fedora-35`).
+  `fedora-43`).
 * `fedora-branched` — all branched releases, that is: everything, except
-Rawhide (e.g. `fedora-34`, `fedora-35`, `fedora-36`).
+Rawhide (e.g. `fedora-42`, `fedora-43`, `fedora-44`).
 * `epel-all` - current active [EPEL](https://docs.fedoraproject.org/en-US/epel/)
-versions (e.g. `epel-7`, `epel-8`, `epel-9`)
+versions (e.g. `epel-8`, `epel-9`, `epel-10.1`, `epel-10.2`, `epel-10.3`)
 
 The aliases above can be used both to specify targets when [building in
 Copr](/docs/configuration/upstream/copr_build) or [running tests](/docs/configuration/upstream/tests),
