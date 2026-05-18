@@ -175,7 +175,9 @@ underscores (`_`) for best compatibility. For example, use `provision-virtual` i
 * **manual_trigger** - Whether to trigger Testing Farm jobs only manually (via pull request comment `/packit test`  (`/packit-stg test` for staging instance) or rerunning the check in the GitHub UI) or not (defaults to false). 
 * **labels** - List of labels that group several jobs together. Users then use them when manually triggering the jobs like `/packit test --labels regression,upgrade`.
 * **use_internal_tf** - Whether to use the internal Testing Farm infrastructure (defaults to false). 
-This requires additional approval from our side (please, [contact us](#contact) in case you want to use it). 
+This requires additional approval from our side (please, [contact us](#contact) in case you want to use it).
+In case you're trying to set up an internal Testing Farm on our staging instance, it is required to allowlist
+your repos manually on the Testing Farm' side, for more information see [docs](https://docs.testing-farm.io/Testing%20Farm/0.1/test-request.html#repository-allowlists).
 * **use_target_repo_for_fmf_url** - Whether to use the target (upstream) repository for the `test.fmf.url`
 field in a Testing Farm request, instead of the forked repository for pull requests from forks (defaults to false). 
 This also impacts [secrets handling](#public-ids-of-packit-tokens-for-using-secrets).
