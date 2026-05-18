@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Tue, 05 May 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 18 May 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 20 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-20</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-20</guid>
+            <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 20 (May 12th – May 18th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-20-may-12th--may-18th">Week 20 (May 12th – May 18th)<a href="#week-20-may-12th--may-18th" class="hash-link" aria-label="Direct link to Week 20 (May 12th – May 18th)" title="Direct link to Week 20 (May 12th – May 18th)">​</a></h2><ul><li>Packit Fedora-CI now runs <code>rmdepcheck</code> and <code>license-validate</code> tests on PRs. (<a href="https://github.com/packit/packit-service/pull/3089" target="_blank" rel="noopener noreferrer">packit-service#3089</a>)</li><li>Starting this week, Packit will provide analysis of failed Koji scratch builds on dist-git pull requests thanks to Log Detective. For more info, look at the <a href="https://fedoramagazine.org/log-detective-in-packit/" target="_blank" rel="noopener noreferrer">Fedora Megazine Article</a>.</li></ul>]]></content:encoded>
+            <author>mmassari@redhat.com (Maja Massarini)</author>
+            <category>2026-May</category>
+            <category>2026</category>
+            <category>May</category>
+        </item>
         <item>
             <title><![CDATA[Week 18 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-18</link>

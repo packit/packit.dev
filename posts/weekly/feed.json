@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-20",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-20-may-12th--may-18th\">Week 20 (May 12th – May 18th)<a href=\"#week-20-may-12th--may-18th\" class=\"hash-link\" aria-label=\"Direct link to Week 20 (May 12th – May 18th)\" title=\"Direct link to Week 20 (May 12th – May 18th)\">​</a></h2><ul><li>Packit Fedora-CI now runs <code>rmdepcheck</code> and <code>license-validate</code> tests on PRs. (<a href=\"https://github.com/packit/packit-service/pull/3089\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3089</a>)</li><li>Starting this week, Packit will provide analysis of failed Koji scratch builds on dist-git pull requests thanks to Log Detective. For more info, look at the <a href=\"https://fedoramagazine.org/log-detective-in-packit/\" target=\"_blank\" rel=\"noopener noreferrer\">Fedora Megazine Article</a>.</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-20",
+            "title": "Week 20 in Packit",
+            "summary": "Week 20 (May 12th – May 18th)",
+            "date_modified": "2026-05-18T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2026-May",
+                "2026",
+                "May"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-18",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-18-april-29th--may-5th\">Week 18 (April 29th – May 5th)<a href=\"#week-18-april-29th--may-5th\" class=\"hash-link\" aria-label=\"Direct link to Week 18 (April 29th – May 5th)\" title=\"Direct link to Week 18 (April 29th – May 5th)\">​</a></h2><ul><li>The <code>/packit test</code> command now supports testing with builds from multiple pull requests. You can specify multiple PRs using the format <code>/packit test namespace/repo#123 namespace/repo#456</code> or GitHub URLs, allowing you to combine artifacts from several PRs in a single test run. (<a href=\"https://github.com/packit/packit-service/pull/3118\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3118</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-18",

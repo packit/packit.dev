@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2026-05-05T00:00:00.000Z</updated>
+    <updated>2026-05-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 20 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2026/week-20</id>
+        <link href="https://packit.dev/posts/weekly/2026/week-20"/>
+        <updated>2026-05-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 20 (May 12th – May 18th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-20-may-12th--may-18th">Week 20 (May 12th – May 18th)<a href="#week-20-may-12th--may-18th" class="hash-link" aria-label="Direct link to Week 20 (May 12th – May 18th)" title="Direct link to Week 20 (May 12th – May 18th)">​</a></h2><ul><li>Packit Fedora-CI now runs <code>rmdepcheck</code> and <code>license-validate</code> tests on PRs. (<a href="https://github.com/packit/packit-service/pull/3089" target="_blank" rel="noopener noreferrer">packit-service#3089</a>)</li><li>Starting this week, Packit will provide analysis of failed Koji scratch builds on dist-git pull requests thanks to Log Detective. For more info, look at the <a href="https://fedoramagazine.org/log-detective-in-packit/" target="_blank" rel="noopener noreferrer">Fedora Megazine Article</a>.</li></ul>]]></content>
+        <author>
+            <name>Maja Massarini</name>
+            <email>mmassari@redhat.com</email>
+            <uri>https://github.com/majamassarini</uri>
+        </author>
+        <category label="2026-May" term="2026-May"/>
+        <category label="2026" term="2026"/>
+        <category label="May" term="May"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 18 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2026/week-18</id>
