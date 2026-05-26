@@ -282,7 +282,9 @@ Files to be uploaded to lookaside cache also use this interface, where all files
 mentioned in the spec file's `Source` are uploaded to the lookaside cache, *unless*
 the file is already being tracked in dist-git. **Note:** this implies that new
 `Source` files are [always added][packit#2365] as lookaside cache as part of an
-update even if they should be tracked in dist-git instead. 
+update even if they should be tracked in dist-git instead. See
+[Tracking `Source` files in dist-git](/docs/configuration/downstream/source-files-in-dist-git)
+for a recipe that keeps such files in dist-git's Git history instead of the lookaside cache.
 
 :::
 
