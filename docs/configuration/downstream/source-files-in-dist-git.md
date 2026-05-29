@@ -70,6 +70,14 @@ actions:
     - bash -c 'cd "${PACKIT_DOWNSTREAM_REPO}" && git add pkg.service'
 ```
 
+:::tip Staging multiple files
+
+Avoid `git add .` or `git add *` — shell globs skip dot-files and can pick up
+unrelated paths. List every file explicitly with the `--` separator instead,
+e.g. `git add -- pkg.service pkg.socket pkg.sysusers`.
+
+:::
+
 After the first successful `propose_downstream`/`pull_from_upstream` run,
 `pkg.service` is committed to dist-git. The action keeps working on subsequent
 runs (`git add` of an unmodified, already-tracked file is a no-op), so it is
@@ -100,23 +108,6 @@ The variables `PACKIT_UPSTREAM_REPO` and `PACKIT_DOWNSTREAM_REPO` are exposed
 to every release-synchronization action — see
 [Release-synchronization actions](/docs/configuration/actions#release-synchronization-actions).
 
-### Multiple files
-
-For more than one file, list them in `files_to_sync` and stage them in a single
-command. Using `git add -- <paths>` keeps the action robust against future
-files that match dot-prefixes or unusual names:
-
-```yaml
-files_to_sync:
-  - pkg.spec
-  - pkg.service
-  - pkg.socket
-  - pkg.sysusers
-
-actions:
-  post-modifications:
-    - bash -c 'cd "${PACKIT_DOWNSTREAM_REPO}" && git add -- pkg.service pkg.socket pkg.sysusers'
-```
 
 ## Verifying the result
 

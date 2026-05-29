@@ -170,12 +170,13 @@ You can, of course, provide *just* the commit title.
 
 ### `post-modifications`
 
-This action runs in the release-synchronization workflow after the spec file
-has been modified and remote sources have been downloaded into dist-git, but
-*before* local `Source` files are collected for the lookaside-cache upload.
-You can use it to stage extra files (e.g. systemd units, configuration templates) into
-dist-git's Git index so that Packit treats them as VCS-tracked and skips them
-when uploading to the lookaside cache. A complete walkthrough is in
+During release synchronization (`propose_downstream` / `pull_from_upstream`),
+this action runs after the spec file has been modified and remote sources have
+been downloaded into dist-git, but *before* local `Source` files are collected
+for the lookaside-cache upload. You can use this timing to stage extra files
+(e.g. systemd units, configuration templates) into dist-git's Git index so that
+Packit treats them as VCS-tracked and skips them when uploading to the
+lookaside cache. A complete walkthrough is in
 [Tracking `Source` files in dist-git](/docs/configuration/downstream/source-files-in-dist-git).
 
 ### `run-condition`
