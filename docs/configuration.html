@@ -18,8 +18,8 @@
 <link rel="alternate" type="application/rss+xml" href="/posts/weekly/rss.xml" title="Packit Weekly RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/posts/weekly/atom.xml" title="Packit Weekly Atom Feed">
 <link rel="alternate" type="application/json" href="/posts/weekly/feed.json" title="Packit Weekly JSON Feed"><link rel="stylesheet" href="/assets/css/styles.4a3b9af6.css">
-<link rel="preload" href="/assets/js/runtime~main.3655e39f.js" as="script">
-<link rel="preload" href="/assets/js/main.13f4cc66.js" as="script">
+<link rel="preload" href="/assets/js/runtime~main.5fcf75e0.js" as="script">
+<link rel="preload" href="/assets/js/main.aa168b74.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}return t}()||function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -99,7 +99,9 @@ include the files in the commit.</p><p>Files to be uploaded to lookaside cache a
 mentioned in the spec file&#x27;s <code>Source</code> are uploaded to the lookaside cache, <em>unless</em>
 the file is already being tracked in dist-git. <strong>Note:</strong> this implies that new
 <code>Source</code> files are <a href="https://github.com/packit/packit/issues/2365" target="_blank" rel="noopener noreferrer">always added</a> as lookaside cache as part of an
-update even if they should be tracked in dist-git instead. </p></div></div><p>Spec file path and config file path are always included by <code>packit init</code>
+update even if they should be tracked in dist-git instead. See
+<a href="/docs/configuration/downstream/source-files-in-dist-git">Tracking <code>Source</code> files in dist-git</a>
+for a recipe that keeps such files in dist-git&#x27;s Git history instead of the lookaside cache.</p></div></div><p>Spec file path and config file path are always included by <code>packit init</code>
 but can be manually removed from the list.</p><p>Under the hood this will use <code>rsync --archive</code> to synchronise the paths
 between the upstream and the dist-git repo.</p><p>The fields for a dictionary item in the list are the following:</p><ul><li><em>src</em>: A single path or a list of paths in the upstream repo that should be synced to dist-git.</li><li><em>dest</em>: Path in the dist-git repo, where paths in <code>src</code> should be synced to.</li><li><em>mkpath</em>: Flag to indicate if missing path components in <code>dest</code> should be created or not (default: false).</li><li><em>delete</em>: Flag to indicate if extra content from <code>dest</code> should be deleted (default: false).</li><li><em>filters</em>: List of <a href="https://www.man7.org/linux/man-pages/man1/rsync.1.html#FILTER_RULES" target="_blank" rel="noopener noreferrer">rsync filter rules</a> to be used during syncing. Note that the rules apply relative
 to the source and/or destination path (e.g. a <code>protect</code> filter applies relative to <code>dest</code> path)</li></ul><h5 class="anchor anchorWithStickyNavbar_LWe7" id="examples">Examples:<a href="#examples" class="hash-link" aria-label="Direct link to Examples:" title="Direct link to Examples:">​</a></h5><p>Copy a file from root of the upstream repo to dist-git:</p><div class="language-yaml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-yaml codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token key atrule" style="color:#00a4db">files_to_sync</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain"> packit.spec</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>If you copy <code>packit.yaml</code> downstream, you can then take advantage of
@@ -295,7 +297,7 @@ has been deprecated and will be removed in future versions.</p></div><footer cla
                     @packit@fosstodon.org
                   </a> (Mastodon)
                 </li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/usage">Usage Charts</a></li><li class="footer__item"><a class="footer__link-item" href="/posts">Blog Posts</a></li><li class="footer__item"><a href="https://github.com/packit" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Packit is a Red Hat sponsored free software project. Built with Docusaurus. <a href="https://github.com/packit/packit.dev">Source of this page</a>.</div></div></div></footer></div>
-<script src="/assets/js/runtime~main.3655e39f.js"></script>
-<script src="/assets/js/main.13f4cc66.js"></script>
+<script src="/assets/js/runtime~main.5fcf75e0.js"></script>
+<script src="/assets/js/main.aa168b74.js"></script>
 </body>
 </html>
