@@ -73,7 +73,7 @@ jobs:
 - job: pull_from_upstream
   trigger: release
   # 3.y.z or higher versions go to Rawhide
-  version_update_specifiers: >=3.0
+  version_update_specifiers: ">=3.0"
   dist_git_branches:
    - fedora-rawhide
 
