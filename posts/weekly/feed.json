@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-27",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-27-july-1st--july-7th\">Week 27 (July 1st – July 7th)<a href=\"#week-27-july-1st--july-7th\" class=\"hash-link\" aria-label=\"Direct link to Week 27 (July 1st – July 7th)\" title=\"Direct link to Week 27 (July 1st – July 7th)\">​</a></h2><ul><li>When a package is configured to consume mutiple release streams and release-monitoring.org detects\nmultiple releases at the same time, if a pull-from-upstream job run for one released version fails,\nonly that one is retried and the rest are unaffected and properly processed. Before this fix\nit could happen that a failed job run for one released version could prevent other released versions\nfrom being processed at all.\n(<a href=\"https://github.com/packit/packit-service/pull/3147\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3147</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-27",
+            "title": "Week 27 in Packit",
+            "summary": "Week 27 (July 1st – July 7th)",
+            "date_modified": "2026-07-07T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2026-July",
+                "2026",
+                "July"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-22",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-22-may-28th--june-3rd\">Week 22 (May 28th – June 3rd)<a href=\"#week-22-may-28th--june-3rd\" class=\"hash-link\" aria-label=\"Direct link to Week 22 (May 28th – June 3rd)\" title=\"Direct link to Week 22 (May 28th – June 3rd)\">​</a></h2><ul><li>Packit now supports wildcards in Copr allowlists.\nThanks <a href=\"https://github.com/evgeni\" target=\"_blank\" rel=\"noopener noreferrer\">@evgeni</a>.\n(<a href=\"https://github.com/packit/packit-service/pull/2907\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#2907</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-22",

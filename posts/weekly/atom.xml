@@ -2,11 +2,32 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2026-06-03T00:00:00.000Z</updated>
+    <updated>2026-07-07T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 27 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2026/week-27</id>
+        <link href="https://packit.dev/posts/weekly/2026/week-27"/>
+        <updated>2026-07-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 27 (July 1st – July 7th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-27-july-1st--july-7th">Week 27 (July 1st – July 7th)<a href="#week-27-july-1st--july-7th" class="hash-link" aria-label="Direct link to Week 27 (July 1st – July 7th)" title="Direct link to Week 27 (July 1st – July 7th)">​</a></h2><ul><li>When a package is configured to consume mutiple release streams and release-monitoring.org detects
+multiple releases at the same time, if a pull-from-upstream job run for one released version fails,
+only that one is retried and the rest are unaffected and properly processed. Before this fix
+it could happen that a failed job run for one released version could prevent other released versions
+from being processed at all.
+(<a href="https://github.com/packit/packit-service/pull/3147" target="_blank" rel="noopener noreferrer">packit-service#3147</a>)</li></ul>]]></content>
+        <author>
+            <name>Nikola Forró</name>
+            <email>nforro@redhat.com</email>
+            <uri>https://github.com/nforro</uri>
+        </author>
+        <category label="2026-July" term="2026-July"/>
+        <category label="2026" term="2026"/>
+        <category label="July" term="July"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 22 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2026/week-22</id>
