@@ -74,7 +74,6 @@ These apply to `propose-downstream` command/job and `pull-from-upstream` job.
 |        | `prepare-files`       | upstream git repo | after cloning, checking out of both upstream and dist-git repos       | replace patching and archive generation |
 |        | `create-patches`      | upstream git repo | after sync of upstream files to the downstream                        | replace patching                        |
 | [hook] | `post-modifications`  | upstream git repo | after all modifications to the spec file and downloading remote sources and before uploading to lookaside cache |                               |
-|        | `get-current-version` | upstream git repo | when the current version needs to be found                            | expect version as a stdout parameter    |
 |        | `changelog-entry`     | upstream git repo | when adding a new changelog entry to the specfile                     | stdout is used as a changelog entry     |
 |        | `commit-message`      | upstream git repo | after running pre-sync hook and checking out the tags/branches        | used to override default commit message |
 
