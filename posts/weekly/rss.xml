@@ -4,10 +4,27 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Tue, 07 Jul 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 13 Jul 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 28 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-28</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-28</guid>
+            <pubDate>Mon, 13 Jul 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 28 (July 7th – July 13th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-28-july-7th--july-13th">Week 28 (July 7th – July 13th)<a href="#week-28-july-7th--july-13th" class="hash-link" aria-label="Direct link to Week 28 (July 7th – July 13th)" title="Direct link to Week 28 (July 7th – July 13th)">​</a></h2><ul><li>Log Detective results in Packit dashboard now show error messages for failed analyses,
+link to related Koji scratch builds and display suggested solutions when available.
+(<a href="https://github.com/packit/packit-service/pull/3151" target="_blank" rel="noopener noreferrer">packit-service#3151</a>,
+<a href="https://github.com/packit/dashboard/pull/537" target="_blank" rel="noopener noreferrer">dashboard#537</a>,
+<a href="https://github.com/packit/dashboard/pull/538" target="_blank" rel="noopener noreferrer">dashboard#538</a>,
+<a href="https://github.com/packit/dashboard/pull/539" target="_blank" rel="noopener noreferrer">dashboard#539</a>)</li></ul>]]></content:encoded>
+            <author>nforro@redhat.com (Nikola Forró)</author>
+            <category>2026-July</category>
+            <category>2026</category>
+            <category>July</category>
+        </item>
         <item>
             <title><![CDATA[Week 27 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-27</link>
