@@ -5,8 +5,8 @@ sidebar_position: 6
 # Dist-git repository onboarding
 ## Table of contents
 - [Setup](#setup)
-  - [1. Configuration file](#configuration-file)
-  - [2. Monitoring](#monitoring-of-the-package)
+  - [1. Configuration file](#1-configuration-file)
+  - [2. Monitoring](#2-monitoring-of-the-package)
   - [How to try that for real](#how-to-try-that-for-real)
 - [UI](#ui)
 - [Retriggering](#retriggering)
