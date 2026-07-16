@@ -1,6 +1,7 @@
 ---
 title: Our experience with AI-based code review
 authors: ttomecek
+date: 2026-02-24
 tags:
   - AI
   - code-review
