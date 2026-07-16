@@ -80,7 +80,10 @@ jobs:
 
 Do not forget that you can also define common Packit config options at the
 top level (such as `targets` or `actions`) and only override them when
-needed in the `jobs` or `packages` section.
+needed in the `jobs` or `packages` section. Note that overriding replaces the
+whole value, not individual keys — for `actions` this means a job's `actions`
+mapping [replaces the top-level one as a whole](/docs/configuration/actions),
+rather than being merged per action.
 
 For more complex structures it can be useful to have yaml-anchors that are ignored,
 in which case you can use the top-level `_` key, for example:
