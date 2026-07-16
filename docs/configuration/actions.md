@@ -39,8 +39,34 @@ e.g. cloning an upstream repo.
 :::caution
 
 Like other keys, the `actions` can be defined on the top, package or job level.
-Be aware that when overriding, the whole `action` mapping is replaced
-instead of merging.
+Be aware that when overriding, the whole `actions` mapping is replaced
+instead of merged per action. In other words, a job that defines its own
+`actions` does **not** inherit any of the top-level actions — only the ones it
+lists itself are applied.
+
+For example:
+
+```yaml
+actions:
+  post-upstream-clone:
+    - echo "top-level clone"
+  create-archive:
+    - echo "top-level archive"
+  fix-spec-file:
+    - echo "top-level spec fix"
+
+jobs:
+  - job: copr_build
+    trigger: pull_request
+    actions:
+      create-archive:
+        - echo "job archive"
+```
+
+For the `copr_build` job above, only `create-archive` runs (executing
+`echo "job archive"`). The top-level `post-upstream-clone` and `fix-spec-file`
+actions are **not** applied to this job, because its `actions` mapping replaces
+the top-level one as a whole rather than being merged into it.
 
 If you want to reduce duplications, you can use the following YAML syntax to do this:
 
