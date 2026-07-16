@@ -76,6 +76,9 @@ files_to_sync:
 (*list of dicts*) A list of job definitions for Packit Service: see
 [Packit Service jobs configuration](configuration/jobs) for details.
 
+The `trigger` key of a job accepts exactly one value — it is not a list, and
+multiple triggers cannot be combined in one job.
+
 ### Package-specific keys
 #### paths
 (*list*) List of relative paths in the upstream repository, which should be considered for the particular package
