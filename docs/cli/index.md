@@ -3,7 +3,6 @@ title: Packit CLI
 date: 2019-07-09
 chapter: false
 sidebar_position: 8
-
 ---
 
 # Packit CLI
