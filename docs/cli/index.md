@@ -3,7 +3,6 @@ title: Packit CLI
 date: 2019-07-09
 chapter: false
 sidebar_position: 8
-
 ---
 
 # Packit CLI
@@ -71,6 +70,20 @@ If none of the above work for you, try running it in a container
 from our Fedora based image. It contains packit installed from `main` branch,
 i.e. the same you'd get by pip installing from GitHub.
 
+::::tip
+
+When you wish to run mock build inside the container, you have to use a privileged
+container, therefore add the `--privileged` switch to the `podman`.
+
+:::warning
+
+`docker run --privileged` is not the same as `podman run --privileged`. For more
+information refer to the [Mock docs](https://rpm-software-management.github.io/mock/#mock-inside-podman-fedora-toolbox-or-docker-container).
+
+:::
+
+::::
+
     $ podman run -ti --rm -v $PWD:/src:z quay.io/packit/packit bash
     $ packit
     Usage: packit [OPTIONS] COMMAND [ARGS]...
@@ -97,6 +110,19 @@ configuration files, like in the following examples:
     $ podman run -ti --rm -v ~/.ssh/:/root/.ssh:z -v $PWD:/src:z quay.io/packit/packit bash
     $ fkinit -u <Fedora Account username>
     $ packit build in-koji
+
+#### RPM build via mock
+
+    $ podman run --privileged -ti --rm -v $PWD:/src/:z quay.io/packit/packit bash
+    $ packit build in-mock
+
+### Running on alternative platforms or architectures
+
+For running Packit CLI on the alternative platforms or architectures,
+such as macOS or unsupported Linux distributions, it is recommened to use the
+container method described above.
+
+For the macOS you can also use seamless virtualization via [Lima](https://lima-vm.io/).
 
 ## Commands
 
