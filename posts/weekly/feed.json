@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-29-30",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"weeks-29-and-30-july-13th--july-27th\">Weeks 29 and 30 (July 13th – July 27th)<a href=\"#weeks-29-and-30-july-13th--july-27th\" class=\"hash-link\" aria-label=\"Direct link to Weeks 29 and 30 (July 13th – July 27th)\" title=\"Direct link to Weeks 29 and 30 (July 13th – July 27th)\">​</a></h2><ul><li>The ogr library now correctly handles the Forgejo <code>error</code> commit flag, resolving an issue\nthat previously caused it to fail during internal mapping.\n(<a href=\"https://github.com/packit/ogr/pull/991\" target=\"_blank\" rel=\"noopener noreferrer\">ogr#991</a>)</li><li>Log Detective run overview on the dashboard now, for successful runs, shows also a list\nof snippets, grouped by file, in expandable sections.\n(<a href=\"https://github.com/packit/dashboard/pull/540\" target=\"_blank\" rel=\"noopener noreferrer\">dashboard#540</a>)\n<img loading=\"lazy\" alt=\"Log Detective snippets\" src=\"/assets/images/log-detective-snippets-0c0d628019803b0466d8690bb9806ad7.png\" width=\"839\" height=\"791\" class=\"img_ev3q\"></li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-29-30",
+            "title": "Weeks 29 and 30 in Packit",
+            "summary": "Weeks 29 and 30 (July 13th – July 27th)",
+            "date_modified": "2026-07-27T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2026-July",
+                "2026",
+                "July"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-28",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-28-july-7th--july-13th\">Week 28 (July 7th – July 13th)<a href=\"#week-28-july-7th--july-13th\" class=\"hash-link\" aria-label=\"Direct link to Week 28 (July 7th – July 13th)\" title=\"Direct link to Week 28 (July 7th – July 13th)\">​</a></h2><ul><li>Log Detective results in Packit dashboard now show error messages for failed analyses,\nlink to related Koji scratch builds and display suggested solutions when available.\n(<a href=\"https://github.com/packit/packit-service/pull/3151\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3151</a>,\n<a href=\"https://github.com/packit/dashboard/pull/537\" target=\"_blank\" rel=\"noopener noreferrer\">dashboard#537</a>,\n<a href=\"https://github.com/packit/dashboard/pull/538\" target=\"_blank\" rel=\"noopener noreferrer\">dashboard#538</a>,\n<a href=\"https://github.com/packit/dashboard/pull/539\" target=\"_blank\" rel=\"noopener noreferrer\">dashboard#539</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-28",

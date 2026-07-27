@@ -2,11 +2,32 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2026-07-13T00:00:00.000Z</updated>
+    <updated>2026-07-27T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Weeks 29 and 30 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2026/week-29-30</id>
+        <link href="https://packit.dev/posts/weekly/2026/week-29-30"/>
+        <updated>2026-07-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Weeks 29 and 30 (July 13th – July 27th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="weeks-29-and-30-july-13th--july-27th">Weeks 29 and 30 (July 13th – July 27th)<a href="#weeks-29-and-30-july-13th--july-27th" class="hash-link" aria-label="Direct link to Weeks 29 and 30 (July 13th – July 27th)" title="Direct link to Weeks 29 and 30 (July 13th – July 27th)">​</a></h2><ul><li>The ogr library now correctly handles the Forgejo <code>error</code> commit flag, resolving an issue
+that previously caused it to fail during internal mapping.
+(<a href="https://github.com/packit/ogr/pull/991" target="_blank" rel="noopener noreferrer">ogr#991</a>)</li><li>Log Detective run overview on the dashboard now, for successful runs, shows also a list
+of snippets, grouped by file, in expandable sections.
+(<a href="https://github.com/packit/dashboard/pull/540" target="_blank" rel="noopener noreferrer">dashboard#540</a>)
+<img loading="lazy" alt="Log Detective snippets" src="/assets/images/log-detective-snippets-0c0d628019803b0466d8690bb9806ad7.png" width="839" height="791" class="img_ev3q"></li></ul>]]></content>
+        <author>
+            <name>Nikola Forró</name>
+            <email>nforro@redhat.com</email>
+            <uri>https://github.com/nforro</uri>
+        </author>
+        <category label="2026-July" term="2026-July"/>
+        <category label="2026" term="2026"/>
+        <category label="July" term="July"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 28 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2026/week-28</id>

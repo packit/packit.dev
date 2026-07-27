@@ -4,10 +4,27 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 13 Jul 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 27 Jul 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Weeks 29 and 30 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-29-30</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-29-30</guid>
+            <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Weeks 29 and 30 (July 13th – July 27th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="weeks-29-and-30-july-13th--july-27th">Weeks 29 and 30 (July 13th – July 27th)<a href="#weeks-29-and-30-july-13th--july-27th" class="hash-link" aria-label="Direct link to Weeks 29 and 30 (July 13th – July 27th)" title="Direct link to Weeks 29 and 30 (July 13th – July 27th)">​</a></h2><ul><li>The ogr library now correctly handles the Forgejo <code>error</code> commit flag, resolving an issue
+that previously caused it to fail during internal mapping.
+(<a href="https://github.com/packit/ogr/pull/991" target="_blank" rel="noopener noreferrer">ogr#991</a>)</li><li>Log Detective run overview on the dashboard now, for successful runs, shows also a list
+of snippets, grouped by file, in expandable sections.
+(<a href="https://github.com/packit/dashboard/pull/540" target="_blank" rel="noopener noreferrer">dashboard#540</a>)
+<img loading="lazy" alt="Log Detective snippets" src="/assets/images/log-detective-snippets-0c0d628019803b0466d8690bb9806ad7.png" width="839" height="791" class="img_ev3q"></li></ul>]]></content:encoded>
+            <author>nforro@redhat.com (Nikola Forró)</author>
+            <category>2026-July</category>
+            <category>2026</category>
+            <category>July</category>
+        </item>
         <item>
             <title><![CDATA[Week 28 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-28</link>
