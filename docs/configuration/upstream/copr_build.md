@@ -48,9 +48,6 @@ With this configuration, you'll get builds in all stable fedora releases
   Prefix with `@` in case of a group.
 * **project** - a name of the Copr project (defaults to `"{github_namespace}-{repository_name}-{pr_id}"`)
 * **additional_repos** - a list of additional buildroot repositories
-* **runtime_dependencies** - a list of repositories to be included when the copr repo is enabled.
-  If not specified the values in `additional_repos` are used. Use an empty list or a specific value
-  to override this behavior.
 * **bootstrap** - mock bootstrap setup. Accepted values are:
   * `default` - use default configuration from `mock-core-configs` package
   * `on` - enable bootstrapping
