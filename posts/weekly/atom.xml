@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2026-07-27T00:00:00.000Z</updated>
+    <updated>2026-08-03T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 31 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2026/week-31</id>
+        <link href="https://packit.dev/posts/weekly/2026/week-31"/>
+        <updated>2026-08-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 31 (July 28th – August 3rd)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-31-july-28th--august-3rd">Week 31 (July 28th – August 3rd)<a href="#week-31-july-28th--august-3rd" class="hash-link" aria-label="Direct link to Week 31 (July 28th – August 3rd)" title="Direct link to Week 31 (July 28th – August 3rd)">​</a></h2><ul><li>There is a new configuration option <code>skip_missing_branched_composes</code> that, when enabled, skips test jobs for freshly branched Fedora versions that don't have a corresponding Testing Farm compose yet. (<a href="https://github.com/packit/packit-service/pull/3160" target="_blank" rel="noopener noreferrer">packit-service#3160</a>)</li><li>A fix has been implemented for a bug causing Packit to crash when adding a comment reaction on GitLab. (<a href="https://github.com/packit/ogr/pull/995" target="_blank" rel="noopener noreferrer">ogr#995</a>)</li></ul>]]></content>
+        <author>
+            <name>Alžběta Kučerová</name>
+            <email>akucerov@redhat.com</email>
+            <uri>https://github.com/betulependule</uri>
+        </author>
+        <category label="2026-July" term="2026-July"/>
+        <category label="2026" term="2026"/>
+        <category label="July" term="July"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Weeks 29 and 30 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2026/week-29-30</id>

@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 27 Jul 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 03 Aug 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 31 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-31</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-31</guid>
+            <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 31 (July 28th – August 3rd)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-31-july-28th--august-3rd">Week 31 (July 28th – August 3rd)<a href="#week-31-july-28th--august-3rd" class="hash-link" aria-label="Direct link to Week 31 (July 28th – August 3rd)" title="Direct link to Week 31 (July 28th – August 3rd)">​</a></h2><ul><li>There is a new configuration option <code>skip_missing_branched_composes</code> that, when enabled, skips test jobs for freshly branched Fedora versions that don't have a corresponding Testing Farm compose yet. (<a href="https://github.com/packit/packit-service/pull/3160" target="_blank" rel="noopener noreferrer">packit-service#3160</a>)</li><li>A fix has been implemented for a bug causing Packit to crash when adding a comment reaction on GitLab. (<a href="https://github.com/packit/ogr/pull/995" target="_blank" rel="noopener noreferrer">ogr#995</a>)</li></ul>]]></content:encoded>
+            <author>akucerov@redhat.com (Alžběta Kučerová)</author>
+            <category>2026-July</category>
+            <category>2026</category>
+            <category>July</category>
+        </item>
         <item>
             <title><![CDATA[Weeks 29 and 30 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-29-30</link>

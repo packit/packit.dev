@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-31",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-31-july-28th--august-3rd\">Week 31 (July 28th – August 3rd)<a href=\"#week-31-july-28th--august-3rd\" class=\"hash-link\" aria-label=\"Direct link to Week 31 (July 28th – August 3rd)\" title=\"Direct link to Week 31 (July 28th – August 3rd)\">​</a></h2><ul><li>There is a new configuration option <code>skip_missing_branched_composes</code> that, when enabled, skips test jobs for freshly branched Fedora versions that don't have a corresponding Testing Farm compose yet. (<a href=\"https://github.com/packit/packit-service/pull/3160\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3160</a>)</li><li>A fix has been implemented for a bug causing Packit to crash when adding a comment reaction on GitLab. (<a href=\"https://github.com/packit/ogr/pull/995\" target=\"_blank\" rel=\"noopener noreferrer\">ogr#995</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-31",
+            "title": "Week 31 in Packit",
+            "summary": "Week 31 (July 28th – August 3rd)",
+            "date_modified": "2026-08-03T00:00:00.000Z",
+            "author": {
+                "name": "Alžběta Kučerová",
+                "url": "https://github.com/betulependule"
+            },
+            "tags": [
+                "2026-July",
+                "2026",
+                "July"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-29-30",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"weeks-29-and-30-july-13th--july-27th\">Weeks 29 and 30 (July 13th – July 27th)<a href=\"#weeks-29-and-30-july-13th--july-27th\" class=\"hash-link\" aria-label=\"Direct link to Weeks 29 and 30 (July 13th – July 27th)\" title=\"Direct link to Weeks 29 and 30 (July 13th – July 27th)\">​</a></h2><ul><li>The ogr library now correctly handles the Forgejo <code>error</code> commit flag, resolving an issue\nthat previously caused it to fail during internal mapping.\n(<a href=\"https://github.com/packit/ogr/pull/991\" target=\"_blank\" rel=\"noopener noreferrer\">ogr#991</a>)</li><li>Log Detective run overview on the dashboard now, for successful runs, shows also a list\nof snippets, grouped by file, in expandable sections.\n(<a href=\"https://github.com/packit/dashboard/pull/540\" target=\"_blank\" rel=\"noopener noreferrer\">dashboard#540</a>)\n<img loading=\"lazy\" alt=\"Log Detective snippets\" src=\"/assets/images/log-detective-snippets-0c0d628019803b0466d8690bb9806ad7.png\" width=\"839\" height=\"791\" class=\"img_ev3q\"></li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-29-30",
