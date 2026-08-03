@@ -813,6 +813,11 @@ to finish, their statuses remain in pending state and only build job statuses ar
 before any configured `run-condition` action is run. The option has no effect if there is no `run-condition`
 action configured. Defaults to `false`.
 
+#### skip_missing_branched_composes
+
+(*bool*) When set to `true`, test jobs for freshly branched Fedora versions that don't have
+a corresponding Testing Farm compose yet are skipped instead of failing. Defaults to `false`.
+
 #### osh_diff_scan_after_copr_build
 
 (*bool*) Whether to run a differential scan in [OpenScanHub](https://openscanhub.fedoraproject.org/) 
