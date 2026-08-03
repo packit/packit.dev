@@ -12,7 +12,7 @@ execution service ([Testing Farm](https://docs.testing-farm.io/Testing%20Farm/0.
 **Fedora CI is now enabled by default for all Fedora dist-git repositories.**
 
 If you need to opt out, you can request your repository to be added to the
-[`disabled_projects_for_fedora_ci`](https://github.com/packit/deployment/blob/main/secrets/packit/prod/packit-service.yaml.j2)
+[`fedora_ci.disabled_projects`](https://github.com/packit/deployment/blob/main/secrets/packit/prod/packit-service.yaml.j2)
 list in the Packit deployment configuration.
 
 For more info continue with:
