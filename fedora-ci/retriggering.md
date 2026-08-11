@@ -22,17 +22,11 @@ Packit is able to provide a help message summarizing all available commands and 
 
 ## Restarting all CI jobs
 
-If you want to restart the entire CI pipeline from the beginning (scratch build followed by tests), retrigger the scratch build:
-
-```
-/packit-ci scratch-build
-```
-
-The tests will be automatically triggered once the scratch build succeeds. There is no need to separately retrigger the tests in this case.
+To restart the entire CI pipeline from the beginning, retrigger the [scratch build](#scratch-builds) — tests will automatically follow once it succeeds. There is no need to separately retrigger the tests.
 
 ## Scratch builds
 
-To retrigger only a scratch build, add the following comment to the pull request:
+To retrigger a scratch build, add the following comment to the pull request:
 
 ```
 /packit-ci scratch-build
