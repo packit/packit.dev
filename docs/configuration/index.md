@@ -175,6 +175,21 @@ branch, setting this key to `false` can be especially useful not to generate
 RPM packages with an NVR referencing an unknown hash (the one created by the 
 Packit merge commit).
 
+:::tip Packages with bundled dependencies
+
+When you have custom `.gitattributes` and use bundled dependencies, the default
+merging may become an issue. In this case it is recommended to disable merging
+with
+
+```yaml
+merge_pr_in_ci: false
+```
+
+If your project requires linear history and you rebase PRs frequently, there are
+no incurred disadvantages to turning off this feature.
+
+:::
+
 
 #### sync_changelog
 
