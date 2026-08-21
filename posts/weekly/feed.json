@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-33",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-33-august-11th--august-17th\">Week 33 (August 11th – August 17th)<a href=\"#week-33-august-11th--august-17th\" class=\"hash-link\" aria-label=\"Direct link to Week 33 (August 11th – August 17th)\" title=\"Direct link to Week 33 (August 11th – August 17th)\">​</a></h2><ul><li>The <code>ForgejoService.get_project_from_url()</code> method has been updated to ensure repository names are parsed accurately. It now correctly removes the <code>.git</code> extension from the repository name, addressing an issue where the extension was previously retained. (<a href=\"https://github.com/packit/ogr/pull/1005\" target=\"_blank\" rel=\"noopener noreferrer\">ogr#1005</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-33",
+            "title": "Week 33 in Packit",
+            "summary": "Week 33 (August 11th – August 17th)",
+            "date_modified": "2026-08-17T00:00:00.000Z",
+            "author": {
+                "name": "Matej Focko",
+                "url": "https://github.com/mfocko"
+            },
+            "tags": [
+                "2026-August",
+                "2026",
+                "August"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-31",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-31-july-28th--august-3rd\">Week 31 (July 28th – August 3rd)<a href=\"#week-31-july-28th--august-3rd\" class=\"hash-link\" aria-label=\"Direct link to Week 31 (July 28th – August 3rd)\" title=\"Direct link to Week 31 (July 28th – August 3rd)\">​</a></h2><ul><li>There is a new configuration option <code>skip_missing_branched_composes</code> that, when enabled, skips test jobs for freshly branched Fedora versions that don't have a corresponding Testing Farm compose yet. (<a href=\"https://github.com/packit/packit-service/pull/3160\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3160</a>)</li><li>A fix has been implemented for a bug causing Packit to crash when adding a comment reaction on GitLab. (<a href=\"https://github.com/packit/ogr/pull/995\" target=\"_blank\" rel=\"noopener noreferrer\">ogr#995</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-31",

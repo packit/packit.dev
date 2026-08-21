@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2026-08-03T00:00:00.000Z</updated>
+    <updated>2026-08-17T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 33 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2026/week-33</id>
+        <link href="https://packit.dev/posts/weekly/2026/week-33"/>
+        <updated>2026-08-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 33 (August 11th – August 17th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-33-august-11th--august-17th">Week 33 (August 11th – August 17th)<a href="#week-33-august-11th--august-17th" class="hash-link" aria-label="Direct link to Week 33 (August 11th – August 17th)" title="Direct link to Week 33 (August 11th – August 17th)">​</a></h2><ul><li>The <code>ForgejoService.get_project_from_url()</code> method has been updated to ensure repository names are parsed accurately. It now correctly removes the <code>.git</code> extension from the repository name, addressing an issue where the extension was previously retained. (<a href="https://github.com/packit/ogr/pull/1005" target="_blank" rel="noopener noreferrer">ogr#1005</a>)</li></ul>]]></content>
+        <author>
+            <name>Matej Focko</name>
+            <email>mfocko@redhat.com</email>
+            <uri>https://github.com/mfocko</uri>
+        </author>
+        <category label="2026-August" term="2026-August"/>
+        <category label="2026" term="2026"/>
+        <category label="August" term="August"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 31 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2026/week-31</id>
