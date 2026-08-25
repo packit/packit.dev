@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2026-08-17T00:00:00.000Z</updated>
+    <updated>2026-08-24T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 34 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2026/week-34</id>
+        <link href="https://packit.dev/posts/weekly/2026/week-34"/>
+        <updated>2026-08-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 34 (August 18th – August 24th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-34-august-18th--august-24th">Week 34 (August 18th – August 24th)<a href="#week-34-august-18th--august-24th" class="hash-link" aria-label="Direct link to Week 34 (August 18th – August 24th)" title="Direct link to Week 34 (August 18th – August 24th)">​</a></h2><ul><li>There were no user-facing changes in packit(-service) this week.</li></ul>]]></content>
+        <author>
+            <name>Nikola Forró</name>
+            <email>nforro@redhat.com</email>
+            <uri>https://github.com/nforro</uri>
+        </author>
+        <category label="2026-August" term="2026-August"/>
+        <category label="2026" term="2026"/>
+        <category label="August" term="August"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 33 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2026/week-33</id>

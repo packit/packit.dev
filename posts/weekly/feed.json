@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-34",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-34-august-18th--august-24th\">Week 34 (August 18th – August 24th)<a href=\"#week-34-august-18th--august-24th\" class=\"hash-link\" aria-label=\"Direct link to Week 34 (August 18th – August 24th)\" title=\"Direct link to Week 34 (August 18th – August 24th)\">​</a></h2><ul><li>There were no user-facing changes in packit(-service) this week.</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-34",
+            "title": "Week 34 in Packit",
+            "summary": "Week 34 (August 18th – August 24th)",
+            "date_modified": "2026-08-24T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2026-August",
+                "2026",
+                "August"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-33",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-33-august-11th--august-17th\">Week 33 (August 11th – August 17th)<a href=\"#week-33-august-11th--august-17th\" class=\"hash-link\" aria-label=\"Direct link to Week 33 (August 11th – August 17th)\" title=\"Direct link to Week 33 (August 11th – August 17th)\">​</a></h2><ul><li>The <code>ForgejoService.get_project_from_url()</code> method has been updated to ensure repository names are parsed accurately. It now correctly removes the <code>.git</code> extension from the repository name, addressing an issue where the extension was previously retained. (<a href=\"https://github.com/packit/ogr/pull/1005\" target=\"_blank\" rel=\"noopener noreferrer\">ogr#1005</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-33",
