@@ -9,27 +9,28 @@ Scratch builds in [Koji](https://koji.fedoraproject.org/koji/) built from SCM.
 
 ## Tests
 
-### Installability
+Each of the following tests is run in [Testing Farm](https://testing-farm.io)
+automatically with a successful scratch build.
 
-[Installability test](https://github.com/fedora-ci/installability-pipeline)
-in [Testing Farm](https://testing-farm.io) run with a successful scratch build.
+### installability
+
+[installability test](https://github.com/fedora-ci/installability-pipeline),
+which checks that the built RPMs/SRPMs install cleanly, together with their dependencies.
 
 ### rpmlint
 
-[rpmlint](https://github.com/rpm-software-management/rpmlint)
-[test](https://github.com/packit/tmt-plans/tree/main/plans/rpmlint)
-in [Testing Farm](https://testing-farm.io) run with a successful scratch build.
+[rpmlint test](https://github.com/packit/tmt-plans/tree/main/plans/rpmlint), which is
+based on [rpmlint](https://github.com/rpm-software-management/rpmlint).
+Lints the built RPM/SRPM packages against Fedora packaging guidelines.
 
 ### rpminspect
 
-[rpminspect](https://github.com/rpminspect/rpminspect)
-[test](https://github.com/fedora-ci/rpminspect-pipeline)
-in [Testing Farm](https://testing-farm.io) run with a successful scratch build.
+[rpminspect test](https://github.com/fedora-ci/rpminspect-pipeline), which runs
+[rpminspect](https://github.com/rpminspect/rpminspect) on the built RPM/SRPM packages.
 
-### Custom test plans
+### custom test plans
 
-Custom [TMT](https://tmt.readthedocs.io/) test plans in [Testing Farm](https://testing-farm.io)
-run with a successful scratch build. This requires TMT metadata (`.fmf/version` presence used as an indicator)
+Custom [TMT](https://tmt.readthedocs.io/) test plans, which require TMT metadata (`.fmf/version` presence used as an indicator)
 in the dist-git repository and at least one [test plan](https://tmt.readthedocs.io/en/stable/spec/plans.html)
 in `plans`.
 
