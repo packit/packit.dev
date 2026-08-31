@@ -30,6 +30,17 @@ Lints the built RPM/SRPM packages against Fedora packaging guidelines.
 Analyzes build artifacts to check policy compliance, changes from the previous build
 and runs general checks to make sure that RPM/Fedora packaging conventions are being followed.
 
+### rmdepcheck
+
+[rmdepcheck test](https://forge.fedoraproject.org/ci/shared-tests/src/branch/main/rmdepcheck),
+which performs an RPM dependency check.
+
+### license-validate
+
+[license-validate test](https://forge.fedoraproject.org/ci/shared-tests/src/branch/main/license-validate),
+which validates that the package's license defined in the spec file
+is [approved](https://docs.fedoraproject.org/en-US/legal/license-approval/#Software_License_List).
+
 ### custom test plans
 
 Custom [TMT](https://tmt.readthedocs.io/) test plans, which require TMT metadata (`.fmf/version` presence used as an indicator)
