@@ -28,6 +28,17 @@ Lints the built RPM/SRPM packages against Fedora packaging guidelines.
 [rpminspect test](https://github.com/fedora-ci/rpminspect-pipeline), which runs
 [rpminspect](https://github.com/rpminspect/rpminspect) on the built RPM/SRPM packages.
 
+### rmdepcheck
+
+[rmdepcheck test](https://forge.fedoraproject.org/ci/shared-tests/src/branch/main/rmdepcheck),
+which performs an RPM dependency check.
+
+### license-validate
+
+[license-validate test](https://forge.fedoraproject.org/ci/shared-tests/src/branch/main/license-validate),
+which validates that the package's license defined in the .spec file
+is [approved](https://docs.fedoraproject.org/en-US/legal/license-approval/#Software_License_List).
+
 ### custom test plans
 
 Custom [TMT](https://tmt.readthedocs.io/) test plans, which require TMT metadata (`.fmf/version` presence used as an indicator)
