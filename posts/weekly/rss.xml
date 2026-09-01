@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 24 Aug 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 01 Sep 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 35 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-35</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-35</guid>
+            <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 35 (August 26th – September 1st)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-35-august-26th--september-1st">Week 35 (August 26th – September 1st)<a href="#week-35-august-26th--september-1st" class="hash-link" aria-label="Direct link to Week 35 (August 26th – September 1st)" title="Direct link to Week 35 (August 26th – September 1st)">​</a></h2><ul><li>Packit Service now respects job identifiers when multiple base builds exist for the same branch with different configurations, ensuring OpenScanHub scans compare against the correct matching base build. (<a href="https://github.com/packit/packit-service/pull/3172" target="_blank" rel="noopener noreferrer">packit-service#3172</a>)</li></ul>]]></content:encoded>
+            <author>mmassari@redhat.com (Maja Massarini)</author>
+            <category>2026-August</category>
+            <category>2026</category>
+            <category>August</category>
+        </item>
         <item>
             <title><![CDATA[Week 34 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-34</link>

@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-35",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-35-august-26th--september-1st\">Week 35 (August 26th – September 1st)<a href=\"#week-35-august-26th--september-1st\" class=\"hash-link\" aria-label=\"Direct link to Week 35 (August 26th – September 1st)\" title=\"Direct link to Week 35 (August 26th – September 1st)\">​</a></h2><ul><li>Packit Service now respects job identifiers when multiple base builds exist for the same branch with different configurations, ensuring OpenScanHub scans compare against the correct matching base build. (<a href=\"https://github.com/packit/packit-service/pull/3172\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3172</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-35",
+            "title": "Week 35 in Packit",
+            "summary": "Week 35 (August 26th – September 1st)",
+            "date_modified": "2026-09-01T00:00:00.000Z",
+            "author": {
+                "name": "Maja Massarini",
+                "url": "https://github.com/majamassarini"
+            },
+            "tags": [
+                "2026-August",
+                "2026",
+                "August"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-34",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-34-august-18th--august-24th\">Week 34 (August 18th – August 24th)<a href=\"#week-34-august-18th--august-24th\" class=\"hash-link\" aria-label=\"Direct link to Week 34 (August 18th – August 24th)\" title=\"Direct link to Week 34 (August 18th – August 24th)\">​</a></h2><ul><li>There were no user-facing changes in packit(-service) this week.</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-34",
