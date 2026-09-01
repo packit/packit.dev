@@ -10,7 +10,7 @@ You can retrigger CI jobs in dist-git pull requests by posting comments that inc
 Fedora CI runs in two stages:
 
 1. **Scratch build** — a Koji scratch build is created from the pull request.
-2. **Tests** — once the scratch build succeeds, all configured tests (installability, rpmlint, rpminspect, custom TMT plans) are automatically triggered.
+2. **Tests** — once the scratch build succeeds, all configured tests (installability, rpmlint, rpminspect, rmdepcheck, license-validate, custom TMT plans) are automatically triggered.
 
 Because tests depend on a successful scratch build, **retriggering a scratch build will also cause tests to re-run** once the new build succeeds. If you only need to re-run the tests (for example, because a test failed due to a transient infrastructure issue but the scratch build was fine), you can retrigger just the tests without rebuilding.
 
@@ -52,10 +52,12 @@ To retrigger a specific test, you can add the test identifier to the command:
 
 Currently supported identifiers are:
 
-- `installability` - represents the [Installability](/fedora-ci/jobs#installability) test
+- `installability` - represents the [installability](/fedora-ci/jobs#installability) test
 - `rpmlint` - represents the [rpmlint](/fedora-ci/jobs#rpmlint) test
 - `rpminspect` - represents the [rpminspect](/fedora-ci/jobs#rpminspect) test
-- `custom` - represents [Custom TMT test plans](/fedora-ci/jobs#custom-test-plans)
+- `rmdepcheck` - represents the [rmdepcheck](/fedora-ci/jobs#rmdepcheck) test
+- `license-validate` - represents the [license-validate](/fedora-ci/jobs#license-validate) test
+- `custom` - represents [custom TMT test plans](/fedora-ci/jobs#custom-test-plans)
 
 Only packagers can retrigger tests.
 
