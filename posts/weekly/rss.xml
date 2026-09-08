@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Tue, 01 Sep 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 08 Sep 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 36 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-36</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-36</guid>
+            <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 36 (September 2nd – September 8th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-36-september-2nd--september-8th">Week 36 (September 2nd – September 8th)<a href="#week-36-september-2nd--september-8th" class="hash-link" aria-label="Direct link to Week 36 (September 2nd – September 8th)" title="Direct link to Week 36 (September 2nd – September 8th)">​</a></h2><ul><li>A retry mechanism has been added to Packit Service for when it interacts with the Testing Farm API. (<a href="https://github.com/packit/packit-service/pull/3165" target="_blank" rel="noopener noreferrer">packit-service#3165</a>)</li></ul>]]></content:encoded>
+            <author>akucerov@redhat.com (Alžběta Kučerová)</author>
+            <category>2026-September</category>
+            <category>2026</category>
+            <category>September</category>
+        </item>
         <item>
             <title><![CDATA[Week 35 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-35</link>
