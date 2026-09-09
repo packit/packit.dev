@@ -65,6 +65,7 @@ With this configuration, you'll get builds in all stable fedora releases
 * **identifier** - Suffix added to the name of a GitHub check run. 
   For example if you [set this to "mock"](https://github.com/rpm-software-management/mock/pull/902/checks?check_run_id=6530714905), then a check run for Rawhide would be
   named "rpm-build:fedora-rawhide-x86\_64:mock".
+  Additionally, this option has uses in relation to [Testing Farm](/docs/configuration/upstream/tests#optional-parameters) and [OpenScanHub](/docs/configuration#osh_diff_scan_after_copr_build) jobs.
 :::caution
 Make sure to configure this option if you are having multiple `copr_build` jobs in the configuration,
 otherwise the reporting may be incorrect.
