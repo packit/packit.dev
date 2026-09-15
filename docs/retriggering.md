@@ -94,9 +94,16 @@ This is a new feature, so the behaviour may be adjusted in the future.
 Please reach out back to us for help or with your suggestions.
 
 #### Running tests with a specific identifier
-It is possible to run a specific job via `/packit test` command. 
-The user just needs to specify the argument `--identifier <job_identifier>` and Packit will trigger only the job with this identifier.
-The whole command should look like this: `/packit test --identifier my-job-id`.
+It is possible to run a specific job via the `/packit test` command. 
+
+The user just needs to specify the `--identifier <job_identifier>` argument and Packit will trigger only the job with this identifier. Alternatively, `--id <job_identifier>` and `-i <job_identifier>` are also accepted.
+The whole command should look like this: 
+
+    /packit test --identifier my-job-id
+    /packit test --id my-job-id
+    /packit test -i my-job-id
+
+All of the above are equivalent. 
 You can also configure [`test_command.default_identifier`](/docs/configuration#default_identifier) to allow commonly used jobs
 to be triggered without the need for manual specification.
 
