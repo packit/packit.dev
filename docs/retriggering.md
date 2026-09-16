@@ -20,6 +20,11 @@ Packit is able to provide a help message summarizing all available commands and 
 
     /packit help
 
+It is also possible to query the usage of a particular command. For example:
+
+    /packit help test
+    /packit help pull-from-upstream
+
 ### copr_build
 For retriggering the [`copr_build`](/docs/configuration/upstream/copr_build) jobs, Packit is able to trigger new builds based on a pull request comment:
 
