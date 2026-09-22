@@ -20,6 +20,11 @@ Packit is able to provide a help message summarizing all available commands and 
 
     /packit-ci help
 
+It is also possible to query the usage of a particular command. For example:
+
+    /packit-ci help scratch-build
+    /packit-ci help test
+
 ## Restarting all CI jobs
 
 To restart the entire CI pipeline from the beginning, retrigger the [scratch build](#scratch-builds) — tests will automatically follow once it succeeds. There is no need to separately retrigger the tests.
