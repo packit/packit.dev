@@ -161,6 +161,10 @@ distro (otherwise the default would be `centos-stream-8`) and for
 * **skip_build** - Whether to skip the build phase and only run tests (defaults to false). 
   Enabling this will cause no Copr build to be built and installed into the testing environment, 
   only submitting request to Testing Farm (the selected components to be installed should be part of the TMT definitions).
+* **skip_install** - Whether to skip installing the Copr build artifacts in the testing environment (defaults to false).
+  Unlike `skip_build`, the Copr build still runs and its artifacts are attached to the Testing Farm request, but their
+  packages are not installed automatically (the artifacts are passed with `install: false`). Installing the desired
+  components is then left to the TMT definitions. This option is independent of `skip_build`.
 * **env** - A dictionary you can use to set any environment variable that will be available in the Testing Farm
   environment where the tests are run.
 * **identifier** – Suffix added to the name of a GitHub check run. This is needed
