@@ -2,11 +2,30 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2026-09-21T00:00:00.000Z</updated>
+    <updated>2026-09-29T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 39 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2026/week-39</id>
+        <link href="https://packit.dev/posts/weekly/2026/week-39"/>
+        <updated>2026-09-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 39 (September 23rd – September 29th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-39-september-23rd--september-29th">Week 39 (September 23rd – September 29th)<a href="#week-39-september-23rd--september-29th" class="hash-link" aria-label="Direct link to Week 39 (September 23rd – September 29th)" title="Direct link to Week 39 (September 23rd – September 29th)">​</a></h2><ul><li>There is a new <code>skip_install</code> option for test jobs to omit automatic installation
+of Copr packages on a Testing Farm runner.
+(<a href="https://github.com/packit/packit-service/pull/3190" target="_blank" rel="noopener noreferrer">packit-service#3190</a>)</li><li>Fixed overwriting of Log Detective analysis for noarch packages built on different arches.
+(<a href="https://github.com/packit/packit-service/pull/3196" target="_blank" rel="noopener noreferrer">packit-service#3196</a>)</li></ul>]]></content>
+        <author>
+            <name>Nikola Forró</name>
+            <email>nforro@redhat.com</email>
+            <uri>https://github.com/nforro</uri>
+        </author>
+        <category label="2026-September" term="2026-September"/>
+        <category label="2026" term="2026"/>
+        <category label="September" term="September"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 38 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2026/week-38</id>

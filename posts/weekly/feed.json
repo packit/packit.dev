@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-39",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-39-september-23rd--september-29th\">Week 39 (September 23rd – September 29th)<a href=\"#week-39-september-23rd--september-29th\" class=\"hash-link\" aria-label=\"Direct link to Week 39 (September 23rd – September 29th)\" title=\"Direct link to Week 39 (September 23rd – September 29th)\">​</a></h2><ul><li>There is a new <code>skip_install</code> option for test jobs to omit automatic installation\nof Copr packages on a Testing Farm runner.\n(<a href=\"https://github.com/packit/packit-service/pull/3190\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3190</a>)</li><li>Fixed overwriting of Log Detective analysis for noarch packages built on different arches.\n(<a href=\"https://github.com/packit/packit-service/pull/3196\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3196</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-39",
+            "title": "Week 39 in Packit",
+            "summary": "Week 39 (September 23rd – September 29th)",
+            "date_modified": "2026-09-29T00:00:00.000Z",
+            "author": {
+                "name": "Nikola Forró",
+                "url": "https://github.com/nforro"
+            },
+            "tags": [
+                "2026-September",
+                "2026",
+                "September"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-38",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-38-september-15th--september-21st\">Week 38 (September 15th – September 21st)<a href=\"#week-38-september-15th--september-21st\" class=\"hash-link\" aria-label=\"Direct link to Week 38 (September 15th – September 21st)\" title=\"Direct link to Week 38 (September 15th – September 21st)\">​</a></h2><ul><li>New <code>skip_install</code> option for test jobs to omit automatic installation of\nCopr packages on Testing Farm runner. (<a href=\"https://github.com/packit/packit/pull/2776\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2776</a>)</li><li>There are also improvements to <code>/packit help</code> from an external contributor\n<a href=\"https://github.com/burakeyler\" target=\"_blank\" rel=\"noopener noreferrer\">@burakeyler</a>. (<a href=\"https://github.com/packit/packit-service/pull/3186\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3186</a>)</li><li><code>Status.get_downstream_prs()</code> now uses <code>itertools.islice()</code> to consume only\nthe required number of PRs from the <code>Iterable</code> returned\nby <code>ForgejoProject.get_pr_list()</code>, avoiding loading all PRs into memory. (<a href=\"https://github.com/packit/packit/pull/2771\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2771</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-38",

@@ -4,10 +4,25 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 21 Sep 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 29 Sep 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 39 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-39</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-39</guid>
+            <pubDate>Tue, 29 Sep 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 39 (September 23rd – September 29th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-39-september-23rd--september-29th">Week 39 (September 23rd – September 29th)<a href="#week-39-september-23rd--september-29th" class="hash-link" aria-label="Direct link to Week 39 (September 23rd – September 29th)" title="Direct link to Week 39 (September 23rd – September 29th)">​</a></h2><ul><li>There is a new <code>skip_install</code> option for test jobs to omit automatic installation
+of Copr packages on a Testing Farm runner.
+(<a href="https://github.com/packit/packit-service/pull/3190" target="_blank" rel="noopener noreferrer">packit-service#3190</a>)</li><li>Fixed overwriting of Log Detective analysis for noarch packages built on different arches.
+(<a href="https://github.com/packit/packit-service/pull/3196" target="_blank" rel="noopener noreferrer">packit-service#3196</a>)</li></ul>]]></content:encoded>
+            <author>nforro@redhat.com (Nikola Forró)</author>
+            <category>2026-September</category>
+            <category>2026</category>
+            <category>September</category>
+        </item>
         <item>
             <title><![CDATA[Week 38 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-38</link>
