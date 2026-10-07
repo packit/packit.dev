@@ -9,13 +9,14 @@ When running tests in Fedora CI, Packit automatically provides TMT context dimen
 
 The following TMT context dimensions are automatically set by Packit for for rpminspect, rpmlint, and custom Fedora CI test jobs:
 
-| Context           | Description                        | Example Values                                 |
-| ----------------- | ---------------------------------- | ---------------------------------------------- |
-| `arch`            | Processor architecture             | `x86_64`                                       |
-| `distro`          | Distribution/compose being tested  | `centos-stream-9`, `centos-stream-10`          |
-| `dist-git-branch` | Target branch of the dist-git PR   | `rawhide`, `f41`, `f40`, `epel-9`, `epel-10.1` |
-| `initiator`       | Who triggered the test             | `fedora-ci`                                    |
-| `trigger`         | Event type that triggered the test | `commit`                                       |
+| Context           | Description                               | Example Values                                 |
+| ----------------- | ----------------------------------------- | ---------------------------------------------- |
+| `arch`            | Processor architecture                    | `x86_64`                                       |
+| `distro`          | Distribution/compose being tested         | `centos-stream-9`, `centos-stream-10`          |
+| `dist-git-branch` | Target branch of the dist-git PR          | `rawhide`, `f41`, `f40`, `epel-9`, `epel-10.1` |
+| `initiator`       | Who triggered the test                    | `fedora-ci`                                    |
+| `trigger`         | Event type that triggered the test        | `commit`                                       |
+| `deployment`      | Packit deployment that triggered the test | `prod`, `stg`, `dev`                           |
 
 :::tip
 
