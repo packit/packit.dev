@@ -844,6 +844,14 @@ Additionally, the target branch of the pull request must match the branch specif
 the configuration for that job. For more details on setting up such a job, refer to
 [this documentation](/docs/configuration/upstream/copr_build.md).
 
+:::caution Multiple OSH jobs
+
+If `osh_diff_scan_after_copr_build` is enabled and you have multiple Copr build jobs with the `pull_request` trigger, each will trigger its own OSH differential scan.
+To ensure each scan compares against the right base build, assign matching `identifier` values to each `pull_request`-triggered job and its corresponding `commit`-triggered job.
+If identifiers are missing or don't match, Packit falls back to the first `commit`-triggered job configured for that branch — which can mean multiple scans end up comparing against the same (possibly wrong) base build.
+
+:::
+
 :::info
 This functionality is an initial prototype and both configuration and functionality
 will likely change in the future.
