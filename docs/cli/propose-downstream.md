@@ -71,6 +71,31 @@ We newly support `propose-downstream` also for CentOS Stream, see the configurat
   Guidelines](https://fedoraproject.org/wiki/Packaging:SourceURL#Referencing_Source).
 Then it copies the files listed in `files_to_sync` (which by default includes the spec file) from the upstream repo to downstream and creates the downstream PR.
 
+## Dry-run mode
+
+You can use `--dry-run` to test the update process locally without pushing to Fedora infrastructure:
+
+```
+$ packit propose-downstream --dry-run
+```
+
+In dry-run mode, packit will:
+- Download source archives locally
+- Update the `sources` file (using `fedpkg new-sources --offline`)
+- Sync files and generate patches
+- Update the spec file
+- Create local commits in dist-git
+
+But it will **skip**:
+- Uploading archives to lookaside cache (only updates `sources` file)
+- Pushing commits to remote
+- Creating pull requests
+
+This allows you to:
+- Test the update locally before pushing to Fedora
+- Perform local builds (e.g., `fedpkg local` or `rpmbuild`) to verify the changes
+- Inspect the dist-git changes before they go live
+
 ## Help
 
     Usage: packit propose-downstream [OPTIONS] [PATH_OR_URL] [VERSION]
@@ -109,4 +134,6 @@ Then it copies the files listed in `files_to_sync` (which by default includes th
       --upstream-ref TEXT     Git ref of the last upstream commit in the current
                               branch from which packit should generate patches
                               (this option implies the repository is source-git).
+      --dry-run               Prepare dist-git repository locally without pushing
+                              to remote or uploading to lookaside cache.
       -h, --help              Show this message and exit.

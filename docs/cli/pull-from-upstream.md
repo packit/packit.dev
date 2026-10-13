@@ -21,6 +21,34 @@ upstream release. This command is meant to be called from **dist-git repository*
     the name of the git tag (or `upstream_tag_template` is configured).
 
 
+## Dry-run mode
+
+You can use `--dry-run` to test the update process locally without pushing to Fedora infrastructure:
+
+```
+$ cd /path/to/dist-git/repo
+$ packit pull-from-upstream --dry-run --dist-git-branch f42
+```
+
+In dry-run mode, packit will:
+- Clone or fetch upstream repository
+- Download source archives locally
+- Update the `sources` file (using `fedpkg new-sources --offline`)
+- Sync files from upstream and generate patches
+- Update the spec file
+- Create local commits in dist-git
+
+But it will **skip**:
+- Uploading archives to lookaside cache (only updates `sources` file)
+- Pushing commits to remote
+- Creating pull requests
+
+This allows you to:
+- Test the update locally before pushing to Fedora
+- Perform local builds (e.g., `fedpkg local` or `rpmbuild`) to verify the changes
+- Inspect the dist-git changes before they go live
+
+
 ## Help
 
     Usage: packit pull-from-upstream [OPTIONS] [PATH_OR_URL] [VERSION]
@@ -53,4 +81,6 @@ upstream release. This command is meant to be called from **dist-git repository*
                               available, like in a monorepo configuration. Use it
                               multiple times to select multiple packages.Defaults
                               to all the packages listed inside the config.
+      --dry-run               Prepare dist-git repository locally without pushing
+                              to remote or uploading to lookaside cache.
       -h, --help              Show this message and exit.
