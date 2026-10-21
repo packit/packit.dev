@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-42",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-42-october-14th--october-20th\">Week 42 (October 14th – October 20th)<a href=\"#week-42-october-14th--october-20th\" class=\"hash-link\" aria-label=\"Direct link to Week 42 (October 14th – October 20th)\" title=\"Direct link to Week 42 (October 14th – October 20th)\">​</a></h2><ul><li>Packit now supports submitting Copr builds from dist-git repositories.\n(<a href=\"https://github.com/packit/packit-service/pull/3208\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3208</a>)</li><li>Testing Farm requests targeting RHEL 9 or RHEL 10 now use the appropriate nightly compose automatically.\n(<a href=\"https://github.com/packit/packit-service/pull/3209\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3209</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-42",
+            "title": "Week 42 in Packit",
+            "summary": "Week 42 (October 14th – October 20th)",
+            "date_modified": "2026-10-20T00:00:00.000Z",
+            "author": {
+                "name": "Dalibor Kříčka",
+                "url": "https://github.com/DaliborKr"
+            },
+            "tags": [
+                "2026-October",
+                "2026",
+                "October"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-41",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-41-october-7th--october-13th\">Week 41 (October 7th – October 13th)<a href=\"#week-41-october-7th--october-13th\" class=\"hash-link\" aria-label=\"Direct link to Week 41 (October 7th – October 13th)\" title=\"Direct link to Week 41 (October 7th – October 13th)\">​</a></h2><ul><li>Pull requests created by Packit in Fedora dist-git now contain information in their descriptions that Packit force-pushes to its own PR branches when a new upstream PR lands. (<a href=\"https://github.com/packit/packit/pull/2780\" target=\"_blank\" rel=\"noopener noreferrer\">packit#2780</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-41",
