@@ -240,6 +240,7 @@ The distinct `identifier` values are needed for correct reporting with multiple
 does not need permission to build in the upstream Copr project. It matches
 branches other than `main`, including `main-fix` and `main/probe`.
 Change `main` in both patterns if your default branch has a different name.
+Escape regex metacharacters in the name (e.g. `release\.1` for `release.1`).
 
 These filters apply in both repositories: a push to upstream's `main` runs the
 job with the custom project without a duplicate build in the default project.
