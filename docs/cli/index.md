@@ -126,6 +126,9 @@ For the macOS you can also use seamless virtualization via [Lima](https://lima-v
 
 ## Commands
 
+See [CLI configuration](/docs/configuration/jobs#cli-configuration) for which
+configuration values CLI commands use and which commands read job-level values.
+
 * [build](/docs/cli/build/)
 * [create-update](/docs/cli/create-update/)
 * [init](/docs/cli/init/)
