@@ -202,6 +202,41 @@ jobs:
 In this example, the job `some-job` would override [`specfile_path`](/docs/configuration#specfile_path) to
 `somewhere/else/package.spec` instead of using `./package.spec`.
 
+### CLI configuration
+
+:::note
+
+Job-level values of keys also available at the top level, such as `actions`,
+`version_update_mask` and `notifications`, are accepted and validated when the
+configuration is loaded. They become part of that job's effective configuration,
+following the override rules above. Packit Service selects the matching job and
+uses its effective configuration.
+
+Ordinary Packit CLI commands use the package configuration instead: top-level
+values, or package-level values when using `packages`. For example, if you set
+different `actions` or `version_update_mask` values at the top level and in a job,
+the ordinary CLI workflow uses the top-level value. Valid job-level overrides
+do not change that workflow. Invalid job-level values can still make loading or
+validation fail, even when a valid value would not be used by the CLI.
+
+The following CLI commands read job-level values:
+
+* `packit prepare-sources --job-config-index N` selects a job and executes its
+  `actions`. This is an internal option used by Packit Service.
+* The experimental `packit build in-image-builder` selects a `vm_image_build`
+  job (the first by default, or by index) and reads its image settings.
+* `packit propose-downstream` and `packit pull-from-upstream` read the matching
+  job's `dist_git_branches`.
+* `packit build in-copr` reads the first qualifying Copr job's `project` when
+  no `--project` option is given.
+* `packit validate` and `packit config validate` validate job-level values.
+  Invalid values fail validation; valid values do not change the CLI workflow.
+
+CLI options, such as `--project` and branch options, take precedence over both
+package-level and job-level configuration values.
+
+:::
+
 ## Supported jobs
 
 * Upstream jobs
