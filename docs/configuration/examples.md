@@ -114,6 +114,16 @@ to place the commands necessary for the creation. You also have to include the a
 be moved to the dist-git repo so that it is then handled by Packit from there. **Note:** Beware of how Packit uploads
 files to lookaside cache or adds them to dist-git (see [this note][files_to_sync_info] for more details).
 
+**Note:** During `propose-downstream` / `pull-from-upstream`, the configured `post-upstream-clone`
+and `pre-sync` actions run once per target dist-git branch processed by the release-sync loop
+(when reached), not once per invocation. A non-reproducible generator (e.g. including changing
+timestamps or randomness) can therefore produce a different archive hash on each run, triggering
+another upload for each branch when that content is absent from the lookaside cache and uploads
+are enabled. Make your generation reproducible: identical inputs should produce byte-identical
+archives. Packit automatically checks the lookaside cache by content hash before uploading.
+It skips the upload call when all archives already exist there for the same package and filenames,
+their filenames occur in the branch's `sources` file, and `--force-new-sources` is not set.
+
 
 <details>
   <summary>Creating an archive using tito and syncing it to dist-git repo</summary>
