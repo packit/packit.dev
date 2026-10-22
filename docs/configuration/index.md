@@ -15,6 +15,10 @@ You should place the file in the root of your upstream repo. Packit accepts thes
 * `packit.yml`
 
 Both Packit Service and Packit CLI use this configuration file.
+Ordinary CLI commands use top-level or package-level values for keys shared with
+jobs, rather than job-level overrides. See
+[CLI configuration and exceptions](/docs/configuration/jobs#cli-configuration)
+for the commands that read job-level values.
 
 :::tip Writing complex configurations
 
