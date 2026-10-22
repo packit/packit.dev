@@ -206,6 +206,50 @@ Configuring building in Copr project `@oamg/convert2rhel`:
 
 
 <details>
+  <summary>Running Copr builds from a fork without changing the upstream project</summary>
+
+An upstream repository can use explicit `owner` and `project` values to build in a
+custom Copr project. If a fork is not allowed to use that project, the same job
+fails with a permissions error when run from the fork.
+
+Add a second job without `owner` or `project` to use Packit's default Copr project
+naming, which includes the fork's namespace. In this example, the default branch
+is `main` and fork work happens on other branches:
+
+```yaml
+jobs:
+- job: copr_build
+  trigger: commit
+  branch: main$
+  identifier: upstream
+  owner: "@oamg"
+  project: convert2rhel
+  targets:
+    - fedora-stable
+
+- job: copr_build
+  trigger: commit
+  branch: '^(?!main$).*'
+  identifier: fork
+  targets:
+    - fedora-stable
+```
+
+The distinct `identifier` values are needed for correct reporting with multiple
+`copr_build` jobs. The second job uses Packit's default owner and project, so it
+does not need permission to build in the upstream Copr project. It matches
+branches other than `main`, including `main-fix` and `main/probe`.
+Change `main` in both patterns if your default branch has a different name.
+Escape regex metacharacters in the name (e.g. `release\.1` for `release.1`).
+
+These filters apply in both repositories: a push to upstream's `main` runs the
+job with the custom project without a duplicate build in the default project.
+A push to the fork's `main` still selects that job and can fail its permissions
+check; use a non-default branch for fork builds.
+
+</details>
+
+<details>
   <summary>Running more types of builds in Copr</summary>
 
 ```yaml
