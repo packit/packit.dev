@@ -40,8 +40,14 @@ With this configuration, you'll get builds in all stable fedora releases
 
 ## Optional parameters
 
-* **branch** - the name of the branch we want to build for when using **commit** trigger 
-(defaults to the repository's default branch) or target branch when using **pull_request** trigger
+* **branch** - the branch name or Python regular expression to build for when using **commit** trigger
+  (defaults to the repository's default branch). Matching uses Python's
+  [`re.match`](https://docs.python.org/3/library/re.html#re.match): it starts at the
+  beginning of the branch name, so `^` is optional, and does not need to match the whole name.
+  For example, `branch: main` also matches `main-fix` and `main/probe`;
+  use `branch: main$` to match just `main`.
+  To build on every branch except `main`, use `branch: '^(?!main$).*'`.
+  With **pull_request** trigger, this option specifies the target branch
   (default behaviour is reacting to all pull requests in the repository).
 * **timeout** - (seconds) give up watching a build after timeout, defaults to 7200s, i.e. 2 hours.
 * **owner** - a namespace in Copr where the build should happen (defaults to packit).
