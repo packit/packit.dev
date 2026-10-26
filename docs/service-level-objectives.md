@@ -42,8 +42,9 @@ system so we reduced the number here.
 
 ![SLO 3](img/slo/slo3.png)
 
-If you are interested, here's the accompanying research:
-[github.com/packit/research/../error-budgets](https://github.com/packit/research/tree/main/research/monitoring/error-budgets)
+If you want to know more about how these objectives are built, how we measure
+them and why we picked them, see
+[How our SLOs are built](./service-level-objectives-details.md).
 
 Unfortunately, we cannot share our Grafana instance with you since it's hidden
 behind a firewall.
