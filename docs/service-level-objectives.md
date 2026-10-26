@@ -65,15 +65,19 @@ system so we reduced the number here.
 
 To know how we are doing against the objectives, we measure these indicators:
 
-| Objective | Indicators                                                                                                                                                                                                   |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| SLO1      | Time it takes Packit to set the first status on a PR or commit after receiving the event. Number of PRs or commits with no status from Packit after 25 seconds (a looser limit than the 15 seconds of SLO1). |
-| SLO2      | Number of Copr builds queued, started and finished. Time from a Copr build finishing to Packit reporting the final status. Time from accepting a Copr build to it finishing.                                 |
-| SLO3      | Number of test runs queued, started and finished. Time from submitting a test run to Packit setting its final status.                                                                                        |
+| Objective | Indicators                                                                                                                                                                                                       |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| SLO1      | Time it takes Packit to set the first status on a PR or commit after receiving the event. Number of PRs or commits whose first status took longer than 25 seconds (a looser limit than the 15 seconds of SLO1). |
+| SLO2      | Number of Copr builds queued, started and finished. Time from a Copr build finishing to Packit reporting the final status. Time from accepting a Copr build to it finishing.                                     |
+| SLO3      | Number of test runs queued, started and finished. Time from submitting a test run to Packit setting its final status.                                                                                            |
 
 The counters tell us how many jobs entered and left the pipeline. If jobs are
 queued or started but never finish, it shows up as a gap between the numbers.
 The durations tell us how long our users wait.
+
+Both SLO1 indicators are recorded only when Packit sets a first status. An event
+that Packit drops completely, without setting any status, does not show up in
+either of them.
 
 ### How we measure
 
@@ -83,10 +87,21 @@ the objectives are visualised in Grafana.
 
 Durations are recorded as Prometheus
 [histograms](https://prometheus.io/docs/concepts/metric_types/#histogram). The
-histogram buckets are aligned with the SLO thresholds (for example 15 seconds
-for SLO1 and 12 hours for SLO3), so we can directly compute
-[what percentage of requests](https://prometheus.io/docs/practices/histograms/)
-fell under the threshold, instead of relying on averages.
+histogram buckets are aligned with the SLO time thresholds (for example 15
+seconds for SLO1 and 12 hours for SLO3), so we can directly compute
+[what percentage of the measured jobs](https://prometheus.io/docs/practices/histograms/)
+finished within the threshold, instead of relying on averages.
+
+The histograms record only the time, whatever the outcome of the job. This means
+the current indicators approximate SLO2 and SLO3 rather than compute them
+exactly:
+
+- The time to the final test status is recorded for every finished test run,
+  including runs that ended with an error or were canceled. A Testing Farm
+  error reported within 12 hours therefore counts as within the threshold.
+- The time to the final build status is recorded only when Packit reports
+  success or failure. A build that ends with an error on Packit's side is
+  missing from the histogram completely.
 
 Unfortunately, we cannot share our Grafana instance with you since it's hidden
 behind a firewall.
