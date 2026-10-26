@@ -1,6 +1,6 @@
 ---
 title: How our SLOs are built
-sidebar_position: 12
+sidebar_position: 12.5
 ---
 
 # How our SLOs are built
