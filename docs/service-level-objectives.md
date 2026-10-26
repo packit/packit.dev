@@ -65,11 +65,11 @@ system so we reduced the number here.
 
 To know how we are doing against the objectives, we measure these indicators:
 
-| Objective | Indicators                                                                                                                                                                    |
-| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SLO1      | Time it takes Packit to set the first status on a PR or commit after receiving the event. Number of PRs or commits with no status from Packit after the time limit.           |
-| SLO2      | Number of Copr builds queued, started and finished. Time from a Copr build finishing to Packit reporting the final status. Time from accepting a Copr build to it finishing.  |
-| SLO3      | Number of test runs queued, started and finished. Time from submitting a test run to Packit setting its final status.                                                        |
+| Objective | Indicators                                                                                                                                                                                                   |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| SLO1      | Time it takes Packit to set the first status on a PR or commit after receiving the event. Number of PRs or commits with no status from Packit after 25 seconds (a looser limit than the 15 seconds of SLO1). |
+| SLO2      | Number of Copr builds queued, started and finished. Time from a Copr build finishing to Packit reporting the final status. Time from accepting a Copr build to it finishing.                                 |
+| SLO3      | Number of test runs queued, started and finished. Time from submitting a test run to Packit setting its final status.                                                                                        |
 
 The counters tell us how many jobs entered and left the pipeline. If jobs are
 queued or started but never finish, it shows up as a gap between the numbers.
@@ -98,7 +98,7 @@ Before defining the objectives, we asked the most active users of Packit
 the service in terms of latency, reliability and availability. The objectives
 are derived from their answers.
 
-### SLO1: a quick first status
+### SLO1: A quick first status
 
 The most consistent request was a quick "accepted" status: an indication that
 Packit has seen the change and will deal with it. Users were fine with waiting
@@ -109,7 +109,7 @@ impossible to tell whether Packit is working or has dropped the event. Hence the
 first objective is about the first status only, with a strict time limit and a
 high percentage.
 
-### SLO2: builds end with a real answer
+### SLO2: Builds end with a real answer
 
 Copr builds for pull requests are Packit's core functionality. What matters to
 users is that a build ends with a real answer (success or failure) and is not
@@ -122,7 +122,7 @@ therefore depend mostly on the project being built. That's why SLO2 measures
 the part Packit is responsible for: reporting the final result once Copr has
 finished the build.
 
-### SLO3: tests with a lower target
+### SLO3: Tests with a lower target
 
 Tests are similar to builds, but they run in Testing Farm, which is outside of
 our control and is a more complex system (provisioning machines, running tests,
