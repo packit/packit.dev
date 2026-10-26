@@ -102,6 +102,12 @@ exactly:
 - The time to the final build status is recorded only when Packit reports
   success or failure. A build that ends with an error on Packit's side is
   missing from the histogram completely.
+- Packit reports every unsuccessful Copr build as a failure, including builds
+  that failed because of a Copr infrastructure problem. Such builds are
+  measured as failures, even though they are errors by the definitions above.
+- A failed build is not reported, and so not measured, when its SRPM build has
+  already failed (Packit has reported that failure already) or when a newer
+  build for the same target exists.
 
 Unfortunately, we cannot share our Grafana instance with you since it's hidden
 behind a firewall.
@@ -123,6 +129,11 @@ No status at all is frustrating, both for our users and for us, because it's
 impossible to tell whether Packit is working or has dropped the event. Hence the
 first objective is about the first status only, with a strict time limit and a
 high percentage.
+
+In late 2022, the SLO1 limit was raised from 15 to 30 seconds to cover setting
+all statuses ([packit-service#1776](https://github.com/packit/packit-service/pull/1776)).
+In March 2023, SLO1 was changed to the current definition: the first status
+within 15 seconds.
 
 ### SLO2: Builds end with a real answer
 
