@@ -221,12 +221,13 @@ The following CLI commands read job-level values:
 
 * `packit prepare-sources --job-config-index N` uses the effective configuration
   of the job at index N (0-based) instead of the package configuration, and
-  executes its `actions` as needed. With `packages`, the index counts the jobs
-  associated with each package. This is an internal option used by Packit Service.
+  executes its `actions` as needed. A job with multiple triggers counts once per
+  trigger; with `packages`, only jobs associated with each package are counted.
+  This is an internal option used by Packit Service.
 * The experimental `packit build in-image-builder` uses the first
   `vm_image_build` job by default, or the job at `--job-config-index` (counting
-  all jobs for the package), which must be a `vm_image_build` job, and reads its
-  image settings.
+  all jobs for the package after expanding multiple triggers), which must be a
+  `vm_image_build` job, and reads its image settings.
 * `packit propose-downstream` and `packit pull-from-upstream` read the matching
   job's `dist_git_branches`.
 * `packit build in-copr` reads the first qualifying Copr job's `project` when
