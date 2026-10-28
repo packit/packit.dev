@@ -120,9 +120,15 @@ and `pre-sync` actions run once per target dist-git branch processed by the rele
 timestamps or randomness) can therefore produce a different archive hash on each run, triggering
 another upload for each branch when that content is absent from the lookaside cache and uploads
 are enabled. Make your generation reproducible: identical inputs should produce byte-identical
-archives. Packit automatically checks the lookaside cache by content hash before uploading.
-It skips the upload call when all archives already exist there for the same package and filenames,
-their filenames occur in the branch's `sources` file, and `--force-new-sources` is not set.
+archives. If that is not possible, have the action check Fedora's lookaside cache for the archive by
+name and, if present, download an appropriate copy instead of generating it again. The cache lists
+each package's files at `https://src.fedoraproject.org/repo/pkgs/<package>/`; when configured, the
+package name is available in `PACKIT_DOWNSTREAM_PACKAGE_NAME`. When handling sources, Packit still
+runs the upload step if an archive's filename does not occur in the branch's `sources` file, but
+fedpkg/centpkg do not upload a file whose name and hash are already in the cache for the same package.
+Packit skips the upload step entirely only when all archives already exist in the cache for the same
+package and filenames, their filenames occur in the branch's `sources` file, and `--force-new-sources`
+is not set.
 
 
 <details>
