@@ -204,8 +204,6 @@ In this example, the job `some-job` would override [`specfile_path`](/docs/confi
 
 ### CLI configuration
 
-:::note
-
 Job-level values of keys also available at the top level, such as `actions`,
 `version_update_mask` and `notifications`, are accepted and validated when the
 configuration is loaded. They become part of that job's effective configuration,
@@ -221,10 +219,14 @@ validation fail, even when a valid value would not be used by the CLI.
 
 The following CLI commands read job-level values:
 
-* `packit prepare-sources --job-config-index N` selects a job and executes its
-  `actions`. This is an internal option used by Packit Service.
-* The experimental `packit build in-image-builder` selects a `vm_image_build`
-  job (the first by default, or by index) and reads its image settings.
+* `packit prepare-sources --job-config-index N` uses the effective configuration
+  of the job at index N (0-based) instead of the package configuration, and
+  executes its `actions` as needed. With `packages`, the index counts the jobs
+  associated with each package. This is an internal option used by Packit Service.
+* The experimental `packit build in-image-builder` uses the first
+  `vm_image_build` job by default, or the job at `--job-config-index` (counting
+  all jobs for the package), which must be a `vm_image_build` job, and reads its
+  image settings.
 * `packit propose-downstream` and `packit pull-from-upstream` read the matching
   job's `dist_git_branches`.
 * `packit build in-copr` reads the first qualifying Copr job's `project` when
@@ -234,8 +236,6 @@ The following CLI commands read job-level values:
 
 CLI options, such as `--project` and branch options, take precedence over both
 package-level and job-level configuration values.
-
-:::
 
 ## Supported jobs
 
