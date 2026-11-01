@@ -99,6 +99,7 @@ that can change the behaviour of your Copr builds:
 * [**update_release**](https://packit.dev/docs/configuration#update_release)
 * [**release_suffix**](https://packit.dev/docs/configuration#release_suffix)
 * [**srpm_build_deps**](https://packit.dev/docs/configuration#srpm_build_deps)
+* [**copr_dist_git**](https://packit.dev/docs/configuration#copr_dist_git)
 
 ## Retriggering
 
