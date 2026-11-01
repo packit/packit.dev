@@ -40,7 +40,9 @@ e.g. cloning an upstream repo.
 
 Like other keys, the `actions` can be defined on the top, package or job level.
 Be aware that when overriding, the whole `actions` mapping is replaced
-instead of merging per action.
+instead of merging per action. Job-level `actions` apply to Packit Service jobs;
+ordinary CLI commands use the top-level or package-level `actions` (see
+[CLI configuration](/docs/configuration/jobs#cli-configuration)).
 
 For example, with `actions` defined both at the top level and in a job:
 
