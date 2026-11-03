@@ -621,6 +621,10 @@ instead of the location defined in the spec-file.
 (*list of strings*) A list of RPM dependencies that are needed for your actions to be run when building a SRPM.
 The dependencies are installed into the Copr build environment each time the build is triggered.
 
+#### use_copr_dist_git_build
+(*bool*) Set to `true` to tell Packit Service that the repository is in dist-git format and to submit Copr builds
+using Copr's dist-git build workflow. Defaults to `false`. Packit CLI ignores this option.
+
 #### copr_dist_git
 (*string*) Name of the dist-git instance configured in Copr to use when submitting a dist-git build.
 This option is used with `use_copr_dist_git_build` and defaults to `fedora`.
