@@ -4,10 +4,24 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Tue, 20 Oct 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 09 Nov 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 45 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-45</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-45</guid>
+            <pubDate>Mon, 09 Nov 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 45 (November 3rd – November 9th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-45-november-3rd--november-9th">Week 45 (November 3rd – November 9th)<a href="#week-45-november-3rd--november-9th" class="hash-link" aria-label="Direct link to Week 45 (November 3rd – November 9th)" title="Direct link to Week 45 (November 3rd – November 9th)">​</a></h2><ul><li>Fedora review has been added as an optional CI check on dist-git pull requests.
+It doesn't run by default, to trigger it add <code>/packit-ci test fedora-review</code> comment.
+(<a href="https://github.com/packit/packit-service/pull/3201" target="_blank" rel="noopener noreferrer">packit-service#3201</a>)</li></ul>]]></content:encoded>
+            <author>nforro@redhat.com (Nikola Forró)</author>
+            <category>2026-November</category>
+            <category>2026</category>
+            <category>November</category>
+        </item>
         <item>
             <title><![CDATA[Week 42 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-42</link>

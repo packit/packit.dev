@@ -2,11 +2,29 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://packit.dev/posts/weekly</id>
     <title>Packit Weekly</title>
-    <updated>2026-10-20T00:00:00.000Z</updated>
+    <updated>2026-11-09T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://packit.dev/posts/weekly"/>
     <subtitle>Weekly updates by Packit</subtitle>
     <icon>https://packit.dev/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Week 45 in Packit]]></title>
+        <id>https://packit.dev/posts/weekly/2026/week-45</id>
+        <link href="https://packit.dev/posts/weekly/2026/week-45"/>
+        <updated>2026-11-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Week 45 (November 3rd – November 9th)]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-45-november-3rd--november-9th">Week 45 (November 3rd – November 9th)<a href="#week-45-november-3rd--november-9th" class="hash-link" aria-label="Direct link to Week 45 (November 3rd – November 9th)" title="Direct link to Week 45 (November 3rd – November 9th)">​</a></h2><ul><li>Fedora review has been added as an optional CI check on dist-git pull requests.
+It doesn't run by default, to trigger it add <code>/packit-ci test fedora-review</code> comment.
+(<a href="https://github.com/packit/packit-service/pull/3201" target="_blank" rel="noopener noreferrer">packit-service#3201</a>)</li></ul>]]></content>
+        <author>
+            <name>Nikola Forró</name>
+            <email>nforro@redhat.com</email>
+            <uri>https://github.com/nforro</uri>
+        </author>
+        <category label="2026-November" term="2026-November"/>
+        <category label="2026" term="2026"/>
+        <category label="November" term="November"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Week 42 in Packit]]></title>
         <id>https://packit.dev/posts/weekly/2026/week-42</id>
