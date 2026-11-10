@@ -7,6 +7,7 @@ repos:
     rev: v4.0.0-alpha.8
     hooks:
       - id: prettier
+        language_version: 22.14.0
         exclude: archetypes|docs|data|layouts|resources|source-git|static|themes/|posts/aws-and-image-builder/index.md
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
