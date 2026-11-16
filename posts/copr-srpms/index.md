@@ -42,7 +42,7 @@ but weren't aware of the details and how would this fit our use case.
 
 ### Implementation of the Copr SRPMs
 
-After some research of the [Copr custom source method](https://docs.pagure.org/copr.copr/custom_source_method.html), we
+After some research of the [Copr custom source method](https://docs.copr.fedorainfracloud.org/custom_source_method.html), we
 decided to give it a try. To make Copr build the SRPMs, Copr needs to be provided
 with a script that will prepare the sources used to build an SRPM.
 Therefore, we created the `packit prepare-sources` command, which mostly reuses existing code that is run also in the sandbox

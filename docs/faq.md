@@ -19,7 +19,7 @@ about the process [here](/docs/guide/#2-approval).
 
 Since Packit Service builds your PRs in Fedora Copr build service, by using
 Packit-as-a-service, your software needs to comply with [Copr
-rules](https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr).
+rules](https://docs.copr.fedorainfracloud.org/user_documentation.html#what-i-can-build-in-copr).
 If any of these points are violated, we'll remove the builds and may put you on
 a blocklist, so you won't be able to use the service again.
 
