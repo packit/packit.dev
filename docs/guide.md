@@ -214,7 +214,7 @@ message on your commits.
 
 Besides that:
 * If you want to configure builds via Packit,
-  your software needs to comply with [Copr guidelines](https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr)
+  your software needs to comply with [Copr guidelines](https://docs.copr.fedorainfracloud.org/user_documentation.html#what-i-can-build-in-copr)
   since we use [Fedora Copr](https://copr.fedorainfracloud.org) for the builds.
   Therefore, please, make sure you read them before configuring the [Packit build job](/docs/configuration/upstream/copr_build).
 * If you are interested in using [internal instance of the Testing Farm](https://docs.testing-farm.io/Testing%20Farm/0.1/services.html#_red_hat_ranch)
