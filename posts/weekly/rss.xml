@@ -4,10 +4,22 @@
         <title>Packit Weekly</title>
         <link>https://packit.dev/posts/weekly</link>
         <description>Weekly updates by Packit</description>
-        <lastBuildDate>Mon, 09 Nov 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 20 Nov 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Week 46 in Packit]]></title>
+            <link>https://packit.dev/posts/weekly/2026/week-46</link>
+            <guid>https://packit.dev/posts/weekly/2026/week-46</guid>
+            <pubDate>Fri, 20 Nov 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Week 46 (November 14th – November 20th)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="week-46-november-14th--november-20th">Week 46 (November 14th – November 20th)<a href="#week-46-november-14th--november-20th" class="hash-link" aria-label="Direct link to Week 46 (November 14th – November 20th)" title="Direct link to Week 46 (November 14th – November 20th)">​</a></h2><ul><li>In the Packit dashboard, you can now click a Testing Farm run’s pipeline ID to check its current state before the results link is available. (<a href="https://github.com/packit/dashboard/pull/551" target="_blank" rel="noopener noreferrer">dashboard#551</a>)</li></ul>]]></content:encoded>
+            <author>dkricka@redhat.com (Dalibor Kříčka)</author>
+            <category>2026-November</category>
+            <category>2026</category>
+            <category>November</category>
+        </item>
         <item>
             <title><![CDATA[Week 45 in Packit]]></title>
             <link>https://packit.dev/posts/weekly/2026/week-45</link>

@@ -5,6 +5,23 @@
     "description": "Weekly updates by Packit",
     "items": [
         {
+            "id": "https://packit.dev/posts/weekly/2026/week-46",
+            "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-46-november-14th--november-20th\">Week 46 (November 14th – November 20th)<a href=\"#week-46-november-14th--november-20th\" class=\"hash-link\" aria-label=\"Direct link to Week 46 (November 14th – November 20th)\" title=\"Direct link to Week 46 (November 14th – November 20th)\">​</a></h2><ul><li>In the Packit dashboard, you can now click a Testing Farm run’s pipeline ID to check its current state before the results link is available. (<a href=\"https://github.com/packit/dashboard/pull/551\" target=\"_blank\" rel=\"noopener noreferrer\">dashboard#551</a>)</li></ul>",
+            "url": "https://packit.dev/posts/weekly/2026/week-46",
+            "title": "Week 46 in Packit",
+            "summary": "Week 46 (November 14th – November 20th)",
+            "date_modified": "2026-11-20T00:00:00.000Z",
+            "author": {
+                "name": "Dalibor Kříčka",
+                "url": "https://github.com/DaliborKr"
+            },
+            "tags": [
+                "2026-November",
+                "2026",
+                "November"
+            ]
+        },
+        {
             "id": "https://packit.dev/posts/weekly/2026/week-45",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"week-45-november-3rd--november-9th\">Week 45 (November 3rd – November 9th)<a href=\"#week-45-november-3rd--november-9th\" class=\"hash-link\" aria-label=\"Direct link to Week 45 (November 3rd – November 9th)\" title=\"Direct link to Week 45 (November 3rd – November 9th)\">​</a></h2><ul><li>Fedora review has been added as an optional CI check on dist-git pull requests.\nIt doesn't run by default, to trigger it add <code>/packit-ci test fedora-review</code> comment.\n(<a href=\"https://github.com/packit/packit-service/pull/3201\" target=\"_blank\" rel=\"noopener noreferrer\">packit-service#3201</a>)</li></ul>",
             "url": "https://packit.dev/posts/weekly/2026/week-45",
