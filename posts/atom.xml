@@ -1167,7 +1167,7 @@ We have to install the dependencies manually on-demand, but of course, which is 
 Then in one of our architecture meetings, when we tried to solve another
 issue related to our sandboxing solution, Pavel Raiskup from Copr team asked us why didn't
 we build the SRPMs directly in Copr. We knew that there is a way of building SRPMs in Copr,
-but weren't aware of the details and how would this fit our use case.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-the-copr-srpms">Implementation of the Copr SRPMs<a href="#implementation-of-the-copr-srpms" class="hash-link" aria-label="Direct link to Implementation of the Copr SRPMs" title="Direct link to Implementation of the Copr SRPMs">​</a></h3><p>After some research of the <a href="https://docs.pagure.org/copr.copr/custom_source_method.html" target="_blank" rel="noopener noreferrer">Copr custom source method</a>, we
+but weren't aware of the details and how would this fit our use case.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-the-copr-srpms">Implementation of the Copr SRPMs<a href="#implementation-of-the-copr-srpms" class="hash-link" aria-label="Direct link to Implementation of the Copr SRPMs" title="Direct link to Implementation of the Copr SRPMs">​</a></h3><p>After some research of the <a href="https://docs.copr.fedorainfracloud.org/custom_source_method.html" target="_blank" rel="noopener noreferrer">Copr custom source method</a>, we
 decided to give it a try. To make Copr build the SRPMs, Copr needs to be provided
 with a script that will prepare the sources used to build an SRPM.
 Therefore, we created the <code>packit prepare-sources</code> command, which mostly reuses existing code that is run also in the sandbox
