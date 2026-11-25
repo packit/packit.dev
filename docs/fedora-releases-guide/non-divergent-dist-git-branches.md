@@ -18,7 +18,7 @@ To prevent your dist-git branches from diverging, you can use the following `dis
 
 In this example, Packit runs the downstream synchronization process for the `rawhide` and `epel-9` branches as usual. Additionally, Packit opens a new pull request reusing the commit from `rawhide` for every `fedora-branched` branch, allowing it to be fast-forwarded when merging.
 
-You can learn more about the `dist_git_branches` syntax for `propose_downstream` [here](docs/configuration/upstream/propose_downstream#optional-parameters) and for `pull_of_upstream` [here](docs/configuration/downstream/pull_from_upstream#optional-parameters).
+You can learn more about the `dist_git_branches` syntax for `propose_downstream` [here](/docs/configuration/upstream/propose_downstream#optional-parameters) and for `pull_of_upstream` [here](/docs/configuration/downstream/pull_from_upstream#optional-parameters).
 
 :::warning How to Reconcile Divergent Branches
 
